@@ -48,6 +48,19 @@
 | 共通 | false     | -3009      | ボタン名が存在しません。                          |
 | 共通 | false     | -3010      | テンプレート本文が一致しません。                       |
 | 共通 | false     | -3011      | テンプレートボタンが存在しません。                       |
+| 共通 | false     | -3012      | 수정할 수 없는 템플릿 상태 (승인/반려 상태만 가능)           |
+| 共通 | false     | -3013      | 이미 수정 중인 템플릿이 존재                          |
+| 共通 | false     | -3014      | 버튼 타입이 올바르지 않은 경우                        |
+| 共通 | false     | -3015      | CBT 기능이 비활성화 된 플러스친구일 경우                 |
+| 共通 | false     | -3016      | 강조 표기형 템플릿은 templateTitle, templateSubtitle 필수 필드            |
+| 共通 | false     | -3017      | templateSubtitle 은 치환 변수를 사용 불가            |
+| 共通 | false     | -3018      | 부가 정보형 템플릿은 templateExtra 필수 필드           |
+| 共通 | false     | -3019      | 광고 추가형 템플릿은 templateAd 필수 필드           |
+| 共通 | false     | -3020      | 복합형 템플릿은 templateExtra, templateAd 필수 필드   |
+| 共通 | false     | -3021      | templateExtra은 치환 변수를 사용 불가               |
+| 共通 | false     | -3022      | templateAd은 치환 변수를 사용 불가                  |
+| 共通 | false     | -3023      | templateAd은 url link 포함 불가                   |
+| 共通 | false     | -3024      | CA 타입 버튼은 광고 추가형 복합형 템플릿만 등록 가능       |
 | 共通 | false     | -3100      | テンプレートお問い合わせが可能な状態ではない場合              |
 | 共通 | false     | -4003      | 照会範囲が1か月を超過                         |
 | 共通 | false     | -4004      | 存在しないアプリケーションキー                        |
