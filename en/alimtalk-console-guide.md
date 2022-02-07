@@ -117,6 +117,17 @@ Click **Register Templates** to register a template.
 * Inquiries that are registered are added to inspection results, which shall be confirmed by an inspector at Kakaotalk.
 * Inspection result includes inquiries on the usage or reasons of returning a template.
 
+## 대체 발송 관리
+
+* 알림톡/친구톡 각 메시지 타입에 따라 플러스친구의 대체 발송을 설정할 수 있습니다.
+* 대체 발송을 설정한 플러스친구의 메시지만 LMS 또는 SMS로 대체 발송됩니다.
+* SMS 앱키를 수정하면 모든 플러스친구의 대체 발송 설정은 초기화됩니다.
+* SMS 서비스로 대체 발송되므로, SMS 서비스의 발송 API 명세에 따라 필드를 입력해야 합니다.(SMS 서비스에 등록된 발신 번호, 각종 필드 길이 제한 등)
+* 지정한 대체 발송 타입의 바이트 제한을 초과하는 대체 발송 제목이나 내용은 잘려서 대체 발송될 수 있습니다.([[SMS 주의 사항](https://docs.toast.com/ko/Notification/SMS/ko/api-guide/#_1)] 참고)
+* 대체 발송 내용은 EUC-KR 기준으로 발송되며, 지원하지 않는 이모티콘은 대체 발송에 실패합니다.
+
+![plusfriend_03_201812.png](https://static.toastoven.net/prod_alimtalk/plusfriend_03_201904.png)
+
 ## Statistics
 ### Query Statistics
 
