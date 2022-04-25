@@ -54,7 +54,7 @@
 | extra2s | List<String> | - | Optional | senderKey |
 | eventTypes | List<String> | - | Optional | Event type<br/> REQUESTED, SENT, RECEIVED, SENT_FAILED, RESENT, RESENT_FAILED |
 | eventCategory | String | - | Optional | Event list (Currently only `MESSAGE` is supported)<br/> MESSAGE |
-| templateCodes | List<String> | - | Optional | Template code list (FriendTalk unsupported) |
+| templateCodes | List<String> | - | Optional | Template code list (Friendtalk unsupported) |
 | requestIds | List<String> | 5 | Optional | Request ID list |
 | statsIds | List<String> | - | Optional | Statistics ID list |
 | statsCriteria | List<String> | - | Optional | Statistics criteria<br/>- EVENT: event (default value)<br/>- EXTRA_1,EVENT: sub product type, event<br/>- EXTRA_2,EVENT: senderKey, event |
@@ -120,7 +120,7 @@
 | extra2s | List<String> | - | Optional | senderKey |
 | eventTypes | List<String> | - | Optional | Event type<br/> REQUESTED, SENT, RECEIVED, SENT_FAILED, RESENT, RESENT_FAILED |
 | eventCategory | String | - | Optional | Event list (Currently only `MESSAGE` is supported)<br/> MESSAGE |
-| templateCodes | List<String> | - | Optional | Template code list (FriendTalk unsupported) |
+| templateCodes | List<String> | - | Optional | Template code list (Friendtalk unsupported) |
 | requestIds | List<String> | 5 | Optional | Request ID list |
 | statsIds | List<String> | - | Optional | Statistics ID list |
 | statsCriteria | List<String> | - | Optional | Statistics criteria<br/>- EVENT: event (default value)<br/>- EXTRA_1,EVENT: sub product type, event<br/>- EXTRA_2,EVENT: senderKey, event |
