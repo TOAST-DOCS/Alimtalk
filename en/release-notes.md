@@ -1,13 +1,13 @@
 ## Notification > KakaoTalk Bizmessage > Release Notes
-### 2022.04.26.
-* [API] SMS 대체 발송 시, 공용 필드 추가
-    * 알림톡/친구톡을 SMS로 대체 발송 시, statsId, senderGroupingKey, recipientGroupingKey 필드를 추가하도록 개선하였습니다.
-* [API] 알림톡 전문 발송 템플릿 validation 개선
-    * 알림톡 전문 발송 시, 템플릿 치환자에 공백을 허용하도록 유효성 검증을 개선하였습니다.
+### April 26, 2022
+* [API] Added public fields for SMS alternative delivery
+    * Made improvements so that the statsId, senderGroupingKey, and recipientGroupingKey fields are added when resending SMS messages for Alimtalk/Friendtalk.
+* [API] Improved validation of template for Alimtalk full text delivery
+    * Improved validation to allow whitespaces for template replacement when sending Alimtalk full text.
 
 ### Mar 29, 2022
-* [Console] Changed the base date for backup of AlimTalk delivery results
-    * The base date for backup of AlimTalk delivery results has been changed from 180 days to 90 days.
+* [Console] Changed the base date for backup of  delivery results
+    * The base date for backup of Alimtalk delivery results has been changed from 180 days to 90 days.
 * [Console] Improved the feature to download general, mass, and tag delivery results
     * For Excel download, changed to create a .zip file for more than 1 million results.
 
@@ -58,8 +58,8 @@
 * [Console] Webhook feature for the change of template status/inquiry content
     * A webhook feature for the change of template status/inquiry content has been added.
 * [API] Added price and currencyType fields for delivery
-    * price and currencyType fields, which are AlimTalk advertisement moment fields, have been added.
-    * A messageOption field has been added to the AlimTalk delivery API and single message retrieval API.
+    * price and currencyType fields, which are Alimtalk advertisement moment fields, have been added.
+    * A messageOption field has been added to the Alimtalk delivery API and single message retrieval API.
 
 ### April 27, 2021
 * [Console] Added a feature to register the same sender's profile
@@ -144,13 +144,13 @@
     * For more details, see [[API User Guide](./alimtalk-api-guide/#precautions-authword)].
 
 ### September 24, 2019
-* [Console] Canceling Scheduled Delivery of Alimtalk/FriendTalk
-    - Added the feature of canceling scheduled delivery of Alimtalk/FriendTalk from the **Query Delivery Result** tab, if it is yet to be delivered.
+* [Console] Canceling Scheduled Delivery of Alimtalk/Friendtalk
+    - Added the feature of canceling scheduled delivery of Alimtalk/Friendtalk from the **Query Delivery Result** tab, if it is yet to be delivered.
     - Canceling is available by querying time after scheduled delivery is requested.
-* [Console] Validity Checks Added for Uploading Bulk Files for Alimtalk/FriendTalk Delivery
+* [Console] Validity Checks Added for Uploading Bulk Files for Alimtalk/Friendtalk Delivery
     - With validity checks for uploading bulk delivery files, you can receive feedbacks before delivery.
-* [Console] Maximum Recipients Raised for Bulk Alimtalk/FriendTalk Delivery
-    - Increased the number of maximum recipients for Alimtalk/FriendTalk from 10,000 to 100,000.
+* [Console] Maximum Recipients Raised for Bulk Alimtalk/Friendtalk Delivery
+    - Increased the number of maximum recipients for Alimtalk/Friendtalk from 10,000 to 100,000.
 * [Console] Name Change from Kakaotalk PlusFriend to Kakaotalk Channel
     - As of September 17 of 2019, the service name has changed from 'PlusFriend' to 'Kakaotalk Channel'.
 
