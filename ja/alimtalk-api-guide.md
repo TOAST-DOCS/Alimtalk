@@ -48,7 +48,7 @@ Content-Type: application/json;charset=UTF-8
 ```
 | 値    | タイプ | 必須 | 説明                               |
 | ------------ | ------ | ---- | ---------------------------------------- |
-| X-Secret-Key | String | O    | コンソールで作成できる。[[参考](./sender-console-guide/#x-secret-key)] |
+| X-Secret-Key | String | O    | コンソールで作成できる。 |
 
 [Request body]
 
@@ -193,7 +193,7 @@ Content-Type: application/json;charset=UTF-8
 ```
 | 値    | タイプ | 必須 | 説明                               |
 | ------------ | ------ | ---- | ---------------------------------------- |
-| X-Secret-Key | String | O    | コンソールで作成できる。[[参考](./sender-console-guide/#x-secret-key)] |
+| X-Secret-Key | String | O    | コンソールで作成できる。 |
 
 [Request body]
 
@@ -350,7 +350,7 @@ Content-Type: application/json;charset=UTF-8
 ```
 | 値    | タイプ | 必須 | 説明                               |
 | ------------ | ------ | ---- | ---------------------------------------- |
-| X-Secret-Key | String | O    | コンソールで作成できる。[[参考](./sender-console-guide/#x-secret-key)] |
+| X-Secret-Key | String | O    | コンソールで作成できる。 |
 
 [Query parameter] 1番or (2番、 3番)の条件は必須
 
@@ -505,7 +505,7 @@ Content-Type: application/json;charset=UTF-8
 ```
 | 値    | タイプ | 必須 | 説明                               |
 | ------------ | ------ | ---- | ---------------------------------------- |
-| X-Secret-Key | String | O    | コンソールで作成できる。[[参考](./sender-console-guide/#x-secret-key)] |
+| X-Secret-Key | String | O    | コンソールで作成できる。 |
 
 [例]
 ```
@@ -646,7 +646,7 @@ Content-Type: application/json;charset=UTF-8
 ```
 | 値    | タイプ | 必須 | 説明                               |
 | ------------ | ------ | ---- | ---------------------------------------- |
-| X-Secret-Key | String | O    | コンソールで作成できる。[[参考](./sender-console-guide/#x-secret-key)] |
+| X-Secret-Key | String | O    | コンソールで作成できる。 |
 
 [Request body]
 
@@ -789,7 +789,7 @@ Content-Type: application/json;charset=UTF-8
 ```
 | 値    | タイプ | 必須 | 説明                               |
 | ------------ | ------ | ---- | ---------------------------------------- |
-| X-Secret-Key | String | O    | コンソールで作成できる。[[参考](./sender-console-guide/#x-secret-key)] |
+| X-Secret-Key | String | O    | コンソールで作成できる。 |
 
 [Request body]
 
@@ -945,7 +945,7 @@ Content-Type: application/json;charset=UTF-8
 ```
 | 値    | タイプ | 必須 | 説明                               |
 | ------------ | ------ | ---- | ---------------------------------------- |
-| X-Secret-Key | String | O    | コンソールで作成できる。[[参考](./sender-console-guide/#x-secret-key)] |
+| X-Secret-Key | String | O    | コンソールで作成できる。 |
 
 [Query parameter] 1番or (2番、 3番)の条件は必須
 
@@ -1100,7 +1100,7 @@ Content-Type: application/json;charset=UTF-8
 ```
 | 値    | タイプ | 必須 | 説明                               |
 | ------------ | ------ | ---- | ---------------------------------------- |
-| X-Secret-Key | String | O    | コンソールで作成できる。[[参考](./sender-console-guide/#x-secret-key)] |
+| X-Secret-Key | String | O    | コンソールで作成できる。 |
 
 [例]
 ```
@@ -1235,7 +1235,7 @@ Content-Type: application/json;charset=UTF-8
 ```
 | 値    | タイプ | 必須 | 説明                               |
 | ------------ | ------ | ---- | ---------------------------------------- |
-| X-Secret-Key | String | O    | コンソールで作成できる。[[参考](./sender-console-guide/#x-secret-key)] |
+| X-Secret-Key | String | O    | コンソールで作成できる。 |
 
 [Query parameter]
 
@@ -1293,7 +1293,7 @@ Content-Type: application/json;charset=UTF-8
 ```
 | 値    | タイプ | 必須 | 説明                               |
 | ------------ | ------ | ---- | ---------------------------------------- |
-| X-Secret-Key | String | O    | コンソールで作成できる。[[参考](./sender-console-guide/#x-secret-key)] |
+| X-Secret-Key | String | O    | コンソールで作成できる。 |
 
 [Query parameter]
 
@@ -1788,7 +1788,7 @@ Content-Type: application/json;charset=UTF-8
 ```
 | 値    | タイプ | 必須 | 説明                               |
 |---|---|---|---|
-| X-Secret-Key | String | O    | コンソールで作成できる。[[参考](./sender-console-guide/#x-secret-key)] |
+| X-Secret-Key | String | O    | コンソールで作成できる。 |
 
 #### レスポンス
 ```
@@ -1855,7 +1855,7 @@ Content-Type: application/json;charset=UTF-8
 ```
 | 値    | タイプ | 必須 | 説明                               |
 | ------------ | ------ | ---- | ---------------------------------------- |
-| X-Secret-Key | String | O    | コンソールで作成できる。[[参考](./sender-console-guide/#x-secret-key)] |
+| X-Secret-Key | String | O    | コンソールで作成できる。 |
 
 [Request body]
 
@@ -1909,6 +1909,9 @@ Content-Type: application/json;charset=UTF-8
 | -linkPc         | String  | X    | PC Webリンク(WLタイプの場合は任意フィールド、最大500文字)        |
 | -schemeIos      | String  | X    | iOSアプリリンク(ALタイプの場合は必須フィールド、最大500文字)       |
 | -schemeAndroid  | String  | X    | Androidアプリリンク(ALタイプの場合は必須フィールド、最大500文字)   |
+* 채널 추가형(AD) 또는 복합형(MI) 메시지 유형 템플릿 등록 시 templateAd 값이 고정됩니다.
+* 채널 추가형(AD) 또는 복합형(MI) 메시지 유형 템플릿 등록 시 채널 추가(AC) 버튼이 첫 번째 순서에 위치해야 합니다.
+* 채널 추가(AC) 버튼의 버튼명은 "채널 추가"로 고정하여 등록해야 합니다.
 
 #### レスポンス
 ```
@@ -1953,7 +1956,7 @@ Content-Type: application/json;charset=UTF-8
 ```
 | 値    | タイプ | 必須 | 説明                               |
 | ------------ | ------ | ---- | ---------------------------------------- |
-| X-Secret-Key | String | O    | コンソールで作成できる。[[参考](./sender-console-guide/#x-secret-key)] |
+| X-Secret-Key | String | O    | コンソールで作成できる。 |
 
 [Request body]
 
@@ -2005,6 +2008,9 @@ Content-Type: application/json;charset=UTF-8
 | -linkPc         | String  | X    | PC Webリンク(WLタイプの場合は任意フィールド、最大500文字)        |
 | -schemeIos      | String  | X    | iOSアプリリンク(ALタイプの場合は必須フィールド、最大500文字)       |
 | -schemeAndroid  | String  | X    | Androidアプリリンク(ALタイプの場合は必須フィールド、最大500文字)   |
+* 채널 추가형(AD)"과 "복합형(MI)" 메시지 유형 템플릿 수정 시, templateAd 값이 고정됩니다.
+* 채널 추가형(AD)과 복합형(MI) 메시지 유형 템플릿 수정 시, 채널 추가(AC) 버튼이 첫 번째 순서에 위치해야 합니다.
+* 채널 추가(AC) 버튼의 버튼명은 "채널 추가"로 고정하여, 수정해야 합니다.
 
 #### レスポンス
 ```
@@ -2096,7 +2102,7 @@ Content-Type: application/json;charset=UTF-8
 ```
 | 値    | タイプ | 必須 | 説明                               |
 | ------------ | ------ | ---- | ---------------------------------------- |
-| X-Secret-Key | String | O    | コンソールで作成できる。[[参考](./sender-console-guide/#x-secret-key)] |
+| X-Secret-Key | String | O    | コンソールで作成できる。 |
 
 [Request body]
 
@@ -2155,7 +2161,7 @@ Content-Type: application/json;charset=UTF-8
 ```
 |値|	タイプ|	必須|	説明|
 |---|---|---|---|
-|X-Secret-Key|	String| O | コンソールで作成できる。[[参考](./sender-console-guide/#x-secret-key)] |
+|X-Secret-Key|	String| O | コンソールで作成できる。 |
 
 [Request Body]
 
@@ -2216,7 +2222,7 @@ Content-Type: application/json;charset=UTF-8
 ```
 | 値    | タイプ | 必須 | 説明                               |
 | ------------ | ------ | ---- | ---------------------------------------- |
-| X-Secret-Key | String | O    | コンソールで作成できる。[[参考](./sender-console-guide/#x-secret-key)] |
+| X-Secret-Key | String | O    | コンソールで作成できる。 |
 
 [Query parameter]
 
@@ -2370,7 +2376,7 @@ Content-Type: application/json;charset=UTF-8
 ```
 | 値    | タイプ | 必須 | 説明                               |
 |---|---|---|---|
-| X-Secret-Key | String | O    | コンソールで作成できる。[[参考](./sender-console-guide/#x-secret-key)] |
+| X-Secret-Key | String | O    | コンソールで作成できる。 |
 
 [例]
 ```
@@ -2504,7 +2510,7 @@ Content-Type: multipart/form-data
 ```
 | 値    | タイプ | 必須 | 説明                               |
 |---|---|---|---|
-| X-Secret-Key | String | O    | コンソールで作成できる。[[参考](./sender-console-guide/#x-secret-key)] |
+| X-Secret-Key | String | O    | コンソールで作成できる。 |
 
 [Request parameter]
 
@@ -2567,7 +2573,7 @@ Content-Type: application/json;charset=UTF-8
 
 | 値    | タイプ | 必須 | 説明                               |
 | ------------ | ------ | ---- | ---------------------------------------- |
-| X-Secret-Key | String | O    | コンソールで作成できる。[[参考](./sender-console-guide/#x-secret-key)] |
+| X-Secret-Key | String | O    | コンソールで作成できる。 |
 
 
 [Request body]
@@ -2623,7 +2629,7 @@ Content-Type: application/json;charset=UTF-8
 
 | 値    | タイプ | 必須 | 説明                               |
 | ------------ | ------ | ---- | ---------------------------------------- |
-| X-Secret-Key | String | O    | コンソールで作成できる。[[参考](./sender-console-guide/#x-secret-key)] |
+| X-Secret-Key | String | O    | コンソールで作成できる。 |
 
 
 [Request body]
