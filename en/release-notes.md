@@ -1,4 +1,10 @@
 ## Notification > KakaoTalk Bizmessage > Release Notes
+### 2023. 08. 29.
+* [API] 메시지 발송 결과 코드 업데이트 웹훅 필드 추가 
+    * 메시지 발송 결과 코드 업데이트 웹훅에 recipientGroupingKey, senderGroupingKey 필드를 추가하였습니다.
+* [Console] 발송 결과 조회 총 건수 표시 개선
+    * 발송 결과가 10만 건 이상일 경우 총 건수가 '9,999+건'과 같이 표시되도록 개선하였습니다(기존 1만 건 이상).
+
 ### July 25, 2023
 * [Console] Added a new field to the Template Registration Using File Uploads feature (v2.3)
     * Improved so that, when registering a template using file uploads, new fields such as Alimtalk Item List, Quick Reply, Primary Link could be applied.
