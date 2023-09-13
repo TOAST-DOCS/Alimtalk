@@ -1,4 +1,9 @@
 ## Notification > KakaoTalk Bizmessage > Release Notes
+### 2023. 09. 26.
+* [Console] 알림톡 채널 추가 시 안내되는 고정 문구가 메시지 변경
+    * (변경 전) 채널 추가하고 이 채널의 광고와 마케팅 메시지를 카카오톡으로 받기
+    * (변경 후) 채널 추가하고 이 채널의 마케팅 메시지 등을 카카오톡으로 받기
+
 ### 2023. 08. 29.
 * [API] 메시지 발송 결과 코드 업데이트 웹훅 필드 추가 
     * 메시지 발송 결과 코드 업데이트 웹훅에 recipientGroupingKey, senderGroupingKey 필드를 추가하였습니다.
