@@ -1,4 +1,9 @@
 ## Notification > KakaoTalk Bizmessage > Release Notes
+### 2023. 11. 28.
+* [API] 친구톡 와이드 이미지 버튼 개수 제한 변경
+    * (변경 전) 친구톡 와이드 이미지 발송 시 최대 버튼 개수 1개
+    * (변경 후) 친구톡 와이드 이미지 발송 시 최대 버튼 개수 2개
+    
 ### September 26, 2023
 * [Console] Changed the fixed text when adding a Alimtalk channel
     * (As-Is) Add a channel and receive relevant ads and marketing messages via KakaoTalk
