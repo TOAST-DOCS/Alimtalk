@@ -1,4 +1,9 @@
 ## Notification > KakaoTalk Bizmessage > Release Notes
+### 2023. 12. 19.
+* [API] 알림톡 아이템리스트형 본문 글자수 제한 변경
+    * (변경 전) 알림톡 아이템리스트형 최대 본문 길이 1,000자
+    * (변경 후) 알림톡 아이템리스트형 최대 본문 길이 700자
+
 ### November 28, 2023
 * [API] Changed the limit on the number of FriendTalk wide image buttons
     * (AS-IS) Maximum 1 button when sending a FriendTalk wide image
