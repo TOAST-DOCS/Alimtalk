@@ -259,7 +259,7 @@ Content-Type: application/json;charset=UTF-8
 |--- attachment | Object | X | Carousel item images, button information | 
 |---- buttons | List | X | Button list(up to 2) | 
 |----- name| String |	X |	Button name(required, if there's a button, up to 28 characters)|
-|----- type| String |	X |	Button type(WL: Web Link, AL: App Link, BK: Bot Keyword, MD: Message Delivery, BF: Business Form) |
+|----- type| String |	X |	Button type(WL: Web Link, AL: App Link) |
 |----- linkMo| String |	X |	Mobile web link(required for the WL type)|
 |----- linkPc | String |	X |PC web link(optional for the WL type) |
 |----- schemeIos | String | X |	iOS app link(required for the AL type) |
@@ -667,7 +667,7 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 |--- attachment | Object | Carousel item images, button information | 
 |---- buttons | List | Button list(up to 2) | 
 |----- name| String |	Button name(required, if there's a button, up to 28 characters)|
-|----- type| String |	Button type(WL: Web Link, AL: App Link, BK: Bot Keyword, MD: Message Delivery, BF: Business Form) |
+|----- type| String |	Button type(WL: Web Link, AL: App Link) |
 |----- linkMo| String |	Mobile web link(required for the WL type)|
 |----- linkPc | String |PC web link(optional for the WL type) |
 |----- schemeIos | String | iOS app link(required for the AL type) |
@@ -1243,7 +1243,7 @@ curl -X GET \
 | --- attachment | Object | Carousel item images, button information | 
 | ---- buttons | List | Button list(up to 2) | 
 | ----- name| String |	Button name(required, if there's a button, up to 28 characters)|
-| ----- type| String |	Button type(WL: Web Link, AL: App Link, BK: Bot Keyword, MD: Message Delivery, BF: Business Form) |
+| ----- type| String |	Button type(WL: Web Link, AL: App Link) |
 | ----- linkMo| String |	Mobile web link(required for the WL type)|
 | ----- linkPc | String |	PC web link(optional for the WL type) |
 | ----- schemeIos | String | iOS app link(required for the AL type) |
