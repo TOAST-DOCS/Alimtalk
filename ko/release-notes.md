@@ -1,4 +1,4 @@
-## Notification > KakaoTalk Bizmessage > 릴리스 노트
+## Notification > KakaoTalk Bizmessage > 릴리스 노트햣 
 ### 2024. 02. 27.
 * [Console] 알림톡 템플릿 등록 시 문의 및 첨부 파일 등록 가능
     * 템플릿 검수에 필요한 의견과 첨부 파일을 템플릿 생성 과정에서 등록할 수 있도록 개선하였습니다.
