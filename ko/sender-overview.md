@@ -1,4 +1,4 @@
-## Notification > KakaoTalk Bizmessage > 플러스친구 > 개요
+## Notification > KakaoTalk Bizmessage > 발신프로필 > 발송 전 준비사항
 
 ### 카카오톡 채널 생성
 카카오톡 비즈 메시지를 발송하려면 먼저 카카오톡채널 관리자센터에서 비즈니스 인증을 받은 채널을 개설해야 합니다. [카카오 채널 생성 및 비즈니스 인증 가이드](https://center-pf.kakao.com/)
