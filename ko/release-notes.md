@@ -1,5 +1,5 @@
 ## Notification > KakaoTalk Bizmessage > 릴리스 노트
-### 2024. 05. 14.
+### 2024. 05. 28.
 * [API] 메시지 리스트 조회 API 응답의 정렬 기준 변경
     * (변경 전) requestDate 기준으로 내림차순 정렬
     * (변경 후) requestDate 기준으로 내림차순 정렬, requestDate가 동일한 경우 requestId, recipientSeq 기준으로 내림차순 정렬
