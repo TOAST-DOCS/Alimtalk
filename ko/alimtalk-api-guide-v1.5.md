@@ -2239,7 +2239,7 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 |--- content |  String | 문의 내용 |
 |---userName | String | 작성자 |
 |---createAt | String | 등록 날짜 |
-|---status | String | 댓글 상태(INQ: 문의, APR: 승인, REJ: 반려, REP: 답변) |
+|---status | String | 댓글 상태(INQ: 문의, APR: 승인, REJ: 반려, REP: 답변, REQ: 검수중) |
 |-- status| String | 템플릿 상태 |
 |-- statusName | String | 템플릿 상태명 |
 |-- createDate | String | 생성일자 |
@@ -2365,7 +2365,7 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 |--- content |  String | 문의 내용 |
 |---userName | String | 작성자 |
 |---createAt | String | 등록 날짜 |
-|---status | String | 댓글 상태(INQ: 문의, APR: 승인, REJ: 반려, REP: 답변) |
+|---status | String | 댓글 상태(INQ: 문의, APR: 승인, REJ: 반려, REP: 답변, REQ: 검수중) |
 |-- status| String | 템플릿 상태 |
 |-- statusName | String | 템플릿 상태명 |
 |-- activated | Boolean | 활성화 여부 |

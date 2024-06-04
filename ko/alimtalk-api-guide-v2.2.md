@@ -2273,52 +2273,52 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 }
 ```
 
-| 이름 |	타입|	설명|
-|---|---|---|
-|header|	Object|	헤더 영역|
-|- resultCode|	Integer|	결과 코드|
-|- resultMessage|	String| 결과 메시지|
-|- isSuccessful|	Boolean| 성공 여부|
-|templateListResponse|	Object|	본문 영역|
-|- templates | List |	템플릿 리스트 |
-|-- plusFriendId | String |	카카오톡 채널 검색용 ID 또는 발신 프로필 그룹명 |
-|-- senderKey    | String | 발신 키    |
-|-- plusFriendType | String | 플러스친구 타입(NORMAL, GROUP) |
-|-- templateCode | String |	템플릿 코드 |
-|-- templateName | String |	템플릿명 |
-|-- templateMessageType| String | 템플릿 메시지 유형(BA: 기본형, EX: 부가 정보형, AD: 채널 추가형, MI: 복합형) |
-|-- templateEmphasizeType| String| 템플릿 강조 표시 타입(NONE : 기본, TEXT : 강조 표시, IMAGE: 이미지형) |
-|-- templateContent | String |	템플릿 본문 |
-|-- templateExtra | String | 템플릿 부가 정보 |
-|-- templateAd | String | 템플릿 내 수신 동의 요청 또는 간단한 광고 문구 |
-|-- tempalteTitle| String | 템플릿 제목 |
-|-- templateSubtitle| String | 템플릿 보조 문구 |
-|-- templateImageName | String | 이미지명(업로드한 파일명) |
-|-- templateImageUrl | String |	이미지 URL |
-|-- buttons | List |	버튼 리스트 |
-|--- ordering | Integer |	버튼 순서(1~5) |
-|--- type | String |	버튼 버튼 타입(WL: 웹 링크, AL: 앱 링크, DS: 배송 조회, BK: 봇 키워드, MD: 메시지 전달, BC: 상담톡 전환, BT: 봇 전환, AC: 채널 추가) |
-|--- name | String |	버튼 이름 |
-|--- linkMo | String |	모바일 웹 링크(WL 타입일 경우 필수 필드) |
-|--- linkPc | String |	PC 웹 링크(WL 타입일 경우 선택 필드) |
-|--- schemeIos | String |	iOS 앱 링크(AL 타입일 경우 필수 필드) |
-|--- schemeAndroid | String |	안드로이드 앱 링크(AL 타입일 경우 필수 필드) |
-|-- comments | List | 검수 결과 |
-|--- id | Integer | 문의 아이디 |
-|--- content |  String | 문의 내용 |
-|--- userName | String | 작성자 |
-|--- createAt | String | 등록 날짜 |
-|--- attachment | List | 첨부 파일 |
-|---- originalFileName | String | 첨부 파일명 |
-|---- filePath | String | 첨부 파일 경로 |
-|--- status | String | 댓글 상태(INQ: 문의, APR: 승인, REJ: 반려, REP: 답변) |
-|-- status| String | 템플릿 상태 |
-|-- statusName | String | 템플릿 상태명 |
-|-- securityFlag| Boolean | 보안 템플릿 여부 |
-|-- categoryCode| String | 템플릿 카테고리 코드  |
-|-- createDate | String | 생성일자 |
-|-- updateDate | String | 수정일자 |
-|- totalCount | Integer | 총개수 |
+| 이름 |	타입| 	설명                                                                                             |
+|---|---|-------------------------------------------------------------------------------------------------|
+|header|	Object| 	헤더 영역                                                                                          |
+|- resultCode|	Integer| 	결과 코드                                                                                          |
+|- resultMessage|	String| 결과 메시지                                                                                          |
+|- isSuccessful|	Boolean| 성공 여부                                                                                           |
+|templateListResponse|	Object| 	본문 영역                                                                                          |
+|- templates | List | 	템플릿 리스트                                                                                        |
+|-- plusFriendId | String | 	카카오톡 채널 검색용 ID 또는 발신 프로필 그룹명                                                                   |
+|-- senderKey    | String | 발신 키                                                                                            |
+|-- plusFriendType | String | 플러스친구 타입(NORMAL, GROUP)                                                                         |
+|-- templateCode | String | 	템플릿 코드                                                                                         |
+|-- templateName | String | 	템플릿명                                                                                           |
+|-- templateMessageType| String | 템플릿 메시지 유형(BA: 기본형, EX: 부가 정보형, AD: 채널 추가형, MI: 복합형)                                            |
+|-- templateEmphasizeType| String| 템플릿 강조 표시 타입(NONE : 기본, TEXT : 강조 표시, IMAGE: 이미지형)                                              |
+|-- templateContent | String | 	템플릿 본문                                                                                         |
+|-- templateExtra | String | 템플릿 부가 정보                                                                                       |
+|-- templateAd | String | 템플릿 내 수신 동의 요청 또는 간단한 광고 문구                                                                     |
+|-- tempalteTitle| String | 템플릿 제목                                                                                          |
+|-- templateSubtitle| String | 템플릿 보조 문구                                                                                       |
+|-- templateImageName | String | 이미지명(업로드한 파일명)                                                                                  |
+|-- templateImageUrl | String | 	이미지 URL                                                                                        |
+|-- buttons | List | 	버튼 리스트                                                                                         |
+|--- ordering | Integer | 	버튼 순서(1~5)                                                                                     |
+|--- type | String | 	버튼 버튼 타입(WL: 웹 링크, AL: 앱 링크, DS: 배송 조회, BK: 봇 키워드, MD: 메시지 전달, BC: 상담톡 전환, BT: 봇 전환, AC: 채널 추가) |
+|--- name | String | 	버튼 이름                                                                                          |
+|--- linkMo | String | 	모바일 웹 링크(WL 타입일 경우 필수 필드)                                                                      |
+|--- linkPc | String | 	PC 웹 링크(WL 타입일 경우 선택 필드)                                                                       |
+|--- schemeIos | String | 	iOS 앱 링크(AL 타입일 경우 필수 필드)                                                                      |
+|--- schemeAndroid | String | 	안드로이드 앱 링크(AL 타입일 경우 필수 필드)                                                                    |
+|-- comments | List | 검수 결과                                                                                           |
+|--- id | Integer | 문의 아이디                                                                                          |
+|--- content |  String | 문의 내용                                                                                           |
+|--- userName | String | 작성자                                                                                             |
+|--- createAt | String | 등록 날짜                                                                                           |
+|--- attachment | List | 첨부 파일                                                                                           |
+|---- originalFileName | String | 첨부 파일명                                                                                          |
+|---- filePath | String | 첨부 파일 경로                                                                                        |
+|--- status | String | 댓글 상태(INQ: 문의, APR: 승인, REJ: 반려, REP: 답변, REQ: 검수중)                                                       |
+|-- status| String | 템플릿 상태                                                                                          |
+|-- statusName | String | 템플릿 상태명                                                                                         |
+|-- securityFlag| Boolean | 보안 템플릿 여부                                                                                       |
+|-- categoryCode| String | 템플릿 카테고리 코드                                                                                     |
+|-- createDate | String | 생성일자                                                                                            |
+|-- updateDate | String | 수정일자                                                                                            |
+|- totalCount | Integer | 총개수                                                                                             |
 
 ### 템플릿 수정 리스트 조회
 
@@ -2456,7 +2456,7 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 |--- attachment | List | 첨부 파일 |
 |---- originalFileName | String | 첨부 파일명 |
 |---- filePath | String | 첨부 파일 경로 |
-|--- status | String | 댓글 상태(INQ: 문의, APR: 승인, REJ: 반려, REP: 답변) |
+|--- status | String | 댓글 상태(INQ: 문의, APR: 승인, REJ: 반려, REP: 답변, REQ: 검수중) |
 |-- status| String | 템플릿 상태 |
 |-- statusName | String | 템플릿 상태명 |
 |-- securityFlag| Boolean | 보안 템플릿 여부 |

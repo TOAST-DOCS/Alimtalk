@@ -1857,7 +1857,7 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 |--- attachment | List | 첨부 파일 |
 |---- originalFileName | String | 첨부 파일명 |
 |---- filePath | String | 첨부 파일 경로 |
-|--- status | String | 댓글 상태(INQ: 문의, APR: 승인, REJ: 반려, REP: 답변) |
+|--- status | String | 댓글 상태(INQ: 문의, APR: 승인, REJ: 반려, REP: 답변, REQ: 검수중) |
 |-- status| String | 템플릿 상태 |
 |-- statusName | String | 템플릿 상태명 |
 |-- securityFlag| Boolean | 보안 템플릿 여부 |
@@ -2002,7 +2002,7 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 |--- attachment | List | 첨부 파일 |
 |---- originalFileName | String | 첨부 파일명 |
 |---- filePath | String | 첨부 파일 경로 |
-|--- status | String | 댓글 상태(INQ: 문의, APR: 승인, REJ: 반려, REP: 답변) |
+|--- status | String | 댓글 상태(INQ: 문의, APR: 승인, REJ: 반려, REP: 답변, REQ: 검수중) |
 |-- status| String | 템플릿 상태 |
 |-- statusName | String | 템플릿 상태명 |
 |-- securityFlag| Boolean | 보안 템플릿 여부 |
