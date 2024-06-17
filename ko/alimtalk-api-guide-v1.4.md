@@ -63,11 +63,11 @@ Content-Type: application/json;charset=UTF-8
             String: String
         },
         "resendParameter": {
-          "isResend" : boolean,
-          "resendType" : String,
-          "resendTitle" : String,
-          "resendContent" : String,
-          "resendSendNo" : String
+          "isResend": boolean,
+          "resendType": String,
+          "resendTitle": String,
+          "resendContent": String,
+          "resendSendNo": String
         },
         "recipientGroupingKey": String
     }]
@@ -95,9 +95,10 @@ Content-Type: application/json;charset=UTF-8
 
 * <b>요청 일시는 호출하는 시점부터 30일 후까지 설정 가능합니다.</b>
 * <b>SMS 서비스에서 대체 발송되므로, SMS 서비스의 발송 API 명세에 따라 필드를 입력해야 합니다.(SMS 서비스에 등록된 발신 번호, 각종 필드 길이 제한 등)</b>
-* <b>대체 발송은 SMS, LMS로 발송 가능하며, 국제 대체 발송은 SMS만 지원 합니다. 국제 수신자 번호일 경우, resendType(대체 발송 타입)을 SMS로 변경해야 정상적으로 대체 발송할 수 있습니다.</b>
+* <b>대체 발송은 SMS, LMS로 발송 가능하며, 국제 대체 발송은 SMS만 지원합니다. 국제 수신자 번호일 경우, resendType(대체 발송 타입)을 SMS로 변경해야 정상적으로 대체 발송할 수 있습니다.</b>
 * <b>지정한 대체 발송 타입의 바이트 제한을 초과하는 대체 발송 제목이나 내용은 잘려서 대체 발송될 수 있습니다.([[SMS 주의사항](https://docs.toast.com/ko/Notification/SMS/ko/api-guide/#_1)] 참고)</b>
-* <b>templateTitle과 templateItemHighlight.title 필드 뒷 부분이 치환자이며 치환되는 값으로 맨 뒤에 `\s` 문자를 추가할 경우 취소선 스타일을 적용할 수 있습니다.</b>
+* <b>templateTitle과 templateItemHighlight.title 필드 맨 뒤에 치환자와 templateParameter를 이용해서 `\s` 문자를 추가할 경우 취소선 스타일을 적용할 수 있습니다.</b>
+    * <b>단, 템플릿 등록 시 미리 \s를 필드에 추가해 두는 경우에는 적용되지 않습니다.</b>
 
 [예시]
 ```
@@ -195,11 +196,11 @@ Content-Type: application/json;charset=UTF-8
                 }
             ],
             "resendParameter": {
-              "isResend" : boolean,
-              "resendType" : String,
-              "resendTitle" : String,
-              "resendContent" : String,
-              "resendSendNo" : String
+              "isResend": boolean,
+              "resendType": String,
+              "resendTitle": String,
+              "resendContent": String,
+              "resendSendNo": String
             },
             "recipientGroupingKey": String
         }
@@ -235,9 +236,10 @@ Content-Type: application/json;charset=UTF-8
 * <b>본문과 버튼에 치환이 완성된 데이터를 넣어주세요.</b>
 * <b>요청 일시는 호출하는 시점부터 30일 후까지 설정 가능합니다.</b>
 * <b>SMS 서비스에서 대체 발송되므로, SMS 서비스의 발송 API 명세에 따라 필드를 입력해야 합니다.(SMS 서비스에 등록된 발신 번호, 각종 필드 길이 제한 등)</b>
-* <b>대체 발송은 SMS, LMS로 발송 가능하며, 국제 대체 발송은 SMS만 지원 합니다. 국제 수신자 번호일 경우, resendType(대체 발송 타입)을 SMS로 변경해야 정상적으로 대체 발송할 수 있습니다.</b>
+* <b>대체 발송은 SMS, LMS로 발송 가능하며, 국제 대체 발송은 SMS만 지원합니다. 국제 수신자 번호일 경우, resendType(대체 발송 타입)을 SMS로 변경해야 정상적으로 대체 발송할 수 있습니다.</b>
 * <b>지정한 대체 발송 타입의 바이트 제한을 초과하는 대체 발송 제목이나 내용은 잘려서 대체 발송될 수 있습니다.([[SMS 주의사항](https://docs.toast.com/ko/Notification/SMS/ko/api-guide/#_1)] 참고)</b>
 * <b>발송 시점에 templateTitle과 templateItemHighlight.title 필드 맨 뒤에 `\s` 문자를 추가할 경우 취소선 스타일을 적용할 수 있습니다.</b>
+    * <b>단, 템플릿 등록 시 미리 \s를 필드에 추가해 두는 경우에는 적용되지 않습니다.</b>
 
 [예시]
 ```
@@ -335,33 +337,33 @@ Content-Type: application/json;charset=UTF-8
 #### 응답
 ```
 {
-  "header" : {
-      "resultCode" :  Integer,
-      "resultMessage" :  String,
-      "isSuccessful" :  boolean
+  "header": {
+      "resultCode": Integer,
+      "resultMessage": String,
+      "isSuccessful": boolean
   },
-  "messageSearchResultResponse" : {
-    "messages" : [
+  "messageSearchResultResponse": {
+    "messages": [
     {
-      "requestId" :  String,
-      "recipientSeq" : Integer,
-      "plusFriendId" :  String,
-      "templateCode" :  String,
-      "recipientNo" :  String,
-      "content" :  String,
-      "requestDate" :  String,
-      "receiveDate" : String,
-      "resendStatus" :  String,
-      "resendStatusName" :  String,
-      "messageStatus" :  String,
-      "resultCode" :  String,
-      "resultCodeName" : String,
-      "buttons" : [
+      "requestId": String,
+      "recipientSeq": Integer,
+      "plusFriendId": String,
+      "templateCode": String,
+      "recipientNo": String,
+      "content": String,
+      "requestDate": String,
+      "receiveDate": String,
+      "resendStatus": String,
+      "resendStatusName": String,
+      "messageStatus": String,
+      "resultCode": String,
+      "resultCodeName": String,
+      "buttons": [
         {
-          "ordering" :  Integer,
-          "type" :  String,
-          "name" :  String,
-          "linkMo" :  String,
+          "ordering": Integer,
+          "type": String,
+          "name": String,
+          "linkMo": String,
           "linkPc": String,
           "schemeIos": String,
           "schemeAndroid": String
@@ -371,7 +373,7 @@ Content-Type: application/json;charset=UTF-8
       "recipientGroupingKey": String
     }
     ],
-    "totalCount" :  Integer
+    "totalCount": Integer
   }
 }
 ```
@@ -460,31 +462,31 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 #### 응답
 ```
 {
-  "header" : {
-      "resultCode" :  Integer,
-      "resultMessage" :  String,
-      "isSuccessful" :  boolean
+  "header": {
+      "resultCode": Integer,
+      "resultMessage": String,
+      "isSuccessful": boolean
   },
-  "message" : {
-      "requestId" :  String,
-      "recipientSeq" : Integer,
-      "plusFriendId" :  String,
-      "templateCode" :  String,
-      "recipientNo" :  String,
-      "content" :  String,
-      "requestDate" :  String,
-      "receiveDate" : String,
-      "resendStatus" :  String,
-      "resendStatusName" :  String,
-      "messageStatus" :  String,
-      "resultCode" :  String,
-      "resultCodeName" : String,
-      "buttons" : [
+  "message": {
+      "requestId": String,
+      "recipientSeq": Integer,
+      "plusFriendId": String,
+      "templateCode": String,
+      "recipientNo": String,
+      "content": String,
+      "requestDate": String,
+      "receiveDate": String,
+      "resendStatus": String,
+      "resendStatusName": String,
+      "messageStatus": String,
+      "resultCode": String,
+      "resultCodeName": String,
+      "buttons": [
         {
-          "ordering" :  Integer,
-          "type" :  String,
-          "name" :  String,
-          "linkMo" :  String,
+          "ordering": Integer,
+          "type": String,
+          "name": String,
+          "linkMo": String,
           "linkPc": String,
           "schemeIos": String,
           "schemeAndroid": String
@@ -580,11 +582,11 @@ Content-Type: application/json;charset=UTF-8
             String: String
         },
         "resendParameter": {
-          "isResend" : boolean,
-          "resendType" : String,
-          "resendTitle" : String,
-          "resendContent" : String,
-          "resendSendNo" : String
+          "isResend": boolean,
+          "resendType": String,
+          "resendTitle": String,
+          "resendContent": String,
+          "resendSendNo": String
         },
         "recipientGroupingKey": String
     }]
@@ -710,11 +712,11 @@ Content-Type: application/json;charset=UTF-8
                 }
             ],
             "resendParameter": {
-              "isResend" : boolean,
-              "resendType" : String,
-              "resendTitle" : String,
-              "resendContent" : String,
-              "resendSendNo" : String
+              "isResend": boolean,
+              "resendType": String,
+              "resendTitle": String,
+              "resendContent": String,
+              "resendSendNo": String
             },
             "recipientGroupingKey": String
         }
@@ -846,33 +848,33 @@ Content-Type: application/json;charset=UTF-8
 #### 응답
 ```
 {
-  "header" : {
-      "resultCode" :  Integer,
-      "resultMessage" :  String,
-      "isSuccessful" :  boolean
+  "header": {
+      "resultCode": Integer,
+      "resultMessage": String,
+      "isSuccessful": boolean
   },
-  "messageSearchResultResponse" : {
-    "messages" : [
+  "messageSearchResultResponse": {
+    "messages": [
     {
-      "requestId" :  String,
-      "recipientSeq" : Integer,
-      "plusFriendId" :  String,
-      "templateCode" :  String,
-      "recipientNo" :  String,
-      "content" :  String,
-      "requestDate" :  String,
-      "receiveDate" : String,
-      "resendStatus" :  String,
-      "resendStatusName" :  String,
-      "messageStatus" :  String,
-      "resultCode" :  String,
-      "resultCodeName" : String,
-      "buttons" : [
+      "requestId": String,
+      "recipientSeq": Integer,
+      "plusFriendId": String,
+      "templateCode": String,
+      "recipientNo": String,
+      "content": String,
+      "requestDate": String,
+      "receiveDate": String,
+      "resendStatus": String,
+      "resendStatusName": String,
+      "messageStatus": String,
+      "resultCode": String,
+      "resultCodeName": String,
+      "buttons": [
         {
-          "ordering" :  Integer,
-          "type" :  String,
-          "name" :  String,
-          "linkMo" :  String,
+          "ordering": Integer,
+          "type": String,
+          "name": String,
+          "linkMo": String,
           "linkPc": String,
           "schemeIos": String,
           "schemeAndroid": String
@@ -882,7 +884,7 @@ Content-Type: application/json;charset=UTF-8
       "recipientGroupingKey": String
     }
     ],
-    "totalCount" :  Integer
+    "totalCount": Integer
   }
 }
 ```
@@ -971,31 +973,31 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 #### 응답
 ```
 {
-  "header" : {
-      "resultCode" :  Integer,
-      "resultMessage" :  String,
-      "isSuccessful" :  boolean
+  "header": {
+      "resultCode": Integer,
+      "resultMessage": String,
+      "isSuccessful": boolean
   },
-  "message" : {
-      "requestId" :  String,
-      "recipientSeq" : Integer,
-      "plusFriendId" :  String,
-      "templateCode" :  String,
-      "recipientNo" :  String,
-      "content" :  String,
-      "requestDate" :  String,
-      "receiveDate" : String,
-      "resendStatus" :  String,
-      "resendStatusName" :  String,
-      "messageStatus" :  String,
-      "resultCode" :  String,
-      "resultCodeName" : String,
-      "buttons" : [
+  "message": {
+      "requestId": String,
+      "recipientSeq": Integer,
+      "plusFriendId": String,
+      "templateCode": String,
+      "recipientNo": String,
+      "content": String,
+      "requestDate": String,
+      "receiveDate": String,
+      "resendStatus": String,
+      "resendStatusName": String,
+      "messageStatus": String,
+      "resultCode": String,
+      "resultCodeName": String,
+      "buttons": [
         {
-          "ordering" :  Integer,
-          "type" :  String,
-          "name" :  String,
-          "linkMo" :  String,
+          "ordering": Integer,
+          "type": String,
+          "name": String,
+          "linkMo": String,
           "linkPc": String,
           "schemeIos": String,
           "schemeAndroid": String
@@ -1078,10 +1080,10 @@ Content-Type: application/json;charset=UTF-8
 #### 응답
 ```
 {
-  "header" : {
-      "resultCode" :  Integer,
-      "resultMessage" :  String,
-      "isSuccessful" :  boolean
+  "header": {
+      "resultCode": Integer,
+      "resultMessage": String,
+      "isSuccessful": boolean
   }
 }
 ```
@@ -1138,33 +1140,33 @@ Content-Type: application/json;charset=UTF-8
 #### 응답
 ```
 {
-  "header" : {
-      "resultCode" :  Integer,
-      "resultMessage" :  String,
-      "isSuccessful" :  boolean
+  "header": {
+      "resultCode": Integer,
+      "resultMessage": String,
+      "isSuccessful": boolean
   },
-  "messageSearchResultResponse" : {
-    "messages" : [
+  "messageSearchResultResponse": {
+    "messages": [
     {
-      "requestId" :  String,
-      "recipientSeq" : Integer,
-      "plusFriendId" :  String,
-      "templateCode" :  String,
-      "recipientNo" :  String,
-      "content" :  String,
-      "requestDate" :  String,
-      "receiveDate" : String,
-      "resendStatus" :  String,
-      "resendStatusName" :  String,
-      "messageStatus" :  String,
-      "resultCode" :  String,
-      "resultCodeName" : String,
-      "buttons" : [
+      "requestId": String,
+      "recipientSeq": Integer,
+      "plusFriendId": String,
+      "templateCode": String,
+      "recipientNo": String,
+      "content": String,
+      "requestDate": String,
+      "receiveDate": String,
+      "resendStatus": String,
+      "resendStatusName": String,
+      "messageStatus": String,
+      "resultCode": String,
+      "resultCodeName": String,
+      "buttons": [
         {
-          "ordering" :  Integer,
-          "type" :  String,
-          "name" :  String,
-          "linkMo" :  String,
+          "ordering": Integer,
+          "type": String,
+          "name": String,
+          "linkMo": String,
           "linkPc": String,
           "schemeIos": String,
           "schemeAndroid": String
@@ -1174,7 +1176,7 @@ Content-Type: application/json;charset=UTF-8
       "recipientGroupingKey": String
     }
     ],
-    "totalCount" :  Integer
+    "totalCount": Integer
   }
 }
 ```
@@ -1249,29 +1251,29 @@ Content-Type: application/json;charset=UTF-8
 #### 응답
 ```
 {
-  "header" : {
-      "resultCode" :  Integer,
-      "resultMessage" :  String,
-      "isSuccessful" :  boolean
+  "header": {
+      "resultCode": Integer,
+      "resultMessage": String,
+      "isSuccessful": boolean
   },
-  "categories" : [
+  "categories": [
   {
-      "parentCode" : String,
-      "depth" : Integer,
-      "code" : String,
-      "name" : String,
-      "subCategories" : [
+      "parentCode": String,
+      "depth": Integer,
+      "code": String,
+      "name": String,
+      "subCategories": [
         {
-        "parentCode" : String,
-        "depth" : Integer,
-        "code" : String,
-        "name" : String,
-        "subCategories" : [
+        "parentCode": String,
+        "depth": Integer,
+        "code": String,
+        "name": String,
+        "subCategories": [
           {
-            "parentCode" : String,
-            "depth" : Integer,
-            "code" : String,
-            "name" : String
+            "parentCode": String,
+            "depth": Integer,
+            "code": String,
+            "name": String
           }
           ]
         }
@@ -1332,9 +1334,9 @@ Content-Type: application/json;charset=UTF-8
 
 ```
 {
-  "plusFriendId" : String,
-  "phoneNo" : String,
-  "categoryCode" : String
+  "plusFriendId": String,
+  "phoneNo": String,
+  "categoryCode": String
 }
 ```
 
@@ -1347,10 +1349,10 @@ Content-Type: application/json;charset=UTF-8
 #### 응답
 ```
 {
-  "header" : {
-    "resultCode" :  Integer,
-    "resultMessage" :  String,
-    "isSuccessful" :  boolean
+  "header": {
+    "resultCode": Integer,
+    "resultMessage": String,
+    "isSuccessful": boolean
   }
 }
 ```
@@ -1392,7 +1394,7 @@ Content-Type: application/json;charset=UTF-8
 
 ```
 {
-  "token" : "Integer"
+  "token": "Integer"
 }
 ```
 
@@ -1403,10 +1405,10 @@ Content-Type: application/json;charset=UTF-8
 #### 응답
 ```
 {
-  "header" : {
-    "resultCode" :  Integer,
-    "resultMessage" :  String,
-    "isSuccessful" :  boolean
+  "header": {
+    "resultCode": Integer,
+    "resultMessage": String,
+    "isSuccessful": boolean
   }
 }
 ```
@@ -1449,36 +1451,36 @@ Content-Type: application/json;charset=UTF-8
 ```
 {  
    "header":{  
-      "resultCode" :  Integer,
-      "resultMessage" :  String,
-      "isSuccessful" :  boolean
+      "resultCode": Integer,
+      "resultMessage": String,
+      "isSuccessful": boolean
    },
    "plusFriend":{  
-         "plusFriendId" : String,
-         "plusFriendType" : String,
-         "senderKey" : String,
-         "categoryCode" : String,
-         "status" : String,
-         "statusName" : String,
-         "kakaoStatus" : String,
-         "kakaoStatusName" : String,
-         "kakaoProfileStatus" : String,
-         "kakaoProfileStatusName" : String,
+         "plusFriendId": String,
+         "plusFriendType": String,
+         "senderKey": String,
+         "categoryCode": String,
+         "status": String,
+         "statusName": String,
+         "kakaoStatus": String,
+         "kakaoStatusName": String,
+         "kakaoProfileStatus": String,
+         "kakaoProfileStatusName": String,
          "createDate": String,
          "alimtalk": {  
                 "resendAppKey": String,
                 "isResend": Boolean,
                 "resendSendNo": String,
-                "dailyMaxCount" : Integer,
-                "sentCount" : Integer
+                "dailyMaxCount": Integer,
+                "sentCount": Integer
           },
          "friendtalk": {
                 "resendAppKey": String,
                 "isResend": Boolean,
                 "resendSendNo": String,
                 "resendUnsubscribeNo": String,
-                "dailyMaxCount" : Integer,
-                "sentCount" : Integer
+                "dailyMaxCount": Integer,
+                "sentCount": Integer
          },
          "createDate": String
     }
@@ -1556,37 +1558,37 @@ Content-Type: application/json;charset=UTF-8
 ```
 {  
    "header":{  
-      "resultCode" :  Integer,
-      "resultMessage" :  String,
-      "isSuccessful" :  boolean
+      "resultCode": Integer,
+      "resultMessage": String,
+      "isSuccessful": boolean
    },
    "plusFriends":[  
       {  
-         "plusFriendId" : String,
-         "plusFriendType" : String,
-         "senderKey" : String,
-         "categoryCode" : String,
-         "status" : String,
-         "statusName" : String,
-         "kakaoStatus" : String,
-         "kakaoStatusName" : String,
-         "kakaoProfileStatus" : String,
-         "kakaoProfileStatusName" : String,
+         "plusFriendId": String,
+         "plusFriendType": String,
+         "senderKey": String,
+         "categoryCode": String,
+         "status": String,
+         "statusName": String,
+         "kakaoStatus": String,
+         "kakaoStatusName": String,
+         "kakaoProfileStatus": String,
+         "kakaoProfileStatusName": String,
          "createDate": String,
          "alimtalk": {  
                 "resendAppKey": String,
                 "isResend": Boolean,
                 "resendSendNo": String,
-                "dailyMaxCount" : Integer,
-                "sentCount" : Integer
+                "dailyMaxCount": Integer,
+                "sentCount": Integer
           },
          "friendtalk": {  
                 "resendAppKey": String,
                 "isResend": Boolean,
                 "resendSendNo": String,
                 "resendUnsubscribeNo": String,
-                "dailyMaxCount" : Integer,
-                "sentCount" : Integer
+                "dailyMaxCount": Integer,
+                "sentCount": Integer
          }
       }
    ],
@@ -1659,18 +1661,18 @@ Content-Type: application/json;charset=UTF-8
 
 ```
 {
-  "templateCode" : String,
-  "templateName" : String,
-  "templateContent" : String,
-  "buttons" : [
+  "templateCode": String,
+  "templateName": String,
+  "templateContent": String,
+  "buttons": [
     {
-      "ordering" : Integer,
-      "type" : String,
-      "name" : String,
-      "linkMo" : String,
-      "linkPc" : String,
-      "schemeIos" : String,
-      "schemeAndroid" : String
+      "ordering": Integer,
+      "type": String,
+      "name": String,
+      "linkMo": String,
+      "linkPc": String,
+      "schemeIos": String,
+      "schemeAndroid": String
     }
   ]
 }
@@ -1693,10 +1695,10 @@ Content-Type: application/json;charset=UTF-8
 #### 응답
 ```
 {
-  "header" : {
-    "resultCode" :  Integer,
-    "resultMessage" :  String,
-    "isSuccessful" :  boolean
+  "header": {
+    "resultCode": Integer,
+    "resultMessage": String,
+    "isSuccessful": boolean
   }
 }
 ```
@@ -1739,17 +1741,17 @@ Content-Type: application/json;charset=UTF-8
 
 ```
 {
-  "templateName" : String,
-  "templateContent" : String,
-  "buttons" : [
+  "templateName": String,
+  "templateContent": String,
+  "buttons": [
     {
-      "ordering" : Integer,
-      "type" : String,
-      "name" : String,
-      "linkMo" : String,
-      "linkPc" : String,
-      "schemeIos" : String,
-      "schemeAndroid" : String
+      "ordering": Integer,
+      "type": String,
+      "name": String,
+      "linkMo": String,
+      "linkPc": String,
+      "schemeIos": String,
+      "schemeAndroid": String
     }
   ]
 }
@@ -1771,10 +1773,10 @@ Content-Type: application/json;charset=UTF-8
 #### 응답
 ```
 {
-  "header" : {
-    "resultCode" :  Integer,
-    "resultMessage" :  String,
-    "isSuccessful" :  boolean
+  "header": {
+    "resultCode": Integer,
+    "resultMessage": String,
+    "isSuccessful": boolean
   }
 }
 ```
@@ -1813,10 +1815,10 @@ Content-Type: application/json;charset=UTF-8
 #### 응답
 ```
 {
-  "header" : {
-    "resultCode" :  Integer,
-    "resultMessage" :  String,
-    "isSuccessful" :  boolean
+  "header": {
+    "resultCode": Integer,
+    "resultMessage": String,
+    "isSuccessful": boolean
   }
 }
 ```
@@ -1859,7 +1861,7 @@ Content-Type: application/json;charset=UTF-8
 
 ```
 {
-  "comment" : String
+  "comment": String
 }
 ```
 
@@ -1870,10 +1872,10 @@ Content-Type: application/json;charset=UTF-8
 #### 응답
 ```
 {
-  "header" : {
-    "resultCode" :  Integer,
-    "resultMessage" :  String,
-    "isSuccessful" :  boolean
+  "header": {
+    "resultCode": Integer,
+    "resultMessage": String,
+    "isSuccessful": boolean
   }
 }
 ```
@@ -1926,7 +1928,7 @@ Content-Type: application/json;charset=UTF-8
 |템플릿 상태 코드| 설명|
 |---|---|
 | TSC01 | 요청 |
-| TSC02 | 검수중 |
+| TSC02 | 검수 중 |
 | TSC03 | 승인 |
 | TSC04 | 반려 |
 
@@ -1939,10 +1941,10 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 ```
 
 {
-  "header" : {
-      "resultCode" :  Integer,
-      "resultMessage" :  String,
-      "isSuccessful" :  boolean
+  "header": {
+      "resultCode": Integer,
+      "resultMessage": String,
+      "isSuccessful": boolean
   },
   "templateListResponse": {
       "templates": [
@@ -2008,7 +2010,7 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 |--- content |  String | 문의 내용                                                          |
 |---userName | String | 작성자                                                            |
 |---createAt | String | 등록 날짜                                                          |
-|---status | String | 댓글 상태(INQ: 문의, APR: 승인, REJ: 반려, REP: 답변, REQ: 검수중)            |
+|---status | String | 댓글 상태(INQ: 문의, APR: 승인, REJ: 반려, REP: 답변, REQ: 검수 중)            |
 |-- status| String | 템플릿 상태                                                         |
 |-- statusName | String | 템플릿 상태명                                                        |
 |-- createDate | String | 생성일자                                                           |
@@ -2052,10 +2054,10 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 ```
 
 {
-  "header" : {
-      "resultCode" :  Integer,
-      "resultMessage" :  String,
-      "isSuccessful" :  boolean
+  "header": {
+      "resultCode": Integer,
+      "resultMessage": String,
+      "isSuccessful": boolean
   },
   "templateModificationsResponse": {
       "templates": [
@@ -2122,7 +2124,7 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 |--- content |  String | 문의 내용 |
 |---userName | String | 작성자 |
 |---createAt | String | 등록 날짜 |
-|---status | String | 댓글 상태(INQ: 문의, APR: 승인, REJ: 반려, REP: 답변, REQ: 검수중) |
+|---status | String | 댓글 상태(INQ: 문의, APR: 승인, REJ: 반려, REP: 답변, REQ: 검수 중) |
 |-- status| String | 템플릿 상태 |
 |-- statusName | String | 템플릿 상태명 |
 |-- activated | Boolean | 활성화 여부 |
@@ -2177,10 +2179,10 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 ```
 
 {
-  "header" : {
-      "resultCode" :  Integer,
-      "resultMessage" :  String,
-      "isSuccessful" :  boolean
+  "header": {
+      "resultCode": Integer,
+      "resultMessage": String,
+      "isSuccessful": boolean
   }
 }
 ```
@@ -2236,10 +2238,10 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 ```
 
 {
-  "header" : {
-      "resultCode" :  Integer,
-      "resultMessage" :  String,
-      "isSuccessful" :  boolean
+  "header": {
+      "resultCode": Integer,
+      "resultMessage": String,
+      "isSuccessful": boolean
   }
 }
 ```
