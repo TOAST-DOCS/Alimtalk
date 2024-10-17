@@ -84,7 +84,6 @@
 | Common  | false     | -3027      | 템플릿 강조 표시 타입 기본(NONE)로 등록 시, templateTitle, templateSubtitle 필드를 등록할 수 없음       |
 | Common  | false     | -3028      | 템플릿 메시지 유형 기본형(BA)일 경우, templateExtra 필드를 등록할 수 없음        |
 | Common  | false     | -3030      | 템플릿 메시지 유형 채널 추가형(AD)일 경우, templateExtra 필드를 등록할 수 없음          |
-| Common  | false     | -3031      | 그룹 템플릿은 템플릿 메시지 유형 채널추가형(AD), 복합형(MI)를 사용할 수 없음       |
 | Common  | false     | -3032      | 템플릿 강조 표시 타입 이미지형(IMAGE)일 경우, templateImageName, templateImageUrl 필드 필수값       |
 | Common  | false     | -3033      | 버튼 또는 바로연결이 템플릿에 등록되지 않았을 경우                                 |
 | Common  | false     | -3034      | Only templates that have not been sent for 3 days can be deleted       |
@@ -100,6 +99,7 @@
 | Common  | false     | -3044      | 비지니스폼(BF) 타입 버튼은 단독으로 사용하거나, 가장 위에 위치해야하는 제약에 어긋난 경우            |
 | Common  | false     | -3045      | 비지니스폼(BF) 타입의 name이 "톡에서 예약하기", "톡에서 설문하기", "톡에서 응모하기" 이 아닐 경우, 또는 등록되지 않은 bizFormKey일 경우       |
 | Common  | false     | -3046      | templateRepresentLink이 템플릿과 일치하지 않는 경우                  |
+| Common  | false     | -3047      | 템플릿 등록시 서체 스타일을 적용하려고 한 경우 (서체 스타일은 발송 시점에 적용 가능합니다.)                                                                                                                                                                                                         |
 | Common  | false     | -4003      | Query range exceeding a month                                |
 | Common  | false     | -4004      | Appkey does not exist                                        |
 | Common  | false     | -4005      | Appkey closed for service                                    |
@@ -130,7 +130,7 @@
 | Common  | false     | -8010      | 네트워크 등의 문제로 이미지 파일 업로드 실패                             |
 | Common  | false     | -9995      | Called API of a faded version                                |
 | Common  | false     | -9996      | Content-type is not application/json                         |
-| Common      | false     | -9997      | Failed dut to invalid request                               |
+| Common     | false     | -9997      | Failed dut to invalid request                               |
 | Common  | false     | -9998      | API does not exist                                           |
 | Common  | false     | -9999      | Error in system                                              |
 
@@ -212,10 +212,6 @@
 	<tr>
 		<td>1030</td>
 		<td>Invalid parameter request</td>
-	</tr>
-	<tr>
-		<td>2000</td>
-		<td>Delivery time exceeded</td>
 	</tr>
 	<tr>
 		<td>2001</td>
@@ -458,167 +454,6 @@
 	<tr>
 		<td>E999</td>
 		<td>Other errors </td>
-	</tr>
-</tbody>
-</table>
-
-## 브랜드톡 발송 결과 코드
-
-<table class="table table-striped table-hover">
-<thead>
-	<tr>
-		<th>코드값</th>
-		<th>의미</th>
-	</tr>
-</thead>
-<tbody>
-	<tr>
-		<td>A0000</td>
-		<td>성공</td>
-	</tr>
-  <tr>
-		<td>A1001</td>
-		<td>Request Body가 JSON형식이 아님</td>
-	</tr>
-  <tr>
-		<td>A1003</td>
-		<td>발신 프로필 키가 유효하지 않음</td>
-	</tr>
-  <tr>
-		<td>A1004</td>
-		<td>Request Body(JSON)에서 name을 찾을 수 없음</td>
-	</tr>
-	<tr>
-		<td>A1006</td>
-		<td>삭제된 발신프로필</td>
-	</tr>
-	<tr>
-		<td>A1007</td>
-		<td>차단 상태의 발신프로필</td>
-	</tr>
-	<tr>
-		<td>A1021</td>
-		<td>차단 상태의 카카오톡 채널</td>
-	</tr>
-	<tr>
-		<td>A1022</td>
-		<td>닫힘 상태의 카카오톡 채널</td>
-	</tr>
-  <tr>
-		<td>A1023</td>
-		<td>삭제된 카카오톡 채널</td>
-	</tr>
-  <tr>
-		<td>A1024</td>
-		<td>삭제대기 상태의 카카오톡 채널</td>
-	</tr>
-	<tr>
-		<td>A1025</td>
-		<td>메시지차단 상태의 카카오톡 채널</td>
-	</tr>
-	<tr>
-		<td>A1030</td>
-		<td>잘못된 파라메터 요청</td>
-	</tr>
-	<tr>
-		<td>A1033</td>
-		<td>템플릿 타입과 메시지타입 불일치</td>
-	</tr>
-	<tr>
-		<td>A2040</td>
-		<td>동보발송 요청이 진행중이라서 타겟팅 값을 사용할 수 없음</td>
-	</tr>
-	<tr>
-		<td>A3000</td>
-		<td>예기치 않은 오류 발생</td>
-	</tr>
-	<tr>
-		<td>A3006</td>
-		<td>내부 시스템 오류로 메시지 전송 실패</td>
-	</tr>
-	<tr>
-		<td>A3008</td>
-		<td>전화번호 오류</td>
-	</tr>
-	<tr>
-		<td>A3010</td>
-		<td>Json 파싱 오류</td>
-	</tr>
-	<tr>
-		<td>A3011</td>
-		<td>메시지가 존재하지 않음</td>
-	</tr>
-	<tr>
-		<td>A3013</td>
-		<td>메시지가 비어 있음</td>
-	</tr>
-	<tr>
-		<td>A3014</td>
-		<td>메시지 길이 제한 오류(템플릿별 제한 길이 또는 1000자 초과)</td>
-	</tr>
-	<tr>
-		<td>A3015</td>
-		<td>템플릿을 찾을 수 없음</td>
-	</tr>
-	<tr>
-		<td>A3016</td>
-		<td>메시지 내용이 변수와 일치하지 않음</td>
-	</tr>
-	<tr>
-		<td>A3018</td>
-		<td>메시지를 전송할 수 없음</td>
-	</tr>
-	<tr>
-		<td>A3020</td>
-		<td>메시지 확인 정보를 찾을 수 없음</td>
-	</tr>
-	<tr>
-		<td>A3022</td>
-		<td>메시지 발송 가능한 시간이 아님(브랜드톡/마케팅 메시지는 08시부터 20시까지 발송 가능)</td>
-	</tr>
-	<tr>
-		<td>A3024</td>
-		<td>메시지에 포함된 이미지를 전송할 수 없음</td>
-	</tr>
-	<tr>
-		<td>A3027</td>
-		<td>버튼이 변수와 일치하지 않음</td>
-	</tr>
-	<tr>
-		<td>A3031</td>
-		<td>텍스트 유형 불일치</td>
-	</tr>
-	<tr>
-		<td>A4000</td>
-		<td>메시지 전송 결과를 찾을 수 없음</td>
-	</tr>
-	<tr>
-		<td>A4001</td>
-		<td>알 수 없는 메시지 상태</td>
-	</tr>
-	<tr>
-		<td>A9998</td>
-		<td>시스템에 문제가 발생하여 담당자가 확인하고 있는 경우</td>
-	</tr>
-	<tr>
-		<td>A9999</td>
-		<td>시스템에 문제가 발생하여 담당자가 확인하고 있는 경우</td>
-	</tr>
-	<tr>
-		<td>B7013</td>
-		<td>발송 제약 시간(20:50~익일 08:00) 에러</td>
-	</tr>
-	<tr>
-		<td>B7014</td>
-		<td>메시지 유효 시간 초과 에러</td>
-	</tr>
-	<tr>
-		<td>B7015</td>
-		<td>메시지 길이 제한 오류</td>
-	</tr>
-	<tr>
-		<td>B7017</td>
-		<td>내부 시스템 오류로 메시지 전송 실패</td>
 	</tr>
 </tbody>
 </table>
