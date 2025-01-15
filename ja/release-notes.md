@@ -1,9 +1,22 @@
 ## Notification > KakaoTalk Bizmessage > リリースノート
+
+### November 12, 2024
+* [Console] Improved so that comma (,) is usable for FriendTalk coupon titles
+    * Improved so that comma (,) is usable for FriendTalk coupon titles.
+* [Console] Improved so that the FriendTalk send history can be viewed by the FriendTalk send type
+    * Added the feature to search by FriendTalk send type when searching FriendTalk send history.
+
 ### 2024. 10. 29.
 * [Console]カカともへのメッセージクーポンのタイトルにコンマ(,)を使用できるように改善
     * カカともへのメッセージクーポンのタイトルにコンマ(,)を使用できるように改善しました。
 * [Console]カカともへのメッセージ送信履歴照会時、カカともへのメッセージ送信タイプで照会できるように改善
     * カカともへのメッセージ送信履歴を照会する際、カカともへのメッセージ送信タイプ条件で照会できるように機能を追加しました。
+
+### 2024. 08. 27.
+* [Console]カカともへのメッセージ新規機能追加(v2.4)
+    * カカともへのメッセージカルーセルコマース型、プレミアム動画型、コマース型、成人向けメッセージ設定機能が追加されました。
+[Console]夜間広告送信制限時間後の再送信設定機能を追加
+    * 夜間広告送信制限時間帯に送信をリクエストすると、広告送信制限時間が終終了した後に自動的に再送信されるように設定できます。
 
 ### 2024. 07. 23.
 * [API]発信プロフィールグループにチャンネル追加型、複合型テンプレートが登録できない問題を改善

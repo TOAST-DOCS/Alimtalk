@@ -221,6 +221,10 @@
 		<td>2004</td>
 		<td>Error occurred when template consistency is checked(internal error occurred)</td>
 	</tr>
+    <tr>
+		<td>2005</td>
+		<td>Failed to read image information due to an internal system error in KakaoTalk.</td>
+	</tr>
 	<tr>
 		<td>3000</td>
 		<td>Unexpected error occurred</td>
@@ -268,6 +272,18 @@
 	<tr>
 		<td>3018</td>
 		<td>Unable to send messages<br>1. KakaoTalk user who has withdrawn <br>2. User who has never been subscribed to KakaoTalk <br>3. Blocked user from AlimTalk messages <br>4. Android users who use different "KakaoTalk numbers from USIM on device" <br>5. Deactivated users(for push) <br>6. User of the minimum KakaoTalk version or unsupported device, or punished user </td>
+	</tr>
+    <tr>
+		<td>3019</td>
+		<td>Cannot send a message<br>Not a KakaoTalk user</td>
+	</tr>
+    <tr>
+		<td>3020</td>
+		<td>Cannot send a message<br>AlimTalk reception blocked</td>
+	</tr>
+    <tr>
+		<td>3021</td>
+		<td>Cannot send a message<br>KakaoTalk minimum version not supported</td>
 	</tr>
 	<tr>
 		<td>3022</td>
