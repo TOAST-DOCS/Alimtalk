@@ -81,7 +81,7 @@ Excel/CSV 포맷의 템플릿 파일을 통해 여러 수신 번호로 친구톡
 ![friendtalkupgrade_mass01.png](https://static.toastoven.net/prod_alimtalk/friendtalkupgrade_mass01.png)
 
 * 내용에 템플릿 치환자를 '#{이름}' 형식으로 입력한 후, **템플릿 다운로드** 버튼을 클릭하면 템플릿 치환자가 포함된 CSV, XLSX 파일을 다운로드할 수 있습니다.
-* CSV 파일은 Excel로 열어 저장할 때 한글이 제대로 저장되지 않을 수 있습니다. '검수 후 발송'으로 치환이 제대로 되었는지 확인하는 것을 권장합니다.
+* CSV 파일은 Excel로 열어 저장할 때 한글이 제대로 저장되지 않을 수 있습니다.
 * CSV, XLSX 파일만 업로드할 수 있습니다. 크기는 최대 30MB이며, 발송할 수 있는 최대 수신자는 1,000,000명입니다.
 
 ![friendtalkupgrade_mass02.png](https://static.toastoven.net/prod_alimtalk/friendtalkupgrade_mass02.png)

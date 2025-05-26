@@ -466,13 +466,13 @@
 		<td>3051</td>
 		<td>Message undelivered </td>
 	</tr>
-    <tr>
+	<tr>
 		<td>3053</td>
 		<td>캐러셀 템플릿 불일치</td>
 	</tr>
 	<tr>
 		<td>3054</td>
-                <td>Unavailable time to send messages</td>
+        <td>Unavailable time to send messages</td>
 	</tr>
     <tr>
 		<td>3055</td>
