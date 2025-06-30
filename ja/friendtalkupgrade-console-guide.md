@@ -217,3 +217,20 @@ Excel/CSV 포맷의 템플릿 파일을 통해 여러 수신 번호로 친구톡
 * 친구톡 Upgrade 광고 메시지는 광고 SMS API로 대체 발송되므로, 반드시 080 수신 거부 번호를 등록해야 대체 발송됩니다.
 * 친구톡 Upgrade 광고 메시지의 resendContent 필드를 입력할 경우, SMS 광고 API의 <span style="color:red">광고 문구</span>를 필수로 입력해야 대체 발송됩니다. `(광고)내용[무료 수신거부]080XXXXXXX`
 * 친구톡 Upgrade 광고 메시지의 resendContent 필드가 없다면, 등록된 080 수신 거부 번호로 <span style="color:red">광고 문구</span>를 자동 생성해서 대체 발송됩니다.
+
+## 타켓팅(M/N) 타입 사용 신청
+
+* 친구톡 Upgrade의 타켓팅(M/N) 타입 사용을 원하시는 경우 사용 신청을 진행해야 합니다. 사용 신청을 하지 않는 경우 발송간 M/N 타입이 노출되지 않습니다.
+* 사용 신청은 아래의 조건을 만족할 경우 승인됩니다.
+    * 비즈니스 인증 채널
+    * 사업자 번호 등록
+    * 채널 고객센터 전화번호 등록
+    * 채널 친구수 5만 이상
+    * 3개월 내 알림톡 발송 성공이력 보유
+
+### 주의사항
+* 비즈니스 인증이 해제될 경우 브랜드 메시지 사용 권한이 해제됩니다. 비즈니스 인증 재심사 이후 다시 사용 신청을 진행해야 합니다.
+* 광고성 정보 수신동의 증적자료 파일은 톡채널 단위로 저장되므로 변경시 동일 톡채널의 타딜러사 발신프로필에 일괄 적용됩니다.
+* 타딜러사에서 업로드한 파일이 이미 존재하는 경우 파일 업로드 과정을 생략하고 M/N 타입 사용 신청이 가능합니다.
+      
+![friendtalkupgrade_11_20250715.png](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_alimtalk/friendtalkupgrade/friendtalkupgrade_11_20250715.png)

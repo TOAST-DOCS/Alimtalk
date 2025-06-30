@@ -10,6 +10,73 @@
 
 ## V1.0 API 소개
 
+## 마케팅 수신동의 증적 자료 업로드
+
+#### 요청
+
+[URL]
+
+```
+POST  /friendtalk-upgrade/v1.0/appkeys/{appKey}/senders/{senderKey}/upload-marketing-agreement
+Content-Type: multipart/form-data
+```
+
+[Path parameter]
+
+| 이름        | 타입     | 설명     |
+|-----------|--------|--------|
+| appkey    | String | 고유의 앱키 |
+| senderKey | String | 발신 키   |
+
+[Header]
+
+```
+{
+  "X-Secret-Key": String
+}
+```
+
+| 이름           | 타입     | 필수 | 설명               |
+|--------------|--------|----|------------------|
+| X-Secret-Key | String | O  | 콘솔에서 생성할 수 있습니다. |
+
+[Request parameter]
+
+| 이름   | 타입   | 필수 | 설명            |
+|------|------|----|---------------|
+| file | File | O  | 마케팅 수신동의 증적자료 |
+
+
+## 타겟팅(M/N) 타입 사용 신청
+
+#### 요청
+
+[URL]
+
+```
+POST  /friendtalk-upgrade/v1.0/appkeys/{appKey}/senders/{senderKey}/marketing-agreements
+Content-Type: application/json;charset=UTF-8
+```
+
+[Path parameter]
+
+| 이름        | 타입     | 설명     |
+|-----------|--------|--------|
+| appkey    | String | 고유의 앱키 |
+| senderKey | String | 발신 키   |
+
+[Header]
+
+```
+{
+  "X-Secret-Key": String
+}
+```
+
+| 이름           | 타입     | 필수 | 설명               |
+|--------------|--------|----|------------------|
+| X-Secret-Key | String | O  | 콘솔에서 생성할 수 있습니다. |
+
 ## 메시지 자유형 발송 요청
 
 * 마수동 발송은 자유형 발송으로 발송할 수 없습니다.
@@ -3088,6 +3155,7 @@ Content-Type: application/json;charset=UTF-8
       "sentCount" : Integer
     },
     "dormant" : boolean,
+    "marketingAgreement" : boolean,
     "block" : boolean,
     "createDate" : String,
     "initialUserRestriction" : boolean
@@ -3122,6 +3190,7 @@ Content-Type: application/json;charset=UTF-8
 | -- resendSendNo           | String  | X        | 재발송 시, tc-sms 발신 번호                                                                                                   |
 | -- resendUnsubscribeNo    | String  | X        | 재발송 시, tc-sms 080 수신 거부 번호                                                                                            |
 | - dormant                 | boolean | O        | 발신프로필 휴면 여부                                                                                                           |
+| - marketingAgreement      | boolean | O        | M/N 타입 사용 신청 여부                                                                                                       |
 | - createDate              | String  | X        | 등록 일자                                                                                                                 |
 | - initialUserRestriction  | boolean | O        | 최초 사용자 제한 여부                                                                                                          |
 
