@@ -24,7 +24,7 @@
 
 6. 메시지 타입을 선택합니다. 타입별 상세 가이드는 [친구톡 발송 지원 타입](https://docs.nhncloud.com/ko/Notification/KakaoTalk%20Bizmessage/ko/friendtalk-overview/#_3)에서 확인하세요.
     * 기본형(텍스트/이미지/와이드 이미지)
-        * 텍스트: 한/영 구분 없이 띄어쓰기 포함 1,000자 텍스트+링크 버튼 최대 5(세로 배열)
+        * 텍스트: 한/영 구분 없이 띄어쓰기 포함 1,300자 텍스트+링크 버튼 최대 5(세로 배열)
         * 이미지: 한/영 구분 없이 띄어쓰기 포함 400자 텍스트+이미지 1장+링크 버튼 최대 5(세로 배열)
         * 와이드 이미지: 한/영 구분 없이 띄어쓰기 포함 76자 텍스트+이미지 1장+링크 버튼 1개
     * 와이드 아이템 리스트
@@ -133,10 +133,10 @@ Excel/CSV 포맷의 템플릿 파일을 통해 여러 수신 번호로 알림톡
 ### 발송 결과 조회
 **발송 결과 조회** 탭에서 친구톡 메시지를 조회할 수 있습니다.
 
-![friendtalk_05_20231227.png](https://static.toastoven.net/prod_alimtalk/friendtalk_05_20231227.png)
+![friendtalk_05_20250403.jpg](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_alimtalk/friendtalk_05_20250403.png)
 
 * 각 발송 메시지의 자세한 내용은 검색 결과 항목을 클릭해 <b>상세 보기</b> 화면에서 확인할 수 있습니다.
-* <b>등록 일시</b> 및 <b>요청 일시</b>는 최대 한 달 이내로 검색할 수 있습니다.
+* <b>요청 일시</b>는 최대 한 달 이내로 검색할 수 있습니다.
 * 전체 화면에 표시되는 데이터는 엑셀 파일로 다운로드할 수 있습니다.
 * <b>요청 상태</b> 열에서 발송 요청에 대한 상태를 확인할 수 있습니다.
 * <b>발송 결과</b> 열에서 발송 처리에 대한 성공 여부를 확인할 수 있습니다.
@@ -152,7 +152,7 @@ Excel/CSV 포맷의 템플릿 파일을 통해 여러 수신 번호로 알림톡
 ### 대량 발송 조회
 친구톡의 대량 발송 건을 조회할 수 있습니다.
 
-![friendtalk_06_20231227.png](https://static.toastoven.net/prod_alimtalk/friendtalk_06_20231227.png)
+![friendtalk_06_20250403.jpg](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_alimtalk/friendtalk_06_20250403.jpg)
 
 * 조회: 상단의 조회 폼에서 대량 친구톡 발송 건을 조회할 수 있습니다. 조회 건의 리스트 행을 선택하면 하단의 조회 폼에서 수신번호와 발송 정보(발송 내용, 발송 결과)를 확인할 수 있습니다.
 * 발송/취소: 대량 친구톡을 발송할 때 <b>검수 후 진행</b>을 선택하면 <b>발송 준비 완료</b> 상태인 항목을 <b>발송</b> 또는 <b>취소</b>를 클릭해 발송하거나 취소할 수 있습니다.
