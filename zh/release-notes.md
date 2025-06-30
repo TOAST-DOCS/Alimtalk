@@ -1,5 +1,14 @@
 ## Notification > KakaoTalk Bizmessage > Release Notes
 
+### 2025. 07. 29.
+
+* [API, Console] 친구톡 Upgrade -> 브랜드 메시지 이름 변경
+    * 친구톡 Upgrade 서비스가 브랜드 메시지로 이름이 변경되었습니다.
+    * 기존 친구톡 Upgrade API는 브랜드 메시지 API로 변경되어 사용됩니다.
+
+* [Console] 백업 기능 추가
+    * 브랜드 메시지 발송 이력 백업 기능이 추가되었습니다.
+
 ### 2025. 07. 15.
 
 * [API, Console] 친구톡 Upgrade M/N 타겟팅 사용 신청 기능 추가
@@ -75,7 +84,7 @@
 * [API] Scheduled to segment the respose code (3018) that was bounced back when KakaoTalk could not send a message as follows
 
   | Product | code | Description  |
-          |-----| --- | --- |
+            |-----| --- | --- |
   | AlimTalk | 3018 | Cannot send a message |
   |     | 3019 | Not a KakaoTalk user |
   |     | 3020 | Blocked AlimTalk reception |
