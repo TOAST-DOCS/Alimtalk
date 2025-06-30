@@ -17,7 +17,7 @@
 [URL]
 
 ```
-POST  /friendtalk-upgrade/v1.0/appkeys/{appKey}/senders/{senderKey}/upload-marketing-agreement
+POST  /brand-message/v1.0/appkeys/{appKey}/senders/{senderKey}/upload-marketing-agreement
 Content-Type: multipart/form-data
 ```
 
@@ -54,7 +54,7 @@ Content-Type: multipart/form-data
 [URL]
 
 ```
-POST  /friendtalk-upgrade/v1.0/appkeys/{appKey}/senders/{senderKey}/marketing-agreements
+POST  /brand-message/v1.0/appkeys/{appKey}/senders/{senderKey}/marketing-agreements
 Content-Type: application/json;charset=UTF-8
 ```
 
@@ -93,7 +93,7 @@ Content-Type: application/json;charset=UTF-8
 [URL]
 
 ```
-POST  /friendtalk-upgrade/v1.0/appkeys/{appkey}/freestyle-messages
+POST  /brand-message/v1.0/appkeys/{appkey}/freestyle-messages
 Content-Type: application/json;charset=UTF-8
 ```
 
@@ -1042,7 +1042,7 @@ Content-Type: application/json;charset=UTF-8
 [URL]
 
 ```
-POST  /friendtalk-upgrade/v1.0/appkeys/{appkey}/basic-messages
+POST  /brand-message/v1.0/appkeys/{appkey}/basic-messages
 Content-Type: application/json;charset=UTF-8
 ```
 
@@ -1161,7 +1161,7 @@ Content-Type: application/json;charset=UTF-8
 [URL]
 
 ```
-GET  /friendtalk-upgrade/v1.0/appkeys/{appkey}/messages
+GET  /brand-message/v1.0/appkeys/{appkey}/messages
 Content-Type: application/json;charset=UTF-8
 ```
 
@@ -1268,7 +1268,7 @@ Content-Type: application/json;charset=UTF-8
 [URL]
 
 ```
-GET  /friendtalk-upgrade/v1.0/appkeys/{appkey}/messages/{requestId}/{recipientSeq}
+GET  /brand-message/v1.0/appkeys/{appkey}/messages/{requestId}/{recipientSeq}
 Content-Type: application/json;charset=UTF-8
 ```
 
@@ -1557,7 +1557,7 @@ Content-Type: application/json;charset=UTF-8
 [URL]
 
 ```
-GET  /friendtalk-upgrade/v1.0/appkeys/{appkey}/senders/{senderKey}/templates
+GET  /brand-message/v1.0/appkeys/{appkey}/senders/{senderKey}/templates
 Content-Type: application/json;charset=UTF-8
 ```
 
@@ -1822,7 +1822,7 @@ Content-Type: application/json;charset=UTF-8
 [URL]
 
 ```
-GET  /friendtalk-upgrade/v1.0/appkeys/{appkey}/senders/{senderKey}/templates/{templateCode}
+GET  /brand-message/v1.0/appkeys/{appkey}/senders/{senderKey}/templates/{templateCode}
 Content-Type: application/json;charset=UTF-8
 ```
 
@@ -2074,7 +2074,7 @@ Content-Type: application/json;charset=UTF-8
 [URL]
 
 ```
-POST  /friendtalk-upgrade/v1.0/appkeys/{appkey}/senders/{senderKey}/templates
+POST  /brand-message/v1.0/appkeys/{appkey}/senders/{senderKey}/templates
 Content-Type: application/json;charset=UTF-8
 ```
 
@@ -2769,7 +2769,7 @@ Content-Type: application/json;charset=UTF-8
 [URL]
 
 ```
-PUT  /friendtalk-upgrade/v1.0/appkeys/{appkey}/senders/{senderKey}/templates/{templateCode}
+PUT  /brand-message/v1.0/appkeys/{appkey}/senders/{senderKey}/templates/{templateCode}
 Content-Type: application/json;charset=UTF-8
 ```
 
@@ -2823,7 +2823,7 @@ Content-Type: application/json;charset=UTF-8
 [URL]
 
 ```
-DELETE  /friendtalk-upgrade/v1.0/appkeys/{appkey}/senders/{senderKey}/templates/{templateCode}
+DELETE  /brand-message/v1.0/appkeys/{appkey}/senders/{senderKey}/templates/{templateCode}
 Content-Type: application/json;charset=UTF-8
 ```
 
@@ -2875,7 +2875,7 @@ Content-Type: application/json;charset=UTF-8
 [URL]
 
 ```
-POST  /friendtalk-upgrade/v1.0/appkeys/{appKey}/images
+POST  /brand-message/v1.0/appkeys/{appKey}/images
 Content-Type: multipart/form-data
 ```
 
@@ -2930,7 +2930,7 @@ Content-Type: multipart/form-data
 [URL]
 
 ```
-GET  /friendtalk-upgrade/v1.0/appkeys/{appKey}/images
+GET  /brand-message/v1.0/appkeys/{appKey}/images
 Content-Type: multipart/form-data
 ```
 
@@ -2995,7 +2995,7 @@ Content-Type: multipart/form-data
 [URL]
 
 ```
-DELETE  /friendtalk-upgrade/v1.0/appkeys/{appKey}/images
+DELETE  /brand-message/v1.0/appkeys/{appKey}/images
 Content-Type: application/json;charset=UTF-8
 ```
 
@@ -3051,7 +3051,7 @@ Content-Type: application/json;charset=UTF-8
 [URL]
 
 ```
-POST /friendtalk-upgrade/v1.0/appkeys/{appKey}/senders/{senderKey}/biz-form
+POST /brand-message/v1.0/appkeys/{appKey}/senders/{senderKey}/biz-form
 Content-Type: application/json;charset=UTF-8
 ```
 
@@ -3100,7 +3100,7 @@ Content-Type: application/json;charset=UTF-8
 [URL]
 
 ```
-GET  /friendtalk-upgrade/v1.0/appkeys/{appKey}/senders/{senderKey}
+GET  /brand-message/v1.0/appkeys/{appKey}/senders/{senderKey}
 Content-Type: application/json;charset=UTF-8
 ```
 
@@ -3201,7 +3201,7 @@ Content-Type: application/json;charset=UTF-8
 [URL]
 
 ```
-POST  /friendtalk-upgrade/v1.0/appkeys/{appkey}/failback/appkey
+POST  /brand-message/v1.0/appkeys/{appkey}/failback/appkey
 Content-Type: application/json;charset=UTF-8
 ```
 
@@ -3238,7 +3238,7 @@ Content-Type: application/json;charset=UTF-8
 [예시]
 
 ```
-curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" https://api-alimtalk.cloud.toast.com/friendtalk-upgrade/v1.0/appkeys/{appkey}/failback/appkey -d '{"resendAppKey": "smsAppKey"}
+curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" https://api-alimtalk.cloud.toast.com/brand-message/v1.0/appkeys/{appkey}/failback/appkey -d '{"resendAppKey": "smsAppKey"}
 ```
 
 #### 응답
@@ -3259,7 +3259,7 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 [URL]
 
 ```
-POST  /friendtalk-upgrade/v1.0/appkeys/{appkey}/failback
+POST  /brand-message/v1.0/appkeys/{appkey}/failback
 Content-Type: application/json;charset=UTF-8
 ```
 
@@ -3300,7 +3300,7 @@ Content-Type: application/json;charset=UTF-8
 [예시]
 
 ```
-curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" https://api-alimtalk.cloud.toast.com/friendtalk-upgrade/v1.0/appkeys/{appkey}/failback/appkey -d '{"senderKey": "0be23c29de88d6888798aeda57062516354d74ba","isResend": true,"resendSendNo": "01012341234" }
+curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" https://api-alimtalk.cloud.toast.com/brand-message/v1.0/appkeys/{appkey}/failback/appkey -d '{"senderKey": "0be23c29de88d6888798aeda57062516354d74ba","isResend": true,"resendSendNo": "01012341234" }
 ```
 
 #### 응답
