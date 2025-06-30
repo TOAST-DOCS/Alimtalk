@@ -1,6 +1,6 @@
-## Notification > KakaoTalk Bizmessage > 친구톡 Upgrade > API v1.0 Guide
+## Notification > KakaoTalk Bizmessage > 브랜드 메시지 > API v1.0 Guide
 
-## 친구톡 Upgrade
+## 브랜드 메시지
 
 #### [API 도메인]
 
@@ -3184,7 +3184,7 @@ Content-Type: application/json;charset=UTF-8
 | - profileSpamLevel        | String  | X        | 카카오톡 채널 스팸 상태명(영구제한, 경고제한, 정상)<br>발신 프로필 상태가 정상적이지 않을 경우 null 값을 가질 수 있습니다.                                           |
 | - profileMessageSpamLevel | String  | X        | 카카오톡 메시지 스팸 상태명(활동제한, 경고제한, 정상)<br>발신 프로필 상태가 정상적이지 않을 경우 null 값을 가질 수 있습니다.                                          |
 | - block                   | boolean | O        | 발신프로필 차단 여부                                                                                                           |
-| - friendtalkUpgrade       | Object  | X        | 친구톡 Upgrade 설정 정보                                                                                                     |
+| - friendtalkUpgrade       | Object  | X        | 브랜드 메시지 설정 정보                                                                                                     |
 | -- resendAppKey           | String  | X        | 대체 발송으로 설정할 SMS 서비스 앱키                                                                                                |
 | -- isResend               | boolean | O        | 대체 발송 설정(재발송) 여부                                                                                                      |
 | -- resendSendNo           | String  | X        | 재발송 시, tc-sms 발신 번호                                                                                                   |
