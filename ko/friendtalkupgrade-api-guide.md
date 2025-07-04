@@ -1,6 +1,6 @@
-## Notification > KakaoTalk Bizmessage > 친구톡 Upgrade > API v1.0 Guide
+## Notification > KakaoTalk Bizmessage > 브랜드 메시지 > API v1.0 Guide
 
-## 친구톡 Upgrade
+## 브랜드 메시지
 
 #### [API 도메인]
 
@@ -9,6 +9,73 @@
 | [https://api-alimtalk.cloud.toast.com](https://api-alimtalk.cloud.toast.com) |
 
 ## V1.0 API 소개
+
+## 마케팅 수신동의 증적 자료 업로드
+
+#### 요청
+
+[URL]
+
+```
+POST  /brand-message/v1.0/appkeys/{appKey}/senders/{senderKey}/upload-marketing-agreement
+Content-Type: multipart/form-data
+```
+
+[Path parameter]
+
+| 이름        | 타입     | 설명     |
+|-----------|--------|--------|
+| appkey    | String | 고유의 앱키 |
+| senderKey | String | 발신 키   |
+
+[Header]
+
+```
+{
+  "X-Secret-Key": String
+}
+```
+
+| 이름           | 타입     | 필수 | 설명               |
+|--------------|--------|----|------------------|
+| X-Secret-Key | String | O  | 콘솔에서 생성할 수 있습니다. |
+
+[Request parameter]
+
+| 이름   | 타입   | 필수 | 설명            |
+|------|------|----|---------------|
+| file | File | O  | 마케팅 수신동의 증적자료 |
+
+
+## 타겟팅(M/N) 타입 사용 신청
+
+#### 요청
+
+[URL]
+
+```
+POST  /brand-message/v1.0/appkeys/{appKey}/senders/{senderKey}/marketing-agreements
+Content-Type: application/json;charset=UTF-8
+```
+
+[Path parameter]
+
+| 이름        | 타입     | 설명     |
+|-----------|--------|--------|
+| appkey    | String | 고유의 앱키 |
+| senderKey | String | 발신 키   |
+
+[Header]
+
+```
+{
+  "X-Secret-Key": String
+}
+```
+
+| 이름           | 타입     | 필수 | 설명               |
+|--------------|--------|----|------------------|
+| X-Secret-Key | String | O  | 콘솔에서 생성할 수 있습니다. |
 
 ## 메시지 자유형 발송 요청
 
@@ -26,7 +93,7 @@
 [URL]
 
 ```
-POST  /friendtalk-upgrade/v1.0/appkeys/{appkey}/freestyle-messages
+POST  /brand-message/v1.0/appkeys/{appkey}/freestyle-messages
 Content-Type: application/json;charset=UTF-8
 ```
 
@@ -975,7 +1042,7 @@ Content-Type: application/json;charset=UTF-8
 [URL]
 
 ```
-POST  /friendtalk-upgrade/v1.0/appkeys/{appkey}/basic-messages
+POST  /brand-message/v1.0/appkeys/{appkey}/basic-messages
 Content-Type: application/json;charset=UTF-8
 ```
 
@@ -1094,7 +1161,7 @@ Content-Type: application/json;charset=UTF-8
 [URL]
 
 ```
-GET  /friendtalk-upgrade/v1.0/appkeys/{appkey}/messages
+GET  /brand-message/v1.0/appkeys/{appkey}/messages
 Content-Type: application/json;charset=UTF-8
 ```
 
@@ -1201,7 +1268,7 @@ Content-Type: application/json;charset=UTF-8
 [URL]
 
 ```
-GET  /friendtalk-upgrade/v1.0/appkeys/{appkey}/messages/{requestId}/{recipientSeq}
+GET  /brand-message/v1.0/appkeys/{appkey}/messages/{requestId}/{recipientSeq}
 Content-Type: application/json;charset=UTF-8
 ```
 
@@ -1490,7 +1557,7 @@ Content-Type: application/json;charset=UTF-8
 [URL]
 
 ```
-GET  /friendtalk-upgrade/v1.0/appkeys/{appkey}/senders/{senderKey}/templates
+GET  /brand-message/v1.0/appkeys/{appkey}/senders/{senderKey}/templates
 Content-Type: application/json;charset=UTF-8
 ```
 
@@ -1755,7 +1822,7 @@ Content-Type: application/json;charset=UTF-8
 [URL]
 
 ```
-GET  /friendtalk-upgrade/v1.0/appkeys/{appkey}/senders/{senderKey}/templates/{templateCode}
+GET  /brand-message/v1.0/appkeys/{appkey}/senders/{senderKey}/templates/{templateCode}
 Content-Type: application/json;charset=UTF-8
 ```
 
@@ -2007,7 +2074,7 @@ Content-Type: application/json;charset=UTF-8
 [URL]
 
 ```
-POST  /friendtalk-upgrade/v1.0/appkeys/{appkey}/senders/{senderKey}/templates
+POST  /brand-message/v1.0/appkeys/{appkey}/senders/{senderKey}/templates
 Content-Type: application/json;charset=UTF-8
 ```
 
@@ -2702,7 +2769,7 @@ Content-Type: application/json;charset=UTF-8
 [URL]
 
 ```
-PUT  /friendtalk-upgrade/v1.0/appkeys/{appkey}/senders/{senderKey}/templates/{templateCode}
+PUT  /brand-message/v1.0/appkeys/{appkey}/senders/{senderKey}/templates/{templateCode}
 Content-Type: application/json;charset=UTF-8
 ```
 
@@ -2756,7 +2823,7 @@ Content-Type: application/json;charset=UTF-8
 [URL]
 
 ```
-DELETE  /friendtalk-upgrade/v1.0/appkeys/{appkey}/senders/{senderKey}/templates/{templateCode}
+DELETE  /brand-message/v1.0/appkeys/{appkey}/senders/{senderKey}/templates/{templateCode}
 Content-Type: application/json;charset=UTF-8
 ```
 
@@ -2808,7 +2875,7 @@ Content-Type: application/json;charset=UTF-8
 [URL]
 
 ```
-POST  /friendtalk-upgrade/v1.0/appkeys/{appKey}/images
+POST  /brand-message/v1.0/appkeys/{appKey}/images
 Content-Type: multipart/form-data
 ```
 
@@ -2863,7 +2930,7 @@ Content-Type: multipart/form-data
 [URL]
 
 ```
-GET  /friendtalk-upgrade/v1.0/appkeys/{appKey}/images
+GET  /brand-message/v1.0/appkeys/{appKey}/images
 Content-Type: multipart/form-data
 ```
 
@@ -2928,7 +2995,7 @@ Content-Type: multipart/form-data
 [URL]
 
 ```
-DELETE  /friendtalk-upgrade/v1.0/appkeys/{appKey}/images
+DELETE  /brand-message/v1.0/appkeys/{appKey}/images
 Content-Type: application/json;charset=UTF-8
 ```
 
@@ -2984,7 +3051,7 @@ Content-Type: application/json;charset=UTF-8
 [URL]
 
 ```
-POST /friendtalk-upgrade/v1.0/appkeys/{appKey}/senders/{senderKey}/biz-form
+POST /brand-message/v1.0/appkeys/{appKey}/senders/{senderKey}/biz-form
 Content-Type: application/json;charset=UTF-8
 ```
 
@@ -3033,7 +3100,7 @@ Content-Type: application/json;charset=UTF-8
 [URL]
 
 ```
-GET  /friendtalk-upgrade/v1.0/appkeys/{appKey}/senders/{senderKey}
+GET  /brand-message/v1.0/appkeys/{appKey}/senders/{senderKey}
 Content-Type: application/json;charset=UTF-8
 ```
 
@@ -3088,6 +3155,7 @@ Content-Type: application/json;charset=UTF-8
       "sentCount" : Integer
     },
     "dormant" : boolean,
+    "marketingAgreement" : boolean,
     "block" : boolean,
     "createDate" : String,
     "initialUserRestriction" : boolean
@@ -3116,12 +3184,13 @@ Content-Type: application/json;charset=UTF-8
 | - profileSpamLevel        | String  | X        | 카카오톡 채널 스팸 상태명(영구제한, 경고제한, 정상)<br>발신 프로필 상태가 정상적이지 않을 경우 null 값을 가질 수 있습니다.                                           |
 | - profileMessageSpamLevel | String  | X        | 카카오톡 메시지 스팸 상태명(활동제한, 경고제한, 정상)<br>발신 프로필 상태가 정상적이지 않을 경우 null 값을 가질 수 있습니다.                                          |
 | - block                   | boolean | O        | 발신프로필 차단 여부                                                                                                           |
-| - friendtalkUpgrade       | Object  | X        | 친구톡 Upgrade 설정 정보                                                                                                     |
+| - friendtalkUpgrade       | Object  | X        | 브랜드 메시지 설정 정보                                                                                                     |
 | -- resendAppKey           | String  | X        | 대체 발송으로 설정할 SMS 서비스 앱키                                                                                                |
 | -- isResend               | boolean | O        | 대체 발송 설정(재발송) 여부                                                                                                      |
 | -- resendSendNo           | String  | X        | 재발송 시, tc-sms 발신 번호                                                                                                   |
 | -- resendUnsubscribeNo    | String  | X        | 재발송 시, tc-sms 080 수신 거부 번호                                                                                            |
 | - dormant                 | boolean | O        | 발신프로필 휴면 여부                                                                                                           |
+| - marketingAgreement      | boolean | O        | M/N 타입 사용 신청 여부                                                                                                       |
 | - createDate              | String  | X        | 등록 일자                                                                                                                 |
 | - initialUserRestriction  | boolean | O        | 최초 사용자 제한 여부                                                                                                          |
 
@@ -3132,7 +3201,7 @@ Content-Type: application/json;charset=UTF-8
 [URL]
 
 ```
-POST  /friendtalk-upgrade/v1.0/appkeys/{appkey}/failback/appkey
+POST  /brand-message/v1.0/appkeys/{appkey}/failback/appkey
 Content-Type: application/json;charset=UTF-8
 ```
 
@@ -3169,7 +3238,7 @@ Content-Type: application/json;charset=UTF-8
 [예시]
 
 ```
-curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" https://api-alimtalk.cloud.toast.com/friendtalk-upgrade/v1.0/appkeys/{appkey}/failback/appkey -d '{"resendAppKey": "smsAppKey"}
+curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" https://api-alimtalk.cloud.toast.com/brand-message/v1.0/appkeys/{appkey}/failback/appkey -d '{"resendAppKey": "smsAppKey"}
 ```
 
 #### 응답
@@ -3190,7 +3259,7 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 [URL]
 
 ```
-POST  /friendtalk-upgrade/v1.0/appkeys/{appkey}/failback
+POST  /brand-message/v1.0/appkeys/{appkey}/failback
 Content-Type: application/json;charset=UTF-8
 ```
 
@@ -3231,7 +3300,7 @@ Content-Type: application/json;charset=UTF-8
 [예시]
 
 ```
-curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" https://api-alimtalk.cloud.toast.com/friendtalk-upgrade/v1.0/appkeys/{appkey}/failback/appkey -d '{"senderKey": "0be23c29de88d6888798aeda57062516354d74ba","isResend": true,"resendSendNo": "01012341234" }
+curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" https://api-alimtalk.cloud.toast.com/brand-message/v1.0/appkeys/{appkey}/failback/appkey -d '{"senderKey": "0be23c29de88d6888798aeda57062516354d74ba","isResend": true,"resendSendNo": "01012341234" }
 ```
 
 #### 응답
