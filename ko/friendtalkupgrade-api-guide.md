@@ -2941,7 +2941,7 @@ Content-Type: multipart/form-data
 
 ```
 GET  /brand-message/v1.0/appkeys/{appKey}/images
-Content-Type: multipart/form-data
+Content-Type: application/json;charset=UTF-8
 ```
 
 [Path parameter]

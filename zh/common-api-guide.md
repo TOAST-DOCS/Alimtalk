@@ -42,6 +42,16 @@
 |---|---|---|
 | appKey | String | Unique appkey |
 
+[Header]
+```
+{
+  "X-Secret-Key": String
+}
+```
+| Name |	Type|	Required|	Descriptions|
+|---|---|---|---|
+|X-Secret-Key|	String| O | It can be created in the console.  |
+
 [Query parameter]
 
 | Name | Type | Max. Length | Required | Description |
