@@ -2912,6 +2912,11 @@ Content-Type: multipart/form-data
       "resultCode": Integer,
       "resultMessage": String,
       "isSuccessful": boolean
+  }, 
+  "image": {
+      "imageSeq": Integer,
+      "imageUrl": String,
+      "imageName": String,
   }
 }
 ```
@@ -2922,6 +2927,10 @@ Content-Type: multipart/form-data
 | - resultCode    | Integer | O        | 결과 코드  |
 | - resultMessage | String  | O        | 결과 메시지 |
 | - isSuccessful  | boolean | O        | 성공 여부  |
+| image           | Object  | X        | 이미지 영역  |
+| - imageSeq      | Integer | O        | 이미지 시퀀스 |
+| - imageUrl      | String  | O        | 이미지 url |
+| - imageName     | String  | X        | 이미지명    |
 
 ### 이미지 조회
 
