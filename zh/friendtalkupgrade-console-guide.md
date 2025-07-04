@@ -230,7 +230,7 @@ Excel/CSV 포맷의 템플릿 파일을 통해 여러 수신 번호로 브랜드
 
 ### 주의사항
 * 비즈니스 인증이 해제될 경우 브랜드 메시지 사용 권한이 해제됩니다. 비즈니스 인증 재심사 이후 다시 사용 신청을 진행해야 합니다.
-* 광고성 정보 수신동의 증적자료 파일은 톡채널 단위로 저장되므로 변경시 동일 톡채널의 타딜러사 발신프로필에 일괄 적용됩니다.
+* 광고성 정보 수신동의 증적자료 파일은 톡채널 단위로 저장되므로 변경시 동일 톡채널의 타 딜러사 발신프로필에 일괄 적용됩니다.
 * 타딜러사에서 업로드한 파일이 이미 존재하는 경우 파일 업로드 과정을 생략하고 M/N 타입 사용 신청이 가능합니다.
       
 ![friendtalkupgrade_11_20250715.png](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_alimtalk/friendtalkupgrade/friendtalkupgrade_11_20250715.png)
