@@ -1223,6 +1223,10 @@ Content-Type: application/json;charset=UTF-8
         "chatBubbleType": String,
         "pushAlarm": boolean,
         "messageStatus": String,
+        "resendStatusCode": String,
+        "resendStatusName": String,
+        "resendResultCode": String,
+        "resendRequestId": String,
         "isAddedChannel": boolean,
         "resultCode": String,
         "resultCodeName": String,
@@ -1255,6 +1259,10 @@ Content-Type: application/json;charset=UTF-8
 | -- chatBubbleType           | String  | O        | 메시지 타입                                                                |
 | -- pushAlarm                | boolean | O        | 푸시 알림 여부                                                              |
 | -- messageStatus            | String  | O        | 요청 상태(COMPLETED: 성공, FAILED: 실패)                                      |
+| -- resendStatusCode         | String  | X        | 대체 발송 상태 코드                                                              |
+| -- resendStatusName         | String  | X        | 대체 발송 상태 이름                                                              |
+| -- resendResultCode         | String  | X        | 대체 발송 결과 코드                                                              |
+| -- resendRequestId          | String  | X        | 대체 발송 요청 ID                                                               |
 | -- isAddedChannel           | boolean | O        | 채널 친구 여부                                                              |
 | -- resultCode               | String  | X        | 수신 결과 코드                                                              |
 | -- resultCodeName           | String  | X        | 수신 결과 코드명                                                             |
