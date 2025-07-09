@@ -46,7 +46,6 @@ Content-Type: multipart/form-data
 |------|------|----|---------------|
 | file | File | O  | 마케팅 수신동의 증적자료 |
 
-
 ## 타겟팅(M/N) 타입 사용 신청
 
 #### 요청
@@ -76,6 +75,25 @@ Content-Type: application/json;charset=UTF-8
 | 이름           | 타입     | 필수 | 설명               |
 |--------------|--------|----|------------------|
 | X-Secret-Key | String | O  | 콘솔에서 생성할 수 있습니다. |
+
+#### 응답
+
+```
+{
+  "header": {
+    "resultCode": Integer,
+    "resultMessage": String,
+    "isSuccessful": boolean
+  }
+}
+```
+
+| 이름              | 타입      | Not Null | 설명     |
+|:----------------|:--------|:---------|:-------|
+| header          | Object  | O        | 헤더 영역  |
+| - resultCode    | Integer | O        | 결과 코드  |
+| - resultMessage | String  | O        | 결과 메시지 |
+| - isSuccessful  | boolean | O        | 성공 여부  |
 
 ## 메시지 자유형 발송 요청
 
@@ -1100,7 +1118,7 @@ Content-Type: application/json;charset=UTF-8
 | senderKey           | String  | O  | 발신 키(40자), 그룹 발신키 사용 불가                                                                                                       |
 | templateCode        | String  | O  | 사용하려는 템플릿 코드                                                                                                                  |
 | pushAlarm           | boolean | X  | 메시지 푸시 알람 발송 여부 (기본값: true)                                                                                                   |
-| unsubscribeNo       | String  | X  | 080 무료수신거부 전화번호 (둘다 미입력시 발신프로필에 등록된 무료수신거부 정보로 발송됨)                                                                           |
+| unsubscribeNo       | String  | X  | 080 무료수신거부 전화번호 (둘다 미입력시 발신프로필에 등록된 무료수신거부 정보로 발송됨)<br>- 080-xxx-xxxx <br>- 080-xxxx-xxxx <br>- 080xxxxxxx <br>- 080xxxxxxxx  |
 | unsubscribeAuthNo   | String  | X  | 080 무료수신거부 인증번호 (둘다 미입력시 발신프로필에 등록된 무료수신거부 정보로 발송됨)<br>unsubscribe_phone_number 없이 unsubscribe_auth_number만 입력 불가<br>ex) 1234 |
 | recipientList       | List    | O  | 수신자 목록(최대 1,000명)                                                                                                             |
 | - recipientNo       | String  | O  | 수신 번호                                                                                                                         |
@@ -1112,7 +1130,7 @@ Content-Type: application/json;charset=UTF-8
 | -- resendTitle      | String  | X  | LMS 대체 발송 제목<br>(값이 없을 경우, 플러스친구 ID로 대체 발송됩니다.)                                                                               |
 | -- resendContent    | String  | X  | 대체 발송 내용<br>(값이 없을 경우, [메시지 본문]으로 대체 발송됩니다.)                                                                                  |
 | -- resendSendNo     | String  | X  | 대체 발송 발신 번호<br><span style="color:red">(SMS 서비스에 등록된 발신 번호가 아닐 경우, 대체 발송에 실패할 수 있습니다.)</span>                                 |
-| unsubscribeNo       | String  | X  | 080 무료수신거부 전화번호 (둘다 미입력시 발신프로필에 등록된 무료수신거부 정보로 발송됨)                                                                           |
+| unsubscribeNo       | String  | X  | 080 무료수신거부 전화번호 (둘다 미입력시 발신프로필에 등록된 무료수신거부 정보로 발송됨)<br>- 080-xxx-xxxx <br>- 080-xxxx-xxxx <br>- 080xxxxxxx <br>- 080xxxxxxxx  |
 | unsubscribeAuthNo   | String  | X  | 080 무료수신거부 인증번호 (둘다 미입력시 발신프로필에 등록된 무료수신거부 정보로 발송됨)<br>unsubscribe_phone_number 없이 unsubscribe_auth_number만 입력 불가<br>ex) 1234 |
 | createUser          | String  | X  | 등록자(콘솔에서 발송 시 사용자 UUID로 저장)                                                                                                   |
 | statsId             | String  | X  | 통계 ID(발신 검색 조건에는 포함되지 않습니다, 최대 8자)                                                                                            |
@@ -1259,10 +1277,10 @@ Content-Type: application/json;charset=UTF-8
 | -- chatBubbleType           | String  | O        | 메시지 타입                                                                |
 | -- pushAlarm                | boolean | O        | 푸시 알림 여부                                                              |
 | -- messageStatus            | String  | O        | 요청 상태(COMPLETED: 성공, FAILED: 실패)                                      |
-| -- resendStatusCode         | String  | X        | 대체 발송 상태 코드                                                              |
-| -- resendStatusName         | String  | X        | 대체 발송 상태 이름                                                              |
-| -- resendResultCode         | String  | X        | 대체 발송 결과 코드                                                              |
-| -- resendRequestId          | String  | X        | 대체 발송 요청 ID                                                               |
+| -- resendStatusCode         | String  | X        | 대체 발송 상태 코드                                                           |
+| -- resendStatusName         | String  | X        | 대체 발송 상태 이름                                                           |
+| -- resendResultCode         | String  | X        | 대체 발송 결과 코드                                                           |
+| -- resendRequestId          | String  | X        | 대체 발송 요청 ID                                                           |
 | -- isAddedChannel           | boolean | O        | 채널 친구 여부                                                              |
 | -- resultCode               | String  | X        | 수신 결과 코드                                                              |
 | -- resultCodeName           | String  | X        | 수신 결과 코드명                                                             |
@@ -1442,119 +1460,119 @@ Content-Type: application/json;charset=UTF-8
 }
 ```
 
-| 이름                    | 타입      | Not Null | 설명                                                                                                        | 
- |:----------------------|:--------|:---------|:----------------------------------------------------------------------------------------------------------| 
-| header                | Object  | O        | 헤더 영역                                                                                                     | 
-| - resultCode          | Integer | O        | 결과 코드                                                                                                     | 
-| - resultMessage       | String  | O        | 결과 메시지                                                                                                    | 
-| - isSuccessful        | boolean | O        | 성공 여부                                                                                                     | 
-| message               | Object  | X        | 메시지 본문 영역 (메시지 실패 시 없을 수 있음)                                                                              | 
-| - requestId           | String  | O        | 요청 ID (message 객체 존재 시 Not Null)                                                                          | 
-| - recipientSeq        | Integer | O        | 수신자 시퀀스 번호 (message 객체 존재 시 Not Null)                                                                     | 
-| - plusFriendId        | String  | O        | 발신 프로필 ID (message 객체 존재 시 Not Null)                                                                      | 
-| - senderKey           | String  | O        | 발신 키 (message 객체 존재 시 Not Null)                                                                           | 
-| - templateCode        | String  | X        | 템플릿 코드                                                                                                    | 
-| - recipientNo         | String  | O        | 수신 번호 (message 객체 존재 시 Not Null)                                                                          | 
-| - targeting           | String  | O        | 메시지 대상의 타입 (M - 마케팅 수신 동의 유저, N - 친구가 아닌 마케팅 수신 동의 유저에게만, I - 친구인 유저) (message 객체 존재 시 Not Null)          | 
-| - requestDate         | String  | O        | 요청 일시 (message 객체 존재 시 Not Null)                                                                          | 
-| - createDate          | String  | O        | 등록 일시 (message 객체 존재 시 Not Null)                                                                          | 
-| - receiveDate         | String  | X        | 수신 일시                                                                                                     | 
-| - chatBubbleType      | String  | O        | 메시지 타입 (message 객체 존재 시 Not Null)                                                                         | 
-| - content             | String  | X        | 메시지 내용                                                                                                    | 
-| - adult               | boolean | O        | 성인용 메시지 여부 (message 객체 존재 시 Not Null)                                                                     | 
-| - header              | String  | X        | 헤더 (메시지 내)                                                                                                | 
-| - additionalContent   | String  | X        | 부가 정보 (메시지 내)                                                                                             |
-| - image               | Object  | X        | 이미지 요소                                                                                                    | 
-| -- imageUrl           | String  | O        | 이미지 URL (image 객체 존재 시 Not Null)                                                                          | 
-| -- imageLink          | String  | X        | 이미지 링크                                                                                                    | 
-| - buttons             | Array   | X        | 버튼 목록                                                                                                     | 
-| -- name               | String  | O        | 버튼 제목 (buttons 배열 항목 존재 시 Not Null)                                                                       | 
-| -- type               | String  | O        | 버튼 타입 (buttons 배열 항목 존재 시 Not Null)                                                                       | 
-| -- linkMo             | String  | X        | 모바일 웹 링크                                                                                                  | 
-| -- linkPc             | String  | X        | PC 웹 링크                                                                                                   | 
-| -- schemeIos          | String  | X        | IOS 앱 링크                                                                                                  | 
-| -- schemeAndroid      | String  | X        | 안드로이드 앱 링크                                                                                                | 
-| -- chatExtra          | String  | X        | BC / BT 타입 버튼일 경우 전달할 메타 정보                                                                               | 
-| -- chatEvent          | String  | X        | BT 타입 버튼일 경우 연결할 봇 이벤트명                                                                                   | 
-| -- bizFormKey         | String  | X        | BF 타입 버튼일 경우 비즈폼 키                                                                                        | 
-| - item                | Object  | X        | 와이드 리스트 요소                                                                                                | 
-| -- list               | Array   | X        | 와이드 리스트 (item 객체 존재 시 Nullable)                                                                           | 
-| --- title             | String  | X        | 아이템 제목                                                                                                    | 
-| --- imageUrl          | String  | O        | 아이템 이미지 URL (item.list 항목 존재 시 Not Null)                                                                  | 
-| --- linkMo            | String  | O        | 모바일 웹 링크 (item.list 항목 존재 시 Not Null)                                                                     | 
-| --- linkPc            | String  | X        | PC 웹 링크                                                                                                   | 
-| --- schemeIos         | String  | X        | IOS 앱 링크                                                                                                  | 
-| --- schemeAndroid     | String  | X        | 안드로이드 앱 링크                                                                                                | 
-| - coupon              | Object  | X        | 쿠폰 요소                                                                                                     | 
-| -- title              | String  | O        | 쿠폰 제목 (coupon 객체 존재 시 Not Null)                                                                           | 
-| -- description        | String  | O        | 쿠폰 상세 설명 (coupon 객체 존재 시 Not Null)                                                                        | 
-| -- linkMo             | String  | X        | 모바일 웹 링크                                                                                                  | 
-| -- linkPc             | String  | X        | PC 웹 링크                                                                                                   | 
-| -- schemeAndroid      | String  | X        | 안드로이드 앱 링크                                                                                                | 
-| -- schemeIos          | String  | X        | IOS 앱 링크                                                                                                  | 
-| - commerce            | Object  | X        | 커머스 요소                                                                                                    | 
-| -- title              | String  | O        | 상품 제목 (commerce 객체 존재 시 Not Null)                                                                         | 
-| -- regularPrice       | Integer | X        | 정상 가격                                                                                                     | 
-| -- discountPrice      | Integer | X        | 할인가격                                                                                                      | 
-| -- discountRate       | Integer | X        | 할인율                                                                                                       | 
-| -- discountFixed      | Integer | X        | 정액할인가격                                                                                                    | 
-| - video               | Object  | X        | 동영상 요소                                                                                                    | 
-| -- videoUrl           | String  | O        | 카카오TV 동영상 URL (video 객체 존재 시 Not Null)                                                                    | 
-| -- thumbnailUrl       | String  | X        | 동영상 썸네일용 이미지 URL                                                                                          | 
-| - carousel            | Object  | X        | 캐러셀                                                                                                       | 
-| -- head               | Object  | X        | 캐러셀 인트로 (carousel 객체 존재 시 Nullable)                                                                       | 
-| --- header            | String  | O        | 캐러셀 인트로 헤더 (head 객체 존재 시 Not Null)                                                                        | 
-| --- content           | String  | O        | 캐러셀 인트로 내용 (head 객체 존재 시 Not Null)                                                                        | 
-| --- imageUrl          | String  | O        | 캐러셀 인트로 이미지 주소 (head 객체 존재 시 Not Null)                                                                    | 
-| --- linkMo            | String  | X        | 모바일 웹 링크                                                                                                  | 
-| --- linkPc            | String  | X        | PC 웹 링크                                                                                                   | 
-| --- schemeIos         | String  | X        | IOS 앱 링크                                                                                                  | 
-| --- schemeAndroid     | String  | X        | 안드로이드 앱 링크                                                                                                | 
-| -- list               | Array   | O        | 캐러셀 리스트 (carousel 객체 존재 시 Not Null)                                                                       | 
-| --- header            | String  | X        | 캐러셀 아이템 헤더                                                                                                | 
-| --- message           | String  | O        | 캐러셀 아이템 메시지 (list 항목 존재 시 Not Null)                                                                       | 
-| --- additionalContent | String  | X        | 부가 정보                                                                                                     | 
-| --- imageUrl          | String  | X        | 이미지 URL                                                                                                   | 
-| --- imageLink         | String  | X        | 이미지 링크                                                                                                    | 
-| --- commerce          | Object  | X        | 커머스 (캐러셀 내)                                                                                               | 
-| ---- title            | String  | O        | 상품 제목 (carousel.list.commerce 존재 시 Not Null)                                                              | 
-| ---- regularPrice     | Integer | X        | 정상 가격                                                                                                     | 
-| ---- discountPrice    | Integer | X        | 할인가격                                                                                                      | 
-| ---- discountRate     | Integer | X        | 할인율                                                                                                       | 
-| ---- discountFixed    | Integer | X        | 정액할인가격                                                                                                    | 
-| --- buttons           | Array   | X        | 버튼 목록 (캐러셀 내)                                                                                             | 
-| ---- name             | String  | O        | 버튼 제목 (carousel.list.buttons 항목 존재 시 Not Null)                                                            | 
-| ---- type             | String  | O        | 버튼 타입 (carousel.list.buttons 항목 존재 시 Not Null)                                                            | 
-| ---- linkMo           | String  | X        | 모바일 웹 링크                                                                                                  | 
-| ---- linkPc           | String  | X        | PC 웹 링크                                                                                                   | 
-| ---- schemeAndroid    | String  | X        | 안드로이드 앱 링크                                                                                                | 
-| ---- schemeIos        | String  | X        | IOS 앱 링크                                                                                                  | 
-| ---- chatExtra        | String  | X        | BC / BT 타입 버튼일 경우 전달할 메타 정보                                                                               | 
-| ---- chatEvent        | String  | X        | BT 타입 버튼일 경우 연결할 봇 이벤트명                                                                                   | 
-| ---- bizFormKey       | String  | X        | BF 타입 버튼일 경우 비즈폼 키                                                                                        | 
-| --- coupon            | Object  | X        | 쿠폰 (캐러셀 내)                                                                                                | 
-| ---- title            | String  | O        | 쿠폰 제목 (carousel.list.coupon 존재 시 Not Null)                                                                | 
-| ---- description      | String  | O        | 쿠폰 상세 설명 (carousel.list.coupon 존재 시 Not Null)                                                             | 
-| ---- linkMo           | String  | X        | 모바일 웹 링크                                                                                                  | 
-| ---- linkPc           | String  | X        | PC 웹 링크                                                                                                   | 
-| ---- schemeAndroid    | String  | X        | 안드로이드 앱 링크                                                                                                | 
-| ---- schemeIos        | String  | X        | IOS 앱 링크                                                                                                  | 
-| -- tail               | Object  | X        | 더보기 버튼 정보 (carousel 객체 존재 시 Nullable)                                                                     | 
-| --- linkMo            | String  | O        | 모바일 웹 링크 (tail 객체 존재 시 Not Null)                                                                          | 
-| --- linkPc            | String  | X        | PC 웹 링크                                                                                                   | 
-| --- schemeAndroid     | String  | X        | 안드로이드 앱 링크                                                                                                | 
-| --- schemeIos         | String  | X        | IOS 앱 링크                                                                                                  | 
-| - templateParameter   | String  | X        | 템플릿 파라미터                                                                                                  | 
-| - pushAlarm           | boolean | O        | 푸시 알림 여부 (message 객체 존재 시 Not Null)                                                                       | 
-| - messageStatus       | String  | O        | 요청 상태 (COMPLETED: 성공, FAILED: 실패) (message 객체 존재 시 Not Null)                                              | 
-| - isAddedChannel      | boolean | O        | 채널 친구 여부 (message 객체 존재 시 Not Null)                                                                       | 
-| - resultCode          | String  | X        | 수신 결과 코드 (메시지 내)                                                                                          | 
-| - resultCodeName      | String  | X        | 수신 결과 코드명 (메시지 내)                                                                                         | 
-| - resendStatusCode    | String  | X        | 대체 발송 상태 코드                                                                                               | 
-| - resendStatusName    | String  | X        | 대체 발송 상태 코드명                                                                                              | 
-| - resendResultCode    | String  | X        | 대체 발송 결과 코드                                                                                               | 
-| - resendRequestId     | String  | X        | 대체 발송 요청 ID                                                                                               | 
-| - createUser          | String  | X        | 등록자(콘솔에서 발송 시 사용자 UUID로 저장)                                                                               |
+| 이름                    | 타입      | Not Null | 설명                                                                                               | 
+ |:----------------------|:--------|:---------|:-------------------------------------------------------------------------------------------------| 
+| header                | Object  | O        | 헤더 영역                                                                                            | 
+| - resultCode          | Integer | O        | 결과 코드                                                                                            | 
+| - resultMessage       | String  | O        | 결과 메시지                                                                                           | 
+| - isSuccessful        | boolean | O        | 성공 여부                                                                                            | 
+| message               | Object  | X        | 메시지 본문 영역 (메시지 실패 시 없을 수 있음)                                                                     | 
+| - requestId           | String  | O        | 요청 ID (message 객체 존재 시 Not Null)                                                                 | 
+| - recipientSeq        | Integer | O        | 수신자 시퀀스 번호 (message 객체 존재 시 Not Null)                                                            | 
+| - plusFriendId        | String  | O        | 발신 프로필 ID (message 객체 존재 시 Not Null)                                                             | 
+| - senderKey           | String  | O        | 발신 키 (message 객체 존재 시 Not Null)                                                                  | 
+| - templateCode        | String  | X        | 템플릿 코드                                                                                           | 
+| - recipientNo         | String  | O        | 수신 번호 (message 객체 존재 시 Not Null)                                                                 | 
+| - targeting           | String  | O        | 메시지 대상의 타입 (M - 마케팅 수신 동의 유저, N - 친구가 아닌 마케팅 수신 동의 유저에게만, I - 친구인 유저) (message 객체 존재 시 Not Null) | 
+| - requestDate         | String  | O        | 요청 일시 (message 객체 존재 시 Not Null)                                                                 | 
+| - createDate          | String  | O        | 등록 일시 (message 객체 존재 시 Not Null)                                                                 | 
+| - receiveDate         | String  | X        | 수신 일시                                                                                            | 
+| - chatBubbleType      | String  | O        | 메시지 타입 (message 객체 존재 시 Not Null)                                                                | 
+| - content             | String  | X        | 메시지 내용                                                                                           | 
+| - adult               | boolean | O        | 성인용 메시지 여부 (message 객체 존재 시 Not Null)                                                            | 
+| - header              | String  | X        | 헤더 (메시지 내)                                                                                       | 
+| - additionalContent   | String  | X        | 부가 정보 (메시지 내)                                                                                    |
+| - image               | Object  | X        | 이미지 요소                                                                                           | 
+| -- imageUrl           | String  | O        | 이미지 URL (image 객체 존재 시 Not Null)                                                                 | 
+| -- imageLink          | String  | X        | 이미지 링크                                                                                           | 
+| - buttons             | Array   | X        | 버튼 목록                                                                                            | 
+| -- name               | String  | O        | 버튼 제목 (buttons 배열 항목 존재 시 Not Null)                                                              | 
+| -- type               | String  | O        | 버튼 타입 (buttons 배열 항목 존재 시 Not Null)                                                              | 
+| -- linkMo             | String  | X        | 모바일 웹 링크                                                                                         | 
+| -- linkPc             | String  | X        | PC 웹 링크                                                                                          | 
+| -- schemeIos          | String  | X        | IOS 앱 링크                                                                                         | 
+| -- schemeAndroid      | String  | X        | 안드로이드 앱 링크                                                                                       | 
+| -- chatExtra          | String  | X        | BC / BT 타입 버튼일 경우 전달할 메타 정보                                                                      | 
+| -- chatEvent          | String  | X        | BT 타입 버튼일 경우 연결할 봇 이벤트명                                                                          | 
+| -- bizFormKey         | String  | X        | BF 타입 버튼일 경우 비즈폼 키                                                                               | 
+| - item                | Object  | X        | 와이드 리스트 요소                                                                                       | 
+| -- list               | Array   | X        | 와이드 리스트 (item 객체 존재 시 Nullable)                                                                  | 
+| --- title             | String  | X        | 아이템 제목                                                                                           | 
+| --- imageUrl          | String  | O        | 아이템 이미지 URL (item.list 항목 존재 시 Not Null)                                                         | 
+| --- linkMo            | String  | O        | 모바일 웹 링크 (item.list 항목 존재 시 Not Null)                                                            | 
+| --- linkPc            | String  | X        | PC 웹 링크                                                                                          | 
+| --- schemeIos         | String  | X        | IOS 앱 링크                                                                                         | 
+| --- schemeAndroid     | String  | X        | 안드로이드 앱 링크                                                                                       | 
+| - coupon              | Object  | X        | 쿠폰 요소                                                                                            | 
+| -- title              | String  | O        | 쿠폰 제목 (coupon 객체 존재 시 Not Null)                                                                  | 
+| -- description        | String  | O        | 쿠폰 상세 설명 (coupon 객체 존재 시 Not Null)                                                               | 
+| -- linkMo             | String  | X        | 모바일 웹 링크                                                                                         | 
+| -- linkPc             | String  | X        | PC 웹 링크                                                                                          | 
+| -- schemeAndroid      | String  | X        | 안드로이드 앱 링크                                                                                       | 
+| -- schemeIos          | String  | X        | IOS 앱 링크                                                                                         | 
+| - commerce            | Object  | X        | 커머스 요소                                                                                           | 
+| -- title              | String  | O        | 상품 제목 (commerce 객체 존재 시 Not Null)                                                                | 
+| -- regularPrice       | Integer | X        | 정상 가격                                                                                            | 
+| -- discountPrice      | Integer | X        | 할인가격                                                                                             | 
+| -- discountRate       | Integer | X        | 할인율                                                                                              | 
+| -- discountFixed      | Integer | X        | 정액할인가격                                                                                           | 
+| - video               | Object  | X        | 동영상 요소                                                                                           | 
+| -- videoUrl           | String  | O        | 카카오TV 동영상 URL (video 객체 존재 시 Not Null)                                                           | 
+| -- thumbnailUrl       | String  | X        | 동영상 썸네일용 이미지 URL                                                                                 | 
+| - carousel            | Object  | X        | 캐러셀                                                                                              | 
+| -- head               | Object  | X        | 캐러셀 인트로 (carousel 객체 존재 시 Nullable)                                                              | 
+| --- header            | String  | O        | 캐러셀 인트로 헤더 (head 객체 존재 시 Not Null)                                                               | 
+| --- content           | String  | O        | 캐러셀 인트로 내용 (head 객체 존재 시 Not Null)                                                               | 
+| --- imageUrl          | String  | O        | 캐러셀 인트로 이미지 주소 (head 객체 존재 시 Not Null)                                                           | 
+| --- linkMo            | String  | X        | 모바일 웹 링크                                                                                         | 
+| --- linkPc            | String  | X        | PC 웹 링크                                                                                          | 
+| --- schemeIos         | String  | X        | IOS 앱 링크                                                                                         | 
+| --- schemeAndroid     | String  | X        | 안드로이드 앱 링크                                                                                       | 
+| -- list               | Array   | O        | 캐러셀 리스트 (carousel 객체 존재 시 Not Null)                                                              | 
+| --- header            | String  | X        | 캐러셀 아이템 헤더                                                                                       | 
+| --- message           | String  | O        | 캐러셀 아이템 메시지 (list 항목 존재 시 Not Null)                                                              | 
+| --- additionalContent | String  | X        | 부가 정보                                                                                            | 
+| --- imageUrl          | String  | X        | 이미지 URL                                                                                          | 
+| --- imageLink         | String  | X        | 이미지 링크                                                                                           | 
+| --- commerce          | Object  | X        | 커머스 (캐러셀 내)                                                                                      | 
+| ---- title            | String  | O        | 상품 제목 (carousel.list.commerce 존재 시 Not Null)                                                     | 
+| ---- regularPrice     | Integer | X        | 정상 가격                                                                                            | 
+| ---- discountPrice    | Integer | X        | 할인가격                                                                                             | 
+| ---- discountRate     | Integer | X        | 할인율                                                                                              | 
+| ---- discountFixed    | Integer | X        | 정액할인가격                                                                                           | 
+| --- buttons           | Array   | X        | 버튼 목록 (캐러셀 내)                                                                                    | 
+| ---- name             | String  | O        | 버튼 제목 (carousel.list.buttons 항목 존재 시 Not Null)                                                   | 
+| ---- type             | String  | O        | 버튼 타입 (carousel.list.buttons 항목 존재 시 Not Null)                                                   | 
+| ---- linkMo           | String  | X        | 모바일 웹 링크                                                                                         | 
+| ---- linkPc           | String  | X        | PC 웹 링크                                                                                          | 
+| ---- schemeAndroid    | String  | X        | 안드로이드 앱 링크                                                                                       | 
+| ---- schemeIos        | String  | X        | IOS 앱 링크                                                                                         | 
+| ---- chatExtra        | String  | X        | BC / BT 타입 버튼일 경우 전달할 메타 정보                                                                      | 
+| ---- chatEvent        | String  | X        | BT 타입 버튼일 경우 연결할 봇 이벤트명                                                                          | 
+| ---- bizFormKey       | String  | X        | BF 타입 버튼일 경우 비즈폼 키                                                                               | 
+| --- coupon            | Object  | X        | 쿠폰 (캐러셀 내)                                                                                       | 
+| ---- title            | String  | O        | 쿠폰 제목 (carousel.list.coupon 존재 시 Not Null)                                                       | 
+| ---- description      | String  | O        | 쿠폰 상세 설명 (carousel.list.coupon 존재 시 Not Null)                                                    | 
+| ---- linkMo           | String  | X        | 모바일 웹 링크                                                                                         | 
+| ---- linkPc           | String  | X        | PC 웹 링크                                                                                          | 
+| ---- schemeAndroid    | String  | X        | 안드로이드 앱 링크                                                                                       | 
+| ---- schemeIos        | String  | X        | IOS 앱 링크                                                                                         | 
+| -- tail               | Object  | X        | 더보기 버튼 정보 (carousel 객체 존재 시 Nullable)                                                            | 
+| --- linkMo            | String  | O        | 모바일 웹 링크 (tail 객체 존재 시 Not Null)                                                                 | 
+| --- linkPc            | String  | X        | PC 웹 링크                                                                                          | 
+| --- schemeAndroid     | String  | X        | 안드로이드 앱 링크                                                                                       | 
+| --- schemeIos         | String  | X        | IOS 앱 링크                                                                                         | 
+| - templateParameter   | String  | X        | 템플릿 파라미터                                                                                         | 
+| - pushAlarm           | boolean | O        | 푸시 알림 여부 (message 객체 존재 시 Not Null)                                                              | 
+| - messageStatus       | String  | O        | 요청 상태 (COMPLETED: 성공, FAILED: 실패) (message 객체 존재 시 Not Null)                                     | 
+| - isAddedChannel      | boolean | O        | 채널 친구 여부 (message 객체 존재 시 Not Null)                                                              | 
+| - resultCode          | String  | X        | 수신 결과 코드 (메시지 내)                                                                                 | 
+| - resultCodeName      | String  | X        | 수신 결과 코드명 (메시지 내)                                                                                | 
+| - resendStatusCode    | String  | X        | 대체 발송 상태 코드                                                                                      | 
+| - resendStatusName    | String  | X        | 대체 발송 상태 코드명                                                                                     | 
+| - resendResultCode    | String  | X        | 대체 발송 결과 코드                                                                                      | 
+| - resendRequestId     | String  | X        | 대체 발송 요청 ID                                                                                      | 
+| - createUser          | String  | X        | 등록자(콘솔에서 발송 시 사용자 UUID로 저장)                                                                      |
 
 ## 템플릿 관리
 
@@ -2929,12 +2947,12 @@ Content-Type: multipart/form-data
 }
 ```
 
-| 이름              | 타입      | Not Null | 설명     |
-|:----------------|:--------|:---------|:-------|
-| header          | Object  | O        | 헤더 영역  |
-| - resultCode    | Integer | O        | 결과 코드  |
-| - resultMessage | String  | O        | 결과 메시지 |
-| - isSuccessful  | boolean | O        | 성공 여부  |
+| 이름              | 타입      | Not Null | 설명      |
+|:----------------|:--------|:---------|:--------|
+| header          | Object  | O        | 헤더 영역   |
+| - resultCode    | Integer | O        | 결과 코드   |
+| - resultMessage | String  | O        | 결과 메시지  |
+| - isSuccessful  | boolean | O        | 성공 여부   |
 | image           | Object  | X        | 이미지 영역  |
 | - imageSeq      | Integer | O        | 이미지 시퀀스 |
 | - imageUrl      | String  | O        | 이미지 url |
@@ -3201,7 +3219,7 @@ Content-Type: application/json;charset=UTF-8
 | - profileSpamLevel        | String  | X        | 카카오톡 채널 스팸 상태명(영구제한, 경고제한, 정상)<br>발신 프로필 상태가 정상적이지 않을 경우 null 값을 가질 수 있습니다.                                           |
 | - profileMessageSpamLevel | String  | X        | 카카오톡 메시지 스팸 상태명(활동제한, 경고제한, 정상)<br>발신 프로필 상태가 정상적이지 않을 경우 null 값을 가질 수 있습니다.                                          |
 | - block                   | boolean | O        | 발신프로필 차단 여부                                                                                                           |
-| - friendtalkUpgrade       | Object  | X        | 브랜드 메시지 설정 정보                                                                                                     |
+| - friendtalkUpgrade       | Object  | X        | 브랜드 메시지 설정 정보                                                                                                         |
 | -- resendAppKey           | String  | X        | 대체 발송으로 설정할 SMS 서비스 앱키                                                                                                |
 | -- isResend               | boolean | O        | 대체 발송 설정(재발송) 여부                                                                                                      |
 | -- resendSendNo           | String  | X        | 재발송 시, tc-sms 발신 번호                                                                                                   |
@@ -3210,6 +3228,73 @@ Content-Type: application/json;charset=UTF-8
 | - marketingAgreement      | boolean | O        | M/N 타입 사용 신청 여부                                                                                                       |
 | - createDate              | String  | X        | 등록 일자                                                                                                                 |
 | - initialUserRestriction  | boolean | O        | 최초 사용자 제한 여부                                                                                                          |
+
+### 발신프로필 080수신거부번호 수정
+
+#### 요청
+
+[URL]
+
+```
+POST /friendtalk-upgrade/v1.0/appkeys/{appKey}/senders/{senderKey}/unsubscribe-content
+Content-Type: application/json;charset=UTF-8
+```
+
+[Path parameter]
+
+| 이름        | 타입     | 설명     |
+|-----------|--------|--------|
+| appkey    | String | 고유의 앱키 |
+| senderKey | String | 발신 키   |
+
+[Header]
+
+```
+{
+  "X-Secret-Key": String
+}
+```
+
+| 이름           | 타입     | 필수 | 설명               |
+|--------------|--------|----|------------------|
+| X-Secret-Key | String | O  | 콘솔에서 생성할 수 있습니다. |
+
+[Request body]
+
+```
+{
+    "unsubscribeNo": String,
+    "unsubscribeAuthNo": String
+}
+```
+
+| 이름                | 	타입     | 	필수 | 	설명                                                                                                                           |
+|-------------------|---------|-----|-------------------------------------------------------------------------------------------------------------------------------|
+| unsubscribeNo     | 	String | 	O  | 080 무료수신거부 전화번호 (둘다 미입력시 발신프로필에 등록된 무료수신거부 정보로 발송됨)<br>- 080-xxx-xxxx <br>- 080-xxxx-xxxx <br>- 080xxxxxxx <br>- 080xxxxxxxx  |
+| unsubscribeAuthNo | 	String | 	X  | 080 무료수신거부 인증번호 (둘다 미입력시 발신프로필에 등록된 무료수신거부 정보로 발송됨)<br>unsubscribe_phone_number 없이 unsubscribe_auth_number만 입력 불가<br>ex) 1234 |
+
+[
+
+#### 응답
+
+]()
+
+```
+{
+  "header": {
+    "resultCode": Integer,
+    "resultMessage": String,
+    "isSuccessful": boolean
+  }
+}
+```
+
+| 이름              | 타입      | Not Null | 설명     |
+|:----------------|:--------|:---------|:-------|
+| header          | Object  | O        | 헤더 영역  |
+| - resultCode    | Integer | O        | 결과 코드  |
+| - resultMessage | String  | O        | 결과 메시지 |
+| - isSuccessful  | boolean | O        | 성공 여부  |
 
 ## 대체 발송 관리
 
@@ -3323,12 +3408,18 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 #### 응답
 
 ```
-
 {
   "header": {
-      "resultCode": Integer,
-      "resultMessage": String,
-      "isSuccessful": boolean
+    "resultCode": Integer,
+    "resultMessage": String,
+    "isSuccessful": boolean
   }
 }
 ```
+
+| 이름              | 타입      | Not Null | 설명     |
+|:----------------|:--------|:---------|:-------|
+| header          | Object  | O        | 헤더 영역  |
+| - resultCode    | Integer | O        | 결과 코드  |
+| - resultMessage | String  | O        | 결과 메시지 |
+| - isSuccessful  | boolean | O        | 성공 여부  |
