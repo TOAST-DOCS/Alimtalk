@@ -1096,6 +1096,7 @@ Content-Type: application/json;charset=UTF-8
       "recipientNo": String,
       "targeting": String,
       "templateParameter": Object,
+      "imageParameters": List,
       "resendParameter": {
           "isResend": boolean,
           "resendType": String,
@@ -1124,6 +1125,7 @@ Content-Type: application/json;charset=UTF-8
 | - recipientNo       | String  | O  | 수신 번호                                                                                                                         |
 | - targeting         | String  | O  | 메시지 대상의 타입 (M - 마케팅 수신 동의 유저, N - 친구가 아닌 마케팅 수신 동의 유저에게만, I - 친구인 유저)                                                         |
 | - templateParameter | Object  | X  | 템플릿 파라미터 (템플릿에 치환할 변수 포함 시, 필수)                                                                                               |
+| - imageParameters   | List    | X  | 템플릿 이미지 필드 값을 변경할 수 있는 동적 파라미터 (템플릿에 존재하는 이미지 갯수와 동일한 크기의 JSON 리스트만 사용할 수 있음, 사용할 경우 변경하지 않을 이미지는 빈 json 객체를 입력해야 함)          |
 | - resendParameter   | Object  | X  | 대체 발송 정보                                                                                                                      |
 | -- isResend         | boolean | X  | 발송 실패 시, 문자 대체 발송 여부<br>콘솔에서 대체 발송 설정 시, 기본으로 대체 발송됩니다.                                                                       |
 | -- resendType       | String  | X  | 대체 발송 타입(SMS,LMS)<br>값이 없을 경우, 템플릿 본문 길이에 따라 타입이 구분됩니다.                                                                       |
