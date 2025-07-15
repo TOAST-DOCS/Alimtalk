@@ -60,7 +60,7 @@
 | from | String | - | Required | Start date of statistics search<br/>yyyy-MM-dd HH:mm:ss |
 | to | String | - | Required | End date of statistics search<br/>yyyy-MM-dd HH:mm:ss |
 | join | Boolean | - | Optional | When retrieving statistics data, set whether to provide the data in tree form |
-| extra1s | List<String> | - | Optional | Sub-product type<br/> ALIMTALK, ALIMTALK_AUTH, FRIENDTALK |
+| extra1s | List<String> | - | Optional | Sub-product type<br/> ALIMTALK, ALIMTALK_AUTH, FRIENDTALK, BRAND_MESSAGE |
 | extra2s | List<String> | - | Optional | senderKey |
 | eventTypes | List<String> | - | Optional | Event type<br/> REQUESTED, SENT, RECEIVED, SENT_FAILED, RESENT, RESENT_FAILED |
 | eventCategory | String | - | Optional | Event list(Currently only `MESSAGE` is supported)<br/> MESSAGE |
@@ -126,7 +126,7 @@
 | from | String | - | Required | Start date of statistics search<br/>yyyy-MM-dd HH:mm:ss |
 | to | String | - | Required | End date of statistics search<br/>yyyy-MM-dd HH:mm:ss |
 | join | Boolean | - | Optional | When retrieving statistics data, set whether to provide the data in tree form |
-| extra1s | List<String> | - | Optional | Sub-product type<br/> ALIMTALK, ALIMTALK_AUTH, FRIENDTALK |
+| extra1s | List<String> | - | Optional | Sub-product type<br/> ALIMTALK, ALIMTALK_AUTH, FRIENDTALK, BRAND_MESSAGE |
 | extra2s | List<String> | - | Optional | senderKey |
 | eventTypes | List<String> | - | Optional | Event type<br/> REQUESTED, SENT, RECEIVED, SENT_FAILED, RESENT, RESENT_FAILED |
 | eventCategory | String | - | Optional | Event list(Currently only `MESSAGE` is supported)<br/> MESSAGE |

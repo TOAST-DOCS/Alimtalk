@@ -60,7 +60,7 @@
 | from | String | - | 必須 | 統計検索開始日<br/>yyyy-MM-dd HH:mm:ss |
 | to | String | - | 必須 | 統計検索終了日<br/>yyyy-MM-dd HH:mm:ss |
 | join | Boolean | - | オプション | 統計データ照会時、ツリー形式で提供するか設定 |
-| extra1s | List<String> | - | オプション | 下位商品区分<br/> ALIMTALK、ALIMTALK_AUTH、FRIENDTALK |
+| extra1s | List<String> | - | オプション | 下位商品区分<br/> ALIMTALK, ALIMTALK_AUTH, FRIENDTALK, BRAND_MESSAGE |
 | extra2s | List<String> | - | オプション | senderKey |
 | eventTypes | List<String> | - | オプション | イベント種類<br/> REQUESTED、SENT、RECEIVED、SENT_FAILED、RESENT、RESENT_FAILED |
 | eventCategory | String | - | オプション | イベントリスト(現在`MESSAGE`のみサポート)<br/> MESSAGE |
@@ -126,7 +126,7 @@
 | from | String | - | 必須 | 統計検索開始日<br/>yyyy-MM-dd HH:mm:ss |
 | to | String | - | 必須 | 統計検索終了日<br/>yyyy-MM-dd HH:mm:ss |
 | join | Boolean | - | オプション | 統計データ照会時、ツリー形式で提供するか設定 |
-| extra1s | List<String> | - | オプション | 下位商品区分<br/> ALIMTALK、ALIMTALK_AUTH、FRIENDTALK |
+| extra1s | List<String> | - | オプション | 下位商品区分<br/> ALIMTALK, ALIMTALK_AUTH, FRIENDTALK, BRAND_MESSAGE |
 | extra2s | List<String> | - | オプション | senderKey |
 | eventTypes | List<String> | - | オプション | イベント種類<br/> REQUESTED、SENT、RECEIVED、SENT_FAILED、RESENT、RESENT_FAILED |
 | eventCategory | String | - | オプション | イベントリスト(現在`MESSAGE`のみサポート)<br/> MESSAGE |
