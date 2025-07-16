@@ -46,7 +46,7 @@ Content-Type: multipart/form-data
 |------|------|----|---------------|
 | file | File | O  | 마케팅 수신동의 증적자료 |
 
-## 타겟팅(M/N) 타입 사용 신청
+## 비친구 메시지 발송 (타겟팅 M, N) 사용 신청
 
 #### 요청
 
@@ -3238,7 +3238,7 @@ Content-Type: application/json;charset=UTF-8
 [URL]
 
 ```
-POST /friendtalk-upgrade/v1.0/appkeys/{appKey}/senders/{senderKey}/unsubscribe-content
+PUT /friendtalk-upgrade/v1.0/appkeys/{appKey}/senders/{senderKey}/unsubscribe-content
 Content-Type: application/json;charset=UTF-8
 ```
 
