@@ -10,7 +10,16 @@
 
 ## V1.0 API 소개
 
-## 마케팅 수신동의 증적 자료 업로드
+## 비친구 메시지 발송(타겟팅 M, N) 관리
+비친구 메시지 발송(타겟팅 M, N)은 아래 조건을 모두 만족할 경우 발송할 수 있습니다.
+- 비즈니스 인증 채널
+- 사업자 번호 등록
+- 채널 고객센터 전화번호 등록
+- 채널 친구수 5만 이상
+- 3개월 내 알림톡 발송 성공이력 보유
+
+
+### 마케팅 수신동의 증적 자료 업로드
 
 #### 요청
 
@@ -46,7 +55,26 @@ Content-Type: multipart/form-data
 |------|------|----|---------------|
 | file | File | O  | 마케팅 수신동의 증적자료 |
 
-## 비친구 메시지 발송 (타겟팅 M, N) 사용 신청
+#### 응답
+
+```
+{
+  "header": {
+    "resultCode": Integer,
+    "resultMessage": String,
+    "isSuccessful": boolean
+  }
+}
+```
+
+| 이름              | 타입      | Not Null | 설명     |
+|:----------------|:--------|:---------|:-------|
+| header          | Object  | O        | 헤더 영역  |
+| - resultCode    | Integer | O        | 결과 코드  |
+| - resultMessage | String  | O        | 결과 메시지 |
+| - isSuccessful  | boolean | O        | 성공 여부  |
+
+### 비친구 메시지 발송(타겟팅 M, N) 사용 신청
 
 #### 요청
 
@@ -3130,8 +3158,9 @@ Content-Type: application/json;charset=UTF-8
 | - resultMessage | String  | O        | 결과 메시지 |
 | - isSuccessful  | boolean | O        | 성공 여부  |
 
-## 발신 프로필 조회
+## 발신 프로필 관리
 
+### 발신프로필 조회
 #### 요청
 
 [URL]
@@ -3275,11 +3304,7 @@ Content-Type: application/json;charset=UTF-8
 | unsubscribeNo     | 	String | 	O  | 080 무료수신거부 전화번호 (둘다 미입력시 발신프로필에 등록된 무료수신거부 정보로 발송됨)<br>- 080-xxx-xxxx <br>- 080-xxxx-xxxx <br>- 080xxxxxxx <br>- 080xxxxxxxx  |
 | unsubscribeAuthNo | 	String | 	X  | 080 무료수신거부 인증번호 (둘다 미입력시 발신프로필에 등록된 무료수신거부 정보로 발송됨)<br>unsubscribe_phone_number 없이 unsubscribe_auth_number만 입력 불가<br>ex) 1234 |
 
-[
-
 #### 응답
-
-]()
 
 ```
 {

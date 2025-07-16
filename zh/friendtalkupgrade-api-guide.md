@@ -10,7 +10,16 @@
 
 ## V1.0 API 소개
 
-## 마케팅 수신동의 증적 자료 업로드
+## 비친구 메시지 발송(타겟팅 M, N) 관리
+비친구 메시지 발송(타겟팅 M, N)은 아래 조건을 모두 만족할 경우 발송할 수 있습니다.
+- 비즈니스 인증 채널
+- 사업자 번호 등록
+- 채널 고객센터 전화번호 등록
+- 채널 친구수 5만 이상
+- 3개월 내 알림톡 발송 성공이력 보유
+
+
+### 마케팅 수신동의 증적 자료 업로드
 
 #### 요청
 
@@ -46,7 +55,26 @@ Content-Type: multipart/form-data
 |------|------|----|---------------|
 | file | File | O  | 마케팅 수신동의 증적자료 |
 
-## 비친구 메시지 발송 (타겟팅 M, N) 사용 신청
+#### 응답
+
+```
+{
+  "header": {
+    "resultCode": Integer,
+    "resultMessage": String,
+    "isSuccessful": boolean
+  }
+}
+```
+
+| 이름              | 타입      | Not Null | 설명     |
+|:----------------|:--------|:---------|:-------|
+| header          | Object  | O        | 헤더 영역  |
+| - resultCode    | Integer | O        | 결과 코드  |
+| - resultMessage | String  | O        | 결과 메시지 |
+| - isSuccessful  | boolean | O        | 성공 여부  |
+
+### 비친구 메시지 발송(타겟팅 M, N) 사용 신청
 
 #### 요청
 
@@ -1096,6 +1124,7 @@ Content-Type: application/json;charset=UTF-8
       "recipientNo": String,
       "targeting": String,
       "templateParameter": Object,
+      "imageParameters": List,
       "resendParameter": {
           "isResend": boolean,
           "resendType": String,
@@ -1124,6 +1153,7 @@ Content-Type: application/json;charset=UTF-8
 | - recipientNo       | String  | O  | 수신 번호                                                                                                                         |
 | - targeting         | String  | O  | 메시지 대상의 타입 (M - 마케팅 수신 동의 유저, N - 친구가 아닌 마케팅 수신 동의 유저에게만, I - 친구인 유저)                                                         |
 | - templateParameter | Object  | X  | 템플릿 파라미터 (템플릿에 치환할 변수 포함 시, 필수)                                                                                               |
+| - imageParameters   | List    | X  | 템플릿 이미지 필드 값을 변경할 수 있는 동적 파라미터 (템플릿에 존재하는 이미지 갯수와 동일한 크기의 JSON 리스트만 사용할 수 있음, 사용할 경우 변경하지 않을 이미지는 빈 json 객체를 입력해야 함)          |
 | - resendParameter   | Object  | X  | 대체 발송 정보                                                                                                                      |
 | -- isResend         | boolean | X  | 발송 실패 시, 문자 대체 발송 여부<br>콘솔에서 대체 발송 설정 시, 기본으로 대체 발송됩니다.                                                                       |
 | -- resendType       | String  | X  | 대체 발송 타입(SMS,LMS)<br>값이 없을 경우, 템플릿 본문 길이에 따라 타입이 구분됩니다.                                                                       |
@@ -3128,8 +3158,9 @@ Content-Type: application/json;charset=UTF-8
 | - resultMessage | String  | O        | 결과 메시지 |
 | - isSuccessful  | boolean | O        | 성공 여부  |
 
-## 발신 프로필 조회
+## 발신 프로필 관리
 
+### 발신프로필 조회
 #### 요청
 
 [URL]
@@ -3273,11 +3304,7 @@ Content-Type: application/json;charset=UTF-8
 | unsubscribeNo     | 	String | 	O  | 080 무료수신거부 전화번호 (둘다 미입력시 발신프로필에 등록된 무료수신거부 정보로 발송됨)<br>- 080-xxx-xxxx <br>- 080-xxxx-xxxx <br>- 080xxxxxxx <br>- 080xxxxxxxx  |
 | unsubscribeAuthNo | 	String | 	X  | 080 무료수신거부 인증번호 (둘다 미입력시 발신프로필에 등록된 무료수신거부 정보로 발송됨)<br>unsubscribe_phone_number 없이 unsubscribe_auth_number만 입력 불가<br>ex) 1234 |
 
-[
-
 #### 응답
-
-]()
 
 ```
 {
