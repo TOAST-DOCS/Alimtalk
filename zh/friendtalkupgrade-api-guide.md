@@ -11,13 +11,14 @@
 ## V1.0 API 소개
 
 ## 비친구 메시지 발송(타겟팅 M, N) 관리
+
 비친구 메시지 발송(타겟팅 M, N)은 아래 조건을 모두 만족할 경우 발송할 수 있습니다.
+
 - 비즈니스 인증 채널
 - 사업자 번호 등록
 - 채널 고객센터 전화번호 등록
 - 채널 친구수 5만 이상
 - 3개월 내 알림톡 발송 성공이력 보유
-
 
 ### 마케팅 수신동의 증적 자료 업로드
 
@@ -3161,6 +3162,7 @@ Content-Type: application/json;charset=UTF-8
 ## 발신 프로필 관리
 
 ### 발신프로필 조회
+
 #### 요청
 
 [URL]
@@ -3212,13 +3214,11 @@ Content-Type: application/json;charset=UTF-8
     "kakaoProfileStatusName" : String,
     "profileSpamLevel" : String,
     "profileMessageSpamLevel" : String,
-    "friendtalkUpgrade" : {
+    "brandMessage" : {
       "resendAppKey": String,
       "isResend": boolean,
       "resendSendNo": String,
-      "resendUnsubscribeNo": String,
-      "dailyMaxCount" : Integer,
-      "sentCount" : Integer
+      "resendUnsubscribeNo": String
     },
     "dormant" : boolean,
     "marketingAgreement" : boolean,
@@ -3250,7 +3250,7 @@ Content-Type: application/json;charset=UTF-8
 | - profileSpamLevel        | String  | X        | 카카오톡 채널 스팸 상태명(영구제한, 경고제한, 정상)<br>발신 프로필 상태가 정상적이지 않을 경우 null 값을 가질 수 있습니다.                                           |
 | - profileMessageSpamLevel | String  | X        | 카카오톡 메시지 스팸 상태명(활동제한, 경고제한, 정상)<br>발신 프로필 상태가 정상적이지 않을 경우 null 값을 가질 수 있습니다.                                          |
 | - block                   | boolean | O        | 발신프로필 차단 여부                                                                                                           |
-| - friendtalkUpgrade       | Object  | X        | 브랜드 메시지 설정 정보                                                                                                         |
+| - brandMessage            | Object  | X        | 브랜드 메시지 설정 정보                                                                                                         |
 | -- resendAppKey           | String  | X        | 대체 발송으로 설정할 SMS 서비스 앱키                                                                                                |
 | -- isResend               | boolean | O        | 대체 발송 설정(재발송) 여부                                                                                                      |
 | -- resendSendNo           | String  | X        | 재발송 시, tc-sms 발신 번호                                                                                                   |
