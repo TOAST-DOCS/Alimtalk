@@ -3267,7 +3267,7 @@ Content-Type: application/json;charset=UTF-8
 [URL]
 
 ```
-PUT /friendtalk-upgrade/v1.0/appkeys/{appKey}/senders/{senderKey}/unsubscribe-content
+PUT /brand-message/v1.0/appkeys/{appKey}/senders/{senderKey}/unsubscribe-content
 Content-Type: application/json;charset=UTF-8
 ```
 
