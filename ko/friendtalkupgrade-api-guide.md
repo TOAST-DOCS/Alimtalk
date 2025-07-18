@@ -82,7 +82,7 @@ Content-Type: multipart/form-data
 [URL]
 
 ```
-POST  /brand-message/v1.0/appkeys/{appKey}/senders/{senderKey}/marketing-agreements
+POST  /brand-message/v1.0/appkeys/{appKey}/senders/{senderKey}/marketing-agreement
 Content-Type: application/json;charset=UTF-8
 ```
 
