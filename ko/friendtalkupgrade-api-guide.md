@@ -1,4 +1,4 @@
-## Notification > KakaoTalk Bizmessage > 브랜드 메시지 > API v1.0 Guide
+# Notification > KakaoTalk Bizmessage > 브랜드 메시지 > API v1.0 Guide
 
 ## 브랜드 메시지
 
