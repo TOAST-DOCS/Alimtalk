@@ -9,7 +9,7 @@
 
 ### 템플릿 사용 시
 
-![friendtalkupgrade_04_20250616.png](https://static.toastoven.net/prod_alimtalk/friendtalkupgrade/friendtalkupgrade_4_20250616.png)
+![friendtalkupgrade_04_20250616.png](https://static.toastoven.net/prod_alimtalk/friendtalkupgrade/friendtalkupgrade_04_20250729.png)
 
 1. 발신 프로필을 선택합니다.
    * 발신 프로필은 **Notification > KakaoTalk Bizmessage > 발신 프로필 관리** 탭에서 확인할 수 있습니다.
@@ -38,7 +38,7 @@
 
 ### 템플릿 미사용 시
 
-![friendtalkupgrade_05_20250616.png](https://static.toastoven.net/prod_alimtalk/friendtalkupgrade/friendtalkupgrade_5_20250616.png)
+![friendtalkupgrade_05_20250616.png](https://static.toastoven.net/prod_alimtalk/friendtalkupgrade/friendtalkupgrade_05_20250729.png)
 
 1. 발신 프로필을 선택합니다.
    * 발신 프로필은 **Notification > KakaoTalk Bizmessage > 발신 프로필 관리** 탭에서 확인할 수 있습니다.
@@ -106,7 +106,7 @@ Excel/CSV 포맷의 템플릿 파일을 통해 여러 수신 번호로 브랜드
 브랜드 메시지 발송을 실패한 경우 해당 내용을 문자 메시지로 대체 발송할 수 있는 기능입니다.
 <b>공통된 내용으로 발송</b> 또는 <b>사용자별 다른 메시지 설정</b>을 선택해 발송할 수 있습니다.
 
-![friendtalkupgrade_06_20250616.png](https://static.toastoven.net/prod_alimtalk/friendtalkupgrade/friendtalkupgrade_6_20250616.png)
+![friendtalkupgrade_06_20250616.png](https://static.toastoven.net/prod_alimtalk/friendtalkupgrade/friendtalkupgrade_06_20250729.png)
 
 * <b>080 수신거부 관리</b> 탭에서 대체 발송 여부를 '사용'으로 설정하고 SMS 서비스를 연동해야 대체 발송이 가능합니다
 * 대체 메시지를 발송하려면 발신 번호가 필요합니다. 대체 발송 여부나 발신 번호를 설정하지 않은 경우 <b>대체 발송 관리</b> 탭에서 지정한 기본 설정이 적용됩니다.
@@ -115,6 +115,9 @@ Excel/CSV 포맷의 템플릿 파일을 통해 여러 수신 번호로 브랜드
 * 메시지 길이에 따라 SMS/LMS로 대체 발송됩니다.(각 타입별 문자 발송 시 별도의 이용료 부과)
 
 #### 공통된 내용으로 발송
+
+![friendtalkupgrade_resend01_20250729.png](https://static.toastoven.net/prod_alimtalk/friendtalkupgrade/friendtalkupgrade_resend01_20250729.png)
+
 * <b>발신 프로필</b>을 선택한 뒤 <b>공통된 내용으로 발송</b>을 클릭해 대체 발송 메시지를 설정합니다.
 * 대체 발송 메시지를 입력하지 않으면 [메시지 본문]으로 발송됩니다.
 
@@ -149,17 +152,28 @@ Excel/CSV 포맷의 템플릿 파일을 통해 여러 수신 번호로 브랜드
 
 ### 발송 결과 조회
 
-![friendtalkupgrade_07_20250616.png](https://static.toastoven.net/prod_alimtalk/friendtalkupgrade/friendtalkupgrade_7_20250616.png)
+![friendtalkupgrade_07_20250616.png](https://static.toastoven.net/prod_alimtalk/friendtalkupgrade/friendtalkupgrade_07_20250729.png)
 
 * 각 발송 메시지의 자세한 내용은 검색 결과 항목을 클릭해 **상세 보기** 화면에서 확인할 수 있습니다.
 * **요청 일시**는 최대 한 달 이내로 검색할 수 있습니다.
 * **요청 상태** 열에서 발송 요청에 대한 상태를 확인할 수 있습니다.
 * **발송 결과** 열에서 발송 처리에 대한 성공 여부를 확인할 수 있습니다.
 
+## 대량 발송 조회
+
+### 발송 결과 조회
+
+![friendtalkupgrade_masssearch01_20250729.png](https://static.toastoven.net/prod_alimtalk/friendtalkupgrade/friendtalkupgrade_masssearch01_20250729.png)
+
+* 대량 발송 요청 건별로 선택해 수신자 발송 결과를 확인할 수 있습니다.
+* 각 발송 메시지의 자세한 내용은 검색 결과 항목을 클릭해 **상세 보기** 화면에서 확인할 수 있습니다.
+* **요청 일시**는 최대 한 달 이내로 검색할 수 있습니다.
+* **요청 상태** 열에서 발송 요청에 대한 상태를 확인할 수 있습니다.
+* **발송 결과** 열에서 발송 처리에 대한 성공 여부를 확인할 수 있습니다.
 
 ## 이미지 관리
 
-![friendtalkupgrade_08_20250616.png](https://static.toastoven.net/prod_alimtalk/friendtalkupgrade/friendtalkupgrade_8_20250616.png)
+![friendtalkupgradfriendtalkupgrade_07_20250729.png](https://static.toastoven.net/prod_alimtalk/friendtalkupgrade/friendtalkupgrade_8_20250616.png)
 
 브랜드 메시지에 사용할 이미지를 등록 또는 삭제하고 등록된 이미지의 정보를 확인할 수 있습니다.
 
@@ -178,7 +192,7 @@ Excel/CSV 포맷의 템플릿 파일을 통해 여러 수신 번호로 브랜드
 
 ## 템플릿 관리
 
-![friendtalkupgrade_09_20250616.png](https://static.toastoven.net/prod_alimtalk/friendtalkupgrade/friendtalkupgrade_9_20250616.png)
+![friendtalkupgrade_09_20250616.png](https://static.toastoven.net/prod_alimtalk/friendtalkupgrade/friendtalkupgrade_09_20250729.png)
 
 * 기존 알림톡과 유사한 방식으로 템플릿을 관리하고 발송에 사용할 수 있습니다.
 * 브랜드 메시지는 검수 과정이 없으며 생성, 수정, 삭제가 자유롭습니다.
@@ -199,7 +213,7 @@ Excel/CSV 포맷의 템플릿 파일을 통해 여러 수신 번호로 브랜드
 * 관리하고자 하는 080 수신거부번호를 SMS 서비스에 등록합니다.
    * 만약 발신프로필에 등록된 080 수신거부번호가 SMS 서비스에서 등록되어 있지 않은 상태라면 발송 요청은 모두 실패하게 됩니다.
 * 자세한 사항은 [SMS 가이드](https://docs.nhncloud.com/ko/Notification/SMS/ko/console-guide/#080)를 참조해주세요
-  ![friendtalkupgrade_10_20250616.png](https://static.toastoven.net/prod_alimtalk/friendtalkupgrade/friendtalkupgrade_10_20250616.png)
+  ![friendtalkupgrade_10_20250616.png](https://static.toastoven.net/prod_alimtalk/friendtalkupgrade/friendtalkupgrade_10_20250729.png)
 * 080 수신거부 번호를 등록한 SMS 서비스의 앱키를 080 수신거부 탭에 입력하고 저장합니다.
 * 관리 대상으로 지정한 SMS 서비스에서 발신프로필에 등록되어 있는 080 수신거부번호로 수신자 관리를 할 수 있는지를 하단 발신프로필 목록에 우측 SMS 프로젝트 080 번호 관리 여부 필드를 통해서 확인할 수 있습니다.
 * SMS 서비스 앱키를 비우고 저장한 경우
@@ -233,4 +247,4 @@ Excel/CSV 포맷의 템플릿 파일을 통해 여러 수신 번호로 브랜드
 * 광고성 정보 수신동의 증적자료 파일은 톡채널 단위로 저장되므로 변경시 동일 톡채널의 타 딜러사 발신프로필에 일괄 적용됩니다.
 * 타딜러사에서 업로드한 파일이 이미 존재하는 경우 파일 업로드 과정을 생략하고 비친구 메시지 발송(타겟팅 M, N) 사용 신청이 가능합니다.
       
-![friendtalkupgrade_11_20250715.png](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_alimtalk/friendtalkupgrade/friendtalkupgrade_11_20250715.png)
+![friendtalkupgrade_11_20250715.png](https://static.toastoven.net/prod_alimtalk/friendtalkupgrade/friendtalkupgrade_11_20250729.png)
