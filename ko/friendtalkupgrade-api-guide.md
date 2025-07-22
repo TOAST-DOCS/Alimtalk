@@ -3418,15 +3418,17 @@ Content-Type: application/json;charset=UTF-8
 {  
    "senderKey": String,
    "isResend": Boolean,
-   "resendSendNo": String
+   "resendSendNo": String,
+   "resendUnsubscribeNo": String
 }
 ```
 
-| 이름           | 	타입      | 	필수 | 	설명                                                                                       |
-|--------------|----------|-----|-------------------------------------------------------------------------------------------|
-| senderKey    | 	String  | 	O  | 발신 키                                                                                      |
-| isResend     | 	Boolean | 	O  | 발송 실패 시, 문자 대체발송 여부<br>Console에서 대체 발송 설정 시, default로 대체 발송 됩니다.                          |
-| resendSendNo | 	String  | 	O  | 대체 발송 발신번호<br><span style="color:red">(SMS 상품에 등록된 발신번호가 아닐 경우, 대체발송이 실패할 수 있습니다.)</span> |
+| 이름                  | 	타입      | 	필수 | 	설명                                                                                                        |
+|---------------------|----------|-----|------------------------------------------------------------------------------------------------------------|
+| senderKey           | 	String  | 	O  | 발신 키                                                                                                       |
+| isResend            | 	Boolean | 	O  | 발송 실패 시, 문자 대체발송 여부<br>Console에서 대체 발송 설정 시, default로 대체 발송 됩니다.                                           |
+| resendSendNo        | 	String  | 	O  | 대체 발송 발신번호<br><span style="color:red">(SMS 상품에 등록된 발신번호가 아닐 경우, 대체발송이 실패할 수 있습니다.)</span>                  |
+| resendUnsubscribeNo | 	String  | 	O  | 대체 발송 080 수신 거부 번호<br><span style="color:red">(SMS 서비스에 등록된 080 수신 거부 번호가 아닐 경우 대체 발송에 실패할 수 있습니다.)</span> |
 
 [예시]
 
