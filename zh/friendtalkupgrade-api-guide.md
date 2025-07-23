@@ -1,4 +1,4 @@
-# Notification > KakaoTalk Bizmessage > 브랜드 메시지 > API v1.0 Guide
+## Notification > KakaoTalk Bizmessage > 브랜드 메시지 > API v1.0 Guide
 
 ## 브랜드 메시지
 
@@ -1143,30 +1143,30 @@ Content-Type: application/json;charset=UTF-8
 }
 ```
 
-| 이름                  | 타입      | 필수 | 설명                                                                                                                            |
-|---------------------|---------|----|-------------------------------------------------------------------------------------------------------------------------------|
-| senderKey           | String  | O  | 발신 키(40자), 그룹 발신키 사용 불가                                                                                                       |
-| templateCode        | String  | O  | 사용하려는 템플릿 코드                                                                                                                  |
-| pushAlarm           | boolean | X  | 메시지 푸시 알람 발송 여부 (기본값: true)                                                                                                   |
-| unsubscribeNo       | String  | X  | 080 무료수신거부 전화번호 (둘다 미입력시 발신 프로필에 등록된 무료수신거부 정보로 발송됨)<br>- 080-xxx-xxxx <br>- 080-xxxx-xxxx <br>- 080xxxxxxx <br>- 080xxxxxxxx  |
-| unsubscribeAuthNo   | String  | X  | 080 무료수신거부 인증번호 (둘다 미입력시 발신 프로필에 등록된 무료수신거부 정보로 발송됨)<br>unsubscribe_phone_number 없이 unsubscribe_auth_number만 입력 불가<br>ex) 1234 |
-| recipientList       | List    | O  | 수신자 목록(최대 1,000명)                                                                                                             |
-| - recipientNo       | String  | O  | 수신 번호                                                                                                                         |
-| - targeting         | String  | O  | 메시지 대상의 타입 (M - 마케팅 수신 동의 유저, N - 친구가 아닌 마케팅 수신 동의 유저에게만, I - 친구인 유저)                                                         |
-| - templateParameter | Object  | X  | 템플릿 파라미터 (템플릿에 치환할 변수 포함 시, 필수)                                                                                               |
+| 이름                  | 타입      | 필수 | 설명                                                                                                                                   |
+|---------------------|---------|----|--------------------------------------------------------------------------------------------------------------------------------------|
+| senderKey           | String  | O  | 발신 키(40자), 그룹 발신키 사용 불가                                                                                                              |
+| templateCode        | String  | O  | 사용하려는 템플릿 코드                                                                                                                         |
+| pushAlarm           | boolean | X  | 메시지 푸시 알람 발송 여부 (기본값: true)                                                                                                          |
+| unsubscribeNo       | String  | X  | 080 무료수신거부 전화번호 (둘다 미입력시 발신 프로필에 등록된 무료수신거부 정보로 발송됨)<br>- 080-xxx-xxxx <br>- 080-xxxx-xxxx <br>- 080xxxxxxx <br>- 080xxxxxxxx         |
+| unsubscribeAuthNo   | String  | X  | 080 무료수신거부 인증번호 (둘다 미입력시 발신 프로필에 등록된 무료수신거부 정보로 발송됨)<br>unsubscribe_phone_number 없이 unsubscribe_auth_number만 입력 불가<br>ex) 1234        |
+| recipientList       | List    | O  | 수신자 목록(최대 1,000명)                                                                                                                    |
+| - recipientNo       | String  | O  | 수신 번호                                                                                                                                |
+| - targeting         | String  | O  | 메시지 대상의 타입 (M - 마케팅 수신 동의 유저, N - 친구가 아닌 마케팅 수신 동의 유저에게만, I - 친구인 유저)                                                                |
+| - templateParameter | Object  | X  | 템플릿 파라미터 (템플릿에 치환할 변수 포함 시, 필수)                                                                                                      |
 | - imageParameters   | List    | X  | 템플릿 이미지 필드 값을 변경할 수 있는 동적 파라미터, 캐러셀 타입은 아직 미지원 (템플릿에 존재하는 이미지 갯수와 동일한 크기의 JSON 리스트만 사용할 수 있음, 사용할 경우 변경하지 않을 이미지는 빈 json 객체를 입력해야 함) |
 | -- imageUrl         | String  | X  | 이미지 URL (image 객체 존재 시 Not Null)                                                                                                     |
 | -- imageLink        | String  | X  | 이미지 링크                                                                                                                               |
-| - resendParameter   | Object  | X  | 대체 발송 정보                                                                                                                      |
-| -- isResend         | boolean | X  | 발송 실패 시, 문자 대체 발송 여부<br>콘솔에서 대체 발송 설정 시, 기본으로 대체 발송됩니다.                                                                       |
-| -- resendType       | String  | X  | 대체 발송 타입(SMS,LMS)<br>값이 없을 경우, 템플릿 본문 길이에 따라 타입이 구분됩니다.                                                                       |
-| -- resendTitle      | String  | X  | LMS 대체 발송 제목<br>(값이 없을 경우, 플러스친구 ID로 대체 발송됩니다.)                                                                               |
-| -- resendContent    | String  | X  | 대체 발송 내용<br>(값이 없을 경우, [메시지 본문]으로 대체 발송됩니다.)                                                                                  |
-| -- resendSendNo     | String  | X  | 대체 발송 발신 번호<br><span style="color:red">(SMS 서비스에 등록된 발신 번호가 아닐 경우, 대체 발송에 실패할 수 있습니다.)</span>                                 |
-| unsubscribeNo       | String  | X  | 080 무료수신거부 전화번호 (둘다 미입력시 발신 프로필에 등록된 무료수신거부 정보로 발송됨)<br>- 080-xxx-xxxx <br>- 080-xxxx-xxxx <br>- 080xxxxxxx <br>- 080xxxxxxxx  |
-| unsubscribeAuthNo   | String  | X  | 080 무료수신거부 인증번호 (둘다 미입력시 발신 프로필에 등록된 무료수신거부 정보로 발송됨)<br>unsubscribe_phone_number 없이 unsubscribe_auth_number만 입력 불가<br>ex) 1234 |
-| createUser          | String  | X  | 등록자(콘솔에서 발송 시 사용자 UUID로 저장)                                                                                                   |
-| statsId             | String  | X  | 통계 ID(발신 검색 조건에는 포함되지 않습니다, 최대 8자)                                                                                            |
+| - resendParameter   | Object  | X  | 대체 발송 정보                                                                                                                             |
+| -- isResend         | boolean | X  | 발송 실패 시, 문자 대체 발송 여부<br>콘솔에서 대체 발송 설정 시, 기본으로 대체 발송됩니다.                                                                              |
+| -- resendType       | String  | X  | 대체 발송 타입(SMS,LMS)<br>값이 없을 경우, 템플릿 본문 길이에 따라 타입이 구분됩니다.                                                                              |
+| -- resendTitle      | String  | X  | LMS 대체 발송 제목<br>(값이 없을 경우, 플러스친구 ID로 대체 발송됩니다.)                                                                                      |
+| -- resendContent    | String  | X  | 대체 발송 내용<br>(값이 없을 경우, [메시지 본문]으로 대체 발송됩니다.)                                                                                         |
+| -- resendSendNo     | String  | X  | 대체 발송 발신 번호<br><span style="color:red">(SMS 서비스에 등록된 발신 번호가 아닐 경우, 대체 발송에 실패할 수 있습니다.)</span>                                        |
+| unsubscribeNo       | String  | X  | 080 무료수신거부 전화번호 (둘다 미입력시 발신 프로필에 등록된 무료수신거부 정보로 발송됨)<br>- 080-xxx-xxxx <br>- 080-xxxx-xxxx <br>- 080xxxxxxx <br>- 080xxxxxxxx         |
+| unsubscribeAuthNo   | String  | X  | 080 무료수신거부 인증번호 (둘다 미입력시 발신 프로필에 등록된 무료수신거부 정보로 발송됨)<br>unsubscribe_phone_number 없이 unsubscribe_auth_number만 입력 불가<br>ex) 1234        |
+| createUser          | String  | X  | 등록자(콘솔에서 발송 시 사용자 UUID로 저장)                                                                                                          |
+| statsId             | String  | X  | 통계 ID(발신 검색 조건에는 포함되지 않습니다, 최대 8자)                                                                                                   |
 
 #### 응답
 
@@ -3427,8 +3427,8 @@ Content-Type: application/json;charset=UTF-8
 |---------------------|----------|-----|------------------------------------------------------------------------------------------------------------|
 | senderKey           | 	String  | 	O  | 발신 키                                                                                                       |
 | isResend            | 	Boolean | 	O  | 발송 실패 시, 문자 대체발송 여부<br>Console에서 대체 발송 설정 시, default로 대체 발송 됩니다.                                           |
-| resendSendNo        | 	String  | 	O  | 대체 발송 발신번호<br><span style="color:red">(SMS 상품에 등록된 발신번호가 아닐 경우, 대체 발송이 실패할 수 있습니다.)</span>                  |
-| resendUnsubscribeNo | 	String  | 	O  | 대체 발송 080 수신 거부 번호<br><span style="color:red">(SMS 서비스에 등록된 080 수신 거부 번호가 아닐 경우 대체 발송에 실패할 수 있습니다.)</span> |
+| resendSendNo        | 	String  | 	X  | 대체 발송 발신번호<br><span style="color:red">(SMS 상품에 등록된 발신번호가 아닐 경우, 대체 발송이 실패할 수 있습니다.)</span>                  |
+| resendUnsubscribeNo | 	String  | 	X  | 대체 발송 080 수신 거부 번호<br><span style="color:red">(SMS 서비스에 등록된 080 수신 거부 번호가 아닐 경우 대체 발송에 실패할 수 있습니다.)</span> |
 
 [예시]
 

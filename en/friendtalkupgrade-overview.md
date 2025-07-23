@@ -1,4 +1,4 @@
-# Notification > KakaoTalk Bizmessage > 브랜드 메시지 > 개요
+## Notification > KakaoTalk Bizmessage > 브랜드 메시지 > 개요
 
 브랜드 메시지는 광고주(고객사)의 마케팅 수신 동의 회원(이하 마수동)을 대상으로 카카오톡 채널 친구 여부와 관계없이 광고성 메시지를 발송할 수 있는 메시지 상품입니다.
 

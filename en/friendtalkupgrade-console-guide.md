@@ -1,4 +1,4 @@
-# Notification > KakaoTalk Bizmessage > 브랜드 메시지 > 콘솔 사용 가이드
+## Notification > KakaoTalk Bizmessage > 브랜드 메시지 > 콘솔 사용 가이드
 
 ## 브랜드 메시지 발송
 
