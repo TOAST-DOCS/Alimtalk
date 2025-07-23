@@ -1148,8 +1148,8 @@ Content-Type: application/json;charset=UTF-8
 | senderKey           | String  | O  | 발신 키(40자), 그룹 발신키 사용 불가                                                                                                              |
 | templateCode        | String  | O  | 사용하려는 템플릿 코드                                                                                                                         |
 | pushAlarm           | boolean | X  | 메시지 푸시 알람 발송 여부 (기본값: true)                                                                                                          |
-| unsubscribeNo       | String  | X  | 080 무료수신거부 전화번호 (둘다 미입력시 발신프로필에 등록된 무료수신거부 정보로 발송됨)<br>- 080-xxx-xxxx <br>- 080-xxxx-xxxx <br>- 080xxxxxxx <br>- 080xxxxxxxx         |
-| unsubscribeAuthNo   | String  | X  | 080 무료수신거부 인증번호 (둘다 미입력시 발신프로필에 등록된 무료수신거부 정보로 발송됨)<br>unsubscribe_phone_number 없이 unsubscribe_auth_number만 입력 불가<br>ex) 1234        |
+| unsubscribeNo       | String  | X  | 080 무료수신거부 전화번호 (둘다 미입력시 발신 프로필에 등록된 무료수신거부 정보로 발송됨)<br>- 080-xxx-xxxx <br>- 080-xxxx-xxxx <br>- 080xxxxxxx <br>- 080xxxxxxxx         |
+| unsubscribeAuthNo   | String  | X  | 080 무료수신거부 인증번호 (둘다 미입력시 발신 프로필에 등록된 무료수신거부 정보로 발송됨)<br>unsubscribe_phone_number 없이 unsubscribe_auth_number만 입력 불가<br>ex) 1234        |
 | recipientList       | List    | O  | 수신자 목록(최대 1,000명)                                                                                                                    |
 | - recipientNo       | String  | O  | 수신 번호                                                                                                                                |
 | - targeting         | String  | O  | 메시지 대상의 타입 (M - 마케팅 수신 동의 유저, N - 친구가 아닌 마케팅 수신 동의 유저에게만, I - 친구인 유저)                                                                |
@@ -1163,8 +1163,8 @@ Content-Type: application/json;charset=UTF-8
 | -- resendTitle      | String  | X  | LMS 대체 발송 제목<br>(값이 없을 경우, 플러스친구 ID로 대체 발송됩니다.)                                                                                      |
 | -- resendContent    | String  | X  | 대체 발송 내용<br>(값이 없을 경우, [메시지 본문]으로 대체 발송됩니다.)                                                                                         |
 | -- resendSendNo     | String  | X  | 대체 발송 발신 번호<br><span style="color:red">(SMS 서비스에 등록된 발신 번호가 아닐 경우, 대체 발송에 실패할 수 있습니다.)</span>                                        |
-| unsubscribeNo       | String  | X  | 080 무료수신거부 전화번호 (둘다 미입력시 발신프로필에 등록된 무료수신거부 정보로 발송됨)<br>- 080-xxx-xxxx <br>- 080-xxxx-xxxx <br>- 080xxxxxxx <br>- 080xxxxxxxx         |
-| unsubscribeAuthNo   | String  | X  | 080 무료수신거부 인증번호 (둘다 미입력시 발신프로필에 등록된 무료수신거부 정보로 발송됨)<br>unsubscribe_phone_number 없이 unsubscribe_auth_number만 입력 불가<br>ex) 1234        |
+| unsubscribeNo       | String  | X  | 080 무료수신거부 전화번호 (둘다 미입력시 발신 프로필에 등록된 무료수신거부 정보로 발송됨)<br>- 080-xxx-xxxx <br>- 080-xxxx-xxxx <br>- 080xxxxxxx <br>- 080xxxxxxxx         |
+| unsubscribeAuthNo   | String  | X  | 080 무료수신거부 인증번호 (둘다 미입력시 발신 프로필에 등록된 무료수신거부 정보로 발송됨)<br>unsubscribe_phone_number 없이 unsubscribe_auth_number만 입력 불가<br>ex) 1234        |
 | createUser          | String  | X  | 등록자(콘솔에서 발송 시 사용자 UUID로 저장)                                                                                                          |
 | statsId             | String  | X  | 통계 ID(발신 검색 조건에는 포함되지 않습니다, 최대 8자)                                                                                                   |
 
@@ -3163,7 +3163,7 @@ Content-Type: application/json;charset=UTF-8
 
 ## 발신 프로필 관리
 
-### 발신프로필 조회
+### 발신 프로필 조회
 
 #### 요청
 
@@ -3251,18 +3251,18 @@ Content-Type: application/json;charset=UTF-8
 | - kakaoProfileStatusName  | String  | X        | 카카오 플러스친구 프로필 상태명(활성화, 비활성화, 차단, 삭제 처리 중, 삭제)<br>status가 YSC02일 경우, kakaoProfileStatusName null 값을 가집니다.              |
 | - profileSpamLevel        | String  | X        | 카카오톡 채널 스팸 상태명(영구제한, 경고제한, 정상)<br>발신 프로필 상태가 정상적이지 않을 경우 null 값을 가질 수 있습니다.                                           |
 | - profileMessageSpamLevel | String  | X        | 카카오톡 메시지 스팸 상태명(활동제한, 경고제한, 정상)<br>발신 프로필 상태가 정상적이지 않을 경우 null 값을 가질 수 있습니다.                                          |
-| - block                   | boolean | O        | 발신프로필 차단 여부                                                                                                           |
+| - block                   | boolean | O        | 발신 프로필 차단 여부                                                                                                           |
 | - brandMessage            | Object  | X        | 브랜드 메시지 설정 정보                                                                                                         |
 | -- resendAppKey           | String  | X        | 대체 발송으로 설정할 SMS 서비스 앱키                                                                                                |
 | -- isResend               | boolean | O        | 대체 발송 설정(재발송) 여부                                                                                                      |
 | -- resendSendNo           | String  | X        | 재발송 시, tc-sms 발신 번호                                                                                                   |
 | -- resendUnsubscribeNo    | String  | X        | 재발송 시, tc-sms 080 수신 거부 번호                                                                                            |
-| - dormant                 | boolean | O        | 발신프로필 휴면 여부                                                                                                           |
+| - dormant                 | boolean | O        | 발신 프로필 휴면 여부                                                                                                           |
 | - marketingAgreement      | boolean | O        | M/N 타입 사용 신청 여부                                                                                                       |
 | - createDate              | String  | X        | 등록 일자                                                                                                                 |
 | - initialUserRestriction  | boolean | O        | 최초 사용자 제한 여부                                                                                                          |
 
-### 발신프로필 080수신거부번호 수정
+### 발신 프로필 080 수신거부번호 수정
 
 #### 요청
 
@@ -3303,8 +3303,8 @@ Content-Type: application/json;charset=UTF-8
 
 | 이름                | 	타입     | 	필수 | 	설명                                                                                                                           |
 |-------------------|---------|-----|-------------------------------------------------------------------------------------------------------------------------------|
-| unsubscribeNo     | 	String | 	O  | 080 무료수신거부 전화번호 (둘다 미입력시 발신프로필에 등록된 무료수신거부 정보로 발송됨)<br>- 080-xxx-xxxx <br>- 080-xxxx-xxxx <br>- 080xxxxxxx <br>- 080xxxxxxxx  |
-| unsubscribeAuthNo | 	String | 	X  | 080 무료수신거부 인증번호 (둘다 미입력시 발신프로필에 등록된 무료수신거부 정보로 발송됨)<br>unsubscribe_phone_number 없이 unsubscribe_auth_number만 입력 불가<br>ex) 1234 |
+| unsubscribeNo     | 	String | 	O  | 080 무료수신거부 전화번호 (둘다 미입력시 발신 프로필에 등록된 무료수신거부 정보로 발송됨)<br>- 080-xxx-xxxx <br>- 080-xxxx-xxxx <br>- 080xxxxxxx <br>- 080xxxxxxxx  |
+| unsubscribeAuthNo | 	String | 	X  | 080 무료수신거부 인증번호 (둘다 미입력시 발신 프로필에 등록된 무료수신거부 정보로 발송됨)<br>unsubscribe_phone_number 없이 unsubscribe_auth_number만 입력 불가<br>ex) 1234 |
 
 #### 응답
 
@@ -3427,7 +3427,7 @@ Content-Type: application/json;charset=UTF-8
 |---------------------|----------|-----|------------------------------------------------------------------------------------------------------------|
 | senderKey           | 	String  | 	O  | 발신 키                                                                                                       |
 | isResend            | 	Boolean | 	O  | 발송 실패 시, 문자 대체발송 여부<br>Console에서 대체 발송 설정 시, default로 대체 발송 됩니다.                                           |
-| resendSendNo        | 	String  | 	O  | 대체 발송 발신번호<br><span style="color:red">(SMS 상품에 등록된 발신번호가 아닐 경우, 대체발송이 실패할 수 있습니다.)</span>                  |
+| resendSendNo        | 	String  | 	O  | 대체 발송 발신번호<br><span style="color:red">(SMS 상품에 등록된 발신번호가 아닐 경우, 대체 발송이 실패할 수 있습니다.)</span>                  |
 | resendUnsubscribeNo | 	String  | 	O  | 대체 발송 080 수신 거부 번호<br><span style="color:red">(SMS 서비스에 등록된 080 수신 거부 번호가 아닐 경우 대체 발송에 실패할 수 있습니다.)</span> |
 
 [예시]

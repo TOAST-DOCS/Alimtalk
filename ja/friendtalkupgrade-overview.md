@@ -30,7 +30,7 @@
 
 * 광고주의 마수동 유저(카카오톡 수신 동의) 대상으로 광고성 메시지를 발송 처리합니다.
 * 수신자가 발송 채널의 친구가 아닌 경우, 무료수신거부 정보가 포함된 N타입의 채널 메시지로 발송 처리됩니다.
-* 무료수신거부 정보는 발송 채널의 발신프로필에서 등록 및 관리하실 수 있습니다.
+* 무료수신거부 정보는 발송 채널의 발신 프로필에서 등록 및 관리하실 수 있습니다.
 
 ![friendtalkupgrade_02_20250508.png](https://static.toastoven.net/prod_alimtalk/friendtalkupgrade/friendtalkupgrade_2_20250508.png)
 
@@ -38,7 +38,7 @@
 
 * 광고주의 마수동 유저(카카오톡 수신 동의)에서 채널 친구를 제외하고 광고성 메시지를 발송 처리합니다.
 * 수신자가 발송 채널의 친구가 아님으로, 무료수신거부 정보가 포함된 N타입의 채널 메시지로 발송 처리됩니다.
-* 무료수신거부 정보는 발송 채널의 발신프로필에서 등록 및 관리하실 수 있습니다.
+* 무료수신거부 정보는 발송 채널의 발신 프로필에서 등록 및 관리하실 수 있습니다.
 
 ![friendtalkupgrade_03_20250508.png](https://static.toastoven.net/prod_alimtalk/friendtalkupgrade/friendtalkupgrade_3_20250508.png)
 
