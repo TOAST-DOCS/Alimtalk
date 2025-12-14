@@ -239,7 +239,7 @@
 <thead>
 	<tr>
 		<th>Code</th>
-		<th>Description</th>
+		<th>Meaning</th>
 	</tr>
 </thead>
 <tbody>
@@ -249,7 +249,7 @@
 	</tr>
 	<tr>
 		<td>1001</td>
-		<td>Request Body is not in JSON format</td>
+		<td>Request body is not in JSON format</td>
 	</tr>
 	<tr>
 		<td>1002</td>
@@ -261,7 +261,7 @@
 	</tr>
 	<tr>
 		<td>1004</td>
-		<td>Cannot find 'name' in Request Body (JSON)</td>
+		<td>Cannot find name in request body (JSON)</td>
 	</tr>
 	<tr>
 		<td>1006</td>
@@ -273,211 +273,379 @@
 	</tr>
 	<tr>
 		<td>1011</td>
-		<td>Contract information not found (Contact customer service)</td>
+		<td>Cannot find contract information (Contact customer service)</td>
 	</tr>
 	<tr>
 		<td>1012</td>
-		<td>Invalid user key request format</td>
+		<td>Invalid user key format request</td>
 	</tr>
 	<tr>
-		<td>2000</td>
-		<td>Invalid button or quick reply format</td>
+		<td>1013</td>
+		<td>Invalid app connection</td>
+	</tr>
+	<tr>
+		<td>1014</td>
+		<td>Invalid business registration number</td>
+	</tr>
+	<tr>
+		<td>1015</td>
+		<td>Invalid app user ID request</td>
+	</tr>
+	<tr>
+		<td>1016</td>
+		<td>Business registration number mismatch</td>
+	</tr>
+	<tr>
+		<td>1020</td>
+		<td>Phone number or app user ID is invalid or not entered</td>
+	</tr>
+	<tr>
+		<td>1021</td>
+		<td>Blocked KakaoTalk channel</td>
+	</tr>
+	<tr>
+		<td>1022</td>
+		<td>Closed KakaoTalk channel</td>
+	</tr>
+	<tr>
+		<td>1023</td>
+		<td>Deleted KakaoTalk channel</td>
+	</tr>
+	<tr>
+		<td>1024</td>
+		<td>KakaoTalk channel pending deletion</td>
+	</tr>
+	<tr>
+		<td>1025</td>
+		<td>Message sending failed due to channel sanctions</td>
+	</tr>
+	<tr>
+		<td>1027</td>
+		<td>Message sending failed due to channel message sanctions</td>
+	</tr>
+	<tr>
+		<td>1028</td>
+		<td>Cannot use the targeting option</td>
+	</tr>
+	<tr>
+		<td>1030</td>
+		<td>Invalid parameter request</td>
+	</tr>
+	<tr>
+		<td>1033</td>
+		<td>Template message type and chat_bubble_type parameter mismatch</td>
 	</tr>
 	<tr>
 		<td>2001</td>
-		<td>Error sending SMS</td>
-	</tr>
-	<tr>
-		<td>2002</td>
-		<td>SMS quota exceeded</td>
+		<td>Unable to send message (Unexpected error occurred)</td>
 	</tr>
 	<tr>
 		<td>2003</td>
-		<td>Template does not exist</td>
-	</tr>
-	<tr>
-		<td>2004</td>
-		<td>Template not in APPROVED status</td>
+		<td>Message sending failed (KakaoTalk channel not added on test server)</td>
 	</tr>
 	<tr>
 		<td>2005</td>
-		<td>Template button not found</td>
-	</tr>
-	<tr>
-		<td>2006</td>
-		<td>Template does not match</td>
-	</tr>
-	<tr>
-		<td>2007</td>
-		<td>Template content does not match</td>
-	</tr>
-	<tr>
-		<td>2008</td>
-		<td>Template does not exist</td>
-	</tr>
-	<tr>
-		<td>2009</td>
-		<td>Template creation failed</td>
+		<td>Failed to read image information due to Kakao internal system error</td>
 	</tr>
 	<tr>
 		<td>3000</td>
-		<td>Invalid or missing plusFriendId</td>
-	</tr>
-	<tr>
-		<td>3001</td>
-		<td>Header empty</td>
-	</tr>
-	<tr>
-		<td>3002</td>
-		<td>Failed to retrieve profile information</td>
-	</tr>
-	<tr>
-		<td>3003</td>
-		<td>Failed to upload image</td>
-	</tr>
-	<tr>
-		<td>3004</td>
-		<td>Exceeded maximum character limit for wide item list title</td>
+		<td>Unexpected error occurred</td>
 	</tr>
 	<tr>
 		<td>3005</td>
-		<td>Invalid wide item list format</td>
+		<td>Message sent but receipt not confirmed (Success uncertain, stored encrypted on server and can be received within 3 days)</td>
 	</tr>
 	<tr>
 		<td>3006</td>
-		<td>Wide item list size exceeds limit</td>
-	</tr>
-	<tr>
-		<td>3007</td>
-		<td>Invalid carousel format</td>
+		<td>Message sending failed due to internal system error</td>
 	</tr>
 	<tr>
 		<td>3008</td>
-		<td>Carousel size exceeds limit</td>
-	</tr>
-	<tr>
-		<td>3009</td>
-		<td>Invalid carousel feed format</td>
+		<td>Phone number error</td>
 	</tr>
 	<tr>
 		<td>3010</td>
-		<td>Carousel feed size exceeds limit</td>
+		<td>Unexpected error occurred</td>
 	</tr>
 	<tr>
 		<td>3011</td>
-		<td>Invalid carousel commerce format</td>
+		<td>Message does not exist</td>
 	</tr>
 	<tr>
 		<td>3012</td>
-		<td>Carousel commerce size exceeds limit</td>
+		<td>Kakao communication failed</td>
 	</tr>
 	<tr>
 		<td>3013</td>
-		<td>Invalid commerce format</td>
+		<td>Message is empty</td>
 	</tr>
 	<tr>
 		<td>3014</td>
-		<td>Invalid coupon format</td>
+		<td>Message length limit error</td>
 	</tr>
 	<tr>
 		<td>3015</td>
-		<td>Invalid button format</td>
+		<td>Cannot find template</td>
 	</tr>
 	<tr>
 		<td>3016</td>
-		<td>Invalid message format</td>
-	</tr>
-	<tr>
-		<td>3017</td>
-		<td>Invalid quick reply format</td>
-	</tr>
-	<tr>
-		<td>3018</td>
-		<td>Invalid video format</td>
-	</tr>
-	<tr>
-		<td>3019</td>
-		<td>Invalid BizFormId</td>
-	</tr>
-	<tr>
-		<td>3020</td>
-		<td>BizForm creation failed</td>
-	</tr>
-	<tr>
-		<td>3021</td>
-		<td>BizForm does not exist</td>
+		<td>Message content does not match template</td>
 	</tr>
 	<tr>
 		<td>3022</td>
-		<td>Invalid parameter</td>
+		<td>Not a valid sending time (FriendTalk messages can be sent from 08:00 to 20:50)</td>
 	</tr>
 	<tr>
 		<td>3023</td>
-		<td>Recipient number format error</td>
+		<td>Message syntax error (JSON format error)</td>
 	</tr>
 	<tr>
 		<td>3024</td>
-		<td>Exceeded maximum number of recipients</td>
+		<td>Cannot send image in message (Image URL or link is invalid or image does not meet specifications)</td>
 	</tr>
 	<tr>
 		<td>3025</td>
-		<td>Ad type message must have channel addition button</td>
+		<td>Variable character limit exceeded</td>
+	</tr>
+	<tr>
+		<td>3026</td>
+		<td>Consultation/bot conversion button extra, event character limit exceeded</td>
 	</tr>
 	<tr>
 		<td>3027</td>
-		<td>Mixed type message must have channel addition button</td>
+		<td>Message button/quick link does not match template</td>
 	</tr>
 	<tr>
 		<td>3028</td>
-		<td>Invalid targeting</td>
+		<td>Message emphasis title does not match template</td>
 	</tr>
 	<tr>
 		<td>3029</td>
-		<td>Contains users who have unsubscribed</td>
+		<td>Message emphasis title length limit exceeded (50 characters)</td>
 	</tr>
 	<tr>
 		<td>3030</td>
-		<td>Invalid commerce variable combination</td>
+		<td>Message type and template emphasis type do not match</td>
 	</tr>
 	<tr>
 		<td>3031</td>
-		<td>Marketing consent required</td>
+		<td>Header does not match template</td>
 	</tr>
 	<tr>
 		<td>3032</td>
-		<td>Invalid unsubscribe number format</td>
+		<td>Header length limit exceeded (16 characters)</td>
 	</tr>
 	<tr>
 		<td>3033</td>
-		<td>Unsubscribe number authentication failed</td>
+		<td>Item highlight does not match template</td>
 	</tr>
 	<tr>
 		<td>3034</td>
-		<td>Marketing agreement file upload failed</td>
+		<td>Item highlight title length limit exceeded (30 characters without image, 21 characters with image)</td>
 	</tr>
 	<tr>
 		<td>3035</td>
-		<td>Invalid image parameter count</td>
+		<td>Item highlight description length limit exceeded (19 characters without image, 13 characters with image)</td>
+	</tr>
+	<tr>
+		<td>3036</td>
+		<td>Item list does not match template</td>
+	</tr>
+	<tr>
+		<td>3037</td>
+		<td>Item list item description length limit exceeded (23 characters)</td>
+	</tr>
+	<tr>
+		<td>3038</td>
+		<td>Item summary information does not match template</td>
+	</tr>
+	<tr>
+		<td>3039</td>
+		<td>Item summary description length limit exceeded (14 characters)</td>
 	</tr>
 	<tr>
 		<td>3040</td>
-		<td>Invalid message type</td>
+		<td>Item summary description contains disallowed characters (Contains characters other than currency symbols/codes, numbers, commas, decimal points, spaces)</td>
+	</tr>
+	<tr>
+		<td>3041</td>
+		<td>Wide item list count min/max mismatch</td>
+	</tr>
+	<tr>
+		<td>3042</td>
+		<td>Main link does not match template</td>
+	</tr>
+	<tr>
+		<td>3043</td>
+		<td>Image variable count template mismatch</td>
+	</tr>
+	<tr>
+		<td>3044</td>
+		<td>Coupon variable template mismatch</td>
+	</tr>
+	<tr>
+		<td>3045</td>
+		<td>Commerce information variable template mismatch</td>
+	</tr>
+	<tr>
+		<td>3046</td>
+		<td>Additional information maximum length limit error</td>
+	</tr>
+	<tr>
+		<td>3047</td>
+		<td>Commerce information product name maximum length limit error</td>
+	</tr>
+	<tr>
+		<td>3048</td>
+		<td>Invalid group tag key input</td>
+	</tr>
+	<tr>
+		<td>3050</td>
+		<td>Opt-out spec (N type) not supported</td>
+	</tr>
+	<tr>
+		<td>3051</td>
+		<td>Carousel item list count min/max mismatch</td>
+	</tr>
+	<tr>
+		<td>3052</td>
+		<td>Carousel item message length exceeded</td>
+	</tr>
+	<tr>
+		<td>3053</td>
+		<td>Carousel template mismatch</td>
+	</tr>
+	<tr>
+		<td>3054</td>
+		<td>Carousel button template mismatch</td>
+	</tr>
+	<tr>
+		<td>3055</td>
+		<td>Carousel coupon template mismatch</td>
+	</tr>
+	<tr>
+		<td>3056</td>
+		<td>Wide item list title length limit error</td>
+	</tr>
+	<tr>
+		<td>3057</td>
+		<td>Carousel commerce template mismatch</td>
+	</tr>
+	<tr>
+		<td>3058</td>
+		<td>Carousel header length limit error</td>
 	</tr>
 	<tr>
 		<td>4000</td>
-		<td>Recipient number does not exist</td>
+		<td>Cannot find message sending result</td>
 	</tr>
 	<tr>
-		<td>5000</td>
-		<td>Token creation failed</td>
+		<td>4001</td>
+		<td>Unknown message status</td>
+	</tr>
+	<tr>
+		<td>4100</td>
+		<td>requestId error</td>
+	</tr>
+	<tr>
+		<td>4101</td>
+		<td>Request date error</td>
+	</tr>
+	<tr>
+		<td>4102</td>
+		<td>Template request error</td>
+	</tr>
+	<tr>
+		<td>4103</td>
+		<td>Cannot find valid hub partner</td>
+	</tr>
+	<tr>
+		<td>4104</td>
+		<td>Cannot find valid sender profile</td>
+	</tr>
+	<tr>
+		<td>4110</td>
+		<td>Invalid chat bubble type or message type request</td>
+	</tr>
+	<tr>
+		<td>4120</td>
+		<td>Message request payload generation error</td>
+	</tr>
+	<tr>
+		<td>4121</td>
+		<td>Message sending target error</td>
+	</tr>
+	<tr>
+		<td>4122</td>
+		<td>Message result query error</td>
+	</tr>
+	<tr>
+		<td>4130</td>
+		<td>requestId pattern error</td>
+	</tr>
+	<tr>
+		<td>4131</td>
+		<td>Duplicate requestId</td>
+	</tr>
+	<tr>
+		<td>4132</td>
+		<td>Template variable mismatch</td>
+	</tr>
+	<tr>
+		<td>4133</td>
+		<td>Stopped template</td>
+	</tr>
+	<tr>
+		<td>4134</td>
+		<td>Changed template</td>
+	</tr>
+	<tr>
+		<td>4137</td>
+		<td>Message request failed</td>
+	</tr>
+	<tr>
+		<td>4138</td>
+		<td>Brand message count limit</td>
+	</tr>
+	<tr>
+		<td>4139</td>
+		<td>Message request failed</td>
+	</tr>
+	<tr>
+		<td>4140</td>
+		<td>Message request failed</td>
+	</tr>
+	<tr>
+		<td>4141</td>
+		<td>Message request failed</td>
+	</tr>
+	<tr>
+		<td>4142</td>
+		<td>Message request failed</td>
+	</tr>
+	<tr>
+		<td>4143</td>
+		<td>Expired request</td>
+	</tr>
+	<tr>
+		<td>4144</td>
+		<td>Body length limit (30KB) exceeded</td>
+	</tr>
+	<tr>
+		<td>4156</td>
+		<td>Maximum send count exceeded</td>
+	</tr>
+	<tr>
+		<td>4161</td>
+		<td>Message in processing</td>
 	</tr>
 	<tr>
 		<td>9998</td>
-		<td>System error occurred</td>
+		<td>System issue under review by staff (Service currently unavailable)</td>
 	</tr>
 	<tr>
 		<td>9999</td>
-		<td>Unknown error occurred</td>
+		<td>System issue under review by staff (Unknown system error occurred)</td>
 	</tr>
 </tbody>
 </table>
