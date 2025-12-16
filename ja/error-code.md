@@ -33,29 +33,29 @@
 | 共通 | false | -3000 | Webリンク(WL)ボタンタイプのテンプレートの場合、linkMo必須フィールド | If template have a WL(webLink), must input linkMo |
 | 共通 | false | -3002 | 必要なリクエストボディ(request body)内容を読み取れない場合 | Field is not valid. |
 | 共通 | false | -3003 | 存在しないテンプレート | Template does not exist. |
-| 共通 | false | -3004 | 템플릿 파라미터 오류 | Please check template parameter. |
+| 共通 | false | -3004 | テンプレートパラメータエラー | Please check template parameter. |
 | 共通 | false | -3005 | テンプレート状態エラー(承認前の送信要求時) | Please check template status. |
-| 共通 | false | -3006 | linkMo/linkPC 는 반드시 http:// 또는 https://를 포함해야 합니다. | The linkMo/linkPc must include http:// or https:// |
-| 共通 | false | -3007 | 앱링크(AL)는  schemeAndroid, schemeIos, linkMo 중 최소 2개 이상을 입력해야 합니다. | If there is an AL(appLink) in the template, at least two of schemeAndroid, schemeIos, linkMo must be entered. |
-| 共通 | false | -3008 | 버튼 명에는 치환자 입력이 불가능합니다. | The button name can't include the replacement parameter. |
+| 共通 | false | -3006 | linkMo/linkPCは必ずhttp://またはhttps://を含む必要があります | The linkMo/linkPc must include http:// or https:// |
+| 共通 | false | -3007 | アプリリンク(AL)にはschemeAndroid、schemeIos、linkMoの中から最低2つ以上を入力する必要があります | If there is an AL(appLink) in the template, at least two of schemeAndroid, schemeIos, linkMo must be entered. |
+| 共通 | false | -3008 | ボタン名には置換変数を入力できません | The button name can't include the replacement parameter. |
 | 共通 | false | -3009 | ボタン名が存在しません | Not exist button name. |
 | 共通 | false | -3010 | 登録したテンプレート本文と一致しない場合 | The contents are not matched to template. This message can be resend by sms service if the resend setting is on. |
 | 共通 | false | -3026 | ACタイプボタンの名前は「チャンネル追加」のみ登録可能 | AC type button name must have 채널 추가 |
 | 共通 | false | -3038 | templateItemサマリーのtitleは置換変数を持てない | The templateItem's summary title can't include the replacement parameter. |
-| 共通 | false | -3040 | 썸네일이 있는 아이템하이라이트의 title은 최대 21글자, description은 최대 13글자 | The itemHighlight's title with thumbnail can not exceed 21 characters, and description can not excced 13 characters |
-| 共通 | false | -3041 | imageUrl은 http:// https:// 을 반드시 포함해야 함 | The imageUrl must include http:// or https:// |
+| 共通 | false | -3040 | サムネイルがあるアイテムハイライトのtitleは最大21文字、descriptionは最大13文字 | The itemHighlight's title with thumbnail can not exceed 21 characters, and description can not excced 13 characters |
+| 共通 | false | -3041 | imageUrlはhttp://またはhttps://を必ず含む必要があります | The imageUrl must include http:// or https:// |
 | 共通 | false | -3051 | TNボタン名は「電話接続」「カスタマーセンター接続」「相談員接続」のいずれかである必要があります | TN button name must be one of: 전화 연결, 고객센터 연결, 상담원 연결 |
 | 共通 | false | -3052 | TNボタンにはtelNumberフィールドが必須です | TN button must have telNumber field. |
 | 共通 | false | -3053 | 無効な電話番号形式です。数字とハイフンのみ使用可能で、最大14文字まで入力できます | Invalid telephone number format. Must be digits/hyphens only, max 14 characters. |
-| 共通 | false | -3101 | 바로연결명이 존재하지 않는 경우 | Not exist quickReply name. |
-| 共通 | false | -3102 | 바로연결명은 치환자를 포함할 수 없음 | The quickReply name can't include the replacement parameter. |
+| 共通 | false | -3101 | クイックリプライ名が存在しない場合 | Not exist quickReply name. |
+| 共通 | false | -3102 | クイックリプライ名には置換変数を含めることができません | The quickReply name can't include the replacement parameter. |
 | 共通 | false | -3303 | 必須入力値が欠落しています | {} is empty. |
 | 共通 | false | -3304 | 入力値が有効な範囲を外れています。指定された範囲内の値を入力してください | The '{}' must be between {} and {}. |
-| 共通 | false | -3305 | 선택한 chatBubbleType에는 특정 필드를 사용할 수 없습니다. | The chatBubbleType {} is not allowed {} field. |
+| 共通 | false | -3305 | 選択したchatBubbleTypeでは特定のフィールドを使用できません | The chatBubbleType {} is not allowed {} field. |
 | 共通 | false | -3306 | コマースタイプメッセージにはボタンが必ず含まれる必要があります | The commerce type require buttons. |
-| 共通 | false | -3307 | linkType의 필수 입력 항목이 누락되었습니다. | linkType {} is required field {} |
-| 共通 | false | -3308 | linkType의 여러 필수 입력 항목이 누락되었습니다. | linkType {} is required fields {} |
-| 共通 | false | -3309 | 템플릿에 앱링크(AL) 사용 시, schemeAndroid, schemeIos, linkMo 중 최소 두 가지를 입력해야 합니다. | If there is an AL(appLink) in the template, at least two of schemeAndroid, schemeIos, linkMo must be entered. |
+| 共通 | false | -3307 | linkTypeの必須入力項目が欠落しています | linkType {} is required field {} |
+| 共通 | false | -3308 | linkTypeの複数の必須入力項目が欠落しています | linkType {} is required fields {} |
+| 共通 | false | -3309 | テンプレートでアプリリンク(AL)を使用する場合、schemeAndroid、schemeIos、linkMoの中から最低2つ以上を入力する必要があります | If there is an AL(appLink) in the template, at least two of schemeAndroid, schemeIos, linkMo must be entered. |
 | 共通 | false | -3310 | WebリンクURL(linkMo/linkPc)は'http://'または'https://'を含む必要があります | The linkMo/linkPc must include http:// or https:// |
 | 共通 | false | -3311 | メッセージタイプがテキストまたはイメージの場合、チャンネル追加(AC)ボタンは最初のボタンである必要があります | When the type is TEXT or IMAGE, AC  button type must be the first button. |
 | 共通 | false | -3312 | メッセージタイプがテキストまたはイメージではない場合、チャンネル追加(AC)ボタンは最後のボタンである必要があります | When the type is not TEXT or IMAGE, AC button type must be the last button. |
@@ -67,23 +67,23 @@
 | 共通 | false | -3318 | 動画URLが有効な形式ではありません | The videoUrl is not valid video url |
 | 共通 | false | -3319 | イメージ情報入力時、必須項目が欠落しています | image field require {} |
 | 共通 | false | -3320 | カルーセルアイテム数が許可された範囲(最小/最大値)を外れています | The carousel list size must be between {} and {} |
-| 共通 | false | -3321 | 캐러셀 헤더에 링크 입력 시, linkMo는 필수입니다. | If at least one link is entered in the Carousel Head, linkMo cannot be empty. |
+| 共通 | false | -3321 | カルーセルヘッダーにリンクを入力する場合、linkMoは必須です | If at least one link is entered in the Carousel Head, linkMo cannot be empty. |
 | 共通 | false | -3322 | カルーセルヘッダー情報入力時、必須項目が欠落しています | The carousel head field require {} |
 | 共通 | false | -3323 | カルーセルフッター情報入力時、必須項目が欠落しています | The carousel tail field require {} |
 | 共通 | false | -3324 | テンプレート変数値が誤っています | The template parameter is invalid. |
-| 共通 | false | -3325 | 아이템(item) 정보 입력 시 필수 항목이 누락되었습니다. | item field require {} |
+| 共通 | false | -3325 | アイテム(item)情報入力時に必須項目が欠落しました | item field require {} |
 | 共通 | false | -3326 | イメージURLは'http://'または'https://'を含む必要があります | The imageUrl must include http:// or https:// |
 | 共通 | false | -3327 | イメージリンクURLは'http://'または'https://'を含む必要があります | The imageLink must include http:// or https:// |
 | 共通 | false | -3328 | 許可されていないボタンタイプです | The button type {} is not allowed. |
-| 共通 | false | -3330 | 채널 추가 버튼이 없는 세로 버튼 배열 시, BF 버튼은 첫 번째여야 합니다. | BF button must be the first button in vertical layout without channel-add button. |
+| 共通 | false | -3330 | チャンネル追加ボタンがない縦ボタン配列時、BFボタンは最初である必要があります | BF button must be the first button in vertical layout without channel-add button. |
 | 共通 | false | -3331 | 許可されていないボタン名です | The button is not allowed to have {} as its name. |
 | 共通 | false | -3332 | カルーセルコマースアイテム情報入力時、必須項目が欠落しています | The carousel commerce item field require {} |
 | 共通 | false | -3333 | カルーセルコマースアイテムに許可されていない情報が含まれています | The carousel commerce field not allowed {} |
 | 共通 | false | -3334 | カルーセル一般アイテム情報入力時、必須項目が欠落しています | The carousel item field require {} |
 | 共通 | false | -3335 | カルーセル一般アイテムに許可されていない情報が含まれています | The carousel item field not allowed {} |
-| 共通 | false | -3336 | 채널 추가 버튼이 있는 세로 버튼 배열 시, BF 버튼은 두 번째여야 합니다. | BF button must be the second button in vertical layout with channel-add button. |
-| 共通 | false | -3337 | 채널 추가 버튼이 없는 가로 버튼 배열 시, BF 버튼은 오른쪽(두 번째)이어야 합니다. | BF button must be the second (right side) button in horizontal layout without channel-add button. |
-| 共通 | false | -3338 | 채널 추가 버튼이 있는 가로 버튼 배열 시, BF 버튼은 왼쪽(첫 번째)이어야 합니다. | BF button must be the first (left side) button in horizontal layout with channel-add button. |
+| 共通 | false | -3336 | チャンネル追加ボタンがある縦ボタン配列時、BFボタンは2番目である必要があります | BF button must be the second button in vertical layout with channel-add button. |
+| 共通 | false | -3337 | チャンネル追加ボタンがない横ボタン配列時、BFボタンは右側(2番目)である必要があります | BF button must be the second (right side) button in horizontal layout without channel-add button. |
+| 共通 | false | -3338 | チャンネル追加ボタンがある横ボタン配列時、BFボタンは左側(最初)である必要があります | BF button must be the first (left side) button in horizontal layout with channel-add button. |
 | 共通 | false | -3340 | 誤った080受信拒否番号 | Invalid unsubscribeNo format. Expected format: 080-xxx-xxxx or 080-xxxx-xxxx or 080xxxxxxx or 080xxxxxxxx. |
 | 共通 | false | -3341 | 誤った080認証番号 | Invalid format. Only digits are allowed, up to a maximum of 9. |
 | 共通 | false | -4000 | 無効なパラメータ | Invalid parameter |
@@ -92,7 +92,7 @@
 | 共通 | false | -4003 | 照会範囲は1ヶ月超過 | Search is possible within 31 days. |
 | 共通 | false | -4004 | 存在しないアプリケーションキー | Not exist appkey. |
 | 共通 | false | -4005 | 使用終了状態のアプリケーションキー | Appkey is disabled status. |
-| 共通 | false | -4007 | 파일 사이즈 초과 | The file size is less than {}. |
+| 共通 | false | -4007 | ファイルサイズ超過 | The file size is less than {}. |
 | 共通 | false | -4009 | 無効なファイル拡張子 | Check the file extension. |
 | 共通 | false | -4010 | ファイルが見つかりません | Not found file. |
 | 共通 | false | -4011 | 受信者リストが見つかりません | Not found recipientList. |
@@ -102,15 +102,15 @@
 | 共通 | false | -4020 | ファイル読み取り失敗 | Failed to reading the file. |
 | 共通 | false | -4023 | 商品を無効化するにはすべての送信者を削除する必要がある | For disabling the product, have to delete all senders |
 | 共通 | false | -4101 | 無効な統計照会パラメータ | Invalid search parameter. |
-| 共通 | false | -4103 | 유효하지 않은 요청Id 또는 요청시작일시/요청종료일시 | RequestId or startRequestDate/endRequestDate is invalid. |
+| 共通 | false | -4103 | 無効なrequestIdまたはリクエスト開始時刻/リクエスト終了時刻 | RequestId or startRequestDate/endRequestDate is invalid. |
 | 共通 | false | -5000 | 無効な受信番号 | RecipientNo is invalid. |
 | 共通 | false | -7000 | ベンダーリクエストAPI失敗 | Vender request API is failed. |
 | 共通 | false | -8001 | イメージファイルが正常でない場合 | The image you upload is invalid. |
-| 共通 | false | -8002 | 이미지를 찾을 수 없는 경우. <br/>캐러셀 피 - 캐러셀 타입 이미지를 사용<br/> 캐러셀 커머스 - 커머스 타입 이미지를 사용 <br/> 커머스 유형 - 이미지 타입을 사용 | It is not found any images. If you want to send carousel-feed type messages, you must use carousel type images. If you want to send carousel-commerce type messages, you must use commerce type images. If you want to send commerce type messages, you must use IMAGE type images. |
+| 共通 | false | -8002 | 画像が見つからない場合。 <br/> キャラセルフィー - キャラセルタイプの画像を使用 <br/> キャラセルコマース - コマースタイプの画像を使用 <br/>コマースタイプ - イメージタイプを使用 | It is not found any images. If you want to send carousel-feed type messages, you must use carousel type images. If you want to send carousel-commerce type messages, you must use commerce type images. If you want to send commerce type messages, you must use IMAGE type images. |
 | 共通 | false | -8007 | ストレージ設定が空 | The storage configs can't empty. |
 | 共通 | false | -8009 | 既に共有されたプロジェクト | This project has already been shared. |
-| 共通 | false | -8010 | 서버 이슈로 이미지 파일 업로드 실패 | Uploading image file has failed for an unexpected error. |
-| 共通 | false | -9992 | fade-out된 친구톡 API를 호출했을 경우 | The API is no longer supported. Please migrate to the new brand-message endpoint/API. |
+| 共通 | false | -8010 | サーバーの問題により画像ファイルアップロード失敗 | Uploading image file has failed for an unexpected error. |
+| 共通 | false | -9992 | fade-out된FriendTalk APIを呼び出した場合 | The API is no longer supported. Please migrate to the new brand-message endpoint/API. |
 | 共通 | false | -9993 | 必須リクエスト部分が欠落 | Required request part is not present. |
 | 共通 | false | -9994 | メソッド引数のタイプが予想と異なる | A method argument has not the expected type. |
 | 共通 | false | -9996 | Content-typeがapplication/jsonではない場合 | Only application/json Content-type is supported. |
@@ -125,9 +125,9 @@
 | 送信プロフィールグループ | false | -1018 | 既に送信プロフィールグループに登録された場合 | This is a plusFriend that has already been added. |
 | 送信プロフィールグループ | false | -1022 | 送信プロフィールがグループに登録されていない送信プロフィールの場合 | This is not a plusFriend added to the group. |
 | 送信プロフィールグループ | false | -1023 | 送信プロフィールグループが最大10個を超過した場合 | The max group size is 10. |
-| 送信プロフィールグループ | false | -1025 | 발신 프로필 그룹 삭제 불가 | The sender-group can't deleted. |
+| 送信プロフィールグループ | false | -1025 | 送信プロフィールグループは削除できません | The sender-group can't deleted. |
 | 送信プロフィールグループ | false | -1026 | 送信プロフィールグループのメンバーが5000個を超過した場合 | The maximum number of members in a group is 5000. |
-| 送信プロフィールグループ | false | -1029 | 발신 프로필이 블랙리스트인 경우 발신 프로필 그룹에 둥록 불가 | Blacklist can't join the group. |
+| 送信プロフィールグループ | false | -1029 | 送信プロフィールがブラックリストの場合、送信プロフィールグループに登録できません | Blacklist can't join the group. |
 | テンプレート | false | -1014 | 有効化されていない送信プロフィールの場合 | Not active status plus friend. |
 | テンプレート | false | -2505 | クイックリプライ含む送信時、最大ボタン数2個を超過した場合 | The 'buttons' is too many. If you request the 'quickReplies', the buttons size muse be 2 or less. |
 | テンプレート | false | -3001 | 既に存在するテンプレートコードまたはテンプレート名 | Already exist templateCode or templateName. |
@@ -136,11 +136,11 @@
 | テンプレート | false | -3016 | 強調表記型テンプレートはtemplateTitle、templateSubtitle必須フィールド | The Template which emphasizeType is 'TEXT' must have templateTitle, templateSubtitle. |
 | テンプレート | false | -3017 | templateSubtitleは置換変数を使用不可 | The templateSubtitle can't include the replacement parameter. |
 | テンプレート | false | -3018 | 付加情報型テンプレートはtemplateExtra必須フィールド | The Template which messageType is 'EX' must have templateExtra. |
-| テンプレート | false | -3020 | 복합형 템플릿은 templateExtra 필수 필드 | The Template which messageType is 'MI' must have templateExtra. |
+| テンプレート | false | -3020 | 複合型テンプレートはtemplateExtraが必須フィールド | The Template which messageType is 'MI' must have templateExtra. |
 | テンプレート | false | -3021 | templateExtraは置換変数を使用不可 | The templateExtra can't include the replacement parameter. |
 | テンプレート | false | -3024 | ACタイプボタンはチャンネル追加型複合型テンプレートのみ登録可能 | The button of AC type can using only templateMessageType (AD/MI). |
 | テンプレート | false | -3025 | ACタイプボタンは単独で使用するか、最上位に位置する必要がある制約に反する場合 | AC type buttons should be located alone or on top. |
-| テンプレート | false | -3027 | 템플릿 강조 표시 타입 선택 안함(NONE)으로 등록 시, templateTitle, templateSubtitle 필드를 등록할 수 없음 | The Template which emphasizeType is 'NONE' can't have templateTitle, templateSubtitle. |
+| テンプレート | false | -3027 | テンプレート強調表示タイプ未選択(NONE)で登録時、templateTitle、templateSubtitleフィールドを登録できません | The Template which emphasizeType is 'NONE' can't have templateTitle, templateSubtitle. |
 | テンプレート | false | -3028 | テンプレートメッセージ類型基本型(BA)の場合、templateExtraフィールドを登録できない | The Template which messageType is 'BA' can't have templateExtra. |
 | テンプレート | false | -3030 | テンプレートメッセージ類型チャンネル追加型(AD)の場合、templateExtraフィールドを登録できない | The Template which messageType is 'AD' can't have templateExtra. |
 | テンプレート | false | -3032 | テンプレート強調表示タイプイメージ型(IMAGE)の場合、templateImageName、templateImageUrlフィールド必須値 | The Template which emphasizeType is 'IMAGE' must have templateImageName, templateImageUrl. |
@@ -148,19 +148,19 @@
 | テンプレート | false | -3047 | テンプレート登録時にフォントスタイルを適用しようとした場合(フォントスタイルは送信時点で適用可能) | The templateTitle and templateItemHighlight's title can't end with \s. |
 | テンプレート | false | -3050 | テンプレートメッセージタイプ(AD/MI)はACタイプのボタンを持つ必要があります | The templateMessageType (AD/MI) must have button of AC type. |
 | テンプレート | false | -3100 | テンプレート要請/承認状態の場合commentを追加できない | Could not add comment on registered/completed template status. |
-| テンプレート | false | -3103 | button 또는 바로연결의 형식이 올바르지 않은 경우 (json 형식이 아니거나, escape 되지 않은 문자가 섞여있음) | The button or quickReply has an invalid format. |
-| テンプレート | false | -4021 | 파일 사이즈 초과 (10MB) | The file size is less than 10MB. |
+| テンプレート | false | -3103 | ボタンまたはクイックリプライの形式が正しくない場合(json形式ではないか、エスケープされていない文字が混在している) | The button or quickReply has an invalid format. |
+| テンプレート | false | -4021 | ファイルサイズ超過(10MB) | The file size is less than 10MB. |
 | テンプレート | false | -4024 | 休眠テンプレート解除失敗 | Failed to release the dormant template. |
 | テンプレート | false | -4025 | テンプレートアップロード時、最大20個を超過した場合 | Only upload up to 20 templates at a time. |
 | テンプレート | false | -4026 | テンプレートアップロードファイルのヘッダーが無効な場合 | Uploaded template's headers are invalid. |
-| テンプレート | false | -4027 | 채널 추가형 전환 실패. button 길이 초과 | Conversion to AD/MI type failed. The 'buttons' length does not exceed its maximum length. |
-| テンプレート | false | -4028 | 채널 추가형 전환 실패. 승인되지 않은 템플릿 사용 | Conversion to AD/MI type failed. The template must be approved |
-| 送信/照会 | false | -1016 | requestId 혹은 recipientSeq로 메시지를 찾을 수 없을 경우 | It is not found any messages responding with that requestId or recipientSeq. |
+| テンプレート | false | -4027 | チャンネル追加型転換失敗。ボタン長超過 | Conversion to AD/MI type failed. The 'buttons' length does not exceed its maximum length. |
+| テンプレート | false | -4028 | チャンネル追加型転換失敗。承認されていないテンプレートを使用 | Conversion to AD/MI type failed. The template must be approved |
+| 送信/照会 | false | -1016 | requestIdまたはrecipientSeqでメッセージが見つからない場合 | It is not found any messages responding with that requestId or recipientSeq. |
 | 送信/照会 | false | -1024 | 送信プロフィールグループがメッセージを送信する場合 | The sender-group can't send the message. |
 | 送信/照会 | false | -1031 | 送信要求した全受信者が送信に失敗した場合 | All of receivers are failed to send. |
-| 送信/照会 | false | -2019 | 템플릿 본문 1,300글자 초과로 실패 | The content that is replaced by the template parameters can not exceed 1,300 characters. |
+| 送信/照会 | false | -2019 | テンプレート本文1,300文字超過で失敗 | The content that is replaced by the template parameters can not exceed 1,300 characters. |
 | 送信/照会 | false | -2023 | 友人トークメッセージ本文が400文字超過する場合(イメージ添付) | The 'content' is too long. If you request the 'image', It can be less than 400 characters. |
-| 送信/照会 | false | -2024 | 친구톡 메시지 본문이 1,300글자 초과할 경우 | The 'content' is too long. It can be less than 1,300 characters without any image. |
+| 送信/照会 | false | -2024 | FriendTalkメッセージ本文が1,300文字を超える場合 | The 'content' is too long. It can be less than 1,300 characters without any image. |
 | 送信/照会 | false | -2025 | 予約日時が過去の日時の場合 | You can not send messages on past dates. Please check `requestDate` again. |
 | 送信/照会 | false | -2026 | 予約日時が90日以降の日時の場合(最大90日まで可能) | You can not send messages after 90 days. Please check `requestDate` again. |
 | 送信/照会 | false | -2027 | 日付フォーマットが異なりパースエラー発生 | The 'requestDate' has invalid format. |
@@ -183,7 +183,7 @@
 | 送信/照会 | false | -3044 | ビジネスフォーム(BF)タイプボタンは単独で使用するか、最上位に位置する必要がある制約に反する場合 | BF type buttons should be located on top. |
 | 送信/照会 | false | -3045 | ビジネスフォーム(BF)タイプのnameが「トークで予約する」「トークでアンケート」「トークで応募」ではない場合、または登録されていないbizFormKeyの場合 | The button linkType 'BF' must follow this constraint. The BF button must have a bizFormKey. The BF button name must be in "톡에서 예약하기", "톡에서 설문하기", "톡에서 응모하기". |
 | 送信/照会 | false | -3046 | templateRepresentLinkがテンプレートと一致しない場合 | The templateRepresentLink is not matched to template. This message can be resend by sms service if the resend setting is on. |
-| 送信/照会 | false | -3048 | 템플릿 파라미터는 1300자를 넘을 수 없습니다. | The template parameter's length can not exceed 1300 characters. |
+| 送信/照会 | false | -3048 | テンプレートパラメータは1300文字を超えることはできません | The template parameter's length can not exceed 1300 characters. |
 | 送信/照会 | false | -3049 | テンプレートパラメータがテンプレートと一致しません | The template parameter is not matched to template. |
 | 送信/照会 | false | -3298 | ターゲティング情報が設定されていません | The targeting is invalid. |
 | 送信/照会 | false | -3299 | コマース変数は指定された組み合わせでのみ使用する必要があります: ['regularPrice']、['regularPrice', 'discountPrice', 'discountRate']、['regularPrice', 'discountPrice', 'discountFixed'] | The commerce variable must be used in the following combinations: ['regularPrice'], ['regularPrice', 'discountPrice', 'discountRate'], ['regularPrice', 'discountPrice', 'discountFixed'] |
@@ -206,6 +206,32 @@
 | 禁止ワード | false | -8012 | 禁止ワードが存在しない | Banned word does not exist. |
 | 禁止ワード | false | -8013 | 禁止ワードが既に存在する | Banned word already exists. |
 | 本人認証 | false | -1030 | 本人認証を受けていない場合 | Self verification is required to use this service. |
+| フレンドトーク互換送信 | false | -3200 | ワイドアイテムリストに名前がない | Friendtalk wide item must have a title. |
+| フレンドトーク互換送信 | false | -3201 | ワイドアイテムリストにイメージがない | Friendtalk wide item must have a image. |
+| フレンドトーク互換送信 | false | -3202 | ワイドアイテムリストにlinkMoがない | Friendtalk wide item must have a linkMo. |
+| フレンドトーク互換送信 | false | -3203 | ワイドアイテムリストは3～4個のリストとヘッダーが必要 | Friendtalk wide item must have 3 ~ 4 list and a header. |
+| フレンドトーク互換送信 | false | -3204 | カルーセルにヘッダーがない | Friendtalk carousel must have a header. |
+| フレンドトーク互換送信 | false | -3205 | カルーセルにメッセージがない | Friendtalk carousel must have a message. |
+| フレンドトーク互換送信 | false | -3206 | カルーセルに添付ファイルがない | Friendtalk carousel must have a attachment. |
+| フレンドトーク互換送信 | false | -3207 | カルーセルにイメージがない | Friendtalk carousel must have a image. |
+| フレンドトーク互換送信 | false | -3208 | カルーセルは2～10個のリスト必要、カルーセルコマースタイプにintroがある場合は1～10個のリスト必要 | Friendtalk carousel must have 2 ~ 10 list. If message type is friendtalk carousel-commerce and carousel intro exists, carousel must have 1 ~ 10 list. |
+| フレンドトーク互換送信 | false | -3209 | カルーセルテールにlinkMoがない | Friendtalk carousel tail must have linkMo. |
+| フレンドトーク互換送信 | false | -3210 | クーポンはタイトルと説明が必要 | Friendtalk coupon must have a title and a description. |
+| フレンドトーク互換送信 | false | -3211 | フレンドトークテキスト/イメージタイプメッセージクーポン説明は12文字超過不可、FW/FLタイプは18文字超過不可 | If the message type is friendTalk text/image type, the friendtalk coupon description's length cannot exceed 12 characters. If the message type is friendTalk wide-image/wide-item-list type, the friendtalk coupon description's length cannot exceed 18 characters |
+| フレンドトーク互換送信 | false | -3212 | クーポンタイトル内容が無効 | Friendtalk coupon title is invalid. |
+| フレンドトーク互換送信 | false | -3213 | クーポンはモバイルリンクまたはチャネルタイプios/androidリンクが必要 | Friendtalk must have a mobile link or a channel formatted ios/android link |
+| フレンドトーク互換送信 | false | -3215 | ワイドアイテムリストとカルーセルは広告タイプのみ使用可能 | Friendtalk wide item / carousel can only be sent in AD type. |
+| フレンドトーク互換送信 | false | -3216 | ワイドアイテムリスト最初のアイテムタイトルは25文字超過不可、2～4番目のアイテムタイトルは30文字超過不可 | Friendtalk first wide item's title length cannot exceed 25 characters, and 2nd ~ 4th wide item's title length cannot exceed 30 characters. |
+| フレンドトーク互換送信 | false | -3217 | フレンドトークテキスト/イメージタイプはボタン5個超過不可、クーポン含む場合4個、ワイドイメージ/ワイドアイテムリストは2個超過不可、プレミアムビデオタイプは1個超過不可、コマースタイプは1～2個ボタン必要 | Friendtalk button size is invalid. The button size must be 5 or less. If coupon is included, the button size must be 4 or less. If the message type is friendTalk wide-image/wide-item-list type, the button size must be 2 or less. If the message type is video type, the button size must be 1 or less. If the message type is commerce, the button size must be 1 or 2 |
+| フレンドトーク互換送信 | false | -3218 | フレンドトークvideoUrlが無効 | Friendtalk video url is invalid. |
+| フレンドトーク互換送信 | false | -3219 | フレンドトーク内容が最大長さ超過。プレミアムビデオタイプ内容最大長さは76文字 | The 'content' is too long. If you request the 'video', It must be less than 76 characters. |
+| フレンドトーク互換送信 | false | -3220 | フレンドトークヘッダーが最大長さ超過。プレミアムビデオタイプヘッダー最大長さは20文字 | The 'header' is too long. If you request the 'video', It must be less than 20 characters. |
+| フレンドトーク互換送信 | false | -3221 | カルーセルフィードタイプはカルーセルイントロ使用不可 | Friendtalk carousel feed type cannot have a 'head' field. |
+| フレンドトーク互換送信 | false | -3222 | カルーセルフィードタイプは付加情報フィールド使用不可 | Friendtalk carousel feed type cannot have a 'additionalContent' field. |
+| フレンドトーク互換送信 | false | -3223 | カルーセルフィードタイプはコマース使用不可 | Friendtalk carousel feed type cannot have a 'commerce' field. |
+| フレンドトーク互換送信 | false | -3224 | カルーセルコマースタイプはヘッダーとメッセージフィールド使用不可 | Friendtalk carousel commerce type cannot have 'header' & 'message' fields. |
+| フレンドトーク互換送信 | false | -3225 | カルーセルボタンが無効。カルーセルフィードタイプは2個ボタン超過不可、カルーセルコマースタイプは1～2個ボタン必要 | Friendtalk carousel button size is invalid. If the message type is friendtalk carousel-feed, the button size must be 2 or less. If the message type is friendtalk carousel-commerce, the button size must be 1 ~ 2. |
+| フレンドトーク互換送信 | false | -3226 | コマースにdiscountPriceフィールドがある場合、discountRateまたはdiscountFixedフィールド必要 | If commerce has 'discountPrice' field, commerce must have a 'discountRate' or 'discountFixed' field. |
 
 ## AlimTalk/FriendTalk 送信結果コード
 
@@ -315,11 +341,11 @@
 	</tr>
 	<tr>
 		<td>2003</td>
-		<td>メッセージ送信失敗(テストサーバーでカカオトークチャネルを追加していない場合)</td>
+		<td>メッセージ送信失敗(テストサーバーでカ카오トークチャネルを追加していない場合)</td>
 	</tr>
 	<tr>
 		<td>2005</td>
-		<td>カカオ内部システムエラーによりイメージ情報の読み込みに失敗</td>
+		<td>カカ오ボード시스템エラーによりイメージ情報の読み込みに失敗</td>
 	</tr>
 	<tr>
 		<td>3000</td>
@@ -407,7 +433,7 @@
 	</tr>
 	<tr>
 		<td>3032</td>
-		<td>ヘッダー長さ制限超過(16文字)</td>
+		<td>ヘッダー長さ制限超과(16文字)</td>
 	</tr>
 	<tr>
 		<td>3033</td>
@@ -619,7 +645,7 @@
 	</tr>
 	<tr>
 		<td>9999</td>
-		<td>システムに問題が発生し、担当者が確認中(システムに不明なエラー発生)</td>
+		<td>システムに問題が発생し、担当者が確認中(システムに不明なエラー発生)</td>
 	</tr>
 </tbody>
 </table>
