@@ -1,651 +1,667 @@
-## Notification > KakaoTalk Bizmessage > エラーコード
+## Notification > KakaoTalk Bizmessage > 오류 코드
 
-## API応答コード
+## API 응답 코드
 
-| カテゴリー | 成功有無 | 結果コード | 結果コードメッセージ | API応答メッセージ |
-|---|---|---|---|---|
-| 共通 | true | 0 | 成功 | SUCCESS |
-| 共通 | false | 4 | パラメータ検証失敗(resultMessage参照) |  |
-| 共通 | false | -1000 | 無効なアプリケーションキー | Invalid appKey. |
-| 共通 | false | -1001 | 無効なシークレットキー(secretKey) | Invalid secretKey. |
-| 共通 | false | -1002 | 無効なSMSアプリケーションキー | Invalid Sms appkey |
-| 共通 | false | -1003 | 無効なSMS発信番号 | Invalid Sms Sendno |
-| 共通 | false | -1005 | 10分間同じX-NC-API-IDEMPOTENCY-KEY値でメッセージ送信を要求した場合 | The same 'X-NC-API-IDEMPOTENCY-KEY' was used within the last 10 minute. |
-| 共通 | false | -1006 | 送信プロフィールが送信キーを持っていない場合 | Plus friend don't have senderKey. |
-| 共通 | false | -1019 | 無効な代替送信080受信拒否番号 | Invalid Sms UnSubscribeno |
-| 共通 | false | -1020 | 無効なUUID | Invalid uuid |
-| 共通 | false | -1027 | 送信プロフィールがブロック状態の場合 | The sender is blocked status. |
-| 共通 | false | -1028 | テンプレート変数が置換される時、その差が14文字を超える部分がある場合(初回ユーザー制限) | Blacklist can't use more than 14 characters in template value. |
-| 共通 | false | -2000 | 特定フィールド値が最大長を超過した場合 | The '{}' must be at less than or equal to {}. |
-| 共通 | false | -2001 | 特定フィールド値が必須値が空白の場合 | The '{}' must not be blank. |
-| 共通 | false | -2002 | 特定フィールド値がNULLの場合 | The '{}' must not be null. |
-| 共通 | false | -2003 | 特定フィールド値が最小長より小さい場合 | The '{}' must be greater than or equal to {}. |
-| 共通 | false | -2004 | 特定フィールド値が最大長より大きい場合 | The '{}' must be between {} and {}. |
-| 共通 | false | -2005 | 特定フィールド値が制限された範囲内の値ではない場合 | The '{}' must be less than or equal to {}. |
-| 共通 | false | -2017 | 存在しない送信プロフィール | Not exist plus friend. |
-| 共通 | false | -2018 | 無効なボタンパラメータ | Button parameter is invalid. |
-| 共通 | false | -2033 | テンプレートアイテムパラメータが無効な場合 | TemplateItem parameter is invalid. |
-| 共通 | false | -2034 | テンプレートアイテムハイライトパラメータが無効な場合 | TemplateItemHighlight parameter is invalid. |
-| 共通 | false | -2036 | TemplateRepresentLinkパラメータが無効な場合 | TemplateRepresentLink parameter is invalid. |
-| 共通 | false | -2037 | アイテムリスト含むテンプレート登録時、メッセージ本文文字数が700文字を超過した場合 | The 'content' is too long. If you request the 'templateItem', It must be less than 1000 characters. |
-| 共通 | false | -2502 | 送信失敗設定がされておらず、代替送信を要求した場合 | Please set up plus-friend resend setting. |
-| 共通 | false | -2504 | 無効なクイックリプライ | The quickReplies parameter is invalid. |
-| 共通 | false | -3000 | Webリンク(WL)ボタンタイプのテンプレートの場合、linkMo必須フィールド | If template have a WL(webLink), must input linkMo |
-| 共通 | false | -3002 | 必要なリクエストボディ(request body)内容を読み取れない場合 | Field is not valid. |
-| 共通 | false | -3003 | 存在しないテンプレート | Template does not exist. |
-| 共通 | false | -3004 | テンプレートパラメータエラー | Please check template parameter. |
-| 共通 | false | -3005 | テンプレート状態エラー(承認前の送信要求時) | Please check template status. |
-| 共通 | false | -3006 | linkMo/linkPCは必ずhttp://またはhttps://を含む必要があります | The linkMo/linkPc must include http:// or https:// |
-| 共通 | false | -3007 | アプリリンク(AL)にはschemeAndroid、schemeIos、linkMoの中から最低2つ以上を入力する必要があります | If there is an AL(appLink) in the template, at least two of schemeAndroid, schemeIos, linkMo must be entered. |
-| 共通 | false | -3008 | ボタン名には置換変数を入力できません | The button name can't include the replacement parameter. |
-| 共通 | false | -3009 | ボタン名が存在しません | Not exist button name. |
-| 共通 | false | -3010 | 登録したテンプレート本文と一致しない場合 | The contents are not matched to template. This message can be resend by sms service if the resend setting is on. |
-| 共通 | false | -3026 | ACタイプボタンの名前は「チャンネル追加」のみ登録可能 | AC type button name must have 채널 추가 |
-| 共通 | false | -3038 | templateItemサマリーのtitleは置換変数を持てない | The templateItem's summary title can't include the replacement parameter. |
-| 共通 | false | -3040 | サムネイルがあるアイテムハイライトのtitleは最大21文字、descriptionは最大13文字 | The itemHighlight's title with thumbnail can not exceed 21 characters, and description can not excced 13 characters |
-| 共通 | false | -3041 | imageUrlはhttp://またはhttps://を必ず含む必要があります | The imageUrl must include http:// or https:// |
-| 共通 | false | -3051 | TNボタン名は「電話接続」「カスタマーセンター接続」「相談員接続」のいずれかである必要があります | TN button name must be one of: 전화 연결, 고객센터 연결, 상담원 연결 |
-| 共通 | false | -3052 | TNボタンにはtelNumberフィールドが必須です | TN button must have telNumber field. |
-| 共通 | false | -3053 | 無効な電話番号形式です。数字とハイフンのみ使用可能で、最大14文字まで入力できます | Invalid telephone number format. Must be digits/hyphens only, max 14 characters. |
-| 共通 | false | -3101 | クイックリプライ名が存在しない場合 | Not exist quickReply name. |
-| 共通 | false | -3102 | クイックリプライ名には置換変数を含めることができません | The quickReply name can't include the replacement parameter. |
-| 共通 | false | -3303 | 必須入力値が欠落しています | {} is empty. |
-| 共通 | false | -3304 | 入力値が有効な範囲を外れています。指定された範囲内の値を入力してください | The '{}' must be between {} and {}. |
-| 共通 | false | -3305 | 選択したchatBubbleTypeでは特定のフィールドを使用できません | The chatBubbleType {} is not allowed {} field. |
-| 共通 | false | -3306 | コマースタイプメッセージにはボタンが必ず含まれる必要があります | The commerce type require buttons. |
-| 共通 | false | -3307 | linkTypeの必須入力項目が欠落しています | linkType {} is required field {} |
-| 共通 | false | -3308 | linkTypeの複数の必須入力項目が欠落しています | linkType {} is required fields {} |
-| 共通 | false | -3309 | テンプレートでアプリリンク(AL)を使用する場合、schemeAndroid、schemeIos、linkMoの中から最低2つ以上を入力する必要があります | If there is an AL(appLink) in the template, at least two of schemeAndroid, schemeIos, linkMo must be entered. |
-| 共通 | false | -3310 | WebリンクURL(linkMo/linkPc)は'http://'または'https://'を含む必要があります | The linkMo/linkPc must include http:// or https:// |
-| 共通 | false | -3311 | メッセージタイプがテキストまたはイメージの場合、チャンネル追加(AC)ボタンは最初のボタンである必要があります | When the type is TEXT or IMAGE, AC  button type must be the first button. |
-| 共通 | false | -3312 | メッセージタイプがテキストまたはイメージではない場合、チャンネル追加(AC)ボタンは最後のボタンである必要があります | When the type is not TEXT or IMAGE, AC button type must be the last button. |
-| 共通 | false | -3313 | クーポンURL情報が誤っています。基本クーポン使用時linkMoフィールドが、チャンネルクーポンURL使用時schemeAndroidまたはschemeIosフィールドが必要です | If a basic coupon is used instead of a channel coupon URL, the linkMo field is required. If a channel coupon URL (format: alimtalk=coupon://) is used, either schemeAndroid or schemeIos must be provided. |
-| 共通 | false | -3314 | クーポン情報入力時、必須項目が欠落しています | The coupon field require {} |
-| 共通 | false | -3315 | クーポンタイトルが無効です | The title is not valid coupon title |
-| 共通 | false | -3316 | コマース情報入力時、必須項目が欠落しています | commerce field require {} |
-| 共通 | false | -3317 | 動画情報入力時、必須項目が欠落しています | video field require {} |
-| 共通 | false | -3318 | 動画URLが有効な形式ではありません | The videoUrl is not valid video url |
-| 共通 | false | -3319 | イメージ情報入力時、必須項目が欠落しています | image field require {} |
-| 共通 | false | -3320 | カルーセルアイテム数が許可された範囲(最小/最大値)を外れています | The carousel list size must be between {} and {} |
-| 共通 | false | -3321 | カルーセルヘッダーにリンクを入力する場合、linkMoは必須です | If at least one link is entered in the Carousel Head, linkMo cannot be empty. |
-| 共通 | false | -3322 | カルーセルヘッダー情報入力時、必須項目が欠落しています | The carousel head field require {} |
-| 共通 | false | -3323 | カルーセルフッター情報入力時、必須項目が欠落しています | The carousel tail field require {} |
-| 共通 | false | -3324 | テンプレート変数値が誤っています | The template parameter is invalid. |
-| 共通 | false | -3325 | アイテム(item)情報入力時に必須項目が欠落しました | item field require {} |
-| 共通 | false | -3326 | イメージURLは'http://'または'https://'を含む必要があります | The imageUrl must include http:// or https:// |
-| 共通 | false | -3327 | イメージリンクURLは'http://'または'https://'を含む必要があります | The imageLink must include http:// or https:// |
-| 共通 | false | -3328 | 許可されていないボタンタイプです | The button type {} is not allowed. |
-| 共通 | false | -3330 | チャンネル追加ボタンがない縦ボタン配列時、BFボタンは最初である必要があります | BF button must be the first button in vertical layout without channel-add button. |
-| 共通 | false | -3331 | 許可されていないボタン名です | The button is not allowed to have {} as its name. |
-| 共通 | false | -3332 | カルーセルコマースアイテム情報入力時、必須項目が欠落しています | The carousel commerce item field require {} |
-| 共通 | false | -3333 | カルーセルコマースアイテムに許可されていない情報が含まれています | The carousel commerce field not allowed {} |
-| 共通 | false | -3334 | カルーセル一般アイテム情報入力時、必須項目が欠落しています | The carousel item field require {} |
-| 共通 | false | -3335 | カルーセル一般アイテムに許可されていない情報が含まれています | The carousel item field not allowed {} |
-| 共通 | false | -3336 | チャンネル追加ボタンがある縦ボタン配列時、BFボタンは2番目である必要があります | BF button must be the second button in vertical layout with channel-add button. |
-| 共通 | false | -3337 | チャンネル追加ボタンがない横ボタン配列時、BFボタンは右側(2番目)である必要があります | BF button must be the second (right side) button in horizontal layout without channel-add button. |
-| 共通 | false | -3338 | チャンネル追加ボタンがある横ボタン配列時、BFボタンは左側(最初)である必要があります | BF button must be the first (left side) button in horizontal layout with channel-add button. |
-| 共通 | false | -3340 | 誤った080受信拒否番号 | Invalid unsubscribeNo format. Expected format: 080-xxx-xxxx or 080-xxxx-xxxx or 080xxxxxxx or 080xxxxxxxx. |
-| 共通 | false | -3341 | 誤った080認証番号 | Invalid format. Only digits are allowed, up to a maximum of 9. |
-| 共通 | false | -4000 | 無効なパラメータ | Invalid parameter |
-| 共通 | false | -4001 | 既に有効化されたアプリケーションキー | Already activated appkey. |
-| 共通 | false | -4002 | 有効化されていないアプリケーションキー | Not activated appkey. |
-| 共通 | false | -4003 | 照会範囲は1ヶ月超過 | Search is possible within 31 days. |
-| 共通 | false | -4004 | 存在しないアプリケーションキー | Not exist appkey. |
-| 共通 | false | -4005 | 使用終了状態のアプリケーションキー | Appkey is disabled status. |
-| 共通 | false | -4007 | ファイルサイズ超過 | The file size is less than {}. |
-| 共通 | false | -4009 | 無効なファイル拡張子 | Check the file extension. |
-| 共通 | false | -4010 | ファイルが見つかりません | Not found file. |
-| 共通 | false | -4011 | 受信者リストが見つかりません | Not found recipientList. |
-| 共通 | false | -4014 | ファイルにrecipient_noヘッダーがない | There is no recipient_no header in the file. |
-| 共通 | false | -4016 | データが存在しない | Not exist data. |
-| 共通 | false | -4018 | ファイルアップロードエラー | Upload attach file error. |
-| 共通 | false | -4020 | ファイル読み取り失敗 | Failed to reading the file. |
-| 共通 | false | -4023 | 商品を無効化するにはすべての送信者を削除する必要がある | For disabling the product, have to delete all senders |
-| 共通 | false | -4101 | 無効な統計照会パラメータ | Invalid search parameter. |
-| 共通 | false | -4103 | 無効なrequestIdまたはリクエスト開始時刻/リクエスト終了時刻 | RequestId or startRequestDate/endRequestDate is invalid. |
-| 共通 | false | -5000 | 無効な受信番号 | RecipientNo is invalid. |
-| 共通 | false | -7000 | ベンダーリクエストAPI失敗 | Vender request API is failed. |
-| 共通 | false | -8001 | イメージファイルが正常でない場合 | The image you upload is invalid. |
-| 共通 | false | -8002 | 画像が見つからない場合。 <br/> キャラセルフィー - キャラセルタイプの画像を使用 <br/> キャラセルコマース - コマースタイプの画像を使用 <br/>コマースタイプ - イメージタイプを使用 | It is not found any images. If you want to send carousel-feed type messages, you must use carousel type images. If you want to send carousel-commerce type messages, you must use commerce type images. If you want to send commerce type messages, you must use IMAGE type images. |
-| 共通 | false | -8007 | ストレージ設定が空 | The storage configs can't empty. |
-| 共通 | false | -8009 | 既に共有されたプロジェクト | This project has already been shared. |
-| 共通 | false | -8010 | サーバーの問題により画像ファイルアップロード失敗 | Uploading image file has failed for an unexpected error. |
-| 共通 | false | -9992 | fade-out된FriendTalk APIを呼び出した場合 | The API is no longer supported. Please migrate to the new brand-message endpoint/API. |
-| 共通 | false | -9993 | 必須リクエスト部分が欠落 | Required request part is not present. |
-| 共通 | false | -9994 | メソッド引数のタイプが予想と異なる | A method argument has not the expected type. |
-| 共通 | false | -9996 | Content-typeがapplication/jsonではない場合 | Only application/json Content-type is supported. |
-| 共通 | false | -9997 | 適切でないリクエストによる失敗 | Client Error. |
-| 共通 | false | -9998 | 存在しないAPI | Not exist API |
-| 共通 | false | -9999 | システムエラー | System error. Please inquire at support@toast.com. |
-| 送信プロフィール | false | -3342 | マーケティング受信同意証跡資料アップロード失敗 | Failed to upload marketing agreement file. |
-| 送信プロフィール | false | -3343 | M/Nタイプ使用申請失敗 | {} |
-| 送信プロフィール | false | -3345 | 080受信拒否情報が無効 | Failed to update unsubscribe content. message: {} |
-| 送信プロフィールグループ | false | -1010 | 送信プロフィールグループが存在しない場合 | Not exist plus friend group. |
-| 送信プロフィールグループ | false | -1013 | 既に存在する送信プロフィールグループの場合 | Already exist plus friend group. |
-| 送信プロフィールグループ | false | -1018 | 既に送信プロフィールグループに登録された場合 | This is a plusFriend that has already been added. |
-| 送信プロフィールグループ | false | -1022 | 送信プロフィールがグループに登録されていない送信プロフィールの場合 | This is not a plusFriend added to the group. |
-| 送信プロフィールグループ | false | -1023 | 送信プロフィールグループが最大10個を超過した場合 | The max group size is 10. |
-| 送信プロフィールグループ | false | -1025 | 送信プロフィールグループは削除できません | The sender-group can't deleted. |
-| 送信プロフィールグループ | false | -1026 | 送信プロフィールグループのメンバーが5000個を超過した場合 | The maximum number of members in a group is 5000. |
-| 送信プロフィールグループ | false | -1029 | 送信プロフィールがブラックリストの場合、送信プロフィールグループに登録できません | Blacklist can't join the group. |
-| テンプレート | false | -1014 | 有効化されていない送信プロフィールの場合 | Not active status plus friend. |
-| テンプレート | false | -2505 | クイックリプライ含む送信時、最大ボタン数2個を超過した場合 | The 'buttons' is too many. If you request the 'quickReplies', the buttons size muse be 2 or less. |
-| テンプレート | false | -3001 | 既に存在するテンプレートコードまたはテンプレート名 | Already exist templateCode or templateName. |
-| テンプレート | false | -3012 | 修正できないテンプレート状態(承認/却下状態のみ可能) | Only templates with TSC03(APPROVE)/TSC04(REJECT) can be modified. |
-| テンプレート | false | -3013 | 既に修正中のテンプレートが存在 | There are templates already being modified. |
-| テンプレート | false | -3016 | 強調表記型テンプレートはtemplateTitle、templateSubtitle必須フィールド | The Template which emphasizeType is 'TEXT' must have templateTitle, templateSubtitle. |
-| テンプレート | false | -3017 | templateSubtitleは置換変数を使用不可 | The templateSubtitle can't include the replacement parameter. |
-| テンプレート | false | -3018 | 付加情報型テンプレートはtemplateExtra必須フィールド | The Template which messageType is 'EX' must have templateExtra. |
-| テンプレート | false | -3020 | 複合型テンプレートはtemplateExtraが必須フィールド | The Template which messageType is 'MI' must have templateExtra. |
-| テンプレート | false | -3021 | templateExtraは置換変数を使用不可 | The templateExtra can't include the replacement parameter. |
-| テンプレート | false | -3024 | ACタイプボタンはチャンネル追加型複合型テンプレートのみ登録可能 | The button of AC type can using only templateMessageType (AD/MI). |
-| テンプレート | false | -3025 | ACタイプボタンは単独で使用するか、最上位に位置する必要がある制約に反する場合 | AC type buttons should be located alone or on top. |
-| テンプレート | false | -3027 | テンプレート強調表示タイプ未選択(NONE)で登録時、templateTitle、templateSubtitleフィールドを登録できません | The Template which emphasizeType is 'NONE' can't have templateTitle, templateSubtitle. |
-| テンプレート | false | -3028 | テンプレートメッセージ類型基本型(BA)の場合、templateExtraフィールドを登録できない | The Template which messageType is 'BA' can't have templateExtra. |
-| テンプレート | false | -3030 | テンプレートメッセージ類型チャンネル追加型(AD)の場合、templateExtraフィールドを登録できない | The Template which messageType is 'AD' can't have templateExtra. |
-| テンプレート | false | -3032 | テンプレート強調表示タイプイメージ型(IMAGE)の場合、templateImageName、templateImageUrlフィールド必須値 | The Template which emphasizeType is 'IMAGE' must have templateImageName, templateImageUrl. |
-| テンプレート | false | -3037 | templateItemリストのtitleは置換変数を持てない | The templateItem's title can't include the replacement parameter. |
-| テンプレート | false | -3047 | テンプレート登録時にフォントスタイルを適用しようとした場合(フォントスタイルは送信時点で適用可能) | The templateTitle and templateItemHighlight's title can't end with \s. |
-| テンプレート | false | -3050 | テンプレートメッセージタイプ(AD/MI)はACタイプのボタンを持つ必要があります | The templateMessageType (AD/MI) must have button of AC type. |
-| テンプレート | false | -3100 | テンプレート要請/承認状態の場合commentを追加できない | Could not add comment on registered/completed template status. |
-| テンプレート | false | -3103 | ボタンまたはクイックリプライの形式が正しくない場合(json形式ではないか、エスケープされていない文字が混在している) | The button or quickReply has an invalid format. |
-| テンプレート | false | -4021 | ファイルサイズ超過(10MB) | The file size is less than 10MB. |
-| テンプレート | false | -4024 | 休眠テンプレート解除失敗 | Failed to release the dormant template. |
-| テンプレート | false | -4025 | テンプレートアップロード時、最大20個を超過した場合 | Only upload up to 20 templates at a time. |
-| テンプレート | false | -4026 | テンプレートアップロードファイルのヘッダーが無効な場合 | Uploaded template's headers are invalid. |
-| テンプレート | false | -4027 | チャンネル追加型転換失敗。ボタン長超過 | Conversion to AD/MI type failed. The 'buttons' length does not exceed its maximum length. |
-| テンプレート | false | -4028 | チャンネル追加型転換失敗。承認されていないテンプレートを使用 | Conversion to AD/MI type failed. The template must be approved |
-| 送信/照会 | false | -1016 | requestIdまたはrecipientSeqでメッセージが見つからない場合 | It is not found any messages responding with that requestId or recipientSeq. |
-| 送信/照会 | false | -1024 | 送信プロフィールグループがメッセージを送信する場合 | The sender-group can't send the message. |
-| 送信/照会 | false | -1031 | 送信要求した全受信者が送信に失敗した場合 | All of receivers are failed to send. |
-| 送信/照会 | false | -2019 | テンプレート本文1,300文字超過で失敗 | The content that is replaced by the template parameters can not exceed 1,300 characters. |
-| 送信/照会 | false | -2023 | 友人トークメッセージ本文が400文字超過する場合(イメージ添付) | The 'content' is too long. If you request the 'image', It can be less than 400 characters. |
-| 送信/照会 | false | -2024 | FriendTalkメッセージ本文が1,300文字を超える場合 | The 'content' is too long. It can be less than 1,300 characters without any image. |
-| 送信/照会 | false | -2025 | 予約日時が過去の日時の場合 | You can not send messages on past dates. Please check `requestDate` again. |
-| 送信/照会 | false | -2026 | 予約日時が90日以降の日時の場合(最大90日まで可能) | You can not send messages after 90 days. Please check `requestDate` again. |
-| 送信/照会 | false | -2027 | 日付フォーマットが異なりパースエラー発生 | The 'requestDate' has invalid format. |
-| 送信/照会 | false | -2028 | 無効なリクエストID | The `requestId` is invalid |
-| 送信/照会 | false | -2029 | 要求したメッセージがないか、キャンセルできるメッセージがない場合 | All of your messages to cancel are not found or do not meet conditions to cancel. |
-| 送信/照会 | false | -2030 | ワイドイメージ送信時、最大本文長76文字を超過した場合 | The 'content' is too long. If you request the 'wide-image', It must be less than 76 characters. |
-| 送信/照会 | false | -2031 | ワイドイメージ送信時、最大ボタン数2個を超過した場合 | The 'buttons' is too many. If you request the 'wide-image', It must be less than 2 buttons size. |
-| 送信/照会 | false | -2032 | テンプレートタイトルが50文字を超過した場合 | The templateTitle that is replaced by the template parameters can not exceed 50 characters. |
-| 送信/照会 | false | -2035 | テンプレートヘッダーが16文字を超過した場合 | The templateHeader that is replaced by the template parameters can not exceed 16 characters. |
-| 送信/照会 | false | -2500 | 大量送信要求が見つからない場合 | Not found mass message request |
-| 送信/照会 | false | -2501 | 要求したメッセージがないか、キャンセルできるメッセージがない場合 | Send request is failed. because the deadline is expired |
-| 送信/照会 | false | -3011 | 登録したテンプレートボタンと一致しない場合 | The buttons or quickReplies are not matched to template. This message can be resend by sms service if the resend setting is on. |
-| 送信/照会 | false | -3033 | ボタンまたはクイックリプライがテンプレートに登録されていない場合 | The button or quickReply is not exist in template. |
-| 送信/照会 | false | -3034 | 削除するテンプレートが3日以内の送信履歴がある場合 | The template could not be deleted because recently sent message. requestId: {} |
-| 送信/照会 | false | -3035 | テンプレート強調表示タイプアイテムリスト型(ITEM_LIST)で登録時、templateHeader、templateImageName、templateImageUrl、templateItem、templateItemHighlightフィールドのうち1個以上必須で含む | The Template which emphasizeType is 'ITEM_LIST' must have at least one of templateImageInfo, templateHeader, templateItem and templateItemHighlight. |
-| 送信/照会 | false | -3036 | テンプレート強調表示タイプアイテムリスト型(ITEM_LIST)で登録時、セキュリティテンプレートとして登録できない | The Template which emphasizeType is 'ITEM_LIST' can't be a security template. |
-| 送信/照会 | false | -3039 | templateItemサマリーはtemplateItemリストなしに存在できない | The TemplateItem's summary can't exist without templateItem list |
-| 送信/照会 | false | -3042 | templateHeaderがテンプレートと一致しない場合 | The templateHeader are not matched to template. This message can be resend by sms service if the resend setting is on. |
-| 送信/照会 | false | -3043 | templateItemまたはtemplateItemHighlightがテンプレートと一致しない場合 | The templateItem or templateItemHighlight are not matched to template. This message can be resend by sms service if the resend setting is on. |
-| 送信/照会 | false | -3044 | ビジネスフォーム(BF)タイプボタンは単独で使用するか、最上位に位置する必要がある制約に反する場合 | BF type buttons should be located on top. |
-| 送信/照会 | false | -3045 | ビジネスフォーム(BF)タイプのnameが「トークで予約する」「トークでアンケート」「トークで応募」ではない場合、または登録されていないbizFormKeyの場合 | The button linkType 'BF' must follow this constraint. The BF button must have a bizFormKey. The BF button name must be in "톡에서 예약하기", "톡에서 설문하기", "톡에서 응모하기". |
-| 送信/照会 | false | -3046 | templateRepresentLinkがテンプレートと一致しない場合 | The templateRepresentLink is not matched to template. This message can be resend by sms service if the resend setting is on. |
-| 送信/照会 | false | -3048 | テンプレートパラメータは1300文字を超えることはできません | The template parameter's length can not exceed 1300 characters. |
-| 送信/照会 | false | -3049 | テンプレートパラメータがテンプレートと一致しません | The template parameter is not matched to template. |
-| 送信/照会 | false | -3298 | ターゲティング情報が設定されていません | The targeting is invalid. |
-| 送信/照会 | false | -3299 | コマース変数は指定された組み合わせでのみ使用する必要があります: ['regularPrice']、['regularPrice', 'discountPrice', 'discountRate']、['regularPrice', 'discountPrice', 'discountFixed'] | The commerce variable must be used in the following combinations: ['regularPrice'], ['regularPrice', 'discountPrice', 'discountRate'], ['regularPrice', 'discountPrice', 'discountFixed'] |
-| 送信/照会 | false | -3300 | 受信拒否処理された番号が見つかりません | The unsubscribe number could not be found. |
-| 送信/照会 | false | -3301 | 受信拒否したユーザーが含まれています | The unsubscribed recipient are found. |
-| 送信/照会 | false | -3344 | イメージ変更パラメータ数がテンプレートイメージ数と一致しない | The image parameter is invalid. image parameter's size must be equal to a number of template images. |
-| 送信/照会 | false | -4017 | 90日以前のメッセージは照会できない | You can not search the messages before 90 days. |
-| 送信/照会 | false | -4019 | 無効な受信者番号 | Invalid recipient number. |
-| 送信/照会 | false | -4022 | データエクスポート失敗 | Failed to exporting data. |
-| 送信/照会 | false | -4029 | 送信プロフィールマーケティング受信同意が有効化されていない場合 | To send 'M/N type' messages to users who are not friends with your profile, you must first apply to have the 'M/N type' messaging feature enabled. Please check if this option is active in your sender profile settings. |
-| 送信/照会 | false | -4104 | RequestIdが空 | RequestId is empty value. |
-| 送信/照会 | false | -4200 | 無効な代替送信メッセージ | Resend Message is invalid. |
-| 送信/照会 | false | -8006 | 認証メッセージ送信時、テンプレート内容に認証文句がない場合 | The content must contain auth guidement. |
-| 送信/照会 | false | -8008 | メッセージ内容に禁止ワードが含まれる場合 | The content has banned word. |
-| イメージ | false | -8000 | イメージシーケンス(imageSeq)がない場合 | The 'imageSeq' is empty. |
-| イメージ | false | -8003 | イメージ削除に失敗した場合 | It is failed to delete images. |
-| イメージ | false | -8004 | createUserフィールドが最大100文字を超過した場合 | The 'createUser' is too long. It can be less than 100 characters. |
-| イメージ | false | -8005 | イメージアップロード時、プロジェクトに登録されたプラスフレンドがない場合 | Your project doesn't have any plus friends. Please register it at first. |
-| イメージ | false | -8011 | 存在しないイメージタイプ | The image type is invalid. |
-| 禁止ワード | false | -8012 | 禁止ワードが存在しない | Banned word does not exist. |
-| 禁止ワード | false | -8013 | 禁止ワードが既に存在する | Banned word already exists. |
-| 本人認証 | false | -1030 | 本人認証を受けていない場合 | Self verification is required to use this service. |
-| フレンドトーク互換送信 | false | -3200 | ワイドアイテムリストに名前がない | Friendtalk wide item must have a title. |
-| フレンドトーク互換送信 | false | -3201 | ワイドアイテムリストにイメージがない | Friendtalk wide item must have a image. |
-| フレンドトーク互換送信 | false | -3202 | ワイドアイテムリストにlinkMoがない | Friendtalk wide item must have a linkMo. |
-| フレンドトーク互換送信 | false | -3203 | ワイドアイテムリストは3～4個のリストとヘッダーが必要 | Friendtalk wide item must have 3 ~ 4 list and a header. |
-| フレンドトーク互換送信 | false | -3204 | カルーセルにヘッダーがない | Friendtalk carousel must have a header. |
-| フレンドトーク互換送信 | false | -3205 | カルーセルにメッセージがない | Friendtalk carousel must have a message. |
-| フレンドトーク互換送信 | false | -3206 | カルーセルに添付ファイルがない | Friendtalk carousel must have a attachment. |
-| フレンドトーク互換送信 | false | -3207 | カルーセルにイメージがない | Friendtalk carousel must have a image. |
-| フレンドトーク互換送信 | false | -3208 | カルーセルは2～10個のリスト必要、カルーセルコマースタイプにintroがある場合は1～10個のリスト必要 | Friendtalk carousel must have 2 ~ 10 list. If message type is friendtalk carousel-commerce and carousel intro exists, carousel must have 1 ~ 10 list. |
-| フレンドトーク互換送信 | false | -3209 | カルーセルテールにlinkMoがない | Friendtalk carousel tail must have linkMo. |
-| フレンドトーク互換送信 | false | -3210 | クーポンはタイトルと説明が必要 | Friendtalk coupon must have a title and a description. |
-| フレンドトーク互換送信 | false | -3211 | フレンドトークテキスト/イメージタイプメッセージクーポン説明は12文字超過不可、FW/FLタイプは18文字超過不可 | If the message type is friendTalk text/image type, the friendtalk coupon description's length cannot exceed 12 characters. If the message type is friendTalk wide-image/wide-item-list type, the friendtalk coupon description's length cannot exceed 18 characters |
-| フレンドトーク互換送信 | false | -3212 | クーポンタイトル内容が無効 | Friendtalk coupon title is invalid. |
-| フレンドトーク互換送信 | false | -3213 | クーポンはモバイルリンクまたはチャネルタイプios/androidリンクが必要 | Friendtalk must have a mobile link or a channel formatted ios/android link |
-| フレンドトーク互換送信 | false | -3215 | ワイドアイテムリストとカルーセルは広告タイプのみ使用可能 | Friendtalk wide item / carousel can only be sent in AD type. |
-| フレンドトーク互換送信 | false | -3216 | ワイドアイテムリスト最初のアイテムタイトルは25文字超過不可、2～4番目のアイテムタイトルは30文字超過不可 | Friendtalk first wide item's title length cannot exceed 25 characters, and 2nd ~ 4th wide item's title length cannot exceed 30 characters. |
-| フレンドトーク互換送信 | false | -3217 | フレンドトークテキスト/イメージタイプはボタン5個超過不可、クーポン含む場合4個、ワイドイメージ/ワイドアイテムリストは2個超過不可、プレミアムビデオタイプは1個超過不可、コマースタイプは1～2個ボタン必要 | Friendtalk button size is invalid. The button size must be 5 or less. If coupon is included, the button size must be 4 or less. If the message type is friendTalk wide-image/wide-item-list type, the button size must be 2 or less. If the message type is video type, the button size must be 1 or less. If the message type is commerce, the button size must be 1 or 2 |
-| フレンドトーク互換送信 | false | -3218 | フレンドトークvideoUrlが無効 | Friendtalk video url is invalid. |
-| フレンドトーク互換送信 | false | -3219 | フレンドトーク内容が最大長さ超過。プレミアムビデオタイプ内容最大長さは76文字 | The 'content' is too long. If you request the 'video', It must be less than 76 characters. |
-| フレンドトーク互換送信 | false | -3220 | フレンドトークヘッダーが最大長さ超過。プレミアムビデオタイプヘッダー最大長さは20文字 | The 'header' is too long. If you request the 'video', It must be less than 20 characters. |
-| フレンドトーク互換送信 | false | -3221 | カルーセルフィードタイプはカルーセルイントロ使用不可 | Friendtalk carousel feed type cannot have a 'head' field. |
-| フレンドトーク互換送信 | false | -3222 | カルーセルフィードタイプは付加情報フィールド使用不可 | Friendtalk carousel feed type cannot have a 'additionalContent' field. |
-| フレンドトーク互換送信 | false | -3223 | カルーセルフィードタイプはコマース使用不可 | Friendtalk carousel feed type cannot have a 'commerce' field. |
-| フレンドトーク互換送信 | false | -3224 | カルーセルコマースタイプはヘッダーとメッセージフィールド使用不可 | Friendtalk carousel commerce type cannot have 'header' & 'message' fields. |
-| フレンドトーク互換送信 | false | -3225 | カルーセルボタンが無効。カルーセルフィードタイプは2個ボタン超過不可、カルーセルコマースタイプは1～2個ボタン必要 | Friendtalk carousel button size is invalid. If the message type is friendtalk carousel-feed, the button size must be 2 or less. If the message type is friendtalk carousel-commerce, the button size must be 1 ~ 2. |
-| フレンドトーク互換送信 | false | -3226 | コマースにdiscountPriceフィールドがある場合、discountRateまたはdiscountFixedフィールド必要 | If commerce has 'discountPrice' field, commerce must have a 'discountRate' or 'discountFixed' field. |
+| 카테고리      | 성공 여부 | 결과 코드 | 결과 코드 메시지                                                                                                                                           | API 응답 메시지                                                                                                                                                                                                                                                                                                                                                                 |
+|-----------|-------|-------|-----------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 공통        | true  | 0     | 성공                                                                                                                                                  | SUCCESS                                                                                                                                                                                                                                                                                                                                                                    |
+| 공통        | false | 4     | 파라미터 유효성 검증 실패(resultMessage 참고)                                                                                                                    |                                                                                                                                                                                                                                                                                                                                                                            |
+| 공통        | false | -1000 | 유효하지 않은 앱키                                                                                                                                          | Invalid appKey.                                                                                                                                                                                                                                                                                                                                                            |
+| 공통        | false | -1001 | 유효하지 않은 비밀 키(secretKey)                                                                                                                             | Invalid secretKey.                                                                                                                                                                                                                                                                                                                                                         |
+| 공통        | false | -1002 | 유효하지 않은 SMS 앱키                                                                                                                                      | Invalid Sms appkey                                                                                                                                                                                                                                                                                                                                                         |
+| 공통        | false | -1003 | 유효하지 않은 SMS 발신 번호                                                                                                                                   | Invalid Sms Sendno                                                                                                                                                                                                                                                                                                                                                         |
+| 공통        | false | -1005 | 10분간 동일한 X-NC-API-IDEMPOTENCY-KEY 값으로 메시지 발송을 요청한 경우                                                                                                | The same 'X-NC-API-IDEMPOTENCY-KEY' was used within the last 10 minute.                                                                                                                                                                                                                                                                                                    |
+| 공통        | false | -1006 | 발신 프로필이 발신 키를 가지고 있지 않은 경우                                                                                                                          | Plus friend don't have senderKey.                                                                                                                                                                                                                                                                                                                                          |
+| 공통        | false | -1019 | 유효하지 않은 대체 발송 080수신거부 번호                                                                                                                            | Invalid Sms UnSubscribeno                                                                                                                                                                                                                                                                                                                                                  |
+| 공통        | false | -1020 | 유효하지 않은 UUID                                                                                                                                        | Invalid uuid                                                                                                                                                                                                                                                                                                                                                               |
+| 공통        | false | -1027 | 발신 프로필이 차단 상태일 경우                                                                                                                                   | The sender is blocked status.                                                                                                                                                                                                                                                                                                                                              |
+| 공통        | false | -1028 | 템플릿 변수가 치환될 때 그 차이가 14개 글자를 초과하는 부분이 있는 경우(최초 사용자 제한)                                                                                               | Blacklist can't use more than 14 characters in template value.                                                                                                                                                                                                                                                                                                             |
+| 공통        | false | -2000 | 특정 필드값이 최대 길이 초과할 경우                                                                                                                                | The '{}' must be at less than or equal to {}.                                                                                                                                                                                                                                                                                                                              |
+| 공통        | false | -2001 | 특정 필드값이 필수 값이 공백인 경우                                                                                                                                | The '{}' must not be blank.                                                                                                                                                                                                                                                                                                                                                |
+| 공통        | false | -2002 | 특정 필드값이 NULL일 경우                                                                                                                                    | The '{}' must not be null.                                                                                                                                                                                                                                                                                                                                                 |
+| 공통        | false | -2003 | 특정 필드값이 최소 길이보다 작을 경우                                                                                                                               | The '{}' must be greater than or equal to {}.                                                                                                                                                                                                                                                                                                                              |
+| 공통        | false | -2004 | 특정 필드값이 최대 길이보다 클 경우                                                                                                                                | The '{}' must be between {} and {}.                                                                                                                                                                                                                                                                                                                                        |
+| 공통        | false | -2005 | 특정 필드값이 제한된 범위 내의 값이 아닌 경우                                                                                                                          | The '{}' must be less than or equal to {}.                                                                                                                                                                                                                                                                                                                                 |
+| 공통        | false | -2017 | 존재하지 않는 발신 프로필                                                                                                                                      | Not exist plus friend.                                                                                                                                                                                                                                                                                                                                                     |
+| 공통        | false | -2018 | 유효하지 않은 버튼 파라미터                                                                                                                                     | Button parameter is invalid.                                                                                                                                                                                                                                                                                                                                               |
+| 공통        | false | -2033 | 템플릿 아이템 파라미터가 유효하지 않은 경우                                                                                                                            | TemplateItem parameter is invalid.                                                                                                                                                                                                                                                                                                                                         |
+| 공통        | false | -2034 | 템플릿 아이템 하이라이트 파라미터가 유효하지 않은 경우                                                                                                                      | TemplateItemHighlight parameter is invalid.                                                                                                                                                                                                                                                                                                                                |
+| 공통        | false | -2036 | TemplateRepresentLink 파라미터가 유효하지 않은 경우                                                                                                              | TemplateRepresentLink parameter is invalid.                                                                                                                                                                                                                                                                                                                                |
+| 공통        | false | -2037 | 아이템 리스트 포함 템플릿 등록 시 메시지 본문 글자 수가 700자를 초과한 경우                                                                                                       | The 'content' is too long. If you request the 'templateItem', It must be less than 1000 characters.                                                                                                                                                                                                                                                                        |
+| 공통        | false | -2502 | 발송 실패 설정이 되어 있지 않고, 대체 발송을 요청했을 경우                                                                                                                  | Please set up plus-friend resend setting.                                                                                                                                                                                                                                                                                                                                  |
+| 공통        | false | -2504 | 유효하지 않은 바로연결                                                                                                                                        | The quickReplies parameter is invalid.                                                                                                                                                                                                                                                                                                                                     |
+| 공통        | false | -3000 | 웹 링크(WL) 버튼 타입의 템플릿일 경우, linkMo 필수 필드                                                                                                               | If template have a WL(webLink), must input linkMo                                                                                                                                                                                                                                                                                                                          |
+| 공통        | false | -3002 | 필요한 요청 본문(request body) 내용을 읽을 수 없을 경우                                                                                                              | Field is not valid.                                                                                                                                                                                                                                                                                                                                                        |
+| 공통        | false | -3003 | 존재하는 않는 템플릿                                                                                                                                         | Template does not exist.                                                                                                                                                                                                                                                                                                                                                   |
+| 공통        | false | -3004 | 템플릿 파라미터 오류                                                                                                                                         | Please check template parameter.                                                                                                                                                                                                                                                                                                                                           |
+| 공통        | false | -3005 | 템플릿 상태 오류(승인 전 발송 요청 시)                                                                                                                             | Please check template status.                                                                                                                                                                                                                                                                                                                                              |
+| 공통        | false | -3006 | linkMo/linkPC 는 반드시 http:// 또는 https://를 포함해야 합니다.                                                                                                  | The linkMo/linkPc must include http:// or https://                                                                                                                                                                                                                                                                                                                         |
+| 공통        | false | -3007 | 앱링크(AL)는  schemeAndroid, schemeIos, linkMo 중 최소 2개 이상을 입력해야 합니다.                                                                                    | If there is an AL(appLink) in the template, at least two of schemeAndroid, schemeIos, linkMo must be entered.                                                                                                                                                                                                                                                              |
+| 공통        | false | -3008 | 버튼 명에는 치환자 입력이 불가능합니다.                                                                                                                              | The button name can't include the replacement parameter.                                                                                                                                                                                                                                                                                                                   |
+| 공통        | false | -3009 | 버튼명이 존재하지 않습니다.                                                                                                                                     | Not exist button name.                                                                                                                                                                                                                                                                                                                                                     |
+| 공통        | false | -3010 | 등록한 템플릿 본문과 일치하지 않는 경우                                                                                                                              | The contents are not matched to template. This message can be resend by sms service if the resend setting is on.                                                                                                                                                                                                                                                           |
+| 공통        | false | -3026 | AC 타입 버튼의 이름은 "채널 추가" 만 등록 가능                                                                                                                       | AC type button name must have 채널 추가                                                                                                                                                                                                                                                                                                                                        |
+| 공통        | false | -3038 | templateItem summary의 title은 치환 변수를 가질 수 없음                                                                                                         | The templateItem's summary title can't include the replacement parameter.                                                                                                                                                                                                                                                                                                  |
+| 공통        | false | -3040 | 썸네일이 있는 아이템하이라이트의 title은 최대 21글자, description은 최대 13글자                                                                                              | The itemHighlight's title with thumbnail can not exceed 21 characters, and description can not excced 13 characters                                                                                                                                                                                                                                                        |
+| 공통        | false | -3041 | imageUrl은 http:// https:// 을 반드시 포함해야 함                                                                                                             | The imageUrl must include http:// or https://                                                                                                                                                                                                                                                                                                                              |
+| 공통        | false | -3051 | TN 버튼 이름은 '전화 연결', '고객센터 연결', '상담원 연결' 중 하나여야 합니다.                                                                                                  | TN button name must be one of: 전화 연결, 고객센터 연결, 상담원 연결                                                                                                                                                                                                                                                                                                                      |
+| 공통        | false | -3052 | TN 버튼에는 telNumber 필드가 필수입니다.                                                                                                                        | TN button must have telNumber field.                                                                                                                                                                                                                                                                                                                                       |
+| 공통        | false | -3053 | 유효하지 않은 전화번호 형식입니다. 숫자와 하이픈만 사용 가능하며, 최대 14자까지 입력할 수 있습니다.                                                                                          | Invalid telephone number format. Must be digits/hyphens only, max 14 characters.                                                                                                                                                                                                                                                                                           |
+| 공통        | false | -3101 | 바로연결명이 존재하지 않는 경우                                                                                                                                   | Not exist quickReply name.                                                                                                                                                                                                                                                                                                                                                 |
+| 공통        | false | -3102 | 바로연결명은 치환자를 포함할 수 없음                                                                                                                                | The quickReply name can't include the replacement parameter.                                                                                                                                                                                                                                                                                                               |
+| 공통        | false | -3303 | 필수 입력값이 누락되었습니다.                                                                                                                                    | {} is empty.                                                                                                                                                                                                                                                                                                                                                               |
+| 공통        | false | -3304 | 입력값이 유효한 범위를 벗어났습니다. 지정된 범위 내의 값을 입력해주세요.                                                                                                           | The '{}' must be between {} and {}.                                                                                                                                                                                                                                                                                                                                        |
+| 공통        | false | -3305 | 선택한 chatBubbleType에는 특정 필드를 사용할 수 없습니다.                                                                                                             | The chatBubbleType {} is not allowed {} field.                                                                                                                                                                                                                                                                                                                             |
+| 공통        | false | -3306 | 커머스 타입 메시지에는 버튼이 반드시 포함되어야 합니다.                                                                                                                     | The commerce type require buttons.                                                                                                                                                                                                                                                                                                                                         |
+| 공통        | false | -3307 | linkType의 필수 입력 항목이 누락되었습니다.                                                                                                                        | linkType {} is required field {}                                                                                                                                                                                                                                                                                                                                           |
+| 공통        | false | -3308 | linkType의 여러 필수 입력 항목이 누락되었습니다.                                                                                                                     | linkType {} is required fields {}                                                                                                                                                                                                                                                                                                                                          |
+| 공통        | false | -3309 | 템플릿에 앱링크(AL) 사용 시, schemeAndroid, schemeIos, linkMo 중 최소 두 가지를 입력해야 합니다.                                                                            | If there is an AL(appLink) in the template, at least two of schemeAndroid, schemeIos, linkMo must be entered.                                                                                                                                                                                                                                                              |
+| 공통        | false | -3310 | 웹링크 URL(linkMo/linkPc)은 'http://' 또는 'https://'를 포함해야 합니다.                                                                                          | The linkMo/linkPc must include http:// or https://                                                                                                                                                                                                                                                                                                                         |
+| 공통        | false | -3311 | 메시지 타입이 텍스트 또는 이미지인 경우, 채널 추가(AC) 버튼은 첫 번째 버튼이어야 합니다.                                                                                               | When the type is TEXT or IMAGE, AC  button type must be the first button.                                                                                                                                                                                                                                                                                                  |
+| 공통        | false | -3312 | 메시지 타입이 텍스트 또는 이미지가 아닌 경우, 채널 추가(AC) 버튼은 마지막 버튼이어야 합니다.                                                                                             | When the type is not TEXT or IMAGE, AC button type must be the last button.                                                                                                                                                                                                                                                                                                |
+| 공통        | false | -3313 | 쿠폰 URL 정보가 잘못되었습니다. 기본 쿠폰 사용 시 linkMo 필드가, 채널 쿠폰 URL 사용 시 schemeAndroid 또는 schemeIos 필드가 필요합니다.                                                     | If a basic coupon is used instead of a channel coupon URL, the linkMo field is required. If a channel coupon URL (format: alimtalk=coupon://) is used, either schemeAndroid or schemeIos must be provided.                                                                                                                                                                 |
+| 공통        | false | -3314 | 쿠폰 정보 입력 시 필수 항목이 누락되었습니다.                                                                                                                          | The coupon field require {}                                                                                                                                                                                                                                                                                                                                                |
+| 공통        | false | -3315 | 쿠폰 제목이 유효하지 않습니다.                                                                                                                                   | The title is not valid coupon title                                                                                                                                                                                                                                                                                                                                        |
+| 공통        | false | -3316 | 커머스 정보 입력 시 필수 항목이 누락되었습니다.                                                                                                                         | commerce field require {}                                                                                                                                                                                                                                                                                                                                                  |
+| 공통        | false | -3317 | 비디오 정보 입력 시 필수 항목이 누락되었습니다.                                                                                                                         | video field require {}                                                                                                                                                                                                                                                                                                                                                     |
+| 공통        | false | -3318 | 비디오 URL이 유효한 형식이 아닙니다.                                                                                                                              | The videoUrl is not valid video url                                                                                                                                                                                                                                                                                                                                        |
+| 공통        | false | -3319 | 이미지 정보 입력 시 필수 항목이 누락되었습니다.                                                                                                                         | image field require {}                                                                                                                                                                                                                                                                                                                                                     |
+| 공통        | false | -3320 | 캐러셀 아이템 개수가 허용된 범위(최소/최대값)를 벗어났습니다.                                                                                                                 | The carousel list size must be between {} and {}                                                                                                                                                                                                                                                                                                                           |
+| 공통        | false | -3321 | 캐러셀 헤더에 링크 입력 시, linkMo는 필수입니다.                                                                                                                     | If at least one link is entered in the Carousel Head, linkMo cannot be empty.                                                                                                                                                                                                                                                                                              |
+| 공통        | false | -3322 | 캐러셀 헤더 정보 입력 시 필수 항목이 누락되었습니다.                                                                                                                      | The carousel head field require {}                                                                                                                                                                                                                                                                                                                                         |
+| 공통        | false | -3323 | 캐러셀 푸터 정보 입력 시 필수 항목이 누락되었습니다.                                                                                                                      | The carousel tail field require {}                                                                                                                                                                                                                                                                                                                                         |
+| 공통        | false | -3324 | 템플릿 변수값이 잘못되었습니다.                                                                                                                                   | The template parameter is invalid.                                                                                                                                                                                                                                                                                                                                         |
+| 공통        | false | -3325 | 아이템(item) 정보 입력 시 필수 항목이 누락되었습니다.                                                                                                                   | item field require {}                                                                                                                                                                                                                                                                                                                                                      |
+| 공통        | false | -3326 | 이미지 URL은 'http://' 또는 'https://'를 포함해야 합니다.                                                                                                         | The imageUrl must include http:// or https://                                                                                                                                                                                                                                                                                                                              |
+| 공통        | false | -3327 | 이미지 링크 URL은 'http://' 또는 'https://'를 포함해야 합니다.                                                                                                      | The imageLink must include http:// or https://                                                                                                                                                                                                                                                                                                                             |
+| 공통        | false | -3328 | 허용되지 않는 버튼 타입입니다.                                                                                                                                   | The button type {} is not allowed.                                                                                                                                                                                                                                                                                                                                         |
+| 공통        | false | -3330 | 채널 추가 버튼이 없는 세로 버튼 배열 시, BF 버튼은 첫 번째여야 합니다.                                                                                                         | BF button must be the first button in vertical layout without channel-add button.                                                                                                                                                                                                                                                                                          |
+| 공통        | false | -3331 | 허용되지 않는 버튼 이름입니다.                                                                                                                                   | The button is not allowed to have {} as its name.                                                                                                                                                                                                                                                                                                                          |
+| 공통        | false | -3332 | 캐러셀 커머스 아이템 정보 입력 시 필수 항목이 누락되었습니다.                                                                                                                 | The carousel commerce item field require {}                                                                                                                                                                                                                                                                                                                                |
+| 공통        | false | -3333 | 캐러셀 커머스 아이템에 허용되지 않는 정보가 포함되어 있습니다.                                                                                                                 | The carousel commerce field not allowed {}                                                                                                                                                                                                                                                                                                                                 |
+| 공통        | false | -3334 | 캐러셀 일반 아이템 정보 입력 시 필수 항목이 누락되었습니다.                                                                                                                  | The carousel item field require {}                                                                                                                                                                                                                                                                                                                                         |
+| 공통        | false | -3335 | 캐러셀 일반 아이템에 허용되지 않는 정보가 포함되어 있습니다.                                                                                                                  | The carousel item field not allowed {}                                                                                                                                                                                                                                                                                                                                     |
+| 공통        | false | -3336 | 채널 추가 버튼이 있는 세로 버튼 배열 시, BF 버튼은 두 번째여야 합니다.                                                                                                         | BF button must be the second button in vertical layout with channel-add button.                                                                                                                                                                                                                                                                                            |
+| 공통        | false | -3337 | 채널 추가 버튼이 없는 가로 버튼 배열 시, BF 버튼은 오른쪽(두 번째)이어야 합니다.                                                                                                   | BF button must be the second (right side) button in horizontal layout without channel-add button.                                                                                                                                                                                                                                                                          |
+| 공통        | false | -3338 | 채널 추가 버튼이 있는 가로 버튼 배열 시, BF 버튼은 왼쪽(첫 번째)이어야 합니다.                                                                                                    | BF button must be the first (left side) button in horizontal layout with channel-add button.                                                                                                                                                                                                                                                                               |
+| 공통        | false | -3340 | 잘못된 080 수신거부번호                                                                                                                                      | Invalid unsubscribeNo format. Expected format: 080-xxx-xxxx or 080-xxxx-xxxx or 080xxxxxxx or 080xxxxxxxx.                                                                                                                                                                                                                                                                 |
+| 공통        | false | -3341 | 잘못된 080 인증번호                                                                                                                                        | Invalid format. Only digits are allowed, up to a maximum of 9.                                                                                                                                                                                                                                                                                                             |
+| 공통        | false | -4000 | 유효하지 않은 파라미터                                                                                                                                        | Invalid parameter                                                                                                                                                                                                                                                                                                                                                          |
+| 공통        | false | -4001 | 이미 활성화된 앱키                                                                                                                                          | Already activated appkey.                                                                                                                                                                                                                                                                                                                                                  |
+| 공통        | false | -4002 | 활성화되지 않은 앱키                                                                                                                                         | Not activated appkey.                                                                                                                                                                                                                                                                                                                                                      |
+| 공통        | false | -4003 | 조회 범위는 한 달 초과                                                                                                                                       | Search is possible within 31 days.                                                                                                                                                                                                                                                                                                                                         |
+| 공통        | false | -4004 | 존재하지 않는 앱키                                                                                                                                          | Not exist appkey.                                                                                                                                                                                                                                                                                                                                                          |
+| 공통        | false | -4005 | 사용 종료 상태의 앱키                                                                                                                                        | Appkey is disabled status.                                                                                                                                                                                                                                                                                                                                                 |
+| 공통        | false | -4007 | 파일 사이즈 초과                                                                                                                                           | The file size is less than {}.                                                                                                                                                                                                                                                                                                                                             |
+| 공통        | false | -4009 | 유효하지 않은 파일 확장자                                                                                                                                      | Check the file extension.                                                                                                                                                                                                                                                                                                                                                  |
+| 공통        | false | -4010 | 파일을 찾을 수 없음                                                                                                                                         | Not found file.                                                                                                                                                                                                                                                                                                                                                            |
+| 공통        | false | -4011 | 수신자 목록을 찾을 수 없음                                                                                                                                     | Not found recipientList.                                                                                                                                                                                                                                                                                                                                                   |
+| 공통        | false | -4014 | 파일에 recipient_no 헤더가 없음                                                                                                                             | There is no recipient_no header in the file.                                                                                                                                                                                                                                                                                                                               |
+| 공통        | false | -4016 | 데이터가 존재하지 않음                                                                                                                                        | Not exist data.                                                                                                                                                                                                                                                                                                                                                            |
+| 공통        | false | -4018 | 파일 업로드 오류                                                                                                                                           | Upload attach file error.                                                                                                                                                                                                                                                                                                                                                  |
+| 공통        | false | -4020 | 파일 읽기 실패                                                                                                                                            | Failed to reading the file.                                                                                                                                                                                                                                                                                                                                                |
+| 공통        | false | -4023 | 상품을 비활성화하려면 모든 발신자를 삭제해야 함                                                                                                                          | For disabling the product, have to delete all senders                                                                                                                                                                                                                                                                                                                      |
+| 공통        | false | -4101 | 유효하지 않은 통계 조회 파라미터                                                                                                                                  | Invalid search parameter.                                                                                                                                                                                                                                                                                                                                                  |
+| 공통        | false | -4103 | 유효하지 않은 요청Id 또는 요청시작일시/요청종료일시                                                                                                                       | RequestId or startRequestDate/endRequestDate is invalid.                                                                                                                                                                                                                                                                                                                   |
+| 공통        | false | -5000 | 유효하지 않은 수신 번호                                                                                                                                       | RecipientNo is invalid.                                                                                                                                                                                                                                                                                                                                                    |
+| 공통        | false | -7000 | 벤더 요청 API 실패                                                                                                                                        | Vender request API is failed.                                                                                                                                                                                                                                                                                                                                              |
+| 공통        | false | -8001 | 이미지 파일이 정상적이지 않은 경우                                                                                                                                 | The image you upload is invalid.                                                                                                                                                                                                                                                                                                                                           |
+| 공통        | false | -8002 | 이미지를 찾을 수 없는 경우. <br/>캐러셀 피 - 캐러셀 타입 이미지를 사용<br/> 캐러셀 커머스 - 커머스 타입 이미지를 사용 <br/> 커머스 유형 - 이미지 타입을 사용                                                | It is not found any images. If you want to send carousel-feed type messages, you must use carousel type images. If you want to send carousel-commerce type messages, you must use commerce type images. If you want to send commerce type messages, you must use IMAGE type images.                                                                                        |
+| 공통        | false | -8007 | 스토리지 설정이 비어있음                                                                                                                                       | The storage configs can't empty.                                                                                                                                                                                                                                                                                                                                           |
+| 공통        | false | -8009 | 이미 공유된 프로젝트                                                                                                                                         | This project has already been shared.                                                                                                                                                                                                                                                                                                                                      |
+| 공통        | false | -8010 | 서버 이슈로 이미지 파일 업로드 실패                                                                                                                                | Uploading image file has failed for an unexpected error.                                                                                                                                                                                                                                                                                                                   |
+| 공통        | false | -9992 | fade-out된 친구톡 API를 호출했을 경우                                                                                                                          | The API is no longer supported. Please migrate to the new brand-message endpoint/API.                                                                                                                                                                                                                                                                                      |
+| 공통        | false | -9993 | 필수 요청 부분이 누락됨                                                                                                                                       | Required request part is not present.                                                                                                                                                                                                                                                                                                                                      |
+| 공통        | false | -9994 | 메서드 인수의 타입이 예상과 다름                                                                                                                                  | A method argument has not the expected type.                                                                                                                                                                                                                                                                                                                               |
+| 공통        | false | -9996 | Content-type이 application/json가 아닐 경우                                                                                                               | Only application/json Content-type is supported.                                                                                                                                                                                                                                                                                                                           |
+| 공통        | false | -9997 | 적절하지 않은 요청으로 인한 실패                                                                                                                                  | Client Error.                                                                                                                                                                                                                                                                                                                                                              |
+| 공통        | false | -9998 | 존재하지 않는 API                                                                                                                                         | Not exist API                                                                                                                                                                                                                                                                                                                                                              |
+| 공통        | false | -9999 | 시스템 오류                                                                                                                                              | System error. Please inquire at support@toast.com.                                                                                                                                                                                                                                                                                                                         |
+| 발신 프로필    | false | -3342 | 마케팅 수신동의 증적자료 업로드 실패                                                                                                                                | Failed to upload marketing agreement file.                                                                                                                                                                                                                                                                                                                                 |
+| 발신 프로필    | false | -3343 | M/N 타입 사용 신청 실패                                                                                                                                     | {}                                                                                                                                                                                                                                                                                                                                                                         |
+| 발신 프로필    | false | -3345 | 080 수신거부정보가 유효하지 않음                                                                                                                                 | Failed to update unsubscribe content. message: {}                                                                                                                                                                                                                                                                                                                          |
+| 발신 프로필 그룹 | false | -1010 | 발신 프로필 그룹이 존재하지 않을 경우                                                                                                                               | Not exist plus friend group.                                                                                                                                                                                                                                                                                                                                               |
+| 발신 프로필 그룹 | false | -1013 | 이미 존재하는 발신 프로필 그룹일 경우                                                                                                                               | Already exist plus friend group.                                                                                                                                                                                                                                                                                                                                           |
+| 발신 프로필 그룹 | false | -1018 | 이미 발신 프로필 그룹에 등록된 경우                                                                                                                                | This is a plusFriend that has already been added.                                                                                                                                                                                                                                                                                                                          |
+| 발신 프로필 그룹 | false | -1022 | 발신 프로필이 그룹에 등록되지 않은 발신 프로필일 경우                                                                                                                      | This is not a plusFriend added to the group.                                                                                                                                                                                                                                                                                                                               |
+| 발신 프로필 그룹 | false | -1023 | 발신 프로필이 그룹이 최대 10개가 초과한 경우                                                                                                                          | The max group size is 10.                                                                                                                                                                                                                                                                                                                                                  |
+| 발신 프로필 그룹 | false | -1025 | 발신 프로필 그룹 삭제 불가                                                                                                                                     | The sender-group can't deleted.                                                                                                                                                                                                                                                                                                                                            |
+| 발신 프로필 그룹 | false | -1026 | 발신 프로필 그룹의 멤버가 5000개가 초과한 경우                                                                                                                        | The maximum number of members in a group is 5000.                                                                                                                                                                                                                                                                                                                          |
+| 발신 프로필 그룹 | false | -1029 | 발신 프로필이 블랙리스트인 경우 발신 프로필 그룹에 둥록 불가                                                                                                                  | Blacklist can't join the group.                                                                                                                                                                                                                                                                                                                                            |
+| 템플릿       | false | -1014 | 활성화 되지 않은 발신 프로필일 경우                                                                                                                                | Not active status plus friend.                                                                                                                                                                                                                                                                                                                                             |
+| 템플릿       | false | -2505 | 바로연결 포함 발송 시, 최대 버튼 개수 2개를 초과한 경우                                                                                                                   | The 'buttons' is too many. If you request the 'quickReplies', the buttons size muse be 2 or less.                                                                                                                                                                                                                                                                          |
+| 템플릿       | false | -3001 | 이미 존재하는 템플릿 코드 또는 템플릿명                                                                                                                              | Already exist templateCode or templateName.                                                                                                                                                                                                                                                                                                                                |
+| 템플릿       | false | -3012 | 수정할 수 없는 템플릿 상태(승인/반려 상태만 가능)                                                                                                                       | Only templates with TSC03(APPROVE)/TSC04(REJECT) can be modified.                                                                                                                                                                                                                                                                                                          |
+| 템플릿       | false | -3013 | 이미 수정 중인 템플릿이 존재                                                                                                                                    | There are templates already being modified.                                                                                                                                                                                                                                                                                                                                |
+| 템플릿       | false | -3016 | 강조 표기형 템플릿은 templateTitle, templateSubtitle 필수 필드                                                                                                   | The Template which emphasizeType is 'TEXT' must have templateTitle, templateSubtitle.                                                                                                                                                                                                                                                                                      |
+| 템플릿       | false | -3017 | templateSubtitle 은 치환 변수를 사용 불가                                                                                                                     | The templateSubtitle can't include the replacement parameter.                                                                                                                                                                                                                                                                                                              |
+| 템플릿       | false | -3018 | 부가 정보형 템플릿은 templateExtra 필수 필드                                                                                                                     | The Template which messageType is 'EX' must have templateExtra.                                                                                                                                                                                                                                                                                                            |
+| 템플릿       | false | -3020 | 복합형 템플릿은 templateExtra 필수 필드                                                                                                                        | The Template which messageType is 'MI' must have templateExtra.                                                                                                                                                                                                                                                                                                            |
+| 템플릿       | false | -3021 | templateExtra은 치환 변수를 사용 불가                                                                                                                         | The templateExtra can't include the replacement parameter.                                                                                                                                                                                                                                                                                                                 |
+| 템플릿       | false | -3024 | AC 타입 버튼은 채널 추가형 복합형 템플릿만 등록 가능                                                                                                                     | The button of AC type can using only templateMessageType (AD/MI).                                                                                                                                                                                                                                                                                                          |
+| 템플릿       | false | -3025 | AC 타입 버튼은 단독으로 사용하거나, 가장 위에 위치해야하는 제약에 어긋난 경우                                                                                                       | AC type buttons should be located alone or on top.                                                                                                                                                                                                                                                                                                                         |
+| 템플릿       | false | -3027 | 템플릿 강조 표시 타입 선택 안함(NONE)으로 등록 시, templateTitle, templateSubtitle 필드를 등록할 수 없음                                                                       | The Template which emphasizeType is 'NONE' can't have templateTitle, templateSubtitle.                                                                                                                                                                                                                                                                                     |
+| 템플릿       | false | -3028 | 템플릿 메시지 유형 기본형(BA)일 경우, templateExtra 필드를 등록할 수 없음                                                                                                  | The Template which messageType is 'BA' can't have templateExtra.                                                                                                                                                                                                                                                                                                           |
+| 템플릿       | false | -3030 | 템플릿 메시지 유형 채널 추가형(AD)일 경우, templateExtra 필드를 등록할 수 없음                                                                                               | The Template which messageType is 'AD' can't have templateExtra.                                                                                                                                                                                                                                                                                                           |
+| 템플릿       | false | -3032 | 템플릿 강조 표시 타입 이미지형(IMAGE)일 경우, templateImageName, templateImageUrl 필드 필수값                                                                            | The Template which emphasizeType is 'IMAGE' must have templateImageName, templateImageUrl.                                                                                                                                                                                                                                                                                 |
+| 템플릿       | false | -3037 | templateItem list의 title은 치환 변수를 가질 수 없음                                                                                                            | The templateItem's title can't include the replacement parameter.                                                                                                                                                                                                                                                                                                          |
+| 템플릿       | false | -3047 | 템플릿 등록 시 서체 스타일을 적용하려고 한 경우 (서체 스타일은 발송 시점에 적용 가능합니다.)                                                                                              | The templateTitle and templateItemHighlight's title can't end with \s.                                                                                                                                                                                                                                                                                                     |
+| 템플릿       | false | -3050 | 템플릿 메시지 타입(AD/MI)은 AC 타입의 버튼을 가져야 합니다.                                                                                                              | The templateMessageType (AD/MI) must have button of AC type.                                                                                                                                                                                                                                                                                                               |
+| 템플릿       | false | -3100 | 템플릿 요청/승인 상태의 경우 comment를 추가할 수 없음                                                                                                                  | Could not add comment on registered/completed template status.                                                                                                                                                                                                                                                                                                             |
+| 템플릿       | false | -3103 | button 또는 바로연결의 형식이 올바르지 않은 경우 (json 형식이 아니거나, escape 되지 않은 문자가 섞여있음)                                                                               | The button or quickReply has an invalid format.                                                                                                                                                                                                                                                                                                                            |
+| 템플릿       | false | -4021 | 파일 사이즈 초과 (10MB)                                                                                                                                    | The file size is less than 10MB.                                                                                                                                                                                                                                                                                                                                           |
+| 템플릿       | false | -4024 | 휴면 템플릿 해제 실패                                                                                                                                        | Failed to release the dormant template.                                                                                                                                                                                                                                                                                                                                    |
+| 템플릿       | false | -4025 | 템플릿 업로드 시, 최대 20개를 초과한 경우                                                                                                                           | Only upload up to 20 templates at a time.                                                                                                                                                                                                                                                                                                                                  |
+| 템플릿       | false | -4026 | 템플릿 업로드 파일의 헤더가 유효하지 않은 경우                                                                                                                          | Uploaded template's headers are invalid.                                                                                                                                                                                                                                                                                                                                   |
+| 템플릿       | false | -4027 | 채널 추가형 전환 실패. button 길이 초과                                                                                                                          | Conversion to AD/MI type failed. The 'buttons' length does not exceed its maximum length.                                                                                                                                                                                                                                                                                  |
+| 템플릿       | false | -4028 | 채널 추가형 전환 실패. 승인되지 않은 템플릿 사용                                                                                                                        | Conversion to AD/MI type failed. The template must be approved                                                                                                                                                                                                                                                                                                             |
+| 발송/조회     | false | -1016 | requestId 혹은 recipientSeq로 메시지를 찾을 수 없을 경우                                                                                                          | It is not found any messages responding with that requestId or recipientSeq.                                                                                                                                                                                                                                                                                               |
+| 발송/조회     | false | -1024 | 발신 프로필이 그룹으로 메시지를 발송할 경우                                                                                                                            | The sender-group can't send the message.                                                                                                                                                                                                                                                                                                                                   |
+| 발송/조회     | false | -1031 | 발송 요청한 전체 수신자가 발송에 실패했을 경우                                                                                                                          | All of receivers are failed to send.                                                                                                                                                                                                                                                                                                                                       |
+| 발송/조회     | false | -2019 | 템플릿 본문 1,300글자 초과로 실패                                                                                                                               | The content that is replaced by the template parameters can not exceed 1,300 characters.                                                                                                                                                                                                                                                                                   |
+| 발송/조회     | false | -2023 | 친구톡 메시지 본문이 400글자 초과할 경우(이미지 첨부)                                                                                                                    | The 'content' is too long. If you request the 'image', It can be less than 400 characters.                                                                                                                                                                                                                                                                                 |
+| 발송/조회     | false | -2024 | 친구톡 메시지 본문이 1,300글자 초과할 경우                                                                                                                          | The 'content' is too long. It can be less than 1,300 characters without any image.                                                                                                                                                                                                                                                                                         |
+| 발송/조회     | false | -2025 | 예약 일시가 과거의 일시일 경우                                                                                                                                   | You can not send messages on past dates. Please check `requestDate` again.                                                                                                                                                                                                                                                                                                 |
+| 발송/조회     | false | -2026 | 예약 일시가 90일 이후의 일시일 경우(최대 90일까지 가능)                                                                                                                  | You can not send messages after 90 days. Please check `requestDate` again.                                                                                                                                                                                                                                                                                                 |
+| 발송/조회     | false | -2027 | 날짜 포맷이 달라 파싱 오류 발생                                                                                                                                  | The 'requestDate' has invalid format.                                                                                                                                                                                                                                                                                                                                      |
+| 발송/조회     | false | -2028 | 유효하지 않은 요청 ID                                                                                                                                       | The `requestId` is invalid                                                                                                                                                                                                                                                                                                                                                 |
+| 발송/조회     | false | -2029 | 요청한 메시지가 없거나, 취소할 수 있는 메시지가 없는 경우                                                                                                                   | All of your messages to cancel are not found or do not meet conditions to cancel.                                                                                                                                                                                                                                                                                          |
+| 발송/조회     | false | -2030 | 와이드 이미지 발송 시, 최대 본문 길이 76자 초과한 경우                                                                                                                   | The 'content' is too long. If you request the 'wide-image', It must be less than 76 characters.                                                                                                                                                                                                                                                                            |
+| 발송/조회     | false | -2031 | 와이드 이미지 발송 시, 최대 버튼 개수 2개 초과한 경우                                                                                                                    | The 'buttons' is too many. If you request the 'wide-image', It must be less than 2 buttons size.                                                                                                                                                                                                                                                                           |
+| 발송/조회     | false | -2032 | 템플릿 제목이 50자를 초과한 경우                                                                                                                                 | The templateTitle that is replaced by the template parameters can not exceed 50 characters.                                                                                                                                                                                                                                                                                |
+| 발송/조회     | false | -2035 | 템플릿 헤더가 16자를 초과한 경우                                                                                                                                 | The templateHeader that is replaced by the template parameters can not exceed 16 characters.                                                                                                                                                                                                                                                                               |
+| 발송/조회     | false | -2500 | 대량 발송 요청을 찾을 수 없는 경우                                                                                                                                | Not found mass message request                                                                                                                                                                                                                                                                                                                                             |
+| 발송/조회     | false | -2501 | 요청한 메시지가 없거나, 취소할 수 있는 메시지가 없는 경우                                                                                                                   | Send request is failed. because the deadline is expired                                                                                                                                                                                                                                                                                                                    |
+| 발송/조회     | false | -3011 | 등록한 템플릿 버튼과 일치하지 않는 경우                                                                                                                              | The buttons or quickReplies are not matched to template. This message can be resend by sms service if the resend setting is on.                                                                                                                                                                                                                                            |
+| 발송/조회     | false | -3033 | 버튼 또는 바로연결이 템플릿에 등록되지 않았을 경우                                                                                                                        | The button or quickReply is not exist in template.                                                                                                                                                                                                                                                                                                                         |
+| 발송/조회     | false | -3034 | 삭제할 템플릿이 3일이내 발송 이력이 있을 경우                                                                                                                          | The template could not be deleted because recently sent message. requestId: {}                                                                                                                                                                                                                                                                                             |
+| 발송/조회     | false | -3035 | 템플릿 강조 표시 타입 아이템리스트형(ITEM_LIST)로 등록 시, templateHeader, templateImageName, templateImageUrl, templateItem, templateItemHighlight 필드 중 1개 이상 필수로 포함   | The Template which emphasizeType is 'ITEM_LIST' must have at least one of templateImageInfo, templateHeader, templateItem and templateItemHighlight.                                                                                                                                                                                                                       |
+| 발송/조회     | false | -3036 | 템플릿 강조 표시 타입 아이템리스트형(ITEM_LIST)로 등록 시, 보안 템플릿으로 등록할 수 없음                                                                                            | The Template which emphasizeType is 'ITEM_LIST' can't be a security template.                                                                                                                                                                                                                                                                                              |
+| 발송/조회     | false | -3039 | templateItem summary은 templateItem list없이 존재할 수 없음                                                                                                  | The TemplateItem's summary can't exist without templateItem list                                                                                                                                                                                                                                                                                                           |
+| 발송/조회     | false | -3042 | templateHeader이 템플릿과 일치하지 않는 경우                                                                                                                     | The templateHeader are not matched to template. This message can be resend by sms service if the resend setting is on.                                                                                                                                                                                                                                                     |
+| 발송/조회     | false | -3043 | templateItem 또는 templateItemHighlight이 템플릿과 일치하지 않는 경우                                                                                              | The templateItem or templateItemHighlight are not matched to template. This message can be resend by sms service if the resend setting is on.                                                                                                                                                                                                                              |
+| 발송/조회     | false | -3044 | 비지니스폼(BF) 타입 버튼은 단독으로 사용하거나, 가장 위에 위치해야하는 제약에 어긋난 경우                                                                                                | BF type buttons should be located on top.                                                                                                                                                                                                                                                                                                                                  |
+| 발송/조회     | false | -3045 | 비지니스폼(BF) 타입의 name이 "톡에서 예약하기", "톡에서 설문하기", "톡에서 응모하기" 이 아닐 경우, 또는 등록되지 않은 bizFormKey일 경우                                                           | The button linkType 'BF' must follow this constraint. The BF button must have a bizFormKey. The BF button name must be in "톡에서 예약하기", "톡에서 설문하기", "톡에서 응모하기".                                                                                                                                                                                                              |
+| 발송/조회     | false | -3046 | templateRepresentLink이 템플릿과 일치하지 않는 경우                                                                                                              | The templateRepresentLink is not matched to template. This message can be resend by sms service if the resend setting is on.                                                                                                                                                                                                                                               |
+| 발송/조회     | false | -3048 | 템플릿 파라미터는 1300자를 넘을 수 없습니다.                                                                                                                         | The template parameter's length can not exceed 1300 characters.                                                                                                                                                                                                                                                                                                            |
+| 발송/조회     | false | -3049 | 템플릿 파라미터가 템플릿과 일치하지 않습니다.                                                                                                                           | The template parameter is not matched to template.                                                                                                                                                                                                                                                                                                                         |
+| 발송/조회     | false | -3298 | 타겟팅 정보가 설정되지 않았습니다.                                                                                                                                 | The targeting is invalid.                                                                                                                                                                                                                                                                                                                                                  |
+| 발송/조회     | false | -3299 | 커머스 변수는 지정된 조합으로만 사용해야 합니다: ['regularPrice'], ['regularPrice', 'discountPrice', 'discountRate'], ['regularPrice', 'discountPrice', 'discountFixed'] | The commerce variable must be used in the following combinations: ['regularPrice'], ['regularPrice', 'discountPrice', 'discountRate'], ['regularPrice', 'discountPrice', 'discountFixed']                                                                                                                                                                                  |
+| 발송/조회     | false | -3300 | 수신거부 처리된 번호를 찾을 수 없습니다.                                                                                                                             | The unsubscribe number could not be found.                                                                                                                                                                                                                                                                                                                                 |
+| 발송/조회     | false | -3301 | 수신거부한 사용자가 포함되어 있습니다.                                                                                                                               | The unsubscribed recipient are found.                                                                                                                                                                                                                                                                                                                                      |
+| 발송/조회     | false | -3344 | 이미지 변경 파라미터 갯수가 템플릿 이미지 갯수와 일치하지 않음                                                                                                                 | The image parameter is invalid. image parameter's size must be equal to a number of template images.                                                                                                                                                                                                                                                                       |
+| 발송/조회     | false | -4017 | 90일 이전 메시지는 조회할 수 없음                                                                                                                                | You can not search the messages before 90 days.                                                                                                                                                                                                                                                                                                                            |
+| 발송/조회     | false | -4019 | 유효하지 않은 수신자 번호                                                                                                                                      | Invalid recipient number.                                                                                                                                                                                                                                                                                                                                                  |
+| 발송/조회     | false | -4022 | 데이터 내보내기 실패                                                                                                                                         | Failed to exporting data.                                                                                                                                                                                                                                                                                                                                                  |
+| 발송/조회     | false | -4029 | 발신 프로필 마케팅 수신 동의가 활성화되지 않은 경우                                                                                                                       | To send 'M/N type' messages to users who are not friends with your profile, you must first apply to have the 'M/N type' messaging feature enabled. Please check if this option is active in your sender profile settings.                                                                                                                                                  |
+| 발송/조회     | false | -4104 | RequestId가 비어있음                                                                                                                                     | RequestId is empty value.                                                                                                                                                                                                                                                                                                                                                  |
+| 발송/조회     | false | -4200 | 유효하지 않은 대체 발송 메시지                                                                                                                                   | Resend Message is invalid.                                                                                                                                                                                                                                                                                                                                                 |
+| 발송/조회     | false | -8006 | 인증 메시지 발송 시, 템플릿 내용에 인증 문구가 없는 경우                                                                                                                   | The content must contain auth guidement.                                                                                                                                                                                                                                                                                                                                   |
+| 발송/조회     | false | -8008 | 메시지 내용에 금칙어가 포함된 경우                                                                                                                                 | The content has banned word.                                                                                                                                                                                                                                                                                                                                               |
+| 이미지       | false | -8000 | 이미지 시퀀스(imageSeq)가 없는 경우                                                                                                                            | The 'imageSeq' is empty.                                                                                                                                                                                                                                                                                                                                                   |
+| 이미지       | false | -8003 | 이미지 삭제에 실패하는 경우                                                                                                                                     | It is failed to delete images.                                                                                                                                                                                                                                                                                                                                             |
+| 이미지       | false | -8004 | createUser 필드 최대 100자를 초과한 경우                                                                                                                       | The 'createUser' is too long. It can be less than 100 characters.                                                                                                                                                                                                                                                                                                          |
+| 이미지       | false | -8005 | 이미지 업로드 시 프로젝트에 등록된 플러스친구가 없는 경우                                                                                                                    | Your project doesn't have any plus friends. Please register it at first.                                                                                                                                                                                                                                                                                                   |
+| 이미지       | false | -8011 | 존재하지 않는 이미지 유형                                                                                                                                      | The image type is invalid.                                                                                                                                                                                                                                                                                                                                                 |
+| 금지어       | false | -8012 | 금칙어가 존재하지 않음                                                                                                                                        | Banned word does not exist.                                                                                                                                                                                                                                                                                                                                                |
+| 금지어       | false | -8013 | 금칙어가 이미 존재함                                                                                                                                         | Banned word already exists.                                                                                                                                                                                                                                                                                                                                                |
+| 본인인증      | false | -1030 | 본인인증을 받지 않은 경우                                                                                                                                      | Self verification is required to use this service.                                                                                                                                                                                                                                                                                                                         |
+| 친구톡 호환 발송 | false | -3200 | 와이드 아이템 리스트에 이름이 없음                                                                                                                                 | Friendtalk wide item must have a title.                                                                                                                                                                                                                                                                                                                                    |
+| 친구톡 호환 발송 | false | -3201 | 와이드 아이템 리스트에 이미지가 없음                                                                                                                                | Friendtalk wide item must have a image.                                                                                                                                                                                                                                                                                                                                    |
+| 친구톡 호환 발송 | false | -3202 | 와이드 아이템 리스트에 linkMo가 없음                                                                                                                             | Friendtalk wide item must have a linkMo.                                                                                                                                                                                                                                                                                                                                   |
+| 친구톡 호환 발송 | false | -3203 | 와이드 아이템 리스트는 3~4개 리스트와 헤더가 필요함                                                                                                                      | Friendtalk wide item must have 3 ~ 4 list and a header.                                                                                                                                                                                                                                                                                                                    |
+| 친구톡 호환 발송 | false | -3204 | 캐러셀에 헤더가 없음                                                                                                                                         | Friendtalk carousel must have a header.                                                                                                                                                                                                                                                                                                                                    |
+| 친구톡 호환 발송 | false | -3205 | 캐러셀에 메시지가 없음                                                                                                                                        | Friendtalk carousel must have a message.                                                                                                                                                                                                                                                                                                                                   |
+| 친구톡 호환 발송 | false | -3206 | 캐러셀에 첨부파일이 없음                                                                                                                                       | Friendtalk carousel must have a attachment.                                                                                                                                                                                                                                                                                                                                |
+| 친구톡 호환 발송 | false | -3207 | 캐러셀에 이미지가 없음                                                                                                                                        | Friendtalk carousel must have a image.                                                                                                                                                                                                                                                                                                                                     |
+| 친구톡 호환 발송 | false | -3208 | 캐러셀은 2~10개 리스트 필요, 캐러셀 커머스 타입에 intro가 있으면 1~10개 리스트 필요                                                                                              | Friendtalk carousel must have 2 ~ 10 list. If message type is friendtalk carousel-commerce and carousel intro exists, carousel must have 1 ~ 10 list.                                                                                                                                                                                                                      |
+| 친구톡 호환 발송 | false | -3209 | 캐러셀 꼬리에 linkMo가 없음                                                                                                                                  | Friendtalk carousel tail must have linkMo.                                                                                                                                                                                                                                                                                                                                 |
+| 친구톡 호환 발송 | false | -3210 | 쿠폰은 제목과 설명이 필요함                                                                                                                                     | Friendtalk coupon must have a title and a description.                                                                                                                                                                                                                                                                                                                     |
+| 친구톡 호환 발송 | false | -3211 | 친구톡 텍스트/이미지 타입 메시지 쿠폰 설명은 12자 초과 불가, FW/FL 타입은 18자 초과 불가                                                                                            | If the message type is friendTalk text/image type, the friendtalk coupon description's length cannot exceed 12 characters. If the message type is friendTalk wide-image/wide-item-list type, the friendtalk coupon description's length cannot exceed 18 characters                                                                                                        |
+| 친구톡 호환 발송 | false | -3212 | 쿠폰 제목 내용이 유효하지 않음                                                                                                                                   | Friendtalk coupon title is invalid.                                                                                                                                                                                                                                                                                                                                        |
+| 친구톡 호환 발송 | false | -3213 | 쿠폰은 모바일 링크 또는 채널 타입 ios/android 링크가 필요함                                                                                                             | Friendtalk must have a mobile link or a channel formatted ios/android link                                                                                                                                                                                                                                                                                                 |
+| 친구톡 호환 발송 | false | -3215 | 와이드 아이템 리스트와 캐러셀은 광고 타입에만 사용 가능                                                                                                                     | Friendtalk wide item / carousel can only be sent in AD type.                                                                                                                                                                                                                                                                                                               |
+| 친구톡 호환 발송 | false | -3216 | 와이드 아이템 리스트 첫 번째 아이템 제목은 25자 초과 불가, 2~4번째 아이템 제목은 30자 초과 불가                                                                                         | Friendtalk first wide item's title length cannot exceed 25 characters, and 2nd ~ 4th wide item's title length cannot exceed 30 characters.                                                                                                                                                                                                                                 |
+| 친구톡 호환 발송 | false | -3217 | 친구톡 텍스트/이미지 타입은 버튼 5개 초과 불가, 쿠폰 포함 시 4개, 와이드 이미지/와이드 아이템 리스트는 2개 초과 불가, 프리미엄 비디오 타입은 1개 초과 불가, 커머스 타입은 1~2개 버튼 필요                                   | Friendtalk button size is invalid. The button size must be 5 or less. If coupon is included, the button size must be 4 or less. If the message type is friendTalk wide-image/wide-item-list type, the button size must be 2 or less. If the message type is video type, the button size must be 1 or less. If the message type is commerce, the button size must be 1 or 2 |
+| 친구톡 호환 발송 | false | -3218 | 친구톡 videoUrl이 유효하지 않음                                                                                                                               | Friendtalk video url is invalid.                                                                                                                                                                                                                                                                                                                                           |
+| 친구톡 호환 발송 | false | -3219 | 친구톡 내용이 최대 길이 초과. 프리미엄 비디오 타입 내용 최대 길이는 76자                                                                                                         | The 'content' is too long. If you request the 'video', It must be less than 76 characters.                                                                                                                                                                                                                                                                                 |
+| 친구톡 호환 발송 | false | -3220 | 친구톡 헤더가 최대 길이 초과. 프리미엄 비디오 타입 헤더 최대 길이는 20자                                                                                                         | The 'header' is too long. If you request the 'video', It must be less than 20 characters.                                                                                                                                                                                                                                                                                  |
+| 친구톡 호환 발송 | false | -3221 | 캐러셀 피드 타입은 캐러셀 인트로 사용 불가                                                                                                                            | Friendtalk carousel feed type cannot have a 'head' field.                                                                                                                                                                                                                                                                                                                  |
+| 친구톡 호환 발송 | false | -3222 | 캐러셀 피드 타입은 부가 정보 필드 사용 불가                                                                                                                           | Friendtalk carousel feed type cannot have a 'additionalContent' field.                                                                                                                                                                                                                                                                                                     |
+| 친구톡 호환 발송 | false | -3223 | 캐러셀 피드 타입은 커머스 사용 불가                                                                                                                                | Friendtalk carousel feed type cannot have a 'commerce' field.                                                                                                                                                                                                                                                                                                              |
+| 친구톡 호환 발송 | false | -3224 | 캐러셀 커머스 타입은 헤더와 메시지 필드 사용 불가                                                                                                                        | Friendtalk carousel commerce type cannot have 'header' & 'message' fields.                                                                                                                                                                                                                                                                                                 |
+| 친구톡 호환 발송 | false | -3225 | 캐러셀 버튼이 유효하지 않음. 캐러셀 피드 타입은 2개 버튼 초과 불가, 캐러셀 커머스 타입은 1~2개 버튼 필요                                                                                     | Friendtalk carousel button size is invalid. If the message type is friendtalk carousel-feed, the button size must be 2 or less. If the message type is friendtalk carousel-commerce, the button size must be 1 ~ 2.                                                                                                                                                        |
+| 친구톡 호환 발송 | false | -3226 | 커머스에 discountPrice 필드가 있으면 discountRate 또는 discountFixed 필드 필요                                                                                      | If commerce has 'discountPrice' field, commerce must have a 'discountRate' or 'discountFixed' field.                                                                                                                                                                                                                                                                       |
 
-## AlimTalk/FriendTalk 送信結果コード
+## 알림톡/친구톡 발송 결과 코드
 
 <table class="table table-striped table-hover">
 <thead>
 	<tr>
-		<th>コード</th>
-		<th>意味</th>
+		<th>코드값</th>
+		<th>의미</th>
 	</tr>
 </thead>
 <tbody>
 	<tr>
 		<td>1000</td>
-		<td>成功</td>
+		<td>성공</td>
 	</tr>
-	<tr>
+  <tr>
 		<td>1001</td>
-		<td>Request BodyがJson形式ではない</td>
+		<td>Request Body가 Json형식이 아님</td>
 	</tr>
-	<tr>
+  <tr>
 		<td>1002</td>
-		<td>ハブパートナーキーが無効</td>
+		<td>허브 파트너 키가 유효하지 않음</td>
 	</tr>
-	<tr>
+  <tr>
 		<td>1003</td>
-		<td>送信プロフィールキーが無効</td>
+		<td>발신 프로필 키가 유효하지 않음</td>
 	</tr>
 	<tr>
 		<td>1004</td>
-		<td>Request Body(JSON)でnameが見つからない</td>
+		<td>Request Body(JSON)에서 name을 찾을 수 없음</td>
 	</tr>
 	<tr>
 		<td>1006</td>
-		<td>削除された送信プロフィール(カスタマーセンターにお問い合わせ)</td>
+		<td>삭제된 발신 프로필(고객센터에게 문의)</td>
 	</tr>
 	<tr>
 		<td>1007</td>
-		<td>ブロック状態の送信プロフィール(カスタマーセンターにお問い合わせ)</td>
+		<td>차단 상태의 발신 프로필(고객센터에게 문의)</td>
 	</tr>
 	<tr>
 		<td>1011</td>
-		<td>契約情報が見つからない(カスタマーセンターにお問い合わせ)</td>
+		<td>계약 정보를 찾을 수 없음(고객센터에게 문의)</td>
 	</tr>
-	<tr>
+  <tr>
 		<td>1012</td>
-		<td>無効な形式のユーザーキーリクエスト</td>
+		<td>잘못된 형식의 사용자키 요청</td>
 	</tr>
-	<tr>
+  <tr>
 		<td>1013</td>
-		<td>無効なアプリ連携</td>
+		<td>유효하지 않은 앱 연결</td>
 	</tr>
 	<tr>
 		<td>1014</td>
-		<td>無効な事業者番号</td>
+		<td>유효하지 않은 사업자번호</td>
 	</tr>
 	<tr>
 		<td>1015</td>
-		<td>無効なapp user idリクエスト</td>
+		<td>유효하지 않은 app user id 요청</td>
 	</tr>
 	<tr>
 		<td>1016</td>
-		<td>事業者登録番号不一致</td>
+		<td>사업자등록번호 불일치</td>
 	</tr>
 	<tr>
 		<td>1020</td>
-		<td>電話番号またはapp user idが無効または未入力</td>
+		<td>전화번호 or app user id가 유효하지 않거나 미입력 요청</td>
 	</tr>
-	<tr>
+ 	<tr>
 		<td>1021</td>
-		<td>ブロック状態のカカオトークチャネル</td>
+		<td>차단 상태의 카카오톡 채널</td>
 	</tr>
 	<tr>
 		<td>1022</td>
-		<td>クローズ状態のカカオトークチャネル</td>
+		<td>닫힘 상태의 카카오톡 채널</td>
 	</tr>
 	<tr>
 		<td>1023</td>
-		<td>削除されたカカオトークチャネル</td>
+		<td>삭제된 카카오톡 채널</td>
 	</tr>
 	<tr>
 		<td>1024</td>
-		<td>削除待ち状態のカカオトークチャネル</td>
+		<td>삭제 대기 상태의 카카오톡 채널</td>
 	</tr>
 	<tr>
 		<td>1025</td>
-		<td>チャネル制裁状態によるメッセージ送信失敗</td>
+		<td>채널 제재 상태로 인한 메시지 전송 실패</td>
 	</tr>
 	<tr>
 		<td>1027</td>
-		<td>チャネルメッセージ制裁状態によるメッセージ送信失敗</td>
+		<td>채널 메시지 제재 상태로 인한 메시지 전송 실패</td>
 	</tr>
-	<tr>
-		<td>1028</td>
-		<td>該当ターゲティングオプションを使用できない</td>
-	</tr>
+    <tr>
+       <td>1028</td>
+       <td>해당 타겟팅 옵션을 사용할 수 없음</td>
+    </tr>
 	<tr>
 		<td>1030</td>
-		<td>無効なパラメータリクエスト</td>
+		<td>잘못된 파라미터 요청</td>
 	</tr>
-	<tr>
-		<td>1033</td>
-		<td>템플릿 메시지 타입과 chat\_bubble\_type 파라미터 불일치</td>
-	</tr>
+    <tr>
+       <td>1033</td>
+       <td>템플릿 메시지 타입과 chat\_bubble\_type 파라미터 불일치</td>
+    </tr>
 	<tr>
 		<td>2001</td>
-		<td>メッセージ送信不可(予期しないエラー発生)</td>
+		<td>메시지 전송 불가(예기치 않은 오류 발생)</td>
 	</tr>
 	<tr>
 		<td>2003</td>
-		<td>メッセージ送信失敗(テストサーバーでカ카오トークチャネルを追加していない場合)</td>
+		<td>메시지 전송 실패(테스트 서버에서 카카오톡 채널을 추가하지 않은 경우)</td>
 	</tr>
-	<tr>
+    <tr>
 		<td>2005</td>
-		<td>カカ오ボード시스템エラーによりイメージ情報の読み込みに失敗</td>
+		<td>카카오 내부 시스템 오류로 이미지 정보를 읽어오는 데 실패함</td>
 	</tr>
 	<tr>
 		<td>3000</td>
-		<td>予期しないエラー発生</td>
+		<td>예기치 않은 오류 발생</td>
 	</tr>
 	<tr>
 		<td>3005</td>
-		<td>メッセージを送信したが受信確認ができない(成功不確実、サーバーには暗号化されて保管され、3日以内に受信可能)</td>
+		<td>메시지를 발송했으나 수신 확인이 안 됨(성공 불확실, 서버에는 암호화되어 보관되며 3일 이내 수신 가능)</td>
 	</tr>
 	<tr>
 		<td>3006</td>
-		<td>内部システムエラーによりメッセージ送信失敗</td>
+		<td>내부 시스템 오류로 메시지 전송 실패</td>
 	</tr>
 	<tr>
 		<td>3008</td>
-		<td>電話番号エラー</td>
+		<td>전화번호 오류</td>
 	</tr>
 	<tr>
 		<td>3010</td>
-		<td>予期しないエラー発生</td>
+		<td>예기치 않은 오류 발생</td>
 	</tr>
 	<tr>
 		<td>3011</td>
-		<td>メッセージが存在しない</td>
+		<td>메시지가 존재하지 않음</td>
 	</tr>
 	<tr>
 		<td>3012</td>
-		<td>カカオ通信失敗</td>
+		<td>카카오 통신 실패</td>
 	</tr>
 	<tr>
 		<td>3013</td>
-		<td>メッセージが空</td>
+		<td>메시지가 비어 있음</td>
 	</tr>
 	<tr>
 		<td>3014</td>
-		<td>メッセージ長さ制限エラー</td>
+		<td>메시지 길이 제한 오류</td>
 	</tr>
 	<tr>
 		<td>3015</td>
-		<td>テンプレートが見つからない</td>
+		<td>템플릿을 찾을 수 없음</td>
 	</tr>
 	<tr>
 		<td>3016</td>
-		<td>メッセージ内容がテンプレートと一致しない</td>
+		<td>메시지 내용이 템플릿과 일치하지 않음</td>
+	</tr>
+	<tr>
+		<td>3018</td>
+		<td>메시지를 전송할 수 없음<br>1. Android 기기 사용자의 경우 핸드폰 유심과 카카오톡 사용 번호가 다른 사람<br>2. 활성 사용자가 아닌 경우<br>활성 사용자란?<br> * 서버와 연결되어 있는 카카오톡 사용자<br> * 발송 당일 가입한 사용자를 제외한 최근 7일(168시간) 내에 카카오톡을 사용한 사용자<br>3. 제재 사용자 등<br></td>
+	</tr>
+    <tr>
+		<td>3019</td>
+		<td>메시지를 발송할 수 없음<br>카카오톡 유저가 아님</td>
+	</tr>
+    <tr>
+		<td>3020</td>
+		<td>메시지를 발송할 수 없음<br>알림톡 수신 차단</td>
+	</tr>
+    <tr>
+		<td>3021</td>
+		<td>메시지를 발송할 수 없음<br>카카오톡 최소 버전 미지원</td>
 	</tr>
 	<tr>
 		<td>3022</td>
-		<td>送信可能な時間ではない(フレンドトークメッセージは08時から20時50分まで送信可能)</td>
+		<td>발송 가능한 시간이 아님(친구톡 메시지는 08시부터 20시 50분까지 발송 가능)</td>
 	</tr>
 	<tr>
 		<td>3023</td>
-		<td>メッセージ文法エラー(JSON形式エラー)</td>
+		<td>메시지 문법 오류(JSON 형식 오류)</td>
 	</tr>
 	<tr>
 		<td>3024</td>
-		<td>メッセージに含まれるイメージを送信できない(イメージアドレスまたはリンクが正しくない、またはイメージが規格に合わない)</td>
+		<td>메시지에 포함된 이미지를 전송할 수 없음(이미지주소 또는 링크가 올바르지 않거나 이미지가 규격에 맞지 않음)</td>
 	</tr>
 	<tr>
 		<td>3025</td>
-		<td>変数文字数制限超過</td>
+		<td>변수 글자 수 제한 초과</td>
 	</tr>
 	<tr>
 		<td>3026</td>
-		<td>相談/ボット転換ボタンextra, event文字数制限超過</td>
+		<td>상담/봇 전환 버튼 extra, event 글자수 제한 초과</td>
 	</tr>
 	<tr>
 		<td>3027</td>
-		<td>メッセージボタン/クイックリンクがテンプレートと一致しない</td>
+		<td>메시지 버튼/바로연결이 템플릿과 일치하지 않음</td>
 	</tr>
 	<tr>
 		<td>3028</td>
-		<td>メッセージ強調表記タイトルがテンプレートと一致しない</td>
+		<td>메시지 강조 표기 타이틀이 템플릿과 일치하지 않음</td>
 	</tr>
 	<tr>
 		<td>3029</td>
-		<td>メッセージ強調表記タイトル長さ制限超過(50文字)</td>
+		<td>메시지 강조 표기 타이틀 길이 제한 초과(50자)</td>
 	</tr>
 	<tr>
 		<td>3030</td>
-		<td>メッセージタイプとテンプレート強調タイプが一致しない</td>
+		<td>메시지 타입과 템플릿 강조유형이 일치하지 않음</td>
 	</tr>
 	<tr>
 		<td>3031</td>
-		<td>ヘッダーがテンプレートと一致しない</td>
+		<td>헤더가 템플릿과 일치하지 않음</td>
 	</tr>
 	<tr>
 		<td>3032</td>
-		<td>ヘッダー長さ制限超과(16文字)</td>
+		<td>헤더 길이 제한 초과(16자)</td>
 	</tr>
 	<tr>
 		<td>3033</td>
-		<td>アイテムハイライトがテンプレートと一致しない</td>
+		<td>아이템 하이라이트가 템플릿과 일치하지 않음</td>
 	</tr>
 	<tr>
 		<td>3034</td>
-		<td>アイテムハイライトタイトル長さ制限超過(イメージなしの場合30文字、イメージありの場合21文字)</td>
+		<td>아이템 하이라이트 타이틀 길이 제한 초과(이미지 없는 경우 30자, 이미지 있는 경우 21자)</td>
 	</tr>
 	<tr>
 		<td>3035</td>
-		<td>アイテムハイライト説明長さ制限超過(イメージなしの場合19文字、イメージありの場合13文字)</td>
+		<td>아이템 하이라이트 디스크립션 길이 제한 초과(이미지 없는 경우 19자, 이미지 있는 경우 13자)</td>
 	</tr>
 	<tr>
 		<td>3036</td>
-		<td>アイテムリストがテンプレートと一致しない</td>
+		<td>아이템 리스트가 템플릿과 일치하지 않음</td>
 	</tr>
 	<tr>
 		<td>3037</td>
-		<td>アイテムリストのアイテムの説明長さ制限超過(23文字)</td>
+		<td>아이템 리스트의 아이템의 디스크립션 길이 제한 초과(23자)</td>
 	</tr>
 	<tr>
 		<td>3038</td>
-		<td>アイテム要約情報がテンプレートと一致しない</td>
+		<td>아이템 요약정보가 템플릿과 일치하지 않음</td>
 	</tr>
 	<tr>
 		<td>3039</td>
-		<td>アイテム要約情報の説明長さ制限超過(14文字)</td>
+		<td>아이템 요약정보의 디스크립션 길이 제한 초과(14자)</td>
 	</tr>
 	<tr>
 		<td>3040</td>
-		<td>アイテム要約情報の説明に許可されない文字が含まれる(通貨記号/コード、数字、カンマ、小数点、空白を除く文字を含む)</td>
+		<td>아이템 요약정보의 디스크립션에 허용되지 않은 문자 포함(통화기호/코드, 숫자, 콤마, 소수점, 공백을 제외한 문자 포함)</td>
 	</tr>
 	<tr>
 		<td>3041</td>
-		<td>ワイドアイテムリスト個数最大最小個数不一致</td>
+		<td>와이드 아이템 리스트 갯수 최대 최소 갯수 불일치</td>
 	</tr>
 	<tr>
 		<td>3042</td>
-		<td>代表リンクがテンプレートと一致しない</td>
+		<td>대표링크가 템플릿과 일치하지 않음</td>
 	</tr>
 	<tr>
 		<td>3043</td>
-		<td>イメージ変数個数テンプレート不一致</td>
+		<td>이미지 변수 개수 템플릿 불일치</td>
 	</tr>
 	<tr>
 		<td>3044</td>
-		<td>クーポン変数テンプレート不一致</td>
+		<td>쿠폰 변수 템플릿 불일치</td>
 	</tr>
 	<tr>
 		<td>3045</td>
-		<td>コマース情報変数テンプレート不一致</td>
+		<td>커머스 정보 변수 템플릿 불일치</td>
 	</tr>
 	<tr>
 		<td>3046</td>
-		<td>付加情報最大長さ制限エラー</td>
+		<td>부가 정보 최대 길이 제한 오류</td>
 	</tr>
 	<tr>
 		<td>3047</td>
-		<td>コマース情報商品名最大長さ制限エラー</td>
+		<td>커머스 정보 상품명 최대 길이 제한 오류</td>
 	</tr>
 	<tr>
 		<td>3048</td>
-		<td>無効なグループタグキー入力</td>
+		<td>유효하지 않은 그룹 태그 키 입력</td>
 	</tr>
-	<tr>
-		<td>3050</td>
-		<td>受信同意拒否スペック(Nタイプ)未対応</td>
-	</tr>
+    <tr>
+       <td>3050</td>
+       <td>수신동의거부 스펙 (N타입) 미지원</td>
+    </tr>
 	<tr>
 		<td>3051</td>
-		<td>カルーセルアイテムリスト個数最小、最大個数不一致</td>
+		<td>케러셀 아이템 리스트 갯수 최소, 최대 갯수 불일치</td>
 	</tr>
 	<tr>
 		<td>3052</td>
-		<td>カルーセルアイテムメッセージ長さ超過</td>
+		<td>케러셀 아이템 메시지 길이 초과</td>
 	</tr>
 	<tr>
 		<td>3053</td>
-		<td>カルーセルテンプレート不一致</td>
+		<td>캐러셀 템플릿 불일치</td>
 	</tr>
-	<tr>
-		<td>3054</td>
-		<td>カルーセルボタンテンプレート不一致</td>
-	</tr>
-	<tr>
-		<td>3055</td>
-		<td>カルーセルクーポンテンプレート不一致</td>
-	</tr>
+    <tr>
+       <td>3054</td>
+       <td>캐러셀 버튼 템플릿 불일치</td>
+    </tr>
+    <tr>
+       <td>3055</td>
+       <td>캐러셀 쿠폰 템플릿 불일치</td>
+    </tr>
 	<tr>
 		<td>3056</td>
-		<td>ワイドアイテムリストタイトル長さ制限エラー</td>
+		<td>와이드 아이템 리스트 타이틀 길이 제한 오류</td>
 	</tr>
-	<tr>
-		<td>3057</td>
-		<td>カルーセルコマーステンプレート不一致</td>
-	</tr>
+    <tr>
+       <td>3057</td>
+       <td>캐러셀 커머스 템플릿 불일치</td>
+    </tr>
 	<tr>
 		<td>3058</td>
-		<td>カルーセルヘッダー長さ制限エラー</td>
+		<td>캐러셀 헤더 길이 제한 오류</td>
 	</tr>
 	<tr>
 		<td>4000</td>
-		<td>メッセージ送信結果が見つからない</td>
+		<td>메시지 전송 결과를 찾을 수 없음</td>
 	</tr>
 	<tr>
 		<td>4001</td>
-		<td>不明なメッセージ状態</td>
+		<td>알 수 없는 메시지 상태</td>
 	</tr>
-	<tr>
-		<td>4100</td>
-		<td>requestIdエラー</td>
-	</tr>
-	<tr>
-		<td>4101</td>
-		<td>リクエスト日付エラー</td>
-	</tr>
-	<tr>
-		<td>4102</td>
-		<td>Templateリクエストエラー</td>
-	</tr>
-	<tr>
-		<td>4103</td>
-		<td>有効なハブパートナーが見つからない</td>
-	</tr>
-	<tr>
-		<td>4104</td>
-		<td>有効な送信プロフィールが見つからない</td>
-	</tr>
-	<tr>
-		<td>4110</td>
-		<td>無効なチャットバブルタイプまたはメッセージタイプリクエスト</td>
-	</tr>
-	<tr>
-		<td>4120</td>
-		<td>メッセージリクエストペイロード生成エラー</td>
-	</tr>
-	<tr>
-		<td>4121</td>
-		<td>メッセージ送信対象エラー</td>
-	</tr>
-	<tr>
-		<td>4122</td>
-		<td>メッセージ結果照会エラー</td>
-	</tr>
-	<tr>
-		<td>4130</td>
-		<td>requestIdパターンエラー</td>
-	</tr>
-	<tr>
-		<td>4131</td>
-		<td>重複requestId</td>
-	</tr>
-	<tr>
-		<td>4132</td>
-		<td>テンプレート変数不一致</td>
-	</tr>
-	<tr>
-		<td>4133</td>
-		<td>中断されたテンプレート</td>
-	</tr>
-	<tr>
-		<td>4134</td>
-		<td>変更されたテンプレート</td>
-	</tr>
-	<tr>
-		<td>4137</td>
-		<td>メッセージリクエスト失敗</td>
-	</tr>
-	<tr>
-		<td>4138</td>
-		<td>ブランドメッセージメッセージ個数制限</td>
-	</tr>
-	<tr>
-		<td>4139</td>
-		<td>メッセージリクエスト失敗</td>
-	</tr>
-	<tr>
-		<td>4140</td>
-		<td>メッセージリクエスト失敗</td>
-	</tr>
-	<tr>
-		<td>4141</td>
-		<td>メッセージリクエスト失敗</td>
-	</tr>
-	<tr>
-		<td>4142</td>
-		<td>メッセージリクエスト失敗</td>
-	</tr>
-	<tr>
-		<td>4143</td>
-		<td>有効期限切れリクエスト</td>
-	</tr>
-	<tr>
-		<td>4144</td>
-		<td>本文長さ制限(30KB)超過</td>
-	</tr>
-	<tr>
-		<td>4156</td>
-		<td>最大送信数超過</td>
-	</tr>
-	<tr>
-		<td>4161</td>
-		<td>処理中のメッセージ</td>
-	</tr>
-	<tr>
+    <tr>
+       <td>4100</td>
+       <td>requestId 오류</td>
+    </tr>
+    <tr>
+       <td>4101</td>
+       <td>요청 날짜 오류</td>
+    </tr>
+    <tr>
+       <td>4102</td>
+       <td>Template 요청 오류</td>
+    </tr>
+    <tr>
+       <td>4103</td>
+       <td>유효한 허브파트너를 찾을 수 없음</td>
+    </tr>
+    <tr>
+       <td>4104</td>
+       <td>유효한 발신 프로필을 찾을 수 없음</td>
+    </tr>
+    <tr>
+       <td>4110</td>
+       <td>유효하지 않은 챗버블 타입 또는 메시지 타입 요청</td>
+    </tr>
+    <tr>
+       <td>4120</td>
+       <td>메시지 요청 페이로드 생성 오류</td>
+    </tr>
+    <tr>
+       <td>4121</td>
+       <td>메시지 발송 대상 오류</td>
+    </tr>
+    <tr>
+       <td>4122</td>
+       <td>메시지 결과 조회 오류</td>
+    </tr>
+    <tr>
+       <td>4130</td>
+       <td>requestId 패턴 오류</td>
+    </tr>
+    <tr>
+       <td>4131</td>
+       <td>중복 requestId</td>
+    </tr>
+    <tr>
+       <td>4132</td>
+       <td>템플릿 변수 불일치</td>
+    </tr>
+    <tr>
+       <td>4133</td>
+       <td>중단된 템플릿</td>
+    </tr>
+    <tr>
+       <td>4134</td>
+       <td>변경된 템플릿</td>
+    </tr>
+    <tr>
+       <td>4137</td>
+       <td>메시지 요청 실패</td>
+    </tr>
+    <tr>
+       <td>4138</td>
+       <td>브랜드 메시지 메시지 개수 제한</td>
+    </tr>
+    <tr>
+       <td>4139</td>
+       <td>메시지 요청 실패</td>
+    </tr>
+    <tr>
+       <td>4140</td>
+       <td>메시지 요청 실패</td>
+    </tr>
+    <tr>
+       <td>4141</td>
+       <td>메시지 요청 실패</td>
+    </tr>
+    <tr>
+       <td>4142</td>
+       <td>메시지 요청 실패</td>
+    </tr>
+    <tr>
+       <td>4143</td>
+       <td>만료된 요청</td>
+    </tr>
+    <tr>
+       <td>4144</td>
+       <td>본문 길이 제한 (30KB) 초과</td>
+    </tr>
+    <tr>
+       <td>4156</td>
+       <td>최대 발송수 초과</td>
+    </tr>
+    <tr>
+       <td>4161</td>
+       <td>처리중인 메시지</td>
+    </tr>
+    <tr>
 		<td>9998</td>
-		<td>システムに問題が発生し、担当者が確認中(現在サービス提供中ではない)</td>
+		<td>시스템에 문제가 발생하여 담당자가 확인 중(현재 서비스 제공 중이 아님)</td>
 	</tr>
-	<tr>
+    <tr>
 		<td>9999</td>
-		<td>システムに問題が発생し、担当者が確認中(システムに不明なエラー発生)</td>
+		<td>시스템에 문제가 발생하여 담당자가 확인 중(시스템에 알 수 없는 오류 발생)</td>
 	</tr>
 </tbody>
 </table>
