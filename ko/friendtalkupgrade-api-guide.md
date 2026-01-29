@@ -871,6 +871,27 @@ Content-Type: application/json;charset=UTF-8
 
 #### 캐러셀 피드형 발송 요청
 
+##### 캐러셀 고정 치환자(Path 기반 템플릿 파라미터)
+
+캐러셀 타입에서 각 아이템별로 다른 치환자 값을 적용할 수 있습니다.
+
+* **사용 형식**: `키@$.carousel.list[인덱스]` (예: `productName@$.carousel.list[0]`)
+* head(캐러셀 인트로)가 있으면 head가 `list[0]`을 차지하고, 실제 아이템은 `list[1]`부터 시작합니다.
+* Path 기반 키로 값을 찾지 못하면 일반 키로 fallback됩니다.
+
+| 구분 | 치환 가능 필드 | Path 형식 |
+|------|--------------|----------|
+| 캐러셀 인트로(head) | header, content, linkMo, linkPc, schemeAndroid, schemeIos | `키@$.carousel.list[0]` (head 존재 시) |
+| 캐러셀 아이템 | header, message, additionalContent | `키@$.carousel.list[인덱스]` |
+| 캐러셀 아이템 버튼 | linkMo, linkPc, schemeAndroid, schemeIos | `키@$.carousel.list[인덱스]` |
+| 캐러셀 아이템 쿠폰 | title, description, linkMo, linkPc, schemeAndroid, schemeIos | `키@$.carousel.list[인덱스]` |
+| 캐러셀 아이템 커머스 | title | `키@$.carousel.list[인덱스]` |
+
+* **Tail**: 치환자 사용 불가
+* **버튼 인덱스는 Path에 포함되지 않습니다.** 같은 아이템 내 버튼들은 동일한 Path 값으로 치환됩니다.
+
+> **[주의]** 치환자 키(`#{key}`)에는 `@` 문자를 사용할 수 없습니다. `@`는 시스템에서 Path 구분자로 사용됩니다.
+
 [Request body]
 
 ```
@@ -1314,7 +1335,7 @@ Content-Type: application/json;charset=UTF-8
 | recipientList          | List    | O  | 수신자 목록(최대 1,000명)                                                                                                             |
 | - recipientNo          | String  | O  | 수신 번호                                                                                                                         |
 | - targeting            | String  | O  | 메시지 대상의 타입(M: 마케팅 수신 동의 유저, N: 친구가 아닌 마케팅 수신 동의 유저에게만, I: 친구인 유저)                                                             |
-| - templateParameter    | Object  | X  | 템플릿 파라미터(템플릿에 치환할 변수 포함 시, 필수)                                                                                                |
+| - templateParameter    | Object  | X  | 템플릿 파라미터(템플릿에 치환할 변수 포함 시, 필수)<br>캐러셀 타입에서 아이템별로 다른 치환자 값 적용 시, `키@$.carousel.list[인덱스]` 형식 사용 가능(예: `productName@$.carousel.list[0]`)<br>head가 있으면 head가 list[0]을 차지하고, 실제 아이템은 list[1]부터 시작<br>치환자 키에 `@` 문자 사용 불가 |
 | - imageParameters      | List    | X  | 템플릿 이미지 필드 값을 변경할 수 있는 동적 파라미터(템플릿에 존재하는 이미지 개수와 동일한 크기의 JSON 목록만 사용할 수 있음, 사용할 경우 변경하지 않을 이미지는 빈 JSON 객체를 입력해야 함)            |
 | -- imageUrl            | String  | O  | 이미지 URL                                                                                                     |
 | -- imageLink           | String  | X  | 이미지 링크                                                                                                                        |
