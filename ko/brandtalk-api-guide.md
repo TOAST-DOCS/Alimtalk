@@ -63,19 +63,19 @@ Content-Type: application/json;charset=UTF-8
 }
 ```
 
-| 이름                     | 	타입     | 	필수 | 	설명                                                                   |
-|------------------------|---------|-----|-----------------------------------------------------------------------|
-| senderKey              | 	String | 	O  | 발신 키(40자)                                                             |
-| templateCode           | 	String | 	O  | 등록한 발송 템플릿 코드(최대 20자)                                                 |
-| requestDate            | String  | X   | 요청 일시(yyyy-MM-dd HH:mm:ss)<br>(입력하지 않을 경우 즉시 발송)<br>최대 30일 이후까지 예약 가능 |
-| senderGroupingKey      | String  | X   | 발신 그룹핑 키(최대 100자)                                                     |
-| createUser             | String  | X   | 등록자(콘솔에서 발송 시 사용자 UUID로 저장)                                           |
-| recipientList          | 	List   | 	O  | 	수신자 리스트(최대 1000명)                                                    |
-| - recipientNo          | 	String | 	O  | 	수신번호(최대 15자)                                                         |
-| - templateParameter    | 	Object | 	X  | 	템플릿 파라미터<br>(템플릿에 치환할 변수 포함 시, 필수)                                   |
-| -- key                 | 	String | 	X  | 	치환 키(#{key}), 최대 1300자, '@' 문자 사용 불가                                 |
-| -- value               | String  | 	X  | 	치환 키에 매핑되는 Value값, 최대 1300자                                          |
-| - recipientGroupingKey | 	String | 	X  | 	수신자 그룹핑 키(최대 100자)                                                   |
+| 이름 |	타입|	필수|	설명|
+|---|---|---|---|
+|senderKey|	String|	O | 발신 키(40자) |
+|templateCode|	String|	O | 등록한 발송 템플릿 코드(최대 20자) |
+|requestDate| String | X| 요청 일시(yyyy-MM-dd HH:mm:ss)<br>(입력하지 않을 경우 즉시 발송)<br>최대 30일 이후까지 예약 가능 |
+|senderGroupingKey| String | X| 발신 그룹핑 키(최대 100자) |
+|createUser| String | X| 등록자(콘솔에서 발송 시 사용자 UUID로 저장)|
+|recipientList|	List|	O|	수신자 리스트(최대 1000명) |
+|- recipientNo|	String|	O|	수신번호(최대 15자) |
+|- templateParameter|	Object|	X|	템플릿 파라미터<br>(템플릿에 치환할 변수 포함 시, 필수) |
+|-- key|	String|	X |	치환 키(#{key})|
+|-- value| String |	X |	치환 키에 매핑되는 Value값|
+|- recipientGroupingKey|	String|	X|	수신자 그룹핑 키(최대 100자) |
 
 * <b>요청 일시는 호출하는 시점부터 30일 후까지 설정 가능합니다.</b>
 * <b>야간 발송 제한(20:50~다음 날 08:00)</b>
@@ -335,7 +335,7 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 |- content | String |	본문 |
 |- buttons | List |	버튼 리스트 |
 |-- name | String |	버튼 이름 |
-|-- type | String |	버튼 타입(WL:웹링크, AL:앱링크, BK:봇 키워드, MD:메시지 전달, AC: 채널 추가, BC: 상담톡 전환, BT: 봇 전환, BF: 비지니스 폼) |
+|-- type | String |	버튼 타입(WL:웹링크, AL:앱링크, BK:봇 키워드, MD:메시지 전달, AC: 채널 추가, BF: 비지니스 폼) |
 |-- linkMo | String |	모바일 웹 링크(WL 타입일 경우 필수 필드) |
 |-- linkPc | String |	PC 웹 링크(WL 타입일 경우 선택 필드) |
 |-- schemeAndroid | String |	안드로이드 앱 링크(AL 타입일 경우 필수 필드) |
@@ -448,7 +448,7 @@ Content-Type: application/json;charset=UTF-8
 |templateContent|	String |	O | 템플릿 본문(최대 1000자) |
 |templateImageLink | String |	O | 템플릿 이미지 링크 |
 |image | File |	O | 이미지 파일 |
-| buttons[i].type|	String |	X | 버튼 타입(WL:웹링크, AL:앱링크, BK:봇 키워드, MD:메시지 전달, AC: 채널 추가, BC: 상담톡 전환, BT: 봇 전환, BF: 비지니스 폼) |
+| buttons[i].type|	String |	X | 버튼 타입(WL:웹링크, AL:앱링크, BK:봇 키워드, MD:메시지 전달, AC: 채널 추가, BF: 비지니스 폼) |
 | buttons[i].name| String |	X |	버튼 이름(버튼이 있는 경우 필수, 최대 14자)|
 | buttons[i].linkMo| String |	X |	모바일 웹 링크(WL 타입일 경우 필수 필드)|
 | buttons[i].linkPc | String |	X |PC 웹 링크(WL 타입일 경우 선택 필드) |
@@ -466,9 +466,6 @@ Content-Type: application/json;charset=UTF-8
 * 이미지형은 버튼 수 최대 5개, 와이드형은 버튼 수 최대 2개까지 가능
 * AC 버튼이 포함된 경우, 이미지형은 첫 번째 버튼 / 와이드형은 마지막 버튼의 순서대로 입력
 * AC 버튼은 버튼명이 "채널 추가"로 고정
-* 캐러셀의 경우 전체 아이템 중 AC 버튼은 1개만 사용 가능
-* BC(상담톡 전환) 버튼: 버튼 클릭 시 상담톡으로 전환됩니다.
-* BT(봇 전환) 버튼: 버튼 클릭 시 봇 대화로 전환됩니다.
 * contentType이 변수형(V)인 경우 링크(linkMo, linkPc, schemeAndroid, schemeIos)에 변수 입력 가능.
 * BF 버튼만 포함된 경우, 이미지형은 첫 번째 버튼 / 와이드형은 마지막 버튼의 순서대로 입력
 * AC 버튼과 BF 버튼이 동시에 쓰일 경우 BF 버튼은, 이미지형은 두번째 버튼 / 와이드형은 첫 번째 버튼의 순서대로 입력
@@ -598,7 +595,7 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 |- templateImageUrl | String |	이미지 URL |
 |- buttons | List |	버튼 리스트 |
 |-- name | String |	버튼 이름 |
-|-- type | String |	버튼 타입(WL:웹링크, AL:앱링크, BK:봇 키워드, MD:메시지 전달, AC: 채널 추가, BC: 상담톡 전환, BT: 봇 전환, BF: 비지니스 폼) |
+|-- type | String |	버튼 타입(WL:웹링크, AL:앱링크, BK:봇 키워드, MD:메시지 전달, AC: 채널 추가, BF: 비지니스 폼) |
 |-- linkMo | String |	모바일 웹 링크(WL 타입일 경우 필수 필드) |
 |-- linkPc | String |	PC 웹 링크(WL 타입일 경우 선택 필드) |
 |-- schemeAndroid | String |	안드로이드 앱 링크(AL 타입일 경우 필수 필드) |
