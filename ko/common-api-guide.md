@@ -155,3 +155,349 @@
     }
 }
 ```
+
+## 카카오 통계
+
+* 카카오비즈센터에서 제공하는 통계 데이터를 조회합니다.
+* 통계 데이터는 발신 키 기준으로 일별(DAILY) 또는 월별(MONTHLY)로 조회할 수 있습니다.
+* DAILY: 최근 90일 이내 데이터만 조회 가능하며, 조회 범위는 최대 90일입니다.
+* MONTHLY: 최근 3개월 이내 데이터만 조회 가능하며, 조회 범위는 최대 3개월입니다.
+
+### 알림톡 발송 통계 조회
+
+#### 요청
+
+[URL]
+
+|Http method| URI|
+|---|---|
+|GET| /common/v2.2/appkeys/{appKey}/kakao-statistics/delivery-statistics/ALIMTALK |
+
+[Path parameter]
+
+| 이름 | 타입 | 설명 |
+|---|---|---|
+| appKey | String | 고유의 앱키 |
+
+[Header]
+
+```
+{
+  "X-Secret-Key": String
+}
+```
+
+| 이름 | 타입 | 필수 | 설명 |
+|---|---|---|---|
+| X-Secret-Key | String | O | 콘솔에서 생성할 수 있습니다. |
+
+[Query parameter]
+
+| 이름 | 타입 | 필수 | 설명 |
+|---|---|---|---|
+| senderKey | String | O | 발신 키 |
+| periodType | String | O | 통계 구분(DAILY: 일별, MONTHLY: 월별) |
+| startDate | String | O | 조회 시작 날짜<br/>DAILY: yyyy-MM-dd(최근 90일 이내), MONTHLY: yyyy-MM(최근 3개월 이내) |
+| endDate | String | O | 조회 종료 날짜<br/>DAILY: yyyy-MM-dd(최대 범위 90일), MONTHLY: yyyy-MM(최대 범위 3개월) |
+| messageType | String | X | 메시지 유형 |
+| receiveUserType | String | X | 수신자 유형 |
+| limit | Integer | X | 조회 건수(Default: 500, Max: 1000) |
+| offset | Integer | X | 시작 위치(Default: 0) |
+
+#### 응답
+
+```json
+{
+    "header": {
+        "resultCode": 0,
+        "resultMessage": "success",
+        "isSuccessful": true
+    },
+    "totalCount": 1,
+    "alimtalkDeliveryStatistics": [
+        {
+            "date": "2026-04-01",
+            "messageType": "NORMAL",
+            "receiveUserType": "ALL",
+            "totalSendRequestCount": 100,
+            "validSendRequestCount": 95,
+            "validReadCount": 80
+        }
+    ]
+}
+```
+
+| 이름 | 타입 | Not Null | 설명 |
+|---|---|:---:|---|
+| header | Object | O | 헤더 영역 |
+| - resultCode | Integer | O | 결과 코드 |
+| - resultMessage | String | O | 결과 메시지 |
+| - isSuccessful | Boolean | O | 성공 여부 |
+| totalCount | Integer | O | 총 개수 |
+| alimtalkDeliveryStatistics | List | O | 알림톡 발송 통계 리스트 |
+| - date | String | O | 날짜 |
+| - messageType | String | O | 메시지 유형 |
+| - receiveUserType | String | O | 수신자 유형 |
+| - totalSendRequestCount | Integer | O | 총 발송 요청 수 |
+| - validSendRequestCount | Integer | O | 유효 발송 요청 수 |
+| - validReadCount | Integer | O | 유효 열람 수 |
+
+### 알림톡 템플릿 통계 조회
+
+#### 요청
+
+[URL]
+
+|Http method| URI|
+|---|---|
+|GET| /common/v2.2/appkeys/{appKey}/kakao-statistics/template-statistics/ALIMTALK |
+
+[Path parameter]
+
+| 이름 | 타입 | 설명 |
+|---|---|---|
+| appKey | String | 고유의 앱키 |
+
+[Header]
+
+```
+{
+  "X-Secret-Key": String
+}
+```
+
+| 이름 | 타입 | 필수 | 설명 |
+|---|---|---|---|
+| X-Secret-Key | String | O | 콘솔에서 생성할 수 있습니다. |
+
+[Query parameter]
+
+| 이름 | 타입 | 필수 | 설명 |
+|---|---|---|---|
+| senderKey | String | O | 발신 키 |
+| periodType | String | O | 통계 구분(DAILY: 일별, MONTHLY: 월별) |
+| startDate | String | O | 조회 시작 날짜<br/>DAILY: yyyy-MM-dd(최근 90일 이내), MONTHLY: yyyy-MM(최근 3개월 이내) |
+| endDate | String | O | 조회 종료 날짜<br/>DAILY: yyyy-MM-dd(최대 범위 90일), MONTHLY: yyyy-MM(최대 범위 3개월) |
+| kakaoTemplateCode | String | X | 카카오 템플릿 코드 |
+| messageType | String | X | 메시지 유형 |
+| limit | Integer | X | 조회 건수(Default: 500, Max: 1000) |
+| offset | Integer | X | 시작 위치(Default: 0) |
+
+#### 응답
+
+```json
+{
+    "header": {
+        "resultCode": 0,
+        "resultMessage": "success",
+        "isSuccessful": true
+    },
+    "totalCount": 1,
+    "alimtalkTemplateStatistics": [
+        {
+            "date": "2026-04-01",
+            "messageType": "NORMAL",
+            "templateCode": "template01",
+            "totalSendSuccessCount": 90,
+            "validReadCount": 75,
+            "totalClickCount": 30
+        }
+    ]
+}
+```
+
+| 이름 | 타입 | Not Null | 설명 |
+|---|---|:---:|---|
+| header | Object | O | 헤더 영역 |
+| - resultCode | Integer | O | 결과 코드 |
+| - resultMessage | String | O | 결과 메시지 |
+| - isSuccessful | Boolean | O | 성공 여부 |
+| totalCount | Integer | O | 총 개수 |
+| alimtalkTemplateStatistics | List | O | 알림톡 템플릿 통계 리스트 |
+| - date | String | O | 날짜 |
+| - messageType | String | O | 메시지 유형 |
+| - templateCode | String | O | 템플릿 코드 |
+| - totalSendSuccessCount | Integer | O | 총 발송 성공 수 |
+| - validReadCount | Integer | O | 유효 열람 수 |
+| - totalClickCount | Integer | O | 총 클릭 수 |
+
+### 브랜드 메시지 발송 통계 조회
+
+#### 요청
+
+[URL]
+
+|Http method| URI|
+|---|---|
+|GET| /common/v2.2/appkeys/{appKey}/kakao-statistics/delivery-statistics/BRANDMESSAGE |
+
+[Path parameter]
+
+| 이름 | 타입 | 설명 |
+|---|---|---|
+| appKey | String | 고유의 앱키 |
+
+[Header]
+
+```
+{
+  "X-Secret-Key": String
+}
+```
+
+| 이름 | 타입 | 필수 | 설명 |
+|---|---|---|---|
+| X-Secret-Key | String | O | 콘솔에서 생성할 수 있습니다. |
+
+[Query parameter]
+
+| 이름 | 타입 | 필수 | 설명 |
+|---|---|---|---|
+| senderKey | String | O | 발신 키 |
+| periodType | String | O | 통계 구분(DAILY: 일별, MONTHLY: 월별) |
+| startDate | String | O | 조회 시작 날짜<br/>DAILY: yyyy-MM-dd(최근 90일 이내), MONTHLY: yyyy-MM(최근 3개월 이내) |
+| endDate | String | O | 조회 종료 날짜<br/>DAILY: yyyy-MM-dd(최대 범위 90일), MONTHLY: yyyy-MM(최대 범위 3개월) |
+| messageSpec | String | X | 메시지 스펙 |
+| chatBubbleType | String | X | 말풍선 유형 |
+| targeting | String | X | 타겟팅 |
+| friendType | String | X | 친구 유형 |
+| receiveUserType | String | X | 수신자 유형 |
+| limit | Integer | X | 조회 건수(Default: 500, Max: 1000) |
+| offset | Integer | X | 시작 위치(Default: 0) |
+
+#### 응답
+
+```json
+{
+    "header": {
+        "resultCode": 0,
+        "resultMessage": "success",
+        "isSuccessful": true
+    },
+    "totalCount": 1,
+    "brandmessageDeliveryStatistics": [
+        {
+            "date": "2026-04-01",
+            "messageSpec": "TEMPLATE",
+            "chatBubbleType": "TEXT",
+            "targeting": "ALL",
+            "friendType": "ALL",
+            "receiveUserType": "ALL",
+            "totalSendRequestCount": 200,
+            "validSendRequestCount": 190,
+            "validReadCount": 150,
+            "totalClickCount": 60
+        }
+    ]
+}
+```
+
+| 이름 | 타입 | Not Null | 설명 |
+|---|---|:---:|---|
+| header | Object | O | 헤더 영역 |
+| - resultCode | Integer | O | 결과 코드 |
+| - resultMessage | String | O | 결과 메시지 |
+| - isSuccessful | Boolean | O | 성공 여부 |
+| totalCount | Integer | O | 총 개수 |
+| brandmessageDeliveryStatistics | List | O | 브랜드 메시지 발송 통계 리스트 |
+| - date | String | O | 날짜 |
+| - messageSpec | String | O | 메시지 스펙 |
+| - chatBubbleType | String | O | 말풍선 유형 |
+| - targeting | String | O | 타겟팅 |
+| - friendType | String | O | 친구 유형 |
+| - receiveUserType | String | O | 수신자 유형 |
+| - totalSendRequestCount | Integer | O | 총 발송 요청 수 |
+| - validSendRequestCount | Integer | O | 유효 발송 요청 수 |
+| - validReadCount | Integer | O | 유효 열람 수 |
+| - totalClickCount | Integer | O | 총 클릭 수 |
+
+### 브랜드 메시지 템플릿 통계 조회
+
+#### 요청
+
+[URL]
+
+|Http method| URI|
+|---|---|
+|GET| /common/v2.2/appkeys/{appKey}/kakao-statistics/template-statistics/BRANDMESSAGE |
+
+[Path parameter]
+
+| 이름 | 타입 | 설명 |
+|---|---|---|
+| appKey | String | 고유의 앱키 |
+
+[Header]
+
+```
+{
+  "X-Secret-Key": String
+}
+```
+
+| 이름 | 타입 | 필수 | 설명 |
+|---|---|---|---|
+| X-Secret-Key | String | O | 콘솔에서 생성할 수 있습니다. |
+
+[Query parameter]
+
+| 이름 | 타입 | 필수 | 설명 |
+|---|---|---|---|
+| senderKey | String | O | 발신 키 |
+| periodType | String | O | 통계 구분(DAILY: 일별, MONTHLY: 월별) |
+| startDate | String | O | 조회 시작 날짜<br/>DAILY: yyyy-MM-dd(최근 90일 이내), MONTHLY: yyyy-MM(최근 3개월 이내) |
+| endDate | String | O | 조회 종료 날짜<br/>DAILY: yyyy-MM-dd(최대 범위 90일), MONTHLY: yyyy-MM(최대 범위 3개월) |
+| kakaoTemplateCode | String | X | 카카오 템플릿 코드 |
+| groupTagKey | String | X | 그룹 태그 키 |
+| messageSpec | String | X | 메시지 스펙 |
+| chatBubbleType | String | X | 말풍선 유형 |
+| targeting | String | X | 타겟팅 |
+| friendType | String | X | 친구 유형 |
+| limit | Integer | X | 조회 건수(Default: 500, Max: 1000) |
+| offset | Integer | X | 시작 위치(Default: 0) |
+
+#### 응답
+
+```json
+{
+    "header": {
+        "resultCode": 0,
+        "resultMessage": "success",
+        "isSuccessful": true
+    },
+    "totalCount": 1,
+    "brandmessageTemplateStatistics": [
+        {
+            "date": "2026-04-01",
+            "templateCode": "brandtemplate01",
+            "groupTagKey": "group01",
+            "messageSpec": "TEMPLATE",
+            "chatBubbleType": "TEXT",
+            "targeting": "ALL",
+            "friendType": "ALL",
+            "totalSendSuccessCount": 180,
+            "validReadCount": 140,
+            "totalClickCount": 55
+        }
+    ]
+}
+```
+
+| 이름 | 타입 | Not Null | 설명 |
+|---|---|:---:|---|
+| header | Object | O | 헤더 영역 |
+| - resultCode | Integer | O | 결과 코드 |
+| - resultMessage | String | O | 결과 메시지 |
+| - isSuccessful | Boolean | O | 성공 여부 |
+| totalCount | Integer | O | 총 개수 |
+| brandmessageTemplateStatistics | List | O | 브랜드 메시지 템플릿 통계 리스트 |
+| - date | String | O | 날짜 |
+| - templateCode | String | O | 템플릿 코드 |
+| - groupTagKey | String | X | 그룹 태그 키 |
+| - messageSpec | String | O | 메시지 스펙 |
+| - chatBubbleType | String | O | 말풍선 유형 |
+| - targeting | String | O | 타겟팅 |
+| - friendType | String | O | 친구 유형 |
+| - totalSendSuccessCount | Integer | O | 총 발송 성공 수 |
+| - validReadCount | Integer | O | 유효 열람 수 |
+| - totalClickCount | Integer | O | 총 클릭 수 |
