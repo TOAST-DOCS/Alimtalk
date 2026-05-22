@@ -95,6 +95,7 @@ Excel/CSV 포맷의 템플릿 파일을 통해 여러 수신 번호로 브랜드
 ![friendtalkupgrade_mass02.png](https://static.toastoven.net/prod_alimtalk/friendtalkupgrade_mass02.png)
 
 * 각 수신자별, 개별 타겟팅 값과 템플릿 치환자의 값을 입력할 수 있습니다.
+   * 자유형 발송의 경우 M, N 타겟팅 값을 설정할 경우 발송에 실패하므로 주의가 필요합니다. 
 * 만약 템플릿 치환자가 없이 내용을 입력하면 같은 내용으로 모든 수신자에게 발송됩니다.
 
 <b>발송</b> 버튼 클릭 시 <b>즉시 발송</b>을 선택할 수 있습니다.
