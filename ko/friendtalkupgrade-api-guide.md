@@ -20,7 +20,7 @@
 - 채널 친구 수 5만 이상
 - 3개월 내 알림톡 발송 성공 이력 보유
 
-### 마케팅 수신동의 증적 자료 업로드
+### 마케팅 수신 동의 증적 자료 업로드
 
 #### 요청
 
@@ -54,7 +54,7 @@ Content-Type: multipart/form-data
 
 | 이름   | 타입   | 필수 | 설명            |
 |------|------|----|---------------|
-| file | File | O  | 마케팅 수신동의 증적자료 |
+| file | File | O  | 마케팅 수신 동의 증적 자료 |
 
 #### 응답
 
@@ -126,10 +126,10 @@ Content-Type: application/json;charset=UTF-8
 
 ## 메시지 자유형 발송 요청
 
-* 마수동 발송을 사용할 수 있습니다.
+* 마케팅 수신 동의 발송을 사용할 수 있습니다.
     * targeting 필드를 지정해 메시지 대상의 타입을 지정할 수 있습니다.
-        * M: 고객사의 광고성 정보 수신동의 유저(카카오톡 수신 동의)
-        * N: 고객사의 광고성 정보 수신동의 유저(카카오톡 수신 동의) - 채널 친구
+        * M: 고객사의 광고성 정보 수신 동의 유저(카카오톡 수신 동의)
+        * N: 고객사의 광고성 정보 수신 동의 유저(카카오톡 수신 동의) - 채널 친구
         * I: 고객사의 발송 요청 대상 ∩ 채널 친구
 * 기존 친구톡의 8가지 메시지 유형을 전부 사용할 수 있습니다.
 * BT, AC 버튼 타입을 사용할 수 있습니다.
@@ -262,7 +262,7 @@ Content-Type: application/json;charset=UTF-8
 | recipientList          | List    | O  | 수신자 목록(최대 1,000명)                                                                                                                                                                                                                                                             |
 | - recipientNo          | String  | O  | 수신 번호                                                                                                                                                                                                                                                                         |
 | - resendParameter      | Object  | X  | 대체 발송 정보                                                                                                                                                                                                                                                                      |
-| -- isResend            | boolean | X  | 발송 실패 시, 문자 대체 발송 여부<br>콘솔에서 대체 발송 설정 시, 기본으로 대체 발송됩니다.                                                                                                                                                                                                                       |
+| -- isResend            | boolean | X  | 발송 실패 시, 문자 대체 발송 여부<br>콘솔에서 대체 발송 설정 시, 기본값으로 대체 발송됩니다.                                                                                                                                                                                                                       |
 | -- resendType          | String  | X  | 대체 발송 타입(SMS, LMS)<br>값이 없을 경우, 템플릿 본문 길이에 따라 타입이 구분됩니다.                                                                                                                                                                                                                       |
 | -- resendTitle         | String  | X  | LMS 대체 발송 제목<br>(값이 없을 경우, 플러스친구 ID로 대체 발송됩니다.)                                                                                                                                                                                                                               |
 | -- resendContent       | String  | X  | 대체 발송 내용<br>(값이 없을 경우, [메시지 본문]으로 대체 발송됩니다.)                                                                                                                                                                                                                                  |
@@ -270,7 +270,7 @@ Content-Type: application/json;charset=UTF-8
 | -- resendUnsubscribeNo | String  | X  | 대체 발송 080 수신거부번호<br><span style="color:red">(SMS 서비스에 등록된 080 수신거부번호가 아닐 경우, 대체 발송에 실패할 수 있습니다.)</span>                                                                                                                                                                       |
 | - targeting         | String  | X  | 메시지 대상의 타입(M: 마케팅 수신 동의 유저, N: 친구가 아닌 마케팅 수신 동의 유저에게만, I: 친구인 유저)                                                                |
 | - unsubscribeNo       | String  | X  | 080 무료수신거부 전화번호(모두 미입력 시 발신 프로필에 등록된 무료수신거부 정보로 발송됨)<br>- 080-xxx-xxxx <br>- 080-xxxx-xxxx <br>- 080xxxxxxx <br>- 080xxxxxxxx         |
-| - unsubscribeAuthNo   | String  | X  | 수신거부 인증번호(모두 미입력 시 발신 프로필에 등록된 무료수신거부 정보로 발송됨)<br>unsubscribeNo 없이 unsubscribeAuthNo만 입력 불가<br>예: 1234        |
+| - unsubscribeAuthNo   | String  | X  | 080 무료수신거부 인증번호(모두 미입력 시 발신 프로필에 등록된 무료수신거부 정보로 발송됨)<br>unsubscribeNo 없이 unsubscribeAuthNo만 입력 불가<br>예: 1234        |
 | - recipientGroupingKey | String  | X  | 수신자 그룹핑 키(수신자별로 그룹핑 키를 지정할 수 있습니다. 최대 100자)                                                                                                                                                                                                                   |
 | senderGroupingKey    | String  | X  | 발신자 그룹핑 키(발신자별로 그룹핑 키를 지정할 수 있습니다. 최대 100자)                                                                                                                                                                                                                   |
 | resellerCode          | String  | X  | 리셀러 코드(리셀러가 발송 시 사용)                                                                                                                                                                                                                                                       |
@@ -373,7 +373,7 @@ Content-Type: application/json;charset=UTF-8
 | recipientList          | List    | O  | 수신자 목록(최대 1,000명)                                                                                                                                                                                                                                                             |
 | - recipientNo          | String  | O  | 수신 번호                                                                                                                                                                                                                                                                         |
 | - resendParameter      | Object  | X  | 대체 발송 정보                                                                                                                                                                                                                                                                      |
-| -- isResend            | boolean | X  | 발송 실패 시, 문자 대체 발송 여부<br>콘솔에서 대체 발송 설정 시, 기본으로 대체 발송됩니다.                                                                                                                                                                                                                       |
+| -- isResend            | boolean | X  | 발송 실패 시, 문자 대체 발송 여부<br>콘솔에서 대체 발송 설정 시, 기본값으로 대체 발송됩니다.                                                                                                                                                                                                                       |
 | -- resendType          | String  | X  | 대체 발송 타입(SMS, LMS)<br>값이 없을 경우, 템플릿 본문 길이에 따라 타입이 구분됩니다.                                                                                                                                                                                                                       |
 | -- resendTitle         | String  | X  | LMS 대체 발송 제목<br>(값이 없을 경우, 플러스친구 ID로 대체 발송됩니다.)                                                                                                                                                                                                                               |
 | -- resendContent       | String  | X  | 대체 발송 내용<br>(값이 없을 경우, [메시지 본문]으로 대체 발송됩니다.)                                                                                                                                                                                                                                  |
@@ -484,7 +484,7 @@ Content-Type: application/json;charset=UTF-8
 | recipientList          | List    | O  | 수신자 목록(최대 1,000명)                                                                                                                                                                                                                                                             |
 | - recipientNo          | String  | O  | 수신 번호                                                                                                                                                                                                                                                                         |
 | - resendParameter      | Object  | X  | 대체 발송 정보                                                                                                                                                                                                                                                                      |
-| -- isResend            | boolean | X  | 발송 실패 시, 문자 대체 발송 여부<br>콘솔에서 대체 발송 설정 시, 기본으로 대체 발송됩니다.                                                                                                                                                                                                                       |
+| -- isResend            | boolean | X  | 발송 실패 시, 문자 대체 발송 여부<br>콘솔에서 대체 발송 설정 시, 기본값으로 대체 발송됩니다.                                                                                                                                                                                                                       |
 | -- resendType          | String  | X  | 대체 발송 타입(SMS, LMS)<br>값이 없을 경우, 템플릿 본문 길이에 따라 타입이 구분됩니다.                                                                                                                                                                                                                       |
 | -- resendTitle         | String  | X  | LMS 대체 발송 제목<br>(값이 없을 경우, 플러스친구 ID로 대체 발송됩니다.)                                                                                                                                                                                                                               |
 | -- resendContent       | String  | X  | 대체 발송 내용<br>(값이 없을 경우, [메시지 본문]으로 대체 발송됩니다.)                                                                                                                                                                                                                                  |
@@ -624,7 +624,7 @@ Content-Type: application/json;charset=UTF-8
 | recipientList          | List    | O  | 수신자 목록(최대 1,000명)                                                                                                                                                                                                                                                             |
 | - recipientNo          | String  | O  | 수신 번호                                                                                                                                                                                                                                                                         |
 | - resendParameter      | Object  | X  | 대체 발송 정보                                                                                                                                                                                                                                                                      |
-| -- isResend            | boolean | X  | 발송 실패 시, 문자 대체 발송 여부<br>콘솔에서 대체 발송 설정 시, 기본으로 대체 발송됩니다.                                                                                                                                                                                                                       |
+| -- isResend            | boolean | X  | 발송 실패 시, 문자 대체 발송 여부<br>콘솔에서 대체 발송 설정 시, 기본값으로 대체 발송됩니다.                                                                                                                                                                                                                       |
 | -- resendType          | String  | X  | 대체 발송 타입(SMS, LMS)<br>값이 없을 경우, 템플릿 본문 길이에 따라 타입이 구분됩니다.                                                                                                                                                                                                                       |
 | -- resendTitle         | String  | X  | LMS 대체 발송 제목<br>(값이 없을 경우, 플러스친구 ID로 대체 발송됩니다.)                                                                                                                                                                                                                               |
 | -- resendContent       | String  | X  | 대체 발송 내용<br>(값이 없을 경우, [메시지 본문]으로 대체 발송됩니다.)                                                                                                                                                                                                                                  |
@@ -737,7 +737,7 @@ Content-Type: application/json;charset=UTF-8
 | recipientList          | List    | O  | 수신자 목록(최대 1,000명)                                                                                                                                                                                                                                                             |
 | - recipientNo          | String  | O  | 수신 번호                                                                                                                                                                                                                                                                         |
 | - resendParameter      | Object  | X  | 대체 발송 정보                                                                                                                                                                                                                                                                      |
-| -- isResend            | boolean | X  | 발송 실패 시, 문자 대체 발송 여부<br>콘솔에서 대체 발송 설정 시, 기본으로 대체 발송됩니다.                                                                                                                                                                                                                       |
+| -- isResend            | boolean | X  | 발송 실패 시, 문자 대체 발송 여부<br>콘솔에서 대체 발송 설정 시, 기본값으로 대체 발송됩니다.                                                                                                                                                                                                                       |
 | -- resendType          | String  | X  | 대체 발송 타입(SMS, LMS)<br>값이 없을 경우, 템플릿 본문 길이에 따라 타입이 구분됩니다.                                                                                                                                                                                                                       |
 | -- resendTitle         | String  | X  | LMS 대체 발송 제목<br>(값이 없을 경우, 플러스친구 ID로 대체 발송됩니다.)                                                                                                                                                                                                                               |
 | -- resendContent       | String  | X  | 대체 발송 내용<br>(값이 없을 경우, [메시지 본문]으로 대체 발송됩니다.)                                                                                                                                                                                                                                  |
@@ -861,7 +861,7 @@ Content-Type: application/json;charset=UTF-8
 | recipientList          | List    | O  | 수신자 목록(최대 1,000명)                                                                                                                                                                                                                                                             |
 | - recipientNo          | String  | O  | 수신 번호                                                                                                                                                                                                                                                                         |
 | - resendParameter      | Object  | X  | 대체 발송 정보                                                                                                                                                                                                                                                                      |
-| -- isResend            | boolean | X  | 발송 실패 시, 문자 대체 발송 여부<br>콘솔에서 대체 발송 설정 시, 기본으로 대체 발송됩니다.                                                                                                                                                                                                                       |
+| -- isResend            | boolean | X  | 발송 실패 시, 문자 대체 발송 여부<br>콘솔에서 대체 발송 설정 시, 기본값으로 대체 발송됩니다.                                                                                                                                                                                                                       |
 | -- resendType          | String  | X  | 대체 발송 타입(SMS, LMS)<br>값이 없을 경우, 템플릿 본문 길이에 따라 타입이 구분됩니다.                                                                                                                                                                                                                       |
 | -- resendTitle         | String  | X  | LMS 대체 발송 제목<br>(값이 없을 경우, 플러스친구 ID로 대체 발송됩니다.)                                                                                                                                                                                                                               |
 | -- resendContent       | String  | X  | 대체 발송 내용<br>(값이 없을 경우, [메시지 본문]으로 대체 발송됩니다.)                                                                                                                                                                                                                                  |
@@ -1038,7 +1038,7 @@ Content-Type: application/json;charset=UTF-8
 | recipientList          | List    | O  | 수신자 목록(최대 1,000명)                                                                                                                                                                                                                                                             |
 | - recipientNo          | String  | O  | 수신 번호                                                                                                                                                                                                                                                                         |
 | - resendParameter      | Object  | X  | 대체 발송 정보                                                                                                                                                                                                                                                                      |
-| -- isResend            | boolean | X  | 발송 실패 시, 문자 대체 발송 여부<br>콘솔에서 대체 발송 설정 시, 기본으로 대체 발송됩니다.                                                                                                                                                                                                                       |
+| -- isResend            | boolean | X  | 발송 실패 시, 문자 대체 발송 여부<br>콘솔에서 대체 발송 설정 시, 기본값으로 대체 발송됩니다.                                                                                                                                                                                                                       |
 | -- resendType          | String  | X  | 대체 발송 타입(SMS, LMS)<br>값이 없을 경우, 템플릿 본문 길이에 따라 타입이 구분됩니다.                                                                                                                                                                                                                       |
 | -- resendTitle         | String  | X  | LMS 대체 발송 제목<br>(값이 없을 경우, 플러스친구 ID로 대체 발송됩니다.)                                                                                                                                                                                                                               |
 | -- resendContent       | String  | X  | 대체 발송 내용<br>(값이 없을 경우, [메시지 본문]으로 대체 발송됩니다.)                                                                                                                                                                                                                                  |
@@ -1195,7 +1195,7 @@ Content-Type: application/json;charset=UTF-8
 | recipientList        | List    | O  | 수신자 목록(최대 1,000명)                                                                                                                                                                                                                                                             |
 | - recipientNo        | String  | O  | 수신 번호                                                                                                                                                                                                                                                                         |
 | - resendParameter    | Object  | X  | 대체 발송 정보                                                                                                                                                                                                                                                                      |
-| -- isResend          | boolean | X  | 발송 실패 시, 문자 대체 발송 여부<br>콘솔에서 대체 발송 설정 시, 기본으로 대체 발송됩니다.                                                                                                                                                                                                                       |
+| -- isResend          | boolean | X  | 발송 실패 시, 문자 대체 발송 여부<br>콘솔에서 대체 발송 설정 시, 기본값으로 대체 발송됩니다.                                                                                                                                                                                                                       |
 | -- resendType        | String  | X  | 대체 발송 타입(SMS,LMS)<br>값이 없을 경우, 템플릿 본문 길이에 따라 타입이 구분됩니다.                                                                                                                                                                                                                       |
 | -- resendTitle       | String  | X  | LMS 대체 발송 제목<br>(값이 없을 경우, 플러스친구 ID로 대체 발송됩니다.)                                                                                                                                                                                                                               |
 | -- resendContent     | String  | X  | 대체 발송 내용<br>(값이 없을 경우, [메시지 본문]으로 대체 발송됩니다.)                                                                                                                                                                                                                                  |
@@ -1249,15 +1249,15 @@ Content-Type: application/json;charset=UTF-8
 ## 메시지 기본형 발송 요청
 
 * 템플릿을 이용한 발송입니다.
-* 마수동 발송을 사용할 수 있습니다.
+* 마케팅 수신 동의 발송을 사용할 수 있습니다.
     * targeting 필드를 지정해 메시지 대상의 타입을 지정할 수 있습니다.
-        * M: 고객사의 광고성 정보 수신동의 유저(카카오톡 수신 동의)
-        * N: 고객사의 광고성 정보 수신동의 유저(카카오톡 수신 동의) - 채널 친구
+        * M: 고객사의 광고성 정보 수신 동의 유저(카카오톡 수신 동의)
+        * N: 고객사의 광고성 정보 수신 동의 유저(카카오톡 수신 동의) - 채널 친구
         * I: 고객사의 발송 요청 대상 ∩ 채널 친구
 * 기존 친구톡의 8가지 메시지 유형을 전부 사용할 수 있습니다.
 * BT 버튼 타입을 사용할 수 없습니다.
-* AC(채널 추가)버튼을 사용할 수 있습니다.
-* BF 버튼을 사용 시 카카오에서 발급받은 비즈니스폼 ID를 업로드하여 비즈폼 키를 발급받아 사용할 수 있습니다.
+* AC(채널 추가) 버튼을 사용할 수 있습니다.
+* BF 버튼 사용 시 카카오에서 발급받은 비즈니스폼 ID를 업로드하여 비즈폼 키를 발급받아 사용할 수 있습니다.
 * 대체 발송은 수신자별 resendParameter를 통해 설정할 수 있습니다.
     * 대체 발송을 이용할 경우 대체 발송 관리 API를 통해 SMS Appkey 등록 및 발송 설정이 필요합니다.
 * **야간 발송 제한(20:50~다음 날 08:00)**
@@ -1350,7 +1350,7 @@ Content-Type: application/json;charset=UTF-8
 | -- videoUrl            | String  | O  | 카카오TV 동영상 URL                                                                                                                                                                                                                           |
 | -- thumbnailUrl        | String  | X  | 동영상 섬네일용 이미지 URL                                                                                                                                                                                                                        |
 | - resendParameter      | Object  | X  | 대체 발송 정보                                                                                                                                                                                                                                |
-| -- isResend            | boolean | X  | 발송 실패 시, 문자 대체 발송 여부<br>콘솔에서 대체 발송 설정 시, 기본으로 대체 발송됩니다.                                                                                                                                                                                 |
+| -- isResend            | boolean | X  | 발송 실패 시, 문자 대체 발송 여부<br>콘솔에서 대체 발송 설정 시, 기본값으로 대체 발송됩니다.                                                                                                                                                                                 |
 | -- resendType          | String  | X  | 대체 발송 타입(SMS,LMS)<br>값이 없을 경우, 템플릿 본문 길이에 따라 타입이 구분됩니다.                                                                                                                                                                                 |
 | -- resendTitle         | String  | X  | LMS 대체 발송 제목<br>(값이 없을 경우, 플러스친구 ID로 대체 발송됩니다.)                                                                                                                                                                                         |
 | -- resendContent       | String  | X  | 대체 발송 내용<br>(값이 없을 경우, [메시지 본문]으로 대체 발송됩니다.)                                                                                                                                                                                            |

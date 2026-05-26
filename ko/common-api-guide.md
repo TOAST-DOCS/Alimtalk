@@ -26,7 +26,7 @@
     * 성공 개수(RECEIVED): 발송 결과 성공(수신 시간)
     * 실패 개수(SENT_FAILED): 발송 요청 실패 or 발송 결과 실패 시점
     * 대체 발송 요청 개수(RESENT): 대체 발송 요청 시점
-    * 대체 발송 실패 개수(RESENT_FAILED):대체 발송 요청 실패 시점
+    * 대체 발송 실패 개수(RESENT_FAILED): 대체 발송 요청 실패 시점
 
 ### 통계 정보 조회
 
@@ -61,7 +61,7 @@
 | statsType | String | - | 필수 | 통계 구분<br/>NORMAL:기본, MINUTELY:분별, HOURLY:시간별, DAILY:일별, BY_DAY:요일별 |
 | from | String | - | 필수 | 통계 검색 시작 날짜<br/>yyyy-MM-dd HH:mm:ss |
 | to | String | - | 필수 | 통계 검색 종료 날짜<br/>yyyy-MM-dd HH:mm:ss |
-| join | Boolean | - | 옵션 | 통계 데이터 조회 시, 트리 형태로 제공할 지 설정 |
+| join | Boolean | - | 옵션 | 통계 데이터 조회 시, 트리 형태로 제공할지 설정 |
 | extra1s | List<String> | - | 옵션 | 하위 상품 구분<br/> ALIMTALK, ALIMTALK_AUTH, FRIENDTALK, BRAND_MESSAGE |
 | extra2s | List<String> | - | 옵션 | senderKey |
 | eventTypes | List<String> | - | 옵션 | 이벤트 종류<br/> REQUESTED, SENT, RECEIVED, SENT_FAILED, RESENT, RESENT_FAILED |
@@ -69,7 +69,7 @@
 | templateCodes | List<String> | - | 옵션 | 템플릿 코드 목록(친구톡 미지원) |
 | requestIds | List<String> | 5 | 옵션 | 요청 ID 목록 |
 | statsIds | List<String> | - | 옵션 | 통계 ID 목록 |
-| statsCriteria | List<String> | - | 옵션 | 통계 기준<br/>- EVENT: 이벤트(기본 값)<br/>- EXTRA_1,EVENT: 하위 상품 구분, 이벤트<br/>- EXTRA_2,EVENT: senderKey, 이벤트 |
+| statsCriteria | List<String> | - | 옵션 | 통계 기준<br/>- EVENT: 이벤트(기본값)<br/>- EXTRA_1, EVENT: 하위 상품 구분, 이벤트<br/>- EXTRA_2, EVENT: senderKey, 이벤트 |
 
 [Response body]
 ```json
@@ -127,7 +127,7 @@
 | statsType | String | - | 필수 | 통계 구분<br/>NORMAL:기본, MINUTELY:분별, HOURLY:시간별, DAILY:일별, BY_DAY:요일별 |
 | from | String | - | 필수 | 통계 검색 시작 날짜<br/>yyyy-MM-dd HH:mm:ss |
 | to | String | - | 필수 | 통계 검색 종료 날짜<br/>yyyy-MM-dd HH:mm:ss |
-| join | Boolean | - | 옵션 | 통계 데이터 조회 시, 트리 형태로 제공할 지 설정 |
+| join | Boolean | - | 옵션 | 통계 데이터 조회 시, 트리 형태로 제공할지 설정 |
 | extra1s | List<String> | - | 옵션 | 하위 상품 구분<br/> ALIMTALK, ALIMTALK_AUTH, FRIENDTALK, BRAND_MESSAGE |
 | extra2s | List<String> | - | 옵션 | senderKey |
 | eventTypes | List<String> | - | 옵션 | 이벤트 종류<br/> REQUESTED, SENT, RECEIVED, SENT_FAILED, RESENT, RESENT_FAILED |
@@ -135,7 +135,7 @@
 | templateCodes | List<String> | - | 옵션 | 템플릿 코드 목록(친구톡 미지원) |
 | requestIds | List<String> | 5 | 옵션 | 요청 ID 목록 |
 | statsIds | List<String> | - | 옵션 | 통계 ID 목록 |
-| statsCriteria | List<String> | - | 옵션 | 통계 기준<br/>- EVENT: 이벤트(기본 값)<br/>- EXTRA_1,EVENT: 하위 상품 구분, 이벤트<br/>- EXTRA_2,EVENT: senderKey, 이벤트 |
+| statsCriteria | List<String> | - | 옵션 | 통계 기준<br/>- EVENT: 이벤트(기본값)<br/>- EXTRA_1, EVENT: 하위 상품 구분, 이벤트<br/>- EXTRA_2, EVENT: senderKey, 이벤트 |
 
 [Response body]
 ```json
