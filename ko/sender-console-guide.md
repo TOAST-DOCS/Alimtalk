@@ -1,4 +1,4 @@
-## Notification > KakaoTalk Bizmessage > 콘솔 사용 가이드
+## Notification > KakaoTalk Bizmessage > 발신 프로필 > 콘솔 사용 가이드
 
 ## 발신 프로필 등록/인증
 * 카카오톡 비즈 메시지를 발송하려면 발신 프로필을 먼저 등록해야 합니다.
