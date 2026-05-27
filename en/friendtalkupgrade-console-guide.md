@@ -49,7 +49,7 @@ You can set up an outgoing profile and enter content to send messages in the for
     * Text
       * 1,300 characters of text including spaces, in both Korean and English + up to 5 link buttons (vertically arranged)
     * Image
-      * 400 characters of text including spaces, in both Korean and English + one image + up to 5 link buttons (vertically arranged)
+      * 1,300 characters of text including spaces, in both Korean and English + one image + up to 5 link buttons (vertically arranged)
     * Wide image
       * 76 characters of text including spaces, in both Korean and English + one image + up to 2 link buttons
     * Wide item list
@@ -104,7 +104,6 @@ This feature allows you to send brand messages to multiple recipient numbers usi
 ![friendtalkupgrade_mass02.png](https://static.toastoven.net/prod_alimtalk/friendtalkupgrade_mass02.png)
 
 * You can enter individual targeting values and template placeholders for each recipient.
-   * For free-form sending, be careful not to set M or N targeting values, as this will result in send failure.
 * If you enter content without template placeholders, the same content will be sent to all recipients.
 
 When clicking **Send** button, you can select **Proceed after Review** or **Immediate Send**.
@@ -197,7 +196,7 @@ You can register or delete images to use in the brand message and check informat
 
 * You can register images by selecting them by type (basic/wide, wide item list type, carousel feed, carousel commerce, business form).
 * The image will no longer be accessible after deletion.
-* If all templates referencing an uploaded image are deleted or changed to a different image, the image will be removed from the Kakao CDN, making the URL invalid. While image information is retained in the Image Retrieval API and the console, the actual image cannot be accessed.
+* When updating a template, if the image is changed to a different one, the existing image is deleted from the Kakao CDN and the URL becomes invalid. Other templates using the same image are also affected, so caution is required. Although image information is retained in the image retrieval API or the console, the actual image cannot be accessed, so it is recommended to keep the original file separately on your own server.
 * It is recommended to store the original file separately on your own server.
 File specifications and recommended/maximum sizes must be strictly followed.
 * You can copy an image address URL. The URL is used when sending the API.

@@ -1,4 +1,4 @@
-## Notification > KakaoTalk Bizmessage > Plus Friend> Console Guide
+## Notification > KakaoTalk Bizmessage > 발신 프로필 > Console Guide
 
 ## Register/Authenticate Sender Profiles
 * To send a KakaoTalk Biz message, you must first register your sender profile.

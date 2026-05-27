@@ -20,7 +20,7 @@ Non-friend message sending (targeting M, N) can be sent if all the conditions be
 - 50,000 or more channel friends
 - Successfully send notification messages within the past three months
 
-### Upload marketing consent evidence
+### Upload marketing consent records
 
 #### Requested
 
@@ -54,7 +54,7 @@ Content-Type: multipart/form-data
 
 | Name| Type| Required| Description|
 |----------|----------|----------|----------|
-| file| File| O| Marketing consent evidence|
+| file| File| O| Marketing consent records|
 
 #### Response
 
@@ -126,7 +126,7 @@ Content-Type: application/json;charset=UTF-8
 
 ## Request to send a free-form message
 
-* You can send a marketing consent.
+* Marketing consent-based sending can be used.
    * You can specify the type of message target by specifying the targeting field.
        * M: Users who agree to receive advertising information from the client company (KakaoTalk message consent)
        * N: Users who agree to receive advertising information from the client company - Channel friend
@@ -241,7 +241,7 @@ Content-Type: application/json;charset=UTF-8
 | unsubscribeNo| String| X| 080 toll-free opt-out phone number (If not entered, the message will be sent using the free opt-out information registered in the outgoing profile)<br>- 080-xxx-xxxx <br>- 080-xxxx-xxxx <br>- 080xxxxxxx <br>- 080xxxxxxxx|
 | unsubscribeAuthNo| String| X| 080 toll-free opt-out verification number (If not entered, the message will be sent using the free opt-out information registered in the outgoing profile)<br>unsubscribeAuthNo cannot be entered without unsubscribeNo<br>ex) 1234|
 | adult| boolean| X| Message status for adults (defaults: false)|
-| content| String| O| \- For TEXT type, up to 1,300 characters (linebreak: up to 99, URL type available)<br>- For IMAGE type, up to 400 characters (linebreak: up to 29, URL type available)<br>- For WIDE type, up to 76 characters (linebreak: up to 1)<br>- For PREMIUM_VIDEO type, the field can be used optionally. Up 76 characters (linebreak: up to 1)<br>- For other types, the field is unavailable.|
+| content| String| O| \- For TEXT type, up to 1,300 characters (linebreak: up to 99, URL type available)<br>- For IMAGE type, up to 1,300 characters (linebreak: up to 99, URL type available)<br>- For WIDE type, up to 76 characters (linebreak: up to 5)<br>- For PREMIUM_VIDEO type, the field can be used optionally. Up 76 characters (linebreak: up to 5)<br>- For other types, the field is unavailable.|
 | buttons| List| X| Button list<br>- For TEXT, IMAGE type, up to 4 when applying a coupon; for others, up to 5<br>- For WIDE, WIDE_ITEM_LIST type, up to 2<br>- For PREMIUM_VIDEO type, up to 1<br>- For COMMERCE type, minimum 1 and up to 2|
 | \- name| String| O| Button title<br>- For TEXT, IMAGE type, up to 14 characters<br>- For other types, up to 8 characters|
 | \- type| String| O| Button type (WL: web link, AL: app link, BK: bot keyword, MD: message forwarding, AC: add channel, BT: chatbot conversion, BF: Business form)<br>- BT type is available only in the channel using the chatbot of Kakao i Open Builder<br>- BF type can only be used as the first button, and only the following three phrases can be used for names:<br>&nbsp;&nbsp;- Make a reservation via KakaoTalk<br>&nbsp;&nbsp;- Take a survey via KakaoTalk<br>&nbsp;&nbsp;- Apply via KakaoTalk|
@@ -270,7 +270,7 @@ Content-Type: application/json;charset=UTF-8
 | \-- resendUnsubscribeNo| String| X| Fallback 080 opt-out number<br><span style="color:red">(if the 080 opt-out number is not registered with the SMS service, the fallback may fail.)</span>|
 | \- targeting| String| X| Type of message target (M: User with marketing consent, N: only users that agreed to marketing consent and are not friends, I: users who are friends)|
 | \- unsubscribeNo| String| X| 080 toll-free opt-out phone number (If not entered, the message will be sent using the free opt-out information registered in the outgoing profile)<br>- 080-xxx-xxxx <br>- 080-xxxx-xxxx <br>- 080xxxxxxx <br>- 080xxxxxxxx|
-| \- unsubscribeAuthNo| String| X| Opt-out verification number (If not entered, the message will be sent using the free opt-out information registered in the outgoing profile)<br>unsubscribeAuthNo cannot be entered without unsubscribeNo<br>ex) 1234|
+| \- unsubscribeAuthNo| String| X| 080 opt-out verification number (If not entered, the message will be sent using the free opt-out information registered in the outgoing profile)<br>unsubscribeAuthNo cannot be entered without unsubscribeNo<br>ex) 1234|
 | \- recipientGroupingKey| String| X| Recipient grouping key (you can specify grouping keys by recipient. Up 100 characters)|
 | senderGroupingKey| String| X| Sender grouping key (you can specify grouping keys by sender. Up 100 characters)|
 | resellerCode| String| X| Reseller code (used by resellers when sending)|
@@ -349,7 +349,7 @@ Content-Type: application/json;charset=UTF-8
 | unsubscribeNo| String| X| 080 toll-free opt-out phone number (If not entered, the message will be sent using the free opt-out information registered in the outgoing profile)<br>- 080-xxx-xxxx <br>- 080-xxxx-xxxx <br>- 080xxxxxxx <br>- 080xxxxxxxx|
 | unsubscribeAuthNo| String| X| 080 toll-free opt-out verification number (If not entered, the message will be sent using the free opt-out information registered in the outgoing profile)<br>unsubscribeAuthNo cannot be entered without unsubscribeNo<br>ex) 1234|
 | adult| boolean| X| Message status for adults (defaults: false)|
-| content| String| O| \- For TEXT type, up to 1,300 characters (linebreak: up to 99, URL type available)<br>- For IMAGE type, up to 400 characters (linebreak: up to 29, URL type available)<br>- For WIDE type, up to 76 characters (linebreak: up to 1)<br>- For PREMIUM_VIDEO type, the field can be used optionally. Up 76 characters (linebreak: up to 1)<br>- For other types, the field is unavailable.|
+| content| String| O| \- For TEXT type, up to 1,300 characters (linebreak: up to 99, URL type available)<br>- For IMAGE type, up to 1,300 characters (linebreak: up to 99, URL type available)<br>- For WIDE type, up to 76 characters (linebreak: up to 5)<br>- For PREMIUM_VIDEO type, the field can be used optionally. Up 76 characters (linebreak: up to 5)<br>- For other types, the field is unavailable.|
 | image| Object| O| Image elements<br>- Required fields for IMAGE, WIDE, COMMERCE types|
 | \- imageUrl| String| O| Image URL. Use an image URL uploaded as a general image|
 | \- imageLink| String| X| URL to go to when the image is clicked. Limited to 1,000 characters<br>If not set, use the image viewer in KakaoTalk|
@@ -460,7 +460,7 @@ Content-Type: application/json;charset=UTF-8
 | unsubscribeNo| String| X| 080 toll-free opt-out phone number (If not entered, the message will be sent using the free opt-out information registered in the outgoing profile)<br>- 080-xxx-xxxx <br>- 080-xxxx-xxxx <br>- 080xxxxxxx <br>- 080xxxxxxxx|
 | unsubscribeAuthNo| String| X| 080 toll-free opt-out verification number (If not entered, the message will be sent using the free opt-out information registered in the outgoing profile)<br>unsubscribeAuthNo cannot be entered without unsubscribeNo<br>ex) 1234|
 | adult| boolean| X| Message status for adults (defaults: false)|
-| content| String| O| \- For TEXT type, up to 1,300 characters (linebreak: up to 99, URL type available)<br>- For IMAGE type, up to 400 characters (linebreak: up to 29, URL type available)<br>- For WIDE type, up to 76 characters (linebreak: up to 1)<br>- For PREMIUM_VIDEO type, the field can be used optionally. Up 76 characters (linebreak: up to 1)<br>- For other types, the field is unavailable.|
+| content| String| O| \- For TEXT type, up to 1,300 characters (linebreak: up to 99, URL type available)<br>- For IMAGE type, up to 1,300 characters (linebreak: up to 99, URL type available)<br>- For WIDE type, up to 76 characters (linebreak: up to 5)<br>- For PREMIUM_VIDEO type, the field can be used optionally. Up 76 characters (linebreak: up to 5)<br>- For other types, the field is unavailable.|
 | image| Object| O| Image elements<br>- Required fields for IMAGE, WIDE, COMMERCE types|
 | \- imageUrl| String| O| Image URL, use an image URL uploaded as a wide image|
 | \- imageLink| String| X| URL to go to when the image is clicked. Limited to 1,000 characters<br>If not set, use the image viewer in KakaoTalk|
@@ -712,7 +712,7 @@ Content-Type: application/json;charset=UTF-8
 | unsubscribeNo| String| X| 080 toll-free opt-out phone number (If not entered, the message will be sent using the free opt-out information registered in the outgoing profile)<br>- 080-xxx-xxxx <br>- 080-xxxx-xxxx <br>- 080xxxxxxx <br>- 080xxxxxxxx|
 | unsubscribeAuthNo| String| X| 080 toll-free opt-out verification number (If not entered, the message will be sent using the free opt-out information registered in the outgoing profile)<br>unsubscribeAuthNo cannot be entered without unsubscribeNo<br>ex) 1234|
 | adult| boolean| X| Message status for adults (defaults: false)|
-| content| String| X| \- For TEXT type, up to 1,300 characters (linebreak: up to 99, URL type available)<br>- For IMAGE type, up to 400 characters (linebreak: up to 29, URL type available)<br>- For WIDE type, up to 76 characters (linebreak: up to 1)<br>- For PREMIUM_VIDEO type, the field can be used optionally, 76 characters (linebreak: up to 1)<br>- For other types, the field is unavailable.|
+| content| String| X| \- For TEXT type, up to 1,300 characters (linebreak: up to 99, URL type available)<br>- For IMAGE type, up to 1,300 characters (linebreak: up to 99, URL type available)<br>- For WIDE type, up to 76 characters (linebreak: up to 5)<br>- For PREMIUM_VIDEO type, the field can be used optionally, 76 characters (linebreak: up to 5)<br>- For other types, the field is unavailable.|
 | header| String| X| Header<br>- Required field for WIDE_ITEM_LIST type, up to 20 characters (linebreak: unavailable)<br>- Optional field for WIDE_ITEM_LIST type, up to 20 characters (linebreak: unavailable)|
 | video| Object| O| Video elements (only PREMIUM_VIDEO type available)|
 | \- videoUrl| String| O| KakaoTV video URL (only video addresses uploaded on KakaoTV available), limited to up to 500 characters|
@@ -1248,7 +1248,7 @@ Allow unique placeholder values for each item in a carousel-type template.
 ## Request to send basic message
 
 * A sending using a template.
-* You can use the marketing consent sending.
+* Marketing consent-based sending can be used.
    * You can specify the type of message target by specifying the targeting field.
        * M: Users who agree to receive advertising information from the client company (KakaoTalk message consent)
        * N: Users who agree to receive advertising information from the client company - Channel friend
@@ -2475,7 +2475,7 @@ Content-Type: application/json;charset=UTF-8
 | templateName| String| O| Template name (up 200 characters)|
 | chatBubbleType| String| O| Message type (TEXT, IMAGE, WIDE, WIDE_ITEM_LIST, PREMIUM_VIDEO, COMMERCE, CAROUSEL_FEED, CAROUSEL_COMMERCE)|
 | adult| boolean| X| Message status for adults (defaults: false)|
-| content| String| O| \- For TEXT type, up to 1,300 characters (linebreak: up to 99, URL type available)<br>- For IMAGE type, up to 400 characters (linebreak: up to 29, URL type available)<br>- For WIDE type, up to 76 characters (linebreak: up to 1)<br>- For PREMIUM_VIDEO type, the field can be used optionally, 76 characters (linebreak: up to 1)<br>- For other types, the field is unavailable.|
+| content| String| O| \- For TEXT type, up to 1,300 characters (linebreak: up to 99, URL type available)<br>- For IMAGE type, up to 1,300 characters (linebreak: up to 99, URL type available)<br>- For WIDE type, up to 76 characters (linebreak: up to 5)<br>- For PREMIUM_VIDEO type, the field can be used optionally, 76 characters (linebreak: up to 5)<br>- For other types, the field is unavailable.|
 | buttons| List| X| Button list<br>- For TEXT, IMAGE type, up to 4 when applying a coupon; for others, up to 5<br>- For WIDE, WIDE_ITEM_LIST type, up to 2<br>- For PREMIUM_VIDEO type, up to 1<br>- For COMMERCE type, minimum 1 and up to 2|
 | \- name| String| O| Button title<br>- For TEXT, IMAGE type, up to 14 characters<br>- For other types, up to 8 characters<br>No placeholders available|
 | \- type| String| O| Button type (WL: web link, AL: app link, BK: bot keyword, MD: forward message, AC: add channel, BT: chatbot conversion, BF: business form)<br>- AC type must be registered as the first button for TEXT and IMAGE, and as the last button for other message types|
@@ -2533,7 +2533,7 @@ Content-Type: application/json;charset=UTF-8
 | templateName| String| O        | Template name (up 200 characters)|
 | chatBubbleType| String| O        | Message type (TEXT, IMAGE, WIDE, WIDE_ITEM_LIST, PREMIUM_VIDEO, COMMERCE, CAROUSEL_FEED, CAROUSEL_COMMERCE)|
 | adult| boolean| X        | Message status for adults (defaults: false)|
-| content| String| O        | \- For TEXT type, up to 1,300 characters (linebreak: up to 99, URL type available)<br>- For IMAGE type, up to 400 characters (linebreak: up to 29, URL type available)<br>- For WIDE type, up to 76 characters (linebreak: up to 1)<br>- For PREMIUM_VIDEO type, the field can be used optionally, 76 characters (linebreak: up to 1)<br>- For other types, the field is unavailable.|
+| content| String| O        | \- For TEXT type, up to 1,300 characters (linebreak: up to 99, URL type available)<br>- For IMAGE type, up to 1,300 characters (linebreak: up to 99, URL type available)<br>- For WIDE type, up to 76 characters (linebreak: up to 5)<br>- For PREMIUM_VIDEO type, the field can be used optionally, 76 characters (linebreak: up to 5)<br>- For other types, the field is unavailable.|
 | image| Object| O        | Image elements<br>- Required fields for IMAGE, WIDE, COMMERCE types|
 | \- imageUrl| String| O        | Image URL, use an image URL uploaded as a general image<br>No placeholders available|
 | \- imageLink| String| X        | URL to go to when the image is clicked, limited to 500 characters<br>If not set, use the image viewer in KakaoTalk<br>No placeholders available|
@@ -2594,7 +2594,7 @@ Content-Type: application/json;charset=UTF-8
 | templateName| String| O        | Template name (up 200 characters)|
 | chatBubbleType| String| O        | Message type (TEXT, IMAGE, WIDE, WIDE_ITEM_LIST, PREMIUM_VIDEO, COMMERCE, CAROUSEL_FEED, CAROUSEL_COMMERCE)|
 | adult| boolean| X        | Message status for adults (defaults: false)|
-| content| String| O        | \- For TEXT type, up to 1,300 characters (linebreak: up to 99, URL type available)<br>- For IMAGE type, up to 400 characters (linebreak: up to 29, URL type available)<br>- For WIDE type, up to 76 characters (linebreak: up to 1)<br>- For PREMIUM_VIDEO type, the field can be used optionally, 76 characters (linebreak: up to 1)<br>- For other types, the field is unavailable.|
+| content| String| O        | \- For TEXT type, up to 1,300 characters (linebreak: up to 99, URL type available)<br>- For IMAGE type, up to 1,300 characters (linebreak: up to 99, URL type available)<br>- For WIDE type, up to 76 characters (linebreak: up to 5)<br>- For PREMIUM_VIDEO type, the field can be used optionally, 76 characters (linebreak: up to 5)<br>- For other types, the field is unavailable.|
 | image| Object| O        | Image elements<br>- Required fields for IMAGE, WIDE, COMMERCE types|
 | \- imageUrl| String| O        | Image URL, use an image URL uploaded as a wide image<br>No placeholders available|
 | \- imageLink| String| X        | URL to go to when the image is clicked, limited to 500 characters<br>If not set, use the image viewer in KakaoTalk<br>No placeholders available|
@@ -2746,7 +2746,7 @@ Content-Type: application/json;charset=UTF-8
 | templateName| String| O| Template name (up 200 characters)|
 | chatBubbleType| String| O| Message type (TEXT, IMAGE, WIDE, WIDE_ITEM_LIST, PREMIUM_VIDEO, COMMERCE, CAROUSEL_FEED, CAROUSEL_COMMERCE)|
 | adult| boolean| X| Message status for adults (defaults: false)|
-| content| String| X| \- For TEXT type, up to 1,300 characters (linebreak: up to 99, URL type available)<br>- For IMAGE type, up to 400 characters (linebreak: up to 29, URL type available)<br>- For WIDE type, up to 76 characters (linebreak: up to 1)<br>- For PREMIUM_VIDEO type, the field can be used optionally, 76 characters (linebreak: up to 1)<br>- For other types, the field is unavailable.|
+| content| String| X| \- For TEXT type, up to 1,300 characters (linebreak: up to 99, URL type available)<br>- For IMAGE type, up to 1,300 characters (linebreak: up to 99, URL type available)<br>- For WIDE type, up to 76 characters (linebreak: up to 5)<br>- For PREMIUM_VIDEO type, the field can be used optionally, 76 characters (linebreak: up to 5)<br>- For other types, the field is unavailable.|
 | header| String| X| Header<br>- Required field for WIDE_ITEM_LIST type, up to 20 characters (linebreak: unavailable)<br>- Optional field for WIDE_ITEM_LIST type, up to 20 characters (linebreak: unavailable)|
 | video| Object| O| Video elements (only PREMIUM_VIDEO type available)|
 | \- videoUrl| String| O| KakaoTV video URL (only video addresses uploaded on KakaoTV available), limited to up to 500 characters<br>Placeholders unavailable|
@@ -3264,7 +3264,7 @@ Content-Type: multipart/form-data
 | CAROUSEL_FEED_IMAGE        | Per-cell image in a carousel feed                                       | **Recommended size:** 800 × 600 px or 800 × 400 px (width ≥ 500 px)<br/>**Aspect ratio:** 0.5 ≤ (height ÷ width) ≤ 1.333<br/>**File format & size limit:** JPG, PNG / up to 5 MB |
 | CAROUSEL_COMMERCE_IMAGE    | Intro image for carousel commerce, per-cell image for carousel commerce | **Recommended size:** 800 × 600 px or 800 × 400 px (width ≥ 500 px)<br/>**Aspect ratio:** 0.5 ≤ (height ÷ width) ≤ 1.333<br/>**File format & size limit:** JPG, PNG / up to 5 MB |
 
-* If all templates referencing an uploaded image are deleted or changed to a different image, the image will be removed from the Kakao CDN, making the URL invalid. While image information is retained in the Image Retrieval API, the actual image cannot be accessed. It is recommended to store the original file separately on your own server.
+* When updating a template, if the image is changed to a different one, the existing image is deleted from the Kakao CDN and the URL becomes invalid. Other templates using the same image are also affected, so caution is required. Although image information is retained in the image retrieval API, the actual image cannot be accessed, so it is recommended to keep the original file separately on your own server.
 
 ### View image
 
