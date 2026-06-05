@@ -3388,6 +3388,259 @@ Content-Type: application/json;charset=UTF-8
 | - resultMessage | String  | O        | 결과 메시지 |
 | - isSuccessful  | boolean | O        | 성공 여부  |
 
+## 동영상 관리
+
+브랜드 메시지에 사용할 동영상을 등록·조회·삭제하는 API입니다. 등록된 동영상은 카카오 비즈센터에서 인코딩 처리 후 발송에 사용할 수 있으며, 상태가 `PUBLIC`인 동영상만 템플릿 등록 및 발송이 가능합니다(`PRIVATE`는 템플릿 등록만 가능).
+
+### 동영상 업로드
+
+#### 요청
+
+[URL]
+
+```
+POST  /brand-message/v1.0/appkeys/{appKey}/videos
+Content-Type: multipart/form-data
+```
+
+[Path parameter]
+
+| 이름     | 타입     | 설명     |
+|--------|--------|--------|
+| appkey | String | 고유의 앱키 |
+
+[Header]
+
+```
+{
+  "X-Secret-Key": String
+}
+```
+
+| 이름           | 타입     | 필수 | 설명               |
+|--------------|--------|----|------------------|
+| X-Secret-Key | String | O  | 콘솔에서 생성할 수 있습니다. |
+
+[Request parameter]
+
+| 이름         | 타입     | 필수 | 설명                                 |
+|------------|--------|----|------------------------------------|
+| file       | File   | O  | 동영상 파일                             |
+| senderKey  | String | O  | 발신프로필 키 (40자)                      |
+| createUser | String | X  | 업로드 사용자 식별자 (최대 100자)              |
+
+#### 응답
+
+```
+{
+  "header": {
+      "resultCode": Integer,
+      "resultMessage": String,
+      "isSuccessful": boolean
+  },
+  "video": {
+      "videoSeq": Long,
+      "vid": String,
+      "senderKey": String,
+      "title": String,
+      "fileName": String,
+      "fileSize": Long,
+      "status": String,
+      "thumbnailUrl": String,
+      "videoUrl": String,
+      "playUrl": String,
+      "createDate": String,
+      "updateDate": String,
+      "createUser": String
+  }
+}
+```
+
+| 이름              | 타입      | Not Null | 설명                                                            |
+|:----------------|:--------|:---------|:--------------------------------------------------------------|
+| header          | Object  | O        | 헤더 영역                                                         |
+| - resultCode    | Integer | O        | 결과 코드                                                         |
+| - resultMessage | String  | O        | 결과 메시지                                                        |
+| - isSuccessful  | boolean | O        | 성공 여부                                                         |
+| video           | Object  | X        | 동영상 영역                                                        |
+| - videoSeq      | Long    | O        | 동영상 시퀀스                                                       |
+| - vid           | String  | O        | 카카오 동영상 ID                                                    |
+| - senderKey     | String  | O        | 발신프로필 키                                                       |
+| - title         | String  | X        | 동영상 제목 (업로드 직후에는 파일명, 인코딩 완료 후 카카오 비즈센터에서 수정한 값으로 동기화됨)        |
+| - fileName      | String  | O        | 업로드 파일명                                                       |
+| - fileSize      | Long    | O        | 파일 크기 (byte)                                                  |
+| - status        | String  | O        | 동영상 상태 ([동영상 상태](#동영상-상태) 참고)                                |
+| - thumbnailUrl  | String  | X        | 썸네일 이미지 URL (인코딩 완료 후 채워짐)                                    |
+| - videoUrl      | String  | X        | 발송 및 관리용 동영상 URL (인코딩 완료 후 채워짐)                               |
+| - playUrl       | String  | X        | 재생용 URL (카카오 가이드상 현재 미지원, 추후 제공 시 자동 반영)                     |
+| - createDate    | String  | O        | 등록 일시                                                         |
+| - updateDate    | String  | X        | 상태 동기화 일시                                                     |
+| - createUser    | String  | X        | 업로드 사용자 식별자                                                   |
+
+#### 업로드 동영상 규격
+
+| 항목       | 제한                                          |
+|:---------|:--------------------------------------------|
+| 파일 형식    | MP4, MOV, AVI                               |
+| 최대 파일 크기 | 4GB                                         |
+| 최대 영상 길이 | 4시간                                         |
+| 최대 해상도   | 8K                                          |
+| 파일명 길이   | 250자 이내                                     |
+
+* 업로드된 동영상은 카카오 비즈센터에서 인코딩이 완료된 후 사용할 수 있습니다. 인코딩 시간은 영상 길이에 따라 다르며 보통 5~10분이 소요됩니다.
+* 업로드 직후 동영상 상태는 `REGISTERED`로 시작하며 `ENCODING`을 거쳐 `PUBLIC` 또는 `PRIVATE`로 전환됩니다. 상태는 콘솔 또는 동영상 조회 API에서 확인할 수 있습니다.
+* 등록된 동영상은 카카오 측에서 영구 보존되며, 템플릿이 삭제되어도 카카오 비즈센터의 동영상은 자동으로 정리되지 않습니다. 카카오 채널 관리자가 채널 비즈니스 홈의 관리 화면에서 직접 삭제할 수 있습니다.
+
+### 동영상 조회
+
+#### 요청
+
+[URL]
+
+```
+GET  /brand-message/v1.0/appkeys/{appKey}/videos
+Content-Type: application/json;charset=UTF-8
+```
+
+[Path parameter]
+
+| 이름     | 타입     | 설명     |
+|--------|--------|--------|
+| appkey | String | 고유의 앱키 |
+
+[Header]
+
+```
+{
+  "X-Secret-Key": String
+}
+```
+
+| 이름           | 타입     | 필수 | 설명               |
+|--------------|--------|----|------------------|
+| X-Secret-Key | String | O  | 콘솔에서 생성할 수 있습니다. |
+
+[Request parameter]
+
+| 이름         | 타입     | 필수 | 설명                |
+|------------|--------|----|-------------------|
+| senderKey  | String | X  | 발신프로필 키 (40자)     |
+| pageNum    | String | X  | 페이지 번호 (기본: 1)    |
+| pageSize   | String | X  | 조회 건수 (기본: 15)    |
+
+#### 응답
+
+```
+{
+  "header": {
+    "resultCode": Integer,
+    "resultMessage": String,
+    "isSuccessful": boolean
+  },
+  "videosResponse": {
+    "videos": [
+      {
+        "videoSeq": Long,
+        "vid": String,
+        "senderKey": String,
+        "title": String,
+        "fileName": String,
+        "fileSize": Long,
+        "status": String,
+        "thumbnailUrl": String,
+        "videoUrl": String,
+        "playUrl": String,
+        "createDate": String,
+        "updateDate": String,
+        "createUser": String
+      }
+    ],
+    "totalCount": Integer
+  }
+}
+```
+
+| 이름                | 타입      | Not Null | 설명         |
+|:------------------|:--------|:---------|:-----------|
+| header            | Object  | O        | 헤더 영역      |
+| - resultCode      | Integer | O        | 결과 코드      |
+| - resultMessage   | String  | O        | 결과 메시지     |
+| - isSuccessful    | boolean | O        | 성공 여부      |
+| videosResponse    | Object  | X        | 동영상 목록 영역  |
+| - videos          | Array   | O        | 동영상 배열     |
+| - totalCount      | Integer | O        | 전체 동영상 수   |
+
+> 각 `videos` 항목의 필드는 [동영상 업로드 응답](#응답)과 동일합니다.
+
+### 동영상 삭제
+
+#### 요청
+
+[URL]
+
+```
+DELETE  /brand-message/v1.0/appkeys/{appKey}/videos
+Content-Type: application/json;charset=UTF-8
+```
+
+[Path parameter]
+
+| 이름     | 타입     | 설명     |
+|--------|--------|--------|
+| appkey | String | 고유의 앱키 |
+
+[Header]
+
+```
+{
+  "X-Secret-Key": String
+}
+```
+
+| 이름           | 타입     | 필수 | 설명               |
+|--------------|--------|----|------------------|
+| X-Secret-Key | String | O  | 콘솔에서 생성할 수 있습니다. |
+
+[Query parameter]
+
+| 이름       | 타입     | 필수 | 설명                                |
+|----------|--------|----|-----------------------------------|
+| videoSeq | String | O  | 동영상 시퀀스 (콤마로 구분하여 다건 전달 가능)        |
+
+#### 응답
+
+```
+{
+  "header": {
+    "resultCode": Integer,
+    "resultMessage": String,
+    "isSuccessful": boolean
+  }
+}
+```
+
+| 이름              | 타입      | Not Null | 설명     |
+|:----------------|:--------|:---------|:-------|
+| header          | Object  | O        | 헤더 영역  |
+| - resultCode    | Integer | O        | 결과 코드  |
+| - resultMessage | String  | O        | 결과 메시지 |
+| - isSuccessful  | boolean | O        | 성공 여부  |
+
+### 동영상 상태
+
+동영상 조회 응답의 `status` 필드 값을 설명합니다.
+
+| status     | 설명                                  |
+|:-----------|:------------------------------------|
+| REGISTERED | 업로드 등록                              |
+| ENCODING   | 인코딩 중                               |
+| PUBLIC     | 공개 상태 (발송 및 템플릿 등록 가능)              |
+| PRIVATE    | 비공개 상태 (템플릿 등록 가능)                  |
+| VIOLATED   | 위반 동영상                              |
+| ILLEGAL    | 불법촬영물 동영상                           |
+| DELETED    | 삭제된 동영상                             |
+| ERROR      | 업로드 및 인코딩 중 오류 발생                   |
+
 ## 업로드
 
 ### 비즈폼 키 업로드
