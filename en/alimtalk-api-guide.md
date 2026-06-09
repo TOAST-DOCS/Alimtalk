@@ -3013,6 +3013,11 @@ Content-Type: application/json;charset=UTF-8
 |- resultMessage|	String| Result message|
 |- isSuccessful|	Boolean| Successful or not|
 
+### Delete Template Plugin
+
+<!-- TODO: translate body -->
+
+<!-- pre-align: ko에 대응 섹션 없음 — 검토 필요 (duplicate Modify Template Plugin with no Korean counterpart) -->
 ### Modify Template Plugin
 #### Request
 [URL]
