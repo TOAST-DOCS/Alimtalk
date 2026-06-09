@@ -1,5 +1,9 @@
 ## Notification > KakaoTalk Bizmessage > FriendTalk > API v2.0 Guide
 
+## FriendTalk End of Service Notice
+
+<!-- TODO: translate body -->
+
 ## FriendTalk
 
 #### [API Domain]
@@ -392,6 +396,22 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 | - senderGroupingKey    | String  | Sender's grouping key                                        |
 | - recipientGroupingKey | String  | Recipient's grouping key                                     |
 
+## Messages
+
+<!-- TODO: translate body -->
+
+### Cancel Message Sending
+
+<!-- TODO: translate body -->
+
+#### Request
+
+<!-- TODO: translate body -->
+
+#### Response
+
+<!-- TODO: translate body -->
+
 ### Query Updated Message Results
 
 #### Request
@@ -699,3 +719,23 @@ curl -X DELETE -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Ke
 | - resultCode    | Integer | Result code       |
 | - resultMessage | String  | Result message    |
 | - isSuccessful  | Boolean | Successful or not |
+## Alternative Sending Management
+
+<!-- TODO: translate body -->
+
+### SMS AppKey Registration
+
+<!-- TODO: translate body -->
+
+#### Response
+
+<!-- TODO: translate body -->
+
+### Alternative Sending Settings Registration
+
+<!-- TODO: translate body -->
+
+#### Response
+
+<!-- TODO: translate body -->
+
