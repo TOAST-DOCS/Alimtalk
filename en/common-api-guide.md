@@ -153,3 +153,375 @@
     }
 }
 ```
+## Kakao Statistics
+
+* You can retrieve statistics data provided by Kakao Biz Center.
+* You can retrieve statistics data by sender key on a daily (DAILY) or monthly (MONTHLY) basis.
+* DAILY: You can retrieve only data within the last 90 days, and the query range is up to 90 days.
+* MONTHLY: You can retrieve only data within the last 3 months, and the query range is up to 3 months.
+
+In Sender Profile Management, if you click **Go to Kakao Statistics**, you can view Kakao statistics in a new window. Statistics criteria include delivery statistics and template statistics, and query conditions vary depending on the message channel. You can view the query results in charts and tables.
+
+* Real-time statistics are not provided. Data collected from the previous day is provided daily around 7 AM.
+* AlimTalk statistics are first provided on D+1 and finalized on D+2.
+* Valid read counts are not duplicated for the same message.
+* Click counts are duplicated for the same message.
+* If the number of successful deliveries is 10 or less, valid read counts and click counts are not provided.
+
+### Send Statistics
+
+Queries daily delivery count, valid read count, and click count based on Sender Profile. You can query by setting the period, delivery identifier, Message Type, and other parameters.
+
+### Template Statistics
+
+You can query daily delivery counts, valid read counts, and click counts based on templates and group tags. You can query by setting the period, message type, and other parameters.
+
+* Brand Message free-form is provided only when group tags are used.
+
+### AlimTalk Send Statistics Query
+
+<!-- TODO: translate body -->
+
+#### Request
+
+[URL]
+
+|Http method| URI|
+|---|---|
+|GET| /common/v2.2/appkeys/{appKey}/kakao-statistics/delivery-statistics/ALIMTALK |
+
+[Path parameter]
+
+| Name | Type | Description |
+|---|---|---|
+| appKey | String | Unique app key |
+
+[Header]
+
+```
+{
+  "X-Secret-Key": String
+}
+```
+
+| Name | Type | Required | Description |
+|---|---|---|---|
+| X-Secret-Key | String | O | You can create this in the console. |
+
+[Query parameter]
+
+| Name | Type | Required | Description |
+|---|---|---|---|
+| senderKey | String | O | Sender Key |
+| periodType | String | O | Statistics category (DAILY: daily, MONTHLY: monthly) |
+| startDate | String | O | Query start date<br/>DAILY: yyyy-MM-dd (within the last 90 days), MONTHLY: yyyy-MM (within the last 3 months) |
+| endDate | String | O | Query end date<br/>DAILY: yyyy-MM-dd (maximum range 90 days), MONTHLY: yyyy-MM (maximum range 3 months) |
+| messageType | String | X | Message Type (AT: general AlimTalk, AI: image AlimTalk) |
+| receiveUserType | String | X | Recipient type (PhoneNumber: phone number, None: no recipient identifier) |
+| limit | Integer | X | Query count (Default: 500, Max: 1000) |
+| offset | Integer | X | Start position (Default: 0) |
+
+#### Response
+
+```json
+{
+    "header": {
+        "resultCode": 0,
+        "resultMessage": "success",
+        "isSuccessful": true
+    },
+    "totalCount": 1,
+    "alimtalkDeliveryStatistics": [
+        {
+            "date": "2026-04-01",
+            "messageType": "NORMAL",
+            "receiveUserType": "ALL",
+            "totalSendRequestCount": 100,
+            "validSendRequestCount": 95,
+            "validReadCount": 80
+        }
+    ]
+}
+```
+
+| Name | Type | Not Null | Description |
+|---|---|:---:|---|
+| header | Object | O | Header area |
+| - resultCode | Integer | O | Result code |
+| - resultMessage | String | O | Result message |
+| - isSuccessful | Boolean | O | Success status |
+| totalCount | Integer | O | Total count |
+| alimtalkDeliveryStatistics | List | O | AlimTalk delivery statistics list |
+| - date | String | O | Date |
+| - messageType | String | O | Message Type (AT: General AlimTalk, AI: Image AlimTalk) |
+| - receiveUserType | String | O | Recipient type (PhoneNumber: Phone number, None: No recipient identifier) |
+| - totalSendRequestCount | Integer | O | Total send request count |
+| - validSendRequestCount | Integer | O | Valid send request count |
+| - validReadCount | Integer | O | Valid read count |
+
+### AlimTalk Template Statistics Query
+
+<!-- TODO: translate body -->
+
+#### Request
+
+[URL]
+
+|Http method| URI|
+|---|---|
+|GET| /common/v2.2/appkeys/{appKey}/kakao-statistics/template-statistics/ALIMTALK |
+
+[Path parameter]
+
+| Name | Type | Description |
+|---|---|---|
+| appKey | String | Unique app key |
+
+[Header]
+
+```
+{
+  "X-Secret-Key": String
+}
+```
+
+| Name | Type | Required | Description |
+|---|---|---|---|
+| X-Secret-Key | String | O | You can create it in the console. |
+
+[Query parameter]
+
+| Name | Type | Required | Description |
+|---|---|---|---|
+| senderKey | String | O | Sender Key |
+| periodType | String | O | Statistics classification (DAILY: daily, MONTHLY: monthly) |
+| startDate | String | O | Query start date<br/>DAILY: yyyy-MM-dd (within the last 90 days), MONTHLY: yyyy-MM (within the last 3 months) |
+| endDate | String | O | Query end date<br/>DAILY: yyyy-MM-dd (maximum range of 90 days), MONTHLY: yyyy-MM (maximum range of 3 months) |
+| kakaoTemplateCode | String | X | Kakao Template Code |
+| messageType | String | X | Message Type (AT: general AlimTalk, AI: image AlimTalk) |
+| limit | Integer | X | Number of queries (Default: 500, Max: 1000) |
+| offset | Integer | X | Start position (Default: 0) |
+
+#### Response
+
+```json
+{
+    "header": {
+        "resultCode": 0,
+        "resultMessage": "success",
+        "isSuccessful": true
+    },
+    "totalCount": 1,
+    "alimtalkTemplateStatistics": [
+        {
+            "date": "2026-04-01",
+            "messageType": "NORMAL",
+            "templateCode": "template01",
+            "totalSendSuccessCount": 90,
+            "validReadCount": 75,
+            "totalClickCount": 30
+        }
+    ]
+}
+```
+
+| Name | Type | Not Null | Description |
+|---|---|:---:|---|
+| header | Object | O | Header area |
+| - resultCode | Integer | O | Result code |
+| - resultMessage | String | O | Result message |
+| - isSuccessful | Boolean | O | Success status |
+| totalCount | Integer | O | Total count |
+| alimtalkTemplateStatistics | List | O | AlimTalk template statistics list |
+| - date | String | O | Date |
+| - messageType | String | O | Message type (AT: general AlimTalk, AI: image AlimTalk) |
+| - templateCode | String | O | Template Code |
+| - totalSendSuccessCount | Integer | O | Total delivery success count |
+| - validReadCount | Integer | O | Valid read count |
+| - totalClickCount | Integer | O | Total click count |
+
+### Brand Message Send Statistics Query
+
+<!-- TODO: translate body -->
+
+#### Request
+
+[URL]
+
+|Http method| URI|
+|---|---|
+|GET| /common/v2.2/appkeys/{appKey}/kakao-statistics/delivery-statistics/BRANDMESSAGE |
+
+[Path parameter]
+
+| Name | Type | Description |
+|---|---|---|
+| appKey | String | Unique app key |
+
+[Header]
+
+```
+{
+  "X-Secret-Key": String
+}
+```
+
+| Name | Type | Required | Description |
+|---|---|---|---|
+| X-Secret-Key | String | O | You can create it in the console. |
+
+[Query parameter]
+
+| Name | Type | Required | Description |
+|---|---|---|---|
+| senderKey | String | O | Sender Key |
+| periodType | String | O | Statistics classification (DAILY: Daily, MONTHLY: Monthly) |
+| startDate | String | O | Query start date<br/>DAILY: yyyy-MM-dd (within the last 90 days), MONTHLY: yyyy-MM (within the last 3 months) |
+| endDate | String | O | Query end date<br/>DAILY: yyyy-MM-dd (maximum range 90 days), MONTHLY: yyyy-MM (maximum range 3 months) |
+| messageSpec | String | X | Message specification (BASIC: Basic type, FREESTYLE: Freestyle type) |
+| chatBubbleType | String | X | Chat bubble type (TEXT: Text Type, IMAGE: Image Type, WIDE: Wide Image, WIDE_ITEM_LIST: Wide Item List, CAROUSEL_FEED: Carousel Feed, PREMIUM_VIDEO: Premium Video, COMMERCE: Commerce, CAROUSEL_COMMERCE: Carousel Commerce) |
+| targeting | String | X | Targeting (M: All marketing consent users, N: Exclude Channel Friends, I: Channel Friends only, F: All Channel Friends) |
+| friendType | String | X | Friend type (F: Friend, N: Non-friend) |
+| receiveUserType | String | X | Recipient type (PhoneNumber: Phone number, None: No recipient identifier) |
+| limit | Integer | X | Number of queries (Default: 500, Max: 1000) |
+| offset | Integer | X | Start position (Default: 0) |
+
+#### Response
+
+```json
+{
+    "header": {
+        "resultCode": 0,
+        "resultMessage": "success",
+        "isSuccessful": true
+    },
+    "totalCount": 1,
+    "brandmessageDeliveryStatistics": [
+        {
+            "date": "2026-04-01",
+            "messageSpec": "TEMPLATE",
+            "chatBubbleType": "TEXT",
+            "targeting": "ALL",
+            "friendType": "ALL",
+            "receiveUserType": "ALL",
+            "totalSendRequestCount": 200,
+            "validSendRequestCount": 190,
+            "validReadCount": 150,
+            "totalClickCount": 60
+        }
+    ]
+}
+```
+
+| Name | Type | Not Null | Description |
+|---|---|:---:|---|
+| header | Object | O | Header area |
+| - resultCode | Integer | O | Result code |
+| - resultMessage | String | O | Result message |
+| - isSuccessful | Boolean | O | Success status |
+| totalCount | Integer | O | Total count |
+| brandmessageDeliveryStatistics | List | O | Brand Message delivery statistics list |
+| - date | String | O | Date |
+| - messageSpec | String | O | Message specification (BASIC: Basic type, FREESTYLE: Freestyle type) |
+| - chatBubbleType | String | O | Chat bubble type (TEXT: Text Type, IMAGE: Image Type, WIDE: Wide Image Type, WIDE_ITEM_LIST: Wide Item List Type, CAROUSEL_FEED: Carousel Feed Type, PREMIUM_VIDEO: Premium Video Type, COMMERCE: Commerce Type, CAROUSEL_COMMERCE: Carousel Commerce Type) |
+| - targeting | String | O | Targeting (M: All users who agreed to marketing, N: Excluding channel friends, I: Channel friends only, F: All channel friends) |
+| - friendType | String | O | Friend type (F: Friend, N: Non-friend) |
+| - receiveUserType | String | O | Recipient type (PhoneNumber: Phone number, None: No recipient identifier) |
+| - totalSendRequestCount | Integer | O | Total send request count |
+| - validSendRequestCount | Integer | O | Valid send request count |
+| - validReadCount | Integer | O | Valid read count |
+| - totalClickCount | Integer | O | Total click count |
+
+### Brand Message Template Statistics Query
+
+<!-- TODO: translate body -->
+
+#### Request
+
+[URL]
+
+|Http method| URI|
+|---|---|
+|GET| /common/v2.2/appkeys/{appKey}/kakao-statistics/template-statistics/BRANDMESSAGE |
+
+[Path parameter]
+
+| Name | Type | Description |
+|---|---|---|
+| appKey | String | Unique app key |
+
+[Header]
+
+```
+{
+  "X-Secret-Key": String
+}
+```
+
+| Name | Type | Required | Description |
+|---|---|---|---|
+| X-Secret-Key | String | O | You can create this in the console. |
+
+[Query parameter]
+
+| Name | Type | Required | Description |
+|---|---|---|---|
+| senderKey | String | O | Sender Key |
+| periodType | String | O | Statistics type (DAILY: Daily, MONTHLY: Monthly) |
+| startDate | String | O | Query start date<br/>DAILY: yyyy-MM-dd (within the last 90 days), MONTHLY: yyyy-MM (within the last 3 months) |
+| endDate | String | O | Query end date<br/>DAILY: yyyy-MM-dd (maximum range of 90 days), MONTHLY: yyyy-MM (maximum range of 3 months) |
+| kakaoTemplateCode | String | X | Kakao Template Code |
+| groupTagKey | String | X | Group tag key |
+| messageSpec | String | X | Message specification (BASIC: Basic type, FREESTYLE: Freestyle type) |
+| chatBubbleType | String | X | Chat bubble type (TEXT: Text Type, IMAGE: Image Type, WIDE: Wide Image, WIDE_ITEM_LIST: Wide Item List, CAROUSEL_FEED: Carousel Feed, PREMIUM_VIDEO: Premium Video, COMMERCE: Commerce, CAROUSEL_COMMERCE: Carousel Commerce) |
+| targeting | String | X | Targeting (M: All users who consented to marketing, N: Excluding channel friends, I: Channel friends only, F: All channel friends) |
+| friendType | String | X | Friend type (F: Friends, N: Non-friends) |
+| limit | Integer | X | Number of queries (Default: 500, Max: 1000) |
+| offset | Integer | X | Start position (Default: 0) |
+
+#### Response
+
+```json
+{
+    "header": {
+        "resultCode": 0,
+        "resultMessage": "success",
+        "isSuccessful": true
+    },
+    "totalCount": 1,
+    "brandmessageTemplateStatistics": [
+        {
+            "date": "2026-04-01",
+            "templateCode": "brandtemplate01",
+            "groupTagKey": "group01",
+            "messageSpec": "TEMPLATE",
+            "chatBubbleType": "TEXT",
+            "targeting": "ALL",
+            "friendType": "ALL",
+            "totalSendSuccessCount": 180,
+            "validReadCount": 140,
+            "totalClickCount": 55
+        }
+    ]
+}
+```
+
+| Name | Type | Not Null | Description |
+|---|---|:---:|---|
+| header | Object | O | Header area |
+| - resultCode | Integer | O | Result code |
+| - resultMessage | String | O | Result message |
+| - isSuccessful | Boolean | O | Success status |
+| totalCount | Integer | O | Total count |
+| brandmessageTemplateStatistics | List | O | Brand Message template statistics list |
+| - date | String | O | Date |
+| - templateCode | String | O | Template Code |
+| - groupTagKey | String | X | Group tag key |
+| - messageSpec | String | O | Message spec (BASIC: Basic type, FREESTYLE: Freestyle type) |
+| - chatBubbleType | String | O | Chat bubble type (TEXT: Text Type, IMAGE: Image Type, WIDE: Wide Image, WIDE_ITEM_LIST: Wide Item List, CAROUSEL_FEED: Carousel Feed, PREMIUM_VIDEO: Premium Video, COMMERCE: Commerce, CAROUSEL_COMMERCE: Carousel Commerce) |
+| - targeting | String | O | Targeting (M: All users who agreed to marketing, N: Excluding channel friends, I: Channel friends only, F: All channel friends) |
+| - friendType | String | O | Friend type (F: Friend, N: Non-friend) |
+| - totalSendSuccessCount | Integer | O | Total delivery success count |
+| - validReadCount | Integer | O | Valid read count |
+| - totalClickCount | Integer | O | Total click count |
+
