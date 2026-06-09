@@ -1,5 +1,11 @@
 ## Notification > KakaoTalk Bizmessage > カカともへのメッセージ > API v1.5 Guide
 
+## フレンドトークサービス終了案内
+
+* 2025-12-31(水) フレンドトークサービスの提供を終了します。
+* 現在ご利用中のお客様には、ブランドメッセージへの移行をお勧めします。
+* 詳細については、[ブランドメッセージ移行ガイド](https://docs.nhncloud.com/ja/Notification/KakaoTalk%20Bizmessage/ko/friendtalk-compatible-api-guide)を参照してください。
+
 ## カカともへのメッセージ
 
 #### [APIドメイン]
