@@ -450,7 +450,7 @@ Content-Type: application/json;charset=UTF-8
 curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" "https://kakaotalk-bizmessage.api.nhncloudservice.com/alimtalk/v2.0/appkeys/{appkey}/messages?startRequestDate=2018-05-01%20:00&endRequestDate=2018-05-30%20:59"
 ```
 
-#### Status of Sending SMS/LMS
+### Status of Sending SMS/LMS
 | Value | Description                                      |
 | ----- | ------------------------------------------------ |
 | RSC01 | No target of resending                           |
@@ -1006,6 +1006,7 @@ Content-Type: application/json;charset=UTF-8
 curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" "https://kakaotalk-bizmessage.api.nhncloudservice.com/alimtalk/v2.0/appkeys/{appkey}/auth/messages?startRequestDate=2018-05-01%20:00&endRequestDate=2018-05-30%20:59"
 ```
 
+<!-- pre-align: ko에 대응 섹션 없음 — 검토 필요 (SMS/LMS status section for Authentication Messages has no Korean counterpart) -->
 #### Status of Resending SMS/LMS
 | Value | Description                                     |
 | ----- | ----------------------------------------------- |
@@ -2001,3 +2002,123 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 | -- activated         | Boolean | activated or not                                             |
 | -- createDate        | String  | Date and time of creation                                    |
 | - totalCount         | Integer | Total count                                                  |
+## Alternative Sending Management
+
+<!-- TODO: translate body -->
+
+### SMS AppKey Registration
+
+[URL]
+
+```
+POST  /alimtalk/v2.0/appkeys/{appkey}/failback/appkey
+Content-Type: application/json;charset=UTF-8
+```
+
+[Path parameter]
+
+| Name | Type | Description |
+|---|---|---|
+|appkey| String | Unique app key |
+
+[Header]
+```
+{
+  "X-Secret-Key": String
+}
+```
+| Name | Type | Required | Description |
+|---|---|---|---|
+|X-Secret-Key| String | O | You can create this in the console. |
+
+
+[Request body]
+
+```
+{
+    "resendAppKey": String
+}
+```
+
+| Name | Type | Required | Description |
+|---|---|---|---|
+|resendAppKey| String | O | SMS service app key to set for alternative delivery |
+
+[Example]
+```
+curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" https://kakaotalk-bizmessage.api.nhncloudservice.com/alimtalk/v2.0/appkeys/{appkey}/failback/appkey -d '{"resendAppKey": "smsAppKey"}
+```
+
+#### Response
+
+```
+
+{
+  "header": {
+      "resultCode": Integer,
+      "resultMessage": String,
+      "isSuccessful": boolean
+  }
+}
+```
+
+### Alternative Sending Settings Registration
+
+[URL]
+
+```
+POST  /alimtalk/v2.0/appkeys/{appkey}/failback
+Content-Type: application/json;charset=UTF-8
+```
+
+[Path parameter]
+
+| Name |	Type|	Description|
+|---|---|---|
+|appkey|	String|	Unique app key|
+
+[Header]
+```
+{
+  "X-Secret-Key": String
+}
+```
+| Name |	Type|	Required|	Description|
+|---|---|---|---|
+|X-Secret-Key|	String| O | You can create this in the console.  |
+
+
+[Request body]
+
+```
+{  
+   "senderKey": String,
+   "isResend": Boolean,
+   "resendSendNo": String
+}
+```
+
+| Name |	Type|	Required|	Description|
+|---|---|---|---|
+|senderKey|	String|	O | Sender Key |
+|isResend|	Boolean|	O | Whether to send SMS alternative delivery when delivery fails<br>When alternative sending settings are configured in the Console, alternative delivery is sent by default. |
+|resendSendNo|	String|	O | Alternative delivery sender number<br><span style="color:red">(If it is not a sender number registered in the SMS service, alternative delivery may fail.)</span> |
+
+[Example]
+```
+curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" https://kakaotalk-bizmessage.api.nhncloudservice.com/alimtalk/v2.0/appkeys/{appkey}/failback/appkey -d '{"senderKey": "0be23c29de88d6888798aeda57062516354d74ba","isResend": true,"resendSendNo": "01012341234" }
+```
+
+#### Response
+
+```
+
+{
+  "header": {
+      "resultCode": Integer,
+      "resultMessage": String,
+      "isSuccessful": boolean
+  }
+}
+```
+
