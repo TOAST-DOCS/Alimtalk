@@ -444,7 +444,7 @@ Content-Type: application/json;charset=UTF-8
 curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" "https://kakaotalk-bizmessage.api.nhncloudservice.com/alimtalk/v2.0/appkeys/{appkey}/messages?startRequestDate=2018-05-01%20:00&endRequestDate=2018-05-30%20:59"
 ```
 
-#### SMS/LMS再送信ステータス
+### SMS/LMS再送信ステータス
 | 値 | 説明                      |
 | ----- | ------------------------------- |
 | RSC01 | 再送信の対象ではない                 |
@@ -1006,6 +1006,7 @@ Content-Type: application/json;charset=UTF-8
 curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" "https://kakaotalk-bizmessage.api.nhncloudservice.com/alimtalk/v2.0/appkeys/{appkey}/auth/messages?startRequestDate=2018-05-01%20:00&endRequestDate=2018-05-30%20:59"
 ```
 
+<!-- pre-align: ko에 대응 섹션 없음 — 검토 필요 (duplicate SMS/LMS status section, already covered by t13) -->
 #### SMS/LMS再送信ステータス
 | 値 | 説明                      |
 | ----- | ------------------------------- |
