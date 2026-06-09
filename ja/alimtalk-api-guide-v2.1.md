@@ -445,6 +445,7 @@ Content-Type: application/json;charset=UTF-8
 curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" "https://kakaotalk-bizmessage.api.nhncloudservice.com/alimtalk/v2.1/appkeys/{appkey}/messages?startRequestDate=2018-05-01%20:00&endRequestDate=2018-05-30%20:59"
 ```
 
+<!-- pre-align: ko에 대응 섹션 없음 — 검토 필요 (misplaced SMS/LMS status section, incorrect translation) -->
 #### SMS/LMS再送信ステータス
 | 値 | 説明                      |
 | ----- | ------------------------------- |
@@ -1007,6 +1008,7 @@ Content-Type: application/json;charset=UTF-8
 curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" "https://kakaotalk-bizmessage.api.nhncloudservice.com/alimtalk/v2.1/appkeys/{appkey}/auth/messages?startRequestDate=2018-05-01%20:00&endRequestDate=2018-05-30%20:59"
 ```
 
+<!-- pre-align: ko에 대응 섹션 없음 — 검토 필요 (duplicate SMS/LMS status section, incorrect translation) -->
 #### SMS/LMS再送信ステータス
 | 値 | 説明                      |
 | ----- | ------------------------------- |
@@ -1293,6 +1295,16 @@ Content-Type: application/json;charset=UTF-8
 ```
 curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" "https://kakaotalk-bizmessage.api.nhncloudservice.com/alimtalk/v2.1/appkeys/{appkey}/message-results?startUpdateDate=2018-05-01%20:00&endUpdateDate=2018-05-30%20:59"
 ```
+
+### SMS/LMS代替送信ステータスコード
+
+| 名前 |	説明|
+|---|---|
+|RSC01|	代替送信非対象|
+|RSC02|	代替送信対象（送信結果失敗時、代替送信が実行されます。）|
+|RSC03|	代替送信中|
+|RSC04|	代替送信成功|
+|RSC05|	代替送信失敗|
 
 ## テンプレート
 
