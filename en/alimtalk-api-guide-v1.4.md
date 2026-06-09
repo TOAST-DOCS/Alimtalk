@@ -1422,6 +1422,107 @@ Content-Type: application/json;charset=UTF-8
 | - resultMessage | String  | Result message    |
 | - isSuccessful  | Boolean | Successful or not |
 
+### Get PlusFriend
+
+<!-- TODO: translate body -->
+
+#### Request
+
+[URL]
+
+```
+GET  /alimtalk/v1.4/appkeys/{appkey}/plus-friends/{plusFriendId}
+Content-Type: application/json;charset=UTF-8
+```
+
+[Path parameter]
+
+| Name |	Type|	Description|
+|---|---|---|
+|appkey|	String|	Unique app key|
+|plusFriendId| String | Plus Friend ID |
+
+[Header]
+```
+{
+  "X-Secret-Key": String
+}
+```
+| Name |	Type|	Required|	Description|
+|---|---|---|---|
+|X-Secret-Key|	String| O | You can create this in the console.  |
+
+#### Response
+
+{  
+   "header":{  
+      "resultCode": Integer,
+      "resultMessage": String,
+      "isSuccessful": boolean
+   },
+   "plusFriend":{  
+         "plusFriendId": String,
+         "plusFriendType": String,
+         "senderKey": String,
+         "categoryCode": String,
+         "status": String,
+         "statusName": String,
+         "kakaoStatus": String,
+         "kakaoStatusName": String,
+         "kakaoProfileStatus": String,
+         "kakaoProfileStatusName": String,
+         "createDate": String,
+         "alimtalk": {  
+                "resendAppKey": String,
+                "isResend": Boolean,
+                "resendSendNo": String,
+                "dailyMaxCount": Integer,
+                "sentCount": Integer
+          },
+         "friendtalk": {
+                "resendAppKey": String,
+                "isResend": Boolean,
+                "resendSendNo": String,
+                "resendUnsubscribeNo": String,
+                "dailyMaxCount": Integer,
+                "sentCount": Integer
+         },
+         "createDate": String
+    }
+}
+
+| Name |	Type|	Description|
+|---|---|---|
+|header|	Object|	Header area|
+|- resultCode|	Integer|	Result code|
+|- resultMessage|	String| Result message|
+|- isSuccessful|	Boolean| Success status|
+|plusFriend|	Object|	Plus Friend|
+|- plusFriendId | String |	Plus Friend ID |
+|- plusFriendType | String | Plus Friend type (NORMAL, GROUP) |
+|- senderKey | String |	Sender key |
+|- categoryCode | String |	Category code |
+|- status | String |	NHN Cloud Plus Friend status code <br>(YSC02: Registration pending, YSC03: Normal registration) |
+|- statusName | String |	NHN Cloud Plus Friend status name (Registration pending, Normal registration) |
+|- kakaoStatus | String |	Kakao Plus Friend status code<br>(A: Normal, S: Blocked, D: Deleted)<br>When status is YSC02, kakaoStatus has a null value. |
+|- kakaoStatusName | String |	Kakao Plus Friend status name (Normal, Blocked, Deleted)<br>When status is YSC02, kakaoStatusName has a null value. |
+|- kakaoProfileStatus | String |	Kakao Plus Friend profile status code<br>(A: Activated, B: Blocked, C: Deactivated, D: Deleted, E: Being deleted)<br>When status is YSC02, kakaoProfileStatus has a null value.|
+|- kakaoProfileStatusName | String | Kakao Plus Friend profile status name (Activated, Deactivated, Blocked, Being deleted, Deleted)<br>When status is YSC02, kakaoProfileStatusName has a null value. |
+|- alimtalk|	Object|	AlimTalk settings information|
+|-- resendAppKey | String | SMS service app key to set for alternative delivery |
+|-- isResend | String | Alternative delivery setting (resend) status|
+|-- resendSendNo | String |	tc-sms sender number for resending |
+|-- dailyMaxCount | Integer |	AlimTalk daily maximum delivery count<br>(No count limit when the value is 0) |
+|-- sentCount | Integer |	AlimTalk daily delivery count<br>(No count limit when the value is 0) |
+|- friendtalk|	Object|	FriendTalk settings information|
+|-- resendAppKey | String | SMS service app key to set for alternative delivery |
+|-- isResend | String | Alternative delivery setting (resend) status|
+|-- resendSendNo | String |	tc-sms sender number for resending |
+|-- resendUnsubscribeNo | String |	tc-sms 080 opt-out number for resending |
+|-- dailyMaxCount | Integer |	FriendTalk daily maximum delivery count<br>(No count limit when the value is 0) |
+|-- sentCount | Integer |	FriendTalk daily delivery count<br>(No count limit when the value is 0) |
+|- createDate | String |	Registration date |
+
 ### List PlusFriends
 
 #### Requet
@@ -2029,3 +2130,117 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 | -- activated         | Boolean | activated or not                                             |
 | -- createDate        | String  | Date and time of creation                                    |
 | - totalCount         | Integer | Total count                                                  |
+## Manage Alternative Sending
+
+<!-- TODO: translate body -->
+
+### Register SMS AppKey
+
+[URL]
+
+```
+POST  /alimtalk/v1.4/appkeys/{appkey}/failback/appkey
+Content-Type: application/json;charset=UTF-8
+```
+
+[Path parameter]
+
+| Name |	Type|	Description|
+|---|---|---|
+|appkey|	String|	Unique app key|
+
+[Header]
+```
+{
+  "X-Secret-Key": String
+}
+```
+| Name |	Type|	Required|	Description|
+|---|---|---|---|
+|X-Secret-Key|	String| O | You can create this in the console.  |
+
+
+[Request body]
+
+```
+{
+    "resendAppKey": String
+}
+```
+
+| Name |	Type|	Required|	Description|
+|---|---|---|---|
+|resendAppKey|	String|	O | SMS service app key to set for alternative delivery |
+
+[Example]
+```
+curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" https://kakaotalk-bizmessage.api.nhncloudservice.com/alimtalk/v1.4/appkeys/{appkey}/failback/appkey -d '{"resendAppKey": "smsAppKey"}
+```
+
+#### Response
+
+{
+  "header": {
+      "resultCode": Integer,
+      "resultMessage": String,
+      "isSuccessful": boolean
+  }
+}
+
+### Register Alternative Sending Settings
+
+[URL]
+
+```
+POST  /alimtalk/v1.4/appkeys/{appkey}/failback
+Content-Type: application/json;charset=UTF-8
+```
+
+[Path parameter]
+
+| Name |	Type|	Description|
+|---|---|---|
+|appkey|	String|	Unique app key|
+
+[Header]
+```
+{
+  "X-Secret-Key": String
+}
+```
+| Name |	Type|	Required|	Description|
+|---|---|---|---|
+|X-Secret-Key|	String| O | You can create this in the console.  |
+
+
+[Request body]
+
+```
+{  
+   "plusFriendId": String,
+   "isResend": Boolean,
+   "resendSendNo": String
+}
+```
+
+| Name |	Type|	Required|	Description|
+|---|---|---|---|
+|plusFriendId|	String|	O | Plus Friend ID |
+|isResend|	Boolean|	O | Whether to send alternative text message when delivery fails<br>When alternative delivery is configured in the Console, it is resent by default. |
+|resendSendNo|	String|	O | Alternative delivery sender number<br><span style="color:red">(If the sender number is not registered in the SMS product, alternative delivery may fail.)</span> |
+
+[Example]
+```
+curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" https://kakaotalk-bizmessage.api.nhncloudservice.com/alimtalk/v1.4/appkeys/{appkey}/failback/appkey -d '{"plusFriendId": "@Plus Friend","isResend": true,"resendSendNo": "01012341234" }
+```
+
+#### Response
+
+{
+  "header": {
+      "resultCode": Integer,
+      "resultMessage": String,
+      "isSuccessful": boolean
+  }
+}
+
