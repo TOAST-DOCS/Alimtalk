@@ -2382,3 +2382,123 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 | -- activated         | Boolean | activated or not                                             |
 | -- createDate        | String  | Date and time of creation                                    |
 | - totalCount         | Integer | Total count                                                  |
+## Alternative Sending Management
+
+<!-- TODO: translate body -->
+
+### Register SMS AppKey
+
+[URL]
+
+```
+POST  /alimtalk/v1.5/appkeys/{appkey}/failback/appkey
+Content-Type: application/json;charset=UTF-8
+```
+
+[Path parameter]
+
+| Name |	Type|	Description|
+|---|---|---|
+|appkey|	String|	Unique app key|
+
+[Header]
+```
+{
+  "X-Secret-Key": String
+}
+```
+| Name |	Type|	Required|	Description|
+|---|---|---|---|
+|X-Secret-Key|	String| O | You can create this in the console.  |
+
+
+[Request body]
+
+```
+{
+    "resendAppKey": String
+}
+```
+
+| Name |	Type|	Required|	Description|
+|---|---|---|---|
+|resendAppKey|	String|	O | SMS service app key to set for alternative delivery |
+
+[Example]
+```
+curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" https://kakaotalk-bizmessage.api.nhncloudservice.com/alimtalk/v1.5/appkeys/{appkey}/failback/appkey -d '{"resendAppKey": "smsAppKey"}
+```
+
+#### Response
+
+```
+
+{
+  "header": {
+      "resultCode": Integer,
+      "resultMessage": String,
+      "isSuccessful": boolean
+  }
+}
+```
+
+### Register Alternative Sending Settings
+
+[URL]
+
+```
+POST  /alimtalk/v1.5/appkeys/{appkey}/failback
+Content-Type: application/json;charset=UTF-8
+```
+
+[Path parameter]
+
+| Name | Type | Description |
+|---|---|---|
+|appkey| String | Unique app key |
+
+[Header]
+```
+{
+  "X-Secret-Key": String
+}
+```
+| Name | Type | Required | Description |
+|---|---|---|---|
+|X-Secret-Key| String| O | You can create this in the console. |
+
+
+[Request body]
+
+```
+{  
+   "plusFriendId": String,
+   "isResend": Boolean,
+   "resendSendNo": String
+}
+```
+
+| Name | Type | Required | Description |
+|---|---|---|---|
+|plusFriendId| String| O | Plus Friend ID |
+|isResend| Boolean| O | Whether to send alternative SMS when delivery fails<br>When alternative sending is configured in the console, resending is done by default. |
+|resendSendNo| String| O | Alternative delivery sender number<br><span style="color:red">(If the sender number is not registered in the SMS service, alternative sending may fail.)</span> |
+
+[Example]
+```
+curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" https://kakaotalk-bizmessage.api.nhncloudservice.com/alimtalk/v1.5/appkeys/{appkey}/failback/appkey -d '{"plusFriendId": "@플러스친구","isResend": true,"resendSendNo": "01012341234" }
+```
+
+#### Response
+
+```
+
+{
+  "header": {
+      "resultCode": Integer,
+      "resultMessage": String,
+      "isSuccessful": boolean
+  }
+}
+```
+
