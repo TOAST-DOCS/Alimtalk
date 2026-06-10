@@ -142,8 +142,8 @@ Content-Type: application/json;charset=UTF-8
     * 캐러셀형은 전체 캐러셀을 통틀어 1개만 사용 가능합니다.
     * 타겟팅 M, N만 사용 가능합니다.
 * BF 버튼 사용 시 카카오에서 발급받은 비즈니스폼 ID를 넣어 사용할 수 있습니다.
-* 대체 발송은 수신자별 resendParameter를 통해 설정할 수 있습니다.
-    * 대체 발송을 이용할 경우 대체 발송 관리 API를 통해 SMS Appkey 등록 및 발송 설정이 필요합니다.
+* 대체 발송은 수신자별 resendParameter로 설정할 수 있습니다.
+    * 대체 발송을 이용할 경우 대체 발송 관리 API로 SMS AppKey 등록 및 발송 설정이 필요합니다.
 * **야간 발송 제한(20:50~다음 날 08:00)**
 
 #### 요청
@@ -716,7 +716,7 @@ Content-Type: application/json;charset=UTF-8
 | header                 | String  | X  | 헤더<br>- WIDE_ITEM_LIST 타입일 경우 필수 필드이고 최대 20자(줄바꿈: 불가)<br>- PREMIUM_VIDEO 타입일 경우 선택 필드이고 최대 20자(줄바꿈: 불가)                                                                                                                                                                     |
 | video                  | Object  | O  | 동영상 요소(PREMIUM_VIDEO 타입만 사용 가능)                                                                                                                                                                                                                                              |
 | - videoUrl             | String  | O  | 카카오TV 동영상 URL(카카오TV에 업로드된 동영상 주소만 사용 가능), 최대 500자 제한                                                                                                                                                                                                                         |
-| - thumbnailUrl         | String  | X  | 동영상 섬네일용 이미지 URL, 일반 이미지로 업로드된 url만 사용 가능(없는 경우 카카오TV 동영상 기본 섬네일 사용), 최대 500자 제한                                                                                                                                                                                            |
+| - thumbnailUrl         | String  | X  | 동영상 섬네일용 이미지 URL, 일반 이미지로 업로드된 URL만 사용 가능(없는 경우 카카오TV 동영상 기본 섬네일 사용), 최대 500자 제한                                                                                                                                                                                            |
 | buttons                | List    | X  | 버튼 목록<br>- TEXT, IMAGE 타입일 경우 쿠폰 적용 시 최대 4개, 그 외 최대 5개<br>- WIDE, WIDE_ITEM_LIST 타입일 경우 최대 2개<br>- PREMIUM_VIDEO 타입일 경우 최대 1개<br>- COMMERCE 타입일 경우 최소 1개, 최대 2개                                                                                                                 |
 | - name                 | String  | O  | 버튼 제목<br>- TEXT, IMAGE 타입일 경우 최대 14자<br>- 이외의 타입일 경우 최대 8자                                                                                                                                                                                                                    |
 | - type                 | String  | O  | 버튼 타입(WL: 웹 링크, AL: 앱 링크, BK: 봇 키워드, MD: 메시지 전달, AC: 채널 추가, BT: 챗봇 전환, BF: 비즈니스폼)<br>- BT 타입은 카카오 오픈 빌더의 챗봇을 사용하는 채널만 이용 가능<br>- BF 타입은 첫 번째 버튼으로만 사용할 수 있으며, name에는 다음 3가지 문구만 사용 가능<br>  - 톡에서 예약하기<br>  - 톡에서 설문하기<br>  - 톡에서 응모하기 |
@@ -1258,11 +1258,11 @@ Content-Type: application/json;charset=UTF-8
 * BT 버튼 타입을 사용할 수 없습니다.
 * AC(채널 추가) 버튼을 사용할 수 있습니다.
 * BF 버튼 사용 시 카카오에서 발급받은 비즈니스폼 ID를 업로드하여 비즈폼 키를 발급받아 사용할 수 있습니다.
-* 대체 발송은 수신자별 resendParameter를 통해 설정할 수 있습니다.
-    * 대체 발송을 이용할 경우 대체 발송 관리 API를 통해 SMS Appkey 등록 및 발송 설정이 필요합니다.
+* 대체 발송은 수신자별 resendParameter로 설정할 수 있습니다.
+    * 대체 발송을 이용할 경우 대체 발송 관리 API로 SMS AppKey 등록 및 발송 설정이 필요합니다.
 * **야간 발송 제한(20:50~다음 날 08:00)**
 
-### 사용 시 주의사항
+### 사용 시 주의 사항
 
 - unsubscribeNo, unsubscribeAuthNo는 080 무료수신거부 전화번호와 인증번호로, 둘 중 하나라도 입력하지 않으면 발신 프로필에 등록된 무료수신거부 정보로 발송됩니다.
 - 발송 간 unsubscribeNo, unsubscribeAuthNo를 입력할 경우 발신 프로필에 등록된 무료수신거부 정보가 아닌 입력한 값으로 발송됩니다.
@@ -3260,7 +3260,7 @@ Content-Type: multipart/form-data
 #### 업로드 이미지 규격
 | 이미지 타입                     | 사용처                                                     | 업로드 이미지 규격                                                                                                                              |
 |:---------------------------|:--------------------------------------------------------|:----------------------------------------------------------------------------------------------------------------------------------------|
-| IMAGE                      | 이미지형 이미지, 커머스형 이미지, 프리미엄 동영상형 썸네일                       | 권장 사이즈: 800 X 400px (가로 500px 이상)<br/>이미지 비율: 0.5 ≤ 세로 ÷ 가로 ≤ 1.333<br/>파일 형식 및 용량 제한: jpg, png / 최대 5MB                                |
+| IMAGE                      | 이미지형 이미지, 커머스형 이미지, 프리미엄 동영상형 섬네일                       | 권장 사이즈: 800 X 400px (가로 500px 이상)<br/>이미지 비율: 0.5 ≤ 세로 ÷ 가로 ≤ 1.333<br/>파일 형식 및 용량 제한: jpg, png / 최대 5MB                                |
 | WIDE_IMAGE                 | 와이드 이미지형 이미지                                            | 권장 사이즈: 800 X 600px (가로 500px 이상)<br/>이미지 비율: 0.5 ≤ 세로 ÷ 가로 ≤ 1<br>파일 형식 및 용량 제한: jpg, png / 최대 5MB                                     |
 | MAIN_WIDE_ITEMLIST_IMAGE   | 와이드 아이템리스트형 첫 번째 아이템 이미지                                | 제한 사이즈: 가로 500px 이상<br/>이미지 비율: 세로 ÷ 가로 = 0.5<br/>파일 형식 및 용량 제한: jpg, png / 최대 5MB                                                      |
 | NORMAL_WIDE_ITEMLIST_IMAGE | 와이드 아이템리스트형 2~4번째 아이템 이미지                              | 제한 사이즈: 가로 500px 이상<br/>이미지 비율: 세로 ÷ 가로 = 1<br/>파일 형식 및 크기 : jpg, png / 각 파일 최대 5MB                                                      |
@@ -3392,7 +3392,20 @@ Content-Type: application/json;charset=UTF-8
 
 브랜드 메시지에 사용할 동영상을 등록·조회·삭제하는 API입니다. 등록된 동영상은 카카오 비즈센터에서 인코딩 처리 후 발송에 사용할 수 있으며, 상태가 `PUBLIC`인 동영상만 템플릿 등록 및 발송이 가능합니다(`PRIVATE`는 템플릿 등록만 가능).
 
-### 동영상 업로드
+### 동영상 업로드 흐름
+
+동영상 업로드는 2단계로 진행됩니다.
+
+1. **동영상 업로드 등록** — 본 API(`POST /brand-message/v1.0/appkeys/{appKey}/videos`)에 동영상 메타정보(파일명·파일 크기)를 JSON으로 전송합니다. 응답으로 `video`(NHN Cloud 측 등록 정보)와 `uploadInfo`(카카오 업로드 URL·토큰)를 받습니다.
+2. **동영상 파일 업로드** — 응답으로 받은 `uploadInfo.uploadUrl`에 `multipart/form-data`로 동영상 파일을 직접 업로드합니다. 인증은 `uploadInfo.token`을 `x-kamp-upload-token` 헤더로 전달합니다.
+
+동영상 파일은 NHN Cloud 서버를 거치지 않고 카카오 측 업로드 서버로 직접 전송됩니다. 따라서 본 API의 요청 본문은 메타정보만 JSON으로 보내고, 실제 파일은 2단계에서 별도로 전송합니다.
+
+> **주의**
+> * `uploadInfo.token`은 발급 후 5분 동안 유효합니다. 5분이 경과하면 1단계 등록을 다시 호출해 새 토큰을 받아야 합니다.
+> * 1단계 요청의 `fileSize`는 실제로 2단계에서 업로드할 파일의 크기와 정확히 일치해야 합니다(불일치 시 카카오 측에서 errCode 109로 거절).
+
+### 동영상 업로드 등록
 
 #### 요청
 
@@ -3400,7 +3413,7 @@ Content-Type: application/json;charset=UTF-8
 
 ```
 POST  /brand-message/v1.0/appkeys/{appKey}/videos
-Content-Type: multipart/form-data
+Content-Type: application/json
 ```
 
 [Path parameter]
@@ -3421,13 +3434,23 @@ Content-Type: multipart/form-data
 |--------------|--------|----|------------------|
 | X-Secret-Key | String | O  | 콘솔에서 생성할 수 있습니다. |
 
-[Request parameter]
+[Request body]
 
-| 이름         | 타입     | 필수 | 설명                                 |
-|------------|--------|----|------------------------------------|
-| file       | File   | O  | 동영상 파일                             |
-| senderKey  | String | O  | 발신프로필 키 (40자)                      |
-| createUser | String | X  | 업로드 사용자 식별자 (최대 100자)              |
+```
+{
+  "senderKey": String,
+  "fileName": String,
+  "fileSize": Long,
+  "createUser": String
+}
+```
+
+| 이름         | 타입     | 필수 | 설명                                                                  |
+|------------|--------|----|---------------------------------------------------------------------|
+| senderKey  | String | O  | 발신 프로필 키 (40자)                                                       |
+| fileName   | String | O  | 동영상 파일명 (확장자 포함, MP4·MOV·AVI 중 하나, 최대 250자)                          |
+| fileSize   | Long   | O  | 동영상 파일 크기 (byte, 최대 4GB = 4294967296)                                |
+| createUser | String | X  | 업로드 사용자 식별자 (최대 100자)                                                |
 
 #### 응답
 
@@ -3445,37 +3468,73 @@ Content-Type: multipart/form-data
       "title": String,
       "fileName": String,
       "fileSize": Long,
-      "status": String,
-      "thumbnailUrl": String,
-      "videoUrl": String,
-      "playUrl": String,
-      "createDate": String,
-      "updateDate": String,
-      "createUser": String
+      "status": String
+  },
+  "uploadInfo": {
+      "uploadUrl": String,
+      "token": String
   }
 }
 ```
 
-| 이름              | 타입      | Not Null | 설명                                                            |
-|:----------------|:--------|:---------|:--------------------------------------------------------------|
-| header          | Object  | O        | 헤더 영역                                                         |
-| - resultCode    | Integer | O        | 결과 코드                                                         |
-| - resultMessage | String  | O        | 결과 메시지                                                        |
-| - isSuccessful  | boolean | O        | 성공 여부                                                         |
-| video           | Object  | X        | 동영상 영역                                                        |
-| - videoSeq      | Long    | O        | 동영상 시퀀스                                                       |
-| - vid           | String  | O        | 카카오 동영상 ID                                                    |
-| - senderKey     | String  | O        | 발신프로필 키                                                       |
-| - title         | String  | X        | 동영상 제목 (업로드 직후에는 파일명, 인코딩 완료 후 카카오 비즈센터에서 수정한 값으로 동기화됨)        |
-| - fileName      | String  | O        | 업로드 파일명                                                       |
-| - fileSize      | Long    | O        | 파일 크기 (byte)                                                  |
-| - status        | String  | O        | 동영상 상태 ([동영상 상태](#동영상-상태) 참고)                                |
-| - thumbnailUrl  | String  | X        | 썸네일 이미지 URL (인코딩 완료 후 채워짐)                                    |
-| - videoUrl      | String  | X        | 발송 및 관리용 동영상 URL (인코딩 완료 후 채워짐)                               |
-| - playUrl       | String  | X        | 재생용 URL (카카오 가이드상 현재 미지원, 추후 제공 시 자동 반영)                     |
-| - createDate    | String  | O        | 등록 일시                                                         |
-| - updateDate    | String  | X        | 상태 동기화 일시                                                     |
-| - createUser    | String  | X        | 업로드 사용자 식별자                                                   |
+| 이름              | 타입      | Not Null | 설명                                                                              |
+|:----------------|:--------|:---------|:--------------------------------------------------------------------------------|
+| header          | Object  | O        | 헤더 영역                                                                           |
+| - resultCode    | Integer | O        | 결과 코드                                                                           |
+| - resultMessage | String  | O        | 결과 메시지                                                                          |
+| - isSuccessful  | boolean | O        | 성공 여부                                                                           |
+| video           | Object  | X        | NHN Cloud 측 등록된 동영상 정보 (status = `REGISTERED`)                                   |
+| - videoSeq      | Long    | O        | 동영상 시퀀스                                                                         |
+| - vid           | String  | O        | 카카오 동영상 ID                                                                      |
+| - senderKey     | String  | O        | 발신 프로필 키                                                                         |
+| - title         | String  | X        | 동영상 제목 (업로드 직후에는 파일명, 인코딩 완료 후 카카오 비즈센터에서 수정한 값으로 동기화됨)                        |
+| - fileName      | String  | O        | 업로드 파일명                                                                         |
+| - fileSize      | Long    | O        | 파일 크기 (byte)                                                                    |
+| - status        | String  | O        | 동영상 상태 ([동영상 상태](#동영상-상태) 참고). 업로드 등록 응답에서는 항상 `REGISTERED`                     |
+| uploadInfo      | Object  | O        | 카카오 업로드 정보. 2단계에서 사용                                                            |
+| - uploadUrl     | String  | O        | 동영상 파일을 직접 업로드할 카카오 측 엔드포인트                                                     |
+| - token         | String  | O        | 업로드 인증 토큰. `x-kamp-upload-token` 헤더로 전달                                          |
+
+> 인코딩 완료 후 채워지는 `thumbnailUrl`, `videoUrl`, `playUrl`, `updateDate` 필드는 [동영상 조회](#동영상-조회) API로 얻을 수 있습니다.
+
+### 동영상 파일 업로드 (2단계)
+
+위 응답의 `uploadInfo.uploadUrl`로 동영상 파일을 직접 호출합니다. 이 요청은 NHN Cloud 서버가 아닌 카카오 측 업로드 서버로 직접 전송됩니다.
+
+#### 요청
+
+[URL]
+
+```
+POST  {uploadInfo.uploadUrl}
+Content-Type: multipart/form-data
+```
+
+[Header]
+
+| 이름                  | 타입     | 필수 | 설명                                          |
+|---------------------|--------|----|---------------------------------------------|
+| x-kamp-upload-token | String | O  | 1단계 응답의 `uploadInfo.token` 값을 그대로 전달        |
+
+[Request body (multipart)]
+
+| 이름   | 타입   | 필수 | 설명                                                  |
+|------|------|----|-----------------------------------------------------|
+| file | File | O  | 동영상 파일. 1단계 요청의 `fileSize`와 정확히 일치해야 합니다             |
+
+#### 응답
+
+```
+{
+  "vid": String,
+  "playUrl": String,
+  "errCode": Integer,
+  "message": String
+}
+```
+
+* 성공 시 `vid`(1단계 응답과 동일)와 `playUrl`을 반환하며 `errCode`/`message` 필드는 포함되지 않습니다.
+* 실패 시 HTTP 4xx와 함께 `errCode`(100~110)와 `message`를 반환합니다. 자세한 에러 코드는 카카오 비즈메시지 가이드를 참고하세요.
 
 #### 업로드 동영상 규격
 
@@ -3488,8 +3547,9 @@ Content-Type: multipart/form-data
 | 파일명 길이   | 250자 이내                                     |
 
 * 업로드된 동영상은 카카오 비즈센터에서 인코딩이 완료된 후 사용할 수 있습니다. 인코딩 시간은 영상 길이에 따라 다르며 보통 5~10분이 소요됩니다.
-* 업로드 직후 동영상 상태는 `REGISTERED`로 시작하며 `ENCODING`을 거쳐 `PUBLIC` 또는 `PRIVATE`로 전환됩니다. 상태는 콘솔 또는 동영상 조회 API에서 확인할 수 있습니다.
+* 업로드 직후 동영상 상태는 `REGISTERED`로 시작하며 `ENCODING`을 거쳐 `PUBLIC` 또는 `PRIVATE`로 전환됩니다. 상태는 콘솔 또는 [동영상 조회](#동영상-조회) API에서 확인할 수 있습니다.
 * 등록된 동영상은 카카오 측에서 영구 보존되며, 템플릿이 삭제되어도 카카오 비즈센터의 동영상은 자동으로 정리되지 않습니다. 카카오 채널 관리자가 채널 비즈니스 홈의 관리 화면에서 직접 삭제할 수 있습니다.
+* 1단계 등록 후 2단계 파일 업로드가 실패하거나 지연되어 토큰(5분)이 만료되면 새 등록을 다시 호출해야 합니다. 등록만 되고 실제 업로드가 이루어지지 않은 동영상은 일정 시간이 지난 후 상태가 `ERROR`로 자동 마킹됩니다.
 
 ### 동영상 조회
 
@@ -3524,7 +3584,7 @@ Content-Type: application/json;charset=UTF-8
 
 | 이름         | 타입     | 필수 | 설명                |
 |------------|--------|----|-------------------|
-| senderKey  | String | X  | 발신프로필 키 (40자)     |
+| senderKey  | String | X  | 발신 프로필 키 (40자)     |
 | pageNum    | String | X  | 페이지 번호 (기본: 1)    |
 | pageSize   | String | X  | 조회 건수 (기본: 15)    |
 
@@ -3787,7 +3847,7 @@ Content-Type: application/json;charset=UTF-8
 | -- resendAppKey           | String  | X        | 대체 발송으로 설정할 SMS 서비스 앱키                                                                                                |
 | -- isResend               | boolean | O        | 대체 발송 설정(재발송) 여부                                                                                                      |
 | -- resendSendNo           | String  | X        | 재발송 시, tc-sms 발신 번호                                                                                                   |
-| -- resendUnsubscribeNo    | String  | X        | 재발송 시, tc-sms 080 수신 거부 번호                                                                                            |
+| -- resendUnsubscribeNo    | String  | X        | 재발송 시, tc-sms 080 수신거부번호                                                                                            |
 | - dormant                 | boolean | O        | 발신 프로필 휴면 여부                                                                                                           |
 | - marketingAgreement      | boolean | O        | M/N 타입 사용 신청 여부                                                                                                       |
 | - createDate              | String  | X        | 등록 일자                                                                                                                 |
@@ -3958,8 +4018,8 @@ Content-Type: application/json;charset=UTF-8
 |---------------------|----------|-----|------------------------------------------------------------------------------------------------------------|
 | senderKey           | 	String  | 	O  | 발신 키                                                                                                       |
 | isResend            | 	Boolean | 	O  | 발송 실패 시, 문자 대체 발송 여부<br>콘솔에서 대체 발송을 설정하면 기본값으로 대체 발송됩니다.                                           |
-| resendSendNo        | 	String  | 	X  | 대체 발송 발신번호<br><span style="color:red">(SMS 서비스에 등록된 발신 번호가 아닐 경우, 대체 발송에 실패할 수 있습니다.)</span>                  |
-| resendUnsubscribeNo | 	String  | 	X  | 대체 발송 080 수신 거부 번호<br><span style="color:red">(SMS 서비스에 등록된 080 수신거부번호가 아닐 경우, 대체 발송에 실패할 수 있습니다.)</span> |
+| resendSendNo        | 	String  | 	X  | 대체 발송 발신 번호<br><span style="color:red">(SMS 서비스에 등록된 발신 번호가 아닐 경우, 대체 발송에 실패할 수 있습니다.)</span>                  |
+| resendUnsubscribeNo | 	String  | 	X  | 대체 발송 080 수신거부번호<br><span style="color:red">(SMS 서비스에 등록된 080 수신거부번호가 아닐 경우, 대체 발송에 실패할 수 있습니다.)</span> |
 
 [예시]
 
