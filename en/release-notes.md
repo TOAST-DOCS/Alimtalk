@@ -1,258 +1,285 @@
 <!-- pre-align:aligned sig=6bf09831069a -->
 
 ## Notification > KakaoTalk Bizmessage > Release Notes
+### June 23, 2026
+#### Added Features
+* [Console] Added brand message video upload feature
+    * You can directly upload and manage videos for brand message premium videos in the console.
+* [API] Added brand message video upload API
+    * Added an API to upload videos for brand message premium videos.
 
+#### Bug Fixes
+* [API] Improved handling of 080 opt-out numbers for brand message and FriendTalk ad alternative sending
+    * Fixed an issue where brand message and FriendTalk ad alternative sending was sent as general messages in some cases where 080 opt-out numbers were missing.
 
 <a id="may-27-2026"></a>
 
 ### May 27, 2026
+* [API] Added KakaoBizCenter statistics inquiry API
+    * Added an API to retrieve sending statistics and template statistics for AlimTalk and brand messages provided by KakaoBizCenter.
+    * You can retrieve daily or monthly statistics data based on sender key.
 
-<!-- TODO: translate body -->
+* [API, Console] Updated brand message image deletion guide
+    * Updated the guide to clarify that changing the image when updating a brand message template deletes the existing image from the Kakao CDN, and that other templates using the same image are also affected.
+
+* [API, Console] Changed content length limits by brand message type
+    * The content length limit for the IMAGE type has been changed from a maximum of 400 characters to a maximum of 1,300 characters.
+    * The line break limit for the IMAGE type has been changed from a maximum of 29 to a maximum of 99.
+    * The line break limit for WIDE and PREMIUM_VIDEO types has been changed from a maximum of 1 to a maximum of 5.
 
 <a id="april-28-2026"></a>
 
 ### April 28, 2026
 * [API] Automatic cleanup of sender profiles and template data deleted after dormancy
     * Synchronizes and automatically cleans up sender profiles and template data that were deleted by Kakao after remaining dormant for over 1 year.
-* [API] Added channel add button (AC type) support for free-form brand message delivery
-    * Expanded the channel add button for free-form delivery to be available for all targeting options.
-    * If the recipient is a friend, the delivery will not fail, but the channel add button will not be displayed.
+* [API] Added support for brand message free-form sending channel add button (AC type)
+    * Extended channel add button for free-form sending to be available for all targeting.
+    * If the recipient is a friend, sending does not fail but the channel add button is not displayed.
 
 <a id="march-24-2026"></a>
 
 ### March 24, 2026
-    * Added a feature to retrieve statistics data for AlimTalk and brand messages provided by KakaoBizCenter.
+* [Console] Provided KakaoBizCenter statistics
+    * Provides a feature to retrieve AlimTalk and brand message statistics data provided by KakaoBizCenter.
 
-* [Console] Added KakaoBizCenter group tag management feature
-    * Added a feature to manage group tags provided by KakaoBizCenter.
+* [Console] Provided KakaoBizCenter group tag management feature
+    * Provides a feature to manage group tags provided by KakaoBizCenter.
 
 * [Console]
-    * Sends a notification email with the results when message delivery history is backed up.
-    * Recipients can be configured in Project Dashboard > Notification Management tab.
+    * Sends notification emails for sending history backup results.
+    * Recipients can be set in Project Dashboard > Notification Management tab.
 
-* [Console] Added notification for message delivery history backup results
-    * You can receive result notifications when configuring backup settings for message delivery history that has exceeded the retention period.
-    * This can be configured in **Project Dashboard > Notification Management**.
-    
+* [Console] Added message sending history backup result notification
+    * You can receive result notifications when setting up backup for message sending history that has exceeded the message retention period.
+    * This can be set in **Project Dashboard > Notification Management**.
+
 <a id="february-24-2026"></a>
 
 ### February 24, 2026
-* [API] Added Brand Message carousel fixed placeholder feature
-    * Enable unique placeholder values for each item within carousel-type templates.
-    * Allow per-item personalization using path-based parameters (`key@$.carousel.list[index]`).
-    * Restrict the use of the @ character in template placeholder keys.
+* [API] Added brand message carousel fixed replacement variable feature
+    * You can apply different replacement variable values to each item in carousel type templates.
+    * Item-specific personalization is possible through path-based parameters (`key@$.carousel.list[index]`).
+    * The '@' character cannot be used in template replacement variable keys.
 
-* [API] Added Brand Message template placeholder key validation
-    * Trigger an error if a placeholder key contains the '@' character during template registration or modification.
+* [API] Added brand message template replacement variable key validation
+    * An error occurs if the '@' character is included in replacement variable keys when registering/modifying templates.
 
-* [API] Added Brand Message template parameter missing check
-    * Trigger an error if a placeholder key defined in the template is missing from templateParameter during a send request.
+* [API] Added missing template parameter check for brand message sending
+    * An error occurs if replacement variable keys defined in the template are missing from templateParameter when making send requests.
 
-* [API, Console] Brand Message BT button type support
-    * Support the BT (Bot Transfer) button type within Brand Messages.
-    * Enable template registration with the BT button type selected via the Console.
+* [API, Console] Added support for brand message BT button type
+    * Supports BT (bot transfer) button type in brand messages.
+    * You can register templates by selecting the BT button type in the console.
 
-* [API, Console] Added Brand Message AC button type
-    * Support the AC (Add Channel) button type for Brand Messages.
-    * Require the AC button name to be set exactly as 'Add Channel'.
-    * Restrict the use of AC buttons to a maximum of one across all carousel items.
+* [API, Console] Added brand message AC button type
+    * Supports AC (add channel) button type in brand messages.
+    * The AC button name must be '채널 추가' (Channel Add).
+    * For carousels, only 1 AC button can be used among all items.
 
-* [Console] Improved response message categorization for Alimtalk/Brand Message failover
-    * Categorize response messages for fallbacks to improve visibility.
+* [Console] Improved AlimTalk/brand message alternative sending response message classification
+    * Response messages are classified and displayed during alternative sending.
 
 * [API] Added template parameter length limit
-    * Enforce a maximum length of 1,300 characters for each template parameter key and value.
+    * Template parameter keys and values are each limited to a maximum of 1,300 characters.
 
 * [API] Added recipient grouping key length limit
-    * Restrict the maximum length of the recipientGroupingKey field to 100 characters.
-  
+    * The recipientGroupingKey field is limited to a maximum length of 100 characters.
+
 <a id="january-27-2026"></a>
 
 ### January 27, 2026
-* [API] Added webhook API link for send result inquiry to scheduled delivery and bulk delivery result webhooks
-    * An API link for send result inquiry has been added to the webhooks for scheduled delivery and bulk delivery results.
+* [API] Added query link to AlimTalk scheduled/bulk sending result webhook
+    * Added a sending result query API link to scheduled and bulk sending result webhooks.
 
 <a id="december-31-2025"></a>
 
 ### December 31, 2025
-* [API, Console] End of FriendTalk service
-    * Friend Talk service will be terminated on Wednesday, December 31, 2025.
-    * FriendTalk API temporarily supports brand message conversion through compatible header settings.
-    * FriendTalk console only supports the Send Result Inquiry, Image Management, and Alternative Send Management tabs.
+* [API, Console] End of FriendTalk service support
+    * FriendTalk service will end on December 31, 2025 (Wednesday).
+    * FriendTalk API temporarily supports brand message conversion through compatibility header settings.
+    * In the FriendTalk console, only sending result query, image management, and alternative sending management tabs are available.
 
-* [API] Added API for single query of AlimTalk template
-    * Added API to allow you to query specific templates individually.
-    * The response includes a field that allows you to check whether the template is blocked or inactive.
+* [API] Added AlimTalk template single inquiry API
+    * Added an API to retrieve a specific template individually.
+    * Fields to check template blocking and dormancy status are included in the response.
 
 <a id="november-25-2025"></a>
 
 ### November 25, 2025
 
-* [Console] Added the feature to send after confirming brand messages
-    * A feature has been added to allow pre-shipment confirmation when sending brand messages in bulk.
-    * Final confirmation is now possible before mass sending through the pre-shipment confirmation feature.
+* [Console] Added brand message send after confirmation feature
+    * Added a feature to send after confirmation before sending when sending brand message bulk messages.
+    * Final confirmation before bulk sending is possible through send after review.
 
-* [Console] Improved image personalization field input for mass brand message delivery
-    * The format of the image personalization field in the recipient upload file for mass brand message sending has been improved.
-    * Previously downloaded recipient uploads Excel and CSV files may not be valid.
+* [Console] Improved brand message bulk sending image personalization field input
+    * Improved the image personalization field format in recipient upload files for brand message bulk sending.
+    * Previously downloaded recipient upload Excel and CSV files may not be valid.
 
-* [API, Console] Improved validation of brand message personalization fields
-    * Validation of brand message personalization fields has been improved to meet Kakao specifications.
-    * More accurate validation of personalization field input prevents delivery failures.
+* [API, Console] Improved brand message personalization field validation
+    * Brand message personalization field validation has been improved to match Kakao specifications.
+    * More accurate validation when entering personalization fields prevents sending failures.
 
-* [Console] Changed brand message link field specification changes
-    * The link field specification for free-form brand messages has been changed to 1,000 characters, and the template link field specification has been changed to 500 characters, aligning with Kakao specifications.
-    * You can send messages by setting the link field to the updated specifications.
+* [Console] Changed brand message link field specifications
+    * Brand message free-form message link field specification changed to 1,000 characters, and template link field specification changed to 500 characters to match Kakao specifications.
+    * You can set link fields according to the changed specifications for sending.
 
-* [API] Improved brand message fallback action
-    * When sending a brand message, if the resendParameter is not entered, fallback will now occur according to default settings.
+* [API] Improved brand message alternative sending behavior
+    * Improved so that alternative sending operates according to default settings when resendParameter is not entered during brand message sending.
 
-* [API] Added API for AlimTalk Result Query Count
-    * An API that responds with the same conditions as the Result Query API has been added.
+* [API] Added AlimTalk result query count API
+    * Added an API that returns count numbers under the same conditions as the result query API.
 
 <a id="october-28-2025"></a>
 
 ### October 28, 2025
-* [API, Console] Changed the validity of the AlimTalk template
-    * The maximum character limit for the AlimTalk template has been increased from 1,000 to 1,300 characters, allowing you to send longer messages.
+* [API, Console] Changed AlimTalk template validity
+    * AlimTalk template maximum character limit has been expanded from 1,000 characters to 1,300 characters, allowing longer messages to be sent.
 
-* [API, Console] Brand message nighttime advertising resending feature
-    * You can use the nightly resend feature in your brand messages.
-    * If you send an advertising message at night (8:50 PM - 8:00 AM), it will automatically be resent at 8:00 AM the next day.
-    * You can configure the nightly resend feature in the console.
+* [API, Console] Brand message nighttime ad resend feature
+    * You can use the nighttime ad resend feature for brand messages.
+    * When sending advertising messages at night (8:50 PM to 8:00 AM), they are automatically resent at 8:00 AM the next day.
+    * You can set up the nighttime ad resend feature in the console.
 
 <a id="september-23-2025"></a>
 
 ### September 23, 2025
 
-* [API] Added a personalization feature for brand message video parameter
-    * Added a feature to dynamically change the video value of a template and send it through the videoParameter field when sending a brand message.
-    * Now personalized messages can be sent by specifying differnet videos by recipients.
+* [API] Added brand message video parameter personalization feature
+    * Added a feature to dynamically change template video values through the videoParameter field when sending brand messages.
+    * Customized message sending is possible by specifying different videos for each recipient.
 
 * [API] Applied brand message carousel image personalization
-    * Due to a bug fix on Kakao's side, applied the image personalization feature now to carousel feed and carousel commerce types.
-    * You can also specify different images for each recipient in carousel-type messages.
+    * Due to a bug fix on Kakao's side, image personalization is now applied to carousel feed and carousel commerce types.
+    * You can specify different images for each recipient in carousel type messages.
 
 * [API] Added AlimTalk call button type
-    * Added a call button to the AlimTalk template.
-    * Provide a feature for users to make a call directly with the click of a button.
+    * Added a call button type to AlimTalk templates.
+    * Provides functionality for users to make calls immediately when clicking the button.
 
-* [Console] Added a feature to download brand message in Excel format
-    * Added an Excel download feature to the brand Message sending results inquiry screen.
-    * You can manage the sending history by downloading it in Excel format.
+* [Console] Added brand message Excel download feature
+    * Added Excel download functionality to the brand message sending result query screen.
+    * You can download and manage sending history as Excel files.
 
 <a id="august-26-2025"></a>
 
 ### August 26, 2025
 
-* [API, Console] Brand message - Supported free-form sending M/N type function
-    * Added a feature to enable sending free-form messages of M/N type in brand messages.
+* [API, Console] Brand message - free-form sending M/N type feature support
+    * Added functionality to enable free-form message M/N type sending for brand messages.
     * In addition to the existing basic type, you can send your brand message more flexibly with the free-form M/N type.
 
-* [API] Brand message - Added API field for sending reseller identification code
-    * Added a field to the Brand Message Sending API to allow you to specify a reseller identification code.
-    * A feature is provided to manage message sending by resellers separately.
+* [API] Brand message - added reseller identification code sending API field
+    * Added a field to specify reseller identification codes in the brand message sending API.
+    * Provides functionality to distinguish and manage message sending by reseller.
 
-* [API, Console] Added a brand message feature - scheduled send
-    * Added a reservation sending feature to the Brand Message upgrade service.
-    * You can schedule and send a Brand Message upgrade message at any time you want.
+* [API, Console] Brand message feature addition - scheduled sending
+    * Added scheduled sending functionality to the brand message service.
+    * You can schedule brand messages to be sent at desired times.
 
 * [API] Brand message - added senderGroupingKey, recipientGroupingKey
-    * Sender grouping key and recipient grouping key fields are added to the brand message sending API.
-    * You can manage message sending requests by group to efficiently track sending results.
+    * Added sender grouping key and recipient grouping key fields to the brand message sending API.
+    * You can efficiently track sending results by managing message send requests by group.
 
 <a id="july-29-2025"></a>
 
 ### July 29, 2025
-* [API, Console] FriendTalk Upgrade -> Changed brand message name
+* [API, Console] FriendTalk Upgrade → Brand Message name change
     * The brand message service has been renamed to brand message.
-    * The existing brand message API will be changed to brand message API.
+    * Existing brand message APIs are changed and used as brand message APIs.
 
 * [Console] Added backup feature
-    * Added a feature to back up brand message sending history.
+    * Added brand message sending history backup functionality.
 
-* [API, Console] Added a feature to apply for brand message M/N targeting
+* [API, Console] Added brand message M/N targeting use application feature
     * A feature to upload and use marketing consent evidence for M/N targeting has been added.
     * Brand message M/N targeting can be sent when the following conditions are met:
-        * Business authentication channel
-        * Register business registration number
-        * Register channel customer service phone number
-        * Have at least 50,000 channel friends
-        * Have a history of successfully sending AlimTalk messages within the past three months
+        * Business authenticated channel
+        * Business registration number registration
+        * Channel customer service phone number registration
+        * More than 50,000 channel friends
+        * Successful AlimTalk sending history within 3 months
 
-* [API, Console] Added new API for registering free call rejection information for the 080 caller profile
-    * You can register 080 free call rejection information in the sender profile used when sending brand messages.
-    * When registering 080 free reception refusal information, modifications are possible, but initialization to a blank value is not possible.
+* [API, Console] Added new sender profile 080 free opt-out information registration API
+    * You can register 080 free opt-out information for sender profiles used when sending brand messages.
+    * When 080 free opt-out information is registered, modification is possible but initialization to empty values is not possible.
 
-* [Console] Fix a bug in rejection management reset for Brand Message 080
-    * Fixed a bug that prevented initialization when registering an SMS service app key.
-    * When you initialize the SMS service app key, any previously registered alternative sending settings will be deleted.
+* [API] Added feature to change template image fields per recipient when sending brand message basic type
+    * Added an imageParameters field that allows changing template image fields per recipient when sending brand message basic type.
+        * When sending basic type, you can replace imageUrl and imageLink values for each image field through the imageParameters field.
+
+* [Console] Fixed brand message 080 opt-out management initialization bug
+    * Fixed a bug where initialization was not working when SMS service app key was registered.
+    * When initializing SMS service app key, previously registered alternative sending settings are deleted.
 
 <a id="june-24-2025"></a>
 
 ### June 24, 2025
 * [API, Console] Added brand message webhook feature
-    * Added webhook feature when updating the sending result.
-* [API, Console] Added the feature to send alternative brand messages
-    * Added the alternative sending feature when sending brand messages.
-    * If you register the SMS service app key in "Sending Settings", you can use alternative sending when sending brand messages.
-        * If the sender number you entered is not the one registered with the SMS product, the replacement transmission may fail.
-* [API] Changed the text validity of brand message's message types
-    * The text body length limit criteria has been changed.
+    * Added webhook functionality when sending results are updated.
+* [API, Console] Added brand message alternative sending feature
+    * Added alternative sending functionality when sending brand messages.
+    * By registering an SMS service app key in 'Send Settings', alternative sending is possible when sending brand messages.
+        * If the entered sender number is not registered as a sender number in the SMS product, alternative sending may fail.
+* [API] Changed brand message text type validity
+    * Text type body length limit criteria have been changed.
     * Changes
-        * Body length limit: 1,000 char. -> 1,300 char.
-        * Line breaks: 33 lines -> 99 lines
-* [API, Console] Improved targeting of brand message templates
-    * When sending a brand message template, improved to enable sending M and N types for all message types.
-* [API, Console] Added a 080 rejection number field to the brand message template.
-    * When sending a brand message template, the 080 rejection number field is added. (unsubscribeNo, unsubscribeAuthNo).
-    * When you enter the field, the message will be sent to that number instead of the 080 rejection number registered in the sender's profile.
-    * If not entered, it will be sent to the 080 rejection number registered in the sender's profile.
-* [API] Fixed an issue in the brand message sending profile inquiry API
+        * Body length limit: 1,000 characters → 1,300 characters
+        * Line breaks: 33 lines → 99 lines
+* [API, Console] Improved brand message template sending targeting feature
+    * Improved to enable M, N type sending for all message types when sending brand message templates.
+* [API, Console] Added brand message template sending 080 opt-out number field
+    * Added 080 opt-out number fields when sending brand message templates (unsubscribeNo, unsubscribeAuthNo).
+    * When entering these fields, messages are sent with those numbers instead of the 080 opt-out number registered in the sender profile.
+    * If not entered, messages are sent with the 080 opt-out number registered in the sender profile.
+* [API] Fixed brand message sender profile inquiry API error
     * Fixed an issue where some fields were missing from the brand message response when querying the brand message sender profile inquiry API.
-        * Fixed an issue where brand message settings information was missing from the sender profile lookup API.
-        * The sender profile inquiry API no longer provides AlimTalk and FriendTalk setting information.
+        * Fixed an error where brand message setting information was missing from the sender profile inquiry API.
+        * AlimTalk and FriendTalk setting information are no longer provided in the sender profile inquiry API.
 
 <a id="may-27-2025"></a>
 
 ### May 27, 2025
-
-<!-- TODO: translate body -->
+* [Console] Template blocking status displayed in AlimTalk template inquiry tab
+    * Template blocking status is displayed in the AlimTalk template inquiry tab.
+* [Console] Added brand message bulk sending feature
+    * Added bulk sending functionality using CSV and XLSX files.
+* [Console] Provided brand message sending statistics screen
+    * Statistics screens by date/time/day of week are provided.
 
 <a id="may-13-2025"></a>
 
 ### May 13, 2025
-* [API] Brand messaging service beta launch
-    * Brand message basic type M,N group (targeting members who have agreed to receive marketing) can be sent to** : if the conditions below are met, you can send after registering on the whitelist (requires Kakao approval)
-        * **Conditions for sending**: Have more than 50,000 KakaoTalk business channel friends + have a history of sending AlimTalk messages (last 3 months) + submit evidence of consent to receive marketing messages + register a number to opt out of receiving messages
-        * Required information for whitelist requests will be provided by Kakao and announced at a later date.
-            * Request a whitelist: Contact [Customer Center](https://www.nhncloud.com/kr/support/inquiry) or a sales representative.
+* [API] Brand message service beta launch
+    * Brand message basic type M, N group (marketing consent member target) sending eligible: If the conditions below are met, sending is possible after whitelist registration (Kakao approval required).
+        * Sending eligibility conditions: Have more than 50,000 KakaoTalk business channel friends + have a history of sending AlimTalk messages (last 3 months) + submit evidence of consent to receive marketing messages + register opt-out numbers
+        * Required details when requesting whitelist will be announced later after receiving them from Kakao
+            * Whitelist request: Contact [Customer Center](https://www.nhncloud.com/kr/support/inquiry) or sales representative
 
 <a id="april-29-2025"></a>
 
 ### April 29, 2025
 
-* [API] Improved failure response for all recipients in the AlimTalk sending API
-    * Changed the response when sending to all recipients fails in the AlimTalk sending API.
-        * Previous: success response, requestId response
-        * Current: Failed response, response with requestId as null
-    * Changed the response when sending to all recipients fails in the Friend Talk sending API.
-        * Previous: success response, requestId response
-        * Current: Failed response, response with requestId as null
-    * Even if sending fails to all recipients, if there are alternative recipients available, a success response is returned as before.
+* [API] Improved AlimTalk sending API all recipient failure response
+    * Response changes when all recipients fail in AlimTalk sending API.
+        * Before change: Success response, requestId response
+        * After change: Failure response, requestId returned as null
+    * Response changes when all recipients fail in FriendTalk sending API.
+        * Before change: Success response, requestId response
+        * After change: Failure response, requestId returned as null
+    * Even if sending fails to all recipients, if there are recipients eligible for alternative sending, a success response is returned as before.
 
-* [Console] Changed AlimTalk search conditions
-    * "Registration date" is deleted from the conditions for sending result inquiry and bulk sending inquiry.
-    * If you previously searched by registration date, search using "Request date".
+* [Console] Changed AlimTalk inquiry conditions
+    * 'Registration time' is removed from sending result inquiry and bulk sending inquiry conditions.
+    * If you previously searched by registration time, use 'Request time' to search.
 
-* [Console] Changed FriendTalk search conditions
-    * "Registration date" is deleted from the conditions for sending result inquiry and bulk sending inquiry.
-    * If you previously searched by registration date, search using "Request date".
+* [Console] Changed FriendTalk inquiry conditions
+    * 'Registration time' is removed from sending result inquiry and bulk sending inquiry conditions.
+    * If you previously searched by registration time, use 'Request time' to search.
 
 <a id="january-14-2025"></a>
 
 ### January 14, 2025
-* [API] Scheduled to segment the respose code (3018) that was bounced back when KakaoTalk could not send a message as follows
+* [API] Response code (3018) returned when messages cannot be sent from KakaoTalk will be subdivided and provided as follows
 
   | Product | code | Description  |
               |-----| --- | --- |
