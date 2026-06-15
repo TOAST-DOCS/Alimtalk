@@ -1,9 +1,15 @@
+<!-- pre-align:aligned sig=f530f01ac2b8 -->
+
 ## Notification > KakaoTalk Bizmessage > Plus Friend> Console Guide
+
+<a id="registerauthenticate-sender-profiles"></a>
 
 ## Register/Authenticate Sender Profiles
 * To send a KakaoTalk Biz message, you must first register your sender profile.
 * KakaoTalk channel can be created free of charge in KakaoTalk homepage (https://center-pf.kakao.com).
 * Only business-certified KakaoTalk channels can be added to NHN Cloud Kakaotalk Bizmessage service (Refer to [PlusFriend Business Authentication](https://static.toastoven.net/prod_alimtalk/plusfriend_business_certify_guide_20190311.pdf))
+
+<a id="add-a-sender-profile"></a>
 
 ## Add a Sender Profile
 
@@ -15,6 +21,8 @@ KakaoTalk token messages are delivered only to mobile phones registered as admin
 * PlusFriend ID requires you to enter the search ID you registered when opening PlusFriend.
 * KakaoTalk Biz message that the customer receives will be indicated by the name of Plus friend registered on KakaoTalk.
 
+<a id="token-registration"></a>
+
 ## Token Registration
 
 If you enter the token message you received on your administrator's phone, your registration will be complete.
@@ -24,6 +32,8 @@ If you enter the token message you received on your administrator's phone, your 
 <b><span style="color:red">When registering a sender profile, the initial daily maximum volume of delivery is limited to 1,000.</span></b> 
 If you want to change the maximum daily delivery, you will need to request it separately from customer center (support@toast.com).
 
+<a id="manage-a-fallback-delivery"></a>
+
 ## Manage a Fallback Delivery
 
 You can set up an **fallback delivery** for each sender profile.
@@ -32,6 +42,8 @@ You can set up an **fallback delivery** for each sender profile.
 * When you modify the SMS app key, the sender failure setting for all sender profiles is initialized.
 
 ![Manage a Fallback Delivery](https://static.toastoven.net/prod_alimtalk/plusfriend_03_201812.png)
+
+<a id="view-kakao-statistics"></a>
 
 ## View Kakao Statistics
 
@@ -43,15 +55,21 @@ Click **Go to Kakao Statistics** in Sender Profile Management to view Kakao stat
 * Clicks are counted multiple times for the same message.
 * If the number of successful deliveries is 10 or fewer, valid opens and clicks are not provided.
 
+<a id="delivery-statistics"></a>
+
 ### Delivery Statistics
 
 Retrieves the daily delivery count, valid opens, and clicks by sender profile. You can query by setting conditions such as period, delivery identifier, and message type.
+
+<a id="template-statistics"></a>
 
 ### Template Statistics
 
 Retrieves the daily delivery count, valid opens, and clicks by template and group tag. You can query by setting conditions such as period and message type.
 
 * Brand message free format is provided only when a group tag is used.
+
+<a id="group-tag-management"></a>
 
 ## Group Tag Management
 
@@ -61,6 +79,8 @@ Group tags are identification tags used when querying template statistics for br
 
 * Click **+ Register Group Tag** to enter a group tag name and register it.
 * Select the checkbox of the group tag to modify or delete, and click **Modify Group Tag** or **Delete Group Tag**.
+
+<a id="notice-of-personal-information-consignee"></a>
 
 ## Notice of Personal Information Consignee
 When a ‘customer’ uses the NHN Cloud > Notification > KakaoTalk Bizmessage service, there is a consignment relationship between the ‘customer’ and the ‘company’ regarding the processing of personal information. Therefor, in line with the Information and Communication Network Act and the Personal Information Protection Act, the ‘customer’ who is the consignor must disclose the status of entrusting personal information to the ‘company’ (trustee and details of work) through the personal information processing policy.
