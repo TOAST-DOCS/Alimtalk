@@ -1,6 +1,12 @@
+<!-- pre-align:aligned sig=473d4f693686 -->
+
 ## Notification > KakaoTalk Bizmessage > Common > API v2.2 Guide
 
+<a id="statistics"></a>
+
 ## 統計
+
+<a id="api-domain"></a>
 
 ### [APIドメイン]
 
@@ -18,6 +24,8 @@
 </table>
 
 
+<a id="statistics-search---event-based"></a>
+
 ### 統計検索 - イベントベース
 * イベント発生時間基準で収集された統計です。
 * 次の時間を基準に統計が収集されます。
@@ -27,6 +35,8 @@
     * 失敗数(SENT_FAILED)：送信リクエスト失敗or送信結果失敗時点
     * 代替送信リクエスト数(RESENT)：代替送信リクエスト時点
     * 代替送信失敗数(RESENT_FAILED)：代替送信リクエスト失敗時点
+
+<a id="get-statistics-information"></a>
 
 ### 統計情報照会
 
@@ -104,6 +114,8 @@
 }
 ```
 
+<a id="get-count-per-event"></a>
+
 ### イベント別数照会
 
 [URL]
@@ -153,3 +165,93 @@
     }
 }
 ```
+<a id="kakao-statistics"></a>
+
+## カカオ統計
+
+<!-- TODO: translate body -->
+
+<a id="send-statistics"></a>
+
+### 送信統計
+
+<!-- TODO: translate body -->
+
+<a id="template-statistics"></a>
+
+### テンプレート統計
+
+<!-- TODO: translate body -->
+
+<a id="get-alimtalk-send-statistics"></a>
+
+### お知らせトーク送信統計照会
+
+<!-- TODO: translate body -->
+
+<a id="request"></a>
+
+#### リクエスト
+
+<!-- TODO: translate body -->
+
+<a id="response"></a>
+
+#### レスポンス
+
+<!-- TODO: translate body -->
+
+<a id="get-alimtalk-template-statistics"></a>
+
+### お知らせトークテンプレート統計照会
+
+<!-- TODO: translate body -->
+
+<a id="request-2"></a>
+
+#### リクエスト
+
+<!-- TODO: translate body -->
+
+<a id="response-2"></a>
+
+#### レスポンス
+
+<!-- TODO: translate body -->
+
+<a id="get-brand-message-send-statistics"></a>
+
+### ブランドメッセージ送信統計照会
+
+<!-- TODO: translate body -->
+
+<a id="request-3"></a>
+
+#### リクエスト
+
+<!-- TODO: translate body -->
+
+<a id="response-3"></a>
+
+#### レスポンス
+
+<!-- TODO: translate body -->
+
+<a id="get-brand-message-template-statistics"></a>
+
+### ブランドメッセージテンプレート統計照会
+
+<!-- TODO: translate body -->
+
+<a id="request-4"></a>
+
+#### リクエスト
+
+<!-- TODO: translate body -->
+
+<a id="response-4"></a>
+
+#### レスポンス
+
+<!-- TODO: translate body -->
+

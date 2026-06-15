@@ -1,8 +1,16 @@
+<!-- pre-align:aligned sig=ee87b06908ec -->
+
 ## Notification > KakaoTalk Bizmessage > Sender > API v2.1 Guide
 
+<a id="overview-of-v21-api"></a>
+
 ## Overview of v2.1 API
+<a id="whats-the-diffrence"></a>
+
 #### What's the diffrence
 1. Added dormant, block on Inquire of Senders
+
+<a id="api-domain"></a>
 
 #### [API Domain]
 
@@ -19,9 +27,15 @@
 </tbody>
 </table>
 
+<a id="senders"></a>
+
 ## Senders
 
+<a id="query-sender-by-category"></a>
+
 ### Query Sender by Category
+
+<a id="request"></a>
 
 #### Request
 [URL]
@@ -46,6 +60,8 @@ Content-Type: application/json;charset=UTF-8
 | Value        | Type   | Required | Description                                                  |
 | ------------ | ------ | -------- | ------------------------------------------------------------ |
 | X-Secret-Key | String | O        | Can be created on console.  |
+
+<a id="response"></a>
 
 #### Response
 ```
@@ -104,7 +120,11 @@ Content-Type: application/json;charset=UTF-8
 | --- code         | String  | Category code     |
 | --- name         | String  | Category name     |
 
+<a id="register-senders"></a>
+
 ### Register Senders
+
+<a id="request-2"></a>
 
 #### Request
 
@@ -147,6 +167,8 @@ Content-Type: application/json;charset=UTF-8
 | phoneNo      | String  | O        | Mobile number of administrator(up to 15 characters)         |
 | categoryCode | String  | O        | Category code(11 characters) See response for Search Category API  e.g.) 00100010001 Health(001) - Hospital(0001) - General Hospital(0001) |
 
+<a id="response-2"></a>
+
 #### Response
 
 ```
@@ -166,7 +188,11 @@ Content-Type: application/json;charset=UTF-8
 | - resultMessage | String  | Result message    |
 | - isSuccessful  | Boolean | Successful or not |
 
+<a id="authenticate-tokens-for-senders"></a>
+
 ### Authenticate Tokens for Senders
+
+<a id="request-3"></a>
 
 #### Request
 
@@ -208,6 +234,8 @@ Content-Type: application/json;charset=UTF-8
 | plusFriendId | String  | O | PlusFriend ID |
 | token | Integer | O        | Authentication token(received on KakaoTalk app, after Register PlusFriend API call) |
 
+<a id="response-3"></a>
+
 #### Response
 
 ```
@@ -227,7 +255,11 @@ Content-Type: application/json;charset=UTF-8
 | - resultMessage | String  | Result message    |
 | - isSuccessful  | Boolean | Successful or not |
 
+<a id="delete-sender"></a>
+
 ### Delete Sender
+<a id="request-4"></a>
+
 #### Request
 
 [URL]
@@ -257,6 +289,8 @@ Content-Type: application/json;charset=UTF-8
 * 발신 프로필 삭제 시, 등록한 템플릿 데이터가 함께 삭제 됩니다.
 * 발신 프로필 삭제 시, 복구가 불가능합니다.
 
+<a id="response-4"></a>
+
 #### Response
 ```
 {  
@@ -275,7 +309,11 @@ Content-Type: application/json;charset=UTF-8
 | - resultMessage | String  | Result message    |
 | - isSuccessful  | Boolean | Successful or not |
 
+<a id="get-sender"></a>
+
 ### Get Sender
+<a id="request-5"></a>
+
 #### Request
 
 [URL]
@@ -301,6 +339,8 @@ Content-Type: application/json;charset=UTF-8
 | Value        | Type   | Required | Description                                                  |
 | ------------ | ------ | -------- | ------------------------------------------------------------ |
 | X-Secret-Key | String | O        | Can be created on console.  |
+
+<a id="response-5"></a>
 
 #### Response
 ```
@@ -376,7 +416,11 @@ Content-Type: application/json;charset=UTF-8
 | - createDate              | String  | Date and time of registration                                |
 | totalCount                | Integer | Total count                                                  |
 
+<a id="list-sender"></a>
+
 ### List Sender
+
+<a id="request-6"></a>
 
 #### Request
 
@@ -412,6 +456,8 @@ Content-Type: application/json;charset=UTF-8
 | status              | String  | X        | Status code of PlusFriend(YSC02: Ready for token authenticated, YSC03: Normally registered) |
 |pageNum|	Integer|	X|	page number(Default: 1)|
 |pageSize|	Integer|	X|	page size(Default: 15, Max: 1000)|
+
+<a id="response-6"></a>
 
 #### Response
 
@@ -491,9 +537,15 @@ Content-Type: application/json;charset=UTF-8
 | - createDate              | String  | Date and time of registration                                |
 | totalCount                | Integer | Total count                                                  |
 
+<a id="sender-group"></a>
+
 ## Sender group
 
+<a id="get-sender-group"></a>
+
 ### Get Sender group
+
+<a id="request-7"></a>
 
 #### Request
 [URL]
@@ -519,6 +571,8 @@ Content-Type: application/json;charset=UTF-8
 | Value        | Type   | Required | Description                                                  |
 | ------------ | ------ | -------- | ------------------------------------------------------------ |
 | X-Secret-Key | String | O        | Can be created on console.  |
+
+<a id="response-7"></a>
 
 #### Response
 ```
@@ -562,7 +616,11 @@ Content-Type: application/json;charset=UTF-8
 |- createDate | String | Date and time of registration |
 |- updateDate |	String|	Date and time of modification |
 
+<a id="add-sender-to-group"></a>
+
 ### Add sender to group
+
+<a id="request-8"></a>
 
 #### Request
 [URL]
@@ -592,6 +650,8 @@ Content-Type: application/json;charset=UTF-8
 
 * The maximum number of members in a group is 5000.
 
+<a id="response-8"></a>
+
 #### Response
 ```
 {
@@ -610,7 +670,11 @@ Content-Type: application/json;charset=UTF-8
 | - resultMessage | String  | Result message    |
 | - isSuccessful  | Boolean | Successful or not |
 
+<a id="delete-sender-from-group"></a>
+
 ### Delete sender from group
+
+<a id="request-9"></a>
 
 #### Request
 [URL]
@@ -637,6 +701,8 @@ Content-Type: application/json;charset=UTF-8
 | Value        | Type   | Required | Description                                                  |
 | ------------ | ------ | -------- | ------------------------------------------------------------ |
 | X-Secret-Key | String | O        | Can be created on console.  |
+
+<a id="response-9"></a>
 
 #### Response
 ```
