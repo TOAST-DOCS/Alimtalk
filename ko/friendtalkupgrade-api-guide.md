@@ -1,6 +1,10 @@
 ## Notification > KakaoTalk Bizmessage > 브랜드 메시지 > API v1.0 Guide
 
+<a id="brand-message"></a>
+
 ## 브랜드 메시지
+
+<a id="api-domain"></a>
 
 #### [API 도메인]
 
@@ -8,7 +12,11 @@
 |------------------------------------------------------------------------------|
 | [https://kakaotalk-bizmessage.api.nhncloudservice.com](https://kakaotalk-bizmessage.api.nhncloudservice.com) |
 
+<a id="introduce-v10-api"></a>
+
 ## v1.0 API 소개
+
+<a id="manage-non-friend-message-sending-targeting-m-n"></a>
 
 ## 비친구 메시지 발송(타겟팅 M, N) 관리
 
@@ -20,7 +28,11 @@
 - 채널 친구 수 5만 이상
 - 3개월 내 알림톡 발송 성공 이력 보유
 
+<a id="upload-marketing-consent-evidence"></a>
+
 ### 마케팅 수신 동의 증적 자료 업로드
+
+<a id="requested"></a>
 
 #### 요청
 
@@ -56,6 +68,8 @@ Content-Type: multipart/form-data
 |------|------|----|---------------|
 | file | File | O  | 마케팅 수신 동의 증적 자료 |
 
+<a id="response"></a>
+
 #### 응답
 
 ```
@@ -75,7 +89,11 @@ Content-Type: multipart/form-data
 | - resultMessage | String  | O        | 결과 메시지 |
 | - isSuccessful  | boolean | O        | 성공 여부  |
 
+<a id="apply-for-using-non-friend-message-sending-targeting-m-n"></a>
+
 ### 비친구 메시지 발송(타겟팅 M, N) 사용 신청
+
+<a id="requested-2"></a>
 
 #### 요청
 
@@ -105,6 +123,8 @@ Content-Type: application/json;charset=UTF-8
 |--------------|--------|----|------------------|
 | X-Secret-Key | String | O  | 콘솔에서 생성할 수 있습니다. |
 
+<a id="response-2"></a>
+
 #### 응답
 
 ```
@@ -123,6 +143,8 @@ Content-Type: application/json;charset=UTF-8
 | - resultCode    | Integer | O        | 결과 코드  |
 | - resultMessage | String  | O        | 결과 메시지 |
 | - isSuccessful  | boolean | O        | 성공 여부  |
+
+<a id="request-to-send-a-free-form-message"></a>
 
 ## 메시지 자유형 발송 요청
 
@@ -145,6 +167,8 @@ Content-Type: application/json;charset=UTF-8
 * 대체 발송은 수신자별 resendParameter를 통해 설정할 수 있습니다.
     * 대체 발송을 이용할 경우 대체 발송 관리 API를 통해 SMS Appkey 등록 및 발송 설정이 필요합니다.
 * **야간 발송 제한(20:50~다음 날 08:00)**
+
+<a id="requested-3"></a>
 
 #### 요청
 
@@ -172,6 +196,8 @@ Content-Type: application/json;charset=UTF-8
 | 이름           | 타입     | 필수 | 설명               |
 |--------------|--------|----|------------------|
 | X-Secret-Key | String | O  | 콘솔에서 생성할 수 있습니다. |
+
+<a id="request-text-type-sending"></a>
 
 #### 텍스트형 발송 요청
 
@@ -276,6 +302,8 @@ Content-Type: application/json;charset=UTF-8
 | resellerCode          | String  | X  | 리셀러 코드(리셀러가 발송 시 사용)                                                                                                                                                                                                                                                       |
 | createUser             | String  | X  | 등록자(콘솔에서 발송 시 사용자 UUID로 저장)                                                                                                                                                                                                                                                   |
 | statsId                | String  | 	X | 통계 ID(발신 검색 조건에는 포함되지 않습니다. 최대 8자)                                                                                                                                                                                                                                            |
+
+<a id="request-image-type-sending"></a>
 
 #### 이미지형 발송 요청
 
@@ -388,6 +416,8 @@ Content-Type: application/json;charset=UTF-8
 | createUser             | String  | X  | 등록자(콘솔에서 발송 시 사용자 UUID로 저장)                                                                                                                                                                                                                                                   |
 | statsId                | String  | 	X | 통계 ID(발신 검색 조건에는 포함되지 않습니다. 최대 8자)                                                                                                                                                                                                                                            |
 
+<a id="request-wide-image-type-sending"></a>
+
 #### 와이드 이미지형 발송 요청
 
 [Request body]
@@ -498,6 +528,8 @@ Content-Type: application/json;charset=UTF-8
 | resellerCode          | String  | X  | 리셀러 코드(리셀러가 발송 시 사용)                                                                                                                                                                                                                                                       |
 | createUser             | String  | X  | 등록자(콘솔에서 발송 시 사용자 UUID로 저장)                                                                                                                                                                                                                                                   |
 | statsId                | String  | 	X | 통계 ID(발신 검색 조건에는 포함되지 않습니다. 최대 8자)                                                                                                                                                                                                                                            |
+
+<a id="request-to-send-wide-item-list-type"></a>
 
 #### 와이드 아이템리스트형 발송 요청
 
@@ -639,6 +671,8 @@ Content-Type: application/json;charset=UTF-8
 | createUser             | String  | X  | 등록자(콘솔에서 발송 시 사용자 UUID로 저장)                                                                                                                                                                                                                                                   |
 | statsId                | String  | 	X | 통계 ID(발신 검색 조건에는 포함되지 않습니다. 최대 8자)                                                                                                                                                                                                                                            |
 
+<a id="request-to-send-premium-video-type"></a>
+
 #### 프리미엄 동영상형 발송 요청
 
 [Request body]
@@ -751,6 +785,8 @@ Content-Type: application/json;charset=UTF-8
 | resellerCode          | String  | X  | 리셀러 코드(리셀러가 발송 시 사용)                                                                                                                                                                                                                                                       |
 | createUser             | String  | X  | 등록자(콘솔에서 발송 시 사용자 UUID로 저장)                                                                                                                                                                                                                                                   |
 | statsId                | String  | 	X | 통계 ID(발신 검색 조건에는 포함되지 않습니다. 최대 8자)                                                                                                                                                                                                                                            |
+
+<a id="request-to-send-commerce"></a>
 
 #### 커머스형 발송 요청
 
@@ -875,6 +911,8 @@ Content-Type: application/json;charset=UTF-8
 | resellerCode          | String  | X  | 리셀러 코드(리셀러가 발송 시 사용)                                                                                                                                                                                                                                                       |
 | createUser             | String  | X  | 등록자(콘솔에서 발송 시 사용자 UUID로 저장)                                                                                                                                                                                                                                                   |
 | statsId                | String  | 	X | 통계 ID(발신 검색 조건에는 포함되지 않습니다. 최대 8자)                                                                                                                                                                                                                                            |
+
+<a id="request-to-send-carousel-feed-type"></a>
 
 #### 캐러셀 피드형 발송 요청
 
@@ -1053,6 +1091,8 @@ Content-Type: application/json;charset=UTF-8
 | createUser             | String  | X  | 등록자(콘솔에서 발송 시 사용자 UUID로 저장)                                                                                                                                                                                                                                                   |
 | statsId                | String  | 	X | 통계 ID(발신 검색 조건에는 포함되지 않습니다. 최대 8자)                                                                                                                                                                                                                                            |
 
+<a id="request-to-send-carousel-commerce-type"></a>
+
 #### 캐러셀 커머스형 발송 요청
 
 [Request body]
@@ -1209,6 +1249,8 @@ Content-Type: application/json;charset=UTF-8
 | createUser           | String  | X  | 등록자(콘솔에서 발송 시 사용자 UUID로 저장)                                                                                                                                                                                                                                                   |
 | statsId              | String  | 	X | 통계 ID(발신 검색 조건에는 포함되지 않습니다. 최대 8자)                                                                                                                                                                                                                                            |
 
+<a id="response-3"></a>
+
 #### 응답
 
 ```
@@ -1246,6 +1288,8 @@ Content-Type: application/json;charset=UTF-8
 | -- resultCode    | Integer | O        | 수신자별 발송 결과 코드(성공 및 다양한 실패 코드가 존재할 수 있음)                     |
 | -- resultMessage | String  | O        | 수신자별 발송 결과 메시지(성공 시 "success" 또는 관련 메시지, 실패 시 실패 원인 상세 메시지) |
 
+<a id="request-to-send-basic-message"></a>
+
 ## 메시지 기본형 발송 요청
 
 * 템플릿을 이용한 발송입니다.
@@ -1261,6 +1305,8 @@ Content-Type: application/json;charset=UTF-8
 * 대체 발송은 수신자별 resendParameter를 통해 설정할 수 있습니다.
     * 대체 발송을 이용할 경우 대체 발송 관리 API를 통해 SMS Appkey 등록 및 발송 설정이 필요합니다.
 * **야간 발송 제한(20:50~다음 날 08:00)**
+
+<a id="cautions-for-use"></a>
 
 ### 사용 시 주의사항
 
@@ -1293,6 +1339,8 @@ Content-Type: application/json;charset=UTF-8
 | 이름           | 타입     | 필수 | 설명               |
 |--------------|--------|----|------------------|
 | X-Secret-Key | String | O  | 콘솔에서 생성할 수 있습니다. |
+
+<a id="requested-4"></a>
 
 #### 발송 요청
 
@@ -1363,6 +1411,8 @@ Content-Type: application/json;charset=UTF-8
 | createUser             | String  | X  | 등록자(콘솔에서 발송 시 사용자 UUID로 저장)                                                                                                                                                                                                             |
 | statsId                | String  | X  | 통계 ID(발신 검색 조건에는 포함되지 않습니다. 최대 8자)                                                                                                                                                                                                      |
 
+<a id="response-4"></a>
+
 #### 응답
 
 ```
@@ -1400,7 +1450,11 @@ Content-Type: application/json;charset=UTF-8
 | -- resultCode    | Integer | O        | 수신자별 발송 결과 코드(성공 및 다양한 실패 코드가 존재할 수 있음)                     |
 | -- resultMessage | String  | O        | 수신자별 발송 결과 메시지(성공 시 "success" 또는 관련 메시지, 실패 시 실패 원인 상세 메시지) |
 
+<a id="view-sending-list"></a>
+
 ## 발송 목록 조회
+
+<a id="requested-5"></a>
 
 #### 요청
 
@@ -1445,6 +1499,8 @@ Content-Type: application/json;charset=UTF-8
 | recipientGroupingKey | 	String  | 	X         | 수신자 그룹핑 키                        |
 | pageNum          | String | X         | 페이지 번호(Default: 1)               |
 | pageSize         | String | X         | 조회 건수(Default: 15, Max: 1000)    |
+
+<a id="response-5"></a>
 
 #### 응답
 
@@ -1521,7 +1577,11 @@ Content-Type: application/json;charset=UTF-8
 | -- recipientGroupingKey     | String  | X        | 수신자 그룹핑 키                                           |
 | - totalCount                | Integer | O        | 총 개수                                                                  |
 
+<a id="view-single-sending"></a>
+
 ## 발송 단건 조회
+
+<a id="requested-6"></a>
 
 #### 요청
 
@@ -1551,6 +1611,8 @@ Content-Type: application/json;charset=UTF-8
 | 이름           | 타입     | 필수 | 설명               |
 |--------------|--------|----|------------------|
 | X-Secret-Key | String | O  | 콘솔에서 생성할 수 있습니다. |
+
+<a id="response-6"></a>
 
 #### 응답
 
@@ -1812,7 +1874,11 @@ Content-Type: application/json;charset=UTF-8
 | - senderGroupingKey   | String  | X        | 발신 그룹핑 키                                                 |
 | - recipientGroupingKey | String  | X        | 수신자 그룹핑 키                                           |
 
+<a id="cancel-message-sending"></a>
+
 ## 메시지 발송 취소
+
+<a id="requested-7"></a>
 
 #### 요청
 
@@ -1848,6 +1914,8 @@ Content-Type: application/json;charset=UTF-8
 |--------------|---------|-----|---------------------------------------------|
 | recipientSeq | 	String | 	X  | 수신자 시퀀스 번호<br>(입력하지 않으면 요청 ID의 모든 발송 건을 취소) |
 
+<a id="response-7"></a>
+
 #### 응답
 
 ```
@@ -1872,9 +1940,15 @@ Content-Type: application/json;charset=UTF-8
 curl -X DELETE -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" "https://kakaotalk-bizmessage.api.nhncloudservice.com/brand-message/v1.0/appkeys/{appkey}/messages/{requestId}?recipientSeq=1,2,3"
 ```
 
+<a id="manage-templates"></a>
+
 ## 템플릿 관리
 
+<a id="view-template-list"></a>
+
 ### 템플릿 리스트 조회
+
+<a id="requested-8"></a>
 
 #### 요청
 
@@ -1913,6 +1987,8 @@ Content-Type: application/json;charset=UTF-8
 | status       | String  | X  | 템플릿 상태 코드                     |
 | pageNum      | Integer | X  | 페이지 번호(Default: 1)            |
 | pageSize     | Integer | X  | 조회 건수(Default: 15, Max: 1000) |
+
+<a id="response-8"></a>
 
 #### 응답
 
@@ -2141,6 +2217,8 @@ Content-Type: application/json;charset=UTF-8
 | --- updateDate          | String  | X        | 수정 일시                                  |
 | - totalCount            | Integer | O        | 총 개수                                   |
 
+<a id="view-single-template"></a>
+
 ### 템플릿 단건 조회
 
 [URL]
@@ -2170,6 +2248,8 @@ Content-Type: application/json;charset=UTF-8
 |--------------|--------|----|------------------|
 | X-Secret-Key | String | O  | 콘솔에서 생성할 수 있습니다. |
 |X-NC-API-IDEMPOTENCY-KEY|	String| X | 중복 메시지 발송 요청 기준 key<br>10분간 동일한 key로 요청 시 해당 요청을 실패 처리합니다. |
+
+<a id="response-9"></a>
 
 #### 응답
 
@@ -2392,7 +2472,11 @@ Content-Type: application/json;charset=UTF-8
 | - createDate          | String  | O        | 등록 일시                |
 | - updateDate          | String  | X        | 수정 일시                |
 
+<a id="register-template"></a>
+
 ### 템플릿 등록
+
+<a id="requested-9"></a>
 
 #### 요청
 
@@ -2422,6 +2506,8 @@ Content-Type: application/json;charset=UTF-8
 |--------------|--------|----|------------------|
 | X-Secret-Key | String | O  | 콘솔에서 생성할 수 있습니다. |
 
+<a id="note"></a>
+
 #### 유의 사항
 
 * 쿠폰 제목에 치환자를 적용할 경우 다음과 같은 고정 치환자를 사용해야 합니다.
@@ -2440,6 +2526,8 @@ Content-Type: application/json;charset=UTF-8
     * discountPrice -> #{할인가격}
     * discountRate -> #{할인율}
     * discountFixed -> #{정액할인가격}
+
+<a id="request-to-register-text-type-template"></a>
 
 #### 텍스트형 템플릿 등록 요청
 
@@ -2494,6 +2582,8 @@ Content-Type: application/json;charset=UTF-8
 | - linkPc        | String  | X  | PC 웹 링크(WL 타입일 경우 선택 필드), 500자 제한                                                                                                                                                                                                            |
 | - schemeAndroid | String  | X  | 안드로이드 앱 링크(AL 타입일 경우 필수 필드), 500자 제한<br>쿠폰에 linkMo 필드를 입력할 경우 나머지 필드는 선택 사항(옵션)이 되며,<br>scheme_android 또는 scheme_ios 필드에 채널 쿠폰 URL(형식: alimtalk=coupon://)을 입력할 경우 나머지 필드가 선택 사항(옵션)이 됩니다.                                                   |
 | - schemeIos     | String  | X  | iOS 앱 링크(AL 타입일 경우 필수 필드), 500자 제한<br>쿠폰에 linkMo 필드를 입력할 경우 나머지 필드는 선택 사항(옵션)이 되며,<br>scheme_android 또는 scheme_ios 필드에 채널 쿠폰 URL(형식: alimtalk=coupon://)을 입력할 경우 나머지 필드가 선택 사항(옵션)이 됩니다.                                                     |
+
+<a id="request-to-register-image-type-template"></a>
 
 #### 이미지형 템플릿 등록 요청
 
@@ -2556,6 +2646,8 @@ Content-Type: application/json;charset=UTF-8
 | - schemeAndroid | String  | X  | 안드로이드 앱 링크(AL 타입일 경우 필수 필드), 500자 제한<br>쿠폰에 linkMo 필드를 입력할 경우 나머지 필드는 선택 사항(옵션)이 되며,<br>scheme_android 또는 scheme_ios 필드에 채널 쿠폰 URL(형식: alimtalk=coupon://)을 입력할 경우 나머지 필드가 선택 사항(옵션)이 됩니다.                                                       |
 | - schemeIos     | String  | X  | iOS 앱 링크(AL 타입일 경우 필수 필드), 500자 제한<br>쿠폰에 linkMo 필드를 입력할 경우 나머지 필드는 선택 사항(옵션)이 되며,<br>scheme_android 또는 scheme_ios 필드에 채널 쿠폰 URL(형식: alimtalk=coupon://)을 입력할 경우 나머지 필드가 선택 사항(옵션)이 됩니다.                                                         |
 
+<a id="request-to-register-wide-image-type-template"></a>
+
 #### 와이드 이미지형 템플릿 등록 요청
 
 [Request body]
@@ -2616,6 +2708,8 @@ Content-Type: application/json;charset=UTF-8
 | - linkPc        | String  | X  | PC 웹 링크(WL 타입일 경우 선택 필드), 500자 제한                                                                                                                                                                                                                |
 | - schemeAndroid | String  | X  | 안드로이드 앱 링크(AL 타입일 경우 필수 필드), 500자 제한<br>쿠폰에 linkMo 필드를 입력할 경우 나머지 필드는 선택 사항(옵션)이 되며,<br>scheme_android 또는 scheme_ios 필드에 채널 쿠폰 URL(형식: alimtalk=coupon://)을 입력할 경우 나머지 필드가 선택 사항(옵션)이 됩니다.                                                       |
 | - schemeIos     | String  | X  | iOS 앱 링크(AL 타입일 경우 필수 필드), 500자 제한<br>쿠폰에 linkMo 필드를 입력할 경우 나머지 필드는 선택 사항(옵션)이 되며,<br>scheme_android 또는 scheme_ios 필드에 채널 쿠폰 URL(형식: alimtalk=coupon://)을 입력할 경우 나머지 필드가 선택 사항(옵션)이 됩니다.                                                         |
+
+<a id="request-to-register-wide-item-list-type-template"></a>
 
 #### 와이드 아이템리스트형 템플릿 등록 요청
 
@@ -2707,6 +2801,8 @@ Content-Type: application/json;charset=UTF-8
 | - schemeAndroid  | String  | X  | 안드로이드 앱 링크(AL 타입일 경우 필수 필드), 500자 제한<br>쿠폰에 linkMo 필드를 입력할 경우 나머지 필드는 선택 사항(옵션)이 되며,<br>scheme_android 또는 scheme_ios 필드에 채널 쿠폰 URL(형식: alimtalk=coupon://)을 입력할 경우 나머지 필드가 선택 사항(옵션)이 됩니다.                                     |
 | - schemeIos      | String  | X  | iOS 앱 링크(AL 타입일 경우 필수 필드), 500자 제한<br>쿠폰에 linkMo 필드를 입력할 경우 나머지 필드는 선택 사항(옵션)이 되며,<br>scheme_android 또는 scheme_ios 필드에 채널 쿠폰 URL(형식: alimtalk=coupon://)을 입력할 경우 나머지 필드가 선택 사항(옵션)이 됩니다.                                       |
 
+<a id="request-to-register-premium-video-type-template"></a>
+
 #### 프리미엄 동영상형 템플릿 등록 요청
 
 [Request body]
@@ -2769,6 +2865,8 @@ Content-Type: application/json;charset=UTF-8
 | - linkPc        | String  | X  | PC 웹 링크(WL 타입일 경우 선택 필드), 500자 제한                                                                                                                                                                                                                |
 | - schemeAndroid | String  | X  | 안드로이드 앱 링크(AL 타입일 경우 필수 필드), 500자 제한<br>쿠폰에 linkMo 필드를 입력할 경우 나머지 필드는 선택 사항(옵션)이 되며,<br>scheme_android 또는 scheme_ios 필드에 채널 쿠폰 URL(형식: alimtalk=coupon://)을 입력할 경우 나머지 필드가 선택 사항(옵션)이 됩니다.                                                       |
 | - schemeIos     | String  | X  | iOS 앱 링크(AL 타입일 경우 필수 필드), 500자 제한<br>쿠폰에 linkMo 필드를 입력할 경우 나머지 필드는 선택 사항(옵션)이 되며,<br>scheme_android 또는 scheme_ios 필드에 채널 쿠폰 URL(형식: alimtalk=coupon://)을 입력할 경우 나머지 필드가 선택 사항(옵션)이 됩니다.                                                         |
+
+<a id="request-to-register-commerce-type-template"></a>
 
 #### 커머스형 템플릿 등록 요청
 
@@ -2844,6 +2942,8 @@ Content-Type: application/json;charset=UTF-8
 | - linkPc          | String  | X  | PC 웹 링크(WL 타입일 경우 선택 필드), 500자 제한                                                                                                                                                                                              |
 | - schemeAndroid   | String  | X  | 안드로이드 앱 링크(AL 타입일 경우 필수 필드), 500자 제한<br>쿠폰에 linkMo 필드를 입력할 경우 나머지 필드는 선택 사항(옵션)이 되며,<br>scheme_android 또는 scheme_ios 필드에 채널 쿠폰 URL(형식: alimtalk=coupon://)을 입력할 경우 나머지 필드가 선택 사항(옵션)이 됩니다.                                     |
 | - schemeIos       | String  | X  | iOS 앱 링크(AL 타입일 경우 필수 필드), 500자 제한<br>쿠폰에 linkMo 필드를 입력할 경우 나머지 필드는 선택 사항(옵션)이 되며,<br>scheme_android 또는 scheme_ios 필드에 채널 쿠폰 URL(형식: alimtalk=coupon://)을 입력할 경우 나머지 필드가 선택 사항(옵션)이 됩니다.                                       |
+
+<a id="request-to-register-carousel-feed-type-template"></a>
 
 #### 캐러셀 피드형 템플릿 등록 요청
 
@@ -2955,6 +3055,8 @@ Content-Type: application/json;charset=UTF-8
 | - recipientNo     | String  | O  | 수신 번호                                                                                                                                                                                                                             |
 | createUser        | String  | X  | 등록자(콘솔에서 발송 시 사용자 UUID로 저장)                                                                                                                                                                                                       |
 
+<a id="request-to-register-carousel-commerce-type-template"></a>
+
 #### 캐러셀 커머스형 템플릿 등록 요청
 
 [Request body]
@@ -3063,6 +3165,8 @@ Content-Type: application/json;charset=UTF-8
 | -- schemeAndroid     | String  | X  | 안드로이드 앱 링크, 500자 제한<br>치환자 사용 불가능                                                                                                                                                                                               |
 | -- schemeIos         | String  | X  | iOS 앱 링크, 500자 제한<br>치환자 사용 불가능                                                                                                                                                                                                 |
 
+<a id="response-10"></a>
+
 #### 응답
 
 ```
@@ -3087,7 +3191,11 @@ Content-Type: application/json;charset=UTF-8
 | template        | Object  | X        | 템플릿 정보 |
 | - templateCode  | String  | O        | 템플릿 코드 |
 
+<a id="modify-template"></a>
+
 ### 템플릿 수정
+
+<a id="requested-10"></a>
 
 #### 요청
 
@@ -3122,6 +3230,8 @@ Content-Type: application/json;charset=UTF-8
 
 * 템플릿 등록과 스펙이 같음
 
+<a id="response-11"></a>
+
 #### 응답
 
 ```
@@ -3141,7 +3251,11 @@ Content-Type: application/json;charset=UTF-8
 | - resultMessage | String  | O        | 결과 메시지 |
 | - isSuccessful  | boolean | O        | 성공 여부  |
 
+<a id="delete-template"></a>
+
 ### 템플릿 삭제
+
+<a id="requested-11"></a>
 
 #### 요청
 
@@ -3172,6 +3286,8 @@ Content-Type: application/json;charset=UTF-8
 |--------------|--------|----|------------------|
 | X-Secret-Key | String | O  | 콘솔에서 생성할 수 있습니다. |
 
+<a id="response-12"></a>
+
 #### 응답
 
 ```
@@ -3191,9 +3307,15 @@ Content-Type: application/json;charset=UTF-8
 | - resultMessage | String  | O        | 결과 메시지 |
 | - isSuccessful  | boolean | O        | 성공 여부  |
 
+<a id="manage-image"></a>
+
 ## 이미지 관리
 
+<a id="upload-image"></a>
+
 ### 이미지 업로드
+
+<a id="requested-12"></a>
 
 #### 요청
 
@@ -3229,6 +3351,8 @@ Content-Type: multipart/form-data
 | image     | File   | O  | 이미지                                                                                                                            |
 | imageType | String | O  | 이미지 타입 <br>(IMAGE, WIDE_IMAGE,MAIN_WIDE_ITEMLIST_IMAGE,NORMAL_WIDE_ITEMLIST_IMAGE,CAROUSEL_FEED_IMAGE,CAROUSEL_COMMERCE_IMAGE) |
 
+<a id="response-13"></a>
+
 #### 응답
 
 ```
@@ -3257,6 +3381,8 @@ Content-Type: multipart/form-data
 | - imageUrl      | String  | O        | 이미지 URL |
 | - imageName     | String  | X        | 이미지명    |
 
+<a id="upload-image-specifications"></a>
+
 #### 업로드 이미지 규격
 | 이미지 타입                     | 사용처                                                     | 업로드 이미지 규격                                                                                                                              |
 |:---------------------------|:--------------------------------------------------------|:----------------------------------------------------------------------------------------------------------------------------------------|
@@ -3269,7 +3395,11 @@ Content-Type: multipart/form-data
 
 * 템플릿 수정 시 이미지를 다른 이미지로 변경하면 기존 이미지가 카카오 CDN에서 삭제되어 URL이 유효하지 않게 됩니다. 동일한 이미지를 사용하는 다른 템플릿도 영향을 받으므로 주의가 필요합니다. 이미지 조회 API에서는 이미지 정보가 유지되지만, 실제 이미지에는 접근할 수 없으므로 원본 파일은 자체 서버에 별도로 보관하는 것을 권장합니다.
 
+<a id="view-image"></a>
+
 ### 이미지 조회
+
+<a id="requested-13"></a>
 
 #### 요청
 
@@ -3306,6 +3436,8 @@ Content-Type: application/json;charset=UTF-8
 | pageNum    | String | X  | 페이지 번호(기본: 1)                                                                                                                  |
 | pageSize   | String | X  | 조회 건수(기본: 15)                                                                                                                  |
 
+<a id="response-14"></a>
+
 #### 응답
 
 ```
@@ -3334,7 +3466,11 @@ Content-Type: application/json;charset=UTF-8
 | - imageUrl      | String  | O        | 이미지 URL |
 | - imageName     | String  | X        | 이미지명    |
 
+<a id="delete-image"></a>
+
 ### 이미지 삭제
+
+<a id="requested-14"></a>
 
 #### 요청
 
@@ -3369,6 +3505,8 @@ Content-Type: application/json;charset=UTF-8
 |----------|--------|----|--------|
 | imageSeq | String | O  | 이미지 번호 |
 
+<a id="response-15"></a>
+
 #### 응답
 
 ```
@@ -3388,9 +3526,15 @@ Content-Type: application/json;charset=UTF-8
 | - resultMessage | String  | O        | 결과 메시지 |
 | - isSuccessful  | boolean | O        | 성공 여부  |
 
+<a id="upload"></a>
+
 ## 업로드
 
+<a id="upload-bizform-key"></a>
+
 ### 비즈폼 키 업로드
+
+<a id="requested-15"></a>
 
 #### 요청
 
@@ -3420,6 +3564,8 @@ Content-Type: application/json;charset=UTF-8
 |--------------|--------|----|------------------|
 | X-Secret-Key | String | O  | 콘솔에서 생성할 수 있습니다. |
 
+<a id="response-16"></a>
+
 #### 응답
 
 ```
@@ -3439,9 +3585,15 @@ Content-Type: application/json;charset=UTF-8
 | - resultMessage | String  | O        | 결과 메시지 |
 | - isSuccessful  | boolean | O        | 성공 여부  |
 
+<a id="manage-outgoing-profiles"></a>
+
 ## 발신 프로필 관리
 
+<a id="view-outgoing-profile"></a>
+
 ### 발신 프로필 조회
+
+<a id="requested-16"></a>
 
 #### 요청
 
@@ -3470,6 +3622,8 @@ Content-Type: application/json;charset=UTF-8
 | 이름           | 타입     | 필수 | 설명               |
 |--------------|--------|----|------------------|
 | X-Secret-Key | String | O  | 콘솔에서 생성할 수 있습니다. |
+
+<a id="response-17"></a>
 
 #### 응답
 
@@ -3540,7 +3694,11 @@ Content-Type: application/json;charset=UTF-8
 | - createDate              | String  | X        | 등록 일자                                                                                                                 |
 | - initialUserRestriction  | boolean | O        | 최초 사용자 제한 여부                                                                                                          |
 
+<a id="modify-outgoing-profile-080-opt-out-number"></a>
+
 ### 발신 프로필 080 수신거부번호 수정
+
+<a id="requested-17"></a>
 
 #### 요청
 
@@ -3584,6 +3742,8 @@ Content-Type: application/json;charset=UTF-8
 | unsubscribeNo     | 	String | 	O  | 080 무료수신거부 전화번호(모두 미입력 시 발신 프로필에 등록된 무료수신거부 정보로 발송됨)<br>- 080-xxx-xxxx <br>- 080-xxxx-xxxx <br>- 080xxxxxxx <br>- 080xxxxxxxx  |
 | unsubscribeAuthNo | 	String | 	X  | 080 무료수신거부 인증번호(모두 미입력 시 발신 프로필에 등록된 무료수신거부 정보로 발송됨)<br>unsubscribeNo 없이 unsubscribeAuthNo만 입력 불가<br>예: 1234 |
 
+<a id="response-18"></a>
+
 #### 응답
 
 ```
@@ -3603,7 +3763,11 @@ Content-Type: application/json;charset=UTF-8
 | - resultMessage | String  | O        | 결과 메시지 |
 | - isSuccessful  | boolean | O        | 성공 여부  |
 
+<a id="manage-fallback"></a>
+
 ## 대체 발송 관리
+
+<a id="register-sms-appkey"></a>
 
 ### SMS AppKey 등록
 
@@ -3650,6 +3814,8 @@ Content-Type: application/json;charset=UTF-8
 curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" https://kakaotalk-bizmessage.api.nhncloudservice.com/brand-message/v1.0/appkeys/{appkey}/failback/appkey -d '{"resendAppKey": "smsAppKey"}
 ```
 
+<a id="response-19"></a>
+
 #### 응답
 
 ```
@@ -3662,6 +3828,8 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
   }
 }
 ```
+
+<a id="register-fallback-settings"></a>
 
 ### 대체 발송 설정 등록
 
@@ -3713,6 +3881,8 @@ Content-Type: application/json;charset=UTF-8
 ```
 curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" https://kakaotalk-bizmessage.api.nhncloudservice.com/brand-message/v1.0/appkeys/{appkey}/failback/appkey -d '{"senderKey": "0be23c29de88d6888798aeda57062516354d74ba","isResend": true,"resendSendNo": "01012341234" }
 ```
+
+<a id="response-20"></a>
 
 #### 응답
 
