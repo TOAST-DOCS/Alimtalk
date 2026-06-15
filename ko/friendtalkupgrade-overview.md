@@ -1,8 +1,12 @@
+<!-- pre-align:aligned sig=7eb2dbb75382 -->
+
 ## Notification > KakaoTalk Bizmessage > 브랜드 메시지 > 개요
 
 브랜드 메시지는 광고주(고객사)의 마케팅 수신 동의 회원(이하 마수동)을 대상으로 카카오톡 채널 친구 여부와 관계없이 광고성 메시지를 발송할 수 있는 메시지 상품입니다.
 
 손쉬운 연동을 위한 RESTful API를 제공합니다.
+
+<a id="features"></a>
 
 ## 특징
 
@@ -14,6 +18,8 @@
 * 템플릿 및 자유형 발송이 가능합니다.
 * 브랜드 메시지 발송 실패 시 문자 메시지로 대체 발송 가능합니다.
 
+<a id="main-features"></a>
+
 ## 주요 기능
 
 * 메시지 발송, 조회, 이미지 관리 RESTful API를 제공합니다.
@@ -21,9 +27,13 @@
 * SMS 서비스와 연계하여 080 수신거부를 관리할 수 있습니다.
 * SMS 서비스와 연계하여 대체발송 기능을 제공합니다.
 
+<a id="brand-message-targeting"></a>
+
 ## 브랜드 메시지 타겟팅
 
 ![friendtalkupgrade_1_20250508.png](https://static.toastoven.net/prod_alimtalk/friendtalkupgrade/friendtalkupgrade_1_20250508.png)
+
+<a id="m-advertisers-users-with-marketing-consent"></a>
 
 ### M: 광고주 마수동 유저(카카오톡 수신 동의)
 
@@ -33,6 +43,8 @@
 
 ![friendtalkupgrade_02_20250508.png](https://static.toastoven.net/prod_alimtalk/friendtalkupgrade/friendtalkupgrade_2_20250508.png)
 
+<a id="n-advertisers-users-with-marketing-consent--channel-friend"></a>
+
 ### N: 광고주 마수동 유저(카카오톡 수신 동의) - 채널 친구
 
 * 광고주의 마수동 유저(카카오톡 수신 동의)에서 채널 친구를 제외하고 광고성 메시지를 발송 처리합니다.
@@ -41,9 +53,13 @@
 
 ![friendtalkupgrade_03_20250508.png](https://static.toastoven.net/prod_alimtalk/friendtalkupgrade/friendtalkupgrade_3_20250508.png)
 
+<a id="i-target-of-advertiser-sending-request-channel-friend"></a>
+
 ### I: 광고주 발송 요청 대상 ∩ 채널 친구
 
 * 광고주 발송 요청 대상에서, 채널 친구인 경우에만 광고성 메시지를 발송 처리합니다.
+
+<a id="brand-message-sending-support-type"></a>
 
 ## 브랜드 메시지 발송 지원 타입
 
@@ -61,6 +77,8 @@
 | **커머스**         | - 커머스 타입의 경우 "커머스 이미지 + 커머스 요소 + 부가 정보 + 버튼 + 쿠폰"으로 구성되어 있습니다.<br>- 커머스 이미지와 커머스 요소는 필수이며, 부가 정보, 버튼, 쿠폰 필드는 선택입니다.<br>- 커머스 요소에서, 상품 제목(`title`) 및 정상 가격(`regular_price`) 값은 필수입니다.<br>- 커머스 이미지의 경우, 일반 이미지 업로드 API로 업로드한 이미지를 사용해야 합니다.<br>- `chat_bubble_type: "COMMERCE"`이 이에 해당합니다.                                                                     | 권장 사이즈: 800 X 400px(가로 500px 이상)<br>가로 세로 비율: 2:1 이상, 3:4 이하<br>파일 형식 및 용량 제한: JPG, PNG / 최대 5MB                                                                                                              |
 | **캐러셀 커머스**     | - 캐러셀 커머스 타입의 경우 "캐러셀 인트로 + 1~6 캐러셀 리스트 + 더보기"로 구성되어 있습니다.<br>- 캐러셀 리스트는 필수이며, 캐러셀 인트로와 더보기는 선택입니다.<br>- 캐러셀 인트로를 사용하는 경우, 캐러셀 리스트는 최소 1개 이상 최대 5개 이하로 구성해야 합니다.<br>- 캐러셀 인트로를 사용하지 않은 경우, 캐러셀 리스트는 최소 2개 이상 최대 6개 이하로 구성해야 합니다.<br>- 캐러셀 인트로 및 리스트 이미지의 경우, 캐러셀 커머스 이미지 업로드 API로 업로드한 이미지를 사용해야 합니다.<br>- `chat_bubble_type: "CAROUSEL_COMMERCE"`이 이에 해당합니다. | 권장 사이즈: 800 X 600px 또는 800 X 400px (가로 500px 이상)<br>가로 세로 비율: 2:1 이상, 3:4 이하 (전체 이미지 비율이 동일)<br>파일 형식 및 용량 제한: JPG, PNG / 최대 5MB                                                                              |
 
+<a id="precautions-before-sending"></a>
+
 ## 발송 전 유의사항
 
 비친구 메시지 발송(타겟팅 M, N)은 아래 조건을 모두 만족할 경우 발송할 수 있습니다.
@@ -74,6 +92,8 @@
 재판매사는 메시지 신고 시 KISA로 전달될 재판매사 코드를 추가 등록해야 합니다.
 
 - 재판매사 코드 추가가 필요 경우 [[고객 센터 > 1:1 문의]](https://www.nhncloud.com/kr/support/inquiry)를 통해 요청하세요.
+
+<a id="notice-of-personal-information-consignee"></a>
 
 ## 개인정보 수탁사 고지 안내
 
