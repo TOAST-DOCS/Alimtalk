@@ -1,10 +1,6 @@
 ## Notification > KakaoTalk Bizmessage > Brand Message > API v1.0 Guide
 
-<a id="brand-message"></a>
-
 ## Brand Message
-
-<a id="api-domain"></a>
 
 #### \[API Domain]
 
@@ -12,11 +8,7 @@
 |----------|
 | [https://kakaotalk-bizmessage.api.nhncloudservice.com](https://kakaotalk-bizmessage.api.nhncloudservice.com)|
 
-<a id="introduce-v10-api"></a>
-
 ## Introduce v1.0 API
-
-<a id="manage-non-friend-message-sending-targeting-m-n"></a>
 
 ## Manage non-friend message sending (targeting M, N)
 
@@ -28,11 +20,7 @@ Non-friend message sending (targeting M, N) can be sent if all the conditions be
 - 50,000 or more channel friends
 - Successfully send notification messages within the past three months
 
-<a id="upload-marketing-consent-evidence"></a>
-
 ### Upload marketing consent evidence
-
-<a id="requested"></a>
 
 #### Requested
 
@@ -68,8 +56,6 @@ Content-Type: multipart/form-data
 |----------|----------|----------|----------|
 | file| File| O| Marketing consent evidence|
 
-<a id="response"></a>
-
 #### Response
 
 ```
@@ -89,11 +75,7 @@ Content-Type: multipart/form-data
 | \- resultMessage| String| O| Result message|
 | \- isSuccessful| boolean| O| Success status|
 
-<a id="apply-for-using-non-friend-message-sending-targeting-m-n"></a>
-
 ### Apply for using non-friend message sending (targeting M, N)
-
-<a id="requested-2"></a>
 
 #### Requested
 
@@ -123,8 +105,6 @@ Content-Type: application/json;charset=UTF-8
 |----------|----------|----------|----------|
 | X-Secret-Key| String| O| Available to create from the console.|
 
-<a id="response-2"></a>
-
 #### Response
 
 ```
@@ -143,8 +123,6 @@ Content-Type: application/json;charset=UTF-8
 | \- resultCode| Integer| O| Result code|
 | \- resultMessage| String| O| Result message|
 | \- isSuccessful| boolean| O| Success status|
-
-<a id="request-to-send-a-free-form-message"></a>
 
 ## Request to send a free-form message
 
@@ -167,8 +145,6 @@ Content-Type: application/json;charset=UTF-8
 * Fallback can be set via resendParameter for each recipient.
   * When using fallback, you need to register the SMS Appkey and set its sending through the fallback management API.
   * **Nighttime delivery restrictions(8:50 PM - 8:00 AM the next day)**
-
-<a id="requested-3"></a>
 
 #### Requested
 
@@ -196,8 +172,6 @@ Content-Type: application/json;charset=UTF-8
 | Name| Type| Required| Description|
 |----------|----------|----------|----------|
 | X-Secret-Key| String| O| Available to create from the console.|
-
-<a id="request-text-type-sending"></a>
 
 #### Request text-type sending
 
@@ -302,8 +276,6 @@ Content-Type: application/json;charset=UTF-8
 | resellerCode| String| X| Reseller code (used by resellers when sending)|
 | createUser| String| X| Registrant (stored as user UUID when sent from console)|
 | statsId| String| X| Statistics ID (not included in the outgoing search conditions. Up 8 characters)|
-
-<a id="request-image-type-sending"></a>
 
 #### Request image-type sending
 
@@ -416,8 +388,6 @@ Content-Type: application/json;charset=UTF-8
 | createUser| String| X| Registrant (stored as user UUID when sent from console)|
 | statsId| String| X| Statistics ID (not included in the outgoing search conditions. Up 8 characters)|
 
-<a id="request-wide-image-type-sending"></a>
-
 #### Request wide image-type sending
 
 \[Request body]
@@ -528,8 +498,6 @@ Content-Type: application/json;charset=UTF-8
 | resellerCode| String| X| Reseller code (used by resellers when sending)|
 | createUser| String| X| Registrant (stored as user UUID when sent from console)|
 | statsId| String| X| Statistics ID (not included in the outgoing search conditions. Up 8 characters)|
-
-<a id="request-to-send-wide-item-list-type"></a>
 
 #### Request to send wide item list type
 
@@ -671,8 +639,6 @@ Content-Type: application/json;charset=UTF-8
 | createUser| String| X| Registrant (stored as user UUID when sent from console)|
 | statsId| String| X| Statistics ID (not included in the outgoing search conditions. Up 8 characters)|
 
-<a id="request-to-send-premium-video-type"></a>
-
 #### Request to send premium video type
 
 \[Request body]
@@ -785,8 +751,6 @@ Content-Type: application/json;charset=UTF-8
 | resellerCode| String| X| Reseller code (used by resellers when sending)|
 | createUser| String| X| Registrant (stored as user UUID when sent from console)|
 | statsId| String| X| Statistics ID (not included in the outgoing search conditions. Up 8 characters)|
-
-<a id="request-to-send-commerce"></a>
 
 #### Request to send commerce
 
@@ -911,8 +875,6 @@ Content-Type: application/json;charset=UTF-8
 | resellerCode| String| X| Reseller code (used by resellers when sending)|
 | createUser| String| X| Registrant (stored as user UUID when sent from console)|
 | statsId| String| X| Statistics ID (not included in the outgoing search conditions. Up 8 characters)|
-
-<a id="request-to-send-carousel-feed-type"></a>
 
 #### Request to send carousel feed type
 ##### Carousel fixed placeholders (path-based template parameter)
@@ -1090,8 +1052,6 @@ Allow unique placeholder values for each item in a carousel-type template.
 | createUser| String| X        | Registrant (stored as user UUID when sent from console)|
 | statsId| String| X        | Statistics ID (not included in the outgoing search conditions. Up 8 characters)|
 
-<a id="request-to-send-carousel-commerce-type"></a>
-
 #### Request to send carousel commerce type
 
 \[Request body]
@@ -1248,8 +1208,6 @@ Allow unique placeholder values for each item in a carousel-type template.
 | createUser| String| X        | Registrant (stored as user UUID when sent from console)|
 | statsId| String| X        | Statistics ID (not included in the outgoing search conditions, up to 8 characters)|
 
-<a id="response-3"></a>
-
 #### Response
 
 ```
@@ -1287,8 +1245,6 @@ Allow unique placeholder values for each item in a carousel-type template.
 | \-- resultCode| Integer| O| Recipient-specific sending result code (success and various failure codes may exist)|
 | \-- resultMessage| String| O| Recipient-specific sending result message ("success" or a related message on success, detailed message on failure, cause on failure)|
 
-<a id="request-to-send-basic-message"></a>
-
 ## Request to send basic message
 
 * A sending using a template.
@@ -1304,8 +1260,6 @@ Allow unique placeholder values for each item in a carousel-type template.
 * Fallback can be set via resendParameter for each recipient.
   * When using fallback, you need to register the SMS Appkey and set its send through the fallback management API.
 * **Nighttime delivery restrictions(8:50 PM - 8:00 AM the next day)**
-
-<a id="cautions-for-use"></a>
 
 ### Cautions for use
 
@@ -1338,8 +1292,6 @@ Content-Type: application/json;charset=UTF-8
 | Name| Type| Required| Description|
 |----------|----------|----------|----------|
 | X-Secret-Key| String| O| Available to create from the console.|
-
-<a id="requested-4"></a>
 
 #### Requested
 
@@ -1407,8 +1359,6 @@ Content-Type: application/json;charset=UTF-8
 | createUser| String| X| Registrant (stored as user UUID when sent from console)|
 | statsId| String| X| Statistics ID (not included in the outgoing search conditions, up to 8 characters)|
 
-<a id="response-4"></a>
-
 #### Response
 
 ```
@@ -1446,11 +1396,7 @@ Content-Type: application/json;charset=UTF-8
 | \-- resultCode| Integer| O| Recipient-specific sending result code (success and various failure codes may exist)|
 | \-- resultMessage| String| O| Recipient-specific sending result message ("success" or a related message on success, detailed message on failure, cause on failure)|
 
-<a id="view-sending-list"></a>
-
 ## View sending list
-
-<a id="requested-5"></a>
 
 #### Requested
 
@@ -1495,8 +1441,6 @@ Content-Type: application/json;charset=UTF-8
 | recipientGroupingKey| String| X| Recipient grouping key|
 | pageNum| String| X| Page number (default: 1\)|
 | pageSize| String| X| Number of views (default: 15, Max: 1,000)|
-
-<a id="response-5"></a>
 
 #### Response
 
@@ -1573,11 +1517,7 @@ Content-Type: application/json;charset=UTF-8
 | \-- recipientGroupingKey| String| X| Recipient grouping key|
 | \- totalCount| Integer| O| Total|
 
-<a id="view-single-sending"></a>
-
 ## View single sending
-
-<a id="requested-6"></a>
 
 #### Requested
 
@@ -1607,8 +1547,6 @@ Content-Type: application/json;charset=UTF-8
 | Name| Type| Required| Description|
 |----------|----------|----------|----------|
 | X-Secret-Key| String| O| Available to create from the console.|
-
-<a id="response-6"></a>
 
 #### Response
 
@@ -1870,11 +1808,7 @@ Content-Type: application/json;charset=UTF-8
 | \- senderGroupingKey| String| X| Outgoing grouping key|
 | \- recipientGroupingKey| String| X| Recipient grouping key|
 
-<a id="cancel-message-sending"></a>
-
 ## Cancel message sending
-
-<a id="requested-7"></a>
 
 #### Requested
 
@@ -1910,8 +1844,6 @@ Content-Type: application/json;charset=UTF-8
 |----------|----------|----------|----------|
 | recipientSeq| String| X| Recipient sequence number<br>(If you do not enter any information, all requests for that request ID will be canceled)|
 
-<a id="response-7"></a>
-
 #### Response
 
 ```
@@ -1937,15 +1869,9 @@ Content-Type: application/json;charset=UTF-8
 curl -X DELETE -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" "https://kakaotalk-bizmessage.api.nhncloudservice.com/brand-message/v1.0/appkeys/{appkey}/messages/{requestId}?recipientSeq=1,2,3"
 ```
 
-<a id="manage-templates"></a>
-
 ## Manage Templates
 
-<a id="view-template-list"></a>
-
 ### View template list
-
-<a id="requested-8"></a>
 
 #### Requested
 
@@ -1984,8 +1910,6 @@ Content-Type: application/json;charset=UTF-8
 | status| String| X| Template status code|
 | pageNum| Integer| X| Page number (Default: 1\)|
 | pageSize| Integer| X| Number of views (default: 15, Max: 1,000)|
-
-<a id="response-8"></a>
 
 #### Response
 
@@ -2214,8 +2138,6 @@ Content-Type: application/json;charset=UTF-8
 | \--- updateDate| String| X| Modified on|
 | \- totalCount| Integer| O| Total|
 
-<a id="view-single-template"></a>
-
 ### View single template
 
 \[URL]
@@ -2245,8 +2167,6 @@ Content-Type: application/json;charset=UTF-8
 |----------|----------|----------|----------|
 | X-Secret-Key| String| O| Available to create from the console.|
 | X-NC-API-IDEMPOTENCY-KEY | String | X | Key used as the basis for duplicate message delivery request detection<br>If a request is made with the same key within 10 minutes, the request will be treated as failed. |
-
-<a id="response-9"></a>
 
 #### Response
 
@@ -2469,11 +2389,7 @@ Content-Type: application/json;charset=UTF-8
 | \- createDate| String| O| Registered on|
 | \- updateDate| String| X| Modified on|
 
-<a id="register-template"></a>
-
 ### Register Template
-
-<a id="requested-9"></a>
 
 #### Requested
 
@@ -2503,8 +2419,6 @@ Content-Type: application/json;charset=UTF-8
 |----------|----------|----------|----------|
 | X-Secret-Key| String| O| Available to create from the console.|
 
-<a id="note"></a>
-
 #### Note
 
 * If applying placeholders to coupon titles, you must use the following fixed placeholders:
@@ -2523,8 +2437,6 @@ Content-Type: application/json;charset=UTF-8
   * discountPrice -> #{discount price}
   * discountRate -> #{discount rate}
   * discountFixed -> #{fixed discount price}
-
-<a id="request-to-register-text-type-template"></a>
 
 #### Request to register text type template
 
@@ -2579,8 +2491,6 @@ Content-Type: application/json;charset=UTF-8
 | \- linkPc| String| X| PC web link (optional for WL type), limited to 500 characters|
 | \- schemeAndroid| String| X| Android app link (required for AL type), limited to 500 characters<br>If entering linkMo field in the coupon, the remaining fields become optional.<br>If entering the channel coupon URL (format: alimtalk=coupon://) in the scheme_android or scheme_ios field, the remaining fields become optional.|
 | \- schemeIos| String| X| iOS app link (required field for AL type), limited to 500 characters<br>If entering linkMo field in the coupon, the remaining fields become optional.<br>If entering the channel coupon URL (format: alimtalk=coupon://) in the scheme_android or scheme_ios field, the remaining fields become optional.|
-
-<a id="request-to-register-image-type-template"></a>
 
 #### Request to register image type template
 
@@ -2643,8 +2553,6 @@ Content-Type: application/json;charset=UTF-8
 | \- schemeAndroid| String| X        | Android app link (required for AL type), limited to 500 characters<br>If entering linkMo field in the coupon, the remaining fields become optional.<br>If entering the channel coupon URL (format: alimtalk=coupon://) in the scheme_android or scheme_ios field, the remaining fields become optional.|
 | \- schemeIos| String| X        | iOS app link (required field for AL type), limited to 500 characters<br>If entering linkMo field in the coupon, the remaining fields become optional.<br>If entering the channel coupon URL (format: alimtalk=coupon://) in the scheme_android or scheme_ios field, the remaining fields become optional.|
 
-<a id="request-to-register-wide-image-type-template"></a>
-
 #### Request to register wide image type template
 
 \[Request body]
@@ -2705,8 +2613,6 @@ Content-Type: application/json;charset=UTF-8
 | \- linkPc| String| X        | PC web link (optional for WL type), limited to 500 characters|
 | \- schemeAndroid| String| X        | Android app link (required for AL type), limited to 500 characters<br>If entering linkMo field in the coupon, the remaining fields become optional.<br>If entering the channel coupon URL (format: alimtalk=coupon://) in the scheme_android or scheme_ios field, the remaining fields become optional.|
 | \- schemeIos| String| X        | iOS app link (required field for AL type), limited to 500 characters<br>If entering linkMo field in the coupon, the remaining fields become optional.<br>If entering the channel coupon URL (format: alimtalk=coupon://) in the scheme_android or scheme_ios field, the remaining fields become optional.|
-
-<a id="request-to-register-wide-item-list-type-template"></a>
 
 #### Request to register wide item list type template
 
@@ -2798,8 +2704,6 @@ Content-Type: application/json;charset=UTF-8
 | \- schemeAndroid| String| X| Android app link (required for AL type), limited to 500 characters<br>If entering linkMo field in the coupon, the remaining fields become optional.<br>If entering the channel coupon URL (format: alimtalk=coupon://) in the scheme_android or scheme_ios field, the remaining fields become optional.|
 | \- schemeIos| String| X| iOS app link (required field for AL type), limited to 500 characters<br>If entering linkMo field in the coupon, the remaining fields become optional.<br>If entering the channel coupon URL (format: alimtalk=coupon://) in the scheme_android or scheme_ios field, the remaining fields become optional.|
 
-<a id="request-to-register-premium-video-type-template"></a>
-
 #### Request to register premium video type template
 
 \[Request body]
@@ -2862,8 +2766,6 @@ Content-Type: application/json;charset=UTF-8
 | \- linkPc| String| X| PC web link (optional for WL type), limited to 500 characters|
 | \- schemeAndroid| String| X| Android app link (required for AL type), limited to 500 characters<br>If entering linkMo field in the coupon, the remaining fields become optional.<br>If entering the channel coupon URL (format: alimtalk=coupon://) in the scheme_android or scheme_ios field, the remaining fields become optional.|
 | \- schemeIos| String| X| iOS app link (required field for AL type), limited to 500 characters<br>If entering linkMo field in the coupon, the remaining fields become optional.<br>If entering the channel coupon URL (format: alimtalk=coupon://) in the scheme_android or scheme_ios field, the remaining fields become optional.|
-
-<a id="request-to-register-commerce-type-template"></a>
 
 #### Request to register commerce type template
 
@@ -2939,8 +2841,6 @@ Content-Type: application/json;charset=UTF-8
 | \- linkPc| String| X        | PC web link (optional for WL type), limited to 500 characters|
 | \- schemeAndroid| String| X        | Android app link (required for AL type), limited to 500 characters<br>If entering linkMo field in the coupon, the remaining fields become optional.<br>If entering the channel coupon URL (format: alimtalk=coupon://) in the scheme_android or scheme_ios field, the remaining fields become optional.|
 | \- schemeIos| String| X        | iOS app link (required field for AL type), limited to 500 characters<br>If entering linkMo field in the coupon, the remaining fields become optional.<br>If entering the channel coupon URL (format: alimtalk=coupon://) in the scheme_android or scheme_ios field, the remaining fields become optional.|
-
-<a id="request-to-register-carousel-feed-type-template"></a>
 
 #### Request to register carousel feed type template
 
@@ -3052,8 +2952,6 @@ Content-Type: application/json;charset=UTF-8
 | \- recipientNo| String| O        | Incoming number|
 | createUser| String| X        | Registrant (stored as user UUID when sent from console)|
 
-<a id="request-to-register-carousel-commerce-type-template"></a>
-
 #### Request to register carousel commerce type template
 
 \[Request body]
@@ -3162,8 +3060,6 @@ Content-Type: application/json;charset=UTF-8
 | \-- schemeAndroid| String| X        | Android app link, limited to 500 characters<br>No placeholders available|
 | \-- schemeIos| String| X        | iOS app link, limited to 500 characters<br>No placeholders available|
 
-<a id="response-10"></a>
-
 #### Response
 
 ```
@@ -3188,11 +3084,7 @@ Content-Type: application/json;charset=UTF-8
 | template| Object| X| Template Info|
 | \- templateCode| String| O| Template Code|
 
-<a id="modify-template"></a>
-
 ### Modify Template
-
-<a id="requested-10"></a>
 
 #### Requested
 
@@ -3227,8 +3119,6 @@ Content-Type: application/json;charset=UTF-8
 
 * Same specifications as template registration
 
-<a id="response-11"></a>
-
 #### Response
 
 ```
@@ -3248,11 +3138,7 @@ Content-Type: application/json;charset=UTF-8
 | \- resultMessage| String| O| Result message|
 | \- isSuccessful| boolean| O| Success status|
 
-<a id="delete-template"></a>
-
 ### Delete Template
-
-<a id="requested-11"></a>
 
 #### Requested
 
@@ -3283,8 +3169,6 @@ Content-Type: application/json;charset=UTF-8
 |----------|----------|----------|----------|
 | X-Secret-Key| String| O| Available to create from the console.|
 
-<a id="response-12"></a>
-
 #### Response
 
 ```
@@ -3304,15 +3188,9 @@ Content-Type: application/json;charset=UTF-8
 | \- resultMessage| String| O| Result message|
 | \- isSuccessful| boolean| O| Success status|
 
-<a id="manage-image"></a>
-
 ## Manage Image
 
-<a id="upload-image"></a>
-
 ### Upload image
-
-<a id="requested-12"></a>
 
 #### Requested
 
@@ -3348,8 +3226,6 @@ Content-Type: multipart/form-data
 | image| File| O| Image|
 | imageType| String| O| Image type <br>(IMAGE, WIDE_IMAGE,MAIN_WIDE_ITEMLIST_IMAGE,NORMAL_WIDE_ITEMLIST_IMAGE,CAROUSEL_FEED_IMAGE,CAROUSEL_COMMERCE_IMAGE)|
 
-<a id="response-13"></a>
-
 #### Response
 
 ```
@@ -3378,8 +3254,6 @@ Content-Type: multipart/form-data
 | \- imageUrl| String| O| Image URL|
 | \- imageName| String| X| Image Name|
 
-<a id="upload-image-specifications"></a>
-
 #### Upload Image Specifications
 | Image Type                 | Usage                                                                   | Upload Image Specifications                                                                                                                                                      |
 | :------------------------- | :---------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -3392,11 +3266,7 @@ Content-Type: multipart/form-data
 
 * If all templates referencing an uploaded image are deleted or changed to a different image, the image will be removed from the Kakao CDN, making the URL invalid. While image information is retained in the Image Retrieval API, the actual image cannot be accessed. It is recommended to store the original file separately on your own server.
 
-<a id="view-image"></a>
-
 ### View image
-
-<a id="requested-13"></a>
 
 #### Requested
 
@@ -3433,8 +3303,6 @@ Content-Type: application/json;charset=UTF-8
 | pageNum| String| X| Page number (default: 1\)|
 | pageSize| String| X| Number of views (default: 15\)|
 
-<a id="response-14"></a>
-
 #### Response
 
 ```
@@ -3463,11 +3331,7 @@ Content-Type: application/json;charset=UTF-8
 | \- imageUrl| String| O| Image URL|
 | \- imageName| String| X| Image Name|
 
-<a id="delete-image"></a>
-
 ### Delete Image
-
-<a id="requested-14"></a>
 
 #### Requested
 
@@ -3502,8 +3366,6 @@ Content-Type: application/json;charset=UTF-8
 |----------|----------|----------|----------|
 | imageSeq| String| O| Image number|
 
-<a id="response-15"></a>
-
 #### Response
 
 ```
@@ -3523,15 +3385,9 @@ Content-Type: application/json;charset=UTF-8
 | \- resultMessage| String| O| Result message|
 | \- isSuccessful| boolean| O| Success status|
 
-<a id="upload"></a>
-
 ## Upload
 
-<a id="upload-bizform-key"></a>
-
 ### Upload Bizform key
-
-<a id="requested-15"></a>
 
 #### Requested
 
@@ -3561,8 +3417,6 @@ Content-Type: application/json;charset=UTF-8
 |----------|----------|----------|----------|
 | X-Secret-Key| String| O| Available to create from the console.|
 
-<a id="response-16"></a>
-
 #### Response
 
 ```
@@ -3582,15 +3436,9 @@ Content-Type: application/json;charset=UTF-8
 | \- resultMessage| String| O| Result message|
 | \- isSuccessful| boolean| O| Success status|
 
-<a id="manage-outgoing-profiles"></a>
-
 ## Manage Outgoing Profiles
 
-<a id="view-outgoing-profile"></a>
-
 ### View outgoing profile
-
-<a id="requested-16"></a>
 
 #### Requested
 
@@ -3619,8 +3467,6 @@ Content-Type: application/json;charset=UTF-8
 | Name| Type| Required| Description|
 |----------|----------|----------|----------|
 | X-Secret-Key| String| O| Available to create from the console.|
-
-<a id="response-17"></a>
 
 #### Response
 
@@ -3691,11 +3537,7 @@ Content-Type: application/json;charset=UTF-8
 | \- createDate| String| X| Registered Date|
 | \- initialUserRestriction| boolean| O| First-time user restriction status|
 
-<a id="modify-outgoing-profile-080-opt-out-number"></a>
-
 ### Modify outgoing profile 080 opt-out number
-
-<a id="requested-17"></a>
 
 #### Requested
 
@@ -3739,8 +3581,6 @@ Content-Type: application/json;charset=UTF-8
 | unsubscribeNo| String| O| 080 toll-free opt-out phone number (If not entered, the message will be sent using the free opt-out information registered in the outgoing profile)<br>- 080-xxx-xxxx <br>- 080-xxxx-xxxx <br>- 080xxxxxxx <br>- 080xxxxxxxx|
 | unsubscribeAuthNo| String| X| 080 toll-free opt-out verification number (If not entered, the message will be sent using the free opt-out information registered in the outgoing profile)<br>unsubscribeAuthNo cannot be entered without unsubscribeNo<br>ex) 1234|
 
-<a id="response-18"></a>
-
 #### Response
 
 ```
@@ -3760,11 +3600,7 @@ Content-Type: application/json;charset=UTF-8
 | \- resultMessage| String| O| Result message|
 | \- isSuccessful| boolean| O| Success status|
 
-<a id="manage-fallback"></a>
-
 ## Manage Fallback
-
-<a id="register-sms-appkey"></a>
 
 ### Register SMS AppKey
 
@@ -3811,8 +3647,6 @@ Content-Type: application/json;charset=UTF-8
 curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" https://kakaotalk-bizmessage.api.nhncloudservice.com/brand-message/v1.0/appkeys/{appkey}/failback/appkey -d '{"resendAppKey": "smsAppKey"}
 ```
 
-<a id="response-19"></a>
-
 #### Response
 
 ```
@@ -3825,8 +3659,6 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
   }
 }
 ```
-
-<a id="register-fallback-settings"></a>
 
 ### Register fallback settings
 
@@ -3878,8 +3710,6 @@ Content-Type: application/json;charset=UTF-8
 ```
 curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" https://kakaotalk-bizmessage.api.nhncloudservice.com/brand-message/v1.0/appkeys/{appkey}/failback/appkey -d '{"senderKey": "0be23c29de88d6888798aeda57062516354d74ba","isResend": true,"resendSendNo": "01012341234" }
 ```
-
-<a id="response-20"></a>
 
 #### Response
 
