@@ -3413,14 +3413,14 @@ Content-Type: application/json;charset=UTF-8
 
 ```
 POST  /brand-message/v1.0/appkeys/{appKey}/videos
-Content-Type: application/json
+Content-Type: application/json;charset=UTF-8
 ```
 
 [Path parameter]
 
 | 이름     | 타입     | 설명     |
 |--------|--------|--------|
-| appkey | String | 고유의 앱키 |
+| appKey | String | 고유의 앱키 |
 
 [Header]
 
@@ -3449,7 +3449,7 @@ Content-Type: application/json
 |------------|--------|----|---------------------------------------------------------------------|
 | senderKey  | String | O  | 발신 프로필 키 (40자)                                                       |
 | fileName   | String | O  | 동영상 파일명 (확장자 포함, MP4·MOV·AVI 중 하나, 최대 250자)                          |
-| fileSize   | Long   | O  | 동영상 파일 크기 (byte, 최대 4GB = 4294967296)                                |
+| fileSize   | Long   | O  | 동영상 파일 크기 (byte, 최대 4GB)                                              |
 | createUser | String | X  | 업로드 사용자 식별자 (최대 100자)                                                |
 
 #### 응답
@@ -3566,7 +3566,7 @@ Content-Type: application/json;charset=UTF-8
 
 | 이름     | 타입     | 설명     |
 |--------|--------|--------|
-| appkey | String | 고유의 앱키 |
+| appKey | String | 고유의 앱키 |
 
 [Header]
 
@@ -3620,17 +3620,30 @@ Content-Type: application/json;charset=UTF-8
 }
 ```
 
-| 이름                | 타입      | Not Null | 설명         |
-|:------------------|:--------|:---------|:-----------|
-| header            | Object  | O        | 헤더 영역      |
-| - resultCode      | Integer | O        | 결과 코드      |
-| - resultMessage   | String  | O        | 결과 메시지     |
-| - isSuccessful    | boolean | O        | 성공 여부      |
-| videosResponse    | Object  | X        | 동영상 목록 영역  |
-| - videos          | Array   | O        | 동영상 배열     |
-| - totalCount      | Integer | O        | 전체 동영상 수   |
+| 이름                  | 타입      | Not Null | 설명                                                          |
+|:--------------------|:--------|:---------|:------------------------------------------------------------|
+| header              | Object  | O        | 헤더 영역                                                       |
+| - resultCode        | Integer | O        | 결과 코드                                                       |
+| - resultMessage     | String  | O        | 결과 메시지                                                      |
+| - isSuccessful      | boolean | O        | 성공 여부                                                       |
+| videosResponse      | Object  | X        | 동영상 목록 영역                                                   |
+| - videos            | Array   | O        | 동영상 배열                                                      |
+| - - videoSeq        | Long    | O        | 동영상 시퀀스                                                     |
+| - - vid             | String  | O        | 카카오 동영상 ID                                                  |
+| - - senderKey       | String  | O        | 발신 프로필 키                                                    |
+| - - title           | String  | X        | 동영상 제목 (업로드 직후에는 파일명, 인코딩 완료 후 카카오 비즈센터에서 수정한 값으로 동기화됨)    |
+| - - fileName        | String  | O        | 업로드 파일명                                                     |
+| - - fileSize        | Long    | O        | 파일 크기 (byte)                                                |
+| - - status          | String  | O        | 동영상 상태 ([동영상 상태](#동영상-상태) 참고)                              |
+| - - thumbnailUrl    | String  | X        | 썸네일 URL (인코딩 완료 후 제공)                                       |
+| - - videoUrl        | String  | X        | 발송·관리용 URL (`PUBLIC` 상태에서 제공)                               |
+| - - playUrl         | String  | X        | 재생용 URL                                                     |
+| - - createDate      | String  | O        | 등록 시각                                                       |
+| - - updateDate      | String  | X        | 상태 동기화 시각 (웹훅/배치 갱신 시 기록)                                    |
+| - - createUser      | String  | X        | 업로드 사용자 식별자                                                 |
+| - totalCount        | Integer | O        | 전체 동영상 수                                                    |
 
-> 각 `videos` 항목의 필드는 [동영상 업로드 응답](#응답)과 동일합니다.
+> 업로드 등록 응답의 `video`는 등록 직후 시점이라 `status`가 항상 `REGISTERED`이며 `thumbnailUrl`·`videoUrl`·`playUrl`·`createDate`·`updateDate`·`createUser` 필드는 포함되지 않습니다. 이 필드들은 인코딩 완료 후 동영상 조회 API에서 확인할 수 있습니다.
 
 ### 동영상 삭제
 
@@ -3647,7 +3660,7 @@ Content-Type: application/json;charset=UTF-8
 
 | 이름     | 타입     | 설명     |
 |--------|--------|--------|
-| appkey | String | 고유의 앱키 |
+| appKey | String | 고유의 앱키 |
 
 [Header]
 
