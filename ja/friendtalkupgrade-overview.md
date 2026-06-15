@@ -1,8 +1,12 @@
+<!-- pre-align:aligned sig=7eb2dbb75382 -->
+
 ## Notification > KakaoTalk Bizmessage > ブランドメッセージ > 概要
 
 ブランドメッセージは、広告主(クライアント企業)のマーケティング受信に同意した会員(以下、マーケティング受信同意)を対象に、カカオトークのチャネルの友だちであるかどうかにかかわらず、広告メッセージを送信できるメッセージ商品です。
 
 簡単な連携のためのRESTful APIを提供します。
+
+<a id="features"></a>
 
 ## 特徴
 
@@ -15,6 +19,8 @@
 * テンプレート及び自由形式での送信が可能です。
 * ブランドメッセージの送信に失敗した場合、テキストメッセージでの代替送信が可能です。
 
+<a id="main-features"></a>
+
 ## 主な機能
 
 * メッセージの送信、照会、画像管理のためのRESTful APIを提供します。
@@ -22,9 +28,13 @@
 * SMSサービスと連携して080受信拒否を管理できます。
 * SMSサービスと連携して代替送信機能を提供します。
 
+<a id="brand-message-targeting"></a>
+
 ## ブランドメッセージのターゲティング
 
 ![friendtalkupgrade_1_20250508.png](https://static.toastoven.net/prod_alimtalk/friendtalkupgrade/friendtalkupgrade_1_20250508.png)
+
+<a id="m-advertisers-users-with-marketing-consent"></a>
 
 ### M: 広告主のマーケティング受信に同意したユーザー(カカオトークでの受信に同意)
 
@@ -34,6 +44,8 @@
 
 ![friendtalkupgrade_02_20250508.png](https://static.toastoven.net/prod_alimtalk/friendtalkupgrade/friendtalkupgrade_2_20250508.png)
 
+<a id="n-advertisers-users-with-marketing-consent--channel-friend"></a>
+
 ### N: 広告主のマーケティング受信に同意したユーザー(カカオトークでの受信に同意) - チャネルの友だち
 
 * 広告主のマーケティング受信に同意したユーザー(カカオトークでの受信に同意)から、チャネルの友だちを除いて広告メッセージを送信します。
@@ -42,9 +54,13 @@
 
 ![friendtalkupgrade_03_20250508.png](https://static.toastoven.net/prod_alimtalk/friendtalkupgrade/friendtalkupgrade_3_20250508.png)
 
+<a id="i-target-of-advertiser-sending-request-channel-friend"></a>
+
 ### I: 広告主の送信リクエスト対象 ∩ チャネルの友だち
 
 * 広告主の送信リクエスト対象のうち、チャネルの友だちである場合にのみ広告メッセージを送信します。
+
+<a id="brand-message-sending-support-type"></a>
 
 ## ブランドメッセージでサポートされる送信タイプ
 
@@ -63,6 +79,8 @@
 | **コマース**         | - コマースタイプの場合、「コマース画像 + コマース要素 + 付加情報 + ボタン + クーポン」で構成されます。<br>- コマース画像とコマース要素は必須で、付加情報、ボタン、クーポンフィールドは任意です。<br>- コマース要素では、商品名(`title`)及び通常価格(`regular_price`)の値は必須です。<br>- コマース画像の場合、通常画像アップロードAPIでアップロードした画像を使用する必要があります。<br>- `chat_bubble_type: "COMMERCE"`がこれに該当します。                                                                                   | 推奨サイズ: 800 X 400px(横500px以上)<br>アスペクト比: 2:1以上、3:4以下<br>ファイル形式及び容量制限: JPG、PNG / 最大5MB                                                                                                              |
 | **カルーセルコマース**     | - カルーセルコマースタイプの場合、「カルーセルイントロ + 1～6 カルーセルリスト + もっと見る」で構成されます。<br>- カルーセルリストは必須で、カルーセルイントロと「もっと見る」は任意です。<br>- カルーセルイントロを使用する場合、カルーセルリストは最小1個以上、最大5個以下で構成する必要があります。<br>- カルーセルイントロを使用しない場合、カルーセルリストは最小2個以上、最大6個以下で構成する必要があります。<br>- カルーセルイントロ及びリストの画像の場合、カルーセルコマース画像アップロードAPIでアップロードした画像を使用する必要があります。<br>- `chat_bubble_type: "CAROUSEL_COMMERCE"`がこれに該当します。 | 推奨サイズ: 800 X 600px または 800 X 400px (横500px以上)<br>アスペクト比: 2:1以上、3:4以下 (全ての画像の比率が同一であること)<br>ファイル形式及び容量制限: JPG、PNG / 最大5MB                                                                              |
 
+<a id="precautions-before-sending"></a>
+
 ## 送信前の注意事項
 
 非友だちメッセージ送信(ターゲティング M, N)は、以下の条件を全て満たす場合に送信できます。
@@ -76,6 +94,8 @@
 販売代理店は、メッセージが通報された際にKISAへ伝達される販売代理店コードを追加登録する必要があります。
 
 - 販売代理店コードの追加が必要な場合は、[[カスタマーセンター > 1:1お問い合わせ]](https://www.nhncloud.com/kr/support/inquiry)からご依頼ください。
+
+<a id="notice-of-personal-information-consignee"></a>
 
 ## 個人情報委託先の告知に関するご案内
 
