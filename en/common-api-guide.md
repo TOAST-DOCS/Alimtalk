@@ -1,6 +1,12 @@
+<!-- pre-align:aligned sig=473d4f693686 -->
+
 ## Notification > KakaoTalk Bizmessage > Common > API v2.2 Guide
 
+<a id="statistics"></a>
+
 ## Statistics
+
+<a id="api-domain"></a>
 
 ### [API Domain]
 
@@ -18,6 +24,8 @@
 </table>
 
 
+<a id="statistics-search---event-based"></a>
+
 ### Statistics Search - Event Based
 * Statistics collected based on the time when the event occurs.
 * Statistics are collected based on the following times:
@@ -27,6 +35,8 @@
     * Failure count(SENT_FAILED): When the delivery request fails or when the delivery result fails
     * Alternative delivery request count(RESENT): Time when the alternative delivery is requested
     * Alternative delivery failure count(RESENT_FAILED): Time when the alternate delivery request fails
+
+<a id="get-statistics-information"></a>
 
 ### Get Statistics Information
 
@@ -104,6 +114,8 @@
 }
 ```
 
+<a id="get-count-per-event"></a>
+
 ### Get Count per Event
 
 [URL]
@@ -153,3 +165,93 @@
     }
 }
 ```
+<a id="kakao-statistics"></a>
+
+## Kakao Statistics
+
+<!-- TODO: translate body -->
+
+<a id="send-statistics"></a>
+
+### Send Statistics
+
+<!-- TODO: translate body -->
+
+<a id="template-statistics"></a>
+
+### Template Statistics
+
+<!-- TODO: translate body -->
+
+<a id="get-alimtalk-send-statistics"></a>
+
+### Get AlimTalk Send Statistics
+
+<!-- TODO: translate body -->
+
+<a id="request"></a>
+
+#### Request
+
+<!-- TODO: translate body -->
+
+<a id="response"></a>
+
+#### Response
+
+<!-- TODO: translate body -->
+
+<a id="get-alimtalk-template-statistics"></a>
+
+### Get AlimTalk Template Statistics
+
+<!-- TODO: translate body -->
+
+<a id="request-2"></a>
+
+#### Request
+
+<!-- TODO: translate body -->
+
+<a id="response-2"></a>
+
+#### Response
+
+<!-- TODO: translate body -->
+
+<a id="get-brand-message-send-statistics"></a>
+
+### Get Brand Message Send Statistics
+
+<!-- TODO: translate body -->
+
+<a id="request-3"></a>
+
+#### Request
+
+<!-- TODO: translate body -->
+
+<a id="response-3"></a>
+
+#### Response
+
+<!-- TODO: translate body -->
+
+<a id="get-brand-message-template-statistics"></a>
+
+### Get Brand Message Template Statistics
+
+<!-- TODO: translate body -->
+
+<a id="request-4"></a>
+
+#### Request
+
+<!-- TODO: translate body -->
+
+<a id="response-4"></a>
+
+#### Response
+
+<!-- TODO: translate body -->
+
