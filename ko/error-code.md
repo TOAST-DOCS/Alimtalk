@@ -1,4 +1,8 @@
+<!-- pre-align:aligned sig=2a9da7055af6 -->
+
 ## Notification > KakaoTalk Bizmessage > 오류 코드
+
+<a id="api-response-code"></a>
 
 ## API 응답 코드
 
@@ -234,6 +238,8 @@
 | 친구톡 호환 발송 | false | -3224 | 캐러셀 커머스 타입은 헤더와 메시지 필드 사용 불가                                                                                                                      | Friendtalk carousel commerce type cannot have 'header' & 'message' fields.                                                                                                                                                                                                                                                                                                 |
 | 친구톡 호환 발송 | false | -3225 | 캐러셀 버튼이 유효하지 않음. 캐러셀 피드 타입은 2개 버튼 초과 불가, 캐러셀 커머스 타입은 1 ~ 2개 버튼 필요                                                                                 | Friendtalk carousel button size is invalid. If the message type is friendtalk carousel-feed, the button size must be 2 or less. If the message type is friendtalk carousel-commerce, the button size must be 1 ~ 2.                                                                                                                                                        |
 | 친구톡 호환 발송 | false | -3226 | 커머스에 discountPrice 필드가 있으면 discountRate 또는 discountFixed 필드 필요                                                                                    | If commerce has 'discountPrice' field, commerce must have a 'discountRate' or 'discountFixed' field.                                                                                                                                                                                                                                                                       |
+
+<a id="delivery-result-code"></a>
 
 ## 발송 결과 코드
 
