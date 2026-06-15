@@ -1,4 +1,8 @@
+<!-- pre-align:aligned sig=2a9da7055af6 -->
+
 ## Notification > KakaoTalk Bizmessage > Error Code
+
+<a id="api-response-code"></a>
 
 ## API Response Code
 
@@ -233,6 +237,8 @@
 | Friendtalk Fallback Send | false | -3224 | Carousel commerce type cannot use header and message field                                                                                                                    | Friendtalk carousel commerce type cannot have 'header' & 'message' fields.                                                                                                                                                                                                                                                                                                 |
 | Friendtalk Fallback Send | false | -3225 | Invalid carousel button. Carousel feed type cannot have more than 2 buttons, while carousel commerce type requires 1-2 buttons.                                                                   | Friendtalk carousel button size is invalid. If the message type is friendtalk carousel-feed, the button size must be 2 or less. If the message type is friendtalk carousel-commerce, the button size must be 1 ~ 2.                                                                                                                                                        |
 | Friendtalk Fallback Send | false | -3226 | If commerce has 'discountPrice' field, commerce must have a 'discountRate' or 'discountFixed' field                                                                                  | If commerce has 'discountPrice' field, commerce must have a 'discountRate' or 'discountFixed' field.                                                                                                                                                                                                                                                                       |
+
+<a id="delivery-result-code"></a>
 
 ## Delivery Result Code
 
