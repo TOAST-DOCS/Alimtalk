@@ -4,176 +4,175 @@
 
 <a id="brand-message-sending"></a>
 
-## Brand Message sending
+## Brand Message Delivery
 
 <a id="regular-send"></a>
 
-### Regular send
+### General Delivery
 
-You can set up an outgoing profile and enter content to send messages in the form of brand message. To send a brand message, select Notification > KakaoTalk Bizmessage > Brand Message on the console.
+You can send Brand Message-type messages by configuring sender profiles and entering content.
+To send Brand Messages, select **Notification > KakaoTalk Bizmessage > Brand Message** in the console.
 
 <a id="when-using-a-template"></a>
 
-### When using a template
+### When Using a Template
 
 ![friendtalkupgrade_04_20250616.png](https://static.toastoven.net/prod_alimtalk/friendtalkupgrade/friendtalkupgrade_04_20250729.png)
 
-1. Select an outgoing profile.
-    * You can check the outgoing profile from the Notification > KakaoTalk Bizmessage > Manage Outgoing Profiles tab.
-2. Select push notification status.
-    * If you select **Disable**, the push notification for messages is not sent.
-3. Select “Enable” for using template, then select the template you wish to request sending.
-    * The template can be registered from the **Notification > KakaoTalk Bizmessage > Brand Message > Manage Templates** tab.
-4. Select whether to set fallback messages.
-    * To enable fallback, you must set the fallback option to **Enable** in the **Manage 080 Opt Out** tab and integrate the SMS service.
-5. Select whether to set 080 opt-out number.
-    * If you select **Not Set (send using outgoing profile settings)** for the 080 opt-out number setting, the 080 opt-out number set in the outgoing profile will be used.
-    * If you select **Set as Common Content** or **Set by User**, the 080 opt-out number you entered will be used for sending.
-    * When using the SMS service from the **Manage 080 Opt Out** tab, only 080 opt-out numbers registered in the SMS service are available.
-6. Add a recipient.
-    * A recipient can be written in phone number format.
-7. Select a targeting type by recipient.
-    * Brand Message is an advertising message that can be sent to users who have agreed to receive marketing messages from advertisers (hereinafter referred to as "marketing consent") and channel friend users.
-    * Depending on the targeting type, whether the specified recipients receive your message may vary.
-      * M: Advertisers’ users with marketing consent
-        * Send advertising messages to Advertisers’ users with marketing consent (KakaoTalk message consent)
-      * N: Advertisers’ users with marketing consent- channel friend
-        * Send advertising messages to advertisers’ users with marketing consent (KakaoTalk message consent), except channel friends.
-      * I: Target of advertiser sending request ∩ Channel friend
-        * For advertiser sending requests, advertising messages are sent only to channel friends.
-8. After completing the input, click Send to send.
+1. Select a sender profile.
+    * You can check sender profiles in the **Notification > KakaoTalk Bizmessage > Sender Profile Management** tab.
+2. Select whether to use push notifications.
+    * If you select **Disable** for push notifications, message push notifications will not be sent.
+3. Select **Use** for template usage and select the template to send.
+    * Templates can be registered in the **Notification > KakaoTalk Bizmessage > Brand Message > Template Management** tab.
+4. Select whether to configure alternative delivery messages.
+    * Alternative delivery is only available when you set alternative delivery to **Use** in the **080 Opt-out Management** tab and integrate the SMS service.
+5. Select whether to configure the 080 opt-out number.
+    * If you select **Not Configured (Send with sender profile settings)** for the 080 opt-out number configuration, the 080 opt-out number configured in the sender profile will be used.
+    * If you select **Set with Common Content** or **Set by User**, the entered 080 opt-out number will be used for delivery.
+    * When using the SMS service in the **080 Opt-out Management** tab, only 080 opt-out numbers registered in the SMS service can be used.
+6. Add recipients.
+    * Recipients can be entered in mobile phone number format.
+7. Select targeting type for each recipient.
+    * Brand Messages are advertising messages that can be sent to users who have consented to receive marketing messages from advertisers (hereinafter referred to as "marketing consent") and channel friend users.
+    * Message reception by specified recipients may vary depending on the targeting type.
+        * M: Advertiser marketing consent users (KakaoTalk reception consent)
+            * Sends advertising messages to advertiser marketing consent users (KakaoTalk reception consent).
+        * N: Advertiser marketing consent users (KakaoTalk reception consent) - Channel friends
+            * Sends advertising messages to advertiser marketing consent users (KakaoTalk reception consent) excluding channel friends.
+        * I: Advertiser delivery request targets ∩ Channel friends
+            * Sends advertising messages only to channel friends among advertiser delivery request targets.
+8. After completing the input, click **Send** to transmit.
 
 <a id="when-not-using-a-template"></a>
 
-### When not using a template
+### When Not Using a Template
 
 ![friendtalkupgrade_05_20250616.png](https://static.toastoven.net/prod_alimtalk/friendtalkupgrade/friendtalkupgrade_05_20250729.png)
 
-1. Select an outgoing profile.
-    * You can check the outgoing profile from the Notification > KakaoTalk Bizmessage > Manage Outgoing Profiles tab.
-2. Select push notification status.
-    * If you select **Disable**, the push notification for messages is not sent.
-3. Select whether the message is for adults or not.
-    * For adult messages, chat room messages will be covered until age verification is completed, and only those over 20 years of age can view the content.
-4. Select a message type.
+1. Select a sender profile.
+    * You can check sender profiles in the **Notification > KakaoTalk Bizmessage > Sender Profile Management** tab.
+2. Select whether to use push notifications.
+    * If you select **Disable** for push notifications, message push notifications will not be sent.
+3. Select whether this is an adult message.
+    * For adult messages, chat room messages are covered until age verification, and only users 20 years or older can view the content.
+4. Select message type.
     * Text
-      * 1,300 characters of text including spaces, in both Korean and English + up to 5 link buttons (vertically arranged)
+        * 1,300 characters of text, including spaces both for Korean and English + up to 5 link buttons (vertically arranged)
     * Image
-      * 400 characters of text including spaces, in both Korean and English + one image + up to 5 link buttons (vertically arranged)
-    * Wide image
-      * 76 characters of text including spaces, in both Korean and English + one image + up to 2 link buttons
-    * Wide item list
-      * An ad-type product that allows you to add 3 to 4 lists (images + items) to one title.
-      * First item title 25 characters, including spaces, regardless of Korean/English, 24 + up to 2 link buttons (horizontally aligned)
-    * Carousel feed
-      * An ad-type product that can contain up to 10 images and various text information.
-      * Up to 6 items consisting of a title of 20 characters including spaces, a phrase of 180 characters, an image, and 2 link buttons (horizontally aligned), regardless of Korean/English
-    * Premium video
-      * This type of video is automatically played in a speech bubble.
-      * Video links can only be used for videos uploaded to Kakao TV (e.g. [https://tv.kakao.com/v/#{number}](https://tv.kakao.com/v/#%7B%EC%88%AB%EC%9E%90%7D) / [https://tv.kakao.com/channel/#{number}/cliplink/#{number}](https://tv.kakao.com/channel/#%7B%EC%88%AB%EC%9E%90%7D/cliplink/#%7B%EC%88%AB%EC%9E%90%7D)).
-      * 20-character header text including spaces, regardless of Korean/English, + 76-character text for the text + 1 video uploaded to Kakao TV + 1 link button
+        * 1,300 characters of text, including spaces both for Korean and English + 1 image + up to 5 link buttons (vertically arranged)
+    * Wide Image
+        * 76 characters of text, including spaces both for Korean and English + 1 image + up to 2 link buttons
+    * Wide Item List
+        * An advertising type product that can add 3-4 lists (image + item) to one title.
+        * 25 characters for the first item title, 30 characters for the 2nd-4th item titles, including spaces both for Korean and English + 3-4 image items + up to 2 link buttons (horizontally aligned)
+    * Carousel Feed
+        * An advertising type product that can contain up to 10 images and various text information.
+        * Up to 6 items consisting of 20-character title text + 180-character phrase text + image + 2 link buttons (horizontally aligned), including spaces both for Korean and English
+    * Premium Video
+        * A type where attached videos automatically play in speech bubbles.
+        * Video links can only use videos uploaded to KakaoTV (e.g., [https://tv.kakao.com/v/#{숫자}](https://tv.kakao.com/v/#%7B%EC%88%AB%EC%9E%90%7D) / [https://tv.kakao.com/channel/#{숫자}/cliplink/#{숫자}](https://tv.kakao.com/channel/#%7B%EC%88%AB%EC%9E%90%7D/cliplink/#%7B%EC%88%AB%EC%9E%90%7D)).
+        * 20-character header text + 76-character phrase text + 1 video uploaded to KakaoTV + 1 link button, including spaces both for Korean and English
     * Commerce
-      * A speech bubble that can highlight product prices and discount information.
-      * 20-character title text including spaces, regardless of Korean/English, 34-character text for additional information + 2 link buttons (horizontally aligned)
-    * Carousel commerce
-      * A speech bubble that can organize information on various products in a catalog format.
-      * Up to 6 items consisting of a title text of 30 characters including spaces, a phrase of 34 characters, and up to 2 link buttons (horizontally aligned), regardless of Korean/English
-      * Every image used for carousel commerce must have the same ratio.
-5. If you have an image, select it.
-    * To attach an image to a message, first register the image in the Manage Image tab.
-    * Image link: Enter the link you want to connect to when the image is clicked (URL including http://, https://).
-    * Every image used for carousel commerce must have the same ratio.
-6. You can insert web links, app links, bot keywords, message forwarding, add channel, chat conversion, bot conversion, and business form buttons.
-    * Up to 5 basic items, up to 2 carousel/wide item lists
-7. If you need to highlight a coupon in your message, you can add a button that takes users to the attached coupon when they click on it.
-8. Select whether to set fallback messages.
-    * To enable fallback, you must set the fallback option to **Enable** in the **080 Opt Out Management** tab and integrate the SMS service.
-9. Add a recipient.
-   * A recipient can be written in phone number format.
-10. Select a targeting type by recipient.
-    * Brand Message is an advertising message that can be sent to users who have agreed to receive marketing messages from advertisers (hereinafter referred to as "marketing consent"') and channel friend users.
-    * Depending on the targeting type, whether the specified recipients receive your message may vary.
-      * M: Advertisers’ users with marketing consent
-        * Send advertising messages to Advertisers’ users with marketing consent (KakaoTalk message consent)
-      * N: Advertisers’ users with marketing consent- channel friend
-        * Send advertising messages to advertisers’ users with marketing consent (KakaoTalk message consent), except channel friends.
-      * I: Target of advertiser sending request ∩ Channel friend
-        * For advertiser sending requests, advertising messages are sent only to channel friends.
-11. After completing the input, click Send to send.
+        * A speech bubble that can emphasize product prices and discount information.
+        * 20-character title text + 34-character additional information text + up to 2 link buttons (horizontally aligned), including spaces both for Korean and English
+    * Carousel Commerce
+        * A speech bubble that can organize various product information in catalog format.
+        * Up to 6 items consisting of 30-character title text + 34-character additional information text + up to 2 link buttons (horizontally aligned), including spaces both for Korean and English
+        * All images used in Carousel Commerce must have the same ratio.
+5. If there are images, select the image.
+    * To attach an image to a message, you must first register the image in the **Image Management** tab.
+    * Image link: Enter the link that connects when the image is clicked (URL including http:// or https://).
+    * All images used in Carousel Commerce must have the same ratio.
+6. You can insert web links, app links, bot keywords, message forwarding, channel addition, consultation chat conversion, bot conversion, and business form buttons.
+    * Basic type up to 5, carousel/wide item list up to 2
+7. If you need to emphasize coupons in messages, you can add buttons to redirect to attached coupons when clicked.
+8. Select whether to configure alternative delivery messages.
+    * Alternative delivery is only available when you set alternative delivery to **Use** in the **080 Opt-out Management** tab and integrate the SMS service.
+9. Add recipients.
+    * Recipients can be entered in mobile phone number format.
+10. Select targeting type for each recipient.
+    * Brand Messages are advertising messages that can be sent to users who have consented to receive marketing messages from advertisers (hereinafter referred to as "marketing consent") and channel friend users.
+    * Message reception by specified recipients may vary depending on the targeting type.
+        * M: Advertiser marketing consent users (KakaoTalk reception consent)
+            * Sends advertising messages to advertiser marketing consent users (KakaoTalk reception consent).
+        * N: Advertiser marketing consent users (KakaoTalk reception consent) - Channel friends
+            * Sends advertising messages to advertiser marketing consent users (KakaoTalk reception consent) excluding channel friends.
+        * I: Advertiser delivery request targets ∩ Channel friends
+            * Sends advertising messages only to channel friends among advertiser delivery request targets.
+11. After completing the input, click **Send** to transmit.
 
 <a id="mass-delivery"></a>
 
 ### Mass Delivery
 
-This feature allows you to send brand messages to multiple recipient numbers using a template file in Excel/CSV format. Select **Mass Delivery** from the bottom tab.
+This function allows you to send Brand Messages to multiple recipient numbers using Excel/CSV format template files. Select **Mass Delivery** in the bottom tab.
 
 ![friendtalkupgrade_mass01.png](https://static.toastoven.net/prod_alimtalk/friendtalkupgrade_mass01.png)
 
-* You can download a CSV or XLSX file containing the template placeholder by entering the template placeholder in the content in the format '#{name}' and clicking the **Download Template** button.
-* When opening and saving CSV files with Excel, Korean characters may not be saved properly.
-* Only CSV, XLSX files can be uploaded. The maximum size is 30MB, and the maximum number of recipients you can send to is 1,000,000.
+* After entering template replacement variables in the content in '#{name}' format and clicking the **Download Template** button, you can download CSV and XLSX files containing template replacement variables.
+* CSV files may not save Korean characters properly when opened and saved in Excel.
+* Only CSV and XLSX files can be uploaded. The maximum size is 30MB, and the maximum number of recipients for delivery is 1,000,000.
 
 ![friendtalkupgrade_mass02.png](https://static.toastoven.net/prod_alimtalk/friendtalkupgrade_mass02.png)
 
-* You can enter individual targeting values and template placeholders for each recipient.
-   * For free-form sending, be careful not to set M or N targeting values, as this will result in send failure.
-* If you enter content without template placeholders, the same content will be sent to all recipients.
+* You can enter individual targeting values and template replacement variable values for each recipient.
+* If you enter content without template replacement variables, the same content will be sent to all recipients.
 
-When clicking **Send** button, you can select **Proceed after Review** or **Immediate Send**.
+When clicking the **Send** button, you can select **Proceed After Review** or **Send Immediately**.
 
-* Proceed after Review: after confirming the recipient of the email within 7 days in the **View Mass Delivery** tab, a notification message will be sent. (unsupported for scheduled send.)
-* Immediate Send: AlimTalks are sent immediately without confirming the recipient. You can check the progress of your shipment in the **View Mass Delivery** tab.
+* Proceed After Review: After confirming message recipients within 7 days in the **Mass Delivery Query** tab, AlimTalk is sent. (Not supported for scheduled delivery.)
+* Send Immediately: AlimTalk is sent immediately without confirming recipients. You can check the delivery status in the **Mass Delivery Query** tab.
 
 <a id="fallback"></a>
 
-### Fallback
-
-A feature that allows you to replace a brand message with a text message if it fails to send. You can send it by selecting **Set as Common Content** or **Set by Different Messages per User**.
+### Alternative Delivery
+This function allows alternative delivery of content as text messages when Brand Message delivery fails.
+You can send by selecting **Send with Common Content** or **Set Different Messages per User**.
 
 ![friendtalkupgrade_06_20250616.png](https://static.toastoven.net/prod_alimtalk/friendtalkupgrade/friendtalkupgrade_06_20250729.png)
 
-* To enable fallback, you must set the fallback option to “Enable” in the “Manage 080 Opt Out” tab and integrate the SMS service.
-* You must have an outgoing number to send a fallback. If you do not set a fallback option or a sending number, the default settings specified in the Manage Fallback tab will be applied.
-* Fallback is performed after changing to Kakao’s send failure, and it may take up to tens of seconds to receive a text message.
-* Depending on the message, some content, such as buttons and links, may appear differently from the KakaoTalk message.
-* Depending on the message length, it will be sent as SMS/LMS (separate fees apply for sending each type of text message).
+* Alternative delivery is only available when you set alternative delivery to **Use** in the **080 Opt-out Management** tab and integrate the SMS service.
+* A sender number is required to send alternative messages. If alternative delivery settings or sender number are not configured, the default settings specified in the **Alternative Delivery Management** tab are applied.
+* Alternative delivery occurs after the KakaoTalk delivery result changes to failure, and it may take up to several tens of seconds to receive the text message.
+* Depending on the message, some content such as buttons and links may appear differently from KakaoTalk messages.
+* Alternative delivery will be sent as SMS/LMS depending on message length (separate usage fees apply for each type of text delivery).
 
 <a id="set-as-common-content"></a>
 
-#### Set as Common Content
+#### Send with Common Content
 
 ![friendtalkupgrade_resend01_20250729.png](https://static.toastoven.net/prod_alimtalk/friendtalkupgrade/friendtalkupgrade_resend01_20250729.png)
 
-* Set a fallback message by selecting **Outgoing Profile** and clicking **Set as Common Content**.
-* If you do not enter a fallback message, it will be sent as [Message Body].
+* After selecting **Sender Profile**, click **Send with Common Content** to configure the alternative delivery message.
+* If no alternative delivery message is entered, it will be sent as [Message Content].
 
 <a id="set-by-different-messages-per-user"></a>
 
-#### Set by Different Messages per User
+#### Set Different Messages per User
+* After selecting **Sender Profile**, click **Set Different Messages per User** to configure the alternative delivery message in the **Add Recipient** tab below.
+* Clicking the [pen icon] next to added recipient numbers allows you to check and modify the configured content.
 
-* After selecting an **Outgoing Profile**, click **Set by Different Messages per User** and set an alternative sending message in the **Add Recipient** tab at the bottom.
-* You can check and modify the settings by clicking the [pen icon] next to the added recipient number.
+!!! danger "Precautions When Sending Advertising Messages"
+Advertising messages refer to messages about information, goods, or services sent by the sender for economic gain.
 
-!!! danger "Notes for sending advertising messages"
-Advertising messages refer to messages about information, goods, or services that the sender transmits for the purpose of obtaining economic gain.
-
-    **[Guide for Sending Advertising Message]**
-    1. Display ads
-        ① Messages containing advertising content must be marked with "(Advertisement)" at the very beginning.
+    **[Advertising Message Delivery Guide]**
+    1. Advertisement Display
+        ① You must display (Advertisement) at the beginning of messages containing advertising content.
         ② Criteria for determining advertising messages
-            a. Information on special offers/discounts
-            b. Promotions or events to promote products and services
-            c. Even if information is presented as "Note," if the contents of [a and b above] are mixed
-    2. Mandatory display of sender's contact information
-       ① The sender's name and contact information must be written above the message body.
-       ② The sender's name and contact information will be displayed at the top of the chat room.
-       ③ For contact information, you must enter either a phone number or an address.
-    3. Mandatory display of measures and methods that facilitate the expression of intent to refuse receipt
-       ① The measures and methods that facilitate opting out or withdrawing consent must be clearly stated in the body of the advertisement.
-       ② If opting out or withdrawing consent is difficult or impossible due to these measures or methods, they will be deemed not to have been indicated.
-       ③ Requiring additional steps, such as logging into a website, to opt out of receiving emails makes opting out or withdrawing consent difficult and constitutes a violation of the law.
+            a. Special price/discount product information
+            b. Promotions or events for product and service promotion
+            c. Cases where content from [a, b above] is mixed, even if information is presented as the 'main' content
+    2. Sender Contact Information Display Requirements
+       ① Sender name and sender contact information must be written above the message body.
+       ② Sender name and sender contact information are displayed at the top of the chat room.
+       ③ For contact information, you must choose and enter either a phone number or address.
+    3. Requirements for Displaying Measures and Methods to Easily Express Intent to Refuse Reception
+       ① You must clearly specify in the advertisement body the measures and methods that allow easy expression of intent to refuse reception and withdraw reception consent.
+       ② If refusal of reception or withdrawal of reception consent cannot be easily achieved or is impossible through such measures and methods, it is considered as not having displayed them.
+       ③ Requiring additional measures such as logging into a website to refuse email reception constitutes a law violation as it makes refusal of reception or withdrawal of reception consent difficult.
 
-![[Figure 3] FriendTalk advertising message](https://static.toastoven.net/prod_alimtalk/friendtalk_02.png)
+![\[Figure 3\] FriendTalk Advertisement Message](https://static.toastoven.net/prod_alimtalk/friendtalk_02.png)
 
 <a id="view-send"></a>
 
@@ -219,28 +218,51 @@ Cancellation is possible for scheduled send with a sending request date set to t
 
 <a id="manage-image"></a>
 
-## Manage Image
+## Image Management
 
 ![friendtalkupgrade_8_20250616.png](https://static.toastoven.net/prod_alimtalk/friendtalkupgrade/friendtalkupgrade_8_20250616.png)
 
-You can register or delete images to use in the brand message and check information about registered images.
+You can register or delete images for use in brand messages and check the information of registered images.
 
-* You can register images by selecting them by type (basic/wide, wide item list type, carousel feed, carousel commerce, business form).
-* The image will no longer be accessible after deletion.
-* If all templates referencing an uploaded image are deleted or changed to a different image, the image will be removed from the Kakao CDN, making the URL invalid. While image information is retained in the Image Retrieval API and the console, the actual image cannot be accessed.
-* It is recommended to store the original file separately on your own server.
-File specifications and recommended/maximum sizes must be strictly followed.
-* You can copy an image address URL. The URL is used when sending the API.
-* Business Form is a business tool that supports the design of events such as reservations, surveys, and applications that KakaoTalk users can easily participate in. Create a business form and enter the corresponding ID.
+* You can select and register images by type (basic/wide, wide item list, carousel feed, carousel commerce, business form).
+* When you delete an image, the image becomes unavailable.
+* When updating a template, if the image is changed to a different one, the existing image is deleted from the Kakao CDN and the URL becomes invalid. Other templates using the same image are also affected, so caution is required. Although image information is retained in the image retrieval API or the console, the actual image cannot be accessed, so it is recommended to keep the original file separately on your own server.
+* You must comply with file specifications and recommended/restricted sizes.
+* You can copy the image address URL. This URL is used when sending via API.
+* Business forms are business tools that support the design of events such as reservations, surveys, and applications that KakaoTalk users can easily participate in. Create a business form and enter its ID.
 * [\[Go to Business Form Registration\]](https://business.kakao.com/talkbizform/)
 * [\[Go to Business Form Registration Guide\]](https://kakaobusiness.gitbook.io/main/tool/bizform)
 
 <a id="image-upload-allowance"></a>
 
-#### Image upload allowance
+#### Image Upload Allowance
 
 * File format: JPG, PNG
-* Please check each image upload API specification.
+* Check the specifications of each image upload API.
+
+<a id="manage-video"></a>
+
+## Video Management
+
+![friendtalkupgrade_video_management.png](TODO: 콘솔 캡처 후 NHN static 호스트 URL 교체)
+
+You can register or delete videos for use in Brand Messages and view information about registered videos.
+
+* You can register or delete videos after selecting a sender profile.
+* For video upload, select a file in the console screen and click the upload button to display the progress. Be careful not to refresh or close the page while uploading. If a refresh occurs during the process, the upload will be interrupted and you will need to upload again.
+* Registered videos can be used for sending after encoding is completed at Kakao Biz Center. Encoding usually takes 5 to 10 minutes and can take up to 3 days depending on the video length. If it exceeds 3 days, it is automatically processed as `ERROR` status.
+* Video status is synchronized periodically with Kakao Biz Center. Only videos with `PUBLIC` status can be used for template registration and sending, while videos with `PRIVATE` status can only be used for template registration.
+* Registered videos are permanently stored on Kakao's side, and even if you delete a video from the console, the video in Kakao Biz Center is not automatically cleaned up. Kakao Channel administrators can delete them directly from the management screen of the Channel Business Home.
+* When deleting a video, be careful as templates that use that video cannot be sent.
+
+<a id="video-upload-allowance"></a>
+
+#### Video Upload Requirements
+
+* File formats: MP4, MOV, AVI
+* Maximum file size: 4 GB
+* Maximum video length: 4 hours
+* Maximum resolution: 8K
 
 <a id="manage-templates"></a>
 
@@ -254,43 +276,43 @@ File specifications and recommended/maximum sizes must be strictly followed.
 
 <a id="080-opt-out-management"></a>
 
-## 080 Opt-out management
+## 080 Opt-Out Management
 
-* In brand messages, the “080 opt-out management” and “fallback” features are integrated into a single smsAppkey through NHN Cloud's SMS service integration.
+* In Brand Message, the '080 Opt-Out Management' and 'Fallback' features are integrated and managed with a single smsAppkey through integration with NHN Cloud's SMS service.
 
 <a id="register-and-manage-080-opt-out-numbers"></a>
 
-### Register and manage 080 opt-out numbers
-
-* When sending Brand Message marketing to users who have opted in, you must register a 080 number in your outgoing profile because messages can be sent to recipients who are not friends with your outgoing profile.
-  * The 080 opt-out number for the outgoing profile is data that is applied to all outgoing profiles of other organizations, projects, and dealers in the same talk channel, so it must be changed carefully.
-* If you need to register the 080 opt-out number on an outgoing profile or modify it, please contact the **NHN Cloud Customer Support**.
-* If you register a 080 opt-out number, the outgoing profile owner is responsible for ensuring that messages are not sent to recipients who have indicated they wish to opt out of receiving calls through the number.
-* By linking with NHN Cloud SMS service, you can easily manage status of the 080 opt-out numbers. ![sms 080](https://static.toastoven.net/prod_sms/SMS_14_20230818.png)
-* To manage the 080 opt-out number with the SMS service, you need to enable the SMS service first.
-* Register the 080 opt-out number you wish to manage for the SMS service.
-   * If the 080 opt-out number registered in the outgoing profile is not registered with the SMS service, all sending requests will fail.
-* For more information, see [SMS User Guide](https://docs.nhncloud.com/ko/Notification/SMS/ko/console-guide/#080 "friendtalkupgrade_10_20250616.png"). ![](https://static.toastoven.net/prod_alimtalk/friendtalkupgrade/friendtalkupgrade_10_20250729.png)
-* Enter the app key of the SMS service that registered the 080 opt-out number in the 080 Opt Out tab and save it.
-* You can check whether recipient management is possible with the 080 opt-out number registered in the outgoing profile of the SMS service designated as the management target by checking the **SMS Project 080 Number Management Status** item of the outgoing profile in the **080 Opt-out Management** tab of the console.
-* If you empty and save the SMS service app key
-   * Customers must manage their own opt-out recipients, and there is no verification of recipients when sending brand messages.
+### Register and Manage 080 Opt-Out Numbers
+* For Brand Message manual user sending, messages can be sent to recipients who are not friends with the sender profile, so you must register an 080 opt-out number in the sender profile.
+    * Since the sender profile 080 opt-out number is data that applies collectively to all sender profiles of other organizations, other projects, and other dealers in the same talk channel, it must be changed carefully.
+* If you need to register or modify an 080 opt-out number in the sender profile, contact us through **NHN Cloud Customer Support > Contact Us**.
+* When an 080 opt-out number is registered, the sender profile owner has the responsibility to manage so that messages are not sent to recipients who have expressed their intention to opt out to that number.
+* By integrating with NHN Cloud SMS service, you can easily manage opt-out for 080 opt-out numbers.
+  ![sms 080](https://static.toastoven.net/prod_sms/SMS_14_20230818.png)
+* To manage 080 opt-out numbers with the SMS service, you must first activate the SMS service.
+* Register the 080 opt-out number you want to manage in the SMS service.
+    * If the 080 opt-out number registered in the sender profile is not registered in the SMS service, all sending requests will fail.
+* For more information, see [SMS User Guide](https://docs.nhncloud.com/ko/Notification/SMS/ko/console-guide/#080).
+  ![friendtalkupgrade_10_20250616.png](https://static.toastoven.net/prod_alimtalk/friendtalkupgrade/friendtalkupgrade_10_20250729.png)
+* Enter the app key of the SMS service that registered the 080 opt-out number in the 080 Opt-Out tab and save.
+* Whether recipient management is possible with the 080 opt-out number registered in the sender profile from the SMS service designated as the management target can be checked in the **SMS Project 080 Number Management Status** item of the corresponding sender profile in the **080 Opt-Out Management** tab of the console.
+* When the SMS service app key is emptied and saved
+    * You must directly manage opt-out recipients and no verification is performed for recipients during the Brand Message sending process.
 
 <a id="manage-fallback"></a>
 
 ### Manage Fallback
-
-* If a brand message fails to be sent, you can set it to be sent as a fallback message.
-* You must be using NHN Cloud SMS service, and messages will be sent via SMS/LMS depending on the message length (separate fees apply for sending each type of text message).
-* If you modify the SMS app key, the fallback settings for all channels for search IDs will be reset.
-* Since it is sent as a fallback through the SMS service, you must enter fields according to the SMS service's sending API specifications (such as outgoing number registered with the SMS service, various field length restrictions).
-* Fallback titles or contents that exceed the byte limit of the specified fallback type may be truncated and replaced (see [SMS API Guide > Caution](https://docs.nhncloud.com/ko/Notification/SMS/ko/api-guide/#_1)).
-* Fallback content is sent based on EUC-KR, and unsupported emoticons will fail to be sent as fallbacks.
-* You can change the **Fallback Status** and **Outgoing Number** by clicking **Modify** on the channel ID for the search.
-* If you set the **Fallback Status** to **Disable**, the channel for the search ID will not be able to send the brand message.
-* Brand Message advertising messages are sent as fallback messages using the advertising SMS API, so you must register a 080 opt-out number to receive fallback messages.
-* When entering the resendContent field of a brand message advertising message, you must enter the advertising text from the SMS advertising API to send it as a replacement. `(ads) content [toll-free opt out]080XXXXXXX`
-* If there is no resendContent field in the brand message advertising message, the advertising text will be automatically generated and sent to the registered 080 opt-out number.
+* When Brand Message sending fails, you can set it to send the content as a text message as fallback.
+* You must be using NHN Cloud SMS service, and messages are sent as SMS/LMS depending on message length (separate fees apply for each type of texting).
+* When you modify the SMS app key, the fallback settings for channels of all search IDs are reset.
+* Since fallback is made in the SMS service, field values must follow the API specifications for SMS (e.g., Sender number registered at the SMS service, or restriction in the field length).
+* Fallback titles or content that exceed the byte limit of the specified fallback type may be truncated when sent as fallback (refer to [SMS API Guide > Cautions](https://docs.nhncloud.com/ko/Notification/SMS/ko/api-guide/#_1)).
+* The content for fallback is sent in EUC-KR, and unsupported emoji will fail for fallback.
+* For channels of the search ID whose fallback settings you want to modify, click **Edit** to modify **Fallback Status** and **Sender Number**.
+* When **Fallback Status** is set to **Disabled**, channels of that search ID cannot send fallback when sending Brand Messages.
+* Brand Message advertising messages are sent as fallback through the advertising SMS API, so you must register an 080 opt-out number for fallback to work.
+* When entering the resendContent field for Brand Message advertising messages, you must enter the advertising text of the SMS advertising API for fallback to work. `(Ad)Content[Free opt-out]080XXXXXXX`
+* If there is no resendContent field for Brand Message advertising messages, the advertising text is automatically generated with the registered 080 opt-out number and sent as fallback.
 
 <a id="apply-for-using-non-friend-message-sending-targeting-m-n"></a>
 
