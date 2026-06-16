@@ -143,7 +143,7 @@ Content-Type: application/json;charset=UTF-8
     * ターゲティングM、Nのみ使用可能です。
 * BFボタンの使用時、カカオから発行されたビジネスフォームIDを入力して使用できます。
 * 代替送信は、受信者ごとにresendParameterを介して設定できます。
-* 代替送信をご利用になる場合、代替送信管理APIを介してSMS Appkeyの登録及び送信設定が必要です。
+* 代替送信をご利用になる場合、代替送信管理APIを介してSMS AppKeyの登録及び送信設定が必要です。
 * **夜間送信制限(20:50～翌日08:00)**
 
 #### リクエスト
@@ -629,7 +629,7 @@ Content-Type: application/json;charset=UTF-8
 | chatBubbleType         | String  | O  | メッセージタイプ(TEXT, IMAGE, WIDE, WIDE_ITEM_LIST, PREMIUM_VIDEO, COMMERCE, CAROUSEL_FEED, CAROUSEL_COMMERCE)                                                                                                                                                                         |
 | pushAlarm | boolean | X | メッセージプッシュ通知の送信有無(デフォルト: true) |
 | adult                  | boolean | X  | 成人向けメッセージの有無(デフォルト値：false)                                                                                                                                                                                                                                                       |
-| content | String | X | - TEXTタイプの場合、最大1,300文字(改行:最大99個、URL形式の入力が可能)<br>- IMAGEタイプの場合、最大400文字(改行:最大29回、URL形式の入力が可能)<br>- WIDEタイプの場合、最大76文字(改行:最大1回)<br>- PREMIUM_VIDEOタイプの場合、このフィールドをオプションとして使用可能、最大76文字(改行:最大1回)<br>- その他のタイプの場合、このフィールドは使用しません |
+| content | String | X | - TEXTタイプの場合、最大1,300文字(改行:最大99個、URL形式の入力が可能)<br>- IMAGEタイプの場合、最大1,300文字(改行:最大99回、URL形式の入力が可能)<br>- WIDEタイプの場合、最大76文字(改行:最大5回)<br>- PREMIUM_VIDEOタイプの場合、このフィールドをオプションとして使用可能、最大76文字(改行:最大5回)<br>- その他のタイプの場合、このフィールドは使用しません |
 | header | String | X | ヘッダ<br>- WIDE_ITEM_LISTタイプの場合、必須フィールドで最大20文字(改行:不可)<br>- PREMIUM_VIDEOタイプの場合、任意フィールドで最大20文字(改行:不可) |
 | video | Object | O | 動画要素(PREMIUM_VIDEOタイプのみ使用可能) |
 | - videoUrl | String | O | カカオTV動画URL (カカオTVにアップロードされた動画アドレスのみ使用可能)、最大500文字制限 |
@@ -1116,7 +1116,7 @@ Content-Type: application/json;charset=UTF-8
 * AC(チャンネル追加)ボタンを使用できます。
 * BFボタンを使用する場合、カカオから発行されたビジネスフォームIDをアップロードしてビズフォームキーを発行して使用できます。
 * 代替送信は、受信者ごとにresendParameterを介して設定できます。
-* 代替送信をご利用になる場合、代替送信管理APIを介してSMS Appkeyの登録及び送信設定が必要です。
+* 代替送信をご利用になる場合、代替送信管理APIを介してSMS AppKeyの登録及び送信設定が必要です。
 * **夜間送信制限(20:50～翌日08:00)**
 
 ### 使用時の注意事項
@@ -3063,7 +3063,7 @@ Content-Type: multipart/form-data
 | CAROUSEL_FEED_IMAGE        | カルーセルフィード型セル別画像                                          | 推奨サイズ: 800 X 600px または 800 X 400px (横500px以上)<br/>画像比率: 0.5 ≤ 縦 ÷ 横 ≤ 1.333<br/>ファイル形式及び容量制限: jpg, png / 最大5MB                 |
 | CAROUSEL_COMMERCE_IMAGE    | カルーセルコマース型イントロ画像、カルーセルコマース型セル別画像 | 推奨サイズ: 800 X 600px または 800 X 400px (横500px以上)<br/>画像比率: 0.5 ≤ 縦 ÷ 横 ≤ 1.333<br/>ファイル形式及び容量制限: jpg, png / 最大5MB                 |
 
-* アップロードされた画像を参照するテンプレートが全て削除されるか、別の画像に変更されると、Kakao CDNから該当の画像が削除され、URLが無効になります。画像照会APIでは画像情報が維持されますが、実際の画像にはアクセスできないため、オリジナルファイルは自社サーバーに別途保管することを推奨します。
+* テンプレート変更時に画像を別の画像に変更すると、既存の画像がKakao CDNから削除されURLが無効になります。同じ画像を使用する他のテンプレートにも影響するため注意が必要です。画像照会APIでは画像情報が保持されますが、実際の画像にはアクセスできないため、元ファイルは独自のサーバーに別途保管することを推奨します。
 
 ### 画像照会
 
@@ -3183,6 +3183,332 @@ Content-Type: application/json;charset=UTF-8
 | - resultCode    | Integer | O        | 結果コード |
 | - resultMessage | String  | O        | 結果メッセージ |
 | - isSuccessful  | boolean | O        | 成否 |
+
+## 動画管理
+
+ブランドメッセージに使用する動画を登録・照会・削除するAPIです。登録された動画はカカオビズセンターでエンコード処理後に送信に使用でき、状態が`PUBLIC`である動画のみテンプレートの登録及び送信が可能です(`PRIVATE`はテンプレートの登録のみ可能)。
+
+### 動画アップロードの流れ
+
+動画のアップロードは2段階で行われます。
+
+1. **動画アップロードの登録** — 本API(`POST /brand-message/v1.0/appkeys/{appKey}/videos`)に動画のメタ情報(ファイル名・ファイルサイズ)をJSONで送信します。レスポンスとして`video`(NHN Cloud側の登録情報)と`uploadInfo`(カカオアップロードURL・トークン)を受信します。
+2. **動画ファイルのアップロード** — レスポンスとして受信した`uploadInfo.uploadUrl`に`multipart/form-data`で動画ファイルを直接アップロードします。認証は`uploadInfo.token`を`x-kamp-upload-token`ヘッダで渡します。
+
+動画ファイルはNHN Cloudサーバーを経由せず、カカオ側のアップロードサーバーへ直接送信されます。したがって、本APIのリクエスト本文はメタ情報のみをJSONで送信し、実際のファイルは2段階目で別途送信します。
+
+> **注意**
+> * `uploadInfo.token`は発行後5分間有効です。5分が経過した場合は、1段階目の登録を再度呼び出して新しいトークンを受け取る必要があります。
+> * 1段階目のリクエストの`fileSize`は、実際に2段階目でアップロードするファイルのサイズと正確に一致する必要があります(不一致の場合、カカオ側でerrCode 109として拒否されます)。
+
+### 動画アップロードの登録
+
+#### リクエスト
+
+[URL]
+
+```
+POST  /brand-message/v1.0/appkeys/{appKey}/videos
+Content-Type: application/json;charset=UTF-8
+```
+
+[Path parameter]
+
+| 名前     | タイプ     | 説明     |
+|--------|--------|--------|
+| appKey | String | 固有のアプリキー |
+
+[Header]
+
+```
+{
+  "X-Secret-Key": String
+}
+```
+
+| 名前           | タイプ     | 必須 | 説明               |
+|--------------|--------|----|------------------|
+| X-Secret-Key | String | O  | コンソールで作成できます。 |
+
+[Request body]
+
+```
+{
+  "senderKey": String,
+  "fileName": String,
+  "fileSize": Long,
+  "createUser": String
+}
+```
+
+| 名前         | タイプ     | 必須 | 説明                                                                                 |
+|------------|--------|----|---------------------------------------------------------------------|
+| senderKey  | String | O  | 送信元プロファイルキー(40文字)                                                       |
+| fileName   | String | O  | 動画ファイル名(拡張子を含む、MP4・MOV・AVIのいずれか、最大250文字)                          |
+| fileSize   | Long   | O  | 動画ファイルのサイズ(バイト、最大4GB)                                                      |
+| createUser | String | X  | アップロードユーザー識別子(最大100文字)                                                |
+
+#### レスポンス
+
+```
+{
+  "header": {
+      "resultCode": Integer,
+      "resultMessage": String,
+      "isSuccessful": boolean
+  },
+  "video": {
+      "videoSeq": Long,
+      "vid": String,
+      "senderKey": String,
+      "title": String,
+      "fileName": String,
+      "fileSize": Long,
+      "status": String
+  },
+  "uploadInfo": {
+      "uploadUrl": String,
+      "token": String
+  }
+}
+```
+
+| 名前              | タイプ      | Not Null | 説明                                                                              |
+|:----------------|:--------|:---------|:--------------------------------------------------------------------------------|
+| header          | Object  | O        | ヘッダ領域                                                                         |
+| - resultCode    | Integer | O        | 結果コード                                                                         |
+| - resultMessage | String  | O        | 結果メッセージ                                                                       |
+| - isSuccessful  | boolean | O        | 成否                                                                           |
+| video           | Object  | X        | NHN Cloud側に登録された動画情報(status = `REGISTERED`)                                  |
+| - videoSeq      | Long    | O        | 動画シーケンス                                                                       |
+| - vid           | String  | O        | カカオ動画ID                                                                      |
+| - senderKey     | String  | O        | 送信元プロファイルキー                                                                    |
+| - title         | String  | X        | 動画のタイトル(アップロード直後はファイル名、エンコード完了後はカカオビズセンターで変更された値に同期されます)                        |
+| - fileName      | String  | O        | アップロードファイル名                                                                    |
+| - fileSize      | Long    | O        | ファイルサイズ(バイト)                                                                   |
+| - status        | String  | O        | 動画状態([動画状態](#動画-状態)を参照)。アップロードの登録レスポンスでは常に`REGISTERED`                     |
+| uploadInfo      | Object  | O        | カカオアップロード情報。2段階目に使用                                                               |
+| - uploadUrl     | String  | O        | 動画ファイルを直接アップロードするカカオ側のエンドポイント                                                       |
+| - token         | String  | O        | アップロード認証トークン。`x-kamp-upload-token`ヘッダで渡します                                         |
+
+> エンコード完了後に値が格納される`thumbnailUrl`、`videoUrl`、`playUrl`、`updateDate`フィールドは、[動画照会](#動画-照会) APIで取得できます。
+
+### 動画ファイルのアップロード(2段階目)
+
+上記レスポンスの`uploadInfo.uploadUrl`に動画ファイルを指定して直接呼び出します。このリクエストはNHN Cloudサーバーではなく、カカオ側のアップロードサーバーに直接送信されます。
+
+#### リクエスト
+
+[URL]
+
+```
+POST  {uploadInfo.uploadUrl}
+Content-Type: multipart/form-data
+```
+
+[Header]
+
+| 名前                  | タイプ     | 必須 | 説明                                          |
+|---------------------|--------|----|---------------------------------------------|
+| x-kamp-upload-token | String | O  | 1段階目のレスポンスの`uploadInfo.token`の値をそのまま渡します        |
+
+[Request body (multipart)]
+
+| 名前   | タイプ   | 必須 | 説明                                                  |
+|------|------|----|-----------------------------------------------------|
+| file | File | O  | 動画ファイル。1段階目のリクエストの`fileSize`と正確に一致する必要があります             |
+
+#### レスポンス
+
+```
+{
+  "vid": String,
+  "playUrl": String,
+  "errCode": Integer,
+  "message": String
+}
+```
+
+* 成功時は`vid`(1段階目のレスポンスと同一)と`playUrl`を返し、`errCode`/`message`フィールドは含まれません。
+* 失敗時はHTTP 4xxとともに`errCode`(100～110)と`message`を返します。詳細なエラーコードはカカオビズメッセージガイドをご参照ください。
+
+#### アップロードする動画の規格
+
+| 項目       | 制限                                          |
+|:---------|:--------------------------------------------|
+| ファイル形式    | MP4、MOV、AVI                               |
+| 最大ファイルサイズ | 4GB                                         |
+| 最大動画長 | 4時間                                         |
+| 最大解像度   | 8K                                          |
+| ファイル名の長さ   | 250文字以内                                     |
+
+* アップロードされた動画は、カカオビズセンターでエンコードが完了した後に使用できます。エンコード時間は動画の長さによって異なりますが、通常5～10分かかります。
+* アップロード直後の動画状態は`REGISTERED`から開始し、`ENCODING`を経て`PUBLIC`または`PRIVATE`に切り替わります。状態はコンソールまたは[動画照会](#動画照会] APIで確認できます。
+* 登録された動画はカカオ側で永久保存され、テンプレートが削除されてもカカオビズセンターの動画は自動的に整理されません。カカオチャネルの管理者が、チャネルビジネスホームの管理画面で直接削除できます。
+* 1段階目の登録後、2段階目のファイルアップロードが失敗したり遅延したりしてトークン(5分)の有効期限が切れた場合、新しい登録を再度呼び出す必要があります。登録のみが行われ実際のアップロードが行われなかった動画は、一定時間が経過すると状態が自動的に`ERROR`とマークされます。
+
+### 動画照会
+
+#### リクエスト
+
+[URL]
+
+```
+GET  /brand-message/v1.0/appkeys/{appKey}/videos
+Content-Type: application/json;charset=UTF-8
+```
+
+[Path parameter]
+
+| 名前     | タイプ     | 説明     |
+|--------|--------|--------|
+| appKey | String | 固有のアプリキー |
+
+[Header]
+
+```
+{
+  "X-Secret-Key": String
+}
+```
+
+| 名前           | タイプ     | 必須 | 説明               |
+|--------------|--------|----|------------------|
+| X-Secret-Key | String | O  | コンソールで作成できます。 |
+
+[Request parameter]
+
+| 名前         | タイプ     | 必須 | 説明                |
+|------------|--------|----|-------------------|
+| senderKey  | String | X  | 送信元プロファイルキー(40文字)     |
+| pageNum    | String | X  | ページ番号(デフォルト: 1)    |
+| pageSize   | String | X  | 照会件数(デフォルト: 15)    |
+
+#### レスポンス
+
+```
+{
+  "header": {
+    "resultCode": Integer,
+    "resultMessage": String,
+    "isSuccessful": boolean
+  },
+  "videosResponse": {
+    "videos": [
+      {
+        "videoSeq": Long,
+        "vid": String,
+        "senderKey": String,
+        "title": String,
+        "fileName": String,
+        "fileSize": Long,
+        "status": String,
+        "thumbnailUrl": String,
+        "videoUrl": String,
+        "playUrl": String,
+        "createDate": String,
+        "updateDate": String,
+        "createUser": String
+      }
+    ],
+    "totalCount": Integer
+  }
+}
+```
+
+| 名前                  | タイプ      | Not Null | 説明                                                  |
+|:--------------------|:--------|:---------|:------------------------------------------------------------|
+| header              | Object  | O        | ヘッダ領域                                               |
+| - resultCode        | Integer | O        | 結果コード                                               |
+| - resultMessage     | String  | O        | 結果メッセージ                                              |
+| - isSuccessful      | boolean | O        | 成否                                                  |
+| videosResponse      | Object  | X        | 動画一覧領域                                               |
+| - videos            | Array   | O        | 動画配列                                                |
+| - - videoSeq        | Long    | O        | 動画シーケンス                                              |
+| - - vid             | String  | O        | カカオ動画ID                                              |
+| - - senderKey       | String  | O        | 送信元プロファイルキー                                            |
+| - - title           | String  | X        | 動画のタイトル(アップロード直後はファイル名、エンコード完了後はカカオビズセンターで変更された値に同期されます)    |
+| - - fileName        | String  | O        | アップロードファイル名                                            |
+| - - fileSize        | Long    | O        | ファイルサイズ(バイト)                                          |
+| - - status          | String  | O        | 動画状態([動画状態](#動画-状態)を参照)                              |
+| - - thumbnailUrl    | String  | X        | サムネイルURL(エンコード完了後に提供)                               |
+| - - videoUrl        | String  | X        | 送信・管理用URL(`PUBLIC`状態で提供)                               |
+| - - playUrl         | String  | X        | 再生用URL                                              |
+| - - createDate      | String  | O        | 登録時刻                                                |
+| - - updateDate      | String  | X        | 状態の同期時刻(Webhook/バッチ更新時に記録)                           |
+| - - createUser      | String  | X        | アップロードユーザー識別子                                         |
+| - totalCount        | Integer | O        | 総動画数                                                |
+
+> アップロードの登録レスポンスの`video`は登録直後の時点であるため、`status`が常に`REGISTERED`であり、`thumbnailUrl`・`videoUrl`・`playUrl`・`createDate`・`updateDate`・`createUser`フィールドは含まれません。これらのフィールドは、エンコード完了後に動画照会APIで確認できます。
+
+### 動画の削除
+
+#### リクエスト
+
+[URL]
+
+```
+DELETE  /brand-message/v1.0/appkeys/{appKey}/videos
+Content-Type: application/json;charset=UTF-8
+```
+
+[Path parameter]
+
+| 名前     | タイプ     | 説明     |
+|--------|--------|--------|
+| appKey | String | 固有のアプリキー |
+
+[Header]
+
+```
+{
+  "X-Secret-Key": String
+}
+```
+
+| 名前           | タイプ     | 必須 | 説明               |
+|--------------|--------|----|------------------|
+| X-Secret-Key | String | O  | コンソールで作成できます。 |
+
+[Query parameter]
+
+| 名前       | タイプ     | 必須 | 説明                                |
+|----------|--------|----|-----------------------------------|
+| videoSeq | String | O  | 動画シーケンス(カンマ区切りで複数件の送信が可能)        |
+
+#### レスポンス
+
+```
+{
+  "header": {
+    "resultCode": Integer,
+    "resultMessage": String,
+    "isSuccessful": boolean
+  }
+}
+```
+
+| 名前              | タイプ      | Not Null | 説明     |
+|:----------------|:--------|:---------|:-------|
+| header          | Object  | O        | ヘッダ領域  |
+| - resultCode    | Integer | O        | 結果コード  |
+| - resultMessage | String  | O        | 結果メッセージ |
+| - isSuccessful  | boolean | O        | 成否  |
+
+### 動画状態
+
+動画照会レスポンスの`status`フィールド値について説明します。
+
+| status     | 説明                                  |
+|:-----------|:------------------------------------|
+| REGISTERED | アップロードの登録                              |
+| ENCODING   | エンコード中                               |
+| PUBLIC     | 公開状態(送信及びテンプレートの登録が可能)              |
+| PRIVATE    | 非公開状態(テンプレートの登録が可能)                  |
+| VIOLATED   | 違反動画                                  |
+| ILLEGAL    | 違法撮影物の動画                               |
+| DELETED    | 削除された動画                               |
+| ERROR      | アップロード及びエンコード中にエラーが発生                   |
 
 ## アップロード
 

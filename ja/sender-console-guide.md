@@ -1,4 +1,4 @@
-## Notification > KakaoTalk Bizmessage > プラスフレンド > コンソールガイド
+## Notification > KakaoTalk Bizmessage > 送信元プロフィール > コンソールガイド
 
 ## 発信プロフィールの登録/認証
 * カカオトークBizメッセージを送信するには、発信プロフィールを先に登録する必要があります。
