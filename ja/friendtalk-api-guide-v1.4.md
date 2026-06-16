@@ -1,6 +1,18 @@
+<!-- pre-align:aligned sig=5073e45b7dd3 -->
+
 ## Notification > KakaoTalk Bizmessage > カカともへのメッセージ > API v1.4 Guide
 
+<a id="friendtalk-service-termination-notice"></a>
+
+## フレンドトークサービス終了のお知らせ
+
+<!-- TODO: translate body -->
+
+<a id="friendtalk"></a>
+
 ## カカともへのメッセージ
+
+<a id="api-domain"></a>
 
 #### [APIドメイン]
 
@@ -17,7 +29,11 @@
 </tbody>
 </table>
 
+<a id="send-messages"></a>
+
 ## メッセージの送信
+<a id="request-of-sending"></a>
+
 #### 送信リクエスト
 
 [URL]
@@ -117,6 +133,8 @@ Content-Type: application/json;charset=UTF-8
 curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" https://kakaotalk-bizmessage.api.nhncloudservice.com/friendtalk/v1.4/appkeys/{appkey}/messages -d '{"plusFriendId":"@プラスフレンド","requestDate":"yyyy-MM-dd HH:mm","recipientList":[{"recipientNo":"010-0000-0000","imageSeq":1,"imageLink":"https://toast.com","content":"内容","buttons":[{"ordering":1,"type":"WL","name":"ボタン1","linkMo":"https://toast.com","linkPc":"https://toast.com"}]}]}'
 ```
 
+<a id="response"></a>
+
 #### レスポンス
 
 ```
@@ -158,7 +176,11 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 | -- resultMessage        | String  | 送信リクエスト結果メッセージ |
 | -- recipientGroupingKey | String  | 受信者グルーピングキー  |
 
+<a id="list-deliveries"></a>
+
 ## 送信リスト照会
+
+<a id="request"></a>
 
 #### リクエスト
 
@@ -200,6 +222,8 @@ Content-Type: application/json;charset=UTF-8
 | resultCode           | String  | X         | 送信結果(MRC01：成功、MRC02：失敗)       |
 | pageNum              | Integer | X         | ページ番号(基本：1)                     |
 | pageSize             | Integer | X         | 照会件数(基本：15, 最大:1000)                     |
+
+<a id="response-2"></a>
 
 #### レスポンス
 ```
@@ -260,6 +284,8 @@ Content-Type: application/json;charset=UTF-8
 curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" "https://kakaotalk-bizmessage.api.nhncloudservice.com/friendtalk/v1.4/appkeys/{appkey}/messages?startRequestDate=2018-05-01%2000:00&endRequestDate=2018-05-30%2023:59"
 ```
 
+<a id="status-of-resending"></a>
+
 #### 再送信ステータス
 | 値 | 説明                        |
 | ----- | ------------------------------- |
@@ -269,7 +295,11 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 | RSC04 | 再送信成功                    |
 | RSC05 | 再送信失敗                    |
 
+<a id="get-deliveries"></a>
+
 ## 送信単件照会
+
+<a id="request-2"></a>
 
 #### リクエスト
 
@@ -307,6 +337,8 @@ Content-Type: application/json;charset=UTF-8
 ```
 curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" "https://kakaotalk-bizmessage.api.nhncloudservice.com/friendtalk/v1.4/appkeys/{appkey}/messages/{requestId}/{recipientSeq}"
 ```
+
+<a id="response-3"></a>
 
 #### レスポンス
 ```
@@ -386,8 +418,14 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 | - senderGroupingKey    | String  | 発信グルーピングキー                               |
 | - recipientGroupingKey | String  | 受信者グルーピングキー                              |
 
+<a id="messages"></a>
+
 ## メッセージ
+<a id="cancel-message-delivery"></a>
+
 ### メッセージ送信取消
+
+<a id="request-3"></a>
 
 #### リクエスト
 
@@ -423,6 +461,8 @@ Content-Type: application/json;charset=UTF-8
 
 * 一般/認証メッセージは同じAPIでキャンセルできます。
 
+<a id="response-4"></a>
+
 #### レスポンス
 ```
 {
@@ -446,7 +486,11 @@ Content-Type: application/json;charset=UTF-8
 curl -X DELETE -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" "https://kakaotalk-bizmessage.api.nhncloudservice.com/friendtalk/v1.4/appkeys/{appkey}/messages/{requestId}?recipientSeq=1,2,3"
 ```
 
+<a id="query-updated-message-results"></a>
+
 ### メッセージ結果アップデート照会
+
+<a id="request-4"></a>
 
 #### リクエスト
 
@@ -481,6 +525,8 @@ Content-Type: application/json;charset=UTF-8
 | endUpdateDate   | String  | O    | 結果アップデート照会の終了時間(yyyy-MM-dd HH:mm) |
 | pageNum         | Integer | X    | ページ番号(基本：1)                      |
 | pageSize        | Integer | X    | 照会件数(基本：15, 最大:1000)          |
+
+<a id="response-5"></a>
 
 #### レスポンス
 ```
@@ -543,9 +589,15 @@ Content-Type: application/json;charset=UTF-8
 curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" "https://kakaotalk-bizmessage.api.nhncloudservice.com/friendtalk/v1.4/appkeys/{appkey}/message-results?startUpdateDate=2018-05-01%20:00&endUpdateDate=2018-05-30%20:59"
 ```
 
+<a id="image-management"></a>
+
 ## イメージの管理
 
+<a id="register-images"></a>
+
 ### イメージの登録
+<a id="request-5"></a>
+
 #### リクエスト
 
 [URL]
@@ -583,6 +635,8 @@ Content-Type: multipart/form-data
 curl -X POST -H "Content-Type: multipart/form-data" -H "X-Secret-Key:{secretkey}" "https://kakaotalk-bizmessage.api.nhncloudservice.com/friendtalk/v1.4/appkeys/{appkey}/images" -F "image=@friend-ricecake02.jpeg"
 ```
 
+<a id="response-6"></a>
+
 #### レスポンス
 ```
 
@@ -612,7 +666,11 @@ curl -X POST -H "Content-Type: multipart/form-data" -H "X-Secret-Key:{secretkey}
 | - imageName     | String  | イメージ名(アップロードしたファイル名)         |
 
 
+<a id="query-images"></a>
+
 ### イメージの照会
+<a id="request-6"></a>
+
 #### リクエスト
 
 [URL]
@@ -649,6 +707,8 @@ Content-Type: application/json;charset=UTF-8
 ```
 curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" "https://kakaotalk-bizmessage.api.nhncloudservice.com/friendtalk/v1.4/appkeys/{appkey}/images?pageNum=1&pageSize=15"
 ```
+
+<a id="response-7"></a>
 
 #### レスポンス
 ```
@@ -692,7 +752,11 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 
 * イメージは、最近登録した順にソートされてレスポンスを返します。
 
+<a id="delete-images"></a>
+
 ### イメージの削除
+<a id="request-7"></a>
+
 #### リクエスト
 
 [URL]
@@ -729,6 +793,8 @@ Content-Type: application/json;charset=UTF-8
 curl -X DELETE -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" "https://kakaotalk-bizmessage.api.nhncloudservice.com/friendtalk/v1.4/appkeys/{appkey}/images?imageSeq=1,2,3"
 ```
 
+<a id="response-8"></a>
+
 #### レスポンス
 ```
 
@@ -749,7 +815,11 @@ curl -X DELETE -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Ke
 | - isSuccessful  | Boolean | 成否 |
 
 
+<a id="alternative-delivery-management"></a>
+
 ## 代替送信管理
+<a id="register-sms-appkey"></a>
+
 ### SMS AppKey 登録
 
 [URL]
@@ -793,6 +863,8 @@ Content-Type: application/json;charset=UTF-8
 curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" https://kakaotalk-bizmessage.api.nhncloudservice.com/friendtalk/v1.4/appkeys/{appkey}/failback/appkey -d '{"resendAppKey": "smsAppKey"}
 ```
 
+<a id="response-9"></a>
+
 #### レスポンス
 ```
 
@@ -804,6 +876,8 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
   }
 }
 ```
+
+<a id="register-alternative-sending-settings"></a>
 
 ### 代替送信設定登録
 
@@ -853,6 +927,8 @@ Content-Type: application/json;charset=UTF-8
 ```
 curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" https://kakaotalk-bizmessage.api.nhncloudservice.com/friendtalk/v1.4/appkeys/{appkey}/failback/appkey -d '{"plusFriendId": "@플러스친구","isResend": true,"resendSendNo": "01012341234", "resendUnsubscribeNo": "0801234567" }
 ```
+
+<a id="response-10"></a>
 
 #### レスポンス
 ```
