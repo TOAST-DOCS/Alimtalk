@@ -1,4 +1,8 @@
+<!-- pre-align:aligned sig=492516bf9d3d -->
+
 ## Notification > KakaoTalk Bizmessage > フレンドトーク > ブランドメッセージ移行ガイド
+
+<a id="overview"></a>
 
 ## 概要
 
@@ -16,9 +20,13 @@
 1. **（推奨）ブランドメッセージ自由型送信 API への移行**  
 2. （暫定）既存フレンドトーク API を利用したフレンドトーク互換送信
 
+<a id="recommended-migrate-to-the-brand-message-free-form-send-api"></a>
+
 ## 1\. （推奨）**ブランドメッセージ自由型送信 API への移行**
 
 * 安定的で長期的な運用のため、**ブランドメッセージ専用 API への直接移行**を推奨します。
+
+<a id="benefits-of-migrating-to-brand-message"></a>
 
 ### ブランドメッセージへ移行する利点
 
@@ -27,9 +35,13 @@
 * ターゲティング指定により、送信チャネルの友だちでない顧客にも広告送信が可能です。  
 * 詳細は [ブランドメッセージガイド](https://docs.nhncloud.com/jp/Notification/KakaoTalk%20Bizmessage/jp/friendtalkupgrade-overview/) をご参照ください。
 
+<a id="temporary-friendtalk-compatibility-send"></a>
+
 ## 2\. （暫定）フレンドトーク互換送信
 
 * フレンドトーク互換送信は、フレンドトークのペイロードをブランドメッセージのフォーマットへ変換して配信するサービスです。
+
+<a id="items-provided-by-the-friendtalk-compatibility-send"></a>
 
 ### フレンドトーク互換送信の提供内容
 
@@ -44,6 +56,8 @@
 * フレンドトーク互換送信は **2025年10月28日** から適用済みで、現在送信テストが可能です。  
 * フェードアウト直後から互換送信を利用予定のお客様は、事前テストが必要となる場合があります。  
 * 仕様差分の概要は以下をご参照ください。
+
+<a id="how-to-use-the-friendtalk-compatibility-send"></a>
 
 ### フレンドトーク互換送信の利用方法
 
@@ -62,9 +76,13 @@
 | :--- | :--- | :--- | :--- |
 | X-Convert-To-Brand-Message | Boolean | X | フレンドトーク互換送信のためのリクエストヘッダー。* **2025年12月30日** 以降、`X-Convert-To-Brand-Message: true` ヘッダーが**ない**リクエストは、受付段階で送信失敗として処理されます。* |
 
+<a id="kakao-provided-spec-change-comparison"></a>
+
 ### Kakao 提供の仕様変更比較表
 
 ![friendtalk_compatible_spec_01.png](https://static.toastoven.net/prod_alimtalk/friendtalk_compatible_spec_01.png)
+
+<a id="other-confirmed-spec-differences"></a>
 
 ### その他で確認済みの仕様差
 
