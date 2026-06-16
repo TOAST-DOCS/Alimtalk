@@ -629,7 +629,7 @@ Content-Type: application/json;charset=UTF-8
 | chatBubbleType         | String  | O  | メッセージタイプ(TEXT, IMAGE, WIDE, WIDE_ITEM_LIST, PREMIUM_VIDEO, COMMERCE, CAROUSEL_FEED, CAROUSEL_COMMERCE)                                                                                                                                                                         |
 | pushAlarm | boolean | X | メッセージプッシュ通知の送信有無(デフォルト: true) |
 | adult                  | boolean | X  | 成人向けメッセージの有無(デフォルト値：false)                                                                                                                                                                                                                                                       |
-| content | String | X | - TEXTタイプの場合、最大1,300文字(改行:最大99個、URL形式の入力が可能)<br>- IMAGEタイプの場合、最大400文字(改行:最大29回、URL形式の入力が可能)<br>- WIDEタイプの場合、最大76文字(改行:最大1回)<br>- PREMIUM_VIDEOタイプの場合、このフィールドをオプションとして使用可能、最大76文字(改行:最大1回)<br>- その他のタイプの場合、このフィールドは使用しません |
+| content | String | X | - TEXTタイプの場合、最大1,300文字(改行:最大99個、URL形式の入力が可能)<br>- IMAGEタイプの場合、最大1,300文字(改行:最大99回、URL形式の入力が可能)<br>- WIDEタイプの場合、最大76文字(改行:最大5回)<br>- PREMIUM_VIDEOタイプの場合、このフィールドをオプションとして使用可能、最大76文字(改行:最大5回)<br>- その他のタイプの場合、このフィールドは使用しません |
 | header | String | X | ヘッダ<br>- WIDE_ITEM_LISTタイプの場合、必須フィールドで最大20文字(改行:不可)<br>- PREMIUM_VIDEOタイプの場合、任意フィールドで最大20文字(改行:不可) |
 | video | Object | O | 動画要素(PREMIUM_VIDEOタイプのみ使用可能) |
 | - videoUrl | String | O | カカオTV動画URL (カカオTVにアップロードされた動画アドレスのみ使用可能)、最大500文字制限 |
@@ -3063,7 +3063,7 @@ Content-Type: multipart/form-data
 | CAROUSEL_FEED_IMAGE        | カルーセルフィード型セル別画像                                          | 推奨サイズ: 800 X 600px または 800 X 400px (横500px以上)<br/>画像比率: 0.5 ≤ 縦 ÷ 横 ≤ 1.333<br/>ファイル形式及び容量制限: jpg, png / 最大5MB                 |
 | CAROUSEL_COMMERCE_IMAGE    | カルーセルコマース型イントロ画像、カルーセルコマース型セル別画像 | 推奨サイズ: 800 X 600px または 800 X 400px (横500px以上)<br/>画像比率: 0.5 ≤ 縦 ÷ 横 ≤ 1.333<br/>ファイル形式及び容量制限: jpg, png / 最大5MB                 |
 
-* アップロードされた画像を参照するテンプレートが全て削除されるか、別の画像に変更されると、Kakao CDNから該当の画像が削除され、URLが無効になります。画像照会APIでは画像情報が維持されますが、実際の画像にはアクセスできないため、オリジナルファイルは自社サーバーに別途保管することを推奨します。
+* テンプレート変更時に画像を別の画像に変更すると、既存の画像がKakao CDNから削除されURLが無効になります。同じ画像を使用する他のテンプレートにも影響するため注意が必要です。画像照会APIでは画像情報が保持されますが、実際の画像にはアクセスできないため、元ファイルは独自のサーバーに別途保管することを推奨します。
 
 ### 画像照会
 

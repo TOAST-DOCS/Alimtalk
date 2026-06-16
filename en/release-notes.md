@@ -1,5 +1,17 @@
 ## Notification > KakaoTalk Bizmessage > Release Notes
 
+### May 27, 2026
+* [API] Added KakaoBizCenter statistics retrieval API
+    * Added an API to retrieve sending statistics and template statistics for AlimTalk and brand messages provided by KakaoBizCenter.
+    * Daily (DAILY) or monthly (MONTHLY) statistics data can be retrieved based on the sender key.
+
+* [API, Console] Updated guide on brand message image deletion
+    * Updated the guide to clarify that changing the image when updating a brand message template deletes the existing image from the Kakao CDN, and that other templates using the same image are also affected.
+
+* [API, Console] Changed content length limits by brand message type
+    * The content length limit for the IMAGE type has been changed from a maximum of 400 characters to a maximum of 1,300 characters.
+    * The line break limit for the IMAGE type has been changed from a maximum of 29 to a maximum of 99.
+    * The line break limit for the WIDE and PREMIUM_VIDEO types has been changed from a maximum of 1 to a maximum of 5.
 
 ### April 28, 2026
 * [API] Automatic cleanup of sender profiles and template data deleted after dormancy

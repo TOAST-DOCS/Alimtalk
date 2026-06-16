@@ -205,6 +205,7 @@
 | 禁止ワード | false | -8012 | 禁止ワードが存在しない | Banned word does not exist. |
 | 禁止ワード | false | -8013 | 禁止ワードがすでに存在 | Banned word already exists. |
 | 本人認証 | false | -1030 | 本人認証を受けていない場合 | Self verification is required to use this service. |
+| Kakao統計 | false | -4105 | 無効なパラメータ | {parameter}: {error message} |
 | カカともへのメッセージ互換送信 | false | -2023 | メッセージ本文が400文字を超過する場合(画像添付)                                                                                                                    | The 'content' is too long. If you request the 'image', It can be less than 400 characters.                                                                                                                                                                                                                                                                                 |
 | カカともへのメッセージ互換送信 | false | -2024 | メッセージ本文が1,300文字を超過する場合                                                                                                                         | The 'content' is too long. It can be less than 1,300 characters without any image.                                                                                                                                                                                                                                                                                         |
 | カカともへのメッセージ互換送信 | false | -3200 | ワイドアイテムリストに名前がない | Friendtalk wide item must have a title. |
