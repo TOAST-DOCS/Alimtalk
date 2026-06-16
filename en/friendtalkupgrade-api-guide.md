@@ -142,8 +142,8 @@ Content-Type: application/json;charset=UTF-8
     * Limit usage to a maximum of one AC button across the entire carousel.
     * Allow only targeting types M and N..
 * Support for the BF button by providing a Business Form ID issued by Kakao.
-* Fallback can be set via resendParameter for each recipient.
-  * When using fallback, you need to register the SMS Appkey and set its sending through the fallback management API.
+* Fallback can be set with resendParameter for each recipient.
+  * When using fallback, you need to register the SMS Appkey and set its sending with the fallback management API.
   * **Nighttime delivery restrictions(8:50 PM - 8:00 AM the next day)**
 
 #### Requested
@@ -1257,8 +1257,8 @@ Allow unique placeholder values for each item in a carousel-type template.
 * You cannot use BT button types.
 * You can use Add Channel (AC) button.
 * When using the BF button, you can upload the Business Form ID issued by Kakao and receive and use a BizForm key.
-* Fallback can be set via resendParameter for each recipient.
-  * When using fallback, you need to register the SMS Appkey and set its send through the fallback management API.
+* Fallback can be set with resendParameter for each recipient.
+  * When using fallback, you need to register the SMS Appkey and set its send with the fallback management API.
 * **Nighttime delivery restrictions(8:50 PM - 8:00 AM the next day)**
 
 ### Cautions for use
@@ -3384,6 +3384,332 @@ Content-Type: application/json;charset=UTF-8
 | \- resultCode| Integer| O| Result code|
 | \- resultMessage| String| O| Result message|
 | \- isSuccessful| boolean| O| Success status|
+
+## Video Management
+
+An API for registering, retrieving, and deleting videos to be used in brand messages. Registered videos can be used for sending after encoding is complete in KakaoBizCenter. Only videos in `PUBLIC` status can be used for template registration and sending (`PRIVATE` status allows template registration only).
+
+### Video Upload Flow
+
+The video upload process consists of 2 steps.
+
+1. **Register video upload** — Send video metadata (file name and file size) as JSON to this API (`POST /brand-message/v1.0/appkeys/{appKey}/videos`). The response includes `video` (registration information on the NHN Cloud side) and `uploadInfo` (Kakao upload URL and token).
+2. **Upload video file** — Directly upload the video file to `uploadInfo.uploadUrl` received in the response as `multipart/form-data`. For authentication, pass `uploadInfo.token` as the `x-kamp-upload-token` header.
+
+The video file is sent directly to Kakao's upload server without going through NHN Cloud servers. Therefore, the request body of this API sends only metadata as JSON, and the actual file is sent separately in step 2.
+
+> **Caution**
+> * `uploadInfo.token` is valid for 5 minutes after issuance. If 5 minutes have elapsed, you must call step 1 registration again to obtain a new token.
+> * The `fileSize` in the step 1 request must exactly match the size of the file to be uploaded in step 2 (a mismatch will result in rejection by Kakao with errCode 109).
+
+### Register Video Upload
+
+#### Request
+
+[URL]
+
+```
+POST  /brand-message/v1.0/appkeys/{appKey}/videos
+Content-Type: application/json;charset=UTF-8
+```
+
+[Path parameter]
+
+| Name | Type | Description |
+|--------|--------|--------|
+| appKey | String | Unique appkey |
+
+[Header]
+
+```
+{
+  "X-Secret-Key": String
+}
+```
+
+| Name | Type | Required | Description |
+|--------------|--------|----|------------------|
+| X-Secret-Key | String | O | Can be created in the console. |
+
+[Request body]
+
+```
+{
+  "senderKey": String,
+  "fileName": String,
+  "fileSize": Long,
+  "createUser": String
+}
+```
+
+| Name | Type | Required | Description |
+|------------|--------|----|---------------------------------------------------------------------|
+| senderKey | String | O | Sender profile key (40 characters) |
+| fileName | String | O | Video file name (including extension; one of MP4, MOV, or AVI; up to 250 characters) |
+| fileSize | Long | O | Video file size (in bytes; maximum 4 GB) |
+| createUser | String | X | Upload user identifier (up to 100 characters) |
+
+#### Response
+
+```
+{
+  "header": {
+      "resultCode": Integer,
+      "resultMessage": String,
+      "isSuccessful": boolean
+  },
+  "video": {
+      "videoSeq": Long,
+      "vid": String,
+      "senderKey": String,
+      "title": String,
+      "fileName": String,
+      "fileSize": Long,
+      "status": String
+  },
+  "uploadInfo": {
+      "uploadUrl": String,
+      "token": String
+  }
+}
+```
+
+| Name | Type | Not Null | Description |
+|:----------------|:--------|:---------|:--------------------------------------------------------------------------------|
+| header | Object | O | |
+| - resultCode | Integer | O | Result code |
+| - resultMessage | String | O | Result message |
+| - isSuccessful | boolean | O | Whether the request was successful |
+| video | Object | X | Video information registered on the NHN Cloud side (status = `REGISTERED`) |
+| - videoSeq | Long | O | Video sequence |
+| - vid | String | O | Kakao video ID |
+| - senderKey | String | O | Sender profile key |
+| - title | String | X | Video title (immediately after upload, the file name is used; synchronized with the value modified in KakaoBizCenter after encoding is complete) |
+| - fileName | String | O | Uploaded file name |
+| - fileSize | Long | O | File size (in bytes) |
+| - status | String | O | Video status (see [Video Status](#video-status)). Always `REGISTERED` in the upload registration response. |
+| uploadInfo | Object | O | Kakao upload information. Used in step 2. |
+| - uploadUrl | String | O | Kakao endpoint for directly uploading the video file |
+| - token | String | O | Upload authentication token. Pass as the `x-kamp-upload-token` header. |
+
+> The `thumbnailUrl`, `videoUrl`, `playUrl`, and `updateDate` fields, which are populated after encoding is complete, can be obtained through the [Retrieve Video](#retrieve-video) API.
+
+### Upload Video File (Step 2)
+
+Call `uploadInfo.uploadUrl` from the above response to directly upload the video file. This request is sent directly to Kakao's upload server, not to NHN Cloud servers.
+
+#### Request
+
+[URL]
+
+```
+POST  {uploadInfo.uploadUrl}
+Content-Type: multipart/form-data
+```
+
+[Header]
+
+| Name | Type | Required | Description |
+|---------------------|--------|----|---------------------------------------------|
+| x-kamp-upload-token | String | O | Pass the `uploadInfo.token` value from the step 1 response as-is. |
+
+[Request body (multipart)]
+
+| Name | Type | Required | Description |
+|------|------|----|-----------------------------------------------------|
+| file | File | O | Video file. Must exactly match the `fileSize` in the step 1 request. |
+
+#### Response
+
+```
+{
+  "vid": String,
+  "playUrl": String,
+  "errCode": Integer,
+  "message": String
+}
+```
+
+* On success, returns `vid` (same as the step 1 response) and `playUrl`. The `errCode` and `message` fields are not included.
+* On failure, returns HTTP 4xx along with `errCode` (100–110) and `message`. For detailed error codes, refer to the Kakao BizMessage guide.
+
+#### Video Upload Specifications
+
+| Item | Limit |
+|:---------|:--------------------------------------------|
+| File format | MP4, MOV, AVI |
+| Maximum file size | 4 GB |
+| Maximum video length | 4 hours |
+| Maximum resolution | 8K |
+| File name length | Up to 250 characters |
+
+* Uploaded videos can be used after encoding is complete in KakaoBizCenter. Encoding time varies depending on the video length and typically takes 5–10 minutes.
+* Immediately after upload, the video status starts as `REGISTERED`, transitions through `ENCODING`, and then changes to `PUBLIC` or `PRIVATE`. The status can be checked in the console or through the [Retrieve Video](#retrieve-video) API.
+* Registered videos are permanently stored on Kakao's side, and deleting a template does not automatically remove the video from KakaoBizCenter. The KakaoTalk channel administrator can delete the video directly from the management screen on the channel business home.
+* If the step 2 file upload fails or is delayed after step 1 registration and the token (5 minutes) expires, you must call a new registration again. Videos that have been registered but not actually uploaded will be automatically marked as `ERROR` after a certain period of time.
+
+### Retrieve Video
+
+#### Request
+
+[URL]
+
+```
+GET  /brand-message/v1.0/appkeys/{appKey}/videos
+Content-Type: application/json;charset=UTF-8
+```
+
+[Path parameter]
+
+| Name | Type | Description |
+|--------|--------|--------|
+| appKey | String | Unique appkey |
+
+[Header]
+
+```
+{
+  "X-Secret-Key": String
+}
+```
+
+| Name | Type | Required | Description |
+|--------------|--------|----|------------------|
+| X-Secret-Key | String | O | Can be created in the console. |
+
+[Request parameter]
+
+| Name | Type | Required | Description |
+|------------|--------|----|-------------------|
+| senderKey | String | X | Sender profile key (40 characters) |
+| pageNum | String | X | Page number (default: 1) |
+| pageSize | String | X | Number of results to retrieve (default: 15) |
+
+#### Response
+
+```
+{
+  "header": {
+    "resultCode": Integer,
+    "resultMessage": String,
+    "isSuccessful": boolean
+  },
+  "videosResponse": {
+    "videos": [
+      {
+        "videoSeq": Long,
+        "vid": String,
+        "senderKey": String,
+        "title": String,
+        "fileName": String,
+        "fileSize": Long,
+        "status": String,
+        "thumbnailUrl": String,
+        "videoUrl": String,
+        "playUrl": String,
+        "createDate": String,
+        "updateDate": String,
+        "createUser": String
+      }
+    ],
+    "totalCount": Integer
+  }
+}
+```
+
+| Name | Type | Not Null | Description |
+|:--------------------|:--------|:---------|:------------------------------------------------------------|
+| header | Object | O | |
+| - resultCode | Integer | O | Result code |
+| - resultMessage | String | O | Result message |
+| - isSuccessful | boolean | O | Whether the request was successful |
+| videosResponse | Object | X | Video list area |
+| - videos | Array | O | Video array |
+| - - videoSeq | Long | O | Video sequence |
+| - - vid | String | O | Kakao video ID |
+| - - senderKey | String | O | Sender profile key |
+| - - title | String | X | Video title (immediately after upload, the file name is used; synchronized with the value modified in KakaoBizCenter after encoding is complete) |
+| - - fileName | String | O | Uploaded file name |
+| - - fileSize | Long | O | File size (in bytes) |
+| - - status | String | O | Video status (see [Video Status](#video-status)) |
+| - - thumbnailUrl | String | X | Thumbnail URL (available after encoding is complete) |
+| - - videoUrl | String | X | URL for sending and management (available in `PUBLIC` status) |
+| - - playUrl | String | X | Playback URL |
+| - - createDate | String | O | Registration time |
+| - - updateDate | String | X | Status synchronization time (recorded upon webhook/batch update) |
+| - - createUser | String | X | Upload user identifier |
+| - totalCount | Integer | O | Total number of videos |
+
+> In the upload registration response, `video` reflects the state immediately after registration, so `status` is always `REGISTERED` and the `thumbnailUrl`, `videoUrl`, `playUrl`, `createDate`, `updateDate`, and `createUser` fields are not included. These fields can be checked through the Retrieve Video API after encoding is complete.
+
+### Delete Video
+
+#### Request
+
+[URL]
+
+```
+DELETE  /brand-message/v1.0/appkeys/{appKey}/videos
+Content-Type: application/json;charset=UTF-8
+```
+
+[Path parameter]
+
+| Name | Type | Description |
+|--------|--------|--------|
+| appKey | String | Unique appkey |
+
+[Header]
+
+```
+{
+  "X-Secret-Key": String
+}
+```
+
+| Name | Type | Required | Description |
+|--------------|--------|----|------------------|
+| X-Secret-Key | String | O | Can be created in the console. |
+
+[Query parameter]
+
+| Name | Type | Required | Description |
+|----------|--------|----|-----------------------------------|
+| videoSeq | String | O | Video sequence (multiple values can be passed separated by commas) |
+
+#### Response
+
+```
+{
+  "header": {
+    "resultCode": Integer,
+    "resultMessage": String,
+    "isSuccessful": boolean
+  }
+}
+```
+
+| Name | Type | Not Null | Description |
+|:----------------|:--------|:---------|:-------|
+| header | Object | O | |
+| - resultCode | Integer | O | Result code |
+| - resultMessage | String | O | Result message |
+| - isSuccessful | boolean | O | Whether the request was successful |
+
+### Video Status
+
+Describes the `status` field values in the video retrieval response.
+
+| Status | Description |
+|:-----------|:------------------------------------|
+| REGISTERED | Upload registered |
+| ENCODING | Encoding in progress |
+| PUBLIC | Public status (available for sending and template registration) |
+| PRIVATE | Private status (available for template registration only) |
+| VIOLATED | Policy-violating video |
+| ILLEGAL | Illegally filmed video |
+| DELETED | Deleted video |
+| ERROR | Error occurred during upload or encoding |
 
 ## Upload
 
