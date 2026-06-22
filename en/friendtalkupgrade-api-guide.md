@@ -20,7 +20,7 @@ Non-friend message sending (targeting M, N) can be sent if all the conditions be
 - 50,000 or more channel friends
 - Successfully send notification messages within the past three months
 
-### Upload marketing consent evidence
+### Upload marketing consent records
 
 #### Requested
 
@@ -54,7 +54,7 @@ Content-Type: multipart/form-data
 
 | Name| Type| Required| Description|
 |----------|----------|----------|----------|
-| file| File| O| Marketing consent evidence|
+| file| File| O| Marketing consent records|
 
 #### Response
 
@@ -126,7 +126,7 @@ Content-Type: application/json;charset=UTF-8
 
 ## Request to send a free-form message
 
-* You can send a marketing consent.
+* Marketing consent-based sending can be used.
    * You can specify the type of message target by specifying the targeting field.
        * M: Users who agree to receive advertising information from the client company (KakaoTalk message consent)
        * N: Users who agree to receive advertising information from the client company - Channel friend
@@ -142,8 +142,8 @@ Content-Type: application/json;charset=UTF-8
     * Limit usage to a maximum of one AC button across the entire carousel.
     * Allow only targeting types M and N..
 * Support for the BF button by providing a Business Form ID issued by Kakao.
-* Fallback can be set via resendParameter for each recipient.
-  * When using fallback, you need to register the SMS Appkey and set its sending through the fallback management API.
+* Fallback can be set with resendParameter for each recipient.
+  * When using fallback, you need to register the SMS Appkey and set its sending with the fallback management API.
   * **Nighttime delivery restrictions(8:50 PM - 8:00 AM the next day)**
 
 #### Requested
@@ -241,7 +241,7 @@ Content-Type: application/json;charset=UTF-8
 | unsubscribeNo| String| X| 080 toll-free opt-out phone number (If not entered, the message will be sent using the free opt-out information registered in the outgoing profile)<br>- 080-xxx-xxxx <br>- 080-xxxx-xxxx <br>- 080xxxxxxx <br>- 080xxxxxxxx|
 | unsubscribeAuthNo| String| X| 080 toll-free opt-out verification number (If not entered, the message will be sent using the free opt-out information registered in the outgoing profile)<br>unsubscribeAuthNo cannot be entered without unsubscribeNo<br>ex) 1234|
 | adult| boolean| X| Message status for adults (defaults: false)|
-| content| String| O| \- For TEXT type, up to 1,300 characters (linebreak: up to 99, URL type available)<br>- For IMAGE type, up to 400 characters (linebreak: up to 29, URL type available)<br>- For WIDE type, up to 76 characters (linebreak: up to 1)<br>- For PREMIUM_VIDEO type, the field can be used optionally. Up 76 characters (linebreak: up to 1)<br>- For other types, the field is unavailable.|
+| content| String| O| \- For TEXT type, up to 1,300 characters (linebreak: up to 99, URL type available)<br>- For IMAGE type, up to 1,300 characters (linebreak: up to 99, URL type available)<br>- For WIDE type, up to 76 characters (linebreak: up to 5)<br>- For PREMIUM_VIDEO type, the field can be used optionally. Up 76 characters (linebreak: up to 5)<br>- For other types, the field is unavailable.|
 | buttons| List| X| Button list<br>- For TEXT, IMAGE type, up to 4 when applying a coupon; for others, up to 5<br>- For WIDE, WIDE_ITEM_LIST type, up to 2<br>- For PREMIUM_VIDEO type, up to 1<br>- For COMMERCE type, minimum 1 and up to 2|
 | \- name| String| O| Button title<br>- For TEXT, IMAGE type, up to 14 characters<br>- For other types, up to 8 characters|
 | \- type| String| O| Button type (WL: web link, AL: app link, BK: bot keyword, MD: message forwarding, AC: add channel, BT: chatbot conversion, BF: Business form)<br>- BT type is available only in the channel using the chatbot of Kakao i Open Builder<br>- BF type can only be used as the first button, and only the following three phrases can be used for names:<br>&nbsp;&nbsp;- Make a reservation via KakaoTalk<br>&nbsp;&nbsp;- Take a survey via KakaoTalk<br>&nbsp;&nbsp;- Apply via KakaoTalk|
@@ -270,7 +270,7 @@ Content-Type: application/json;charset=UTF-8
 | \-- resendUnsubscribeNo| String| X| Fallback 080 opt-out number<br><span style="color:red">(if the 080 opt-out number is not registered with the SMS service, the fallback may fail.)</span>|
 | \- targeting| String| X| Type of message target (M: User with marketing consent, N: only users that agreed to marketing consent and are not friends, I: users who are friends)|
 | \- unsubscribeNo| String| X| 080 toll-free opt-out phone number (If not entered, the message will be sent using the free opt-out information registered in the outgoing profile)<br>- 080-xxx-xxxx <br>- 080-xxxx-xxxx <br>- 080xxxxxxx <br>- 080xxxxxxxx|
-| \- unsubscribeAuthNo| String| X| Opt-out verification number (If not entered, the message will be sent using the free opt-out information registered in the outgoing profile)<br>unsubscribeAuthNo cannot be entered without unsubscribeNo<br>ex) 1234|
+| \- unsubscribeAuthNo| String| X| 080 opt-out verification number (If not entered, the message will be sent using the free opt-out information registered in the outgoing profile)<br>unsubscribeAuthNo cannot be entered without unsubscribeNo<br>ex) 1234|
 | \- recipientGroupingKey| String| X| Recipient grouping key (you can specify grouping keys by recipient. Up 100 characters)|
 | senderGroupingKey| String| X| Sender grouping key (you can specify grouping keys by sender. Up 100 characters)|
 | resellerCode| String| X| Reseller code (used by resellers when sending)|
@@ -349,7 +349,7 @@ Content-Type: application/json;charset=UTF-8
 | unsubscribeNo| String| X| 080 toll-free opt-out phone number (If not entered, the message will be sent using the free opt-out information registered in the outgoing profile)<br>- 080-xxx-xxxx <br>- 080-xxxx-xxxx <br>- 080xxxxxxx <br>- 080xxxxxxxx|
 | unsubscribeAuthNo| String| X| 080 toll-free opt-out verification number (If not entered, the message will be sent using the free opt-out information registered in the outgoing profile)<br>unsubscribeAuthNo cannot be entered without unsubscribeNo<br>ex) 1234|
 | adult| boolean| X| Message status for adults (defaults: false)|
-| content| String| O| \- For TEXT type, up to 1,300 characters (linebreak: up to 99, URL type available)<br>- For IMAGE type, up to 400 characters (linebreak: up to 29, URL type available)<br>- For WIDE type, up to 76 characters (linebreak: up to 1)<br>- For PREMIUM_VIDEO type, the field can be used optionally. Up 76 characters (linebreak: up to 1)<br>- For other types, the field is unavailable.|
+| content| String| O| \- For TEXT type, up to 1,300 characters (linebreak: up to 99, URL type available)<br>- For IMAGE type, up to 1,300 characters (linebreak: up to 99, URL type available)<br>- For WIDE type, up to 76 characters (linebreak: up to 5)<br>- For PREMIUM_VIDEO type, the field can be used optionally. Up 76 characters (linebreak: up to 5)<br>- For other types, the field is unavailable.|
 | image| Object| O| Image elements<br>- Required fields for IMAGE, WIDE, COMMERCE types|
 | \- imageUrl| String| O| Image URL. Use an image URL uploaded as a general image|
 | \- imageLink| String| X| URL to go to when the image is clicked. Limited to 1,000 characters<br>If not set, use the image viewer in KakaoTalk|
@@ -460,7 +460,7 @@ Content-Type: application/json;charset=UTF-8
 | unsubscribeNo| String| X| 080 toll-free opt-out phone number (If not entered, the message will be sent using the free opt-out information registered in the outgoing profile)<br>- 080-xxx-xxxx <br>- 080-xxxx-xxxx <br>- 080xxxxxxx <br>- 080xxxxxxxx|
 | unsubscribeAuthNo| String| X| 080 toll-free opt-out verification number (If not entered, the message will be sent using the free opt-out information registered in the outgoing profile)<br>unsubscribeAuthNo cannot be entered without unsubscribeNo<br>ex) 1234|
 | adult| boolean| X| Message status for adults (defaults: false)|
-| content| String| O| \- For TEXT type, up to 1,300 characters (linebreak: up to 99, URL type available)<br>- For IMAGE type, up to 400 characters (linebreak: up to 29, URL type available)<br>- For WIDE type, up to 76 characters (linebreak: up to 1)<br>- For PREMIUM_VIDEO type, the field can be used optionally. Up 76 characters (linebreak: up to 1)<br>- For other types, the field is unavailable.|
+| content| String| O| \- For TEXT type, up to 1,300 characters (linebreak: up to 99, URL type available)<br>- For IMAGE type, up to 1,300 characters (linebreak: up to 99, URL type available)<br>- For WIDE type, up to 76 characters (linebreak: up to 5)<br>- For PREMIUM_VIDEO type, the field can be used optionally. Up 76 characters (linebreak: up to 5)<br>- For other types, the field is unavailable.|
 | image| Object| O| Image elements<br>- Required fields for IMAGE, WIDE, COMMERCE types|
 | \- imageUrl| String| O| Image URL, use an image URL uploaded as a wide image|
 | \- imageLink| String| X| URL to go to when the image is clicked. Limited to 1,000 characters<br>If not set, use the image viewer in KakaoTalk|
@@ -712,7 +712,7 @@ Content-Type: application/json;charset=UTF-8
 | unsubscribeNo| String| X| 080 toll-free opt-out phone number (If not entered, the message will be sent using the free opt-out information registered in the outgoing profile)<br>- 080-xxx-xxxx <br>- 080-xxxx-xxxx <br>- 080xxxxxxx <br>- 080xxxxxxxx|
 | unsubscribeAuthNo| String| X| 080 toll-free opt-out verification number (If not entered, the message will be sent using the free opt-out information registered in the outgoing profile)<br>unsubscribeAuthNo cannot be entered without unsubscribeNo<br>ex) 1234|
 | adult| boolean| X| Message status for adults (defaults: false)|
-| content| String| X| \- For TEXT type, up to 1,300 characters (linebreak: up to 99, URL type available)<br>- For IMAGE type, up to 400 characters (linebreak: up to 29, URL type available)<br>- For WIDE type, up to 76 characters (linebreak: up to 1)<br>- For PREMIUM_VIDEO type, the field can be used optionally, 76 characters (linebreak: up to 1)<br>- For other types, the field is unavailable.|
+| content| String| X| \- For TEXT type, up to 1,300 characters (linebreak: up to 99, URL type available)<br>- For IMAGE type, up to 1,300 characters (linebreak: up to 99, URL type available)<br>- For WIDE type, up to 76 characters (linebreak: up to 5)<br>- For PREMIUM_VIDEO type, the field can be used optionally, 76 characters (linebreak: up to 5)<br>- For other types, the field is unavailable.|
 | header| String| X| Header<br>- Required field for WIDE_ITEM_LIST type, up to 20 characters (linebreak: unavailable)<br>- Optional field for WIDE_ITEM_LIST type, up to 20 characters (linebreak: unavailable)|
 | video| Object| O| Video elements (only PREMIUM_VIDEO type available)|
 | \- videoUrl| String| O| KakaoTV video URL (only video addresses uploaded on KakaoTV available), limited to up to 500 characters|
@@ -1248,7 +1248,7 @@ Allow unique placeholder values for each item in a carousel-type template.
 ## Request to send basic message
 
 * A sending using a template.
-* You can use the marketing consent sending.
+* Marketing consent-based sending can be used.
    * You can specify the type of message target by specifying the targeting field.
        * M: Users who agree to receive advertising information from the client company (KakaoTalk message consent)
        * N: Users who agree to receive advertising information from the client company - Channel friend
@@ -1257,8 +1257,8 @@ Allow unique placeholder values for each item in a carousel-type template.
 * You cannot use BT button types.
 * You can use Add Channel (AC) button.
 * When using the BF button, you can upload the Business Form ID issued by Kakao and receive and use a BizForm key.
-* Fallback can be set via resendParameter for each recipient.
-  * When using fallback, you need to register the SMS Appkey and set its send through the fallback management API.
+* Fallback can be set with resendParameter for each recipient.
+  * When using fallback, you need to register the SMS Appkey and set its send with the fallback management API.
 * **Nighttime delivery restrictions(8:50 PM - 8:00 AM the next day)**
 
 ### Cautions for use
@@ -2475,7 +2475,7 @@ Content-Type: application/json;charset=UTF-8
 | templateName| String| O| Template name (up 200 characters)|
 | chatBubbleType| String| O| Message type (TEXT, IMAGE, WIDE, WIDE_ITEM_LIST, PREMIUM_VIDEO, COMMERCE, CAROUSEL_FEED, CAROUSEL_COMMERCE)|
 | adult| boolean| X| Message status for adults (defaults: false)|
-| content| String| O| \- For TEXT type, up to 1,300 characters (linebreak: up to 99, URL type available)<br>- For IMAGE type, up to 400 characters (linebreak: up to 29, URL type available)<br>- For WIDE type, up to 76 characters (linebreak: up to 1)<br>- For PREMIUM_VIDEO type, the field can be used optionally, 76 characters (linebreak: up to 1)<br>- For other types, the field is unavailable.|
+| content| String| O| \- For TEXT type, up to 1,300 characters (linebreak: up to 99, URL type available)<br>- For IMAGE type, up to 1,300 characters (linebreak: up to 99, URL type available)<br>- For WIDE type, up to 76 characters (linebreak: up to 5)<br>- For PREMIUM_VIDEO type, the field can be used optionally, 76 characters (linebreak: up to 5)<br>- For other types, the field is unavailable.|
 | buttons| List| X| Button list<br>- For TEXT, IMAGE type, up to 4 when applying a coupon; for others, up to 5<br>- For WIDE, WIDE_ITEM_LIST type, up to 2<br>- For PREMIUM_VIDEO type, up to 1<br>- For COMMERCE type, minimum 1 and up to 2|
 | \- name| String| O| Button title<br>- For TEXT, IMAGE type, up to 14 characters<br>- For other types, up to 8 characters<br>No placeholders available|
 | \- type| String| O| Button type (WL: web link, AL: app link, BK: bot keyword, MD: forward message, AC: add channel, BT: chatbot conversion, BF: business form)<br>- AC type must be registered as the first button for TEXT and IMAGE, and as the last button for other message types|
@@ -2533,7 +2533,7 @@ Content-Type: application/json;charset=UTF-8
 | templateName| String| O        | Template name (up 200 characters)|
 | chatBubbleType| String| O        | Message type (TEXT, IMAGE, WIDE, WIDE_ITEM_LIST, PREMIUM_VIDEO, COMMERCE, CAROUSEL_FEED, CAROUSEL_COMMERCE)|
 | adult| boolean| X        | Message status for adults (defaults: false)|
-| content| String| O        | \- For TEXT type, up to 1,300 characters (linebreak: up to 99, URL type available)<br>- For IMAGE type, up to 400 characters (linebreak: up to 29, URL type available)<br>- For WIDE type, up to 76 characters (linebreak: up to 1)<br>- For PREMIUM_VIDEO type, the field can be used optionally, 76 characters (linebreak: up to 1)<br>- For other types, the field is unavailable.|
+| content| String| O        | \- For TEXT type, up to 1,300 characters (linebreak: up to 99, URL type available)<br>- For IMAGE type, up to 1,300 characters (linebreak: up to 99, URL type available)<br>- For WIDE type, up to 76 characters (linebreak: up to 5)<br>- For PREMIUM_VIDEO type, the field can be used optionally, 76 characters (linebreak: up to 5)<br>- For other types, the field is unavailable.|
 | image| Object| O        | Image elements<br>- Required fields for IMAGE, WIDE, COMMERCE types|
 | \- imageUrl| String| O        | Image URL, use an image URL uploaded as a general image<br>No placeholders available|
 | \- imageLink| String| X        | URL to go to when the image is clicked, limited to 500 characters<br>If not set, use the image viewer in KakaoTalk<br>No placeholders available|
@@ -2594,7 +2594,7 @@ Content-Type: application/json;charset=UTF-8
 | templateName| String| O        | Template name (up 200 characters)|
 | chatBubbleType| String| O        | Message type (TEXT, IMAGE, WIDE, WIDE_ITEM_LIST, PREMIUM_VIDEO, COMMERCE, CAROUSEL_FEED, CAROUSEL_COMMERCE)|
 | adult| boolean| X        | Message status for adults (defaults: false)|
-| content| String| O        | \- For TEXT type, up to 1,300 characters (linebreak: up to 99, URL type available)<br>- For IMAGE type, up to 400 characters (linebreak: up to 29, URL type available)<br>- For WIDE type, up to 76 characters (linebreak: up to 1)<br>- For PREMIUM_VIDEO type, the field can be used optionally, 76 characters (linebreak: up to 1)<br>- For other types, the field is unavailable.|
+| content| String| O        | \- For TEXT type, up to 1,300 characters (linebreak: up to 99, URL type available)<br>- For IMAGE type, up to 1,300 characters (linebreak: up to 99, URL type available)<br>- For WIDE type, up to 76 characters (linebreak: up to 5)<br>- For PREMIUM_VIDEO type, the field can be used optionally, 76 characters (linebreak: up to 5)<br>- For other types, the field is unavailable.|
 | image| Object| O        | Image elements<br>- Required fields for IMAGE, WIDE, COMMERCE types|
 | \- imageUrl| String| O        | Image URL, use an image URL uploaded as a wide image<br>No placeholders available|
 | \- imageLink| String| X        | URL to go to when the image is clicked, limited to 500 characters<br>If not set, use the image viewer in KakaoTalk<br>No placeholders available|
@@ -2746,7 +2746,7 @@ Content-Type: application/json;charset=UTF-8
 | templateName| String| O| Template name (up 200 characters)|
 | chatBubbleType| String| O| Message type (TEXT, IMAGE, WIDE, WIDE_ITEM_LIST, PREMIUM_VIDEO, COMMERCE, CAROUSEL_FEED, CAROUSEL_COMMERCE)|
 | adult| boolean| X| Message status for adults (defaults: false)|
-| content| String| X| \- For TEXT type, up to 1,300 characters (linebreak: up to 99, URL type available)<br>- For IMAGE type, up to 400 characters (linebreak: up to 29, URL type available)<br>- For WIDE type, up to 76 characters (linebreak: up to 1)<br>- For PREMIUM_VIDEO type, the field can be used optionally, 76 characters (linebreak: up to 1)<br>- For other types, the field is unavailable.|
+| content| String| X| \- For TEXT type, up to 1,300 characters (linebreak: up to 99, URL type available)<br>- For IMAGE type, up to 1,300 characters (linebreak: up to 99, URL type available)<br>- For WIDE type, up to 76 characters (linebreak: up to 5)<br>- For PREMIUM_VIDEO type, the field can be used optionally, 76 characters (linebreak: up to 5)<br>- For other types, the field is unavailable.|
 | header| String| X| Header<br>- Required field for WIDE_ITEM_LIST type, up to 20 characters (linebreak: unavailable)<br>- Optional field for WIDE_ITEM_LIST type, up to 20 characters (linebreak: unavailable)|
 | video| Object| O| Video elements (only PREMIUM_VIDEO type available)|
 | \- videoUrl| String| O| KakaoTV video URL (only video addresses uploaded on KakaoTV available), limited to up to 500 characters<br>Placeholders unavailable|
@@ -3264,7 +3264,7 @@ Content-Type: multipart/form-data
 | CAROUSEL_FEED_IMAGE        | Per-cell image in a carousel feed                                       | **Recommended size:** 800 × 600 px or 800 × 400 px (width ≥ 500 px)<br/>**Aspect ratio:** 0.5 ≤ (height ÷ width) ≤ 1.333<br/>**File format & size limit:** JPG, PNG / up to 5 MB |
 | CAROUSEL_COMMERCE_IMAGE    | Intro image for carousel commerce, per-cell image for carousel commerce | **Recommended size:** 800 × 600 px or 800 × 400 px (width ≥ 500 px)<br/>**Aspect ratio:** 0.5 ≤ (height ÷ width) ≤ 1.333<br/>**File format & size limit:** JPG, PNG / up to 5 MB |
 
-* If all templates referencing an uploaded image are deleted or changed to a different image, the image will be removed from the Kakao CDN, making the URL invalid. While image information is retained in the Image Retrieval API, the actual image cannot be accessed. It is recommended to store the original file separately on your own server.
+* When updating a template, if the image is changed to a different one, the existing image is deleted from the Kakao CDN and the URL becomes invalid. Other templates using the same image are also affected, so caution is required. Although image information is retained in the image retrieval API, the actual image cannot be accessed, so it is recommended to keep the original file separately on your own server.
 
 ### View image
 
@@ -3384,6 +3384,332 @@ Content-Type: application/json;charset=UTF-8
 | \- resultCode| Integer| O| Result code|
 | \- resultMessage| String| O| Result message|
 | \- isSuccessful| boolean| O| Success status|
+
+## Video Management
+
+An API for registering, retrieving, and deleting videos to be used in brand messages. Registered videos can be used for sending after encoding is complete in KakaoBizCenter. Only videos in `PUBLIC` status can be used for template registration and sending (`PRIVATE` status allows template registration only).
+
+### Video Upload Flow
+
+The video upload process consists of 2 steps.
+
+1. **Register video upload** — Send video metadata (file name and file size) as JSON to this API (`POST /brand-message/v1.0/appkeys/{appKey}/videos`). The response includes `video` (registration information on the NHN Cloud side) and `uploadInfo` (Kakao upload URL and token).
+2. **Upload video file** — Directly upload the video file to `uploadInfo.uploadUrl` received in the response as `multipart/form-data`. For authentication, pass `uploadInfo.token` as the `x-kamp-upload-token` header.
+
+The video file is sent directly to Kakao's upload server without going through NHN Cloud servers. Therefore, the request body of this API sends only metadata as JSON, and the actual file is sent separately in step 2.
+
+> **Caution**
+> * `uploadInfo.token` is valid for 5 minutes after issuance. If 5 minutes have elapsed, you must call step 1 registration again to obtain a new token.
+> * The `fileSize` in the step 1 request must exactly match the size of the file to be uploaded in step 2 (a mismatch will result in rejection by Kakao with errCode 109).
+
+### Register Video Upload
+
+#### Request
+
+[URL]
+
+```
+POST  /brand-message/v1.0/appkeys/{appKey}/videos
+Content-Type: application/json;charset=UTF-8
+```
+
+[Path parameter]
+
+| Name | Type | Description |
+|--------|--------|--------|
+| appKey | String | Unique appkey |
+
+[Header]
+
+```
+{
+  "X-Secret-Key": String
+}
+```
+
+| Name | Type | Required | Description |
+|--------------|--------|----|------------------|
+| X-Secret-Key | String | O | Can be created in the console. |
+
+[Request body]
+
+```
+{
+  "senderKey": String,
+  "fileName": String,
+  "fileSize": Long,
+  "createUser": String
+}
+```
+
+| Name | Type | Required | Description |
+|------------|--------|----|---------------------------------------------------------------------|
+| senderKey | String | O | Sender profile key (40 characters) |
+| fileName | String | O | Video file name (including extension; one of MP4, MOV, or AVI; up to 250 characters) |
+| fileSize | Long | O | Video file size (in bytes; maximum 4 GB) |
+| createUser | String | X | Upload user identifier (up to 100 characters) |
+
+#### Response
+
+```
+{
+  "header": {
+      "resultCode": Integer,
+      "resultMessage": String,
+      "isSuccessful": boolean
+  },
+  "video": {
+      "videoSeq": Long,
+      "vid": String,
+      "senderKey": String,
+      "title": String,
+      "fileName": String,
+      "fileSize": Long,
+      "status": String
+  },
+  "uploadInfo": {
+      "uploadUrl": String,
+      "token": String
+  }
+}
+```
+
+| Name | Type | Not Null | Description |
+|:----------------|:--------|:---------|:--------------------------------------------------------------------------------|
+| header | Object | O | |
+| - resultCode | Integer | O | Result code |
+| - resultMessage | String | O | Result message |
+| - isSuccessful | boolean | O | Whether the request was successful |
+| video | Object | X | Video information registered on the NHN Cloud side (status = `REGISTERED`) |
+| - videoSeq | Long | O | Video sequence |
+| - vid | String | O | Kakao video ID |
+| - senderKey | String | O | Sender profile key |
+| - title | String | X | Video title (immediately after upload, the file name is used; synchronized with the value modified in KakaoBizCenter after encoding is complete) |
+| - fileName | String | O | Uploaded file name |
+| - fileSize | Long | O | File size (in bytes) |
+| - status | String | O | Video status (see [Video Status](#video-status)). Always `REGISTERED` in the upload registration response. |
+| uploadInfo | Object | O | Kakao upload information. Used in step 2. |
+| - uploadUrl | String | O | Kakao endpoint for directly uploading the video file |
+| - token | String | O | Upload authentication token. Pass as the `x-kamp-upload-token` header. |
+
+> The `thumbnailUrl`, `videoUrl`, `playUrl`, and `updateDate` fields, which are populated after encoding is complete, can be obtained through the [Retrieve Video](#retrieve-video) API.
+
+### Upload Video File (Step 2)
+
+Call `uploadInfo.uploadUrl` from the above response to directly upload the video file. This request is sent directly to Kakao's upload server, not to NHN Cloud servers.
+
+#### Request
+
+[URL]
+
+```
+POST  {uploadInfo.uploadUrl}
+Content-Type: multipart/form-data
+```
+
+[Header]
+
+| Name | Type | Required | Description |
+|---------------------|--------|----|---------------------------------------------|
+| x-kamp-upload-token | String | O | Pass the `uploadInfo.token` value from the step 1 response as-is. |
+
+[Request body (multipart)]
+
+| Name | Type | Required | Description |
+|------|------|----|-----------------------------------------------------|
+| file | File | O | Video file. Must exactly match the `fileSize` in the step 1 request. |
+
+#### Response
+
+```
+{
+  "vid": String,
+  "playUrl": String,
+  "errCode": Integer,
+  "message": String
+}
+```
+
+* On success, returns `vid` (same as the step 1 response) and `playUrl`. The `errCode` and `message` fields are not included.
+* On failure, returns HTTP 4xx along with `errCode` (100–110) and `message`. For detailed error codes, refer to the Kakao BizMessage guide.
+
+#### Video Upload Specifications
+
+| Item | Limit |
+|:---------|:--------------------------------------------|
+| File format | MP4, MOV, AVI |
+| Maximum file size | 4 GB |
+| Maximum video length | 4 hours |
+| Maximum resolution | 8K |
+| File name length | Up to 250 characters |
+
+* Uploaded videos can be used after encoding is complete in KakaoBizCenter. Encoding time varies depending on the video length and typically takes 5–10 minutes.
+* Immediately after upload, the video status starts as `REGISTERED`, transitions through `ENCODING`, and then changes to `PUBLIC` or `PRIVATE`. The status can be checked in the console or through the [Retrieve Video](#retrieve-video) API.
+* Registered videos are permanently stored on Kakao's side, and deleting a template does not automatically remove the video from KakaoBizCenter. The KakaoTalk channel administrator can delete the video directly from the management screen on the channel business home.
+* If the step 2 file upload fails or is delayed after step 1 registration and the token (5 minutes) expires, you must call a new registration again. Videos that have been registered but not actually uploaded will be automatically marked as `ERROR` after a certain period of time.
+
+### Retrieve Video
+
+#### Request
+
+[URL]
+
+```
+GET  /brand-message/v1.0/appkeys/{appKey}/videos
+Content-Type: application/json;charset=UTF-8
+```
+
+[Path parameter]
+
+| Name | Type | Description |
+|--------|--------|--------|
+| appKey | String | Unique appkey |
+
+[Header]
+
+```
+{
+  "X-Secret-Key": String
+}
+```
+
+| Name | Type | Required | Description |
+|--------------|--------|----|------------------|
+| X-Secret-Key | String | O | Can be created in the console. |
+
+[Request parameter]
+
+| Name | Type | Required | Description |
+|------------|--------|----|-------------------|
+| senderKey | String | X | Sender profile key (40 characters) |
+| pageNum | String | X | Page number (default: 1) |
+| pageSize | String | X | Number of results to retrieve (default: 15) |
+
+#### Response
+
+```
+{
+  "header": {
+    "resultCode": Integer,
+    "resultMessage": String,
+    "isSuccessful": boolean
+  },
+  "videosResponse": {
+    "videos": [
+      {
+        "videoSeq": Long,
+        "vid": String,
+        "senderKey": String,
+        "title": String,
+        "fileName": String,
+        "fileSize": Long,
+        "status": String,
+        "thumbnailUrl": String,
+        "videoUrl": String,
+        "playUrl": String,
+        "createDate": String,
+        "updateDate": String,
+        "createUser": String
+      }
+    ],
+    "totalCount": Integer
+  }
+}
+```
+
+| Name | Type | Not Null | Description |
+|:--------------------|:--------|:---------|:------------------------------------------------------------|
+| header | Object | O | |
+| - resultCode | Integer | O | Result code |
+| - resultMessage | String | O | Result message |
+| - isSuccessful | boolean | O | Whether the request was successful |
+| videosResponse | Object | X | Video list area |
+| - videos | Array | O | Video array |
+| - - videoSeq | Long | O | Video sequence |
+| - - vid | String | O | Kakao video ID |
+| - - senderKey | String | O | Sender profile key |
+| - - title | String | X | Video title (immediately after upload, the file name is used; synchronized with the value modified in KakaoBizCenter after encoding is complete) |
+| - - fileName | String | O | Uploaded file name |
+| - - fileSize | Long | O | File size (in bytes) |
+| - - status | String | O | Video status (see [Video Status](#video-status)) |
+| - - thumbnailUrl | String | X | Thumbnail URL (available after encoding is complete) |
+| - - videoUrl | String | X | URL for sending and management (available in `PUBLIC` status) |
+| - - playUrl | String | X | Playback URL |
+| - - createDate | String | O | Registration time |
+| - - updateDate | String | X | Status synchronization time (recorded upon webhook/batch update) |
+| - - createUser | String | X | Upload user identifier |
+| - totalCount | Integer | O | Total number of videos |
+
+> In the upload registration response, `video` reflects the state immediately after registration, so `status` is always `REGISTERED` and the `thumbnailUrl`, `videoUrl`, `playUrl`, `createDate`, `updateDate`, and `createUser` fields are not included. These fields can be checked through the Retrieve Video API after encoding is complete.
+
+### Delete Video
+
+#### Request
+
+[URL]
+
+```
+DELETE  /brand-message/v1.0/appkeys/{appKey}/videos
+Content-Type: application/json;charset=UTF-8
+```
+
+[Path parameter]
+
+| Name | Type | Description |
+|--------|--------|--------|
+| appKey | String | Unique appkey |
+
+[Header]
+
+```
+{
+  "X-Secret-Key": String
+}
+```
+
+| Name | Type | Required | Description |
+|--------------|--------|----|------------------|
+| X-Secret-Key | String | O | Can be created in the console. |
+
+[Query parameter]
+
+| Name | Type | Required | Description |
+|----------|--------|----|-----------------------------------|
+| videoSeq | String | O | Video sequence (multiple values can be passed separated by commas) |
+
+#### Response
+
+```
+{
+  "header": {
+    "resultCode": Integer,
+    "resultMessage": String,
+    "isSuccessful": boolean
+  }
+}
+```
+
+| Name | Type | Not Null | Description |
+|:----------------|:--------|:---------|:-------|
+| header | Object | O | |
+| - resultCode | Integer | O | Result code |
+| - resultMessage | String | O | Result message |
+| - isSuccessful | boolean | O | Whether the request was successful |
+
+### Video Status
+
+Describes the `status` field values in the video retrieval response.
+
+| Status | Description |
+|:-----------|:------------------------------------|
+| REGISTERED | Upload registered |
+| ENCODING | Encoding in progress |
+| PUBLIC | Public status (available for sending and template registration) |
+| PRIVATE | Private status (available for template registration only) |
+| VIOLATED | Policy-violating video |
+| ILLEGAL | Illegally filmed video |
+| DELETED | Deleted video |
+| ERROR | Error occurred during upload or encoding |
 
 ## Upload
 

@@ -49,7 +49,7 @@ You can set up an outgoing profile and enter content to send messages in the for
     * Text
       * 1,300 characters of text including spaces, in both Korean and English + up to 5 link buttons (vertically arranged)
     * Image
-      * 400 characters of text including spaces, in both Korean and English + one image + up to 5 link buttons (vertically arranged)
+      * 1,300 characters of text including spaces, in both Korean and English + one image + up to 5 link buttons (vertically arranged)
     * Wide image
       * 76 characters of text including spaces, in both Korean and English + one image + up to 2 link buttons
     * Wide item list
@@ -104,12 +104,11 @@ This feature allows you to send brand messages to multiple recipient numbers usi
 ![friendtalkupgrade_mass02.png](https://static.toastoven.net/prod_alimtalk/friendtalkupgrade_mass02.png)
 
 * You can enter individual targeting values and template placeholders for each recipient.
-   * For free-form sending, be careful not to set M or N targeting values, as this will result in send failure.
 * If you enter content without template placeholders, the same content will be sent to all recipients.
 
 When clicking **Send** button, you can select **Proceed after Review** or **Immediate Send**.
 
-* Proceed after Review: after confirming the recipient of the email within 7 days in the **View Mass Delivery** tab, a notification message will be sent. (unsupported for scheduled send.)
+* Proceed after Review: after confirming the recipient of the message within 7 days in the **View Mass Delivery** tab, a notification message will be sent. (unsupported for scheduled send.)
 * Immediate Send: AlimTalks are sent immediately without confirming the recipient. You can check the progress of your shipment in the **View Mass Delivery** tab.
 
 ### Fallback
@@ -197,7 +196,7 @@ You can register or delete images to use in the brand message and check informat
 
 * You can register images by selecting them by type (basic/wide, wide item list type, carousel feed, carousel commerce, business form).
 * The image will no longer be accessible after deletion.
-* If all templates referencing an uploaded image are deleted or changed to a different image, the image will be removed from the Kakao CDN, making the URL invalid. While image information is retained in the Image Retrieval API and the console, the actual image cannot be accessed.
+* When updating a template, if the image is changed to a different one, the existing image is deleted from the Kakao CDN and the URL becomes invalid. Other templates using the same image are also affected, so caution is required. Although image information is retained in the image retrieval API or the console, the actual image cannot be accessed, so it is recommended to keep the original file separately on your own server.
 * It is recommended to store the original file separately on your own server.
 File specifications and recommended/maximum sizes must be strictly followed.
 * You can copy an image address URL. The URL is used when sending the API.
@@ -210,6 +209,26 @@ File specifications and recommended/maximum sizes must be strictly followed.
 * File format: JPG, PNG
 * Please check each image upload API specification.
 
+## Video Management
+
+![friendtalkupgrade_video_management.png](TODO: 콘솔 캡처 후 NHN static 호스트 URL 교체)
+
+You can register or delete videos to be used in brand messages and check the information of registered videos.
+
+* After selecting a sender profile, you can register or delete videos.
+* When uploading a video, select a file on the console screen and click the Upload button. The progress will be displayed. Be careful not to refresh or close the page while the upload is in progress. If the page is refreshed during the upload, the upload will be interrupted and you will need to upload again.
+* Registered videos can be used for sending after encoding is complete in KakaoBizCenter. Encoding typically takes 5–10 minutes and may take up to 3 days depending on the video length. If 3 days are exceeded, the video is automatically set to `ERROR` status.
+* Video status is periodically synchronized with KakaoBizCenter. Only videos in `PUBLIC` status can be used for template registration and sending, and videos in `PRIVATE` status can only be used for template registration.
+* Registered videos are permanently stored on Kakao's side, and deleting a video in the console does not automatically remove the video from KakaoBizCenter. The KakaoTalk channel administrator can delete the video directly from the management screen on the channel business home.
+* Note that videos deleted from the console can no longer be used for sending in templates that used the video.
+
+#### Allowed Range for Video Upload
+
+* File format: MP4, MOV, AVI
+* Maximum file size: 4 GB
+* Maximum video length: 4 hours
+* Maximum resolution: 8K
+
 ## Manage Templates
 
 ![friendtalkupgrade_09_20250616.png](https://static.toastoven.net/prod_alimtalk/friendtalkupgrade/friendtalkupgrade_09_20250729.png)
@@ -220,7 +239,7 @@ File specifications and recommended/maximum sizes must be strictly followed.
 
 ## 080 Opt-out management
 
-* In brand messages, the “080 opt-out management” and “fallback” features are integrated into a single smsAppkey through NHN Cloud's SMS service integration.
+* In brand messages, the “080 opt-out management” and “fallback” features are integrated into a single SMS AppKey with NHN Cloud's SMS service integration.
 
 ### Register and manage 080 opt-out numbers
 
