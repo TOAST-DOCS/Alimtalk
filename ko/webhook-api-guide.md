@@ -104,23 +104,24 @@ curl -X POST \
 ```
 
 #### 메시지 발송 결과 코드 업데이트
-|값|	타입| 	설명                                                                                                                                                             |
-|---|---|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|hooks|	List\<Map\> | 웹훅 이벤트 발생 시 데이터                                                                                                                                                 |
+|값|	타입| 	설명                                                                                                                                                   |
+|---|---|-------------------------------------------------------------------------------------------------------------------------------------------------------|
+|hooks|	List\<Map\> | 웹훅 이벤트 발생 시 데이터                                                                                                                                       |
 |- kakaoMessageType|	String| 카카오 메시지 타입<br>ALIMTALK_NORMAL<br>ALIMTALK_AUTH<br>ALIMTALK_MASS<br>FRIENDTALK_NORMAL<br>FRIENDTALK_MASS<br>BRAND_MESSAGE_NORMAL<br>BRAND_MESSAGE_MASS |
-|- requestId|	String| 요청 ID                                                                                                                                                           |
-|- recipientSeq|	Integer| 수신자 시퀀스 번호                                                                                                                                                      |
-|- requestDate|	String| 요청 일시                                                                                                                                                           |
-|- createDate|	String| 생성 일시                                                                                                                                                           |
-|- receiveDate|	String| 수신 일시                                                                                                                                                           |
-|- recipientNo|	String| 수신번호                                                                                                                                                            |
-|- resultCode|	String| 수신 결과 코드                                                                                                                                                        |
-|- senderGroupingKey|	String| 발신 그룹핑 키                                                                                                                                                        |
-|- recipientGroupingKey|	String| 수신자 그룹핑 키                                                                                                                                                       |
-|- _links|	Object| 	링크                                                                                                                                                             |
-|- self|	Object| 	-                                                                                                                                                              |
-|- href|	String| 	메시지 조회 API 링크                                                                                                                                                  |
-|- hookId|	String| 서비스에서 이벤트가 발생할 때 생성되는 고유 ID                                                                                                                                     |
+|- requestId|	String| 요청 ID                                                                                                                                                 |
+|- recipientSeq|	Integer| 수신자 시퀀스 번호                                                                                                                                            |
+|- requestDate|	String| 요청 일시                                                                                                                                                 |
+|- createDate|	String| 생성 일시                                                                                                                                                 |
+|- receiveDate|	String| 수신 일시                                                                                                                                                 |
+|- recipientNo|	String| 수신번호                                                                                                                                                  |
+|- resultCode|	String| 수신 결과 코드                                                                                                                                              |
+|- senderGroupingKey|	String| 발신 그룹핑 키                                                                                                                                              |
+|- recipientGroupingKey|	String| 수신자 그룹핑 키                                                                                                                                             |
+|- isAddedChannel|	Boolean| 채널 추가 친구 여부<br>브랜드 메시지(BRAND_MESSAGE_NORMAL, BRAND_MESSAGE_MASS): true/false<br>그 외 카카오 메시지 타입: null                                                  |
+|- _links|	Object| 	링크                                                                                                                                                   |
+|- self|	Object| 	-                                                                                                                                                    |
+|- href|	String| 	메시지 조회 API 링크                                                                                                                                        |
+|- hookId|	String| 서비스에서 이벤트가 발생할 때 생성되는 고유 ID                                                                                                                           |
 
 ```json
 "hooks": [
@@ -135,6 +136,7 @@ curl -X POST \
      "resultCode": "String",
      "senderGroupingKey": "String",
      "recipientGroupingKey": "String",
+     "isAddedChannel": "Boolean",
      "_links": {
        "self": {
          "href": "String"
