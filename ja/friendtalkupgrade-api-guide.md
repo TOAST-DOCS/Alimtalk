@@ -1,6 +1,10 @@
 ## Notification > KakaoTalk Bizmessage > ブランドメッセージ > API v1.0 Guide
 
+<a id="brand-message"></a>
+
 ## ブランドメッセージ
+
+<a id="api-domain"></a>
 
 #### [APIドメイン]
 
@@ -8,7 +12,11 @@
 |------------------------------------------------------------------------------|
 | [https://kakaotalk-bizmessage.api.nhncloudservice.com](https://kakaotalk-bizmessage.api.nhncloudservice.com) |
 
+<a id="introduce-v10-api"></a>
+
 ## v1.0 API紹介
+
+<a id="manage-non-friend-message-sending-targeting-m-n"></a>
 
 ## 非友だちメッセージ送信(ターゲティングM、N)管理
 
@@ -20,7 +28,11 @@
   - チャンネルの友だち数が5万以上
   - 3か月以内にお知らせトークの送信成功履歴を保有
 
+<a id="upload-marketing-consent-records"></a>
+
 ### マーケティング受信同意の証明資料のアップロード
+
+<a id="requested"></a>
 
 #### リクエスト
 
@@ -56,6 +68,8 @@ Content-Type: multipart/form-data
 |------|------|----|---------------|
 | file | File | O | マーケティング受信同意の証明資料 |
 
+<a id="response"></a>
+
 #### レスポンス
 
 ```
@@ -75,7 +89,11 @@ Content-Type: multipart/form-data
 | - resultMessage | String  | O        | 結果メッセージ |
 | - isSuccessful  | boolean | O        | 成否 |
 
+<a id="apply-for-using-non-friend-message-sending-targeting-m-n"></a>
+
 ### 非友だちメッセージ送信(ターゲティングM、N)の使用申請
+
+<a id="requested-2"></a>
 
 #### リクエスト
 
@@ -105,6 +123,8 @@ Content-Type: application/json;charset=UTF-8
 |--------------|--------|----|------------------|
 | X-Secret-Key | String | O  | コンソールで作成できます。 |
 
+<a id="response-2"></a>
+
 #### レスポンス
 
 ```
@@ -123,6 +143,8 @@ Content-Type: application/json;charset=UTF-8
 | - resultCode    | Integer | O        | 結果コード |
 | - resultMessage | String  | O        | 結果メッセージ |
 | - isSuccessful  | boolean | O        | 成否 |
+
+<a id="request-to-send-a-free-form-message"></a>
 
 ## メッセージ自由形送信リクエスト
 
@@ -145,6 +167,8 @@ Content-Type: application/json;charset=UTF-8
 * 代替送信は、受信者ごとにresendParameterを介して設定できます。
 * 代替送信をご利用になる場合、代替送信管理APIを介してSMS AppKeyの登録及び送信設定が必要です。
 * **夜間送信制限(20:50～翌日08:00)**
+
+<a id="requested-3"></a>
 
 #### リクエスト
 
@@ -172,6 +196,8 @@ Content-Type: application/json;charset=UTF-8
 | 名前         | タイプ   | 必須 | 説明             |
 |--------------|--------|----|------------------|
 | X-Secret-Key | String | O  | コンソールで作成できます。 |
+
+<a id="request-text-type-sending"></a>
 
 #### テキスト型送信リクエスト
 
@@ -259,6 +285,8 @@ Content-Type: application/json;charset=UTF-8
 | -- resendUnsubscribeNo | String | X | 代替送信080受信拒否番号<br><span style="color:red">(SMSサービスに登録された080受信拒否番号ではない場合、代替送信に失敗することがあります。)</span> |
 | createUser | String | X | 登録者(コンソールから送信した場合、ユーザーUUIDで保存) |
 | statsId                | String  | 	X | 統計ID(発信検索条件には含まれません。最大8文字)                                                                                                                                                                                                                                            |
+
+<a id="request-image-type-sending"></a>
 
 #### 画像形式の送信リクエスト
 
@@ -353,6 +381,8 @@ Content-Type: application/json;charset=UTF-8
 | createUser | String | X | 登録者(コンソールから送信した場合、ユーザーUUIDで保存) |
 | statsId                | String  | 	X | 統計ID(発信検索条件には含まれません。最大8文字)                                                                                                                                                                                                                                            |
 
+<a id="request-wide-image-type-sending"></a>
+
 #### ワイド画像形式の送信リクエスト
 
 [Request body]
@@ -445,6 +475,8 @@ Content-Type: application/json;charset=UTF-8
 | -- resendUnsubscribeNo | String | X | 代替送信080受信拒否番号<br><span style="color:red">(SMSサービスに登録された080受信拒否番号ではない場合、代替送信に失敗することがあります。)</span> |
 | createUser | String | X | 登録者(コンソールから送信した場合、ユーザーUUIDで保存) |
 | statsId                | String  | 	X | 統計ID(発信検索条件には含まれません。最大8文字)                                                                                                                                                                                                                                            |
+
+<a id="request-to-send-wide-item-list-type"></a>
 
 #### ワイドアイテムリスト形式の送信リクエスト
 
@@ -568,6 +600,8 @@ Content-Type: application/json;charset=UTF-8
 | createUser | String | X | 登録者(コンソールから送信した場合、ユーザーUUIDで保存) |
 | statsId                | String  | 	X | 統計ID(発信検索条件には含まれません。最大8文字)                                                                                                                                                                                                                                            |
 
+<a id="request-to-send-premium-video-type"></a>
+
 #### プレミアム動画形式の送信リクエスト
 
 [Request body]
@@ -662,6 +696,8 @@ Content-Type: application/json;charset=UTF-8
 | -- resendUnsubscribeNo | String | X | 代替送信080受信拒否番号<br><span style="color:red">(SMSサービスに登録された080受信拒否番号ではない場合、代替送信に失敗することがあります。)</span> |
 | createUser | String | X | 登録者(コンソールから送信した場合、ユーザーUUIDで保存) |
 | statsId                | String  | 	X | 統計ID(発信検索条件には含まれません。最大8文字)                                                                                                                                                                                                                                            |
+
+<a id="request-to-send-commerce"></a>
 
 #### コマース形式の送信リクエスト
 
@@ -768,6 +804,8 @@ Content-Type: application/json;charset=UTF-8
 | -- resendUnsubscribeNo | String | X | 代替送信080受信拒否番号<br><span style="color:red">(SMSサービスに登録された080受信拒否番号ではない場合、代替送信に失敗することがあります。)</span> |
 | createUser | String | X | 登録者(コンソールから送信した場合、ユーザーUUIDで保存) |
 | statsId                | String  | 	X | 統計ID(発信検索条件には含まれません。最大8文字)                                                                                                                                                                                                                                            |
+
+<a id="request-to-send-carousel-feed-type"></a>
 
 #### カルーセルフィード形式の送信リクエスト
 
@@ -1066,6 +1104,8 @@ Content-Type: application/json;charset=UTF-8
 | createUser | String | X  | 登録者(コンソールで送信時にユーザーUUIDとして保存) |
 | statsId | String | X  | 統計ID(送信検索条件には含まれません、最大8文字) |
 
+<a id="response-3"></a>
+
 #### レスポンス
 
 ```
@@ -1103,6 +1143,8 @@ Content-Type: application/json;charset=UTF-8
 | -- resultCode | Integer | O | 受信者別の送信結果コード(成功及び様々な失敗コードが存在する可能性があります) |
 | -- resultMessage | String | O | 受信者別の送信結果メッセージ(成功時は「success」または関連メッセージ、失敗時は失敗原因の詳細メッセージ) |
 
+<a id="request-to-send-basic-message"></a>
+
 ## メッセージ基本形送信リクエスト
 
 * テンプレートを利用した送信です。
@@ -1118,6 +1160,8 @@ Content-Type: application/json;charset=UTF-8
 * 代替送信は、受信者ごとにresendParameterを介して設定できます。
 * 代替送信をご利用になる場合、代替送信管理APIを介してSMS AppKeyの登録及び送信設定が必要です。
 * **夜間送信制限(20:50～翌日08:00)**
+
+<a id="cautions-for-use"></a>
 
 ### 使用時の注意事項
 
@@ -1150,6 +1194,8 @@ Content-Type: application/json;charset=UTF-8
 | 名前         | タイプ   | 必須 | 説明             |
 |--------------|--------|----|------------------|
 | X-Secret-Key | String | O  | コンソールで作成できます。 |
+
+<a id="requested-4"></a>
 
 #### 送信リクエスト
 
@@ -1219,6 +1265,8 @@ Content-Type: application/json;charset=UTF-8
 | createUser | String | X | 登録者(コンソールから送信時、ユーザーUUIDとして保存) |
 | statsId | String | X | 統計ID(送信検索条件には含まれません。最大8文字) |
 
+<a id="response-4"></a>
+
 #### レスポンス
 
 ```
@@ -1256,7 +1304,11 @@ Content-Type: application/json;charset=UTF-8
 | -- resultCode | Integer | O | 受信者別の送信結果コード(成功及び様々な失敗コードが存在する可能性があります) |
 | -- resultMessage | String | O | 受信者別の送信結果メッセージ(成功時は「success」または関連メッセージ、失敗時は失敗原因の詳細メッセージ) |
 
+<a id="view-sending-list"></a>
+
 ## 送信リストの照会
+
+<a id="requested-5"></a>
 
 #### リクエスト
 
@@ -1299,6 +1351,8 @@ Content-Type: application/json;charset=UTF-8
 | resultCode       | String | X         | 送信結果(MRC01:成功MRC02:失敗)      |
 | pageNum          | String | X         | ページ番号(Default: 1)               |
 | pageSize | String | X | 照会件数(Default: 15、Max: 1,000) |
+
+<a id="response-5"></a>
 
 #### レスポンス
 
@@ -1371,7 +1425,11 @@ Content-Type: application/json;charset=UTF-8
 | -- createUser | String | X | 登録者(コンソールで送信時にユーザーUUIDとして保存) |
 | - totalCount | Integer | O | 合計数 |
 
+<a id="view-single-sending"></a>
+
 ## 送信単件照会
+
+<a id="requested-6"></a>
 
 #### リクエスト
 
@@ -1401,6 +1459,8 @@ Content-Type: application/json;charset=UTF-8
 | 名前         | タイプ   | 必須 | 説明             |
 |--------------|--------|----|------------------|
 | X-Secret-Key | String | O  | コンソールで作成できます。 |
+
+<a id="response-6"></a>
 
 #### レスポンス
 
@@ -1658,9 +1718,33 @@ Content-Type: application/json;charset=UTF-8
 | - resendRequestId     | String  | X        | 代替送信リクエストID                                                                                      | 
 | - createUser          | String  | X        | 登録者(コンソールから送信した場合、ユーザーUUIDで保存)                                                                      |
 
+<a id="cancel-message-sending"></a>
+
+## メッセージ送信取消
+
+<!-- TODO: translate body -->
+
+<a id="requested-7"></a>
+
+#### リクエスト
+
+<!-- TODO: translate body -->
+
+<a id="response-7"></a>
+
+#### レスポンス
+
+<!-- TODO: translate body -->
+
+<a id="manage-templates"></a>
+
 ## テンプレート管理
 
+<a id="view-template-list"></a>
+
 ### テンプレートリスト照会
+
+<a id="requested-8"></a>
 
 #### リクエスト
 
@@ -1699,6 +1783,8 @@ Content-Type: application/json;charset=UTF-8
 | status       | String  | X  | テンプレートステータスコード                   |
 | pageNum      | Integer | X  | ページ番号(Default: 1)            |
 | pageSize     | Integer | X  | 照会件数(Default: 15, Max: 1,000) |
+
+<a id="response-8"></a>
 
 #### レスポンス
 
@@ -1927,6 +2013,8 @@ Content-Type: application/json;charset=UTF-8
 | --- updateDate          | String  | X        | 修正日時                                |
 | - totalCount            | Integer | O        | 合計数                                  |
 
+<a id="view-single-template"></a>
+
 ### テンプレートの個別照会
 
 [URL]
@@ -1956,6 +2044,8 @@ Content-Type: application/json;charset=UTF-8
 |--------------|--------|----|------------------|
 | X-Secret-Key | String | O  | コンソールで作成できます。 |
 |X-NC-API-IDEMPOTENCY-KEY| String| X | 重複メッセージ送信リクエストの基準key<br>10分間同じkeyでリクエストした場合、該当リクエストは失敗として処理します。 |
+
+<a id="response-9"></a>
 
 #### レスポンス
 
@@ -2178,7 +2268,11 @@ Content-Type: application/json;charset=UTF-8
 | - createDate          | String  | O        | 登録日時              |
 | - updateDate          | String  | X        | 修正日時              |
 
+<a id="register-template"></a>
+
 ### テンプレート登録
+
+<a id="requested-9"></a>
 
 #### リクエスト
 
@@ -2208,6 +2302,8 @@ Content-Type: application/json;charset=UTF-8
 |--------------|--------|----|------------------|
 | X-Secret-Key | String | O  | コンソールで作成できます。 |
 
+<a id="note"></a>
+
 #### 注意事項
 
 * クーポン名にプレースホルダーを適用する場合、次のような固定プレースホルダーを使用する必要があります。
@@ -2226,6 +2322,8 @@ Content-Type: application/json;charset=UTF-8
     * discountPrice -> #{割引価格}
     * discountRate -> #{割引率}
     * discountFixed -> #{定額割引価格}
+
+<a id="request-to-register-text-type-template"></a>
 
 #### テキスト型テンプレート登録リクエスト
 
@@ -2280,6 +2378,8 @@ Content-Type: application/json;charset=UTF-8
 | - linkPc        | String  | X  | PC Webリンク(WLタイプの場合、任意フィールド)、500文字制限                                                                                                                                                                                                               |
 | - schemeAndroid | String  | X  | Androidアプリリンク(ALタイプの場合、必須フィールド)、500文字制限<br>クーポンにlinkMoフィールドを入力する場合、残りのフィールドは任意項目(オプション)となり、<br>scheme_androidまたはscheme_iosフィールドにチャンネルクーポンURL(形式: alimtalk=coupon://)を入力する場合、残りのフィールドが任意項目(オプション)になります。                                                       |
 | - schemeIos     | String  | X  | iOSアプリリンク(ALタイプの場合、必須フィールド)、500文字制限<br>クーポンにlinkMoフィールドを入力する場合、残りのフィールドは任意項目(オプション)となり、<br>scheme_androidまたはscheme_iosフィールドにチャンネルクーポンURL(形式: alimtalk=coupon://)を入力する場合、残りのフィールドが任意項目(オプション)になります。                                                         |
+
+<a id="request-to-register-image-type-template"></a>
 
 #### 画像型テンプレート登録リクエスト
 
@@ -2342,6 +2442,8 @@ Content-Type: application/json;charset=UTF-8
 | - schemeAndroid | String  | X  | Androidアプリリンク(ALタイプの場合、必須フィールド)、500文字制限<br>クーポンにlinkMoフィールドを入力する場合、残りのフィールドは任意項目(オプション)となり、<br>scheme_androidまたはscheme_iosフィールドにチャンネルクーポンURL(形式: alimtalk=coupon://)を入力する場合、残りのフィールドが任意項目(オプション)になります。                                                       |
 | - schemeIos     | String  | X  | iOSアプリリンク(ALタイプの場合、必須フィールド)、500文字制限<br>クーポンにlinkMoフィールドを入力する場合、残りのフィールドは任意項目(オプション)となり、<br>scheme_androidまたはscheme_iosフィールドにチャンネルクーポンURL(形式: alimtalk=coupon://)を入力する場合、残りのフィールドが任意項目(オプション)になります。                                                         |
 
+<a id="request-to-register-wide-image-type-template"></a>
+
 #### ワイド画像型テンプレート登録リクエスト
 
 [Request body]
@@ -2402,6 +2504,8 @@ Content-Type: application/json;charset=UTF-8
 | - linkPc        | String  | X  | PC Webリンク(WLタイプの場合、任意フィールド)、500文字制限                                                                                                                                                                                                               |
 | - schemeAndroid | String  | X  | Androidアプリリンク(ALタイプの場合、必須フィールド)、500文字制限<br>クーポンにlinkMoフィールドを入力する場合、残りのフィールドは任意項目(オプション)となり、<br>scheme_androidまたはscheme_iosフィールドにチャンネルクーポンURL(形式: alimtalk=coupon://)を入力する場合、残りのフィールドが任意項目(オプション)になります。                                                       |
 | - schemeIos     | String  | X  | iOSアプリリンク(ALタイプの場合、必須フィールド)、500文字制限<br>クーポンにlinkMoフィールドを入力する場合、残りのフィールドは任意項目(オプション)となり、<br>scheme_androidまたはscheme_iosフィールドにチャンネルクーポンURL(形式: alimtalk=coupon://)を入力する場合、残りのフィールドが任意項目(オプション)になります。                                                         |
+
+<a id="request-to-register-wide-item-list-type-template"></a>
 
 #### ワイドアイテムリスト型テンプレート登録リクエスト
 
@@ -2493,6 +2597,8 @@ Content-Type: application/json;charset=UTF-8
 | - schemeAndroid  | String  | X  | Androidアプリリンク(ALタイプの場合、必須フィールド)、500文字制限<br>クーポンにlinkMoフィールドを入力する場合、残りのフィールドは任意項目(オプション)となり、<br>scheme_androidまたはscheme_iosフィールドにチャンネルクーポンURL(形式: alimtalk=coupon://)を入力する場合、残りのフィールドが任意項目(オプション)になります。                                     |
 | - schemeIos      | String  | X  | iOSアプリリンク(ALタイプの場合、必須フィールド)、500文字制限<br>クーポンにlinkMoフィールドを入力する場合、残りのフィールドは任意項目(オプション)となり、<br>scheme_androidまたはscheme_iosフィールドにチャンネルクーポンURL(形式: alimtalk=coupon://)を入力する場合、残りのフィールドが任意項目(オプション)になります。                                       |
 
+<a id="request-to-register-premium-video-type-template"></a>
+
 #### プレミアム動画型テンプレート登録リクエスト
 
 [Request body]
@@ -2555,6 +2661,8 @@ Content-Type: application/json;charset=UTF-8
 | - linkPc        | String  | X  | PC Webリンク(WLタイプの場合、任意フィールド)、500文字制限                                                                                                                                                                                                               |
 | - schemeAndroid | String  | X  | Androidアプリリンク(ALタイプの場合、必須フィールド)、500文字制限<br>クーポンにlinkMoフィールドを入力する場合、残りのフィールドは任意項目(オプション)となり、<br>scheme_androidまたはscheme_iosフィールドにチャンネルクーポンURL(形式: alimtalk=coupon://)を入力する場合、残りのフィールドが任意項目(オプション)になります。                                                       |
 | - schemeIos     | String  | X  | iOSアプリリンク(ALタイプの場合、必須フィールド)、500文字制限<br>クーポンにlinkMoフィールドを入力する場合、残りのフィールドは任意項目(オプション)となり、<br>scheme_androidまたはscheme_iosフィールドにチャンネルクーポンURL(形式: alimtalk=coupon://)を入力する場合、残りのフィールドが任意項目(オプション)になります。                                                         |
+
+<a id="request-to-register-commerce-type-template"></a>
 
 #### コマース型テンプレート登録リクエスト
 
@@ -2630,6 +2738,8 @@ Content-Type: application/json;charset=UTF-8
 | - linkPc          | String  | X  | PC Webリンク(WLタイプの場合、任意フィールド)、500文字制限                                                                                                                                                                                             |
 | - schemeAndroid   | String  | X  | Androidアプリリンク(ALタイプの場合、必須フィールド)、500文字制限<br>クーポンにlinkMoフィールドを入力する場合、残りのフィールドは任意項目(オプション)となり、<br>scheme_androidまたはscheme_iosフィールドにチャンネルクーポンURL(形式: alimtalk=coupon://)を入力する場合、残りのフィールドが任意項目(オプション)になります。                                     |
 | - schemeIos       | String  | X  | iOSアプリリンク(ALタイプの場合、必須フィールド)、500文字制限<br>クーポンにlinkMoフィールドを入力する場合、残りのフィールドは任意項目(オプション)となり、<br>scheme_androidまたはscheme_iosフィールドにチャンネルクーポンURL(形式: alimtalk=coupon://)を入力する場合、残りのフィールドが任意項目(オプション)になります。                                       |
+
+<a id="request-to-register-carousel-feed-type-template"></a>
 
 #### カルーセルフィード型テンプレート登録リクエスト
 
@@ -2741,6 +2851,8 @@ Content-Type: application/json;charset=UTF-8
 | - recipientNo     | String  | O  | 受信番号                                                                                                                                                                                                                           |
 | createUser        | String  | X  | 登録者(コンソールから送信した場合、ユーザーUUIDで保存)                                                                                                                                                                                                       |
 
+<a id="request-to-register-carousel-commerce-type-template"></a>
+
 #### カルーセルコマース型テンプレート登録リクエスト
 
 [Request body]
@@ -2849,6 +2961,8 @@ Content-Type: application/json;charset=UTF-8
 | -- schemeAndroid     | String  | X  | Androidアプリリンク、500文字制限<br>プレースホルダーは使用不可。                                                                                                                                                                                               |
 | -- schemeIos         | String  | X  | iOSアプリリンク、500文字制限<br>プレースホルダーは使用不可。                                                                                                                                                                                                 |
 
+<a id="response-10"></a>
+
 #### レスポンス
 
 ```
@@ -2873,7 +2987,11 @@ Content-Type: application/json;charset=UTF-8
 | template        | Object  | X        | テンプレート情報 |
 | - templateCode  | String  | O        | テンプレートコード |
 
+<a id="modify-template"></a>
+
 ### テンプレート修正
+
+<a id="requested-10"></a>
 
 #### リクエスト
 
@@ -2908,6 +3026,8 @@ Content-Type: application/json;charset=UTF-8
 
 * テンプレート登録と仕様は同じです
 
+<a id="response-11"></a>
+
 #### レスポンス
 
 ```
@@ -2927,7 +3047,11 @@ Content-Type: application/json;charset=UTF-8
 | - resultMessage | String  | O        | 結果メッセージ |
 | - isSuccessful  | boolean | O        | 成否 |
 
+<a id="delete-template"></a>
+
 ### テンプレート削除
+
+<a id="requested-11"></a>
 
 #### リクエスト
 
@@ -2958,6 +3082,8 @@ Content-Type: application/json;charset=UTF-8
 |--------------|--------|----|------------------|
 | X-Secret-Key | String | O  | コンソールで作成できます。 |
 
+<a id="response-12"></a>
+
 #### レスポンス
 
 ```
@@ -2977,9 +3103,15 @@ Content-Type: application/json;charset=UTF-8
 | - resultMessage | String  | O        | 結果メッセージ |
 | - isSuccessful  | boolean | O        | 成否 |
 
+<a id="manage-image"></a>
+
 ## 画像管理
 
+<a id="upload-image"></a>
+
 ### 画像アップロード
+
+<a id="requested-12"></a>
 
 #### リクエスト
 
@@ -3015,6 +3147,8 @@ Content-Type: multipart/form-data
 | image     | File   | O  | 画像                                                                                                                           |
 | imageType | String | O  | 画像タイプ <br>(IMAGE, WIDE_IMAGE,MAIN_WIDE_ITEMLIST_IMAGE,NORMAL_WIDE_ITEMLIST_IMAGE,CAROUSEL_FEED_IMAGE,CAROUSEL_COMMERCE_IMAGE) |
 
+<a id="response-13"></a>
+
 #### レスポンス
 
 ```
@@ -3043,6 +3177,8 @@ Content-Type: multipart/form-data
 | - imageUrl      | String  | O        | 画像のURL |
 | - imageName     | String  | X        | 画像名   |
 
+<a id="upload-image-specifications"></a>
+
 #### アップロード画像規格
 | 画像タイプ                      | 使用先                                                 | アップロード画像規格                                                                                                         |
 | :------------------------- | :-------------------------------------------------- | :----------------------------------------------------------------------------------------------------------------- |
@@ -3053,7 +3189,7 @@ Content-Type: multipart/form-data
 | CAROUSEL_FEED_IMAGE        | カルーセルフィード形式の送信リクエストのセル別画像                           | **推奨サイズ：**800 × 600px または 800 × 400px（横500px以上）<br/>**画像比率：**0.5 ≤ 縦 ÷ 横 ≤ 1.333<br/>**ファイル形式／容量制限：**jpg、png／最大5MB |
 | CAROUSEL_COMMERCE_IMAGE    | コマース形式の送信リクエスト（カルーセルコマース形式）のイントロ画像、セル別画像            | **推奨サイズ：**800 × 600px または 800 × 400px（横500px以上）<br/>**画像比率：**0.5 ≤ 縦 ÷ 横 ≤ 1.333<br/>**ファイル形式／容量制限：**jpg、png／最大5MB |
 
-#### アップロード画像規格
+**アップロード画像規格**
 | 画像タイプ                     | 使用箇所                                                     | アップロード画像規格                                                                                                                              |
 |:---------------------------|:--------------------------------------------------------|:----------------------------------------------------------------------------------------------------------------------------------------|
 | IMAGE                      | 画像型画像、コマース型画像、プレミアム動画型サムネイル                       | 推奨サイズ: 800 X 400px (横500px以上)<br/>画像比率: 0.5 ≤ 縦 ÷ 横 ≤ 1.333<br/>ファイル形式及び容量制限: jpg, png / 最大5MB                                |
@@ -3065,7 +3201,11 @@ Content-Type: multipart/form-data
 
 * テンプレート変更時に画像を別の画像に変更すると、既存の画像がKakao CDNから削除されURLが無効になります。同じ画像を使用する他のテンプレートにも影響するため注意が必要です。画像照会APIでは画像情報が保持されますが、実際の画像にはアクセスできないため、元ファイルは独自のサーバーに別途保管することを推奨します。
 
+<a id="view-image"></a>
+
 ### 画像照会
+
+<a id="requested-13"></a>
 
 #### リクエスト
 
@@ -3102,6 +3242,8 @@ Content-Type: application/json;charset=UTF-8
 | pageNum    | String | X  | ページ番号(基本: 1)                                                                                                                  |
 | pageSize   | String | X  | 照会件数(基本: 15)                                                                                                                  |
 
+<a id="response-14"></a>
+
 #### レスポンス
 
 ```
@@ -3130,7 +3272,11 @@ Content-Type: application/json;charset=UTF-8
 | - imageUrl      | String  | O        | 画像のURL |
 | - imageName     | String  | X        | 画像名   |
 
+<a id="delete-image"></a>
+
 ### 画像削除
+
+<a id="requested-14"></a>
 
 #### リクエスト
 
@@ -3165,6 +3311,8 @@ Content-Type: application/json;charset=UTF-8
 |----------|--------|----|--------|
 | imageSeq | String | O  | 画像番号 |
 
+<a id="response-15"></a>
+
 #### レスポンス
 
 ```
@@ -3184,9 +3332,13 @@ Content-Type: application/json;charset=UTF-8
 | - resultMessage | String  | O        | 結果メッセージ |
 | - isSuccessful  | boolean | O        | 成否 |
 
+<a id="manage-video"></a>
+
 ## 動画管理
 
 ブランドメッセージに使用する動画を登録・照会・削除するAPIです。登録された動画はカカオビズセンターでエンコード処理後に送信に使用でき、状態が`PUBLIC`である動画のみテンプレートの登録及び送信が可能です(`PRIVATE`はテンプレートの登録のみ可能)。
+
+<a id="video-upload-flow"></a>
 
 ### 動画アップロードの流れ
 
@@ -3201,7 +3353,11 @@ Content-Type: application/json;charset=UTF-8
 > * `uploadInfo.token`は発行後5分間有効です。5分が経過した場合は、1段階目の登録を再度呼び出して新しいトークンを受け取る必要があります。
 > * 1段階目のリクエストの`fileSize`は、実際に2段階目でアップロードするファイルのサイズと正確に一致する必要があります(不一致の場合、カカオ側でerrCode 109として拒否されます)。
 
+<a id="register-video-upload"></a>
+
 ### 動画アップロードの登録
+
+<a id="request"></a>
 
 #### リクエスト
 
@@ -3248,6 +3404,8 @@ Content-Type: application/json;charset=UTF-8
 | fileSize   | Long   | O  | 動画ファイルのサイズ(バイト、最大4GB)                                                      |
 | createUser | String | X  | アップロードユーザー識別子(最大100文字)                                                |
 
+<a id="response-16"></a>
+
 #### レスポンス
 
 ```
@@ -3293,9 +3451,13 @@ Content-Type: application/json;charset=UTF-8
 
 > エンコード完了後に値が格納される`thumbnailUrl`、`videoUrl`、`playUrl`、`updateDate`フィールドは、[動画照会](#動画-照会) APIで取得できます。
 
+<a id="video-file-upload-step-2"></a>
+
 ### 動画ファイルのアップロード(2段階目)
 
 上記レスポンスの`uploadInfo.uploadUrl`に動画ファイルを指定して直接呼び出します。このリクエストはNHN Cloudサーバーではなく、カカオ側のアップロードサーバーに直接送信されます。
+
+<a id="request-2"></a>
 
 #### リクエスト
 
@@ -3318,6 +3480,8 @@ Content-Type: multipart/form-data
 |------|------|----|-----------------------------------------------------|
 | file | File | O  | 動画ファイル。1段階目のリクエストの`fileSize`と正確に一致する必要があります             |
 
+<a id="response-17"></a>
+
 #### レスポンス
 
 ```
@@ -3331,6 +3495,8 @@ Content-Type: multipart/form-data
 
 * 成功時は`vid`(1段階目のレスポンスと同一)と`playUrl`を返し、`errCode`/`message`フィールドは含まれません。
 * 失敗時はHTTP 4xxとともに`errCode`(100～110)と`message`を返します。詳細なエラーコードはカカオビズメッセージガイドをご参照ください。
+
+<a id="upload-video-specifications"></a>
 
 #### アップロードする動画の規格
 
@@ -3347,7 +3513,11 @@ Content-Type: multipart/form-data
 * 登録された動画はカカオ側で永久保存され、テンプレートが削除されてもカカオビズセンターの動画は自動的に整理されません。カカオチャネルの管理者が、チャネルビジネスホームの管理画面で直接削除できます。
 * 1段階目の登録後、2段階目のファイルアップロードが失敗したり遅延したりしてトークン(5分)の有効期限が切れた場合、新しい登録を再度呼び出す必要があります。登録のみが行われ実際のアップロードが行われなかった動画は、一定時間が経過すると状態が自動的に`ERROR`とマークされます。
 
+<a id="view-video"></a>
+
 ### 動画照会
+
+<a id="request-3"></a>
 
 #### リクエスト
 
@@ -3383,6 +3553,8 @@ Content-Type: application/json;charset=UTF-8
 | senderKey  | String | X  | 送信元プロファイルキー(40文字)     |
 | pageNum    | String | X  | ページ番号(デフォルト: 1)    |
 | pageSize   | String | X  | 照会件数(デフォルト: 15)    |
+
+<a id="response-18"></a>
 
 #### レスポンス
 
@@ -3441,7 +3613,11 @@ Content-Type: application/json;charset=UTF-8
 
 > アップロードの登録レスポンスの`video`は登録直後の時点であるため、`status`が常に`REGISTERED`であり、`thumbnailUrl`・`videoUrl`・`playUrl`・`createDate`・`updateDate`・`createUser`フィールドは含まれません。これらのフィールドは、エンコード完了後に動画照会APIで確認できます。
 
+<a id="delete-video"></a>
+
 ### 動画の削除
+
+<a id="request-4"></a>
 
 #### リクエスト
 
@@ -3476,6 +3652,8 @@ Content-Type: application/json;charset=UTF-8
 |----------|--------|----|-----------------------------------|
 | videoSeq | String | O  | 動画シーケンス(カンマ区切りで複数件の送信が可能)        |
 
+<a id="response-19"></a>
+
 #### レスポンス
 
 ```
@@ -3495,6 +3673,8 @@ Content-Type: application/json;charset=UTF-8
 | - resultMessage | String  | O        | 結果メッセージ |
 | - isSuccessful  | boolean | O        | 成否  |
 
+<a id="video-status"></a>
+
 ### 動画状態
 
 動画照会レスポンスの`status`フィールド値について説明します。
@@ -3510,9 +3690,15 @@ Content-Type: application/json;charset=UTF-8
 | DELETED    | 削除された動画                               |
 | ERROR      | アップロード及びエンコード中にエラーが発生                   |
 
+<a id="upload"></a>
+
 ## アップロード
 
+<a id="upload-bizform-key"></a>
+
 ### ビズフォームキーのアップロード
+
+<a id="requested-15"></a>
 
 #### リクエスト
 
@@ -3542,6 +3728,8 @@ Content-Type: application/json;charset=UTF-8
 |--------------|--------|----|------------------|
 | X-Secret-Key | String | O  | コンソールで作成できます。 |
 
+<a id="response-20"></a>
+
 #### レスポンス
 
 ```
@@ -3561,9 +3749,15 @@ Content-Type: application/json;charset=UTF-8
 | - resultMessage | String  | O        | 結果メッセージ |
 | - isSuccessful  | boolean | O        | 成否 |
 
+<a id="manage-outgoing-profiles"></a>
+
 ## 送信プロフィール管理
 
+<a id="view-outgoing-profile"></a>
+
 ### 送信プロフィール照会
+
+<a id="requested-16"></a>
 
 #### リクエスト
 
@@ -3592,6 +3786,8 @@ Content-Type: application/json;charset=UTF-8
 | 名前         | タイプ   | 必須 | 説明             |
 |--------------|--------|----|------------------|
 | X-Secret-Key | String | O  | コンソールで作成できます。 |
+
+<a id="response-21"></a>
 
 #### レスポンス
 
@@ -3662,7 +3858,11 @@ Content-Type: application/json;charset=UTF-8
 | - createDate              | String  | X        | 登録日                                                                                                                |
 | - initialUserRestriction  | boolean | O        | 初回ユーザー制限の有無                                                                                                         |
 
+<a id="modify-outgoing-profile-080-opt-out-number"></a>
+
 ### 送信プロフィールの080受信拒否番号の修正
+
+<a id="requested-17"></a>
 
 #### リクエスト
 
@@ -3706,6 +3906,8 @@ Content-Type: application/json;charset=UTF-8
 | unsubscribeNo     | 	String | 	O  | 080無料受信拒否電話番号(両方とも未入力の場合、送信プロフィールに登録された無料受信拒否情報で送信されます)<br>- 080-xxx-xxxx <br>- 080-xxxx-xxxx <br>- 080xxxxxxx <br>- 080xxxxxxxx  |
 | unsubscribeAuthNo | 	String | 	X  | 080無料受信拒否認証番号(両方とも未入力の場合、送信プロフィールに登録された無料受信拒否情報で送信されます)<br>unsubscribe_phone_numberなしでunsubscribe_auth_numberのみの入力は不可<br>ex) 1234 |
 
+<a id="response-22"></a>
+
 #### レスポンス
 
 ```
@@ -3725,7 +3927,11 @@ Content-Type: application/json;charset=UTF-8
 | - resultMessage | String  | O        | 結果メッセージ |
 | - isSuccessful  | boolean | O        | 成否 |
 
+<a id="manage-fallback"></a>
+
 ## 代替送信管理
+
+<a id="register-sms-appkey"></a>
 
 ### SMS AppKeyの登録
 
@@ -3772,6 +3978,8 @@ Content-Type: application/json;charset=UTF-8
 curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" https://kakaotalk-bizmessage.api.nhncloudservice.com/brand-message/v1.0/appkeys/{appkey}/failback/appkey -d '{"resendAppKey": "smsAppKey"}
 ```
 
+<a id="response-23"></a>
+
 #### レスポンス
 
 ```
@@ -3784,6 +3992,8 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
   }
 }
 ```
+
+<a id="register-fallback-settings"></a>
 
 ### 代替送信設定の登録
 
@@ -3835,6 +4045,8 @@ Content-Type: application/json;charset=UTF-8
 ```
 curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" https://kakaotalk-bizmessage.api.nhncloudservice.com/brand-message/v1.0/appkeys/{appkey}/failback/appkey -d '{"senderKey": "0be23c29de88d6888798aeda57062516354d74ba","isResend": true,"resendSendNo": "01012341234" }
 ```
+
+<a id="response-24"></a>
 
 #### レスポンス
 

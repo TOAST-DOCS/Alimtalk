@@ -1,10 +1,18 @@
+<!-- pre-align:aligned sig=3b443c0f0141 -->
+
 ## Notification > KakaoTalk Bizmessage > Brand Message > Console User Guide
 
+<a id="brand-message-sending"></a>
+
 ## Brand Message sending
+
+<a id="regular-send"></a>
 
 ### Regular send
 
 You can set up an outgoing profile and enter content to send messages in the form of brand message. To send a brand message, select Notification > KakaoTalk Bizmessage > Brand Message on the console.
+
+<a id="when-using-a-template"></a>
 
 ### When using a template
 
@@ -34,6 +42,8 @@ You can set up an outgoing profile and enter content to send messages in the for
       * I: Target of advertiser sending request ∩ Channel friend
         * For advertiser sending requests, advertising messages are sent only to channel friends.
 8. After completing the input, click Send to send.
+
+<a id="when-not-using-a-template"></a>
 
 ### When not using a template
 
@@ -91,6 +101,8 @@ You can set up an outgoing profile and enter content to send messages in the for
         * For advertiser sending requests, advertising messages are sent only to channel friends.
 11. After completing the input, click Send to send.
 
+<a id="mass-delivery"></a>
+
 ### Mass Delivery
 
 This feature allows you to send brand messages to multiple recipient numbers using a template file in Excel/CSV format. Select **Mass Delivery** from the bottom tab.
@@ -111,6 +123,8 @@ When clicking **Send** button, you can select **Proceed after Review** or **Imme
 * Proceed after Review: after confirming the recipient of the message within 7 days in the **View Mass Delivery** tab, a notification message will be sent. (unsupported for scheduled send.)
 * Immediate Send: AlimTalks are sent immediately without confirming the recipient. You can check the progress of your shipment in the **View Mass Delivery** tab.
 
+<a id="fallback"></a>
+
 ### Fallback
 
 A feature that allows you to replace a brand message with a text message if it fails to send. You can send it by selecting **Set as Common Content** or **Set by Different Messages per User**.
@@ -123,12 +137,16 @@ A feature that allows you to replace a brand message with a text message if it f
 * Depending on the message, some content, such as buttons and links, may appear differently from the KakaoTalk message.
 * Depending on the message length, it will be sent as SMS/LMS (separate fees apply for sending each type of text message).
 
+<a id="set-as-common-content"></a>
+
 #### Set as Common Content
 
 ![friendtalkupgrade_resend01_20250729.png](https://static.toastoven.net/prod_alimtalk/friendtalkupgrade/friendtalkupgrade_resend01_20250729.png)
 
 * Set a fallback message by selecting **Outgoing Profile** and clicking **Set as Common Content**.
 * If you do not enter a fallback message, it will be sent as [Message Body].
+
+<a id="set-by-different-messages-per-user"></a>
 
 #### Set by Different Messages per User
 
@@ -156,7 +174,11 @@ Advertising messages refer to messages about information, goods, or services tha
 
 ![[Figure 3] FriendTalk advertising message](https://static.toastoven.net/prod_alimtalk/friendtalk_02.png)
 
+<a id="view-send"></a>
+
 ## View Send
+
+<a id="view-send-result"></a>
 
 ### View Send Result
 
@@ -167,6 +189,8 @@ Advertising messages refer to messages about information, goods, or services tha
 * You can check the status of the sending request in the **Request Status** column.
 * You can check the sending process status in the **Send Result** column.
 
+<a id="cancel-send"></a>
+
 ### Cancel send
 
 Cancellation is possible for scheduled send with a sending request date set to the future during regular send.
@@ -176,7 +200,11 @@ Cancellation is possible for scheduled send with a sending request date set to t
 * Select the checkbox for the request you wish to cancel and click the Cancel Selected Schedule button at the top to cancel the schedule.
 * You can select or deselect the entire list by checking the checkboxes in the header of the list.
 
+<a id="view-mass-delivery"></a>
+
 ## View Mass Delivery
+
+<a id="view-send-result-2"></a>
 
 ### View Send Result
 
@@ -187,6 +215,8 @@ Cancellation is possible for scheduled send with a sending request date set to t
 * **Request Date** can be searched for up to one month.
 * You can check the status of the sending request in the **Request Status** column.
 * You can check the sending process status in the **Send Result** column.
+
+<a id="manage-image"></a>
 
 ## Manage Image
 
@@ -204,10 +234,14 @@ File specifications and recommended/maximum sizes must be strictly followed.
 * [\[Go to Business Form Registration\]](https://business.kakao.com/talkbizform/)
 * [\[Go to Business Form Registration Guide\]](https://kakaobusiness.gitbook.io/main/tool/bizform)
 
+<a id="image-upload-allowance"></a>
+
 #### Image upload allowance
 
 * File format: JPG, PNG
 * Please check each image upload API specification.
+
+<a id="manage-video"></a>
 
 ## Video Management
 
@@ -222,12 +256,16 @@ You can register or delete videos to be used in brand messages and check the inf
 * Registered videos are permanently stored on Kakao's side, and deleting a video in the console does not automatically remove the video from KakaoBizCenter. The KakaoTalk channel administrator can delete the video directly from the management screen on the channel business home.
 * Note that videos deleted from the console can no longer be used for sending in templates that used the video.
 
+<a id="video-upload-allowance"></a>
+
 #### Allowed Range for Video Upload
 
 * File format: MP4, MOV, AVI
 * Maximum file size: 4 GB
 * Maximum video length: 4 hours
 * Maximum resolution: 8K
+
+<a id="manage-templates"></a>
 
 ## Manage Templates
 
@@ -237,9 +275,13 @@ You can register or delete videos to be used in brand messages and check the inf
 * ******Brand messages are free to create, edit, and delete, with no review process.******
 * Unlike AlimTalk, this is a method where users do not register a template code, but instead receive a random identifier from Kakao.
 
+<a id="080-opt-out-management"></a>
+
 ## 080 Opt-out management
 
 * In brand messages, the “080 opt-out management” and “fallback” features are integrated into a single SMS AppKey with NHN Cloud's SMS service integration.
+
+<a id="register-and-manage-080-opt-out-numbers"></a>
 
 ### Register and manage 080 opt-out numbers
 
@@ -257,6 +299,8 @@ You can register or delete videos to be used in brand messages and check the inf
 * If you empty and save the SMS service app key
    * Customers must manage their own opt-out recipients, and there is no verification of recipients when sending brand messages.
 
+<a id="manage-fallback"></a>
+
 ### Manage Fallback
 
 * If a brand message fails to be sent, you can set it to be sent as a fallback message.
@@ -271,6 +315,8 @@ You can register or delete videos to be used in brand messages and check the inf
 * When entering the resendContent field of a brand message advertising message, you must enter the advertising text from the SMS advertising API to send it as a replacement. `(ads) content [toll-free opt out]080XXXXXXX`
 * If there is no resendContent field in the brand message advertising message, the advertising text will be automatically generated and sent to the registered 080 opt-out number.
 
+<a id="apply-for-using-non-friend-message-sending-targeting-m-n"></a>
+
 ## Apply for using non-friend message sending (targeting M, N)
 
 * If you wish to use non-friend message sending (targeting M, N), you must apply for use. If you do not apply for use, the M/N type will not be displayed during send.
@@ -280,6 +326,8 @@ You can register or delete videos to be used in brand messages and check the inf
   * Register a channel customer service center phone number
   * 50,000 or more channel friends
   * Successfully send notification messages within the past three months
+
+<a id="cautions"></a>
 
 ### Cautions
 * If your business verification is canceled, the permission to send non-friend messages (targeting M, N) will be canceled. You will need to reapply for use after your business verification has been re-reviewed.

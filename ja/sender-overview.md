@@ -1,6 +1,10 @@
+<!-- pre-align:aligned sig=0142a0759662 -->
+
 ## Notification > KakaoTalk Bizmessage > プラスフレンド > 概要
 カカオポリシーに従ってカカオトークBizメッセージを送信するには、先にカカオトークチャンネル管理者センターでビジネス認証を受けたチャンネルを開設する必要があります。開設すると、お知らせトーク/カカともへのメッセージを送信できます。[[カカオチャンネル作成およびビジネス認証ガイド]](https://kakaobusiness.gitbook.io/main/channel/start)
 
+
+<a id="create-kakaotalk-channel"></a>
 
 ### カカオトークチャンネルの作成
 チャンネル開設ページの上にある｢情報入力ガイド｣をクリックすると、関連ガイドが表示されます。
@@ -15,6 +19,8 @@
 
 ![図1](https://static.toastoven.net/prod_alimtalk/KTB_Image_1.png)
 
+<a id="set-kakaotalk-channel"></a>
+
 ### カカオトークチャンネルの設定
 チャンネル開設完了後、チャンネル情報を設定してビジネスチャンネルを申請します。
 
@@ -27,6 +33,8 @@
     * 入力したビジネス情報の企業名とチャンネル名が異なる場合は、審査の参考資料を添付してください。
 
 ![図2](https://static.toastoven.net/prod_alimtalk/KTB_Image_1.png)
+
+<a id="register-kakaotalk-channel"></a>
 
 ### カカオトークチャンネルの登録
 1. ビジネスチャンネルへの切り替えが完了(承認)したら、**Notification > KakaoTalk Bizmessage > 発信プロフィール管理**タブで該当発信プロフィール(カカオトークチャンネル)を登録します。
