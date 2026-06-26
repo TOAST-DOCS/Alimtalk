@@ -1,9 +1,15 @@
+<!-- pre-align:aligned sig=f530f01ac2b8 -->
+
 ## Notification > KakaoTalk Bizmessage > 발신 프로필 > 콘솔 사용 가이드
+
+<a id="registerauthenticate-sender-profiles"></a>
 
 ## 발신 프로필 등록/인증
 * 카카오톡 비즈 메시지를 발송하려면 발신 프로필을 먼저 등록해야 합니다.
 * 카카오톡 채널은 카카오톡 홈페이지(https://center-pf.kakao.com)에서 무료로 만들 수 있습니다.
 * 비즈니스 인증을 받은 카카오톡 채널만 NHN Cloud KakaoTalk Bizmessage 서비스에 추가할 수 있습니다.([플러스친구 비즈니스 인증](https://static.toastoven.net/prod_alimtalk/plusfriend_business_certify_guide_20190311.pdf) 참고)
+
+<a id="add-a-sender-profile"></a>
 
 ## 발신 프로필 추가
 
@@ -15,6 +21,8 @@
 * 플러스친구 ID는 플러스친구를 개설할 때 등록한 검색용 ID를 입력해야 합니다.
 * 고객이 받는 카카오톡 비즈 메시지는 카카오톡에 등록한 플러스친구 이름으로 표시됩니다.
 
+<a id="token-registration"></a>
+
 ## 토큰 등록
 
 관리자 휴대폰으로 받은 토큰 메시지를 입력하면 등록이 완료됩니다.
@@ -24,6 +32,8 @@
 <b><span style="color:red">발신 프로필 등록 시, 초기 일별 최대 발송량은 1,000건으로 제한됩니다.</span></b>
 일별 최대 발송량을 변경하려면 고객 센터(support@toast.com)에 별도로 요청해야 합니다.
 
+<a id="manage-a-fallback-delivery"></a>
+
 ## 대체 발송 관리
 
 발신 프로필별로 **대체 발송 설정**을 할 수 있습니다.
@@ -32,6 +42,8 @@
 * SMS 앱 키 수정 시, 모든 발신 프로필의 발송 실패 설정은 초기화됩니다.
 
 ![대체 발송 관리](https://static.toastoven.net/prod_alimtalk/plusfriend_03_201812.png)
+
+<a id="view-kakao-statistics"></a>
 
 ## 카카오 통계 조회
 
@@ -43,15 +55,21 @@
 * 클릭 수는 같은 메시지에 대해 중복 집계합니다.
 * 발송 성공 건수가 10건 이하이면 유효 읽음 수와 클릭 수를 제공하지 않습니다.
 
+<a id="delivery-statistics"></a>
+
 ### 발송 통계
 
 발신 프로필을 기준으로 일별 발송 수, 유효 읽음 수, 클릭 수를 조회합니다. 기간, 발송 식별자, 메시지 타입 등을 설정해 조회할 수 있습니다.
+
+<a id="template-statistics"></a>
 
 ### 템플릿 통계
 
 템플릿 및 그룹 태그를 기준으로 일별 발송 수, 유효 읽음 수, 클릭 수를 조회합니다. 기간, 메시지 타입 등을 설정해 조회할 수 있습니다.
 
 * 브랜드 메시지 자유형은 그룹 태그를 사용한 경우에만 제공합니다.
+
+<a id="group-tag-management"></a>
 
 ## 그룹 태그 관리
 
@@ -61,6 +79,8 @@
 
 * **+ 그룹 태그 등록**을 클릭해 그룹 태그 이름을 입력하고 등록합니다.
 * 수정하거나 삭제할 그룹 태그의 체크박스를 선택하고 **그룹 태그 수정** 또는 **그룹 태그 삭제**를 클릭합니다.
+
+<a id="notice-of-personal-information-consignee"></a>
 
 ## 개인정보 수탁사 고지 안내
 '고객'이 NHN Cloud > Notification > KakaoTalk Bizmessage 서비스를 이용하면 '고객'과 '당사' 간 개인정보 처리에 관한 업무 위수탁 관계가 발생합니다. 정보통신망법 및 개인정보보호법에 따라 위탁자인 '고객'은 개인정보 처리방침을 통해 '당사'에 개인정보를 위탁한 현황(수탁자 및 업무의 내용)을 공개해야 합니다.

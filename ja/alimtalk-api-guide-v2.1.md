@@ -1,6 +1,10 @@
 ## Notification > KakaoTalk Bizmessage > お知らせトーク > API v2.1 Guide
 
+<a id="alimtalk"></a>
+
 ## お知らせトーク
+
+<a id="api-domain"></a>
 
 #### [APIドメイン]
 
@@ -17,12 +21,18 @@
 </tbody>
 </table>
 
+<a id="overview-of-v21-api"></a>
+
 ## v2.1 API紹介
 1. 通知フリックテンプレート画像のアップロードAPIが追加されました。
 2. templateEmphasizeType中、'IMAGE'が追加されました。
 3. テンプレート照会時、templateImageName、templateImageUrlフィールドが追加されました。
 
+<a id="general-messages"></a>
+
 ## 一般メッセージ
+
+<a id="request-of-sending-replaced-messages"></a>
 
 ### メッセージ置換送信リクエスト
 
@@ -116,6 +126,8 @@ Content-Type: application/json;charset=UTF-8
 curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" https://kakaotalk-bizmessage.api.nhncloudservice.com/alimtalk/v2.1/appkeys/{appkey}/messages -d '{"senderKey":"{発信キー}","templateCode":"{テンプレートコード}","requestDate":"2018-10-01 00:00","recipientList":[{"recipientNo":"{受信番号}","templateParameter":{"{日本語識別子フィールド}":"{置換データ}"}}]}'
 ```
 
+<a id="response"></a>
+
 #### レスポンス
 
 ```
@@ -156,6 +168,8 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 | -- resultCode           | Integer | 送信リクエスト結果コード |
 | -- resultMessage        | String  | 送信リクエスト結果メッセージ |
 | -- recipientGroupingKey | String  | 受信者グルーピングキー |
+
+<a id="request-of-sending-full-text"></a>
 
 ### メッセージ全文送信リクエスト
 
@@ -266,6 +280,8 @@ Content-Type: application/json;charset=UTF-8
 curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" https://kakaotalk-bizmessage.api.nhncloudservice.com/alimtalk/v2.1/appkeys/{appkey}/raw-messages -d '{"senderKey":"{発信キー}","templateCode":"{テンプレートコード}","requestDate":"2018-10-01 00:00","recipientList":[{"recipientNo":"{受信番号}","content":"{内容}","buttons":[{"ordering":"{ボタン順序}","type":"{ボタンタイプ}","name":"{ボタン名}","linkMo":"{モバイルWebリンク}"}]}]}'
 ```
 
+<a id="response-2"></a>
+
 #### レスポンス
 
 ```
@@ -307,7 +323,11 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 | -- resultMessage        | String  | 送信リクエスト結果メッセージ |
 | -- recipientGroupingKey | String  | 受信者グルーピングキー |
 
+<a id="list-messages"></a>
+
 ### メッセージリストの照会
+
+<a id="request"></a>
 
 #### リクエスト
 
@@ -356,6 +376,8 @@ Content-Type: application/json;charset=UTF-8
 
 * 90日以上前の送信リクエストデータは照会されません。
 * 送信リクエスト日時の範囲は最大30日です。
+
+<a id="response-3"></a>
 
 #### レスポンス
 ```
@@ -454,7 +476,11 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 | RSC04 | 再送信成功                  |
 | RSC05 | 再送信失敗                  |
 
+<a id="get-messages"></a>
+
 ### メッセージ単件照会
+
+<a id="request-2"></a>
 
 #### リクエスト
 
@@ -487,6 +513,8 @@ Content-Type: application/json;charset=UTF-8
 ```
 curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" "https://kakaotalk-bizmessage.api.nhncloudservice.com/alimtalk/v2.1/appkeys/{appkey}/messages/{requestId}/{recipientSeq}"
 ```
+
+<a id="response-4"></a>
 
 #### レスポンス
 ```
@@ -580,6 +608,8 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 | - senderGroupingKey    | String  | 発信グルーピングキー                            |
 | - recipientGroupingKey | String  | 受信者グルーピングキー                           |
 
+<a id="authentication-messages"></a>
+
 ## 認証メッセージ
 
 <span id="precautions-authword"></span>
@@ -592,6 +622,8 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 - 例1)認証メッセージAPI送信リクエストした時、全文(テンプレート日本語識別子含む)に認証文言が含まれていない場合は、送信に失敗します。
 - 例2)認証文言が英文の場合、大文字/小文字の区別なしで有効性チェックが行われます。
 
+
+<a id="request-of-sending-replaced-messages-2"></a>
 
 ### メッセージ置換送信リクエスト
 
@@ -681,6 +713,8 @@ Content-Type: application/json;charset=UTF-8
 curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" https://kakaotalk-bizmessage.api.nhncloudservice.com/alimtalk/v2.1/appkeys/{appkey}/auth/messages -d '{"senderKey":"{発信キー}","templateCode":"{テンプレートコード}","requestDate":"2018-10-01 00:00","recipientList":[{"recipientNo":"{受信番号}","templateParameter":{"{日本語識別子フィールド}":"{置換データ}"}}]}'
 ```
 
+<a id="response-5"></a>
+
 #### レスポンス
 
 ```
@@ -721,6 +755,8 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 | -- resultCode           | Integer | 送信リクエスト結果コード |
 | -- resultMessage        | String  | 送信リクエスト結果メッセージ |
 | -- recipientGroupingKey | String  | 受信者グルーピングキー |
+
+<a id="request-of-sending-full-text-2"></a>
 
 ### メッセージ全文送信リクエスト
 
@@ -828,6 +864,8 @@ Content-Type: application/json;charset=UTF-8
 curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" https://kakaotalk-bizmessage.api.nhncloudservice.com/alimtalk/v2.1/appkeys/{appkey}/auth/raw-messages -d '{"senderKey":"{発信キー}","templateCode":"{テンプレートコード}","requestDate":"2018-10-01 00:00","recipientList":[{"recipientNo":"{受信番号}","content":"{内容}","buttons":[{"ordering":"{ボタン順序}","type":"{ボタンタイプ}","name":"{ボタン名}","linkMo":"{モバイルWebリンク}"}]}]}'
 ```
 
+<a id="response-6"></a>
+
 #### レスポンス
 
 ```
@@ -868,6 +906,8 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 | -- resultCode           | Integer | 送信リクエスト結果コード |
 | -- resultMessage        | String  | 送信リクエスト結果メッセージ |
 | -- recipientGroupingKey | String  | 受信者グルーピングキー |
+
+<a id="list-messages-2"></a>
 
 ### メッセージリストの照会
 
@@ -918,6 +958,8 @@ Content-Type: application/json;charset=UTF-8
 
 * 90日以上前の送信リクエストデータは照会されません。
 * 送信リクエスト日時の範囲は最大30日です。
+
+<a id="request-3"></a>
 
 #### レスポンス
 ```
@@ -1007,6 +1049,8 @@ Content-Type: application/json;charset=UTF-8
 curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" "https://kakaotalk-bizmessage.api.nhncloudservice.com/alimtalk/v2.1/appkeys/{appkey}/auth/messages?startRequestDate=2018-05-01%20:00&endRequestDate=2018-05-30%20:59"
 ```
 
+<a id="response-7"></a>
+
 #### SMS/LMS再送信ステータス
 | 値 | 説明                      |
 | ----- | ------------------------------- |
@@ -1016,7 +1060,11 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 | RSC04 | 再送信成功                  |
 | RSC05 | 再送信失敗                  |
 
+<a id="get-messages-2"></a>
+
 ### メッセージ単件照会
+
+<a id="request-4"></a>
 
 #### リクエスト
 
@@ -1049,6 +1097,8 @@ Content-Type: application/json;charset=UTF-8
 ```
 curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" "https://kakaotalk-bizmessage.api.nhncloudservice.com/alimtalk/v2.1/appkeys/{appkey}/auth/messages/{requestId}/{recipientSeq}"
 ```
+
+<a id="response-8"></a>
 
 #### レスポンス
 ```
@@ -1145,8 +1195,14 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 | - senderGroupingKey    | String  | 発信グルーピングキー                            |
 | - recipientGroupingKey | String  | 受信者グルーピングキー                           |
 
+<a id="messages"></a>
+
 ## メッセージ
+<a id="cancel-sending-messages"></a>
+
 ### メッセージ送信取消
+
+<a id="request-5"></a>
 
 #### リクエスト
 
@@ -1182,6 +1238,8 @@ Content-Type: application/json;charset=UTF-8
 
 * 一般/認証メッセージは同じAPIでキャンセルできます。
 
+<a id="response-9"></a>
+
 #### レスポンス
 ```
 {
@@ -1205,7 +1263,11 @@ Content-Type: application/json;charset=UTF-8
 curl -X DELETE -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" "https://kakaotalk-bizmessage.api.nhncloudservice.com/alimtalk/v2.1/appkeys/{appkey}/messages/{requestId}?recipientSeq=1,2,3"
 ```
 
+<a id="query-updates-of-message-result"></a>
+
 ### メッセージ結果アップデートの照会
+
+<a id="request-6"></a>
 
 #### リクエスト
 
@@ -1241,6 +1303,8 @@ Content-Type: application/json;charset=UTF-8
 | alimtalkMessageType | String  | X    | お知らせトークメッセージタイプ(NORMAL、AUTH)           |
 | pageNum             | Integer | X    | ページ番号(基本：1)                      |
 | pageSize            | Integer | X    | 照会件数(基本：15、最大: 1000)          |
+
+<a id="response-10"></a>
 
 #### レスポンス
 ```
@@ -1294,9 +1358,21 @@ Content-Type: application/json;charset=UTF-8
 curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" "https://kakaotalk-bizmessage.api.nhncloudservice.com/alimtalk/v2.1/appkeys/{appkey}/message-results?startUpdateDate=2018-05-01%20:00&endUpdateDate=2018-05-30%20:59"
 ```
 
+<a id="messages-1"></a>
+
+### SMS/LMS 대체 발송 상태 코드
+
+<!-- TODO: translate body -->
+
+<a id="templates"></a>
+
 ## テンプレート
 
+<a id="list-template-categories"></a>
+
 ### テンプレートカテゴリー照会
+<a id="request-7"></a>
+
 #### リクエスト
 [URL]
 
@@ -1320,6 +1396,8 @@ Content-Type: application/json;charset=UTF-8
 | 値    | タイプ | 必須 | 説明                               |
 |---|---|---|---|
 | X-Secret-Key | String | O    | コンソールで作成できます。 |
+
+<a id="response-11"></a>
 
 #### レスポンス
 ```
@@ -1362,7 +1440,11 @@ Content-Type: application/json;charset=UTF-8
 |-- inclusion | String |	カテゴリー対象テンプレートの説明 |
 |-- exclusion| String| カテゴリの除外対象のテンプレートの説明 |
 
+<a id="register-templates"></a>
+
 ### テンプレートの登録
+<a id="request-8"></a>
+
 #### リクエスト
 [URL]
 
@@ -1441,6 +1523,8 @@ Content-Type: application/json;charset=UTF-8
 | -schemeIos      | String  | X    | iOSアプリリンク(ALタイプの場合は必須フィールド、最大500文字)       |
 | -schemeAndroid  | String  | X    | Androidアプリリンク(ALタイプの場合は必須フィールド、最大500文字)   |
 
+<a id="response-12"></a>
+
 #### レスポンス
 ```
 {
@@ -1459,7 +1543,11 @@ Content-Type: application/json;charset=UTF-8
 | - resultMessage | String  | 結果メッセージ |
 | - isSuccessful  | Boolean | 成否 |
 
+<a id="modify-templates"></a>
+
 ### テンプレートの修正
+<a id="request-9"></a>
+
 #### リクエスト
 [URL]
 
@@ -1537,6 +1625,8 @@ Content-Type: application/json;charset=UTF-8
 | -schemeIos      | String  | X    | iOSアプリリンク(ALタイプの場合は必須フィールド、最大500文字)       |
 | -schemeAndroid  | String  | X    | Androidアプリリンク(ALタイプの場合は必須フィールド、最大500文字)   |
 
+<a id="response-13"></a>
+
 #### レスポンス
 ```
 {
@@ -1555,7 +1645,11 @@ Content-Type: application/json;charset=UTF-8
 | - resultMessage | String  | 結果メッセージ |
 | - isSuccessful  | Boolean | 成否 |
 
+<a id="delete-templates"></a>
+
 ### テンプレートの削除
+<a id="request-10"></a>
+
 #### リクエスト
 [URL]
 
@@ -1579,6 +1673,8 @@ Content-Type: application/json;charset=UTF-8
 }
 ```
 
+<a id="response-14"></a>
+
 #### レスポンス
 ```
 {
@@ -1597,7 +1693,11 @@ Content-Type: application/json;charset=UTF-8
 | - resultMessage | String  | 結果メッセージ |
 | - isSuccessful  | Boolean | 成否 |
 
+<a id="inquire-of-templates"></a>
+
 ### テンプレートの問い合わせをする
+<a id="request-11"></a>
+
 #### リクエスト
 [URL]
 
@@ -1636,6 +1736,8 @@ Content-Type: application/json;charset=UTF-8
 | ------- | ------ | ---- | ----- |
 | comment | String | O    | お問い合わせ内容 |
 
+<a id="response-15"></a>
+
 #### レスポンス
 ```
 {
@@ -1654,7 +1756,11 @@ Content-Type: application/json;charset=UTF-8
 | - resultMessage | String  | 結果メッセージ |
 | - isSuccessful  | Boolean | 成否 |
 
+<a id="attach-files-to-send-inquiry-on-templates"></a>
+
 ### ファイルを添付してテンプレートお問い合わせ
+<a id="request-12"></a>
+
 #### リクエスト
 [URL]
 
@@ -1695,6 +1801,8 @@ Content-Type: application/json;charset=UTF-8
 |comment|	String |	O | お問い合わせ内容         |
 |attachments| List<File> | X | 添付ファイルリスト(最大10個) |
 
+<a id="response-16"></a>
+
 #### レスポンス
 ```
 {
@@ -1713,7 +1821,11 @@ Content-Type: application/json;charset=UTF-8
 |- resultMessage|	String| 結果メッセージ|
 |- isSuccessful|	Boolean| 成否|
 
+<a id="list-templates"></a>
+
 ### テンプレートリストの照会
+
+<a id="request-13"></a>
 
 #### リクエスト
 
@@ -1762,6 +1874,8 @@ Content-Type: application/json;charset=UTF-8
 ```
 curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" "https://kakaotalk-bizmessage.api.nhncloudservice.com/alimtalk/v2.1/appkeys/{appkey}/templates?plusFriendId={発信キー}&templateStatus={テンプレートステータスコード}"
 ```
+
+<a id="response-17"></a>
 
 #### レスポンス
 ```
@@ -1865,7 +1979,11 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 | -- createDate        | String  | 作成日時                            |
 | - totalCount         | Integer | 総個数                              |
 
+<a id="list-template-modifications"></a>
+
 ### テンプレートの修正リスト照会
+
+<a id="request-14"></a>
 
 #### リクエスト
 
@@ -1898,6 +2016,8 @@ Content-Type: application/json;charset=UTF-8
 ```
 curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" "https://kakaotalk-bizmessage.api.nhncloudservice.com/alimtalk/v2.1/appkeys/{appkey}/plus-friends/{plusFriendId}/templates/{templateCode}/modifications"
 ```
+
+<a id="response-18"></a>
 
 #### レスポンス
 ```
@@ -2003,7 +2123,11 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 | -- createDate        | String  | 作成日時                            |
 | - totalCount         | Integer | 総個数                              |
 
+<a id="register-template-image"></a>
+
 ### テンプレート画像の登録
+<a id="request-15"></a>
+
 #### リクエスト
 [URL]
 
@@ -2039,6 +2163,8 @@ Content-Type: multipart/form-data
 curl -X POST -H "Content-Type: multipart/form-data" -H "X-Secret-Key:{secretkey}" "https://kakaotalk-bizmessage.api.nhncloudservice.com/alimtalk/v2.1/appkeys/{appkey}/template-image" -F "file=@alimtalk-template-image.jpeg"
 ```
 
+<a id="response-19"></a>
+
 #### レスポンス
 ```
 {
@@ -2064,7 +2190,11 @@ curl -X POST -H "Content-Type: multipart/form-data" -H "X-Secret-Key:{secretkey}
 |- templateImageName    | String |	画像名（アップロードされたファイル名） |
 |- templateImageUrl     | String |	画像のURL |
 
+<a id="section-1"></a>
+
 ## 代替送信管理
+<a id="section-1-1"></a>
+
 ### SMS AppKey登録
 
 [URL]
@@ -2109,6 +2239,8 @@ Content-Type: application/json;charset=UTF-8
 curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" https://kakaotalk-bizmessage.api.nhncloudservice.com/alimtalk/v2.1/appkeys/{appkey}/failback/appkey -d '{"resendAppKey": "smsAppKey"}
 ```
 
+<a id="section-1-1-1"></a>
+
 #### レスポンス
 ```
 
@@ -2120,6 +2252,8 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
   }
 }
 ```
+
+<a id="section-1-2"></a>
 
 ### 代替送信設定登録
 
@@ -2168,6 +2302,8 @@ Content-Type: application/json;charset=UTF-8
 ```
 curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" https://kakaotalk-bizmessage.api.nhncloudservice.com/alimtalk/v2.1/appkeys/{appkey}/failback/appkey -d '{"plusFriendId": "@プラスフレンド","isResend": true,"resendSendNo": "01012341234" }
 ```
+
+<a id="section-1-2-1"></a>
 
 #### レスポンス
 ```

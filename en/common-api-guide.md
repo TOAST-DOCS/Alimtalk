@@ -1,6 +1,12 @@
+<!-- pre-align:aligned sig=8c7be9b338eb -->
+
 ## Notification > KakaoTalk Bizmessage > Common > API v2.2 Guide
 
+<a id="statistics"></a>
+
 ## Statistics
+
+<a id="api-domain"></a>
 
 ### [API Domain]
 
@@ -18,6 +24,8 @@
 </table>
 
 
+<a id="statistics-search---event-based"></a>
+
 ### Statistics Search - Event Based
 * Statistics collected based on the time when the event occurs.
 * Statistics are collected based on the following times:
@@ -27,6 +35,8 @@
     * Failure count (SENT_FAILED): When the delivery request fails or when the delivery result fails
     * Alternative delivery request count (RESENT): Time when the alternative delivery is requested
     * Alternative delivery failure count (RESENT_FAILED): Time when the alternate delivery request fails
+
+<a id="get-statistics-information"></a>
 
 ### Get Statistics Information
 
@@ -104,6 +114,8 @@
 }
 ```
 
+<a id="get-count-per-event"></a>
+
 ### Get Count per Event
 
 [URL]
@@ -154,6 +166,8 @@
 }
 ```
 
+<a id="kakao-statistics"></a>
+
 ## Kakao Statistics
 
 * Retrieves statistics data provided by KakaoBizCenter.
@@ -169,9 +183,13 @@ Clicking **Go to Kakao Statistics** in Sender Profile Management opens Kakao Sta
 * Click counts are duplicated for the same message.
 * If the number of successful sends is 10 or fewer, valid read counts and click counts are not provided.
 
+<a id="delivery-statistics"></a>
+
 ### Delivery Statistics
 
 Retrieves the daily send count, valid read count, and click count by sender profile. You can filter by period, send identifier, message type, and more.
+
+<a id="template-statistics"></a>
 
 ### Template Statistics
 
@@ -179,7 +197,11 @@ Retrieves the daily send count, valid read count, and click count by template an
 
 * Brand message freestyle is only provided when a group tag is used.
 
+<a id="retrieve-alimtalk-delivery-statistics"></a>
+
 ### Retrieve AlimTalk Delivery Statistics
+
+<a id="request"></a>
 
 #### Request
 
@@ -220,6 +242,8 @@ Retrieves the daily send count, valid read count, and click count by template an
 | limit | Integer | X | Number of results to retrieve (Default: 500, Max: 1,000) |
 | offset | Integer | X | Start position (Default: 0) |
 
+<a id="response"></a>
+
 #### Response
 
 ```json
@@ -258,7 +282,11 @@ Retrieves the daily send count, valid read count, and click count by template an
 | - validSendRequestCount | Integer | O | Valid send request count |
 | - validReadCount | Integer | O | Valid read count |
 
+<a id="retrieve-alimtalk-template-statistics"></a>
+
 ### Retrieve AlimTalk Template Statistics
+
+<a id="request-2"></a>
 
 #### Request
 
@@ -299,6 +327,8 @@ Retrieves the daily send count, valid read count, and click count by template an
 | limit | Integer | X | Number of results to retrieve (Default: 500, Max: 1,000) |
 | offset | Integer | X | Start position (Default: 0) |
 
+<a id="response-2"></a>
+
 #### Response
 
 ```json
@@ -337,7 +367,11 @@ Retrieves the daily send count, valid read count, and click count by template an
 | - validReadCount | Integer | O | Valid read count |
 | - totalClickCount | Integer | O | Total click count |
 
+<a id="retrieve-brand-message-delivery-statistics"></a>
+
 ### Retrieve Brand Message Delivery Statistics
+
+<a id="request-3"></a>
 
 #### Request
 
@@ -380,6 +414,8 @@ Retrieves the daily send count, valid read count, and click count by template an
 | receiveUserType | String | X | Recipient type (PhoneNumber: phone number, None: no recipient identifier) |
 | limit | Integer | X | Number of results to retrieve (Default: 500, Max: 1,000) |
 | offset | Integer | X | Start position (Default: 0) |
+
+<a id="response-3"></a>
 
 #### Response
 
@@ -427,7 +463,11 @@ Retrieves the daily send count, valid read count, and click count by template an
 | - validReadCount | Integer | O | Valid read count |
 | - totalClickCount | Integer | O | Total click count |
 
+<a id="retrieve-brand-message-template-statistics"></a>
+
 ### Retrieve Brand Message Template Statistics
+
+<a id="request-4"></a>
 
 #### Request
 
@@ -471,6 +511,8 @@ Retrieves the daily send count, valid read count, and click count by template an
 | friendType | String | X | Friend type (F: friend, N: non-friend) |
 | limit | Integer | X | Number of results to retrieve (Default: 500, Max: 1,000) |
 | offset | Integer | X | Start position (Default: 0) |
+
+<a id="response-4"></a>
 
 #### Response
 

@@ -1,7 +1,11 @@
+<!-- pre-align:aligned sig=cf26af3116e5 -->
+
 ## Notification > KakaoTalk Bizmessage > AlimTalk > Overview
 
 Alimtalk is a service based on mobile phones with which users can send informative messages such as delivery message, schedule notification, and others without adding the recipient as a friend.
 The service provides RESTful APIs for easy integration.
+
+<a id="characteristics"></a>
 
 ## Characteristics
 * You can send long messages up to 1,000 characters at a lower cost than SMS.
@@ -12,14 +16,20 @@ The service provides RESTful APIs for easy integration.
 * Kakao authentication marks can be sent together to increase the credibility of the brand.
 * It shows a high message reach rate because it can be sent as an alternative text message to recipients who do not use KakaoTalk.
 
+<a id="main-features"></a>
+
 ## Main Features
 * NHN Cloud provides a differentiated features to modify AlimTalk template (no template code change used for API interworking)
 * It provides RESTful APIs such as sending, inquiring and etc.
 * It provides a Webhook for updating delivery results, updating template status.
 * You can also send, inquire about delivery history, and manage templates from the console.
 
+<a id="alimtalk-template-precautions"></a>
+
 ## AlimTalk Template Precautions
 AlimTalk is an informational message that can be sent to users who have not added KakaoTalk channel.<br/> Among the exceptions to commercial information for commercial purposes in the Information and Communication Network Act guide to prevent illegal spam, only templates that have been judged to be suitable for the protection of KakaoTalk users can be sent. [[Guidance on compliance with informational messages (AlimTalk)]](https://kakaobusiness.gitbook.io/main/ad/infotalk/operations)
+
+<a id="alert-talk-message-maximum-character-guide"></a>
 
 #### Alert Talk Message Maximum Character Guide
 Please refer to the following two additional contents based on the maximum number of characters in Alim Talk message, which is largely basic and up to 1,000 characters in image/item list 700 characters for each message type.
@@ -29,11 +39,17 @@ Please refer to the following two additional contents based on the maximum numbe
     * “Channel Addition type (AD)” and “Complex type (MI)” using the channel add button should be considered to be included in the AlimTalk maximum character guide because AlimTalk message (approximately 40 characters) related to channel addition is required by default.
     * In case of the message type using the Add Channel button, please consider the maximum number of characters in the 'Body + Variables + Additional Information' message except for the number of characters related to adding a channel (about 40 characters).
 
+<a id="number-of-variable-limits-in-alimtalk-template"></a>
+
 #### Number of variable limits in AlimTalk template
 * Templates with up to 40 variables in one template cannot be registered.
 
+<a id="validating-alimtalk-template-button"></a>
+
 #### Validating AlimTalk Template button
 * Please be careful that the delivery will fail if there is a case where the normal link connection is not possible among the buttons in the AlimTalk sent to the customer. [[Related Notice Shortcut]](https://www.nhncloud.com/kr/support/notice/detail/5287)
+
+<a id="alimtalk-template-dormant-policy"></a>
 
 #### AlimTalk Template Dormant Policy
 * If it will remain the same for 1 year after template registration or if there is no additional delivery, it will switch to **Dormant** status. 
@@ -42,14 +58,20 @@ Please refer to the following two additional contents based on the maximum numbe
 * In case of dormant release, please submit the request form in the path [[Technical Support 1:1 Inquiry]](https://www.nhncloud.com/kr/support/inquiry).
     * Template dormant release Request Form<br/>- Kacao template code to release dormant:<br/> - Sender Profile Name:
 
+<a id="alimtalk-template-review-time"></a>
+
 #### AlimTalk Template Review Time
 * The inspection and review of AlimTalk template will be conducted directly by Kakao, and will be processed sequentially within two business days after the inspection request.
+
+<a id="request-for-emergency-inspection-of-alimtalk-template"></a>
 
 #### Request for Emergency Inspection of AlimTalk Template
 * Emergency inspection only allows emergency notification messages related to failure/error and mis-delivery, and if not, requests for quick emergency cannot be accepted.
 * If you meet the emergency inspection criteria, you can apply by submitting the request form through the path [[Technical Support 1:1 Inquiry]](https://www.nhncloud.com/kr/support/inquiry).
     * Emergency Inspection Request Form<br/>- Kakao Template Code:<br/> - Template name:<br/> - Sender Profile Name:<br/>- Reasons for emergency inspection:
     * How to check Kakao template code<br/>- NHN Cloud Console > KakaoTalk Bizmessage > AlimTalk > Template > Template to request emergency inspection > Check Kakao Template Code
+
+<a id="template-inspection-and-creation-guide"></a>
 
 ## Template Inspection and Creation Guide
 * [[AlimTalk Creation Guide]](https://kakaobusiness.gitbook.io/main/ad/bizmessage/notice-friend/content-guide)

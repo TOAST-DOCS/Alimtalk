@@ -1,4 +1,8 @@
+<!-- pre-align:aligned sig=2a9da7055af6 -->
+
 ## Notification > KakaoTalk Bizmessage > エラーコード
+
+<a id="api-response-code"></a>
 
 ## APIレスポンスコード
 
@@ -234,6 +238,8 @@
 | カカともへのメッセージ互換送信 | false | -3224 | カルーセルコマースタイプはヘッダとメッセージフィールド使用不可                                                                                                                       | Friendtalk carousel commerce type cannot have 'header' & 'message' fields.                                                                                                                                                                                                                                                                                                 |
 | カカともへのメッセージ互換送信 | false | -3225 | カルーセルボタンが無効。カルーセルフィードタイプはボタン2個超過不可、カルーセルコマースタイプは1～2個のボタンが必要 | Friendtalk carousel button size is invalid. If the message type is friendtalk carousel-feed, the button size must be 2 or less. If the message type is friendtalk carousel-commerce, the button size must be 1 ~ 2. |
 | カカともへのメッセージ互換送信 | false | -3226 | コマースにdiscountPriceフィールドがある場合、discountRateまたはdiscountFixedフィールドが必要 | If commerce has 'discountPrice' field, commerce must have a 'discountRate' or 'discountFixed' field. |
+
+<a id="delivery-result-code"></a>
 
 ## 送信結果コード
 
