@@ -120,7 +120,7 @@ This feature allows you to send brand messages to multiple recipient numbers usi
 
 When clicking **Send** button, you can select **Proceed after Review** or **Immediate Send**.
 
-* Proceed after Review: after confirming the recipient of the email within 7 days in the **View Mass Delivery** tab, a notification message will be sent. (unsupported for scheduled send.)
+* Proceed after Review: after confirming the recipient of the message within 7 days in the **View Mass Delivery** tab, a notification message will be sent. (unsupported for scheduled send.)
 * Immediate Send: AlimTalks are sent immediately without confirming the recipient. You can check the progress of your shipment in the **View Mass Delivery** tab.
 
 <a id="fallback"></a>
@@ -243,15 +243,27 @@ File specifications and recommended/maximum sizes must be strictly followed.
 
 <a id="manage-video"></a>
 
-## Manage Video
+## Video Management
 
-<!-- TODO: translate body -->
+![friendtalkupgrade_video_management.png](TODO: 콘솔 캡처 후 NHN static 호스트 URL 교체)
+
+You can register or delete videos to be used in brand messages and check the information of registered videos.
+
+* After selecting a sender profile, you can register or delete videos.
+* When uploading a video, select a file on the console screen and click the Upload button. The progress will be displayed. Be careful not to refresh or close the page while the upload is in progress. If the page is refreshed during the upload, the upload will be interrupted and you will need to upload again.
+* Registered videos can be used for sending after encoding is complete in KakaoBizCenter. Encoding typically takes 5–10 minutes and may take up to 3 days depending on the video length. If 3 days are exceeded, the video is automatically set to `ERROR` status.
+* Video status is periodically synchronized with KakaoBizCenter. Only videos in `PUBLIC` status can be used for template registration and sending, and videos in `PRIVATE` status can only be used for template registration.
+* Registered videos are permanently stored on Kakao's side, and deleting a video in the console does not automatically remove the video from KakaoBizCenter. The KakaoTalk channel administrator can delete the video directly from the management screen on the channel business home.
+* Note that videos deleted from the console can no longer be used for sending in templates that used the video.
 
 <a id="video-upload-allowance"></a>
 
-#### Video Upload Allowance
+#### Allowed Range for Video Upload
 
-<!-- TODO: translate body -->
+* File format: MP4, MOV, AVI
+* Maximum file size: 4 GB
+* Maximum video length: 4 hours
+* Maximum resolution: 8K
 
 <a id="manage-templates"></a>
 
@@ -267,7 +279,7 @@ File specifications and recommended/maximum sizes must be strictly followed.
 
 ## 080 Opt-out management
 
-* In brand messages, the “080 opt-out management” and “fallback” features are integrated into a single smsAppkey through NHN Cloud's SMS service integration.
+* In brand messages, the “080 opt-out management” and “fallback” features are integrated into a single SMS AppKey with NHN Cloud's SMS service integration.
 
 <a id="register-and-manage-080-opt-out-numbers"></a>
 

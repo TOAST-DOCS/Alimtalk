@@ -1,6 +1,15 @@
 <!-- pre-align:aligned sig=7e06fb48b072 -->
 
 ## Notification > KakaoTalk Bizmessage > Release Notes
+### June 23, 2026
+#### Added Features
+* [Console] Added brand message video upload feature
+    * You can now directly upload and manage videos for brand message premium video in the console.
+* [API] Added brand message video upload API
+    * Added an API to upload videos for brand message premium video.
+#### Bug Fixes
+* [API] Improved 080 opt-out number handling for brand message and FriendTalk ad fallback sending
+    * Fixed an issue where messages were sent as general messages in some cases where no 080 opt-out number was registered during brand message and FriendTalk ad fallback sending.
 
 <a id="june-23-2026"></a>
 
