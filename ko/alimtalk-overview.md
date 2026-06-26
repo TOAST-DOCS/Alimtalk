@@ -1,7 +1,11 @@
+<!-- pre-align:aligned sig=cf26af3116e5 -->
+
 ## Notification > KakaoTalk Bizmessage > 알림톡 > 개요
 
 알림톡은 휴대폰 번호를 기반으로 친구 추가 없이 카카오톡 사용자에게 배송, 예약 시간 등의 정보성 메시지를 발송할 수 있는 서비스입니다.
 손쉬운 연동을 위한 RESTful API를 제공합니다.
+
+<a id="characteristics"></a>
 
 ## 특징
 * SMS보다 저렴한 비용으로 1,000자까지 장문의 메시지를 보낼 수 있습니다.
@@ -12,14 +16,20 @@
 * 카카오 인증마크가 함께 발송되어 브랜드에 대한 신뢰도를 높일 수 있습니다.
 * 카카오톡을 사용하지 않는 수신자에게는 문자 메시지로 대체 발송할 수 있기 때문에 높은 메시지 도달률을 보입니다.
 
+<a id="main-features"></a>
+
 ## 주요 기능
 * NHN Cloud는 알림톡 템플릿을 수정할 수 있는 차별화 기능을 제공합니다. (API 연동에 사용되는 templateCode 변경 없음)
 * 발송, 조회 등의 RESTful API를 제공합니다.
 * 발송 결과 업데이트, 템플릿 상태 업데이트 Webhook을 제공합니다.
 * 콘솔에서도 발송, 발송 내역 조회, 템플릿 관리를 할 수 있습니다.
 
+<a id="alimtalk-template-precautions"></a>
+
 ## 알림톡 템플릿 유의 사항
 알림톡은 카카오톡 채널을 추가하지 않은 이용자에게도 발송 가능한 정보성 메시지입니다.<br/> 불법스팸 방지를 위한 정보통신망법 안내서의 영리목적의 광고성 정보의 예외 중 카카오톡 이용자 보호 차원에서 적합하다고 심사된 템플릿에 한하여 발송 가능합니다. [[정보성 메시지(알림톡) 준수사항 안내]](https://kakaobusiness.gitbook.io/main/ad/infotalk/operations)
+
+<a id="alert-talk-message-maximum-character-guide"></a>
 
 #### 알림톡 메시지 최대 글자수 가이드
 알림톡 메시지 최대 글자수는 메시지 유형별로 크게 기본 및 이미지 1,000자 / 아이템리스트 700자까지 가능한 기준으로 아래 2가지 내용을 추가 참고 부탁 드립니다.
@@ -29,11 +39,17 @@
     * 채널 추가 버튼을 사용하는 "채널추가형(AD)", "복합형(MI)"은 채널 추가 관련한 안내 메시지 (약 40자)가 기본으로 기재 필요하므로 알림톡 최대 글자수 가이드에 포함되는 것으로 고려해야 합니다.
     * 채널 추가 버튼 사용하는 메시지 유형의 경우, 채널 추가 관련 안내 글자수 (약 40자)를 제외하고 '본문 + 변수 + 부가정보' 메시지 최대 글자수를 고려 부탁드립니다.
 
+<a id="number-of-variable-limits-in-alimtalk-template"></a>
+
 #### 알림톡 템플릿 내 변수 제한 개수
 * 1개의 템플릿 내 최대 40개를 초과하는 변수가 있는 템플릿은 등록이 불가합니다.
 
+<a id="validating-alimtalk-template-button"></a>
+
 #### 알림톡 템플릿 버튼 유효성 검증
 * 고객에게 발송되는 알림톡의 버튼 중 정상적인 링크 연결이 불가한 케이스의 경우에는 발송에 실패되오니 주의를 부탁드립니다. [[관련 공지 바로가기]](https://www.nhncloud.com/kr/support/notice/detail/5287)
+
+<a id="alimtalk-template-dormant-policy"></a>
 
 #### 알림톡 템플릿 휴면 정책
 * 템플릿 등록 후 1년간 동일한 상태로 유지되거나 추가 발송이 없는 경우 **휴면** 상태로 전환됩니다.
@@ -42,14 +58,20 @@
 * 휴면 해제의 경우 [[기술지원 1:1 문의]](https://www.nhncloud.com/kr/support/inquiry) 경로에서 요청 양식을 제출 부탁드립니다.
     * 템플릿 휴면 해제 요청 양식<br/>- 휴면 해제할 카카오 템플릿 코드 :<br/> - 발신프로필명 :
 
+<a id="alimtalk-template-review-time"></a>
+
 #### 알림톡 템플릿 심사 소요 시간
 * 알림톡 템플릿의 검수 및 심사는 카카오에서 직접 진행하며, 검수 요청 후 영업일 기준 2일 이내 순차적으로 처리됩니다.
+
+<a id="request-for-emergency-inspection-of-alimtalk-template"></a>
 
 #### 알림톡 템플릿 긴급 검수 신청
 * 템플릿 긴급 검수는 장애/오류, 오발송 관련 긴급공지 메시지만 가능하며, 해당 내용이 아닌 경우 빠른 검수 요청은 접수가 불가합니다.
 * 긴급 검수 기준에 해당하는 경우 [[기술지원 1:1 문의]](https://www.nhncloud.com/kr/support/inquiry) 경로에서 요청 양식을 제출해 주시면 지원 가능합니다.
     * 긴급 검수 요청 양식<br/>- 카카오 템플릿 코드 :<br/> - 템플릿 이름 :<br/> - 발신프로필명 :<br/>- 긴급검수 사유 :
     * 카카오 템플릿 코드 확인 방법<br/>- NHN Cloud 콘솔 > KakaoTalk Bizmessage > 알림톡 > 템플릿 > 긴급 검수 요청할 템플릿 > 카카오 템플릿 코드 확인
+
+<a id="template-inspection-and-creation-guide"></a>
 
 ## 템플릿 검수 및 작성 가이드
 * [[알림톡 제작 가이드]](https://kakaobusiness.gitbook.io/main/ad/bizmessage/notice-friend/content-guide)

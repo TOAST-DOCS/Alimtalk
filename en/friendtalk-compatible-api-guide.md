@@ -1,4 +1,8 @@
+<!-- pre-align:aligned sig=492516bf9d3d -->
+
 ## Notification > KakaoTalk Bizmessage > FriendTalk > Brand Message Migration Guide
+
+<a id="overview"></a>
 
 ## Overview
 
@@ -16,9 +20,13 @@ To support a smooth migration to Brand Message, we provide two options:
 1. **(Recommended) Migrate to the Brand Message Free-form Send API**
 2. (Temporary) Use the FriendTalk Compatibility Send via the existing FriendTalk API
 
+<a id="recommended-migrate-to-the-brand-message-free-form-send-api"></a>
+
 ## 1. (Recommended) **Migrate to the Brand Message Free-form Send API**
 
 * For more stable, long-term sending, we recommend **migrating directly to the Brand Message–specific API**.
+
+<a id="benefits-of-migrating-to-brand-message"></a>
 
 ### Benefits of Migrating to Brand Message
 
@@ -27,9 +35,13 @@ To support a smooth migration to Brand Message, we provide two options:
 * Brand Message allows advertising to recipients **who are not friends of your sending channel** by specifying targeting.
 * For details, see the [Brand Message Guide](https://docs.nhncloud.com/en/Notification/KakaoTalk%20Bizmessage/en/friendtalkupgrade-overview/).
 
+<a id="temporary-friendtalk-compatibility-send"></a>
+
 ## 2. (Temporary) FriendTalk Compatibility Send
 
 * The FriendTalk Compatibility Send converts a FriendTalk payload into the Brand Message format and delivers it.
+
+<a id="items-provided-by-the-friendtalk-compatibility-send"></a>
 
 ### Items Provided by the FriendTalk Compatibility Send
 
@@ -44,6 +56,8 @@ To support a smooth migration to Brand Message, we provide two options:
 * The FriendTalk Compatibility Send has been available since **October 28, 2025**, and you can test sending now.
 * If you plan to use compatibility send immediately after the fade-out, prior testing may be required.
 * See the comparison below for spec differences.
+
+<a id="how-to-use-the-friendtalk-compatibility-send"></a>
 
 ### How to Use the FriendTalk Compatibility Send
 
@@ -61,9 +75,13 @@ To support a smooth migration to Brand Message, we provide two options:
 | :--- | :--- | :--- | :--- |
 | X-Convert-To-Brand-Message | Boolean | X | Request header for FriendTalk compatibility send. *(From **December 30, 2025**, requests **without** `X-Convert-To-Brand-Message: true` will be rejected at the request stage.)* |
 
+<a id="kakao-provided-spec-change-comparison"></a>
+
 ### Kakao-Provided Spec Change Comparison
 
 ![friendtalk_compatible_spec_01.png](https://static.toastoven.net/prod_alimtalk/friendtalk_compatible_spec_01.png)
+
+<a id="other-confirmed-spec-differences"></a>
 
 ### Other Confirmed Spec Differences
 

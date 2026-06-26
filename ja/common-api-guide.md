@@ -1,6 +1,12 @@
+<!-- pre-align:aligned sig=8c7be9b338eb -->
+
 ## Notification > KakaoTalk Bizmessage > Common > API v2.2 Guide
 
+<a id="statistics"></a>
+
 ## 統計
+
+<a id="api-domain"></a>
 
 ### [APIドメイン]
 
@@ -18,6 +24,8 @@
 </table>
 
 
+<a id="statistics-search---event-based"></a>
+
 ### 統計検索 - イベントベース
 * イベント発生時間基準で収集された統計です。
 * 次の時間を基準に統計が収集されます。
@@ -27,6 +35,8 @@
     * 失敗数(SENT_FAILED)：送信リクエスト失敗or送信結果失敗時点
     * 代替送信リクエスト数(RESENT)：代替送信リクエスト時点
     * 代替送信失敗数(RESENT_FAILED)：代替送信リクエスト失敗時点
+
+<a id="get-statistics-information"></a>
 
 ### 統計情報照会
 
@@ -104,6 +114,8 @@
 }
 ```
 
+<a id="get-count-per-event"></a>
+
 ### イベント別数照会
 
 [URL]
@@ -154,6 +166,8 @@
 }
 ```
 
+<a id="kakao-statistics"></a>
+
 ## Kakao統計
 
 * Kakao Biz Centerで提供する統計データを照会します。
@@ -169,9 +183,13 @@
 * クリック数は同じメッセージに対して重複集計します。
 * 送信成功件数が10件以下の場合は、有効既読数とクリック数を提供しません。
 
+<a id="delivery-statistics"></a>
+
 ### 送信統計
 
 送信元プロフィールを基準として、日別の送信数、有効既読数、クリック数を照会します。期間、送信識別子、メッセージタイプなどを設定して照会できます。
+
+<a id="template-statistics"></a>
 
 ### テンプレート統計
 
@@ -179,7 +197,11 @@
 
 * ブランドメッセージ(自由型)はグループタグを使用した場合にのみ提供します。
 
+<a id="retrieve-alimtalk-delivery-statistics"></a>
+
 ### お知らせトーク送信統計の照会
+
+<a id="request"></a>
 
 #### リクエスト
 
@@ -220,6 +242,8 @@
 | limit | Integer | X | 照会件数(Default：500、Max：1000) |
 | offset | Integer | X | 開始位置(Default：0) |
 
+<a id="response"></a>
+
 #### レスポンス
 
 ```json
@@ -258,7 +282,11 @@
 | - validSendRequestCount | Integer | O | 有効送信リクエスト数 |
 | - validReadCount | Integer | O | 有効既読数 |
 
+<a id="retrieve-alimtalk-template-statistics"></a>
+
 ### お知らせトークテンプレート統計の照会
+
+<a id="request-2"></a>
 
 #### リクエスト
 
@@ -299,6 +327,8 @@
 | limit | Integer | X | 照会件数(Default：500、Max：1000) |
 | offset | Integer | X | 開始位置(Default：0) |
 
+<a id="response-2"></a>
+
 #### レスポンス
 
 ```json
@@ -337,7 +367,11 @@
 | - validReadCount | Integer | O | 有効既読数 |
 | - totalClickCount | Integer | O | 総クリック数 |
 
+<a id="retrieve-brand-message-delivery-statistics"></a>
+
 ### ブランドメッセージ送信統計の照会
+
+<a id="request-3"></a>
 
 #### リクエスト
 
@@ -380,6 +414,8 @@
 | receiveUserType | String | X | 受信者のタイプ(PhoneNumber：電話番号、None：受信者の識別子なし) |
 | limit | Integer | X | 照会件数(Default：500、Max：1000) |
 | offset | Integer | X | 開始位置(Default：0) |
+
+<a id="response-3"></a>
 
 #### レスポンス
 
@@ -427,7 +463,11 @@
 | - validReadCount | Integer | O | 有効既読数 |
 | - totalClickCount | Integer | O | 総クリック数 |
 
+<a id="retrieve-brand-message-template-statistics"></a>
+
 ### ブランドメッセージテンプレート統計の照会
+
+<a id="request-4"></a>
 
 #### リクエスト
 
@@ -471,6 +511,8 @@
 | friendType | String | X | 友だちのタイプ(F：友だち、N：非友だち) |
 | limit | Integer | X | 照会件数(Default：500、Max：1000) |
 | offset | Integer | X | 開始位置(Default：0) |
+
+<a id="response-4"></a>
 
 #### レスポンス
 

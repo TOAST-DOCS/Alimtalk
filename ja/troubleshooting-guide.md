@@ -1,4 +1,8 @@
+<!-- pre-align:aligned sig=f86d36730580 -->
+
 ## Notification > KakaoTalk Bizmessage > 問題解決ガイド
+
+<a id="message-for-query-delivery-button"></a>
 
 ### 配送照会ボタン文言
 
