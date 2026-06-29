@@ -3988,7 +3988,7 @@ Content-Type: application/json;charset=UTF-8
 | REGISTERED | 업로드 등록                              |
 | ENCODING   | 인코딩 중                               |
 | PUBLIC     | 공개 상태 (발송 및 템플릿 등록 가능)              |
-| PRIVATE    | 비공개 상태 (템플릿 등록 가능)                  |
+| PRIVATE    | 비공개 상태 (템플릿 등록만 가능, 발송 시 실패)        |
 | VIOLATED   | 위반 동영상                              |
 | ILLEGAL    | 불법촬영물 동영상                           |
 | DELETED    | 삭제된 동영상                             |
