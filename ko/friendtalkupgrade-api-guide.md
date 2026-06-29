@@ -2586,7 +2586,7 @@ Content-Type: application/json;charset=UTF-8
 
 ### 템플릿 등록
 
-<a id="requested-9"></a>
+<a id="requested-10"></a>
 
 #### 요청
 
@@ -3305,7 +3305,7 @@ Content-Type: application/json;charset=UTF-8
 
 ### 템플릿 수정
 
-<a id="requested-10"></a>
+<a id="requested-11"></a>
 
 #### 요청
 
@@ -3365,7 +3365,7 @@ Content-Type: application/json;charset=UTF-8
 
 ### 템플릿 삭제
 
-<a id="requested-11"></a>
+<a id="requested-12"></a>
 
 #### 요청
 
@@ -3425,7 +3425,7 @@ Content-Type: application/json;charset=UTF-8
 
 ### 이미지 업로드
 
-<a id="requested-12"></a>
+<a id="requested-13"></a>
 
 #### 요청
 
@@ -3509,7 +3509,7 @@ Content-Type: multipart/form-data
 
 ### 이미지 조회
 
-<a id="requested-13"></a>
+<a id="requested-14"></a>
 
 #### 요청
 
@@ -3580,7 +3580,7 @@ Content-Type: application/json;charset=UTF-8
 
 ### 이미지 삭제
 
-<a id="requested-14"></a>
+<a id="requested-15"></a>
 
 #### 요청
 
@@ -3661,7 +3661,7 @@ Content-Type: application/json;charset=UTF-8
 
 ### 동영상 업로드 등록
 
-<a id="request"></a>
+<a id="requested-16"></a>
 
 #### 요청
 
@@ -3761,7 +3761,7 @@ Content-Type: application/json;charset=UTF-8
 
 위 응답의 `uploadInfo.uploadUrl`로 동영상 파일을 직접 호출합니다. 이 요청은 NHN Cloud 서버가 아닌 카카오 측 업로드 서버로 직접 전송됩니다.
 
-<a id="request-2"></a>
+<a id="requested-17"></a>
 
 #### 요청
 
@@ -3821,7 +3821,7 @@ Content-Type: multipart/form-data
 
 ### 동영상 조회
 
-<a id="request-3"></a>
+<a id="requested-18"></a>
 
 #### 요청
 
@@ -3921,7 +3921,7 @@ Content-Type: application/json;charset=UTF-8
 
 ### 동영상 삭제
 
-<a id="request-4"></a>
+<a id="requested-19"></a>
 
 #### 요청
 
@@ -4002,7 +4002,7 @@ Content-Type: application/json;charset=UTF-8
 
 ### 비즈폼 키 업로드
 
-<a id="requested-15"></a>
+<a id="requested-20"></a>
 
 #### 요청
 
@@ -4061,7 +4061,7 @@ Content-Type: application/json;charset=UTF-8
 
 ### 발신 프로필 조회
 
-<a id="requested-16"></a>
+<a id="requested-21"></a>
 
 #### 요청
 
@@ -4166,7 +4166,7 @@ Content-Type: application/json;charset=UTF-8
 
 ### 발신 프로필 080 수신거부번호 수정
 
-<a id="requested-17"></a>
+<a id="requested-22"></a>
 
 #### 요청
 
