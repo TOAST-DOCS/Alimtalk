@@ -1874,6 +1874,116 @@ Content-Type: application/json;charset=UTF-8
 | - senderGroupingKey   | String  | X        | 발신 그룹핑 키                                                 |
 | - recipientGroupingKey | String  | X        | 수신자 그룹핑 키                                           |
 
+<a id="message-results"></a>
+
+## 메시지 결과 업데이트 조회
+
+<a id="requested-25"></a>
+
+#### 요청
+
+[URL]
+
+```
+GET  /brand-message/v1.0/appkeys/{appKey}/message-results
+Content-Type: application/json;charset=UTF-8
+```
+
+[Path parameter]
+
+| 이름     | 타입     | 설명     |
+|--------|--------|--------|
+| appKey | String | 고유의 앱키 |
+
+[Header]
+
+```
+{
+  "X-Secret-Key": String
+}
+```
+
+| 이름           | 타입     | 필수 | 설명               |
+|--------------|--------|----|------------------|
+| X-Secret-Key | String | O  | 콘솔에서 생성할 수 있습니다. |
+
+[Query parameter]
+
+| 이름              | 타입      | 필수 | 설명                                                                  |
+|-----------------|---------|----|---------------------------------------------------------------------|
+| startUpdateDate | String  | O  | 결과 업데이트 조회 시작 시간(yyyy-MM-dd HH:mm)                                  |
+| endUpdateDate   | String  | O  | 결과 업데이트 조회 종료 시간(yyyy-MM-dd HH:mm)                                  |
+| targeting       | String  | X  | 메시지 대상의 타입(M: 마케팅 수신 동의 유저, N: 친구가 아닌 마케팅 수신 동의 유저에게만, I: 친구인 유저) |
+| pageNum         | Integer | X  | 페이지 번호(기본: 1)                                                       |
+| pageSize        | Integer | X  | 조회 건수(기본: 15)                                                       |
+
+> **참고** 조회 가능 기간은 최근 90일 이내이며, 1회 조회 범위는 최대 31일입니다.
+
+<a id="response-25"></a>
+
+#### 응답
+
+```
+{
+  "header": {
+    "resultCode": Integer,
+    "resultMessage": String,
+    "isSuccessful": boolean
+  },
+  "messageSearchResultResponse": {
+    "messages": [
+      {
+        "requestId": String,
+        "recipientSeq": Integer,
+        "plusFriendId": String,
+        "recipientNo": String,
+        "targeting": String,
+        "requestDate": String,
+        "messageStatus": String,
+        "isAddedChannel": boolean,
+        "resendStatus": String,
+        "resendStatusName": String,
+        "resultCode": String,
+        "resultCodeName": String,
+        "senderGroupingKey": String,
+        "recipientGroupingKey": String
+      }
+    ],
+    "totalCount": Integer
+  }
+}
+```
+
+| 이름                          | 타입      | Not Null | 설명                                                                    |
+|:----------------------------|:--------|:---------|:----------------------------------------------------------------------|
+| header                      | Object  | O        | 헤더 영역                                                                 |
+| - resultCode                | Integer | O        | 결과 코드                                                                 |
+| - resultMessage             | String  | O        | 결과 메시지                                                                |
+| - isSuccessful              | boolean | O        | 성공 여부                                                                 |
+| messageSearchResultResponse | Object  | X        | 본문 영역                                                                 |
+| - messages                  | Array   | X        | 메시지 목록                                                               |
+| -- requestId                | String  | O        | 요청 ID                                                                 |
+| -- recipientSeq             | Integer | O        | 수신자 시퀀스 번호                                                            |
+| -- plusFriendId             | String  | O        | 발신 프로필 ID                                                             |
+| -- recipientNo              | String  | O        | 수신 번호                                                                 |
+| -- targeting                | String  | O        | 메시지 대상의 타입(M: 마케팅 수신 동의 유저, N: 친구가 아닌 마케팅 수신 동의 유저에게만, I: 친구인 유저) |
+| -- requestDate              | String  | O        | 요청 일시                                                                 |
+| -- messageStatus            | String  | O        | 요청 상태(COMPLETED: 성공, FAILED: 실패, CANCEL: 취소)                         |
+| -- isAddedChannel           | boolean | O        | 채널 친구 여부                                                              |
+| -- resendStatus             | String  | X        | 대체 발송 상태 코드                                                           |
+| -- resendStatusName         | String  | X        | 대체 발송 상태 코드명                                                          |
+| -- resultCode               | String  | X        | 수신 결과 코드                                                              |
+| -- resultCodeName           | String  | X        | 수신 결과 코드명                                                             |
+| -- senderGroupingKey        | String  | X        | 발신 그룹핑 키                                                             |
+| -- recipientGroupingKey     | String  | X        | 수신자 그룹핑 키                                                            |
+| - totalCount                | Integer | X        | 총 개수                                                                  |
+
+[예시]
+
+```
+curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" "https://kakaotalk-bizmessage.api.nhncloudservice.com/brand-message/v1.0/appkeys/{appKey}/message-results?startUpdateDate=2026-06-01%2000:00&endUpdateDate=2026-06-30%2023:59"
+```
+
 <a id="cancel-message-sending"></a>
 
 ## 메시지 발송 취소

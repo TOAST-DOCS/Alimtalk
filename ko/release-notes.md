@@ -1,9 +1,20 @@
 <!-- pre-align:aligned sig=7e06fb48b072 -->
 
 ## Notification > KakaoTalk Bizmessage > 릴리스 노트
+
+<a id="july-28-2026"></a>
+
+### 2026. 07. 28.
+
+* [API] 브랜드 메시지 결과 업데이트 조회 API 추가
+    * 결과 업데이트일(result_date) 기준으로 브랜드 메시지 발송 결과를 조회할 수 있는 API가 추가되었습니다.
+        * Endpoint: `GET /brand-message/v1.0/appkeys/{appKey}/message-results`
+    * 조회 가능 기간은 최근 90일 이내이며, 1회 조회 범위는 최대 31일입니다.
+
 <a id="june-23-2026"></a>
 
 ### 2026. 06. 23.
+
 <a id="feature-additions"></a>
 
 #### 기능 추가
