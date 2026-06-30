@@ -1901,6 +1901,28 @@ Content-Type: application/json;charset=UTF-8
 * 채널 추가형(AD) 또는 복합형(MI) 메시지 유형 템플릿 등록 시 templateAd 값이 고정됩니다.
 * 채널 추가형(AD) 또는 복합형(MI) 메시지 유형 템플릿 등록 시 채널 추가(AC) 버튼이 첫 번째 순서에 위치해야 합니다.
 * 채널 추가(AC) 버튼의 버튼명은 "채널 추가"로 고정하여 등록해야 합니다.
+* <b>필드별 치환 변수(#{변수}) 사용 가능 여부는 아래를 참고하세요.</b>
+
+| 구분 | 필드 | 치환 가능 |
+|------|------|---------|
+| 기본 | templateContent(본문) | O |
+| 기본 | templateTitle(제목) | O |
+| 기본 | templateSubtitle(부제) | O |
+| 기본 | templateHeader(헤더) | O |
+| 기본 | templateExtra(부가정보) | X |
+| 기본 | templateAd(광고성 메시지) | X |
+| 버튼 | name(버튼명) | X |
+| 버튼 | linkMo, linkPc, schemeIos, schemeAndroid | O |
+| 바로연결 | name(바로연결명) | X |
+| 바로연결 | linkMo, linkPc, schemeIos, schemeAndroid | O |
+| 템플릿 아이템 | title | X |
+| 템플릿 아이템 | description | O |
+| 템플릿 아이템 summary | title | X |
+| 템플릿 아이템 summary | description | O |
+| 템플릿 아이템 하이라이트 | title | O |
+| 템플릿 아이템 하이라이트 | description | O |
+| 템플릿 아이템 하이라이트 | imageUrl | X |
+| 대표링크 | linkMo, linkPc, schemeIos, schemeAndroid | O |
 
 <a id="response-13"></a>
 
