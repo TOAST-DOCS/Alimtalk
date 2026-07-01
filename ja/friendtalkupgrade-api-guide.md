@@ -945,6 +945,8 @@ Content-Type: application/json;charset=UTF-8
 | createUser | String | X | 登録者(コンソールから送信した場合、ユーザーUUIDで保存) |
 | statsId                | String  | 	X | 統計ID(発信検索条件には含まれません。最大8文字)                                                                                                                                                                                                                                            |
 
+<a id="request-to-send-carousel-commerce-type"></a>
+
 #### カルーセルコマース形式の送信リクエスト
 
 ##### カルーセル固定置換パラメータ(pathベースのテンプレートパラメータ)
