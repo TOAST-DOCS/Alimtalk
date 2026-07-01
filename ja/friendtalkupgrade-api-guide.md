@@ -945,6 +945,8 @@ Content-Type: application/json;charset=UTF-8
 | createUser | String | X | 登録者(コンソールから送信した場合、ユーザーUUIDで保存) |
 | statsId                | String  | 	X | 統計ID(発信検索条件には含まれません。最大8文字)                                                                                                                                                                                                                                            |
 
+<a id="request-to-send-carousel-commerce-type"></a>
+
 #### カルーセルコマース形式の送信リクエスト
 
 ##### カルーセル固定置換パラメータ(pathベースのテンプレートパラメータ)
@@ -2272,7 +2274,7 @@ Content-Type: application/json;charset=UTF-8
 
 ### テンプレート登録
 
-<a id="requested-9"></a>
+<a id="requested-10"></a>
 
 #### リクエスト
 
@@ -2991,7 +2993,7 @@ Content-Type: application/json;charset=UTF-8
 
 ### テンプレート修正
 
-<a id="requested-10"></a>
+<a id="requested-11"></a>
 
 #### リクエスト
 
@@ -3051,7 +3053,7 @@ Content-Type: application/json;charset=UTF-8
 
 ### テンプレート削除
 
-<a id="requested-11"></a>
+<a id="requested-12"></a>
 
 #### リクエスト
 
@@ -3111,7 +3113,7 @@ Content-Type: application/json;charset=UTF-8
 
 ### 画像アップロード
 
-<a id="requested-12"></a>
+<a id="requested-13"></a>
 
 #### リクエスト
 
@@ -3205,7 +3207,7 @@ Content-Type: multipart/form-data
 
 ### 画像照会
 
-<a id="requested-13"></a>
+<a id="requested-14"></a>
 
 #### リクエスト
 
@@ -3276,7 +3278,7 @@ Content-Type: application/json;charset=UTF-8
 
 ### 画像削除
 
-<a id="requested-14"></a>
+<a id="requested-15"></a>
 
 #### リクエスト
 
@@ -3357,7 +3359,7 @@ Content-Type: application/json;charset=UTF-8
 
 ### 動画アップロードの登録
 
-<a id="request"></a>
+<a id="requested-16"></a>
 
 #### リクエスト
 
@@ -3457,7 +3459,7 @@ Content-Type: application/json;charset=UTF-8
 
 上記レスポンスの`uploadInfo.uploadUrl`に動画ファイルを指定して直接呼び出します。このリクエストはNHN Cloudサーバーではなく、カカオ側のアップロードサーバーに直接送信されます。
 
-<a id="request-2"></a>
+<a id="requested-17"></a>
 
 #### リクエスト
 
@@ -3517,7 +3519,7 @@ Content-Type: multipart/form-data
 
 ### 動画照会
 
-<a id="request-3"></a>
+<a id="requested-18"></a>
 
 #### リクエスト
 
@@ -3617,7 +3619,7 @@ Content-Type: application/json;charset=UTF-8
 
 ### 動画の削除
 
-<a id="request-4"></a>
+<a id="requested-19"></a>
 
 #### リクエスト
 
@@ -3698,7 +3700,7 @@ Content-Type: application/json;charset=UTF-8
 
 ### ビズフォームキーのアップロード
 
-<a id="requested-15"></a>
+<a id="requested-20"></a>
 
 #### リクエスト
 
@@ -3757,7 +3759,7 @@ Content-Type: application/json;charset=UTF-8
 
 ### 送信プロフィール照会
 
-<a id="requested-16"></a>
+<a id="requested-21"></a>
 
 #### リクエスト
 
@@ -3862,7 +3864,7 @@ Content-Type: application/json;charset=UTF-8
 
 ### 送信プロフィールの080受信拒否番号の修正
 
-<a id="requested-17"></a>
+<a id="requested-22"></a>
 
 #### リクエスト
 

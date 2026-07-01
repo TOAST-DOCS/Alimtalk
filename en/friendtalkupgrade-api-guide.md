@@ -2473,7 +2473,7 @@ Content-Type: application/json;charset=UTF-8
 
 ### Register Template
 
-<a id="requested-9"></a>
+<a id="requested-10"></a>
 
 #### Requested
 
@@ -3192,7 +3192,7 @@ Content-Type: application/json;charset=UTF-8
 
 ### Modify Template
 
-<a id="requested-10"></a>
+<a id="requested-11"></a>
 
 #### Requested
 
@@ -3252,7 +3252,7 @@ Content-Type: application/json;charset=UTF-8
 
 ### Delete Template
 
-<a id="requested-11"></a>
+<a id="requested-12"></a>
 
 #### Requested
 
@@ -3312,7 +3312,7 @@ Content-Type: application/json;charset=UTF-8
 
 ### Upload image
 
-<a id="requested-12"></a>
+<a id="requested-13"></a>
 
 #### Requested
 
@@ -3396,7 +3396,7 @@ Content-Type: multipart/form-data
 
 ### View image
 
-<a id="requested-13"></a>
+<a id="requested-14"></a>
 
 #### Requested
 
@@ -3467,7 +3467,7 @@ Content-Type: application/json;charset=UTF-8
 
 ### Delete Image
 
-<a id="requested-14"></a>
+<a id="requested-15"></a>
 
 #### Requested
 
@@ -3548,9 +3548,9 @@ The video file is sent directly to Kakao's upload server without going through N
 
 ### Register Video Upload
 
-<a id="request"></a>
+<a id="requested-16"></a>
 
-#### Request
+#### Requested
 
 [URL]
 
@@ -3648,9 +3648,9 @@ Content-Type: application/json;charset=UTF-8
 
 Call `uploadInfo.uploadUrl` from the above response to directly upload the video file. This request is sent directly to Kakao's upload server, not to NHN Cloud servers.
 
-<a id="request-2"></a>
+<a id="requested-17"></a>
 
-#### Request
+#### Requested
 
 [URL]
 
@@ -3708,9 +3708,9 @@ Content-Type: multipart/form-data
 
 ### Retrieve Video
 
-<a id="request-3"></a>
+<a id="requested-18"></a>
 
-#### Request
+#### Requested
 
 [URL]
 
@@ -3808,9 +3808,9 @@ Content-Type: application/json;charset=UTF-8
 
 ### Delete Video
 
-<a id="request-4"></a>
+<a id="requested-19"></a>
 
-#### Request
+#### Requested
 
 [URL]
 
@@ -3889,7 +3889,7 @@ Describes the `status` field values in the video retrieval response.
 
 ### Upload Bizform key
 
-<a id="requested-15"></a>
+<a id="requested-20"></a>
 
 #### Requested
 
@@ -3948,7 +3948,7 @@ Content-Type: application/json;charset=UTF-8
 
 ### View outgoing profile
 
-<a id="requested-16"></a>
+<a id="requested-21"></a>
 
 #### Requested
 
@@ -4053,7 +4053,7 @@ Content-Type: application/json;charset=UTF-8
 
 ### Modify outgoing profile 080 opt-out number
 
-<a id="requested-17"></a>
+<a id="requested-22"></a>
 
 #### Requested
 
