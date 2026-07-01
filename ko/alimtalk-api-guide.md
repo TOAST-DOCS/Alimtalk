@@ -1905,15 +1905,15 @@ Content-Type: application/json;charset=UTF-8
 
 | 구분 | 필드 | 치환 가능 |
 |------|------|---------|
-| 기본 | templateContent(본문) | O |
-| 기본 | templateTitle(제목) | O |
-| 기본 | templateSubtitle(부제) | O |
-| 기본 | templateHeader(헤더) | O |
-| 기본 | templateExtra(부가정보) | X |
-| 기본 | templateAd(광고성 메시지) | X |
-| 버튼 | name(버튼명) | X |
+| 기본 | templateContent | O |
+| 기본 | templateTitle | O |
+| 기본 | templateSubtitle | X |
+| 기본 | templateHeader | O |
+| 기본 | templateExtra | X |
+| 기본 | templateAd | X |
+| 버튼 | name | X |
 | 버튼 | linkMo, linkPc, schemeIos, schemeAndroid | O |
-| 바로연결 | name(바로연결명) | X |
+| 바로연결 | name | X |
 | 바로연결 | linkMo, linkPc, schemeIos, schemeAndroid | O |
 | 템플릿 아이템 | title | X |
 | 템플릿 아이템 | description | O |
