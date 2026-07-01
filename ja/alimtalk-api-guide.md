@@ -885,7 +885,7 @@ Content-Type: application/json;charset=UTF-8
 curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" https://kakaotalk-bizmessage.api.nhncloudservice.com/alimtalk/v2.3/appkeys/{appkey}/auth/messages -d '{"senderKey":"{発信キー}","templateCode":"{テンプレートコード}","requestDate":"2018-10-01 00:00","recipientList":[{"recipientNo":"{受信番号}","templateParameter":{"{日本語識別子フィールド}":"{置換データ}"}}]}'
 ```
 
-#### レスポンス
+**レスポンス**
 
 ```
 {
@@ -1045,7 +1045,7 @@ Content-Type: application/json;charset=UTF-8
 curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" https://kakaotalk-bizmessage.api.nhncloudservice.com/alimtalk/v2.3/appkeys/{appkey}/auth/raw-messages -d '{"senderKey":"{発信キー}","templateCode":"{テンプレートコード}","requestDate":"2018-10-01 00:00","recipientList":[{"recipientNo":"{受信番号}","content":"{内容}","buttons":[{"ordering":"{ボタン順序}","type":"{ボタンタイプ}","name":"{ボタン名}","linkMo":"{モバイルWebリンク}"}]}]}'
 ```
 
-#### レスポンス
+**レスポンス**
 
 ```
 {
@@ -1144,7 +1144,7 @@ Content-Type: application/json;charset=UTF-8
 * 90日以上前の送信リクエストデータは照会されません。
 * 送信リクエスト日時の範囲は最大30日です。
 
-#### レスポンス
+**レスポンス**
 ```
 {
   "header" : {
@@ -1238,9 +1238,9 @@ Content-Type: application/json;charset=UTF-8
 curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" "https://kakaotalk-bizmessage.api.nhncloudservice.com/alimtalk/v2.3/appkeys/{appkey}/auth/messages?startRequestDate=2018-05-01%20:00&endRequestDate=2018-05-30%20:59"
 ```
 
-### メッセージ結果アップデート件数の照会
+**メッセージ結果アップデート件数の照会**
 
-#### リクエスト
+**リクエスト**
 
 [URL]
 
@@ -1275,7 +1275,7 @@ Content-Type: application/json;charset=UTF-8
 | endUpdateDate       | 	String  | O   | 	結果アップデート照会終了時間(yyyy-MM-dd HH:mm) |
 | alimtalkMessageType | 	String  | X   | 	お知らせトークのメッセージタイプ(NORMAL, AUTH)           |
 
-#### レスポンス
+**レスポンス**
 
 ```
 {
@@ -1587,6 +1587,30 @@ Content-Type: application/json;charset=UTF-8
 ```
 curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" "https://kakaotalk-bizmessage.api.nhncloudservice.com/alimtalk/v2.3/appkeys/{appkey}/message-results?startUpdateDate=2018-05-01%20:00&endUpdateDate=2018-05-30%20:59"
 ```
+
+<a id="query-the-number-of-message-result-updates"></a>
+
+### メッセージ結果更新件数照会
+
+<!-- TODO: translate body -->
+
+<a id="request-7"></a>
+
+#### 要求
+
+<!-- TODO: translate body -->
+
+<a id="response-8"></a>
+
+#### ## 応答
+
+<!-- TODO: translate body -->
+
+<a id="status-code-of-smslms-resending"></a>
+
+### SMS/LMS 代替送信ステータスコード
+
+<!-- TODO: translate body -->
 
 <a id="mass-delivery"></a>
 
