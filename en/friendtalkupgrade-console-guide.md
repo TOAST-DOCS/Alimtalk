@@ -252,7 +252,7 @@ You can register or delete videos to be used in brand messages and check the inf
 * After selecting a sender profile, you can register or delete videos.
 * When uploading a video, select a file on the console screen and click the Upload button. The progress will be displayed. Be careful not to refresh or close the page while the upload is in progress. If the page is refreshed during the upload, the upload will be interrupted and you will need to upload again.
 * Registered videos can be used for sending after encoding is complete in KakaoBizCenter. Encoding typically takes 5–10 minutes and may take up to 3 days depending on the video length. If 3 days are exceeded, the video is automatically set to `ERROR` status.
-* Video status is periodically synchronized with KakaoBizCenter. Only videos in `PUBLIC` status can be used for template registration and sending, and videos in `PRIVATE` status can only be used for template registration.
+* Video status is periodically synchronized with KakaoBizCenter. Only videos in `PUBLIC` status can be used for template registration and sending, and videos in `PRIVATE` status can only be used for template registration. If you attempt to send using a template that contains a `PRIVATE` status video, the send will fail.
 * Registered videos are permanently stored on Kakao's side, and deleting a video in the console does not automatically remove the video from KakaoBizCenter. The KakaoTalk channel administrator can delete the video directly from the management screen on the channel business home.
 * Note that videos deleted from the console can no longer be used for sending in templates that used the video.
 
