@@ -2,6 +2,20 @@
 
 ## Notification > KakaoTalk Bizmessage > リリースノート
 
+<a id="july-28-2026"></a>
+
+### 2026. 07. 28.
+<a id="feature-additions"></a>
+
+#### 機能変更
+* [API] ブランドメッセージ結果更新照会 API 追加
+    * 結果更新日（result_date）基準でブランドメッセージ送信結果を照会できる API が追加されました。
+        * Endpoint: `GET /brand-message/v1.0/appkeys/{appKey}/message-results`
+    * 照会可能期間は直近 90 日以内で、1 回の照会範囲は最大 31 日です。
+
+* [API] ブランドメッセージ 080 受信拒否認証番号の最大長変更
+    * 080 受信拒否認証番号の最大許容長が 9 文字から 10 文字に変更されました。
+
 <a id="june-23-2026"></a>
 
 ### 2026. 06. 23.
