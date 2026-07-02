@@ -1,3 +1,5 @@
+<!-- pre-align:aligned sig=59b3050f8882 -->
+
 ## Notification > KakaoTalk Bizmessage > AlimTalk > API v2.1 Guide
 
 <a id="alimtalk"></a>
@@ -470,15 +472,6 @@ Content-Type: application/json;charset=UTF-8
 curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" "https://kakaotalk-bizmessage.api.nhncloudservice.com/alimtalk/v2.1/appkeys/{appkey}/messages?startRequestDate=2018-05-01%20:00&endRequestDate=2018-05-30%20:59"
 ```
 
-#### Status of Sending SMS/LMS
-| Value | Description                                      |
-| ----- | ------------------------------------------------ |
-| RSC01 | No target of resending                           |
-| RSC02 | Target of resending(resent, if delivery fails.) |
-| RSC03 | Resending                                        |
-| RSC04 | Resending successful                             |
-| RSC05 | Resending failed                                 |
-
 <a id="get-messages"></a>
 
 ### Get Messages
@@ -908,6 +901,8 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 
 ### List Messages
 
+<a id="request-3"></a>
+
 #### Request
 
 [URL]
@@ -956,7 +951,7 @@ Content-Type: application/json;charset=UTF-8
 * Delivery request data before 90 days cannot be queried.
 * Delivery can be requested within 30 days to the maximum.   
 
-<a id="request-3"></a>
+<a id="response-7"></a>
 
 #### Response
 ```
@@ -1045,17 +1040,6 @@ Content-Type: application/json;charset=UTF-8
 ```
 curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" "https://kakaotalk-bizmessage.api.nhncloudservice.com/alimtalk/v2.1/appkeys/{appkey}/auth/messages?startRequestDate=2018-05-01%20:00&endRequestDate=2018-05-30%20:59"
 ```
-
-<a id="response-7"></a>
-
-#### Status of Resending SMS/LMS
-| Value | Description                                     |
-| ----- | ----------------------------------------------- |
-| RSC01 | No target of resending                          |
-| RSC02 | Target of resending(resent, if sending fails.) |
-| RSC03 | Resending                                       |
-| RSC04 | Resending successful                            |
-| RSC05 | Resending failed                                |
 
 <a id="get-messages-2"></a>
 

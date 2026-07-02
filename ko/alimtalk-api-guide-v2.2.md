@@ -1,3 +1,5 @@
+<!-- pre-align:aligned sig=ff88f5bc1ceb -->
+
 ## Notification > KakaoTalk Bizmessage > 알림톡 > API v2.2 Guide
 
 <a id="alimtalk"></a>
