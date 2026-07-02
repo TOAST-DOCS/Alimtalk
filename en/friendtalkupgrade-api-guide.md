@@ -1870,6 +1870,24 @@ Content-Type: application/json;charset=UTF-8
 | \- senderGroupingKey| String| X| Outgoing grouping key|
 | \- recipientGroupingKey| String| X| Recipient grouping key|
 
+<a id="message-results"></a>
+
+## View Message Result Updates
+
+<!-- TODO: translate body -->
+
+<a id="requested-25"></a>
+
+#### Requested
+
+<!-- TODO: translate body -->
+
+<a id="response-25"></a>
+
+#### Response
+
+<!-- TODO: translate body -->
+
 <a id="cancel-message-sending"></a>
 
 ## Cancel message sending
