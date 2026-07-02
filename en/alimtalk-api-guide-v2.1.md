@@ -470,15 +470,6 @@ Content-Type: application/json;charset=UTF-8
 curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" "https://kakaotalk-bizmessage.api.nhncloudservice.com/alimtalk/v2.1/appkeys/{appkey}/messages?startRequestDate=2018-05-01%20:00&endRequestDate=2018-05-30%20:59"
 ```
 
-#### Status of Sending SMS/LMS
-| Value | Description                                      |
-| ----- | ------------------------------------------------ |
-| RSC01 | No target of resending                           |
-| RSC02 | Target of resending(resent, if delivery fails.) |
-| RSC03 | Resending                                        |
-| RSC04 | Resending successful                             |
-| RSC05 | Resending failed                                 |
-
 <a id="get-messages"></a>
 
 ### Get Messages
@@ -1045,17 +1036,6 @@ Content-Type: application/json;charset=UTF-8
 ```
 curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" "https://kakaotalk-bizmessage.api.nhncloudservice.com/alimtalk/v2.1/appkeys/{appkey}/auth/messages?startRequestDate=2018-05-01%20:00&endRequestDate=2018-05-30%20:59"
 ```
-
-<a id="response-7"></a>
-
-#### Status of Resending SMS/LMS
-| Value | Description                                     |
-| ----- | ----------------------------------------------- |
-| RSC01 | No target of resending                          |
-| RSC02 | Target of resending(resent, if sending fails.) |
-| RSC03 | Resending                                       |
-| RSC04 | Resending successful                            |
-| RSC05 | Resending failed                                |
 
 <a id="get-messages-2"></a>
 
