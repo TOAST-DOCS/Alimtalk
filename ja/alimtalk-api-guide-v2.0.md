@@ -1,3 +1,5 @@
+<!-- pre-align:aligned sig=6622ebb72190 -->
+
 ## Notification > KakaoTalk Bizmessage > お知らせトーク > API v2.0 Guide
 
 <a id="alimtalk"></a>
@@ -466,15 +468,6 @@ Content-Type: application/json;charset=UTF-8
 curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" "https://kakaotalk-bizmessage.api.nhncloudservice.com/alimtalk/v2.0/appkeys/{appkey}/messages?startRequestDate=2018-05-01%20:00&endRequestDate=2018-05-30%20:59"
 ```
 
-#### SMS/LMS再送信ステータス
-| 値 | 説明                      |
-| ----- | ------------------------------- |
-| RSC01 | 再送信の対象ではない                 |
-| RSC02 | 再送信の対象(送信結果が失敗の時、再送信が行われます。) |
-| RSC03 | 再送信中                    |
-| RSC04 | 再送信成功                  |
-| RSC05 | 再送信失敗                  |
-
 <a id="get-messages"></a>
 
 ### メッセージ単件照会
@@ -910,6 +903,8 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 
 ### メッセージリストの照会
 
+<a id="request-3"></a>
+
 #### リクエスト
 
 [URL]
@@ -958,7 +953,7 @@ Content-Type: application/json;charset=UTF-8
 * 90日以上前の送信リクエストデータは照会されません。
 * 送信リクエスト日時の範囲は最大30日です。
 
-<a id="request-3"></a>
+<a id="response-7"></a>
 
 #### レスポンス
 ```
@@ -1047,17 +1042,6 @@ Content-Type: application/json;charset=UTF-8
 ```
 curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" "https://kakaotalk-bizmessage.api.nhncloudservice.com/alimtalk/v2.0/appkeys/{appkey}/auth/messages?startRequestDate=2018-05-01%20:00&endRequestDate=2018-05-30%20:59"
 ```
-
-<a id="response-7"></a>
-
-#### SMS/LMS再送信ステータス
-| 値 | 説明                      |
-| ----- | ------------------------------- |
-| RSC01 | 再送信の対象ではない                 |
-| RSC02 | 再送信の対象(送信結果が失敗の時、再送信が行われます。) |
-| RSC03 | 再送信中                    |
-| RSC04 | 再送信成功                  |
-| RSC05 | 再送信失敗                  |
 
 <a id="get-messages-2"></a>
 

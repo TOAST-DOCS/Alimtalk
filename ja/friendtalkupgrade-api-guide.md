@@ -1720,6 +1720,24 @@ Content-Type: application/json;charset=UTF-8
 | - resendRequestId     | String  | X        | 代替送信リクエストID                                                                                      | 
 | - createUser          | String  | X        | 登録者(コンソールから送信した場合、ユーザーUUIDで保存)                                                                      |
 
+<a id="message-results"></a>
+
+## メッセージ結果アップデート照会
+
+<!-- TODO: translate body -->
+
+<a id="requested-25"></a>
+
+#### リクエスト
+
+<!-- TODO: translate body -->
+
+<a id="response-25"></a>
+
+#### レスポンス
+
+<!-- TODO: translate body -->
+
 <a id="cancel-message-sending"></a>
 
 ## メッセージ送信取消
