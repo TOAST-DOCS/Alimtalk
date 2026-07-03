@@ -3749,12 +3749,12 @@ Content-Type: application/json;charset=UTF-8
 | - title         | String  | X        | 動画タイトル (アップロード直後はファイル名、エンコード完了後にカカオビズセンターで修正した値に同期されます)                        |
 | - fileName      | String  | O        | アップロードファイル名                                                                         |
 | - fileSize      | Long    | O        | ファイルサイズ (byte)                                                                    |
-| - status        | String  | O        | 動画ステータス ([動画ステータス](#動画-ステータス) 参照)。アップロード登録レスポンスでは常に `REGISTERED`                     |
+| - status        | String  | O        | 動画ステータス ([動画ステータス](#video-status) 参照)。アップロード登録レスポンスでは常に `REGISTERED`                     |
 | uploadInfo      | Object  | O        | カカオアップロード情報。ステップ 2 で使用                                                            |
 | - uploadUrl     | String  | O        | 動画ファイルを直接アップロードするカカオ側エンドポイント                                                     |
 | - token         | String  | O        | アップロード認証トークン。`x-kamp-upload-token` ヘッダーで渡します                                          |
 
-> エンコード完了後に設定される `thumbnailUrl`、`videoUrl`、`playUrl`、`updateDate` フィールドは、[動画照会](#動画-照会) API で取得できます。
+> エンコード完了後に設定される `thumbnailUrl`、`videoUrl`、`playUrl`、`updateDate` フィールドは、[動画照会](#view-video) API で取得できます。
 
 <a id="video-file-upload-step-2"></a>
 
@@ -3814,7 +3814,7 @@ Content-Type: multipart/form-data
 | ファイル名の長さ   | 250文字以内                                    |
 
 * アップロードされた動画は、カカオビズセンターでエンコードが完了した後に使用できます。エンコード時間は映像の長さによって異なり、通常 5〜10 分かかります。
-* アップロード直後の動画ステータスは `REGISTERED` から始まり、`ENCODING` を経て `PUBLIC` または `PRIVATE` に移行します。ステータスはコンソールまたは[動画照会](#動画-照会) API で確認できます。
+* アップロード直後の動画ステータスは `REGISTERED` から始まり、`ENCODING` を経て `PUBLIC` または `PRIVATE` に移行します。ステータスはコンソールまたは[動画照会](#view-video) API で確認できます。
 * 登録された動画はカカオ側で永久保存され、テンプレートが削除されてもカカオビズセンターの動画は自動的に削除されません。カカオチャンネル管理者がチャンネルビジネスホームの管理画面から直接削除できます。
 * ステップ 1 の登録後にステップ 2 のファイルアップロードが失敗または遅延してトークン（5 分）が期限切れになった場合は、新しい登録を再度呼び出す必要があります。登録のみ行われ実際のアップロードが完了していない動画は、一定時間経過後にステータスが `ERROR` に自動的にマークされます。
 
@@ -3907,7 +3907,7 @@ Content-Type: application/json;charset=UTF-8
 | - - title           | String  | X        | 動画タイトル (アップロード直後はファイル名、エンコード完了後にカカオビズセンターで修正した値に同期されます)    |
 | - - fileName        | String  | O        | アップロードファイル名                                                     |
 | - - fileSize        | Long    | O        | ファイルサイズ (byte)                                                |
-| - - status          | String  | O        | 動画ステータス ([動画ステータス](#動画-状態) 参照)                              |
+| - - status          | String  | O        | 動画ステータス ([動画ステータス](#video-status) 参照)                              |
 | - - thumbnailUrl    | String  | X        | サムネイル URL (エンコード完了後に提供)                                       |
 | - - videoUrl        | String  | X        | 送信・管理用 URL (`PUBLIC` 状態で提供)                               |
 | - - playUrl         | String  | X        | 再生用 URL                                                     |
