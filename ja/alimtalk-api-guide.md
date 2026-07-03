@@ -1,4 +1,4 @@
-## Notification > KakaoTalk Bizmessage > 알림톡 > API v2.3 Guide
+## Notification > KakaoTalk Bizmessage > お知らせトーク > API v2.3 Guide
 
 <a id="alimtalk"></a>
 
@@ -976,7 +976,7 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 
 <a id="request-5"></a>
 
-#### 요청
+#### リクエスト
 
 [URL]
 
@@ -987,7 +987,7 @@ Content-Type: application/json;charset=UTF-8
 
 [Path parameter]
 
-| 이름        | 	타입     | 	설명     |
+| 名前        | 	タイプ     | 	説明     |
 |-----------|---------|---------|
 | appkey    | 	String | 	固有のアプリキー |
 | requestId | String  | リクエスト ID   |
@@ -1000,13 +1000,13 @@ Content-Type: application/json;charset=UTF-8
 }
 ```
 
-| 이름           | 	타입     | 	필수 | 	설명              |
+| 名前           | 	タイプ     | 	必須 | 	説明              |
 |--------------|---------|-----|------------------|
 | X-Secret-Key | 	String | O   | コンソールで作成できます。 |
 
 [Query parameter]
 
-| 이름           | 	타입     | 	필수 | 	설명                                         |
+| 名前           | 	タイプ     | 	必須 | 	説明                                         |
 |--------------|---------|-----|---------------------------------------------|
 | recipientSeq | 	String | 	X  | 受信者シーケンス番号<br>(入力しない場合、リクエスト ID のすべての送信件を取消) |
 
@@ -1014,7 +1014,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="response-6"></a>
 
-#### 응답
+#### レスポンス
 
 ```
 {
@@ -1026,14 +1026,14 @@ Content-Type: application/json;charset=UTF-8
 }
 ```
 
-| 이름              | 타입      | Not Null | 설명     |
+| 名前              | タイプ      | Not Null | 説明     |
 |-----------------|---------|:--------:|--------|
 | header          | Object  |    O     | ヘッダー領域  |
 | - resultCode    | Integer |    O     | 結果コード  |
 | - resultMessage | String  |    O     | 結果メッセージ |
 | - isSuccessful  | Boolean |    O     | 成否  |
 
-[예시]
+[例]
 
 ```
 curl -X DELETE -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" "https://kakaotalk-bizmessage.api.nhncloudservice.com/alimtalk/v2.3/appkeys/{appkey}/messages/{requestId}?recipientSeq=1,2,3"
@@ -1045,7 +1045,7 @@ curl -X DELETE -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Ke
 
 <a id="request-6"></a>
 
-#### 요청
+#### リクエスト
 
 [URL]
 
@@ -1056,7 +1056,7 @@ Content-Type: application/json;charset=UTF-8
 
 [Path parameter]
 
-| 이름     | 	타입     | 	설명     |
+| 名前     | 	タイプ     | 	説明     |
 |--------|---------|---------|
 | appkey | 	String | 	固有のアプリキー |
 
@@ -1068,13 +1068,13 @@ Content-Type: application/json;charset=UTF-8
 }
 ```
 
-| 이름           | 	타입     | 	필수 | 	설명              |
+| 名前           | 	タイプ     | 	必須 | 	説明              |
 |--------------|---------|-----|------------------|
 | X-Secret-Key | 	String | O   | コンソールで作成できます。 |
 
 [Query parameter]
 
-| 이름                  | 	타입      | 	필수 | 	설명                                 |
+| 名前                  | 	タイプ      | 	必須 | 	説明                                 |
 |---------------------|----------|-----|-------------------------------------|
 | startUpdateDate     | 	String  | 	O  | 結果アップデート照会開始時間(yyyy-MM-dd HH:mm)  |
 | endUpdateDate       | 	String  | O   | 	結果アップデート照会終了時間(yyyy-MM-dd HH:mm) |
@@ -1084,7 +1084,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="response-7"></a>
 
-#### 응답
+#### レスポンス
 
 ```
 {
@@ -1112,7 +1112,7 @@ Content-Type: application/json;charset=UTF-8
 }
 ```
 
-| 이름                 | 타입      | Not Null | 설명                                                                                                                                                                     |
+| 名前                 | タイプ      | Not Null | 説明                                                                                                                                                                     |
 |--------------------|---------|:--------:|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | header             | Object  |    O     | ヘッダー領域                                                                                                                                                                  |
 | - resultCode       | Integer |    O     | 結果コード                                                                                                                                                                  |
@@ -1132,7 +1132,7 @@ Content-Type: application/json;charset=UTF-8
 | - resultCode       | String  |    X     | 受信結果コード                                                                                                                                                               |
 | - resultCodeName   | String  |    X     | 受信結果コード名                                                                                                                                                              |
 
-[예시]
+[例]
 
 ```
 curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" "https://kakaotalk-bizmessage.api.nhncloudservice.com/alimtalk/v2.3/appkeys/{appkey}/message-results?startUpdateDate=2018-05-01%20:00&endUpdateDate=2018-05-30%20:59"
@@ -1144,7 +1144,7 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 
 <a id="request-7"></a>
 
-#### 요청
+#### リクエスト
 
 [URL]
 
@@ -1155,7 +1155,7 @@ Content-Type: application/json;charset=UTF-8
 
 [Path parameter]
 
-| 이름     | 	타입     | 	설명     |
+| 名前     | 	タイプ     | 	説明     |
 |--------|---------|---------|
 | appkey | 	String | 	固有のアプリキー |
 
@@ -1167,13 +1167,13 @@ Content-Type: application/json;charset=UTF-8
 }
 ```
 
-| 이름           | 	타입     | 	필수 | 	설명              |
+| 名前           | 	タイプ     | 	必須 | 	説明              |
 |--------------|---------|-----|------------------|
 | X-Secret-Key | 	String | O   | コンソールで作成できます。 |
 
 [Query parameter]
 
-| 이름                  | 	타입      | 	필수 | 	설명                                 |
+| 名前                  | 	タイプ      | 	必須 | 	説明                                 |
 |---------------------|----------|-----|-------------------------------------|
 | startUpdateDate     | 	String  | 	O  | 結果アップデート照会開始時間(yyyy-MM-dd HH:mm)  |
 | endUpdateDate       | 	String  | O   | 	結果アップデート照会終了時間(yyyy-MM-dd HH:mm) |
@@ -1181,7 +1181,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="response-8"></a>
 
-#### 응답
+#### レスポンス
 
 ```
 {
@@ -1194,7 +1194,7 @@ Content-Type: application/json;charset=UTF-8
 }
 ```
 
-| 이름              | 타입      | Not Null | 설명     |
+| 名前              | タイプ      | Not Null | 説明     |
 |-----------------|---------|:--------:|--------|
 | header          | Object  |    O     | ヘッダー領域  |
 | - resultCode    | Integer |    O     | 結果コード  |
@@ -1202,7 +1202,7 @@ Content-Type: application/json;charset=UTF-8
 | - isSuccessful  | Boolean |    O     | 成否  |
 | totalCount      | Integer |    O     | 総件数   |
 
-[예시]
+[例]
 
 ```
 curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" "https://kakaotalk-bizmessage.api.nhncloudservice.com/alimtalk/v2.3/appkeys/{appkey}/message-results/count?startUpdateDate=2018-05-01%20:00&endUpdateDate=2018-05-30%20:59"
@@ -1212,7 +1212,7 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 
 ### SMS/LMS 代替送信ステータスコード
 
-| 이름    | 	설명                                  |
+| 名前    | 	説明                                  |
 |-------|--------------------------------------|
 | RSC01 | 	代替送信対象外                           |
 | RSC02 | 	代替送信対象(送信結果が失敗の場合、代替送信が進行されます。) |
@@ -1762,7 +1762,7 @@ Content-Type: application/json;charset=UTF-8
 
 [Path parameter]
 
-| 이름        | 	타입     | 	설명     |
+| 名前        | 	タイプ     | 	説明     |
 |-----------|---------|---------|
 | appkey    | 	String | 	固有のアプリキー |
 | senderKey | 	String | 	発信キー   |
@@ -1775,7 +1775,7 @@ Content-Type: application/json;charset=UTF-8
 }
 ```
 
-| 이름           | 	타입     | 	필수 | 	설명              |
+| 名前           | 	タイプ     | 	必須 | 	説明              |
 |--------------|---------|-----|------------------|
 | X-Secret-Key | 	String | O   | コンソールで作成できます。 |
 
@@ -2781,7 +2781,7 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 | -- kakaoTemplateCode     | String  |    O     | 元のテンプレートコード                                                                                                                                                              |
 | -- templateName          | String  |    O     | テンプレート名                                                                                                                                                                   |
 | -- templateMessageType   | String  |    X     | テンプレートメッセージタイプ (BA: 基本型、EX: 付加情報型、AD: チャンネル追加型、MI: 複合型)                                                                                                                   |
-| -- templateEmphasizeType | String  |    X     | テンプレート강조表記型タイプ (NONE: デフォルト、TEXT: 강조表示、IMAGE: 画像型、ITEM_LIST: アイテムリストタイプ)                                                                                                   |
+| -- templateEmphasizeType | String  |    X     | テンプレート強調表記型タイプ (NONE: デフォルト、TEXT: 強調表示、IMAGE: 画像型、ITEM_LIST: アイテムリストタイプ)                                                                                                   |
 | -- templateContent       | String  |    X     | テンプレート本文                                                                                                                                                                 |
 | -- templateExtra         | String  |    X     | テンプレート付加情報                                                                                                                                                              |
 | -- templateAd            | String  |    X     | テンプレート内の受信同意要求または簡単な広告文                                                                                                                                            |

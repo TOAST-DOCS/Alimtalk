@@ -3750,12 +3750,12 @@ Content-Type: application/json;charset=UTF-8
 | - title         | String  | X        | Video title (set to the file name immediately after upload; synchronized with the value edited in Kakao Biz Center after encoding is complete)                        |
 | - fileName      | String  | O        | Uploaded file name                                                                         |
 | - fileSize      | Long    | O        | File size (bytes)                                                                    |
-| - status        | String  | O        | Video status (see [Video Status](#동영상-상태)). Always `REGISTERED` in the upload registration response.                     |
+| - status        | String  | O        | Video status (see [Video Status](#video-status)). Always `REGISTERED` in the upload registration response.                     |
 | uploadInfo      | Object  | O        | Kakao upload information. Used in step 2.                                                            |
 | - uploadUrl     | String  | O        | Kakao endpoint to which the video file is uploaded directly                                                     |
 | - token         | String  | O        | Upload authentication token. Passed via the `x-kamp-upload-token` header.                                          |
 
-> The `thumbnailUrl`, `videoUrl`, `playUrl`, and `updateDate` fields, which are populated after encoding is complete, can be retrieved using the [Get Video](#동영상-조회) API.
+> The `thumbnailUrl`, `videoUrl`, `playUrl`, and `updateDate` fields, which are populated after encoding is complete, can be retrieved using the [Query Video](#view-video) API.
 
 <a id="video-file-upload-step-2"></a>
 
@@ -3815,7 +3815,7 @@ Content-Type: multipart/form-data
 | File name length   | Up to 250 characters     |
 
 * Uploaded videos are available after encoding is complete in the Kakao Biz Center. Encoding time varies depending on the video length and typically takes 5 to 10 minutes.
-* Immediately after upload, the video status starts as `REGISTERED`, transitions through `ENCODING`, and then changes to either `PUBLIC` or `PRIVATE`. You can check the status in the console or via the [View Video](#동영상-조회) API.
+* Immediately after upload, the video status starts as `REGISTERED`, transitions through `ENCODING`, and then changes to either `PUBLIC` or `PRIVATE`. You can check the status in the console or via the [Query Video](#view-video) API.
 * Registered videos are permanently retained by Kakao. Even if a template is deleted, the videos in the Kakao Biz Center are not automatically removed. The KakaoTalk Channel administrator can manually delete them from the management screen on the channel's business home.
 * If the Step 2 file upload fails or is delayed after Step 1 registration and the token (valid for 5 minutes) expires, you must call the registration again. Videos that were registered but never actually uploaded will be automatically marked with a status of `ERROR` after a certain period of time.
 
@@ -3908,7 +3908,7 @@ Content-Type: application/json;charset=UTF-8
 | - - title           | String  | X        | Video title (immediately after upload, set to the file name; synced with the value modified in Kakao Biz Center after encoding is complete) |
 | - - fileName        | String  | O        | Uploaded file name |
 | - - fileSize        | Long    | O        | File size (bytes) |
-| - - status          | String  | O        | Video status (see [Video Status](#동영상-상태)) |
+| - - status          | String  | O        | Video status (see [Video Status](#video-status)) |
 | - - thumbnailUrl    | String  | X        | Thumbnail URL (provided after encoding is complete) |
 | - - videoUrl        | String  | X        | URL for sending and management (provided in `PUBLIC` status) |
 | - - playUrl         | String  | X        | Playback URL |

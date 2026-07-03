@@ -1559,7 +1559,7 @@ Content-Type: application/json;charset=UTF-8
 | -- templateCode             | String  | X        | テンプレートコード                                                                |
 | -- recipientNo              | String  | O        | 受信番号                                                                 |
 | -- targeting                | String  | O        | メッセージ対象のタイプ(M: マーケティング受信同意ユーザー、N: フレンドではないマーケティング受信同意ユーザーのみ、I: フレンドであるユーザー) |
-| -- requestDate              | String  | O        | リクエスト日時(yyyy-MM-dd HH:mm)<br>(入力しない場合は즉시送信)<br>最大60日後まで予約可能                                                                 |
+| -- requestDate              | String  | O        | リクエスト日時(yyyy-MM-dd HH:mm)<br>(入力しない場合は即時送信)<br>最大60日後まで予約可能                                                                 |
 | -- createDate               | String  | O        | 登録日時                                                                 |
 | -- receiveDate              | String  | X        | 受信日時                                                                 |
 | -- chatBubbleType           | String  | O        | メッセージタイプ                                                                |
