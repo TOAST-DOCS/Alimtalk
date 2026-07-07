@@ -3749,12 +3749,12 @@ Content-Type: application/json;charset=UTF-8
 | - title         | String  | X        | 동영상 제목 (업로드 직후에는 파일명, 인코딩 완료 후 카카오 비즈센터에서 수정한 값으로 동기화됨)                        |
 | - fileName      | String  | O        | 업로드 파일명                                                                         |
 | - fileSize      | Long    | O        | 파일 크기 (byte)                                                                    |
-| - status        | String  | O        | 동영상 상태 ([동영상 상태](#동영상-상태) 참고). 업로드 등록 응답에서는 항상 `REGISTERED`                     |
+| - status        | String  | O        | 동영상 상태 ([동영상 상태](#video-status) 참고). 업로드 등록 응답에서는 항상 `REGISTERED`                     |
 | uploadInfo      | Object  | O        | 카카오 업로드 정보. 2단계에서 사용                                                            |
 | - uploadUrl     | String  | O        | 동영상 파일을 직접 업로드할 카카오 측 엔드포인트                                                     |
 | - token         | String  | O        | 업로드 인증 토큰. `x-kamp-upload-token` 헤더로 전달                                          |
 
-> 인코딩 완료 후 채워지는 `thumbnailUrl`, `videoUrl`, `playUrl`, `updateDate` 필드는 [동영상 조회](#동영상-조회) API로 얻을 수 있습니다.
+> 인코딩 완료 후 채워지는 `thumbnailUrl`, `videoUrl`, `playUrl`, `updateDate` 필드는 [동영상 조회](#view-video) API로 얻을 수 있습니다.
 
 <a id="video-file-upload-step-2"></a>
 
@@ -3814,7 +3814,7 @@ Content-Type: multipart/form-data
 | 파일명 길이   | 250자 이내                                     |
 
 * 업로드된 동영상은 카카오 비즈센터에서 인코딩이 완료된 후 사용할 수 있습니다. 인코딩 시간은 영상 길이에 따라 다르며 보통 5~10분이 소요됩니다.
-* 업로드 직후 동영상 상태는 `REGISTERED`로 시작하며 `ENCODING`을 거쳐 `PUBLIC` 또는 `PRIVATE`로 전환됩니다. 상태는 콘솔 또는 [동영상 조회](#동영상-조회) API에서 확인할 수 있습니다.
+* 업로드 직후 동영상 상태는 `REGISTERED`로 시작하며 `ENCODING`을 거쳐 `PUBLIC` 또는 `PRIVATE`로 전환됩니다. 상태는 콘솔 또는 [동영상 조회](#view-video) API에서 확인할 수 있습니다.
 * 등록된 동영상은 카카오 측에서 영구 보존되며, 템플릿이 삭제되어도 카카오 비즈센터의 동영상은 자동으로 정리되지 않습니다. 카카오 채널 관리자가 채널 비즈니스 홈의 관리 화면에서 직접 삭제할 수 있습니다.
 * 1단계 등록 후 2단계 파일 업로드가 실패하거나 지연되어 토큰(5분)이 만료되면 새 등록을 다시 호출해야 합니다. 등록만 되고 실제 업로드가 이루어지지 않은 동영상은 일정 시간이 지난 후 상태가 `ERROR`로 자동 마킹됩니다.
 
@@ -3907,7 +3907,7 @@ Content-Type: application/json;charset=UTF-8
 | - - title           | String  | X        | 동영상 제목 (업로드 직후에는 파일명, 인코딩 완료 후 카카오 비즈센터에서 수정한 값으로 동기화됨)    |
 | - - fileName        | String  | O        | 업로드 파일명                                                     |
 | - - fileSize        | Long    | O        | 파일 크기 (byte)                                                |
-| - - status          | String  | O        | 동영상 상태 ([동영상 상태](#동영상-상태) 참고)                              |
+| - - status          | String  | O        | 동영상 상태 ([동영상 상태](#video-status) 참고)                              |
 | - - thumbnailUrl    | String  | X        | 썸네일 URL (인코딩 완료 후 제공)                                       |
 | - - videoUrl        | String  | X        | 발송·관리용 URL (`PUBLIC` 상태에서 제공)                               |
 | - - playUrl         | String  | X        | 재생용 URL                                                     |
