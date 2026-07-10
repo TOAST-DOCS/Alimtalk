@@ -411,7 +411,7 @@
 | endDate | String | O | 조회 종료 날짜<br/>DAILY: yyyy-MM-dd(최대 범위 90일), MONTHLY: yyyy-MM(최대 범위 3개월) |
 | messageSpec | String | X | 메시지 스펙(BASIC: 기본형, FREESTYLE: 자유형) |
 | chatBubbleType | String | X | 말풍선 유형(TEXT: 텍스트형, IMAGE: 이미지형, WIDE: 와이드 이미지형, WIDE_ITEM_LIST: 와이드 아이템리스트형, CAROUSEL_FEED: 캐러셀 피드형, PREMIUM_VIDEO: 프리미엄 비디오형, COMMERCE: 커머스형, CAROUSEL_COMMERCE: 캐러셀 커머스형) |
-| targeting | String | X | 타겟팅(M: 마케팅 수신동의 유저 전체, N: 채널 친구 제외, I: 채널 친구만, F: 채널 친구 전체) |
+| targeting | String | X | 타겟팅(M: 마케팅 수신동의 유저 전체, N: 마케팅 수신동의 유저 중 채널 친구 제외, I: 마케팅 수신동의 유저 중 채널 친구만, F: 채널 친구 전체, O: 마케팅 수신동의 유저 중 채널 친구만(브랜드 메시지 v2)) |
 | friendType | String | X | 친구 유형(F: 친구, N: 비친구) |
 | receiveUserType | String | X | 수신자 유형(PhoneNumber: 전화번호, None: 수신자 식별자 없음) |
 | limit | Integer | X | 조회 건수(Default: 500, Max: 1000) |
@@ -457,7 +457,7 @@
 | - date | String | O | 날짜 |
 | - messageSpec | String | O | 메시지 스펙(BASIC: 기본형, FREESTYLE: 자유형) |
 | - chatBubbleType | String | O | 말풍선 유형(TEXT: 텍스트형, IMAGE: 이미지형, WIDE: 와이드 이미지형, WIDE_ITEM_LIST: 와이드 아이템리스트형, CAROUSEL_FEED: 캐러셀 피드형, PREMIUM_VIDEO: 프리미엄 비디오형, COMMERCE: 커머스형, CAROUSEL_COMMERCE: 캐러셀 커머스형) |
-| - targeting | String | O | 타겟팅(M: 마케팅 수신동의 유저 전체, N: 채널 친구 제외, I: 채널 친구만, F: 채널 친구 전체) |
+| - targeting | String | O | 타겟팅(M: 마케팅 수신동의 유저 전체, N: 마케팅 수신동의 유저 중 채널 친구 제외, I: 마케팅 수신동의 유저 중 채널 친구만, F: 채널 친구 전체, O: 마케팅 수신동의 유저 중 채널 친구만(브랜드 메시지 v2)) |
 | - friendType | String | O | 친구 유형(F: 친구, N: 비친구) |
 | - receiveUserType | String | O | 수신자 유형(PhoneNumber: 전화번호, None: 수신자 식별자 없음) |
 | - totalSendRequestCount | Integer | O | 총 발송 요청 수 |
@@ -509,7 +509,7 @@
 | groupTagKey | String | X | 그룹 태그 키 |
 | messageSpec | String | X | 메시지 스펙(BASIC: 기본형, FREESTYLE: 자유형) |
 | chatBubbleType | String | X | 말풍선 유형(TEXT: 텍스트형, IMAGE: 이미지형, WIDE: 와이드 이미지형, WIDE_ITEM_LIST: 와이드 아이템리스트형, CAROUSEL_FEED: 캐러셀 피드형, PREMIUM_VIDEO: 프리미엄 비디오형, COMMERCE: 커머스형, CAROUSEL_COMMERCE: 캐러셀 커머스형) |
-| targeting | String | X | 타겟팅(M: 마케팅 수신동의 유저 전체, N: 채널 친구 제외, I: 채널 친구만, F: 채널 친구 전체) |
+| targeting | String | X | 타겟팅(M: 마케팅 수신동의 유저 전체, N: 마케팅 수신동의 유저 중 채널 친구 제외, I: 마케팅 수신동의 유저 중 채널 친구만, F: 채널 친구 전체, O: 마케팅 수신동의 유저 중 채널 친구만(브랜드 메시지 v2)) |
 | friendType | String | X | 친구 유형(F: 친구, N: 비친구) |
 | limit | Integer | X | 조회 건수(Default: 500, Max: 1000) |
 | offset | Integer | X | 시작 위치(Default: 0) |
@@ -556,7 +556,7 @@
 | - groupTagKey | String | X | 그룹 태그 키 |
 | - messageSpec | String | O | 메시지 스펙(BASIC: 기본형, FREESTYLE: 자유형) |
 | - chatBubbleType | String | O | 말풍선 유형(TEXT: 텍스트형, IMAGE: 이미지형, WIDE: 와이드 이미지형, WIDE_ITEM_LIST: 와이드 아이템리스트형, CAROUSEL_FEED: 캐러셀 피드형, PREMIUM_VIDEO: 프리미엄 비디오형, COMMERCE: 커머스형, CAROUSEL_COMMERCE: 캐러셀 커머스형) |
-| - targeting | String | O | 타겟팅(M: 마케팅 수신동의 유저 전체, N: 채널 친구 제외, I: 채널 친구만, F: 채널 친구 전체) |
+| - targeting | String | O | 타겟팅(M: 마케팅 수신동의 유저 전체, N: 마케팅 수신동의 유저 중 채널 친구 제외, I: 마케팅 수신동의 유저 중 채널 친구만, F: 채널 친구 전체, O: 마케팅 수신동의 유저 중 채널 친구만(브랜드 메시지 v2)) |
 | - friendType | String | O | 친구 유형(F: 친구, N: 비친구) |
 | - totalSendSuccessCount | Integer | O | 총 발송 성공 수 |
 | - validReadCount | Integer | O | 유효 열람 수 |
