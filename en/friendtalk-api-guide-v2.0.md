@@ -4,13 +4,13 @@
 
 <a id="friendtalk-service-end-of-life-notice"></a>
 
-## FriendTalk Service End of Life Notice
+## FriendTalk Service End of Life Notice { #friendtalk-service-end-of-life-notice }
 
 <!-- TODO: translate body -->
 
 <a id="friendtalk"></a>
 
-## FriendTalk
+## FriendTalk { #friendtalk }
 
 <a id="api-domain"></a>
 
@@ -31,7 +31,7 @@
 
 <a id="send-messages"></a>
 
-## Send Messages
+## Send Messages { #send-messages }
 <a id="request-of-sending"></a>
 
 #### Request of Sending
@@ -169,7 +169,7 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 
 <a id="list-deliveries"></a>
 
-## List Deliveries
+## List Deliveries { #list-deliveries }
 
 <a id="request"></a>
 
@@ -295,7 +295,7 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 
 <a id="get-deliveries"></a>
 
-## Get Deliveries
+## Get Deliveries { #get-deliveries }
 
 <a id="request-2"></a>
 
@@ -426,13 +426,13 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 
 <a id="messages"></a>
 
-## Messages
+## Messages { #messages }
 
 <!-- TODO: translate body -->
 
 <a id="message-delivery-cancelled"></a>
 
-### Message Delivery Cancelled
+### Message Delivery Cancelled { #message-delivery-cancelled }
 
 <!-- TODO: translate body -->
 
@@ -450,7 +450,7 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 
 <a id="query-updated-message-results"></a>
 
-### Query Updated Message Results
+### Query Updated Message Results { #query-updated-message-results }
 
 <a id="request-4"></a>
 
@@ -555,11 +555,11 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 
 <a id="image-management"></a>
 
-## Image Management
+## Image Management { #image-management }
 
 <a id="register-images"></a>
 
-### Register Images
+### Register Images { #register-images }
 <a id="request-5"></a>
 
 #### Request
@@ -633,7 +633,7 @@ curl -X POST -H "Content-Type: multipart/form-data" -H "X-Secret-Key:{secretkey}
 
 <a id="query-images"></a>
 
-### Query Images
+### Query Images { #query-images }
 <a id="request-6"></a>
 
 #### Request
@@ -721,7 +721,7 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 
 <a id="delete-images"></a>
 
-### Delete Images
+### Delete Images { #delete-images }
 <a id="request-7"></a>
 
 #### Request
@@ -783,13 +783,13 @@ curl -X DELETE -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Ke
 | - isSuccessful  | Boolean | Successful or not |
 <a id="alternative-delivery-management"></a>
 
-## Alternative Delivery Management
+## Alternative Delivery Management { #alternative-delivery-management }
 
 <!-- TODO: translate body -->
 
 <a id="register-sms-appkey"></a>
 
-### Register SMS AppKey
+### Register SMS AppKey { #register-sms-appkey }
 
 <!-- TODO: translate body -->
 
@@ -801,7 +801,7 @@ curl -X DELETE -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Ke
 
 <a id="register-alternative-sending-settings"></a>
 
-### Register Alternative Sending Settings
+### Register Alternative Sending Settings { #register-alternative-sending-settings }
 
 <!-- TODO: translate body -->
 

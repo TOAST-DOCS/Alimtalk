@@ -4,10 +4,10 @@
 
 <a id="send-alimtalk"></a>
 
-## 알림톡 발송
+## 알림톡 발송 { #send-alimtalk }
 <a id="general-delivery"></a>
 
-### 일반 발송
+### 일반 발송 { #general-delivery }
 알림톡 일반 발송 화면입니다.
 
 ![KTB_09_20230926.png](https://static.toastoven.net/prod_alimtalk/KTB_09_20230926.png)
@@ -30,7 +30,7 @@
 
 <a id="mass-delivery"></a>
 
-### 대량 발송
+### 대량 발송 { #mass-delivery }
 Excel/CSV 포맷의 템플릿 파일을 통해 여러 수신 번호로 알림톡을 발송할 수 있는 기능입니다. 하단 탭에서 <b>대량 발송</b>을 선택합니다.
 ![KTB_10_20230926.png](https://static.toastoven.net/prod_alimtalk/KTB_10_20230926.png)
 * 템플릿을 선택한 뒤 <b>템플릿 다운로드</b>를 클릭하면 템플릿 치환자가 포함된 CSV, XLSX 파일을 다운로드할 수 있습니다. 템플릿 치환자가 포함되지 않을 경우 발송 실패 처리됩니다.
@@ -49,7 +49,7 @@ Excel/CSV 포맷의 템플릿 파일을 통해 여러 수신 번호로 알림톡
 
 <a id="alternative-delivery"></a>
 
-### 대체 발송
+### 대체 발송 { #alternative-delivery }
 알림톡 발송을 실패할 경우 해당 내용을 문자 메시지로 대체 발송할 수 있는 기능입니다.
 <b>공통된 내용으로 발송</b> 또는 <b>사용자별 다른 메시지 설정</b>을 선택해 발송할 수 있습니다.
 ![KTB_12_20230926.png](https://static.toastoven.net/prod_alimtalk/KTB_12_20230926.png)
@@ -74,10 +74,10 @@ Excel/CSV 포맷의 템플릿 파일을 통해 여러 수신 번호로 알림톡
 
 <a id="view-delivery"></a>
 
-## 발송 조회
+## 발송 조회 { #view-delivery }
 <a id="retrieve-send-results"></a>
 
-### 발송 결과 조회
+### 발송 결과 조회 { #retrieve-send-results }
 메시지 타입을 조건으로 조회할 수 있습니다.
 (<b>요청ID</b> 및 <b>요청 일시</b>는 필수값 입니다.)
 ![KTB_13_20250403.jpg](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_alimtalk/KTB_13_20250403.jpg)
@@ -89,7 +89,7 @@ Excel/CSV 포맷의 템플릿 파일을 통해 여러 수신 번호로 알림톡
 
 <a id="cancel-send"></a>
 
-### 발송 취소
+### 발송 취소 { #cancel-send }
 일반 발송 중 발신 요청 일시를 미래로 설정한 예약 발송은 취소할 수 있습니다.
 ![KTB_14_20250403.jpg](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_alimtalk/KTB_14_20250403.jpg)
 * 예약 발신 요청을 조회하면 요청 ID 좌측의 체크 박스를 확인할 수 있습니다.
@@ -100,7 +100,7 @@ Excel/CSV 포맷의 템플릿 파일을 통해 여러 수신 번호로 알림톡
 
 <a id="view-mass-delivery"></a>
 
-### 대량 발송 조회
+### 대량 발송 조회 { #view-mass-delivery }
 알림톡의 대량 발송 건을 조회할 수 있습니다.
 ![KTB_15_20250403.jpg](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_alimtalk/KTB_15_20250403.png)
 * 조회: 상단의 조회 폼에서 대량 알림톡 발송 건을 조회할 수 있습니다. 조회 건의 리스트 행을 선택하면 하단의 조회 폼에서 수신번호와 발송 정보(발송 내용, 발송 결과)를 확인할 수 있습니다.
@@ -132,19 +132,19 @@ Excel/CSV 포맷의 템플릿 파일을 통해 여러 수신 번호로 알림톡
 
 <a id="template-management"></a>
 
-## 템플릿 관리
+## 템플릿 관리 { #template-management }
 <b>템플릿 등록</b> 버튼을 클릭해 템플릿을 등록할 수 있습니다.
 
 <a id="template-type"></a>
 
-### 템플릿 유형
+### 템플릿 유형 { #template-type }
 * 등록 가능한 메시지 유형으로는 **채널추가형, 기본형, 부가정보형, 복합형**이 있습니다.
 * 등록 가능한 강조 유형으로는 **강조 표기형, 이미지형, 아이템리스트형**이 있습니다.
 * 발송을 원하시는 유형을 선택하여 템플릿을 작성해 주시면 됩니다.
 
 <a id="register-templates"></a>
 
-### 템플릿 등록
+### 템플릿 등록 { #register-templates }
 * 카카오 알림톡 가이드
     * [[알림톡 제작가이드]](https://kakaobusiness.gitbook.io/main/ad/bizmessage/notice-friend/content-guide), [[알림톡 심사가이드]](https://kakaobusiness.gitbook.io/main/ad/bizmessage/notice-friend/audit), [[알림톡 유의사항]](https://kakaobusiness.gitbook.io/main/ad/infotalk/operations)
 * 발신프로필 / 그룹
@@ -219,7 +219,7 @@ Excel/CSV 포맷의 템플릿 파일을 통해 여러 수신 번호로 알림톡
 
 <a id="manage-alternative-delivery"></a>
 
-## 대체 발송 관리
+## 대체 발송 관리 { #manage-alternative-delivery }
 
 * 알림톡 발송을 실패할 경우 해당 내용을 문자 메시지로 대체 발송하도록 설정할 수 있습니다.
 * NHN Cloud SMS 서비스를 이용 중이어야 하며, 메시지 길이에 따라 SMS/LMS로 발송됩니다.(각 타입별 문자 발송 시 별도의 이용료 부과)
@@ -234,7 +234,7 @@ Excel/CSV 포맷의 템플릿 파일을 통해 여러 수신 번호로 알림톡
 
 <a id="manage-sender-profile-group"></a>
 
-## 발신프로필 그룹 관리
+## 발신프로필 그룹 관리 { #manage-sender-profile-group }
 * 2개 이상의 발신프로필을 그룹으로 만들어 템플릿을 한번에 등록할 수 있습니다.
 * 하나의 발신프로필은 여러 그룹에 중복으로 속할 수 있습니다.
 * 발신프로필 그룹 ID는 최대 10자까지 입력할 수 있습니다. (한글/영문)

@@ -7,7 +7,7 @@
 
 <a id="characteristics"></a>
 
-## 特徴
+## 特徴 { #characteristics }
 * SMSよりも低コストで1,000文字まで長文メッセージを送信できます。
 * 告知、通知、案内などの営利性目的ではない情報性メッセージをチャンネルの追加登録に関係なく送信できます。
 * お知らせトークはテンプレートベースで検収完了後、送信できます。
@@ -18,7 +18,7 @@
 
 <a id="main-features"></a>
 
-## 主な機能
+## 主な機能 { #main-features }
 * NHN Cloudは、お知らせトークテンプレートを修正できる差別化機能を提供します。(API連動に使用されるtemplateCodeの変更はなし)
 * 送信、照会などのRESTful APIを提供します。
 * 送信結果のアップデート、テンプレート状態のアップデートWebhookを提供します。
@@ -26,7 +26,7 @@
 
 <a id="alimtalk-template-precautions"></a>
 
-## お知らせトークテンプレートの注意事項
+## お知らせトークテンプレートの注意事項 { #alimtalk-template-precautions }
 お知らせトークは、カカオトークチャンネルを追加せずにユーザーにも送信可能な情報性メッセージです。<br/>不法スパム防止のための情報通信網法案内書にある営利目的の広告性情報の例外のうち、カカオトークユーザー保護の観点に適していると審査されたテンプレートに限り送信可能です。[[情報性メッセージ(お知らせトーク)の遵守事項案内]](https://kakaobusiness.gitbook.io/main/ad/infotalk/operations)
 
 <a id="alert-talk-message-maximum-character-guide"></a>
@@ -73,7 +73,7 @@
 
 <a id="template-inspection-and-creation-guide"></a>
 
-## テンプレート検収および作成ガイド
+## テンプレート検収および作成ガイド { #template-inspection-and-creation-guide }
 * [[お知らせトークの作成ガイド]](https://kakaobusiness.gitbook.io/main/ad/bizmessage/notice-friend/content-guide)
 * [[お知らせトークの審査ガイド]](https://kakaobusiness.gitbook.io/main/ad/bizmessage/notice-friend/audit)
 * [[お知らせトークのイメージ作成ガイド]](https://kakaobusiness.gitbook.io/main/ad/infotalk/audit#id-3)

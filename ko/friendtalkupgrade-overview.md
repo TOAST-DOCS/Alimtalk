@@ -8,7 +8,7 @@
 
 <a id="features"></a>
 
-## 특징
+## 특징 { #features }
 
 * 친구를 맺은 이용자를 대상으로 광고성 메시지를 포함한 다양한 홍보 메시지를 발송할 수 있습니다.
 * 친구를 맺지 않은 사용자의 경우에도 광고주의 마케팅 수신동의(이하 마수동) 유저 대상으로 광고성 메시지를 발송할 수 있습니다.
@@ -20,7 +20,7 @@
 
 <a id="main-features"></a>
 
-## 주요 기능
+## 주요 기능 { #main-features }
 
 * 메시지 발송, 조회, 이미지 관리 RESTful API를 제공합니다.
 * 콘솔에서는 메시지 발송, 조회, 이미지 관리 내역을 조회할 수 있습니다.
@@ -29,13 +29,13 @@
 
 <a id="brand-message-targeting"></a>
 
-## 브랜드 메시지 타겟팅
+## 브랜드 메시지 타겟팅 { #brand-message-targeting }
 
 ![friendtalkupgrade_1_20250508.png](https://static.toastoven.net/prod_alimtalk/friendtalkupgrade/friendtalkupgrade_1_20250508.png)
 
 <a id="m-advertisers-users-with-marketing-consent"></a>
 
-### M: 광고주 마수동 유저(카카오톡 수신 동의)
+### M: 광고주 마수동 유저(카카오톡 수신 동의) { #m-advertisers-users-with-marketing-consent }
 
 * 광고주의 마수동 유저(카카오톡 수신 동의) 대상으로 광고성 메시지를 발송 처리합니다.
 * 수신자가 발송 채널의 친구가 아닌 경우, 무료수신거부 정보가 포함된 N타입의 채널 메시지로 발송 처리됩니다.
@@ -45,7 +45,7 @@
 
 <a id="n-advertisers-users-with-marketing-consent--channel-friend"></a>
 
-### N: 광고주 마수동 유저(카카오톡 수신 동의) - 채널 친구
+### N: 광고주 마수동 유저(카카오톡 수신 동의) - 채널 친구 { #n-advertisers-users-with-marketing-consent--channel-friend }
 
 * 광고주의 마수동 유저(카카오톡 수신 동의)에서 채널 친구를 제외하고 광고성 메시지를 발송 처리합니다.
 * 수신자가 발송 채널의 친구가 아님으로, 무료수신거부 정보가 포함된 N타입의 채널 메시지로 발송 처리됩니다.
@@ -55,13 +55,13 @@
 
 <a id="i-target-of-advertiser-sending-request-channel-friend"></a>
 
-### I: 광고주 발송 요청 대상 ∩ 채널 친구
+### I: 광고주 발송 요청 대상 ∩ 채널 친구 { #i-target-of-advertiser-sending-request-channel-friend }
 
 * 광고주 발송 요청 대상에서, 채널 친구인 경우에만 광고성 메시지를 발송 처리합니다.
 
 <a id="brand-message-sending-support-type"></a>
 
-## 브랜드 메시지 발송 지원 타입
+## 브랜드 메시지 발송 지원 타입 { #brand-message-sending-support-type }
 
 - **기본형(템플릿)으로 등록 시, 모든 발송 지원 타입에 대해 '마수동' 유저를 대상으로 타겟팅 옵션 M과 N을 사용하여 발송할 수 있습니다.**<br>
     - 채널 친구 대상으로 발송을 원하실 경우 타겟팅 옵션 I를 사용해야 합니다.
@@ -79,7 +79,7 @@
 
 <a id="precautions-before-sending"></a>
 
-## 발송 전 유의사항
+## 발송 전 유의사항 { #precautions-before-sending }
 
 비친구 메시지 발송(타겟팅 M, N)은 아래 조건을 모두 만족할 경우 발송할 수 있습니다.
 
@@ -95,7 +95,7 @@
 
 <a id="notice-of-personal-information-consignee"></a>
 
-## 개인정보 수탁사 고지 안내
+## 개인정보 수탁사 고지 안내 { #notice-of-personal-information-consignee }
 
 고객사에서 NHN Cloud > Notification > KakaoTalk Bizmessage 서비스 이용 시, 고객사와 당사 간 개인정보 처리에 관한 업무 위수탁 관계가 발생하는 바 정보통신망법 및 개인정보보호법에 따라 위탁자인 고객사는 개인정보 처리방침을 통해 당사에 개인정보를
 위탁한 현황(수탁자 및 업무의 내용)을 공개해야 합니다.

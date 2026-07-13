@@ -4,7 +4,7 @@
 
 <a id="alimtalk"></a>
 
-## AlimTalk
+## AlimTalk { #alimtalk }
 
 <a id="api-domain"></a>
 
@@ -25,7 +25,7 @@
 
 <a id="overview-of-v20-api"></a>
 
-## Overview of v2.0 API
+## Overview of v2.0 API { #overview-of-v20-api }
 1. It has been changed to allow emphasized template for Register Template API(for a full-text delivery, the title value can be configured.)
 2. Expanded the template type. Ad or additional information can be added.
 3. The CreateUser field has been added when sending AlimTalk/Friendtlk messages.
@@ -35,11 +35,11 @@
 
 <a id="general-messages"></a>
 
-## General Messages
+## General Messages { #general-messages }
 
 <a id="request-of-sending-replaced-messages"></a>
 
-### Request of Sending Replaced Messages
+### Request of Sending Replaced Messages { #request-of-sending-replaced-messages }
 
 [URL]
 
@@ -176,7 +176,7 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 
 <a id="request-of-sending-full-text"></a>
 
-### Request of Sending Full Text
+### Request of Sending Full Text { #request-of-sending-full-text }
 
 [URL]
 
@@ -331,7 +331,7 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 
 <a id="list-messages"></a>
 
-### List Messages
+### List Messages { #list-messages }
 
 <a id="request"></a>
 
@@ -476,7 +476,7 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 
 <a id="get-messages"></a>
 
-### Get Messages
+### Get Messages { #get-messages }
 
 <a id="request-2"></a>
 
@@ -608,7 +608,7 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 
 <a id="authentication-messages"></a>
 
-## Authentication Messages
+## Authentication Messages { #authentication-messages }
 
 <span id="precautions-authword"></span>
 1. Guide for authentication words required to be included for Authentication Messages API
@@ -623,7 +623,7 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 
 <a id="request-of-sending-replaced-messages-2"></a>
 
-### Request of Sending Replaced Messages
+### Request of Sending Replaced Messages { #request-of-sending-replaced-messages-2 }
 
 [URL]
 
@@ -752,7 +752,7 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 
 <a id="request-of-sending-full-text-2"></a>
 
-### Request of Sending Full Text
+### Request of Sending Full Text { #request-of-sending-full-text-2 }
 
 [URL]
 
@@ -901,7 +901,7 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 
 <a id="list-messages-2"></a>
 
-### List Messages
+### List Messages { #list-messages-2 }
 
 <a id="request-3"></a>
 
@@ -1045,7 +1045,7 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 
 <a id="get-messages-2"></a>
 
-### Get Messages
+### Get Messages { #get-messages-2 }
 
 <a id="request-4"></a>
 
@@ -1180,10 +1180,10 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 
 <a id="messages"></a>
 
-## Messages
+## Messages { #messages }
 <a id="cancel-sending-messages"></a>
 
-### Cancel Sending Messages
+### Cancel Sending Messages { #cancel-sending-messages }
 
 <a id="request-5"></a>
 
@@ -1248,7 +1248,7 @@ curl -X DELETE -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Ke
 
 <a id="query-updates-of-message-result"></a>
 
-### Query Updates of Message Result
+### Query Updates of Message Result { #query-updates-of-message-result }
 
 <a id="request-6"></a>
 
@@ -1344,17 +1344,17 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 
 <a id="messages-1"></a>
 
-### SMS/LMS 대체 발송 상태 코드
+### SMS/LMS 대체 발송 상태 코드 { #messages-1 }
 
 <!-- TODO: translate body -->
 
 <a id="templates"></a>
 
-## Templates
+## Templates { #templates }
 
 <a id="list-template-categories"></a>
 
-### List Template Categories
+### List Template Categories { #list-template-categories }
 <a id="request-7"></a>
 
 #### Request
@@ -1426,7 +1426,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="register-templates"></a>
 
-### Register Templates
+### Register Templates { #register-templates }
 
 <a id="request-8"></a>
 
@@ -1528,7 +1528,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="modify-templates"></a>
 
-### Modify Templates
+### Modify Templates { #modify-templates }
 
 <a id="request-9"></a>
 
@@ -1629,7 +1629,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="delete-templates"></a>
 
-### Delete Templates
+### Delete Templates { #delete-templates }
 
 <a id="request-10"></a>
 
@@ -1679,7 +1679,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="inquire-of-templates"></a>
 
-### Inquire of Templates
+### Inquire of Templates { #inquire-of-templates }
 
 <a id="request-11"></a>
 
@@ -1744,7 +1744,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="attach-files-to-send-inquiry-on-templates"></a>
 
-### Attach files to send inquiry on templates
+### Attach files to send inquiry on templates { #attach-files-to-send-inquiry-on-templates }
 <a id="request-12"></a>
 
 #### Request
@@ -1809,7 +1809,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="list-templates"></a>
 
-### List Templates
+### List Templates { #list-templates }
 
 <a id="request-13"></a>
 
@@ -1966,7 +1966,7 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 
 <a id="list-template-modifications"></a>
 
-### List Template modifications
+### List Template modifications { #list-template-modifications }
 
 <a id="request-14"></a>
 
@@ -2107,13 +2107,13 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 | - totalCount         | Integer | Total count                                                  |
 <a id="section-1"></a>
 
-## 대체 발송 관리
+## 대체 발송 관리 { #section-1 }
 
 <!-- TODO: translate body -->
 
 <a id="section-1-1"></a>
 
-### SMS AppKey 등록
+### SMS AppKey 등록 { #section-1-1 }
 
 <!-- TODO: translate body -->
 
@@ -2125,7 +2125,7 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 
 <a id="section-1-2"></a>
 
-### 대체 발송 설정 등록
+### 대체 발송 설정 등록 { #section-1-2 }
 
 <!-- TODO: translate body -->
 

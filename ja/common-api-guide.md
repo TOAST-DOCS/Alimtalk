@@ -4,11 +4,11 @@
 
 <a id="statistics"></a>
 
-## 統計
+## 統計 { #statistics }
 
 <a id="api-domain"></a>
 
-### [APIドメイン]
+### [APIドメイン] { #api-domain }
 
 <table>
 <thead>
@@ -26,7 +26,7 @@
 
 <a id="statistics-search---event-based"></a>
 
-### 統計検索 - イベントベース
+### 統計検索 - イベントベース { #statistics-search---event-based }
 * イベント発生時間基準で収集された統計です。
 * 次の時間を基準に統計が収集されます。
     * リクエスト数(REQUESTED)：予約送信登録時間
@@ -38,7 +38,7 @@
 
 <a id="get-statistics-information"></a>
 
-### 統計情報照会
+### 統計情報照会 { #get-statistics-information }
 
 [URL]
 
@@ -116,7 +116,7 @@
 
 <a id="get-count-per-event"></a>
 
-### イベント別数照会
+### イベント別数照会 { #get-count-per-event }
 
 [URL]
 
@@ -168,7 +168,7 @@
 
 <a id="kakao-statistics"></a>
 
-## Kakao統計
+## Kakao統計 { #kakao-statistics }
 
 * Kakao Biz Centerで提供する統計データを照会します。
 * 統計データは送信元キーを基準として日別(DAILY)または月別(MONTHLY)で照会できます。
@@ -185,13 +185,13 @@
 
 <a id="delivery-statistics"></a>
 
-### 送信統計
+### 送信統計 { #delivery-statistics }
 
 送信元プロフィールを基準として、日別の送信数、有効既読数、クリック数を照会します。期間、送信識別子、メッセージタイプなどを設定して照会できます。
 
 <a id="template-statistics"></a>
 
-### テンプレート統計
+### テンプレート統計 { #template-statistics }
 
 テンプレート及びグループタグを基準として、日別の送信数、有効既読数、クリック数を照会します。期間、メッセージタイプなどを設定して照会できます。
 
@@ -199,7 +199,7 @@
 
 <a id="retrieve-alimtalk-delivery-statistics"></a>
 
-### お知らせトーク送信統計の照会
+### お知らせトーク送信統計の照会 { #retrieve-alimtalk-delivery-statistics }
 
 <a id="request"></a>
 
@@ -284,7 +284,7 @@
 
 <a id="retrieve-alimtalk-template-statistics"></a>
 
-### お知らせトークテンプレート統計の照会
+### お知らせトークテンプレート統計の照会 { #retrieve-alimtalk-template-statistics }
 
 <a id="request-2"></a>
 
@@ -369,7 +369,7 @@
 
 <a id="retrieve-brand-message-delivery-statistics"></a>
 
-### ブランドメッセージ送信統計の照会
+### ブランドメッセージ送信統計の照会 { #retrieve-brand-message-delivery-statistics }
 
 <a id="request-3"></a>
 
@@ -465,7 +465,7 @@
 
 <a id="retrieve-brand-message-template-statistics"></a>
 
-### ブランドメッセージテンプレート統計の照会
+### ブランドメッセージテンプレート統計の照会 { #retrieve-brand-message-template-statistics }
 
 <a id="request-4"></a>
 

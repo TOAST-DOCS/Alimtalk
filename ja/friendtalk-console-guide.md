@@ -4,17 +4,17 @@
 
 <a id="friendtalk-service-termination-notice"></a>
 
-## フレンドトークサービス終了のお知らせ
+## フレンドトークサービス終了のお知らせ { #friendtalk-service-termination-notice }
 
 <!-- TODO: translate body -->
 
 <a id="send-friendtalk"></a>
 
-## カカともへのメッセージ送信
+## カカともへのメッセージ送信 { #send-friendtalk }
 
 <a id="general-delivery"></a>
 
-### 一般送信
+### 一般送信 { #general-delivery }
 
 発信プロフィールを設定し、内容を入力してカカともへのメッセージ形式のメッセージを送信できます。
 カカともへのメッセージを送信するにはコンソールで**Notification > KakaoTalk Bizmessage > カカともへのメッセージ**を選択します。
@@ -76,7 +76,7 @@
 
 <a id="mass-delivery"></a>
 
-### 大量送信
+### 大量送信 { #mass-delivery }
 
 Excel/CSVフォーマットのテンプレートファイルによって、複数の受信番号にお知らせトークを送信できる機能です。下にあるタブで<b>大量送信</b>を選択します。
 
@@ -99,7 +99,7 @@ Excel/CSVフォーマットのテンプレートファイルによって、複�
 
 <a id="alternative-delivery"></a>
 
-### 代替送信
+### 代替送信 { #alternative-delivery }
 カカともへのメッセージ送信に失敗した場合、該当内容をテキストメッセージで代替送信できる機能です。
 <b>共通の内容で送信</b>または<b>ユーザーごとに異なるメッセージ設定</b>を選択して送信できます。
 
@@ -125,7 +125,7 @@ Excel/CSVフォーマットのテンプレートファイルによって、複�
 
 <a id="precautions-for-sending-advertising-messages"></a>
 
-### 広告性メッセージ送信時の注意事項
+### 広告性メッセージ送信時の注意事項 { #precautions-for-sending-advertising-messages }
 広告性メッセージとは？
 送信者が経済的利益を得る目的で送信する情報や財貨、サービスに関するメッセージが該当します。
 
@@ -152,11 +152,11 @@ Excel/CSVフォーマットのテンプレートファイルによって、複�
 
 <a id="view-delivery"></a>
 
-## 送信照会
+## 送信照会 { #view-delivery }
 
 <a id="retrieve-send-results"></a>
 
-### 送信結果の照会
+### 送信結果の照会 { #retrieve-send-results }
 **送信結果照会**タブでカカともへのメッセージを照会できます。
 
 ![friendtalk_05_20250403.jpg](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_alimtalk/friendtalk_05_20250403.png)
@@ -169,7 +169,7 @@ Excel/CSVフォーマットのテンプレートファイルによって、複�
 
 <a id="cancel-send"></a>
 
-### 送信キャンセル
+### 送信キャンセル { #cancel-send }
 一般送信中の発信リクエストの日時を未来に設定した予約送信の場合は、キャンセルが可能です。
 
 * 予約発信リクエストを照会すると、リクエストIDの左にあるチェックボックスを確認できます。
@@ -179,7 +179,7 @@ Excel/CSVフォーマットのテンプレートファイルによって、複�
 
 <a id="view-mass-delivery"></a>
 
-### 大量送信の照会
+### 大量送信の照会 { #view-mass-delivery }
 カカともへのメッセージの大量送信件を照会できます。
 
 ![friendtalk_06_20250403.jpg](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_alimtalk/friendtalk_06_20250403.jpg)
@@ -216,11 +216,11 @@ Excel/CSVフォーマットのテンプレートファイルによって、複�
 
 <a id="image-management"></a>
 
-## 画像管理
+## 画像管理 { #image-management }
 
 <a id="register-delete-look-up-images"></a>
 
-### 画像の登録、削除、照会
+### 画像の登録、削除、照会 { #register-delete-look-up-images }
 カカともへのメッセージに使用する画像を登録または削除し、登録された画像の情報を確認できます。
 
 ![friendtalk_09_20231227.png](https://static.toastoven.net/prod_alimtalk/friendtalk_09_20231227.png)
@@ -248,7 +248,7 @@ Excel/CSVフォーマットのテンプレートファイルによって、複�
 
 <a id="manage-alternative-delivery"></a>
 
-## 代替送信の管理
+## 代替送信の管理 { #manage-alternative-delivery }
 
 * カカともへのメッセージ送信に失敗した場合、該当内容をテキストメッセージで代替送信するように設定できます。
 * NHN Cloud SMSサービスを利用中である必要があり、メッセージの長さによって、SMS/LMSで送信されます。(タイプごとに別途の利用料金が加算されます。)

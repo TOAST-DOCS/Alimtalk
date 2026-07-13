@@ -2,7 +2,7 @@
 
 <a id="brand-message"></a>
 
-## 브랜드 메시지
+## 브랜드 메시지 { #brand-message }
 
 <a id="api-domain"></a>
 
@@ -14,11 +14,11 @@
 
 <a id="introduce-v10-api"></a>
 
-## v1.0 API 소개
+## v1.0 API 소개 { #introduce-v10-api }
 
 <a id="manage-non-friend-message-sending-targeting-m-n"></a>
 
-## 비친구 메시지 발송(타겟팅 M, N) 관리
+## 비친구 메시지 발송(타겟팅 M, N) 관리 { #manage-non-friend-message-sending-targeting-m-n }
 
 비친구 메시지 발송(타겟팅 M, N)은 아래 조건을 모두 만족할 경우 발송할 수 있습니다.
 
@@ -30,7 +30,7 @@
 
 <a id="upload-marketing-consent-records"></a>
 
-### 마케팅 수신 동의 증적 자료 업로드
+### 마케팅 수신 동의 증적 자료 업로드 { #upload-marketing-consent-records }
 
 <a id="requested"></a>
 
@@ -91,7 +91,7 @@ Content-Type: multipart/form-data
 
 <a id="apply-for-using-non-friend-message-sending-targeting-m-n"></a>
 
-### 비친구 메시지 발송(타겟팅 M, N) 사용 신청
+### 비친구 메시지 발송(타겟팅 M, N) 사용 신청 { #apply-for-using-non-friend-message-sending-targeting-m-n }
 
 <a id="requested-2"></a>
 
@@ -146,7 +146,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="request-to-send-a-free-form-message"></a>
 
-## 메시지 자유형 발송 요청
+## 메시지 자유형 발송 요청 { #request-to-send-a-free-form-message }
 
 * 마케팅 수신 동의 발송을 사용할 수 있습니다.
     * targeting 필드를 지정해 메시지 대상의 타입을 지정할 수 있습니다.
@@ -1290,7 +1290,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="request-to-send-basic-message"></a>
 
-## 메시지 기본형 발송 요청
+## 메시지 기본형 발송 요청 { #request-to-send-basic-message }
 
 * 템플릿을 이용한 발송입니다.
 * 마케팅 수신 동의 발송을 사용할 수 있습니다.
@@ -1308,7 +1308,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="cautions-for-use"></a>
 
-### 사용 시 주의 사항
+### 사용 시 주의 사항 { #cautions-for-use }
 
 - unsubscribeNo, unsubscribeAuthNo는 080 무료수신거부 전화번호와 인증번호로, 둘 중 하나라도 입력하지 않으면 발신 프로필에 등록된 무료수신거부 정보로 발송됩니다.
 - 발송 간 unsubscribeNo, unsubscribeAuthNo를 입력할 경우 발신 프로필에 등록된 무료수신거부 정보가 아닌 입력한 값으로 발송됩니다.
@@ -1452,7 +1452,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="view-sending-list"></a>
 
-## 발송 목록 조회
+## 발송 목록 조회 { #view-sending-list }
 
 <a id="requested-5"></a>
 
@@ -1579,7 +1579,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="view-single-sending"></a>
 
-## 발송 단건 조회
+## 발송 단건 조회 { #view-single-sending }
 
 <a id="requested-6"></a>
 
@@ -1876,7 +1876,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="message-results"></a>
 
-## 메시지 결과 업데이트 조회
+## 메시지 결과 업데이트 조회 { #message-results }
 
 <a id="requested-25"></a>
 
@@ -1987,7 +1987,7 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 
 <a id="cancel-message-sending"></a>
 
-## 메시지 발송 취소
+## 메시지 발송 취소 { #cancel-message-sending }
 
 <a id="requested-7"></a>
 
@@ -2053,11 +2053,11 @@ curl -X DELETE -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Ke
 
 <a id="manage-templates"></a>
 
-## 템플릿 관리
+## 템플릿 관리 { #manage-templates }
 
 <a id="view-template-list"></a>
 
-### 템플릿 리스트 조회
+### 템플릿 리스트 조회 { #view-template-list }
 
 <a id="requested-8"></a>
 
@@ -2330,7 +2330,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="view-single-template"></a>
 
-### 템플릿 단건 조회
+### 템플릿 단건 조회 { #view-single-template }
 
 [URL]
 
@@ -2585,7 +2585,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="register-template"></a>
 
-### 템플릿 등록
+### 템플릿 등록 { #register-template }
 
 <a id="requested-10"></a>
 
@@ -3304,7 +3304,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="modify-template"></a>
 
-### 템플릿 수정
+### 템플릿 수정 { #modify-template }
 
 <a id="requested-11"></a>
 
@@ -3364,7 +3364,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="delete-template"></a>
 
-### 템플릿 삭제
+### 템플릿 삭제 { #delete-template }
 
 <a id="requested-12"></a>
 
@@ -3420,11 +3420,11 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="manage-image"></a>
 
-## 이미지 관리
+## 이미지 관리 { #manage-image }
 
 <a id="upload-image"></a>
 
-### 이미지 업로드
+### 이미지 업로드 { #upload-image }
 
 <a id="requested-13"></a>
 
@@ -3508,7 +3508,7 @@ Content-Type: multipart/form-data
 
 <a id="view-image"></a>
 
-### 이미지 조회
+### 이미지 조회 { #view-image }
 
 <a id="requested-14"></a>
 
@@ -3579,7 +3579,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="delete-image"></a>
 
-### 이미지 삭제
+### 이미지 삭제 { #delete-image }
 
 <a id="requested-15"></a>
 
@@ -3639,13 +3639,13 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="manage-video"></a>
 
-## 동영상 관리
+## 동영상 관리 { #manage-video }
 
 브랜드 메시지에 사용할 동영상을 등록·조회·삭제하는 API입니다. 등록된 동영상은 카카오 비즈센터에서 인코딩 처리 후 발송에 사용할 수 있으며, 상태가 `PUBLIC`인 동영상만 템플릿 등록 및 발송이 가능합니다(`PRIVATE`는 템플릿 등록만 가능).
 
 <a id="video-upload-flow"></a>
 
-### 동영상 업로드 흐름
+### 동영상 업로드 흐름 { #video-upload-flow }
 
 동영상 업로드는 2단계로 진행됩니다.
 
@@ -3660,7 +3660,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="register-video-upload"></a>
 
-### 동영상 업로드 등록
+### 동영상 업로드 등록 { #register-video-upload }
 
 <a id="requested-16"></a>
 
@@ -3758,7 +3758,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="video-file-upload-step-2"></a>
 
-### 동영상 파일 업로드 (2단계)
+### 동영상 파일 업로드 (2단계) { #video-file-upload-step-2 }
 
 위 응답의 `uploadInfo.uploadUrl`로 동영상 파일을 직접 호출합니다. 이 요청은 NHN Cloud 서버가 아닌 카카오 측 업로드 서버로 직접 전송됩니다.
 
@@ -3820,7 +3820,7 @@ Content-Type: multipart/form-data
 
 <a id="view-video"></a>
 
-### 동영상 조회
+### 동영상 조회 { #view-video }
 
 <a id="requested-18"></a>
 
@@ -3920,7 +3920,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="delete-video"></a>
 
-### 동영상 삭제
+### 동영상 삭제 { #delete-video }
 
 <a id="requested-19"></a>
 
@@ -3980,7 +3980,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="video-status"></a>
 
-### 동영상 상태
+### 동영상 상태 { #video-status }
 
 동영상 조회 응답의 `status` 필드 값을 설명합니다.
 
@@ -3997,11 +3997,11 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="upload"></a>
 
-## 업로드
+## 업로드 { #upload }
 
 <a id="upload-bizform-key"></a>
 
-### 비즈폼 키 업로드
+### 비즈폼 키 업로드 { #upload-bizform-key }
 
 <a id="requested-20"></a>
 
@@ -4056,11 +4056,11 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="manage-outgoing-profiles"></a>
 
-## 발신 프로필 관리
+## 발신 프로필 관리 { #manage-outgoing-profiles }
 
 <a id="view-outgoing-profile"></a>
 
-### 발신 프로필 조회
+### 발신 프로필 조회 { #view-outgoing-profile }
 
 <a id="requested-21"></a>
 
@@ -4165,7 +4165,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="modify-outgoing-profile-080-opt-out-number"></a>
 
-### 발신 프로필 080 수신거부번호 수정
+### 발신 프로필 080 수신거부번호 수정 { #modify-outgoing-profile-080-opt-out-number }
 
 <a id="requested-22"></a>
 
@@ -4234,11 +4234,11 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="manage-fallback"></a>
 
-## 대체 발송 관리
+## 대체 발송 관리 { #manage-fallback }
 
 <a id="register-sms-appkey"></a>
 
-### SMS AppKey 등록
+### SMS AppKey 등록 { #register-sms-appkey }
 
 [URL]
 
@@ -4300,7 +4300,7 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 
 <a id="register-fallback-settings"></a>
 
-### 대체 발송 설정 등록
+### 대체 발송 설정 등록 { #register-fallback-settings }
 
 [URL]
 

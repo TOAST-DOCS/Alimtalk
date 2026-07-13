@@ -4,7 +4,7 @@
 
 <a id="alimtalk"></a>
 
-## AlimTalk
+## AlimTalk { #alimtalk }
 
 <a id="api-domain"></a>
 
@@ -25,18 +25,18 @@
 
 <a id="overview-of-v14-api"></a>
 
-## Overview of v1.4 API
+## Overview of v1.4 API { #overview-of-v14-api }
 1. Validity checks for the main text for Authentication Messages API has been added.
    - For more details, see [[Authentication Messages API](./alimtalk-api-guide/#precautions-authword)].
 
 
 <a id="general-messages"></a>
 
-## General Messages
+## General Messages { #general-messages }
 
 <a id="request-of-sending-replaced-messages"></a>
 
-### Request of Sending Replaced Messages
+### Request of Sending Replaced Messages { #request-of-sending-replaced-messages }
 
 [URL]
 
@@ -164,7 +164,7 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 
 <a id="request-of-sending-full-text"></a>
 
-### Request of Sending Full Text
+### Request of Sending Full Text { #request-of-sending-full-text }
 
 [URL]
 
@@ -308,7 +308,7 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 
 <a id="list-messages"></a>
 
-### List Messages
+### List Messages { #list-messages }
 
 <a id="request"></a>
 
@@ -455,7 +455,7 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 
 <a id="get-messages"></a>
 
-### Get Messages
+### Get Messages { #get-messages }
 
 <a id="request-2"></a>
 
@@ -565,7 +565,7 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 
 <a id="authentication-messages"></a>
 
-## Authentication Messages
+## Authentication Messages { #authentication-messages }
 
 <span id="precautions-authword"></span>
 1. Guide for authentication words required to be included for Authentication Messages API
@@ -580,7 +580,7 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 
 <a id="request-of-sending-replaced-messages-2"></a>
 
-### Request of Sending Replaced Messages
+### Request of Sending Replaced Messages { #request-of-sending-replaced-messages-2 }
 
 [URL]
 
@@ -698,7 +698,7 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 
 <a id="request-of-sending-full-text-2"></a>
 
-### Request of Sending Full Text
+### Request of Sending Full Text { #request-of-sending-full-text-2 }
 
 [URL]
 
@@ -834,7 +834,7 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 
 <a id="list-messages-2"></a>
 
-### List Messages
+### List Messages { #list-messages-2 }
 
 <a id="request-3"></a>
 
@@ -980,7 +980,7 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 
 <a id="get-messages-2"></a>
 
-### Get Messages
+### Get Messages { #get-messages-2 }
 
 <a id="request-4"></a>
 
@@ -1090,10 +1090,10 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 
 <a id="messages"></a>
 
-## Messages
+## Messages { #messages }
 <a id="cancel-sending-messages"></a>
 
-### Cancel Sending Messages
+### Cancel Sending Messages { #cancel-sending-messages }
 
 <a id="request-5"></a>
 
@@ -1158,7 +1158,7 @@ curl -X DELETE -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Ke
 
 <a id="query-updates-of-message-result"></a>
 
-### Query Updates of Message Result
+### Query Updates of Message Result { #query-updates-of-message-result }
 
 <a id="request-6"></a>
 
@@ -1284,11 +1284,11 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 
 <a id="plusfriends"></a>
 
-## PlusFriends
+## PlusFriends { #plusfriends }
 
 <a id="query-plusfriend-by-category"></a>
 
-### Query PlusFriend by Category
+### Query PlusFriend by Category { #query-plusfriend-by-category }
 
 <a id="request-7"></a>
 
@@ -1377,7 +1377,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="register-plusfriends"></a>
 
-### Register PlusFriends
+### Register PlusFriends { #register-plusfriends }
 
 <a id="request-8"></a>
 
@@ -1448,7 +1448,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="authenticate-tokens-for-plusfriends"></a>
 
-### Authenticate Tokens for PlusFriends
+### Authenticate Tokens for PlusFriends { #authenticate-tokens-for-plusfriends }
 
 <a id="request-9"></a>
 
@@ -1514,7 +1514,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="get-plusfriends"></a>
 
-### Get PlusFriends
+### Get PlusFriends { #get-plusfriends }
 
 <!-- TODO: translate body -->
 
@@ -1532,7 +1532,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="list-plusfriends"></a>
 
-### List PlusFriends
+### List PlusFriends { #list-plusfriends }
 
 <a id="requet"></a>
 
@@ -1633,11 +1633,11 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="templates"></a>
 
-## Templates
+## Templates { #templates }
 
 <a id="register-templates"></a>
 
-### Register Templates
+### Register Templates { #register-templates }
 
 <a id="request-11"></a>
 
@@ -1725,7 +1725,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="modify-templates"></a>
 
-### Modify Templates
+### Modify Templates { #modify-templates }
 
 <a id="request-12"></a>
 
@@ -1812,7 +1812,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="delete-templates"></a>
 
-### Delete Templates
+### Delete Templates { #delete-templates }
 
 <a id="request-13"></a>
 
@@ -1862,7 +1862,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="inquire-of-templates"></a>
 
-### Inquire of Templates
+### Inquire of Templates { #inquire-of-templates }
 
 <a id="request-14"></a>
 
@@ -1927,7 +1927,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="list-templates"></a>
 
-### List Templates
+### List Templates { #list-templates }
 
 <a id="request-15"></a>
 
@@ -2063,7 +2063,7 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 
 <a id="list-template-modifications"></a>
 
-### List Template modifications
+### List Template modifications { #list-template-modifications }
 
 <a id="request-16"></a>
 
@@ -2183,13 +2183,13 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 | - totalCount         | Integer | Total count                                                  |
 <a id="alternative-sending-management"></a>
 
-## Alternative Sending Management
+## Alternative Sending Management { #alternative-sending-management }
 
 <!-- TODO: translate body -->
 
 <a id="register-sms-appkey"></a>
 
-### Register SMS AppKey
+### Register SMS AppKey { #register-sms-appkey }
 
 <!-- TODO: translate body -->
 
@@ -2201,7 +2201,7 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 
 <a id="register-alternative-sending-settings"></a>
 
-### Register Alternative Sending Settings
+### Register Alternative Sending Settings { #register-alternative-sending-settings }
 
 <!-- TODO: translate body -->
 

@@ -6,7 +6,7 @@ According to the Kakao policy, in order to send a KakaoTalk Biz message, you mus
 
 <a id="create-kakaotalk-channel"></a>
 
-### Create KakaoTalk Channel 
+### Create KakaoTalk Channel { #create-kakaotalk-channel }
 Click 'Information Entry Guide' at the top of opening the channel to refer to the relevant guide.
 
 1. [Log into the KakaoTalk Channel Administrator Center](https://accounts.kakao.com/login/?continue=https%3A%2F%2Fbusiness.kakao.com%2Fdashboard%2F#login).
@@ -21,7 +21,7 @@ Click 'Information Entry Guide' at the top of opening the channel to refer to th
 
 <a id="set-kakaotalk-channel"></a>
 
-### Set KakaoTalk Channel 
+### Set KakaoTalk Channel { #set-kakaotalk-channel }
 After opening channel, apply for a business channel by setting up channel information.
 
 1. Select the channel opened in KakaoTalk Channel Management Center. Set channel disclosure and allow to search to ‘ON.’
@@ -36,7 +36,7 @@ After opening channel, apply for a business channel by setting up channel inform
 
 <a id="register-kakaotalk-channel"></a>
 
-### Register KakaoTalk Channel 
+### Register KakaoTalk Channel { #register-kakaotalk-channel }
 1. If switching to a business channel has been completed (approved), register the correspodning sender profile (KakaoTalk channel) on **Notification > KakaoTalk Bizmessage > Manage outgoing Profiles** tab.
     * The Sender Profile Registration Detail Guide is available to check [Manage Sender Profiles](https://docs.nhncloud.com/ko/Notification/KakaoTalk%20Bizmessage/ko/common-console-guide/#_5).
 

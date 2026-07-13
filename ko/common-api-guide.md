@@ -4,11 +4,11 @@
 
 <a id="statistics"></a>
 
-## 통계
+## 통계 { #statistics }
 
 <a id="api-domain"></a>
 
-### [API 도메인]
+### [API 도메인] { #api-domain }
 
 <table>
 <thead>
@@ -26,7 +26,7 @@
 
 <a id="statistics-search---event-based"></a>
 
-### 통계 검색 - 이벤트 기반
+### 통계 검색 - 이벤트 기반 { #statistics-search---event-based }
 * 이벤트 발생 시간 기준으로 수집된 통계입니다.
 * 다음 시간 기준으로 통계가 수집됩니다.
     * 요청 개수(REQUESTED): 예약 발송 등록 시간
@@ -38,7 +38,7 @@
 
 <a id="get-statistics-information"></a>
 
-### 통계 정보 조회
+### 통계 정보 조회 { #get-statistics-information }
 
 [URL]
 
@@ -118,7 +118,7 @@
 
 <a id="get-count-per-event"></a>
 
-### 이벤트별 개수 조회
+### 이벤트별 개수 조회 { #get-count-per-event }
 
 [URL]
 
@@ -170,7 +170,7 @@
 
 <a id="kakao-statistics"></a>
 
-## 카카오 통계
+## 카카오 통계 { #kakao-statistics }
 
 * 카카오비즈센터에서 제공하는 통계 데이터를 조회합니다.
 * 통계 데이터는 발신 키 기준으로 일별(DAILY) 또는 월별(MONTHLY)로 조회할 수 있습니다.
@@ -187,13 +187,13 @@
 
 <a id="delivery-statistics"></a>
 
-### 발송 통계
+### 발송 통계 { #delivery-statistics }
 
 발신 프로필을 기준으로 일별 발송 수, 유효 읽음 수, 클릭 수를 조회합니다. 기간, 발송 식별자, 메시지 타입 등을 설정해 조회할 수 있습니다.
 
 <a id="template-statistics"></a>
 
-### 템플릿 통계
+### 템플릿 통계 { #template-statistics }
 
 템플릿 및 그룹 태그를 기준으로 일별 발송 수, 유효 읽음 수, 클릭 수를 조회합니다. 기간, 메시지 타입 등을 설정해 조회할 수 있습니다.
 
@@ -201,7 +201,7 @@
 
 <a id="retrieve-alimtalk-delivery-statistics"></a>
 
-### 알림톡 발송 통계 조회
+### 알림톡 발송 통계 조회 { #retrieve-alimtalk-delivery-statistics }
 
 <a id="request"></a>
 
@@ -286,7 +286,7 @@
 
 <a id="retrieve-alimtalk-template-statistics"></a>
 
-### 알림톡 템플릿 통계 조회
+### 알림톡 템플릿 통계 조회 { #retrieve-alimtalk-template-statistics }
 
 <a id="request-2"></a>
 
@@ -371,7 +371,7 @@
 
 <a id="retrieve-brand-message-delivery-statistics"></a>
 
-### 브랜드 메시지 발송 통계 조회
+### 브랜드 메시지 발송 통계 조회 { #retrieve-brand-message-delivery-statistics }
 
 <a id="request-3"></a>
 
@@ -467,7 +467,7 @@
 
 <a id="retrieve-brand-message-template-statistics"></a>
 
-### 브랜드 메시지 템플릿 통계 조회
+### 브랜드 메시지 템플릿 통계 조회 { #retrieve-brand-message-template-statistics }
 
 <a id="request-4"></a>
 

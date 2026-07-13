@@ -4,10 +4,10 @@
 
 <a id="send-alimtalk"></a>
 
-## お知らせトーク送信
+## お知らせトーク送信 { #send-alimtalk }
 <a id="general-delivery"></a>
 
-### 一般送信
+### 一般送信 { #general-delivery }
 お知らせトークの一般送信画面です。
 
 ![KTB_09_20230926.png](https://static.toastoven.net/prod_alimtalk/KTB_09_20230926.png)
@@ -30,7 +30,7 @@
 
 <a id="mass-delivery"></a>
 
-### 大量送信
+### 大量送信 { #mass-delivery }
 Excel/CSVフォーマットのテンプレートファイルを通じて、複数の受信番号にお知らせトークを送信できる機能です。下段のタブで<b>大量送信</b>を選択します。
 ![KTB_10_20230926.png](https://static.toastoven.net/prod_alimtalk/KTB_10_20230926.png)
 * テンプレートを選択後、<b>テンプレートダウンロード</b>をクリックすると、テンプレート日本語識別子を含むCSV、XLSXファイルをダウンロードできます。テンプレート日本語識別子が含まれていない場合、送信失敗処理されます。
@@ -49,7 +49,7 @@ Excel/CSVフォーマットのテンプレートファイルを通じて、複�
 
 <a id="alternative-delivery"></a>
 
-### 代替送信
+### 代替送信 { #alternative-delivery }
 お知らせトークの送信に失敗した場合、該当内容をテキストメッセージで代替送信できる機能です。
 <b>共通の内容で送信</b>または、<b>ユーザーごとに異なるメッセージを設定</b>を選択して送信できます。
 ![KTB_12_20230926.png](https://static.toastoven.net/prod_alimtalk/KTB_12_20230926.png)
@@ -74,10 +74,10 @@ Excel/CSVフォーマットのテンプレートファイルを通じて、複�
 
 <a id="view-delivery"></a>
 
-## 送信照会
+## 送信照会 { #view-delivery }
 <a id="retrieve-send-results"></a>
 
-### 送信結果の照会
+### 送信結果の照会 { #retrieve-send-results }
 メッセージタイプを条件に照会できます。
 (<b>リクエストID</b>および<b>リクエスト日時</b>は必須値です。)
 ![KTB_13_20250403.jpg](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_alimtalk/KTB_13_20250403.jpg)
@@ -89,7 +89,7 @@ Excel/CSVフォーマットのテンプレートファイルを通じて、複�
 
 <a id="cancel-send"></a>
 
-### 送信キャンセル
+### 送信キャンセル { #cancel-send }
 一般送信中の発信リクエスト日時を未来に設定した予約送信は、キャンセルできます。
 ![KTB_14_20250403.jpg](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_alimtalk/KTB_14_20250403.jpg)
 * 予約発信リクエストを照会すると、リクエストIDの左にあるチェックボックスを確認できます。
@@ -100,7 +100,7 @@ Excel/CSVフォーマットのテンプレートファイルを通じて、複�
 
 <a id="view-mass-delivery"></a>
 
-### 大量送信照会
+### 大量送信照会 { #view-mass-delivery }
 お知らせトークの大量送信件を照会できます。
 ![KTB_15_20250403.jpg](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_alimtalk/KTB_15_20250403.png)
 * 照会：上段の照会フォームで大量お知らせトーク送信件を照会できます。照会件のリストを選択すると、下段の照会フォームで受信番号と送信情報(送信内容、送信結果)を確認できます。
@@ -132,19 +132,19 @@ Excel/CSVフォーマットのテンプレートファイルを通じて、複�
 
 <a id="template-management"></a>
 
-## テンプレート管理
+## テンプレート管理 { #template-management }
 <b>テンプレート登録</b>ボタンをクリックして、テンプレートを登録できます。
 
 <a id="template-type"></a>
 
-### テンプレートタイプ
+### テンプレートタイプ { #template-type }
 * 登録可能なメッセージタイプには、**チャンネル追加型、基本型、付加情報型、複合型**があります。
 * 登録可能な強調タイプには、**強調表記型、画像型、アイテムリスト型**があります。
 * 送信したいタイプを選択して、テンプレートを作成してください。
 
 <a id="register-templates"></a>
 
-### テンプレート登録
+### テンプレート登録 { #register-templates }
 * カカオお知らせトークガイド
     * [[お知らせトーク作成ガイド]](https://kakaobusiness.gitbook.io/main/ad/bizmessage/notice-friend/content-guide)、[[お知らせトーク審査ガイド]](https://kakaobusiness.gitbook.io/main/ad/bizmessage/notice-friend/audit)、[[お知らせトーク注意事項]](https://kakaobusiness.gitbook.io/main/ad/infotalk/operations)
 * 発信プロフィール / グループ
@@ -219,7 +219,7 @@ Excel/CSVフォーマットのテンプレートファイルを通じて、複�
 
 <a id="manage-alternative-delivery"></a>
 
-## 代替送信の管理
+## 代替送信の管理 { #manage-alternative-delivery }
 
 * お知らせトークの送信に失敗した場合、該当内容をテキストメッセージで代替送信するように設定できます。
 * NHN Cloud SMSサービスを利用中である必要があり、メッセージの長さによって、SMS/LMSで送信されます。(タイプごとに別途の利用料金が加算されます。)
@@ -234,7 +234,7 @@ Excel/CSVフォーマットのテンプレートファイルを通じて、複�
 
 <a id="manage-sender-profile-group"></a>
 
-## 発信プロフィールグループの管理
+## 発信プロフィールグループの管理 { #manage-sender-profile-group }
 * 2個以上の発信プロフィールをグループで作成して、テンプレートを一度に登録できます。
 * 1つの発信プロフィールは、複数のグループに重複して属すことができます。
 * 発信プロフィールのグループIDは、最大10文字まで入力できます。(ハングル/英字)

@@ -4,7 +4,7 @@
 
 <a id="alimtalk"></a>
 
-## お知らせトーク
+## お知らせトーク { #alimtalk }
 
 <a id="api-domain"></a>
 
@@ -25,17 +25,17 @@
 
 <a id="overview-of-v14-api"></a>
 
-## v1.4 API紹介
+## v1.4 API紹介 { #overview-of-v14-api }
 1. 認証メッセージAPIに対する本文の有効性チェックが追加されました。
    - 詳細は[[認証用SMS送信API](./alimtalk-api-guide/#precautions-authword)]を参照してください。
 
 <a id="general-messages"></a>
 
-## 一般メッセージ
+## 一般メッセージ { #general-messages }
 
 <a id="request-of-sending-replaced-messages"></a>
 
-### メッセージ置換送信リクエスト
+### メッセージ置換送信リクエスト { #request-of-sending-replaced-messages }
 
 [URL]
 
@@ -162,7 +162,7 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 
 <a id="request-of-sending-full-text"></a>
 
-### メッセージ全文送信リクエスト
+### メッセージ全文送信リクエスト { #request-of-sending-full-text }
 
 [URL]
 
@@ -305,7 +305,7 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 
 <a id="list-messages"></a>
 
-### メッセージリストの照会
+### メッセージリストの照会 { #list-messages }
 
 <a id="request"></a>
 
@@ -451,7 +451,7 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 
 <a id="get-messages"></a>
 
-### メッセージ単件照会
+### メッセージ単件照会 { #get-messages }
 
 <a id="request-2"></a>
 
@@ -561,7 +561,7 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 
 <a id="authentication-messages"></a>
 
-## 認証メッセージ
+## 認証メッセージ { #authentication-messages }
 
 <span id="precautions-authword"></span>
 1. 認証メッセージの送信時、含まれる必要がある認証文言案内
@@ -576,7 +576,7 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 
 <a id="request-of-sending-replaced-messages-2"></a>
 
-### メッセージ置換送信リクエスト
+### メッセージ置換送信リクエスト { #request-of-sending-replaced-messages-2 }
 
 [URL]
 
@@ -700,7 +700,7 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 
 <a id="request-of-sending-full-text-2"></a>
 
-### メッセージ全文送信リクエスト
+### メッセージ全文送信リクエスト { #request-of-sending-full-text-2 }
 
 [URL]
 
@@ -839,7 +839,7 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 
 <a id="list-messages-2"></a>
 
-### メッセージリストの照会
+### メッセージリストの照会 { #list-messages-2 }
 
 <a id="request-3"></a>
 
@@ -985,7 +985,7 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 
 <a id="get-messages-2"></a>
 
-### メッセージ単件照会
+### メッセージ単件照会 { #get-messages-2 }
 
 <a id="request-4"></a>
 
@@ -1095,10 +1095,10 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 
 <a id="messages"></a>
 
-## メッセージ
+## メッセージ { #messages }
 <a id="cancel-sending-messages"></a>
 
-### メッセージ送信取消
+### メッセージ送信取消 { #cancel-sending-messages }
 
 <a id="request-5"></a>
 
@@ -1163,7 +1163,7 @@ curl -X DELETE -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Ke
 
 <a id="query-updates-of-message-result"></a>
 
-### メッセージ結果アップデートの照会
+### メッセージ結果アップデートの照会 { #query-updates-of-message-result }
 
 <a id="request-6"></a>
 
@@ -1288,11 +1288,11 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 
 <a id="plusfriends"></a>
 
-## プラスフレンド
+## プラスフレンド { #plusfriends }
 
 <a id="query-plusfriend-by-category"></a>
 
-### プラスフレンドカテゴリーの照会
+### プラスフレンドカテゴリーの照会 { #query-plusfriend-by-category }
 
 <a id="request-7"></a>
 
@@ -1381,7 +1381,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="register-plusfriends"></a>
 
-### プラスフレンドの登録
+### プラスフレンドの登録 { #register-plusfriends }
 <a id="request-8"></a>
 
 #### リクエスト
@@ -1446,7 +1446,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="authenticate-tokens-for-plusfriends"></a>
 
-### プラスフレンドトークン認証
+### プラスフレンドトークン認証 { #authenticate-tokens-for-plusfriends }
 <a id="request-9"></a>
 
 #### リクエスト
@@ -1509,7 +1509,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="get-plusfriends"></a>
 
-### プラスフレンド単件照会
+### プラスフレンド単件照会 { #get-plusfriends }
 <a id="request-10"></a>
 
 #### リクエスト
@@ -1611,7 +1611,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="list-plusfriends"></a>
 
-### プラスフレンドリストの照会
+### プラスフレンドリストの照会 { #list-plusfriends }
 <a id="requet"></a>
 
 #### リクエスト
@@ -1723,11 +1723,11 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="templates"></a>
 
-## テンプレート
+## テンプレート { #templates }
 
 <a id="register-templates"></a>
 
-### テンプレートの登録
+### テンプレートの登録 { #register-templates }
 <a id="request-11"></a>
 
 #### リクエスト
@@ -1812,7 +1812,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="modify-templates"></a>
 
-### テンプレートの修正
+### テンプレートの修正 { #modify-templates }
 <a id="request-12"></a>
 
 #### リクエスト
@@ -1896,7 +1896,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="delete-templates"></a>
 
-### テンプレートの削除
+### テンプレートの削除 { #delete-templates }
 <a id="request-13"></a>
 
 #### リクエスト
@@ -1944,7 +1944,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="inquire-of-templates"></a>
 
-### テンプレートの問い合わせをする
+### テンプレートの問い合わせをする { #inquire-of-templates }
 <a id="request-14"></a>
 
 #### リクエスト
@@ -2007,7 +2007,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="list-templates"></a>
 
-### テンプレートリストの照会
+### テンプレートリストの照会 { #list-templates }
 
 <a id="request-15"></a>
 
@@ -2144,7 +2144,7 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 
 <a id="list-template-modifications"></a>
 
-### テンプレートの修正リスト照会
+### テンプレートの修正リスト照会 { #list-template-modifications }
 
 <a id="request-16"></a>
 
@@ -2265,10 +2265,10 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 
 <a id="alternative-sending-management"></a>
 
-## 代替送信管理
+## 代替送信管理 { #alternative-sending-management }
 <a id="register-sms-appkey"></a>
 
-### SMS AppKey 登録
+### SMS AppKey 登録 { #register-sms-appkey }
 
 [URL]
 
@@ -2328,7 +2328,7 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 
 <a id="register-alternative-sending-settings"></a>
 
-### 代替送信設定登録
+### 代替送信設定登録 { #register-alternative-sending-settings }
 
 [URL]
 
