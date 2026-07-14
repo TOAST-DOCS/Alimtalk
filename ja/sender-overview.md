@@ -6,7 +6,7 @@
 
 <a id="create-kakaotalk-channel"></a>
 
-### カカオトークチャンネルの作成
+### カカオトークチャンネルの作成 { #create-kakaotalk-channel }
 チャンネル開設ページの上にある｢情報入力ガイド｣をクリックすると、関連ガイドが表示されます。
 
 1. [カカオトークチャンネル管理者センター](https://accounts.kakao.com/login/?continue=https%3A%2F%2Fbusiness.kakao.com%2Fdashboard%2F#login)にログインします。
@@ -21,7 +21,7 @@
 
 <a id="set-kakaotalk-channel"></a>
 
-### カカオトークチャンネルの設定
+### カカオトークチャンネルの設定 { #set-kakaotalk-channel }
 チャンネル開設完了後、チャンネル情報を設定してビジネスチャンネルを申請します。
 
 1. カカオトークチャンネル管理者センターで開設したチャンネルを選択します。チャンネル公開と検索許可を｢ON｣に設定します。
@@ -36,6 +36,6 @@
 
 <a id="register-kakaotalk-channel"></a>
 
-### カカオトークチャンネルの登録
+### カカオトークチャンネルの登録 { #register-kakaotalk-channel }
 1. ビジネスチャンネルへの切り替えが完了(承認)したら、**Notification > KakaoTalk Bizmessage > 発信プロフィール管理**タブで該当発信プロフィール(カカオトークチャンネル)を登録します。
     * 発信プロフィールの登録に関する詳細ガイドは、[発信プロフィール管理](https://docs.nhncloud.com/ko/Notification/KakaoTalk%20Bizmessage/ko/common-console-guide/#_5)で確認できます。

@@ -4,7 +4,7 @@
 
 <a id="overview-of-v20-api"></a>
 
-## v2.0 API紹介
+## v2.0 API紹介 { #overview-of-v20-api }
 <a id="whats-the-diffrence"></a>
 
 #### 改善された点
@@ -31,11 +31,11 @@
 
 <a id="senders"></a>
 
-## Sender
+## Sender { #senders }
 
 <a id="query-sender-by-category"></a>
 
-### Senderカテゴリーの照会
+### Senderカテゴリーの照会 { #query-sender-by-category }
 
 <a id="request"></a>
 
@@ -124,7 +124,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="register-senders"></a>
 
-### Senderの登録
+### Senderの登録 { #register-senders }
 <a id="request-2"></a>
 
 #### リクエスト
@@ -189,7 +189,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="authenticate-tokens-for-senders"></a>
 
-### Senderトークン認証
+### Senderトークン認証 { #authenticate-tokens-for-senders }
 <a id="request-3"></a>
 
 #### リクエスト
@@ -252,7 +252,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="delete-sender"></a>
 
-### Sender 削除
+### Sender 削除 { #delete-sender }
 <a id="request-4"></a>
 
 #### リクエスト
@@ -307,7 +307,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="get-sender"></a>
 
-### Sender 単件照会
+### Sender 単件照会 { #get-sender }
 <a id="request-5"></a>
 
 #### リクエスト
@@ -407,7 +407,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="list-sender"></a>
 
-### Senderの照会
+### Senderの照会 { #list-sender }
 <a id="request-6"></a>
 
 #### リクエスト
@@ -518,11 +518,11 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="sender-group"></a>
 
-## Sender group
+## Sender group { #sender-group }
 
 <a id="get-sender-group"></a>
 
-### Sender group の照会
+### Sender group の照会 { #get-sender-group }
 
 <a id="request-7"></a>
 
@@ -597,7 +597,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="add-sender-to-group"></a>
 
-### グループにSender追加
+### グループにSender追加 { #add-sender-to-group }
 
 <a id="request-8"></a>
 
@@ -649,7 +649,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="delete-sender-from-group"></a>
 
-### グループにSender削除
+### グループにSender削除 { #delete-sender-from-group }
 
 <a id="request-9"></a>
 

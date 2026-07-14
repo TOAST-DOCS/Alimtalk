@@ -7,7 +7,7 @@ The service provides RESTful APIs for easy integration.
 
 <a id="characteristics"></a>
 
-## Characteristics
+## Characteristics { #characteristics }
 * You can send long messages up to 1,000 characters at a lower cost than SMS.
 * Informational messages without commercial purposes, such as announcements, notifications, and guidance, can be sent regardless of adding channel friends or not.
 * AlimTalk can be sent after completing the template-based inspection.
@@ -18,7 +18,7 @@ The service provides RESTful APIs for easy integration.
 
 <a id="main-features"></a>
 
-## Main Features
+## Main Features { #main-features }
 * NHN Cloud provides a differentiated features to modify AlimTalk template (no template code change used for API interworking)
 * It provides RESTful APIs such as sending, inquiring and etc.
 * It provides a Webhook for updating delivery results, updating template status.
@@ -26,7 +26,7 @@ The service provides RESTful APIs for easy integration.
 
 <a id="alimtalk-template-precautions"></a>
 
-## AlimTalk Template Precautions
+## AlimTalk Template Precautions { #alimtalk-template-precautions }
 AlimTalk is an informational message that can be sent to users who have not added KakaoTalk channel.<br/> Among the exceptions to commercial information for commercial purposes in the Information and Communication Network Act guide to prevent illegal spam, only templates that have been judged to be suitable for the protection of KakaoTalk users can be sent. [[Guidance on compliance with informational messages (AlimTalk)]](https://kakaobusiness.gitbook.io/main/ad/infotalk/operations)
 
 <a id="alert-talk-message-maximum-character-guide"></a>
@@ -73,7 +73,7 @@ Please refer to the following two additional contents based on the maximum numbe
 
 <a id="template-inspection-and-creation-guide"></a>
 
-## Template Inspection and Creation Guide
+## Template Inspection and Creation Guide { #template-inspection-and-creation-guide }
 * [[AlimTalk Creation Guide]](https://kakaobusiness.gitbook.io/main/ad/bizmessage/notice-friend/content-guide)
 * [[AlimTalk Inspection Guide]](https://kakaobusiness.gitbook.io/main/ad/bizmessage/notice-friend/audit)
 * [[AlimTalk Image Creation Guide]](https://kakaobusiness.gitbook.io/main/ad/infotalk/audit#id-3)

@@ -4,7 +4,7 @@
 
 <a id="overview-of-v20-api"></a>
 
-## Overview of v2.0 API
+## Overview of v2.0 API { #overview-of-v20-api }
 <a id="whats-the-diffrence"></a>
 
 #### What's the diffrence
@@ -31,11 +31,11 @@
 
 <a id="senders"></a>
 
-## Senders
+## Senders { #senders }
 
 <a id="query-sender-by-category"></a>
 
-### Query Sender by Category
+### Query Sender by Category { #query-sender-by-category }
 
 <a id="request"></a>
 
@@ -124,7 +124,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="register-senders"></a>
 
-### Register Senders
+### Register Senders { #register-senders }
 
 <a id="request-2"></a>
 
@@ -192,7 +192,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="authenticate-tokens-for-senders"></a>
 
-### Authenticate Tokens for Senders
+### Authenticate Tokens for Senders { #authenticate-tokens-for-senders }
 
 <a id="request-3"></a>
 
@@ -259,7 +259,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="delete-sender"></a>
 
-### Delete Sender
+### Delete Sender { #delete-sender }
 <a id="request-4"></a>
 
 #### Request
@@ -313,7 +313,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="get-sender"></a>
 
-### Get Sender
+### Get Sender { #get-sender }
 <a id="request-5"></a>
 
 #### Request
@@ -416,7 +416,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="list-sender"></a>
 
-### List Sender
+### List Sender { #list-sender }
 
 <a id="request-6"></a>
 
@@ -533,11 +533,11 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="sender-group"></a>
 
-## Sender group
+## Sender group { #sender-group }
 
 <a id="get-sender-group"></a>
 
-### Get Sender group
+### Get Sender group { #get-sender-group }
 
 <a id="request-7"></a>
 
@@ -612,7 +612,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="add-sender-to-group"></a>
 
-### Add sender to group
+### Add sender to group { #add-sender-to-group }
 
 <a id="request-8"></a>
 
@@ -664,7 +664,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="delete-sender-from-group"></a>
 
-### Delete sender from group
+### Delete sender from group { #delete-sender-from-group }
 
 <a id="request-9"></a>
 

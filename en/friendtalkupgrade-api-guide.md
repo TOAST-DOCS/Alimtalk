@@ -2,7 +2,7 @@
 
 <a id="brand-message"></a>
 
-## Brand Message
+## Brand Message { #brand-message }
 
 <a id="api-domain"></a>
 
@@ -14,11 +14,11 @@
 
 <a id="introduce-v10-api"></a>
 
-## Introduction to v1.0 API
+## Introduction to v1.0 API { #introduce-v10-api }
 
 <a id="manage-non-friend-message-sending-targeting-m-n"></a>
 
-## Manage Non-Friend Message Sending (Targeting M, N)
+## Manage Non-Friend Message Sending (Targeting M, N) { #manage-non-friend-message-sending-targeting-m-n }
 
 Non-friend message sending (Targeting M, N) can be used when all of the following conditions are met:
 
@@ -30,7 +30,7 @@ Non-friend message sending (Targeting M, N) can be used when all of the followin
 
 <a id="upload-marketing-consent-records"></a>
 
-### Upload Marketing Consent Records
+### Upload Marketing Consent Records { #upload-marketing-consent-records }
 
 <a id="requested"></a>
 
@@ -91,7 +91,7 @@ Content-Type: multipart/form-data
 
 <a id="apply-for-using-non-friend-message-sending-targeting-m-n"></a>
 
-### Apply for Non-Friend Message Sending (Targeting M, N)
+### Apply for Non-Friend Message Sending (Targeting M, N) { #apply-for-using-non-friend-message-sending-targeting-m-n }
 
 <a id="requested-2"></a>
 
@@ -146,7 +146,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="request-to-send-a-free-form-message"></a>
 
-## Send Freestyle Messages
+## Send Freestyle Messages { #request-to-send-a-free-form-message }
 
 * Marketing consent-based sending can be used.
     * You can specify the message target type by setting the targeting field.
@@ -1290,7 +1290,7 @@ In the carousel type, you can apply different replacement variable values to eac
 
 <a id="request-to-send-basic-message"></a>
 
-## Send Basic Message Request
+## Send Basic Message Request { #request-to-send-basic-message }
 
 * This delivery uses a template.
 * Marketing consent-based sending can be used.
@@ -1308,7 +1308,7 @@ In the carousel type, you can apply different replacement variable values to eac
 
 <a id="cautions-for-use"></a>
 
-### Notes on Usage
+### Notes on Usage { #cautions-for-use }
 
 - `unsubscribeNo` and `unsubscribeAuthNo` are the 080 toll-free opt-out phone number and authentication number. If either one is not entered, the message will be sent using the opt-out information registered in the Sender Profile.
 - If you enter `unsubscribeNo` and `unsubscribeAuthNo` when sending, the message will be sent using the entered values instead of the opt-out information registered in the Sender Profile.
@@ -1452,7 +1452,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="view-sending-list"></a>
 
-## List Deliveries
+## List Deliveries { #view-sending-list }
 
 <a id="requested-5"></a>
 
@@ -1579,7 +1579,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="view-single-sending"></a>
 
-## Get Delivery
+## Get Delivery { #view-single-sending }
 
 <a id="requested-6"></a>
 
@@ -1876,7 +1876,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="message-results"></a>
 
-## Query Message Result Updates
+## Query Message Result Updates { #message-results }
 
 <a id="requested-25"></a>
 
@@ -1987,7 +1987,7 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 
 <a id="cancel-message-sending"></a>
 
-## Cancel Message Delivery
+## Cancel Message Delivery { #cancel-message-sending }
 
 <a id="requested-7"></a>
 
@@ -2053,11 +2053,11 @@ curl -X DELETE -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Ke
 
 <a id="manage-templates"></a>
 
-## Template Management
+## Template Management { #manage-templates }
 
 <a id="view-template-list"></a>
 
-### List Templates
+### List Templates { #view-template-list }
 
 <a id="requested-8"></a>
 
@@ -2330,7 +2330,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="view-single-template"></a>
 
-### Get a Template
+### Get a Template { #view-single-template }
 
 [URL]
 
@@ -2585,7 +2585,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="register-template"></a>
 
-### Template Registration
+### Template Registration { #register-template }
 
 <a id="requested-10"></a>
 
@@ -3304,7 +3304,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="modify-template"></a>
 
-### Modify Template
+### Modify Template { #modify-template }
 
 <a id="requested-11"></a>
 
@@ -3364,7 +3364,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="delete-template"></a>
 
-### Delete Template
+### Delete Template { #delete-template }
 
 <a id="requested-12"></a>
 
@@ -3420,11 +3420,11 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="manage-image"></a>
 
-## Image Management
+## Image Management { #manage-image }
 
 <a id="upload-image"></a>
 
-### Upload Image
+### Upload Image { #upload-image }
 
 <a id="requested-13"></a>
 
@@ -3509,7 +3509,7 @@ Content-Type: multipart/form-data
 
 <a id="view-image"></a>
 
-### View Image
+### View Image { #view-image }
 
 <a id="requested-14"></a>
 
@@ -3580,7 +3580,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="delete-image"></a>
 
-### Delete Image
+### Delete Image { #delete-image }
 
 <a id="requested-15"></a>
 
@@ -3640,13 +3640,13 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="manage-video"></a>
 
-## Video Management
+## Video Management { #manage-video }
 
 This API is used to register, view, and delete videos for use in Brand Message. Registered videos can be used for sending after encoding by the Kakao Biz Center, and only videos with a status of `PUBLIC` can be used for template registration and sending (`PRIVATE` allows template registration only).
 
 <a id="video-upload-flow"></a>
 
-### Video Upload Flow
+### Video Upload Flow { #video-upload-flow }
 
 Video upload is a two-step process.
 
@@ -3661,7 +3661,7 @@ The video file is sent directly to the Kakao upload server without passing throu
 
 <a id="register-video-upload"></a>
 
-### Register Video Upload
+### Register Video Upload { #register-video-upload }
 
 <a id="requested-16"></a>
 
@@ -3759,7 +3759,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="video-file-upload-step-2"></a>
 
-### Upload Video File (Step 2)
+### Upload Video File (Step 2) { #video-file-upload-step-2 }
 
 Call the video file directly to `uploadInfo.uploadUrl` from the response above. This request is sent directly to the Kakao upload server, not to the NHN Cloud server.
 
@@ -3821,7 +3821,7 @@ Content-Type: multipart/form-data
 
 <a id="view-video"></a>
 
-### Query Video
+### Query Video { #view-video }
 
 <a id="requested-18"></a>
 
@@ -3921,7 +3921,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="delete-video"></a>
 
-### Delete a Video
+### Delete a Video { #delete-video }
 
 <a id="requested-19"></a>
 
@@ -3981,7 +3981,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="video-status"></a>
 
-### Video Status
+### Video Status { #video-status }
 
 Describes the `status` field values in the video query response.
 
@@ -3998,11 +3998,11 @@ Describes the `status` field values in the video query response.
 
 <a id="upload"></a>
 
-## Upload
+## Upload { #upload }
 
 <a id="upload-bizform-key"></a>
 
-### Upload Biz Form Key
+### Upload Biz Form Key { #upload-bizform-key }
 
 <a id="requested-20"></a>
 
@@ -4057,11 +4057,11 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="manage-outgoing-profiles"></a>
 
-## Sender Profile Management
+## Sender Profile Management { #manage-outgoing-profiles }
 
 <a id="view-outgoing-profile"></a>
 
-### View Sender Profile
+### View Sender Profile { #view-outgoing-profile }
 
 <a id="requested-21"></a>
 
@@ -4166,7 +4166,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="modify-outgoing-profile-080-opt-out-number"></a>
 
-### Modify Sender Profile 080 Opt-Out Number
+### Modify Sender Profile 080 Opt-Out Number { #modify-outgoing-profile-080-opt-out-number }
 
 <a id="requested-22"></a>
 
@@ -4235,11 +4235,11 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="manage-fallback"></a>
 
-## Alternative Delivery Management
+## Alternative Delivery Management { #manage-fallback }
 
 <a id="register-sms-appkey"></a>
 
-### Register SMS AppKey
+### Register SMS AppKey { #register-sms-appkey }
 
 [URL]
 
@@ -4301,7 +4301,7 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 
 <a id="register-fallback-settings"></a>
 
-### Register Alternative Delivery Settings
+### Register Alternative Delivery Settings { #register-fallback-settings }
 
 [URL]
 

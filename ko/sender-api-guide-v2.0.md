@@ -4,7 +4,7 @@
 
 <a id="overview-of-v20-api"></a>
 
-## v2.0 API 소개
+## v2.0 API 소개 { #overview-of-v20-api }
 <a id="whats-the-diffrence"></a>
 
 #### 개선된 점
@@ -32,11 +32,11 @@
 
 <a id="senders"></a>
 
-## 발신 프로필
+## 발신 프로필 { #senders }
 
 <a id="query-sender-by-category"></a>
 
-### 발신 프로필 카테고리 조회
+### 발신 프로필 카테고리 조회 { #query-sender-by-category }
 
 <a id="request"></a>
 
@@ -125,7 +125,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="register-senders"></a>
 
-### 발신 프로필 등록
+### 발신 프로필 등록 { #register-senders }
 <a id="request-2"></a>
 
 #### 요청
@@ -190,7 +190,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="authenticate-tokens-for-senders"></a>
 
-### 발신 프로필 토큰 인증
+### 발신 프로필 토큰 인증 { #authenticate-tokens-for-senders }
 <a id="request-3"></a>
 
 #### 요청
@@ -264,7 +264,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="delete-sender"></a>
 
-### 발신 프로필 삭제
+### 발신 프로필 삭제 { #delete-sender }
 <a id="request-4"></a>
 
 #### 요청
@@ -318,7 +318,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="get-sender"></a>
 
-### 발신 프로필 단건 조회
+### 발신 프로필 단건 조회 { #get-sender }
 <a id="request-5"></a>
 
 #### 요청
@@ -420,7 +420,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="list-sender"></a>
 
-### 발신 프로필 리스트 조회
+### 발신 프로필 리스트 조회 { #list-sender }
 <a id="request-6"></a>
 
 #### 요청
@@ -535,11 +535,11 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="sender-group"></a>
 
-## 발신 프로필 그룹
+## 발신 프로필 그룹 { #sender-group }
 
 <a id="get-sender-group"></a>
 
-### 발신 프로필 그룹 조회
+### 발신 프로필 그룹 조회 { #get-sender-group }
 
 <a id="request-7"></a>
 
@@ -614,7 +614,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="add-sender-to-group"></a>
 
-### 그룹에 발신 프로필 추가
+### 그룹에 발신 프로필 추가 { #add-sender-to-group }
 
 <a id="request-8"></a>
 
@@ -666,7 +666,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="delete-sender-from-group"></a>
 
-### 그룹에 발신 프로필 삭제
+### 그룹에 발신 프로필 삭제 { #delete-sender-from-group }
 
 <a id="request-9"></a>
 

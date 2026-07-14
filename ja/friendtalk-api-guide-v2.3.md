@@ -4,13 +4,13 @@
 
 <a id="friendtalk-service-end-of-service-notice"></a>
 
-## フレンドトークサービス終了のご案内
+## フレンドトークサービス終了のご案内 { #friendtalk-service-end-of-service-notice }
 
 <!-- TODO: translate body -->
 
 <a id="friendtalk"></a>
 
-## カカともへのメッセージ
+## カカともへのメッセージ { #friendtalk }
 
 <a id="api-domain"></a>
 
@@ -31,7 +31,7 @@
 
 <a id="overview-of-v23-api"></a>
 
-## v2.3 API紹介
+## v2.3 API紹介 { #overview-of-v23-api }
 1. カカともへのメッセージワイドアイテムリスト、カルーセルフィード型、クーポン、ビジネスフォームボタン機能が追加されました。
 2. ワイドアイテムリスト画像登録、カルーセル画像登録APIが追加されました。
 3. 画像照会時、 imageTypeフィールドが追加されました。
@@ -39,7 +39,7 @@
 
 <a id="send-messages"></a>
 
-## メッセージの送信
+## メッセージの送信 { #send-messages }
 
 [URL]
 
@@ -578,7 +578,7 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 
 <a id="list-deliveries"></a>
 
-## 送信リスト照会
+## 送信リスト照会 { #list-deliveries }
 
 <a id="request"></a>
 
@@ -708,7 +708,7 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 
 <a id="get-deliveries"></a>
 
-## 送信単件照会
+## 送信単件照会 { #get-deliveries }
 
 <a id="request-2"></a>
 
@@ -953,10 +953,10 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 
 <a id="message"></a>
 
-## メッセージ
+## メッセージ { #message }
 <a id="cancel-sending-messages"></a>
 
-### メッセージ送信取消
+### メッセージ送信取消 { #cancel-sending-messages }
 
 <a id="request-3"></a>
 
@@ -1021,7 +1021,7 @@ curl -X DELETE -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Ke
 
 <a id="query-updated-message-results"></a>
 
-### メッセージ結果アップデート照会
+### メッセージ結果アップデート照会 { #query-updated-message-results }
 
 <a id="request-4"></a>
 
@@ -1126,7 +1126,7 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 
 <a id="list-mass-delivery-requests"></a>
 
-### 大量送信リクエストリスト照会
+### 大量送信リクエストリスト照会 { #list-mass-delivery-requests }
 
 <a id="request-5"></a>
 
@@ -1239,7 +1239,7 @@ https://kakaotalk-bizmessage.api.nhncloudservice.com/friendtalk/v2.3/appkeys/{ap
 
 <a id="list-mass-delivery-recipients"></a>
 
-### 大量送信大量送信受信者リスト照会
+### 大量送信大量送信受信者リスト照会 { #list-mass-delivery-recipients }
 
 <a id="request-6"></a>
 
@@ -1338,7 +1338,7 @@ https://kakaotalk-bizmessage.api.nhncloudservice.com/friendtalk/v2.3/appkeys/{ap
 
 <a id="get-a-mass-delivery-recipient"></a>
 
-### 大量送信大量送信受信者照会
+### 大量送信大量送信受信者照会 { #get-a-mass-delivery-recipient }
 
 <a id="request-7"></a>
 
@@ -1582,11 +1582,11 @@ https://kakaotalk-bizmessage.api.nhncloudservice.com/friendtalk/v2.3/appkeys/{ap
 
 <a id="image-management"></a>
 
-## イメージの管理
+## イメージの管理 { #image-management }
 
 <a id="register-images"></a>
 
-### イメージの登録
+### イメージの登録 { #register-images }
 <a id="request-8"></a>
 
 #### リクエスト
@@ -1658,7 +1658,7 @@ curl -X POST -H "Content-Type: multipart/form-data" -H "X-Secret-Key:{secretkey}
 
 <a id="register-wide-item-list-images"></a>
 
-### ワイドアイテムリスト画像登録
+### ワイドアイテムリスト画像登録 { #register-wide-item-list-images }
 <a id="request-9"></a>
 
 #### リクエスト
@@ -1729,7 +1729,7 @@ curl -X POST -H "Content-Type: multipart/form-data" -H "X-Secret-Key:{secretkey}
 
 <a id="register-carousel-image"></a>
 
-### カルーセル画像登録
+### カルーセル画像登録 { #register-carousel-image }
 <a id="request-10"></a>
 
 #### リクエスト
@@ -1800,7 +1800,7 @@ curl -X POST -H "Content-Type: multipart/form-data" -H "X-Secret-Key:{secretkey}
 
 <a id="query-images"></a>
 
-### イメージの照会
+### イメージの照会 { #query-images }
 <a id="request-11"></a>
 
 #### リクエスト
@@ -1887,7 +1887,7 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 
 <a id="delete-images"></a>
 
-### イメージの削除
+### イメージの削除 { #delete-images }
 <a id="request-12"></a>
 
 #### リクエスト
@@ -1950,10 +1950,10 @@ curl -X DELETE -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Ke
 
 <a id="upload"></a>
 
-## アップロード
+## アップロード { #upload }
 <a id="register-a-business-form"></a>
 
-### ビジネスフォーム登録
+### ビジネスフォーム登録 { #register-a-business-form }
 [URL]
 
 ```
@@ -2022,10 +2022,10 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 
 <a id="manage-alternative-delivery"></a>
 
-## 代替送信管理
+## 代替送信管理 { #manage-alternative-delivery }
 <a id="sms-app-key-registration"></a>
 
-### SMS AppKey 登録
+### SMS AppKey 登録 { #sms-app-key-registration }
 
 [URL]
 
@@ -2084,7 +2084,7 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 
 <a id="register-alternative-delivery-settings"></a>
 
-### 代替送信設定登録
+### 代替送信設定登録 { #register-alternative-delivery-settings }
 
 [URL]
 

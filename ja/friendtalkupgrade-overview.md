@@ -8,7 +8,7 @@
 
 <a id="features"></a>
 
-## 特徴
+## 特徴 { #features }
 
 * 友だちになっているユーザーを対象に、広告メッセージを含む様々な広報メッセージを送信できます。
 * 友だちになっていないユーザーの場合でも、広告主のマーケティング受信に同意したユーザーを対象に広告メッセージを送信できます。
@@ -20,7 +20,7 @@
 
 <a id="main-features"></a>
 
-## 主な機能
+## 主な機能 { #main-features }
 
 * メッセージの送信、照会、画像管理のためのRESTful APIを提供します。
 * コンソールではメッセージの送信、照会、画像管理の履歴を照会できます。
@@ -29,13 +29,13 @@
 
 <a id="brand-message-targeting"></a>
 
-## ブランドメッセージのターゲティング
+## ブランドメッセージのターゲティング { #brand-message-targeting }
 
 ![friendtalkupgrade_1_20250508.png](https://static.toastoven.net/prod_alimtalk/friendtalkupgrade/friendtalkupgrade_1_20250508.png)
 
 <a id="m-advertisers-users-with-marketing-consent"></a>
 
-### M: 広告主のマーケティング受信に同意したユーザー(カカオトークでの受信に同意)
+### M: 広告主のマーケティング受信に同意したユーザー(カカオトークでの受信に同意) { #m-advertisers-users-with-marketing-consent }
 
 * 広告主のマーケティング受信に同意したユーザー(カカオトークでの受信に同意)を対象に広告メッセージを送信します。
 * 受信者が送信チャネルの友だちではない場合、無料受信拒否情報が含まれたNタイプのチャネルメッセージとして送信されます。
@@ -45,7 +45,7 @@
 
 <a id="n-advertisers-users-with-marketing-consent--channel-friend"></a>
 
-### N: 広告主のマーケティング受信に同意したユーザー(カカオトークでの受信に同意) - チャネルの友だち
+### N: 広告主のマーケティング受信に同意したユーザー(カカオトークでの受信に同意) - チャネルの友だち { #n-advertisers-users-with-marketing-consent--channel-friend }
 
 * 広告主のマーケティング受信に同意したユーザー(カカオトークでの受信に同意)から、チャネルの友だちを除いて広告メッセージを送信します。
 * 受信者は送信チャネルの友だちではないため、無料受信拒否情報が含まれたNタイプのチャネルメッセージとして送信されます。
@@ -55,13 +55,13 @@
 
 <a id="i-target-of-advertiser-sending-request-channel-friend"></a>
 
-### I: 広告主の送信リクエスト対象 ∩ チャネルの友だち
+### I: 広告主の送信リクエスト対象 ∩ チャネルの友だち { #i-target-of-advertiser-sending-request-channel-friend }
 
 * 広告主の送信リクエスト対象のうち、チャネルの友だちである場合にのみ広告メッセージを送信します。
 
 <a id="brand-message-sending-support-type"></a>
 
-## ブランドメッセージでサポートされる送信タイプ
+## ブランドメッセージでサポートされる送信タイプ { #brand-message-sending-support-type }
 
 - **基本形式(テンプレート)で登録した場合、全ての送信サポートタイプにおいて「マーケティング受信同意」ユーザーを対象に、ターゲティングオプションMとNを使用して送信できます。**<br>
     - チャネルの友だちを対象に送信をご希望の場合は、ターゲティングオプションIを使用する必要があります。
@@ -79,7 +79,7 @@
 
 <a id="precautions-before-sending"></a>
 
-## 送信前の注意事項
+## 送信前の注意事項 { #precautions-before-sending }
 
 非友だちメッセージ送信(ターゲティング M, N)は、以下の条件を全て満たす場合に送信できます。
 
@@ -95,7 +95,7 @@
 
 <a id="notice-of-personal-information-consignee"></a>
 
-## 個人情報委託先の告知に関するご案内
+## 個人情報委託先の告知に関するご案内 { #notice-of-personal-information-consignee }
 
 クライアント企業がNHN Cloud > Notification > KakaoTalk Bizmessageサービスを利用する際、クライアント企業と当社間において個人情報の取り扱いに関する業務委託関係が発生します。これに基づき、情報通信網法及び個人情報保護法に従い、委託者であるクライアント企業は個人情報処理方針を通じて当社に個人情報を
 委託した現況(委託先及び業務内容)を公開する必要があります。

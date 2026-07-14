@@ -4,10 +4,10 @@
 
 <a id="send-alimtalk"></a>
 
-## Send AlimTalk
+## Send AlimTalk { #send-alimtalk }
 <a id="general-delivery"></a>
 
-### General Delivery
+### General Delivery { #general-delivery }
 This is general delivery screen of AlimTalk
 
 ![KTB_09_20230926.png](https://static.toastoven.net/prod_alimtalk/KTB_09_20230926.png)
@@ -30,7 +30,7 @@ This is general delivery screen of AlimTalk
 
 <a id="mass-delivery"></a>
 
-### Mass Delivery
+### Mass Delivery { #mass-delivery }
 It is the feature to send AlimTalk to multiple recipient numbers through an Excel/CSV format template file. Select <b>Mass Delivery </b> from bottom tab. 
 ![KTB_10_20230926.png](https://static.toastoven.net/prod_alimtalk/KTB_10_20230926.png)
 * Select a template and click on <b>Download Template</b> to download the CSV, XLSX files containing the template replacement. If the template replacement is not included, the delivery will be processed as fail.
@@ -49,7 +49,7 @@ If you click on <b>Send</b> button, you can select <b>Inspect and proceed</b> or
 
 <a id="alternative-delivery"></a>
 
-### Alternative Delivery
+### Alternative Delivery { #alternative-delivery }
 It is the feature to send a text message alternatively if you fail to send AlimTalk. 
 <b>Send with common content </b> or <b>Set different messages for each user </b> can be selected to send. 
 ![KTB_12_20230926.png](https://static.toastoven.net/prod_alimtalk/KTB_12_20230926.png)
@@ -74,10 +74,10 @@ It is the feature to send a text message alternatively if you fail to send AlimT
 
 <a id="view-delivery"></a>
 
-## View Delivery 
+## View Delivery { #view-delivery }
 <a id="retrieve-send-results"></a>
 
-### Retrieve send results 
+### Retrieve send results { #retrieve-send-results }
 You can view based on the message type. 
 (<b>Request ID</b> and <b>Request Date and Time</b> are required values.) 
 ![KTB_13_20250403.jpg](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_alimtalk/KTB_13_20250403.jpg)
@@ -89,7 +89,7 @@ You can view based on the message type.
 
 <a id="cancel-send"></a>
 
-### Cancel Send
+### Cancel Send { #cancel-send }
 During normal delivery, scheduled delivery with sending request date and time set to the future can be canceled. 
 ![KTB_14_20250403.jpg](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_alimtalk/KTB_14_20250403.jpg)
 * You can see the check box on the left side of the request ID by querying the scheduled delivery request.
@@ -100,7 +100,7 @@ During normal delivery, scheduled delivery with sending request date and time se
 
 <a id="view-mass-delivery"></a>
 
-### View Mass delivery
+### View Mass delivery { #view-mass-delivery }
 You can View Mass delivery of AlimTalk. 
 ![KTB_15_20250403.jpg](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_alimtalk/KTB_15_20250403.png)
 * View: You can look up mass AlimTalk messages sent in the inquiry form at the top. If you select the line of the inquiry list, you can check the receipt number and the sending information (sending contents, sending result) in the inquiry form at the bottom.
@@ -132,19 +132,19 @@ You can select the recipient from <b>View by Recipient</b> to see if the deliver
 
 <a id="template-management"></a>
 
-## Template Management
+## Template Management { #template-management }
 You can register a template by clicking the <b>Register Template</b> button.
 
 <a id="template-type"></a>
 
-### Template type
+### Template type { #template-type }
 * Registrable message types include **Channel Add type, Basic type, Additional information type, and Complex type**.
 * Registrable highlights types include **Highlight type, Image type and Item list type **.
 * You can select the type you want to send and create a template.
 
 <a id="register-templates"></a>
 
-### Register Templates
+### Register Templates { #register-templates }
 * Kakao AlimTalk Guide
     * [[ AlimTalk Creation Guide]](https://kakaobusiness.gitbook.io/main/ad/bizmessage/notice-friend/content-guide), [[ AlimTalk Review Guide]](https://kakaobusiness.gitbook.io/main/ad/bizmessage/notice-friend/audit), [[ AlimTalk Precautions]](https://kakaobusiness.gitbook.io/main/ad/infotalk/operations)
 * Sender profile/Group
@@ -219,7 +219,7 @@ The inspection and review of AlimTalk template will be conducted directly by Kak
 
 <a id="manage-alternative-delivery"></a>
 
-## Manage Alternative Delivery
+## Manage Alternative Delivery { #manage-alternative-delivery }
 
 * If AlimTalk fails to send, you can set it to be sent alternatively as a text message.
 * The NHN Cloud SMS service must be in use and will be sent by SMS/LMS depending on the length of the message. (A separate fee will be charged for sending text messages for each type.)
@@ -234,7 +234,7 @@ The inspection and review of AlimTalk template will be conducted directly by Kak
 
 <a id="manage-sender-profile-group"></a>
 
-## Manage sender profile group
+## Manage sender profile group { #manage-sender-profile-group }
 * You can group two or more sender profiles to register templates at once.
 * One sender profile can belong to multiple groups in duplicate.
 * Sender profile group ID can be up to 10 characters. (Korean/English)

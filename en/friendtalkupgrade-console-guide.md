@@ -4,17 +4,17 @@
 
 <a id="brand-message-sending"></a>
 
-## Brand Message sending
+## Brand Message sending { #brand-message-sending }
 
 <a id="regular-send"></a>
 
-### Regular send
+### Regular send { #regular-send }
 
 You can set up an outgoing profile and enter content to send messages in the form of brand message. To send a brand message, select Notification > KakaoTalk Bizmessage > Brand Message on the console.
 
 <a id="when-using-a-template"></a>
 
-### When using a template
+### When using a template { #when-using-a-template }
 
 ![friendtalkupgrade_04_20250616.png](https://static.toastoven.net/prod_alimtalk/friendtalkupgrade/friendtalkupgrade_04_20250729.png)
 
@@ -45,7 +45,7 @@ You can set up an outgoing profile and enter content to send messages in the for
 
 <a id="when-not-using-a-template"></a>
 
-### When not using a template
+### When not using a template { #when-not-using-a-template }
 
 ![friendtalkupgrade_05_20250616.png](https://static.toastoven.net/prod_alimtalk/friendtalkupgrade/friendtalkupgrade_05_20250729.png)
 
@@ -103,7 +103,7 @@ You can set up an outgoing profile and enter content to send messages in the for
 
 <a id="mass-delivery"></a>
 
-### Mass Delivery
+### Mass Delivery { #mass-delivery }
 
 This feature allows you to send brand messages to multiple recipient numbers using a template file in Excel/CSV format. Select **Mass Delivery** from the bottom tab.
 
@@ -125,7 +125,7 @@ When clicking **Send** button, you can select **Proceed after Review** or **Imme
 
 <a id="fallback"></a>
 
-### Fallback
+### Fallback { #fallback }
 
 A feature that allows you to replace a brand message with a text message if it fails to send. You can send it by selecting **Set as Common Content** or **Set by Different Messages per User**.
 
@@ -176,11 +176,11 @@ Advertising messages refer to messages about information, goods, or services tha
 
 <a id="view-send"></a>
 
-## View Send
+## View Send { #view-send }
 
 <a id="view-send-result"></a>
 
-### View Send Result
+### View Send Result { #view-send-result }
 
 ![friendtalkupgrade_07_20250616.png](https://static.toastoven.net/prod_alimtalk/friendtalkupgrade/friendtalkupgrade_07_20250729.png)
 
@@ -191,7 +191,7 @@ Advertising messages refer to messages about information, goods, or services tha
 
 <a id="cancel-send"></a>
 
-### Cancel send
+### Cancel send { #cancel-send }
 
 Cancellation is possible for scheduled send with a sending request date set to the future during regular send.
 
@@ -202,11 +202,11 @@ Cancellation is possible for scheduled send with a sending request date set to t
 
 <a id="view-mass-delivery"></a>
 
-## View Mass Delivery
+## View Mass Delivery { #view-mass-delivery }
 
 <a id="view-send-result-2"></a>
 
-### View Send Result
+### View Send Result { #view-send-result-2 }
 
 ![friendtalkupgrade_masssearch01_20250729.png](https://static.toastoven.net/prod_alimtalk/friendtalkupgrade/friendtalkupgrade_masssearch01_20250729.png)
 
@@ -218,7 +218,7 @@ Cancellation is possible for scheduled send with a sending request date set to t
 
 <a id="manage-image"></a>
 
-## Manage Image
+## Manage Image { #manage-image }
 
 ![friendtalkupgrade_8_20250616.png](https://static.toastoven.net/prod_alimtalk/friendtalkupgrade/friendtalkupgrade_8_20250616.png)
 
@@ -243,7 +243,7 @@ File specifications and recommended/maximum sizes must be strictly followed.
 
 <a id="manage-video"></a>
 
-## Video Management
+## Video Management { #manage-video }
 
 ![friendtalkupgrade_video_management.png](TODO: 콘솔 캡처 후 NHN static 호스트 URL 교체)
 
@@ -267,7 +267,7 @@ You can register or delete videos to be used in brand messages and check the inf
 
 <a id="manage-templates"></a>
 
-## Manage Templates
+## Manage Templates { #manage-templates }
 
 ![friendtalkupgrade_09_20250616.png](https://static.toastoven.net/prod_alimtalk/friendtalkupgrade/friendtalkupgrade_09_20250729.png)
 
@@ -277,13 +277,13 @@ You can register or delete videos to be used in brand messages and check the inf
 
 <a id="080-opt-out-management"></a>
 
-## 080 Opt-out management
+## 080 Opt-out management { #080-opt-out-management }
 
 * In brand messages, the “080 opt-out management” and “fallback” features are integrated into a single SMS AppKey with NHN Cloud's SMS service integration.
 
 <a id="register-and-manage-080-opt-out-numbers"></a>
 
-### Register and manage 080 opt-out numbers
+### Register and manage 080 opt-out numbers { #register-and-manage-080-opt-out-numbers }
 
 * When sending Brand Message marketing to users who have opted in, you must register a 080 number in your outgoing profile because messages can be sent to recipients who are not friends with your outgoing profile.
   * The 080 opt-out number for the outgoing profile is data that is applied to all outgoing profiles of other organizations, projects, and dealers in the same talk channel, so it must be changed carefully.
@@ -301,7 +301,7 @@ You can register or delete videos to be used in brand messages and check the inf
 
 <a id="manage-fallback"></a>
 
-### Manage Fallback
+### Manage Fallback { #manage-fallback }
 
 * If a brand message fails to be sent, you can set it to be sent as a fallback message.
 * You must be using NHN Cloud SMS service, and messages will be sent via SMS/LMS depending on the message length (separate fees apply for sending each type of text message).
@@ -317,7 +317,7 @@ You can register or delete videos to be used in brand messages and check the inf
 
 <a id="apply-for-using-non-friend-message-sending-targeting-m-n"></a>
 
-## Apply for using non-friend message sending (targeting M, N)
+## Apply for using non-friend message sending (targeting M, N) { #apply-for-using-non-friend-message-sending-targeting-m-n }
 
 * If you wish to use non-friend message sending (targeting M, N), you must apply for use. If you do not apply for use, the M/N type will not be displayed during send.
 * Applications for use will be approved if they meet the following conditions:
@@ -329,7 +329,7 @@ You can register or delete videos to be used in brand messages and check the inf
 
 <a id="cautions"></a>
 
-### Cautions
+### Cautions { #cautions }
 * If your business verification is canceled, the permission to send non-friend messages (targeting M, N) will be canceled. You will need to reapply for use after your business verification has been re-reviewed.
 * The consent evidence file for receiving advertising information is saved per Talk channel, so any changes will be applied to all profiles sent by other dealers in the same Talk channel.
 * If a file uploaded by a dealer already exists, you can skip the file upload process and apply to send non-friend messages (targeting M, N).

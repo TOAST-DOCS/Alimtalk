@@ -4,7 +4,7 @@
 
 <a id="identity-verification"></a>
 
-## 本人認証
+## 本人認証 { #identity-verification }
 * アビューズ防止のためのカカオトークポリシーにより、KakaoTalk Bizmessageサービスに強化された本人認証の事前登録制が適用されました。
     * 2023年4月25日以降に加入した会員に限る
 * 本人認証は、基本的に携帯電話本人認証と会員タイプに応じた追加書類審査が必要です。
@@ -15,7 +15,7 @@
 
 <a id="required-documents-for-identity-verification"></a>
 
-### 本人認証に必要な書類
+### 本人認証に必要な書類 { #required-documents-for-identity-verification }
 | 会員タイプ | 認証方法   | 必要書類       |
 |---------|-----------|---------------|
 | 事業者代表 | 携帯電話本人認証 | 事業者登録証、在職証明書 |
@@ -23,7 +23,7 @@
 
 <a id="authentication-representative"></a>
 
-### 本人認証代表
+### 本人認証代表 { #authentication-representative }
 ![KTB_01_20230926.png](https://static.toastoven.net/prod_alimtalk/KTB_01_20230926.png)
 1. <b>本人認証</b>タブを選択します。
 2. <b>携帯電話本人認証および必要書類添付する</b>をクリックして、手続きを開始します。
@@ -35,18 +35,18 @@
 
 <a id="identity-verification-status-settings"></a>
 
-### 本人認証のステータス設定
+### 本人認証のステータス設定 { #identity-verification-status-settings }
 * 審査中：登録した本人認証の認証書類を管理者が審査している状態
 * 拒否：本人認証が却下され、書類の再登録が必要な状態
 * 承認：本人認証承認が完了した状態
 
 <a id="manage-sender-profiles"></a>
 
-## 発信プロフィールの管理
+## 発信プロフィールの管理 { #manage-sender-profiles }
 
 <a id="add-sender-profiles"></a>
 
-### 発信プロフィールの追加
+### 発信プロフィールの追加 { #add-sender-profiles }
 カカオトークチャンネルの開設完了後、発信プロフィールを登録します。カカオトークチャンネル作成についての詳細ガイドは、[発信プロフィール](https://docs.nhncloud.com/ko/Notification/KakaoTalk%20Bizmessage/ko/sender-overview/ )で確認できます。
 発信プロフィールの登録が完了すると、管理者の携帯電話にカカオトークトークンメッセージが送信されます。
 ![KTB_02_20230926.png](https://static.toastoven.net/prod_alimtalk/KTB_02_20230926.png)
@@ -58,7 +58,7 @@
 
 <a id="register-token"></a>
 
-### トークンの登録
+### トークンの登録 { #register-token }
 管理者の携帯電話で受け取ったトークンメッセージを入力すると、発信プロフィールの登録が完了します。
 
 ![KTB_03_20230926.png](https://static.toastoven.net/prod_alimtalk/KTB_03_20230926.png)
@@ -69,7 +69,7 @@
 
 <a id="kakaotalk-channel-status"></a>
 
-### カカオトークチャンネルの状態
+### カカオトークチャンネルの状態 { #kakaotalk-channel-status }
 <a id="nhn-cloud-sender-profile-status"></a>
 
 #### NHN Cloud発信プロフィールの状態
@@ -92,7 +92,7 @@
 
 <a id="sender-profile-status"></a>
 
-### 発信プロフィールの状態
+### 発信プロフィールの状態 { #sender-profile-status }
 <a id="sender-profile-dormant-status"></a>
 
 #### 発信プロフィールの休眠状態
@@ -109,7 +109,7 @@
 
 <a id="kakaotalk-channel-spam-status"></a>
 
-### カカオトークチャンネルのスパム状態
+### カカオトークチャンネルのスパム状態 { #kakaotalk-channel-spam-status }
 <a id="kakaotalk-channel-spam-status-2"></a>
 
 #### カカオトークチャンネルのスパム状態
@@ -126,7 +126,7 @@
 
 <a id="first-time-user-restrictions"></a>
 
-### 最初のユーザー制限
+### 最初のユーザー制限 { #first-time-user-restrictions }
 特定の基準を満たしていない発信プロフィールは、アビューズ防止のために最初のユーザー制限が適用され、一部機能に制限がかかります。
 
 <a id="first-time-user-restriction-items"></a>
@@ -145,20 +145,20 @@
 
 <a id="sending-settings"></a>
 
-## 送信設定
+## 送信設定 { #sending-settings }
 * メッセージ保管期間ポリシーに従って、90日が経過した送信履歴データをバックアップできます。
 * お知らせトークのバックアップを行うかどうか、ファイル拡張子、ファイルをアップロードする場所の情報を入力すると、その場所にバックアップ日時を含むファイルが作成されます。
 
 <a id="data-retention-period"></a>
 
-### データの保管期間
+### データの保管期間 { #data-retention-period }
 * データ保管ポリシーに従って、過去90日の送信履歴を保管します。
 * 統計データは過去90日の情報を保管します。
 * カカオサービスにアップロードされた画像は、カカオCDNサーバーに永久保管されます。
 
 <a id="webhook-management"></a>
 
-## Webフック管理
+## Webフック管理 { #webhook-management }
 指定したイベントが発生した時、URLを指定してWebフックイベンを受け取ることができます。
 ![KTB_04_20230926.png](https://static.toastoven.net/prod_alimtalk/KTB_04_20230926.png)
 1. 登録するイベントタイプを選択します。
@@ -170,7 +170,7 @@
 
 <a id="statistical-event-key-settings"></a>
 
-## 統計イベントキーの設定
+## 統計イベントキーの設定 { #statistical-event-key-settings }
 イベントキーを登録して、そのキーに送信すると、統計イベントキーごとに統計データを収集できます。
 統計イベントキー用語の意味は、<b>参考</b>でご確認ください。
 ![KTB_05_20230926.png](https://static.toastoven.net/prod_alimtalk/KTB_05_20230926.png)
@@ -183,10 +183,10 @@
 
 <a id="statistics"></a>
 
-## 統計
+## 統計 { #statistics }
 <a id="query-statistics"></a>
 
-### 統計照会
+### 統計照会 { #query-statistics }
 * 送信リクエスト期間、統計イベントキー、テンプレートなど、タイプごとに統計を照会できます。
 * 送信リクエスト、成功、失敗など、送信ステータスをグラフと表で確認できます。
 
@@ -205,10 +205,10 @@
 
 <a id="note"></a>
 
-## 参考
+## 参考 { #note }
 <a id="statistics-event-keys-and-statistics"></a>
 
-### 統計イベントキーと統計
+### 統計イベントキーと統計 { #statistics-event-keys-and-statistics }
 
 | 用語     | 説明                                  |
 |----------|---------------------------------------|

@@ -4,7 +4,7 @@
 
 <a id="alimtalk"></a>
 
-## 알림톡
+## 알림톡 { #alimtalk }
 
 <a id="api-domain"></a>
 
@@ -25,18 +25,18 @@
 
 <a id="overview-of-v21-api"></a>
 
-## v2.1 API 소개
+## v2.1 API 소개 { #overview-of-v21-api }
 1. 알림톡 템플릿 이미지 업로드 API가 추가되었습니다.
 2. 템플릿 조회 시, templateImageName, templateImageUrl 필드가 추가되었습니다.
 3. 예약 발송이 90일 -> 60일 이후까지 가능하도록 변경되었습니다.
 
 <a id="general-messages"></a>
 
-## 일반 메시지
+## 일반 메시지 { #general-messages }
 
 <a id="request-of-sending-replaced-messages"></a>
 
-### 메시지 치환 발송 요청
+### 메시지 치환 발송 요청 { #request-of-sending-replaced-messages }
 
 [URL]
 
@@ -172,7 +172,7 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 
 <a id="request-of-sending-full-text"></a>
 
-### 메시지 전문 발송 요청
+### 메시지 전문 발송 요청 { #request-of-sending-full-text }
 
 [URL]
 
@@ -328,7 +328,7 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 
 <a id="list-messages"></a>
 
-### 메시지 리스트 조회
+### 메시지 리스트 조회 { #list-messages }
 
 <a id="request"></a>
 
@@ -472,7 +472,7 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 
 <a id="get-messages"></a>
 
-### 메시지 단건 조회
+### 메시지 단건 조회 { #get-messages }
 
 <a id="request-2"></a>
 
@@ -607,7 +607,7 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 
 <a id="authentication-messages"></a>
 
-## 인증 메시지
+## 인증 메시지 { #authentication-messages }
 
 <span id="precautions-authword"></span>
 1. 인증 메시지 발송 시 포함되어야 할 인증 문구 안내
@@ -622,7 +622,7 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 
 <a id="request-of-sending-replaced-messages-2"></a>
 
-### 메시지 치환 발송 요청
+### 메시지 치환 발송 요청 { #request-of-sending-replaced-messages-2 }
 
 [URL]
 
@@ -755,7 +755,7 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 
 <a id="request-of-sending-full-text-2"></a>
 
-### 메시지 전문 발송 요청
+### 메시지 전문 발송 요청 { #request-of-sending-full-text-2 }
 
 [URL]
 
@@ -906,7 +906,7 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 
 <a id="list-messages-2"></a>
 
-### 메시지 리스트 조회
+### 메시지 리스트 조회 { #list-messages-2 }
 
 <a id="request-3"></a>
 
@@ -1050,7 +1050,7 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 
 <a id="get-messages-2"></a>
 
-### 메시지 단건 조회
+### 메시지 단건 조회 { #get-messages-2 }
 
 <a id="request-4"></a>
 
@@ -1185,10 +1185,10 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 
 <a id="messages"></a>
 
-## 메시지
+## 메시지 { #messages }
 <a id="cancel-sending-messages"></a>
 
-### 메시지 발송 취소
+### 메시지 발송 취소 { #cancel-sending-messages }
 
 <a id="request-5"></a>
 
@@ -1253,7 +1253,7 @@ curl -X DELETE -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Ke
 
 <a id="query-updates-of-message-result"></a>
 
-### 메시지 결과 업데이트 조회
+### 메시지 결과 업데이트 조회 { #query-updates-of-message-result }
 
 <a id="request-6"></a>
 
@@ -1348,7 +1348,7 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 
 <a id="messages-1"></a>
 
-### SMS/LMS 대체 발송 상태 코드
+### SMS/LMS 대체 발송 상태 코드 { #messages-1 }
 | 이름 |	설명|
 |---|---|
 |RSC01|	대체 발송 미대상|
@@ -1359,11 +1359,11 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 
 <a id="templates"></a>
 
-## 템플릿
+## 템플릿 { #templates }
 
 <a id="list-template-categories"></a>
 
-### 템플릿 카테고리 조회
+### 템플릿 카테고리 조회 { #list-template-categories }
 <a id="request-7"></a>
 
 #### 요청
@@ -1435,7 +1435,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="register-templates"></a>
 
-### 템플릿 등록
+### 템플릿 등록 { #register-templates }
 <a id="request-8"></a>
 
 #### 요청
@@ -1538,7 +1538,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="modify-templates"></a>
 
-### 템플릿 수정
+### 템플릿 수정 { #modify-templates }
 <a id="request-9"></a>
 
 #### 요청
@@ -1640,7 +1640,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="delete-templates"></a>
 
-### 템플릿 삭제
+### 템플릿 삭제 { #delete-templates }
 <a id="request-10"></a>
 
 #### 요청
@@ -1688,7 +1688,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="inquire-of-templates"></a>
 
-### 템플릿 문의하기
+### 템플릿 문의하기 { #inquire-of-templates }
 <a id="request-11"></a>
 
 #### 요청
@@ -1751,7 +1751,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="attach-files-to-send-inquiry-on-templates"></a>
 
-### 파일 첨부하여 템플릿 문의하기
+### 파일 첨부하여 템플릿 문의하기 { #attach-files-to-send-inquiry-on-templates }
 <a id="request-12"></a>
 
 #### 요청
@@ -1816,7 +1816,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="list-templates"></a>
 
-### 템플릿 리스트 조회
+### 템플릿 리스트 조회 { #list-templates }
 
 <a id="request-13"></a>
 
@@ -1982,7 +1982,7 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 
 <a id="list-template-modifications"></a>
 
-### 템플릿 수정 리스트 조회
+### 템플릿 수정 리스트 조회 { #list-template-modifications }
 
 <a id="request-14"></a>
 
@@ -2134,7 +2134,7 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 
 <a id="register-template-image"></a>
 
-### 템플릿 이미지 등록
+### 템플릿 이미지 등록 { #register-template-image }
 <a id="request-15"></a>
 
 #### 요청
@@ -2201,10 +2201,10 @@ curl -X POST -H "Content-Type: multipart/form-data" -H "X-Secret-Key:{secretkey}
 
 <a id="section-1"></a>
 
-## 대체 발송 관리
+## 대체 발송 관리 { #section-1 }
 <a id="section-1-1"></a>
 
-### SMS AppKey 등록
+### SMS AppKey 등록 { #section-1-1 }
 
 [URL]
 
@@ -2263,7 +2263,7 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 
 <a id="section-1-2"></a>
 
-### 대체 발송 설정 등록
+### 대체 발송 설정 등록 { #section-1-2 }
 
 [URL]
 
