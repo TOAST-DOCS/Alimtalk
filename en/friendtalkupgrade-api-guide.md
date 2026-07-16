@@ -2,7 +2,7 @@
 
 <a id="brand-message"></a>
 
-## Brand Message { #brand-message }
+## Brand Message
 
 <a id="api-domain"></a>
 
@@ -14,11 +14,11 @@
 
 <a id="introduce-v10-api"></a>
 
-## Introduction to v1.0 API { #introduce-v10-api }
+## Introduction to v1.0 API
 
 <a id="manage-non-friend-message-sending-targeting-m-n"></a>
 
-## Manage Non-Friend Message Sending (Targeting M, N) { #manage-non-friend-message-sending-targeting-m-n }
+## Manage Non-Friend Message Sending (Targeting M, N)
 
 Non-friend message sending (Targeting M, N) can be used when all of the following conditions are met:
 
@@ -30,7 +30,7 @@ Non-friend message sending (Targeting M, N) can be used when all of the followin
 
 <a id="upload-marketing-consent-records"></a>
 
-### Upload Marketing Consent Records { #upload-marketing-consent-records }
+### Upload Marketing Consent Records
 
 <a id="requested"></a>
 
@@ -91,7 +91,7 @@ Content-Type: multipart/form-data
 
 <a id="apply-for-using-non-friend-message-sending-targeting-m-n"></a>
 
-### Apply for Non-Friend Message Sending (Targeting M, N) { #apply-for-using-non-friend-message-sending-targeting-m-n }
+### Apply for Non-Friend Message Sending (Targeting M, N)
 
 <a id="requested-2"></a>
 
@@ -146,7 +146,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="request-to-send-a-free-form-message"></a>
 
-## Send Freestyle Messages { #request-to-send-a-free-form-message }
+## Send Freestyle Messages
 
 * Marketing consent-based sending can be used.
     * You can specify the message target type by setting the targeting field.
@@ -1290,7 +1290,7 @@ In the carousel type, you can apply different replacement variable values to eac
 
 <a id="request-to-send-basic-message"></a>
 
-## Send Basic Message Request { #request-to-send-basic-message }
+## Send Basic Message Request
 
 * This delivery uses a template.
 * Marketing consent-based sending can be used.
@@ -1308,7 +1308,7 @@ In the carousel type, you can apply different replacement variable values to eac
 
 <a id="cautions-for-use"></a>
 
-### Notes on Usage { #cautions-for-use }
+### Notes on Usage
 
 - `unsubscribeNo` and `unsubscribeAuthNo` are the 080 toll-free opt-out phone number and authentication number. If either one is not entered, the message will be sent using the opt-out information registered in the Sender Profile.
 - If you enter `unsubscribeNo` and `unsubscribeAuthNo` when sending, the message will be sent using the entered values instead of the opt-out information registered in the Sender Profile.
@@ -1452,7 +1452,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="view-sending-list"></a>
 
-## List Deliveries { #view-sending-list }
+## List Deliveries
 
 <a id="requested-5"></a>
 
@@ -1579,7 +1579,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="view-single-sending"></a>
 
-## Get Delivery { #view-single-sending }
+## Get Delivery
 
 <a id="requested-6"></a>
 
@@ -1876,7 +1876,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="message-results"></a>
 
-## Query Message Result Updates { #message-results }
+## Query Message Result Updates
 
 <a id="requested-25"></a>
 
@@ -1987,7 +1987,7 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 
 <a id="cancel-message-sending"></a>
 
-## Cancel Message Delivery { #cancel-message-sending }
+## Cancel Message Delivery
 
 <a id="requested-7"></a>
 
@@ -2053,11 +2053,11 @@ curl -X DELETE -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Ke
 
 <a id="manage-templates"></a>
 
-## Template Management { #manage-templates }
+## Template Management
 
 <a id="view-template-list"></a>
 
-### List Templates { #view-template-list }
+### List Templates
 
 <a id="requested-8"></a>
 
@@ -2330,7 +2330,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="view-single-template"></a>
 
-### Get a Template { #view-single-template }
+### Get a Template
 
 [URL]
 
@@ -2585,7 +2585,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="register-template"></a>
 
-### Template Registration { #register-template }
+### Template Registration
 
 <a id="requested-10"></a>
 
@@ -3304,7 +3304,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="modify-template"></a>
 
-### Modify Template { #modify-template }
+### Modify Template
 
 <a id="requested-11"></a>
 
@@ -3364,7 +3364,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="delete-template"></a>
 
-### Delete Template { #delete-template }
+### Delete Template
 
 <a id="requested-12"></a>
 
@@ -3420,11 +3420,11 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="manage-image"></a>
 
-## Image Management { #manage-image }
+## Image Management
 
 <a id="upload-image"></a>
 
-### Upload Image { #upload-image }
+### Upload Image
 
 <a id="requested-13"></a>
 
@@ -3509,7 +3509,7 @@ Content-Type: multipart/form-data
 
 <a id="view-image"></a>
 
-### View Image { #view-image }
+### View Image
 
 <a id="requested-14"></a>
 
@@ -3580,7 +3580,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="delete-image"></a>
 
-### Delete Image { #delete-image }
+### Delete Image
 
 <a id="requested-15"></a>
 
@@ -3640,13 +3640,13 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="manage-video"></a>
 
-## Video Management { #manage-video }
+## Video Management
 
 This API is used to register, view, and delete videos for use in Brand Message. Registered videos can be used for sending after encoding by the Kakao Biz Center, and only videos with a status of `PUBLIC` can be used for template registration and sending (`PRIVATE` allows template registration only).
 
 <a id="video-upload-flow"></a>
 
-### Video Upload Flow { #video-upload-flow }
+### Video Upload Flow
 
 Video upload is a two-step process.
 
@@ -3661,7 +3661,7 @@ The video file is sent directly to the Kakao upload server without passing throu
 
 <a id="register-video-upload"></a>
 
-### Register Video Upload { #register-video-upload }
+### Register Video Upload
 
 <a id="requested-16"></a>
 
@@ -3750,16 +3750,16 @@ Content-Type: application/json;charset=UTF-8
 | - title         | String  | X        | Video title (set to the file name immediately after upload; synchronized with the value edited in Kakao Biz Center after encoding is complete)                        |
 | - fileName      | String  | O        | Uploaded file name                                                                         |
 | - fileSize      | Long    | O        | File size (bytes)                                                                    |
-| - status        | String  | O        | Video status (see [Video Status](#video-status)). Always `REGISTERED` in the upload registration response.                     |
+| - status        | String  | O        | Video status (see [Video Status](#동영상-상태)). Always `REGISTERED` in the upload registration response.                     |
 | uploadInfo      | Object  | O        | Kakao upload information. Used in step 2.                                                            |
 | - uploadUrl     | String  | O        | Kakao endpoint to which the video file is uploaded directly                                                     |
 | - token         | String  | O        | Upload authentication token. Passed via the `x-kamp-upload-token` header.                                          |
 
-> The `thumbnailUrl`, `videoUrl`, `playUrl`, and `updateDate` fields, which are populated after encoding is complete, can be retrieved using the [Query Video](#view-video) API.
+> The `thumbnailUrl`, `videoUrl`, `playUrl`, and `updateDate` fields, which are populated after encoding is complete, can be retrieved using the [Query Video](#동영상-조회) API.
 
 <a id="video-file-upload-step-2"></a>
 
-### Upload Video File (Step 2) { #video-file-upload-step-2 }
+### Upload Video File (Step 2)
 
 Call the video file directly to `uploadInfo.uploadUrl` from the response above. This request is sent directly to the Kakao upload server, not to the NHN Cloud server.
 
@@ -3815,13 +3815,13 @@ Content-Type: multipart/form-data
 | File name length   | Up to 250 characters     |
 
 * Uploaded videos are available after encoding is complete in the Kakao Biz Center. Encoding time varies depending on the video length and typically takes 5 to 10 minutes.
-* Immediately after upload, the video status starts as `REGISTERED`, transitions through `ENCODING`, and then changes to either `PUBLIC` or `PRIVATE`. You can check the status in the console or via the [Query Video](#view-video) API.
+* Immediately after upload, the video status starts as `REGISTERED`, transitions through `ENCODING`, and then changes to either `PUBLIC` or `PRIVATE`. You can check the status in the console or via the [Query Video](#동영상-조회) API.
 * Registered videos are permanently retained by Kakao. Even if a template is deleted, the videos in the Kakao Biz Center are not automatically removed. The KakaoTalk Channel administrator can manually delete them from the management screen on the channel's business home.
 * If the Step 2 file upload fails or is delayed after Step 1 registration and the token (valid for 5 minutes) expires, you must call the registration again. Videos that were registered but never actually uploaded will be automatically marked with a status of `ERROR` after a certain period of time.
 
 <a id="view-video"></a>
 
-### Query Video { #view-video }
+### Query Video
 
 <a id="requested-18"></a>
 
@@ -3908,7 +3908,7 @@ Content-Type: application/json;charset=UTF-8
 | - - title           | String  | X        | Video title (immediately after upload, set to the file name; synced with the value modified in Kakao Biz Center after encoding is complete) |
 | - - fileName        | String  | O        | Uploaded file name |
 | - - fileSize        | Long    | O        | File size (bytes) |
-| - - status          | String  | O        | Video status (see [Video Status](#video-status)) |
+| - - status          | String  | O        | Video status (see [Video Status](#동영상-상태)) |
 | - - thumbnailUrl    | String  | X        | Thumbnail URL (provided after encoding is complete) |
 | - - videoUrl        | String  | X        | URL for sending and management (provided in `PUBLIC` status) |
 | - - playUrl         | String  | X        | Playback URL |
@@ -3921,7 +3921,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="delete-video"></a>
 
-### Delete a Video { #delete-video }
+### Delete a Video
 
 <a id="requested-19"></a>
 
@@ -3981,7 +3981,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="video-status"></a>
 
-### Video Status { #video-status }
+### Video Status
 
 Describes the `status` field values in the video query response.
 
@@ -3998,11 +3998,11 @@ Describes the `status` field values in the video query response.
 
 <a id="upload"></a>
 
-## Upload { #upload }
+## Upload
 
 <a id="upload-bizform-key"></a>
 
-### Upload Biz Form Key { #upload-bizform-key }
+### Upload Biz Form Key
 
 <a id="requested-20"></a>
 
@@ -4057,11 +4057,11 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="manage-outgoing-profiles"></a>
 
-## Sender Profile Management { #manage-outgoing-profiles }
+## Sender Profile Management
 
 <a id="view-outgoing-profile"></a>
 
-### View Sender Profile { #view-outgoing-profile }
+### View Sender Profile
 
 <a id="requested-21"></a>
 
@@ -4166,7 +4166,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="modify-outgoing-profile-080-opt-out-number"></a>
 
-### Modify Sender Profile 080 Opt-Out Number { #modify-outgoing-profile-080-opt-out-number }
+### Modify Sender Profile 080 Opt-Out Number
 
 <a id="requested-22"></a>
 
@@ -4235,11 +4235,11 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="manage-fallback"></a>
 
-## Alternative Delivery Management { #manage-fallback }
+## Alternative Delivery Management
 
 <a id="register-sms-appkey"></a>
 
-### Register SMS AppKey { #register-sms-appkey }
+### Register SMS AppKey
 
 [URL]
 
@@ -4301,7 +4301,7 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 
 <a id="register-fallback-settings"></a>
 
-### Register Alternative Delivery Settings { #register-fallback-settings }
+### Register Alternative Delivery Settings
 
 [URL]
 
