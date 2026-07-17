@@ -1,4 +1,4 @@
-<!-- pre-align:aligned sig=2a9da7055af6 -->
+<!-- pre-align:aligned sig=130f1c16c96c -->
 
 <a id="error-code"></a>
 ## Notification > KakaoTalk Bizmessage > Error Code { #error-code }
