@@ -1,6 +1,8 @@
 <!-- pre-align:aligned sig=7eb2dbb75382 -->
 
-## Notification > KakaoTalk Bizmessage > ブランドメッセージ > 概要
+<a id="friendtalkupgrade-overview"></a>
+
+## Notification > KakaoTalk Bizmessage > ブランドメッセージ > 概要 { #friendtalkupgrade-overview }
 
 ブランドメッセージは、広告主(クライアント企業)のマーケティング受信に同意した会員(以下、マーケティング受信同意)を対象に、カカオトークのチャネルの友だちであるかどうかにかかわらず、広告メッセージを送信できるメッセージ商品です。
 

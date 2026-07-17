@@ -1,6 +1,8 @@
 <!-- pre-align:aligned sig=f86d36730580 -->
 
-## Notification > KakaoTalk Bizmessage > 문제 해결 가이드
+<a id="troubleshooting-guide"></a>
+
+## Notification > KakaoTalk Bizmessage > 문제 해결 가이드 { #troubleshooting-guide }
 
 <a id="message-for-query-delivery-button"></a>
 

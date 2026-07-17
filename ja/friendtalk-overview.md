@@ -1,6 +1,8 @@
 <!-- pre-align:aligned sig=33585d5af5a4 -->
 
-## Notification > KakaoTalk Bizmessage > カカともへのメッセージ > 概要
+<a id="friendtalk-overview"></a>
+
+## Notification > KakaoTalk Bizmessage > カカともへのメッセージ > 概要 { #friendtalk-overview }
 
 カカともへのメッセージは、携帯電話番号に基づいて、カカオチャンネルのフレンドに追加された顧客にイベントなどの広告性メッセージを含むさまざまなメッセージを送信できるサービスです。
 簡単に連携するためにRESTful APIを提供します。

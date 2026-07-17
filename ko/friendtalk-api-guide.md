@@ -1,6 +1,8 @@
 <!-- pre-align:aligned sig=318c3793bdb0 -->
 
-## Notification > KakaoTalk Bizmessage > 친구톡 > API v2.4 가이드
+<a id="friendtalk-api-guide"></a>
+
+## Notification > KakaoTalk Bizmessage > 친구톡 > API v2.4 가이드 { #friendtalk-api-guide }
 
 <a id="friendtalk-service-termination-notice"></a>
 

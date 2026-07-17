@@ -1,6 +1,8 @@
 <!-- pre-align:aligned sig=cf26af3116e5 -->
 
-## Notification > KakaoTalk Bizmessage > AlimTalk > Overview
+<a id="alimtalk-overview"></a>
+
+## Notification > KakaoTalk Bizmessage > AlimTalk > Overview { #alimtalk-overview }
 
 Alimtalk is a service based on mobile phones with which users can send informative messages such as delivery message, schedule notification, and others without adding the recipient as a friend.
 The service provides RESTful APIs for easy integration.

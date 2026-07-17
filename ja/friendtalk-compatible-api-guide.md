@@ -1,6 +1,8 @@
 <!-- pre-align:aligned sig=492516bf9d3d -->
 
-## Notification > KakaoTalk Bizmessage > フレンドトーク > ブランドメッセージ移行ガイド
+<a id="friendtalk-compatible-api-guide"></a>
+
+## Notification > KakaoTalk Bizmessage > フレンドトーク > ブランドメッセージ移行ガイド { #friendtalk-compatible-api-guide }
 
 <a id="overview"></a>
 

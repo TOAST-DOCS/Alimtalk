@@ -1,6 +1,8 @@
 <!-- pre-align:aligned sig=9287aa20c2c3 -->
 
-## Notification > KakaoTalk Bizmessage > AlimTalk > API v1.4 Guide
+<a id="alimtalk-api-guide-v1-4"></a>
+
+## Notification > KakaoTalk Bizmessage > AlimTalk > API v1.4 Guide { #alimtalk-api-guide-v1-4 }
 
 <a id="alimtalk"></a>
 

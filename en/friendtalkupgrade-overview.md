@@ -1,6 +1,8 @@
 <!-- pre-align:aligned sig=7eb2dbb75382 -->
 
-## Notification > KakaoTalk Bizmessage > Brand Message > Overview
+<a id="friendtalkupgrade-overview"></a>
+
+## Notification > KakaoTalk Bizmessage > Brand Message > Overview { #friendtalkupgrade-overview }
 
 Brand Message is a message product that allows advertisers (clients) to send advertising messages to members who have agreed to receive marketing messages (hereinafter referred to as “marketing consent”), regardless of whether they are KakaoTalk channel friends.
 

@@ -1,6 +1,8 @@
 <!-- pre-align:aligned sig=872af16524aa -->
 
-## Notification > KakaoTalk Bizmessage > プラスフレンド > コンソールガイド
+<a id="common-console-guide"></a>
+
+## Notification > KakaoTalk Bizmessage > プラスフレンド > コンソールガイド { #common-console-guide }
 
 <a id="identity-verification"></a>
 

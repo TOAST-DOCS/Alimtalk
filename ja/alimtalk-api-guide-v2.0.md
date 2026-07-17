@@ -1,6 +1,8 @@
 <!-- pre-align:aligned sig=6622ebb72190 -->
 
-## Notification > KakaoTalk Bizmessage > お知らせトーク > API v2.0 Guide
+<a id="alimtalk-api-guide-v2-0"></a>
+
+## Notification > KakaoTalk Bizmessage > お知らせトーク > API v2.0 Guide { #alimtalk-api-guide-v2-0 }
 
 <a id="alimtalk"></a>
 

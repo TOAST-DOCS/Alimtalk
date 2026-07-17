@@ -1,6 +1,8 @@
 <!-- pre-align:aligned sig=cf26af3116e5 -->
 
-## Notification > KakaoTalk Bizmessage > お知らせトーク > 概要
+<a id="alimtalk-overview"></a>
+
+## Notification > KakaoTalk Bizmessage > お知らせトーク > 概要 { #alimtalk-overview }
 
 お知らせトークは携帯電話番号を基づいて、フレンド追加せずにカカオトークユーザーに配送、予約時間などの情報性メッセージを送信できるサービスです。
 簡単に連携するためのRESTful APIを提供しています。
