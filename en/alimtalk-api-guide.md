@@ -1904,8 +1904,6 @@ Content-Type: application/json;charset=UTF-8
 * The Add Channel (AC) button must be in the first position when registering the AD included (AD) or Mixed Purposes (MI) message type template.
 * The Add Channel (AC) button name must be registered as "Add channel".
 
-Refer to the table below for whether replacement variables (#{variable}) can be used for each field.
-
 | Category | Field | Replaceable |
 |------|------|---------|
 | Basic | templateContent | O |
@@ -2530,6 +2528,8 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 }
 ```
 
+---
+
 | Name                    | Type    | Not Null | Description                                                                                                                                                                                                                  |
 |-------------------------|---------|:--------:|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | header                  | Object  |    O     | Header area                                                                                                                                                                                                                  |
@@ -2768,6 +2768,10 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 }
 ```
 
+---
+
+---
+
 | Name                     | Type    | Not Null | Description                                                                                                                                                                     |
 |--------------------------|---------|:--------:|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | header                   | Object  |    O     | Header area                                                                                                                                                                  |
@@ -2987,6 +2991,8 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
   }
 }
 ```
+
+---
 
 | Name                          | Type    | Not Null | Description                                                                                                                                                                                                                                  |
 |-------------------------------|---------|:--------:|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
