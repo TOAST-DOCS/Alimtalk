@@ -1,6 +1,8 @@
 <!-- pre-align:aligned sig=7e06fb48b072 -->
 
-## Notification > KakaoTalk Bizmessage > Release Notes
+<a id="release-notes"></a>
+
+## Notification > KakaoTalk Bizmessage > Release Notes { #release-notes }
 ### June 23, 2026
 #### Added Features
 * [Console] Added brand message video upload feature

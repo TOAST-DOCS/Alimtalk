@@ -1,6 +1,8 @@
 <!-- pre-align:aligned sig=8c7be9b338eb -->
 
-## Notification > KakaoTalk Bizmessage > Common > API v2.2 Guide
+<a id="common-api-guide"></a>
+
+## Notification > KakaoTalk Bizmessage > Common > API v2.2 Guide { #common-api-guide }
 
 <a id="statistics"></a>
 

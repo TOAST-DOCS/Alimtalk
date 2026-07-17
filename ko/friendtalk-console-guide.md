@@ -1,6 +1,8 @@
 <!-- pre-align:aligned sig=00da575a6590 -->
 
-## Notification > KakaoTalk Bizmessage > 친구톡 > 콘솔 사용 가이드
+<a id="friendtalk-console-guide"></a>
+
+## Notification > KakaoTalk Bizmessage > 친구톡 > 콘솔 사용 가이드 { #friendtalk-console-guide }
 
 <a id="friendtalk-service-termination-notice"></a>
 

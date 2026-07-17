@@ -1,6 +1,8 @@
 <!-- pre-align:aligned sig=0142a0759662 -->
 
-## Notification > KakaoTalk Bizmessage > Plus Friend > Overview
+<a id="sender-overview"></a>
+
+## Notification > KakaoTalk Bizmessage > Plus Friend > Overview { #sender-overview }
 According to the Kakao policy, in order to send a KakaoTalk Biz message, you must first open a business-certified channel at the KakaoTalk Channel Administrator Center to send an AlimTalk /FriendTalk.[[Create Kakao Channel and Business Certification Guide]](https://kakaobusiness.gitbook.io/main/channel/start)
 
 

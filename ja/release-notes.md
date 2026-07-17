@@ -1,6 +1,8 @@
 <!-- pre-align:aligned sig=7e06fb48b072 -->
 
-## Notification > KakaoTalk Bizmessage > リリースノート
+<a id="release-notes"></a>
+
+## Notification > KakaoTalk Bizmessage > リリースノート { #release-notes }
 
 <a id="june-23-2026"></a>
 

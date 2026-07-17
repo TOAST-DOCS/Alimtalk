@@ -1,6 +1,8 @@
 <!-- pre-align:aligned sig=3fddaef1a9f4 -->
 
-## Notification > KakaoTalk Bizmessage > 알림톡 > 콘솔 사용 가이드
+<a id="alimtalk-console-guide"></a>
+
+## Notification > KakaoTalk Bizmessage > 알림톡 > 콘솔 사용 가이드 { #alimtalk-console-guide }
 
 <a id="send-alimtalk"></a>
 

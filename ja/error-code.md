@@ -1,6 +1,8 @@
 <!-- pre-align:aligned sig=2a9da7055af6 -->
 
-## Notification > KakaoTalk Bizmessage > エラーコード
+<a id="error-code"></a>
+
+## Notification > KakaoTalk Bizmessage > エラーコード { #error-code }
 
 <a id="api-response-code"></a>
 

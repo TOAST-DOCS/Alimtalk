@@ -1,6 +1,8 @@
 <!-- pre-align:aligned sig=0142a0759662 -->
 
-## Notification > KakaoTalk Bizmessage > プラスフレンド > 概要
+<a id="sender-overview"></a>
+
+## Notification > KakaoTalk Bizmessage > プラスフレンド > 概要 { #sender-overview }
 カカオポリシーに従ってカカオトークBizメッセージを送信するには、先にカカオトークチャンネル管理者センターでビジネス認証を受けたチャンネルを開設する必要があります。開設すると、お知らせトーク/カカともへのメッセージを送信できます。[[カカオチャンネル作成およびビジネス認証ガイド]](https://kakaobusiness.gitbook.io/main/channel/start)
 
 

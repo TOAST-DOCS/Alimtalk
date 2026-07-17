@@ -1,6 +1,8 @@
 <!-- pre-align:aligned sig=872af16524aa -->
 
-## Notification > KakaoTalk Bizmessage > 콘솔 사용 가이드
+<a id="common-console-guide"></a>
+
+## Notification > KakaoTalk Bizmessage > 콘솔 사용 가이드 { #common-console-guide }
 
 <a id="identity-verification"></a>
 

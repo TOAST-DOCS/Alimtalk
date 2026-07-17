@@ -1,6 +1,8 @@
 <!-- pre-align:aligned sig=33585d5af5a4 -->
 
-## Notification > KakaoTalk Bizmessage > FriendTalk > Overview
+<a id="friendtalk-overview"></a>
+
+## Notification > KakaoTalk Bizmessage > FriendTalk > Overview { #friendtalk-overview }
 
 FriendTalk is a service that can send various messages, including advertising messages such as events and occasions, to customers with added friends on my Kakao channel based on their mobile phone number. 
 It provides RESTful API for easy integration.

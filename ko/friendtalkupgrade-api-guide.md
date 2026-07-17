@@ -1,4 +1,6 @@
-## Notification > KakaoTalk Bizmessage > 브랜드 메시지 > API v1.0 Guide
+<a id="friendtalkupgrade-api-guide"></a>
+
+## Notification > KakaoTalk Bizmessage > 브랜드 메시지 > API v1.0 Guide { #friendtalkupgrade-api-guide }
 
 <a id="brand-message"></a>
 

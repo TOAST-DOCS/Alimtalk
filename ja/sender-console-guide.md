@@ -1,6 +1,8 @@
 <!-- pre-align:aligned sig=f530f01ac2b8 -->
 
-## Notification > KakaoTalk Bizmessage > 送信元プロフィール > コンソールガイド
+<a id="sender-console-guide"></a>
+
+## Notification > KakaoTalk Bizmessage > 送信元プロフィール > コンソールガイド { #sender-console-guide }
 
 <a id="registerauthenticate-sender-profiles"></a>
 

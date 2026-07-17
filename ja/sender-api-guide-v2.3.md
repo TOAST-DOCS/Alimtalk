@@ -1,6 +1,8 @@
 <!-- pre-align:aligned sig=509feeb5926b -->
 
-## Notification > KakaoTalk Bizmessage > Sender > API v2.3 Guide
+<a id="sender-api-guide-v2-3"></a>
+
+## Notification > KakaoTalk Bizmessage > Sender > API v2.3 Guide { #sender-api-guide-v2-3 }
 
 <a id="overview-of-v23-api"></a>
 

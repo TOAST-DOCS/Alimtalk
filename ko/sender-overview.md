@@ -1,6 +1,8 @@
 <!-- pre-align:aligned sig=0142a0759662 -->
 
-## Notification > KakaoTalk Bizmessage > 발신 프로필 > 발송 전 준비사항
+<a id="sender-overview"></a>
+
+## Notification > KakaoTalk Bizmessage > 발신 프로필 > 발송 전 준비사항 { #sender-overview }
 카카오 정책에 따라 카카오톡 비즈 메시지를 발송하려면 먼저 카카오톡채널 관리자센터에서 비즈니스 인증을 받은 채널을 개설해야 알림톡/친구톡 발송이 가능합니다. [[카카오 채널 생성 및 비즈니스 인증 가이드]](https://kakaobusiness.gitbook.io/main/channel/start)
 
 

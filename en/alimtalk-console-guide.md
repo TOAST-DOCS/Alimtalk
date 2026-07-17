@@ -1,6 +1,8 @@
 <!-- pre-align:aligned sig=3fddaef1a9f4 -->
 
-## Notification > KakaoTalk Bizmessage > AlimTalk > Console Guide
+<a id="alimtalk-console-guide"></a>
+
+## Notification > KakaoTalk Bizmessage > AlimTalk > Console Guide { #alimtalk-console-guide }
 
 <a id="send-alimtalk"></a>
 
