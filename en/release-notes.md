@@ -1,4 +1,4 @@
-<!-- pre-align:aligned sig=7e06fb48b072 -->
+<!-- pre-align:aligned sig=36b95bf67fb2 -->
 
 ## Notification > KakaoTalk Bizmessage > Release Notes
 
