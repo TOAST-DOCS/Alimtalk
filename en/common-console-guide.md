@@ -1,4 +1,4 @@
-<!-- pre-align:aligned sig=872af16524aa -->
+<!-- pre-align:aligned sig=81b14e4f383d -->
 
 <a id="common-console-guide"></a>
 ## Notification > KakaoTalk Bizmessage > Plus Friend> Console Guide { #common-console-guide }
