@@ -1,17 +1,21 @@
 <!-- pre-align:aligned sig=8265ba6ef405 -->
 
 <a id="friendtalkupgrade-console-guide"></a>
+
 ## Notification > KakaoTalk Bizmessage > Brand Message > Console User Guide { #friendtalkupgrade-console-guide }
 
 <a id="brand-message-sending"></a>
+
 ## Brand Message sending { #brand-message-sending }
 
 <a id="regular-send"></a>
+
 ### Regular send { #regular-send }
 
 You can set up an outgoing profile and enter content to send messages in the form of brand message. To send a brand message, select Notification > KakaoTalk Bizmessage > Brand Message on the console.
 
 <a id="when-using-a-template"></a>
+
 ### When using a template { #when-using-a-template }
 
 ![friendtalkupgrade_04_20250616.png](https://static.toastoven.net/prod_alimtalk/friendtalkupgrade/friendtalkupgrade_04_20250729.png)
@@ -42,6 +46,7 @@ You can set up an outgoing profile and enter content to send messages in the for
 8. After completing the input, click Send to send.
 
 <a id="when-not-using-a-template"></a>
+
 ### When not using a template { #when-not-using-a-template }
 
 ![friendtalkupgrade_05_20250616.png](https://static.toastoven.net/prod_alimtalk/friendtalkupgrade/friendtalkupgrade_05_20250729.png)
@@ -99,6 +104,7 @@ You can set up an outgoing profile and enter content to send messages in the for
 11. After completing the input, click Send to send.
 
 <a id="mass-delivery"></a>
+
 ### Mass Delivery { #mass-delivery }
 
 This feature allows you to send brand messages to multiple recipient numbers using a template file in Excel/CSV format. Select **Mass Delivery** from the bottom tab.
@@ -120,6 +126,7 @@ When clicking **Send** button, you can select **Proceed after Review** or **Imme
 * Immediate Send: AlimTalks are sent immediately without confirming the recipient. You can check the progress of your shipment in the **View Mass Delivery** tab.
 
 <a id="fallback"></a>
+
 ### Fallback { #fallback }
 
 A feature that allows you to replace a brand message with a text message if it fails to send. You can send it by selecting **Set as Common Content** or **Set by Different Messages per User**.
@@ -133,6 +140,7 @@ A feature that allows you to replace a brand message with a text message if it f
 * Depending on the message length, it will be sent as SMS/LMS (separate fees apply for sending each type of text message).
 
 <a id="set-as-common-content"></a>
+
 #### Set as Common Content
 
 ![friendtalkupgrade_resend01_20250729.png](https://static.toastoven.net/prod_alimtalk/friendtalkupgrade/friendtalkupgrade_resend01_20250729.png)
@@ -141,6 +149,7 @@ A feature that allows you to replace a brand message with a text message if it f
 * If you do not enter a fallback message, it will be sent as [Message Body].
 
 <a id="set-by-different-messages-per-user"></a>
+
 #### Set by Different Messages per User
 
 * After selecting an **Outgoing Profile**, click **Set by Different Messages per User** and set an alternative sending message in the **Add Recipient** tab at the bottom.
@@ -168,9 +177,11 @@ Advertising messages refer to messages about information, goods, or services tha
 ![[Figure 3] FriendTalk advertising message](https://static.toastoven.net/prod_alimtalk/friendtalk_02.png)
 
 <a id="view-send"></a>
+
 ## View Send { #view-send }
 
 <a id="view-send-result"></a>
+
 ### View Send Result { #view-send-result }
 
 ![friendtalkupgrade_07_20250616.png](https://static.toastoven.net/prod_alimtalk/friendtalkupgrade/friendtalkupgrade_07_20250729.png)
@@ -181,6 +192,7 @@ Advertising messages refer to messages about information, goods, or services tha
 * You can check the sending process status in the **Send Result** column.
 
 <a id="cancel-send"></a>
+
 ### Cancel send { #cancel-send }
 
 Cancellation is possible for scheduled send with a sending request date set to the future during regular send.
@@ -191,9 +203,11 @@ Cancellation is possible for scheduled send with a sending request date set to t
 * You can select or deselect the entire list by checking the checkboxes in the header of the list.
 
 <a id="view-mass-delivery"></a>
+
 ## View Mass Delivery { #view-mass-delivery }
 
 <a id="view-send-result-2"></a>
+
 ### View Send Result { #view-send-result-2 }
 
 ![friendtalkupgrade_masssearch01_20250729.png](https://static.toastoven.net/prod_alimtalk/friendtalkupgrade/friendtalkupgrade_masssearch01_20250729.png)
@@ -205,6 +219,7 @@ Cancellation is possible for scheduled send with a sending request date set to t
 * You can check the sending process status in the **Send Result** column.
 
 <a id="manage-image"></a>
+
 ## Manage Image { #manage-image }
 
 ![friendtalkupgrade_8_20250616.png](https://static.toastoven.net/prod_alimtalk/friendtalkupgrade/friendtalkupgrade_8_20250616.png)
@@ -222,12 +237,14 @@ File specifications and recommended/maximum sizes must be strictly followed.
 * [\[Go to Business Form Registration Guide\]](https://kakaobusiness.gitbook.io/main/tool/bizform)
 
 <a id="image-upload-allowance"></a>
+
 #### Image upload allowance
 
 * File format: JPG, PNG
 * Please check each image upload API specification.
 
 <a id="manage-video"></a>
+
 ## Video Management { #manage-video }
 
 ![friendtalkupgrade_video_management.png](TODO: 콘솔 캡처 후 NHN static 호스트 URL 교체)
@@ -243,6 +260,7 @@ You can register or delete videos to be used in brand messages and check the inf
 * Note that videos deleted from the console can no longer be used for sending in templates that used the video.
 
 <a id="video-upload-allowance"></a>
+
 #### Allowed Range for Video Upload
 
 * File format: MP4, MOV, AVI
@@ -251,6 +269,7 @@ You can register or delete videos to be used in brand messages and check the inf
 * Maximum resolution: 8K
 
 <a id="manage-templates"></a>
+
 ## Manage Templates { #manage-templates }
 
 ![friendtalkupgrade_09_20250616.png](https://static.toastoven.net/prod_alimtalk/friendtalkupgrade/friendtalkupgrade_09_20250729.png)
@@ -260,11 +279,13 @@ You can register or delete videos to be used in brand messages and check the inf
 * Unlike AlimTalk, this is a method where users do not register a template code, but instead receive a random identifier from Kakao.
 
 <a id="080-opt-out-management"></a>
+
 ## 080 Opt-out management { #080-opt-out-management }
 
 * In brand messages, the “080 opt-out management” and “fallback” features are integrated into a single SMS AppKey with NHN Cloud's SMS service integration.
 
 <a id="register-and-manage-080-opt-out-numbers"></a>
+
 ### Register and manage 080 opt-out numbers { #register-and-manage-080-opt-out-numbers }
 
 * When sending Brand Message marketing to users who have opted in, you must register a 080 number in your outgoing profile because messages can be sent to recipients who are not friends with your outgoing profile.
@@ -282,6 +303,7 @@ You can register or delete videos to be used in brand messages and check the inf
    * Customers must manage their own opt-out recipients, and there is no verification of recipients when sending brand messages.
 
 <a id="manage-fallback"></a>
+
 ### Manage Fallback { #manage-fallback }
 
 * If a brand message fails to be sent, you can set it to be sent as a fallback message.
@@ -297,6 +319,7 @@ You can register or delete videos to be used in brand messages and check the inf
 * If there is no resendContent field in the brand message advertising message, the advertising text will be automatically generated and sent to the registered 080 opt-out number.
 
 <a id="apply-for-using-non-friend-message-sending-targeting-m-n"></a>
+
 ## Apply for using non-friend message sending (targeting M, N) { #apply-for-using-non-friend-message-sending-targeting-m-n }
 
 * If you wish to use non-friend message sending (targeting M, N), you must apply for use. If you do not apply for use, the M/N type will not be displayed during send.
@@ -308,6 +331,7 @@ You can register or delete videos to be used in brand messages and check the inf
   * Successfully send notification messages within the past three months
 
 <a id="cautions"></a>
+
 ### Cautions { #cautions }
 * If your business verification is canceled, the permission to send non-friend messages (targeting M, N) will be canceled. You will need to reapply for use after your business verification has been re-reviewed.
 * The consent evidence file for receiving advertising information is saved per Talk channel, so any changes will be applied to all profiles sent by other dealers in the same Talk channel.

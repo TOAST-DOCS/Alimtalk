@@ -1,9 +1,11 @@
 <!-- pre-align:aligned sig=81b14e4f383d -->
 
 <a id="common-console-guide"></a>
+
 ## Notification > KakaoTalk Bizmessage > プラスフレンド > コンソールガイド { #common-console-guide }
 
 <a id="identity-verification"></a>
+
 ## 本人認証 { #identity-verification }
 * アビューズ防止のためのカカオトークポリシーにより、KakaoTalk Bizmessageサービスに強化された本人認証の事前登録制が適用されました。
     * 2023年4月25日以降に加入した会員に限る
@@ -14,6 +16,7 @@
 * 在職証明書は、<b><span style="color:red">発行日が表記されており、職印が捺印された書類</span></b>のみ有効です。在職証明書内の住民番号の後ろ6桁は必ずマスキング(非表示)処理してください。例) 000000-0******
 
 <a id="required-documents-for-identity-verification"></a>
+
 ### 本人認証に必要な書類 { #required-documents-for-identity-verification }
 | 会員タイプ | 認証方法   | 必要書類       |
 |---------|-----------|---------------|
@@ -21,6 +24,7 @@
 | 事業者従業員 | 携帯電話本人認証 | 事業者登録証、在職証明書 |
 
 <a id="authentication-representative"></a>
+
 ### 本人認証代表 { #authentication-representative }
 ![KTB_01_20230926.png](https://static.toastoven.net/prod_alimtalk/KTB_01_20230926.png)
 1. <b>本人認証</b>タブを選択します。
@@ -32,15 +36,18 @@
 7. 本人認証手続きが完了すると、アカウントに登録されたメールに承認結果が送信されます。
 
 <a id="identity-verification-status-settings"></a>
+
 ### 本人認証のステータス設定 { #identity-verification-status-settings }
 * 審査中：登録した本人認証の認証書類を管理者が審査している状態
 * 拒否：本人認証が却下され、書類の再登録が必要な状態
 * 承認：本人認証承認が完了した状態
 
 <a id="manage-sender-profiles"></a>
+
 ## 発信プロフィールの管理 { #manage-sender-profiles }
 
 <a id="add-sender-profiles"></a>
+
 ### 発信プロフィールの追加 { #add-sender-profiles }
 カカオトークチャンネルの開設完了後、発信プロフィールを登録します。カカオトークチャンネル作成についての詳細ガイドは、[発信プロフィール](https://docs.nhncloud.com/ko/Notification/KakaoTalk%20Bizmessage/ko/sender-overview/ )で確認できます。
 発信プロフィールの登録が完了すると、管理者の携帯電話にカカオトークトークンメッセージが送信されます。
@@ -52,6 +59,7 @@
 4. <b>トークンリクエスト</b>をクリックして認証トークンをリクエストします。
 
 <a id="register-token"></a>
+
 ### トークンの登録 { #register-token }
 管理者の携帯電話で受け取ったトークンメッセージを入力すると、発信プロフィールの登録が完了します。
 
@@ -62,13 +70,16 @@
 * 一日の最大送信量を変更するには、サポートにリクエストする必要があります。
 
 <a id="kakaotalk-channel-status"></a>
+
 ### カカオトークチャンネルの状態 { #kakaotalk-channel-status }
 <a id="nhn-cloud-sender-profile-status"></a>
+
 #### NHN Cloud発信プロフィールの状態
 * NHN Cloudに登録した発信プロフィールの状態を意味します。
 * カカオトークチャンネル作成および発信プロフィールコンソールの使用ガイドを参照して、カカオトークチャンネルを登録し、トークンの認証まで完了すると、正常に使用できます。
 
 <a id="kakaotalk-channel-profile-status"></a>
+
 #### カカオトークチャンネルのプロフィール状態
 * お知らせトーク/フレンドトークを送信するための発信キーの状態を意味します。
 * プロフィールの長期間未使用、事業者情報の不一致などの場合、ブロックされる可能性があります。
@@ -76,67 +87,80 @@
 * プロフィール状態が無効（`C`）の場合、カカオ管理者ページでホーム公開を「ON」に変更すると、チャンネル状態が正常（`A`）に変更されます。状態の同期は最大 15 分間隔で行われるため、カカオへの反映タイミングによっては、反映までに時間がさらにかかる場合があります。
 
 <a id="kakao-channel-status"></a>
+
 #### カカオチャンネルの状態
 * カカオトークビジネスIDの状態を意味します。
 * 発信プロフィールが長期的に未使用などの場合、ブロックされることがあります。
 * 状態が正常ではない場合、NHN CloudサポートにカカオトークチャンネルIDを添えて、ブロック解除をリクエストしてください。
 
 <a id="sender-profile-status"></a>
+
 ### 発信プロフィールの状態 { #sender-profile-status }
 <a id="sender-profile-dormant-status"></a>
+
 #### 発信プロフィールの休眠状態
 * 1年間カカオお知らせトークの発信履歴がなく、発信プロフィールが休眠している状態を意味します。
 * 休眠状態に切り替わり、1年間休眠状態を解除しなかった場合、発信プロフィールが削除されます。
 * 状態が正常ではない場合、NHN CloudサポートにカカオトークチャンネルIDを添えて、ブロック解除をリクエストしてください。
 
 <a id="sender-profile-block-status"></a>
+
 #### 発信プロフィールのブロック状態
 * 発信プロフィールが休眠状態に切り替わり、1年間休眠が解除されず、発信プロフィールが削除された状態を意味します。
 * 削除された発信プロフィールは復元が不可能なため、新規で登録する必要があります。
 * 発信プロフィールコンソールの使用ガイドを参照して、発信プロフィールを追加登録してください。
 
 <a id="kakaotalk-channel-spam-status"></a>
+
 ### カカオトークチャンネルのスパム状態 { #kakaotalk-channel-spam-status }
 <a id="kakaotalk-channel-spam-status-2"></a>
+
 #### カカオトークチャンネルのスパム状態
 * カカオトークの発信プロフィールのスパム状態を意味します。
 * Bizメッセージの運営ポリシーに違反した場合、スパムチャンネルに分類されて該当プロフィールを利用した活動が制限されることがあります。
 * スパム状態が正常ではない場合、NHN CloudサポートにカカオトークチャンネルIDを添えて、ブロック解除をリクエストしてください。
 
 <a id="kakaotalk-message-spam-status"></a>
+
 #### カカオトークメッセージのスパム状態
 * カカオトーク発信プロフィールで送信するメッセージのスパム状態を意味します。
 * Bizメッセージの運営ポリシーに違反した場合、スパムチャンネルに分類されて該当プロフィールを利用した活動が制限されることがあります。
 * スパム状態が正常ではない場合、NHN CloudサポートにカカオトークチャンネルIDを添えて、ブロック解除をリクエストしてください。
 
 <a id="first-time-user-restrictions"></a>
+
 ### 最初のユーザー制限 { #first-time-user-restrictions }
 特定の基準を満たしていない発信プロフィールは、アビューズ防止のために最初のユーザー制限が適用され、一部機能に制限がかかります。
 
 <a id="first-time-user-restriction-items"></a>
+
 #### 最初のユーザー制限事項
 * 一日の送信量制限
 * グループプロフィールにメンバーとして追加不可
 * テンプレート変数が置換される時、その差が14文字を超える部分がある場合、メッセージ送信失敗処理
 
 <a id="release-criteria-for-first-time-user-restrictions"></a>
+
 #### 最初のユーザー制限解除基準
 * 最初のユーザー制限発信プロフィールが作成されてから1カ月以内に課金正常送信テンプレート件数が10件以上ある場合、翌月自動的に制限が解除されます。
 * この他に最初のユーザー制限解除が必要な場合は、NHN CloudサポートにカカオトークチャンネルIDを添えて、お問い合わせください。
 
 
 <a id="sending-settings"></a>
+
 ## 送信設定 { #sending-settings }
 * メッセージ保管期間ポリシーに従って、90日が経過した送信履歴データをバックアップできます。
 * お知らせトークのバックアップを行うかどうか、ファイル拡張子、ファイルをアップロードする場所の情報を入力すると、その場所にバックアップ日時を含むファイルが作成されます。
 
 <a id="data-retention-period"></a>
+
 ### データの保管期間 { #data-retention-period }
 * データ保管ポリシーに従って、過去90日の送信履歴を保管します。
 * 統計データは過去90日の情報を保管します。
 * カカオサービスにアップロードされた画像は、カカオCDNサーバーに永久保管されます。
 
 <a id="webhook-management"></a>
+
 ## Webフック管理 { #webhook-management }
 指定したイベントが発生した時、URLを指定してWebフックイベンを受け取ることができます。
 ![KTB_04_20230926.png](https://static.toastoven.net/prod_alimtalk/KTB_04_20230926.png)
@@ -148,6 +172,7 @@
 登録が完了したWebフックは、<b>Webフック登録リスト</b>で確認できます。
 
 <a id="statistical-event-key-settings"></a>
+
 ## 統計イベントキーの設定 { #statistical-event-key-settings }
 イベントキーを登録して、そのキーに送信すると、統計イベントキーごとに統計データを収集できます。
 統計イベントキー用語の意味は、<b>参考</b>でご確認ください。
@@ -160,13 +185,16 @@
 <b>データ収集期間の終了時点は、有効状態の場合に修正できます。</b>
 
 <a id="statistics"></a>
+
 ## 統計 { #statistics }
 <a id="query-statistics"></a>
+
 ### 統計照会 { #query-statistics }
 * 送信リクエスト期間、統計イベントキー、テンプレートなど、タイプごとに統計を照会できます。
 * 送信リクエスト、成功、失敗など、送信ステータスをグラフと表で確認できます。
 
 <a id="categorize-statistics"></a>
+
 #### 統計分類
 * メッセージ(イベント時間)：イベントが発生した時間を基準に収集された統計です。
 * 次の時間を基準に統計が収集されます。
@@ -179,8 +207,10 @@
 
 
 <a id="note"></a>
+
 ## 参考 { #note }
 <a id="statistics-event-keys-and-statistics"></a>
+
 ### 統計イベントキーと統計 { #statistics-event-keys-and-statistics }
 
 | 用語     | 説明                                  |
