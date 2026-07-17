@@ -1901,10 +1901,9 @@ Content-Type: application/json;charset=UTF-8
 | - bizFormId           | 	Integer | 	X  | 	Business form ID (required for the BF type)                                                                                                                                                                                                                         |
 
 * The templateAd value is fixed when registering the AD included (AD) or Mixed Purposes (MI) message type template.
-* The Add Channel (AC) button must be in the first position when registering the AD included (AD) or Mixed Purposes (MI) message type template.
-* The Add Channel (AC) button name must be registered as "Add channel".
-
-Refer to the table below for whether replacement variables (#{variable}) can be used for each field.
+* The Add Channel (AC) button must be placed in the first position when registering the AD included (AD) or Mixed Purposes (MI) message type template.
+* The Add Channel (AC) button must be registered with the button name fixed as "Add channel".
+Refer to the information below for the availability of replacement variables (#{variable}) for each field.
 
 | Category | Field | Replaceable |
 |------|------|---------|
@@ -1918,15 +1917,14 @@ Refer to the table below for whether replacement variables (#{variable}) can be 
 | Button | linkMo, linkPc, schemeIos, schemeAndroid | O |
 | Quick Reply | name | X |
 | Quick Reply | linkMo, linkPc, schemeIos, schemeAndroid | O |
-| Template item | title | X |
-| Template item | description | O |
-| Template item summary | title | X |
-| Template item summary | description | O |
-| Template item highlight | title | O |
-| Template item highlight | description | O |
-| Template item highlight | imageUrl | X |
-| Representative link | linkMo, linkPc, schemeIos, schemeAndroid | O |
-
+| Template Item | title | X |
+| Template Item | description | O |
+| Template Item Summary | title | X |
+| Template Item Summary | description | O |
+| Template Item Highlight | title | O |
+| Template Item Highlight | description | O |
+| Template Item Highlight | imageUrl | X |
+| Representative Link | linkMo, linkPc, schemeIos, schemeAndroid | O |
 <a id="response-13"></a>
 
 #### Response
@@ -2530,6 +2528,10 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 }
 ```
 
+---
+
+---
+
 | Name                    | Type    | Not Null | Description                                                                                                                                                                                                                  |
 |-------------------------|---------|:--------:|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | header                  | Object  |    O     | Header area                                                                                                                                                                                                                  |
@@ -2768,6 +2770,9 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 }
 ```
 
+---
+---
+
 | Name                     | Type    | Not Null | Description                                                                                                                                                                     |
 |--------------------------|---------|:--------:|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | header                   | Object  |    O     | Header area                                                                                                                                                                  |
@@ -2987,6 +2992,9 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
   }
 }
 ```
+
+---
+---
 
 | Name                          | Type    | Not Null | Description                                                                                                                                                                                                                                  |
 |-------------------------------|---------|:--------:|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
