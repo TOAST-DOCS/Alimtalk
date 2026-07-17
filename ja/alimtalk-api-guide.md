@@ -1904,6 +1904,29 @@ Content-Type: application/json;charset=UTF-8
 * チャンネル追加型(AD)または複合型(MI)メッセージタイプのテンプレート登録時、チャンネル追加(AC)ボタンが最初の順序に配置される必要があります。
 * チャンネル追加(AC)ボタンのボタン名は「チャンネル追加」で固定して登録する必要があります。
 
+フィールドごとの置換変数(#{変数})の使用可否については、以下を参照してください。
+
+| 区分 | フィールド | 置換可能 |
+|------|------|---------|
+| 基本 | templateContent | O |
+| 基本 | templateTitle | O |
+| 基本 | templateSubtitle | X |
+| 基本 | templateHeader | O |
+| 基本 | templateExtra | X |
+| 基本 | templateAd | X |
+| ボタン | name | X |
+| ボタン | linkMo, linkPc, schemeIos, schemeAndroid | O |
+| クイックリプライ | name | X |
+| クイックリプライ | linkMo, linkPc, schemeIos, schemeAndroid | O |
+| テンプレートアイテム | title | X |
+| テンプレートアイテム | description | O |
+| テンプレートアイテム summary | title | X |
+| テンプレートアイテム summary | description | O |
+| テンプレートアイテムハイライト | title | O |
+| テンプレートアイテムハイライト | description | O |
+| テンプレートアイテムハイライト | imageUrl | X |
+| 代表リンク | linkMo, linkPc, schemeIos, schemeAndroid | O |
+
 <a id="response-13"></a>
 
 #### 応答
