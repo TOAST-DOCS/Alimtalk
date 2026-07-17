@@ -81,9 +81,10 @@ If you enter the token message you received on your administrator's phone, your 
 <a id="kakaotalk-channel-profile-status"></a>
 
 #### KakaoTalk Channel Profile Status
-* It indicates the status of sender key for sending AlimTalk/FriendTalk.
-* It may be blocked in the case of long-term non-use of profiles, inconsistency of business information, etc.
-* If the condition is not normal, please request NHN Cloud Customer Center to release the block along with KakaoTalk Channel ID.
+* This refers to the status of the Sender Key used to send AlimTalk/FriendTalk messages.
+* The profile may be blocked if it has been unused for a long period of time, if the business information does not match, or for other reasons.
+* If the status is not normal, please contact NHN Cloud Customer Center with your KakaoTalk Channel ID to request that the block be released.
+* If the profile status is inactive (`C`), changing the home visibility to "ON" on the Kakao admin page changes the channel status to normal (`A`). Since status synchronization occurs at intervals of up to 15 minutes, it may take additional time for the changes to be reflected depending on when Kakao applies the update.
 
 <a id="kakao-channel-status"></a>
 
