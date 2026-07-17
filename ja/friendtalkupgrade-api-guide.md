@@ -2,7 +2,7 @@
 
 <a id="brand-message"></a>
 
-## ブランドメッセージ { #brand-message }
+## ブランドメッセージ
 
 <a id="api-domain"></a>
 
@@ -14,11 +14,11 @@
 
 <a id="introduce-v10-api"></a>
 
-## v1.0 API 紹介 { #introduce-v10-api }
+## v1.0 API 紹介
 
 <a id="manage-non-friend-message-sending-targeting-m-n"></a>
 
-## 非フレンドメッセージ送信（ターゲティング M、N）管理 { #manage-non-friend-message-sending-targeting-m-n }
+## 非フレンドメッセージ送信（ターゲティング M、N）管理
 
 非フレンドメッセージ送信（ターゲティング M、N）は、以下の条件をすべて満たす場合に送信できます。
 
@@ -30,7 +30,7 @@
 
 <a id="upload-marketing-consent-records"></a>
 
-### マーケティング受信同意証跡資料のアップロード { #upload-marketing-consent-records }
+### マーケティング受信同意証跡資料のアップロード
 
 <a id="requested"></a>
 
@@ -91,7 +91,7 @@ Content-Type: multipart/form-data
 
 <a id="apply-for-using-non-friend-message-sending-targeting-m-n"></a>
 
-### 非フレンドメッセージ送信（ターゲティング M、N）の利用申請 { #apply-for-using-non-friend-message-sending-targeting-m-n }
+### 非フレンドメッセージ送信（ターゲティング M、N）の利用申請
 
 <a id="requested-2"></a>
 
@@ -146,7 +146,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="request-to-send-a-free-form-message"></a>
 
-## メッセージ自由形式送信リクエスト { #request-to-send-a-free-form-message }
+## メッセージ自由形式送信リクエスト
 
 * マーケティング受信同意送信を使用できます。
     * targeting フィールドを指定してメッセージ対象のタイプを指定できます。
@@ -1290,7 +1290,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="request-to-send-basic-message"></a>
 
-## メッセージ基本型送信リクエスト { #request-to-send-basic-message }
+## メッセージ基本型送信リクエスト
 
 * テンプレートを使用した送信です。
 * マーケティング受信同意送信を使用できます。
@@ -1308,7 +1308,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="cautions-for-use"></a>
 
-### 使用上の注意事項 { #cautions-for-use }
+### 使用上の注意事項
 
 - unsubscribeNo、unsubscribeAuthNo は 080 無料受信拒否電話番号と認証番号です。どちらか一方でも入力しない場合、発信プロフィールに登録された無料受信拒否情報で送信されます。
 - 送信時に unsubscribeNo、unsubscribeAuthNo を入力した場合、発信プロフィールに登録された無料受信拒否情報ではなく、入力した値で送信されます。
@@ -1452,7 +1452,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="view-sending-list"></a>
 
-## 送信リスト照会 { #view-sending-list }
+## 送信リスト照会
 
 <a id="requested-5"></a>
 
@@ -1579,7 +1579,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="view-single-sending"></a>
 
-## 送信単件照会 { #view-single-sending }
+## 送信単件照会
 
 <a id="requested-6"></a>
 
@@ -1876,7 +1876,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="message-results"></a>
 
-## メッセージ結果更新照会 { #message-results }
+## メッセージ結果更新照会
 
 <a id="requested-25"></a>
 
@@ -1987,7 +1987,7 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 
 <a id="cancel-message-sending"></a>
 
-## メッセージ送信取消 { #cancel-message-sending }
+## メッセージ送信取消
 
 <a id="requested-7"></a>
 
@@ -2053,11 +2053,11 @@ curl -X DELETE -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Ke
 
 <a id="manage-templates"></a>
 
-## テンプレート管理 { #manage-templates }
+## テンプレート管理
 
 <a id="view-template-list"></a>
 
-### テンプレートリスト照会 { #view-template-list }
+### テンプレートリスト照会
 
 <a id="requested-8"></a>
 
@@ -2330,7 +2330,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="view-single-template"></a>
 
-### テンプレート単件照会 { #view-single-template }
+### テンプレート単件照会
 
 [URL]
 
@@ -2585,7 +2585,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="register-template"></a>
 
-### テンプレート登録 { #register-template }
+### テンプレート登録
 
 <a id="requested-10"></a>
 
@@ -3304,7 +3304,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="modify-template"></a>
 
-### テンプレート修正 { #modify-template }
+### テンプレート修正
 
 <a id="requested-11"></a>
 
@@ -3364,7 +3364,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="delete-template"></a>
 
-### テンプレート削除 { #delete-template }
+### テンプレート削除
 
 <a id="requested-12"></a>
 
@@ -3420,11 +3420,11 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="manage-image"></a>
 
-## 画像管理 { #manage-image }
+## 画像管理
 
 <a id="upload-image"></a>
 
-### 画像アップロード { #upload-image }
+### 画像アップロード
 
 <a id="requested-13"></a>
 
@@ -3508,7 +3508,7 @@ Content-Type: multipart/form-data
 
 <a id="view-image"></a>
 
-### 画像照会 { #view-image }
+### 画像照会
 
 <a id="requested-14"></a>
 
@@ -3579,7 +3579,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="delete-image"></a>
 
-### 画像削除 { #delete-image }
+### 画像削除
 
 <a id="requested-15"></a>
 
@@ -3639,13 +3639,13 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="manage-video"></a>
 
-## 動画管理 { #manage-video }
+## 動画管理
 
 ブランドメッセージで使用する動画を登録・照会・削除する API です。登録された動画はカカオビズセンターでエンコード処理後、送信に使用できます。ステータスが `PUBLIC` の動画のみテンプレート登録および送信が可能です（`PRIVATE` はテンプレート登録のみ可能）。
 
 <a id="video-upload-flow"></a>
 
-### 動画アップロードの流れ { #video-upload-flow }
+### 動画アップロードの流れ
 
 動画のアップロードは2段階で行います。
 
@@ -3660,7 +3660,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="register-video-upload"></a>
 
-### 動画アップロード登録 { #register-video-upload }
+### 動画アップロード登録
 
 <a id="requested-16"></a>
 
@@ -3749,16 +3749,16 @@ Content-Type: application/json;charset=UTF-8
 | - title         | String  | X        | 動画タイトル (アップロード直後はファイル名、エンコード完了後にカカオビズセンターで修正した値に同期されます)                        |
 | - fileName      | String  | O        | アップロードファイル名                                                                         |
 | - fileSize      | Long    | O        | ファイルサイズ (byte)                                                                    |
-| - status        | String  | O        | 動画ステータス ([動画ステータス](#video-status) 参照)。アップロード登録レスポンスでは常に `REGISTERED`                     |
+| - status        | String  | O        | 動画ステータス ([動画ステータス](#動画ステータス) 参照)。アップロード登録レスポンスでは常に `REGISTERED`                     |
 | uploadInfo      | Object  | O        | カカオアップロード情報。ステップ 2 で使用                                                            |
 | - uploadUrl     | String  | O        | 動画ファイルを直接アップロードするカカオ側エンドポイント                                                     |
 | - token         | String  | O        | アップロード認証トークン。`x-kamp-upload-token` ヘッダーで渡します                                          |
 
-> エンコード完了後に設定される `thumbnailUrl`、`videoUrl`、`playUrl`、`updateDate` フィールドは、[動画照会](#view-video) API で取得できます。
+> エンコード完了後に設定される `thumbnailUrl`、`videoUrl`、`playUrl`、`updateDate` フィールドは、[動画照会](#動画照会) API で取得できます。
 
 <a id="video-file-upload-step-2"></a>
 
-### 動画ファイルアップロード (ステップ 2) { #video-file-upload-step-2 }
+### 動画ファイルアップロード (ステップ 2)
 
 上記レスポンスの `uploadInfo.uploadUrl` に対して動画ファイルを直接呼び出します。このリクエストは NHN Cloud サーバーではなく、カカオ側のアップロードサーバーに直接送信されます。
 
@@ -3814,13 +3814,13 @@ Content-Type: multipart/form-data
 | ファイル名の長さ   | 250文字以内                                    |
 
 * アップロードされた動画は、カカオビズセンターでエンコードが完了した後に使用できます。エンコード時間は映像の長さによって異なり、通常 5〜10 分かかります。
-* アップロード直後の動画ステータスは `REGISTERED` から始まり、`ENCODING` を経て `PUBLIC` または `PRIVATE` に移行します。ステータスはコンソールまたは[動画照会](#view-video) API で確認できます。
+* アップロード直後の動画ステータスは `REGISTERED` から始まり、`ENCODING` を経て `PUBLIC` または `PRIVATE` に移行します。ステータスはコンソールまたは[動画照会](#動画照会) API で確認できます。
 * 登録された動画はカカオ側で永久保存され、テンプレートが削除されてもカカオビズセンターの動画は自動的に削除されません。カカオチャンネル管理者がチャンネルビジネスホームの管理画面から直接削除できます。
 * ステップ 1 の登録後にステップ 2 のファイルアップロードが失敗または遅延してトークン（5 分）が期限切れになった場合は、新しい登録を再度呼び出す必要があります。登録のみ行われ実際のアップロードが完了していない動画は、一定時間経過後にステータスが `ERROR` に自動的にマークされます。
 
 <a id="view-video"></a>
 
-### 動画照会 { #view-video }
+### 動画照会
 
 <a id="requested-18"></a>
 
@@ -3907,7 +3907,7 @@ Content-Type: application/json;charset=UTF-8
 | - - title           | String  | X        | 動画タイトル (アップロード直後はファイル名、エンコード完了後にカカオビズセンターで修正した値に同期されます)    |
 | - - fileName        | String  | O        | アップロードファイル名                                                     |
 | - - fileSize        | Long    | O        | ファイルサイズ (byte)                                                |
-| - - status          | String  | O        | 動画ステータス ([動画ステータス](#video-status) 参照)                              |
+| - - status          | String  | O        | 動画ステータス ([動画ステータス](#動画ステータス) 参照)                              |
 | - - thumbnailUrl    | String  | X        | サムネイル URL (エンコード完了後に提供)                                       |
 | - - videoUrl        | String  | X        | 送信・管理用 URL (`PUBLIC` 状態で提供)                               |
 | - - playUrl         | String  | X        | 再生用 URL                                                     |
@@ -3920,7 +3920,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="delete-video"></a>
 
-### 動画の削除 { #delete-video }
+### 動画の削除
 
 <a id="requested-19"></a>
 
@@ -3980,7 +3980,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="video-status"></a>
 
-### 動画ステータス { #video-status }
+### 動画ステータス
 
 動画照会レスポンスの `status` フィールド値について説明します。
 
@@ -3997,11 +3997,11 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="upload"></a>
 
-## アップロード { #upload }
+## アップロード
 
 <a id="upload-bizform-key"></a>
 
-### ビズフォームキーのアップロード { #upload-bizform-key }
+### ビズフォームキーのアップロード
 
 <a id="requested-20"></a>
 
@@ -4056,11 +4056,11 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="manage-outgoing-profiles"></a>
 
-## 発信プロフィール管理 { #manage-outgoing-profiles }
+## 発信プロフィール管理
 
 <a id="view-outgoing-profile"></a>
 
-### 発信プロフィール照会 { #view-outgoing-profile }
+### 発信プロフィール照会
 
 <a id="requested-21"></a>
 
@@ -4165,7 +4165,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="modify-outgoing-profile-080-opt-out-number"></a>
 
-### 発信プロフィール 080 受信拒否番号の修正 { #modify-outgoing-profile-080-opt-out-number }
+### 発信プロフィール 080 受信拒否番号の修正
 
 <a id="requested-22"></a>
 
@@ -4234,11 +4234,11 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="manage-fallback"></a>
 
-## 代替送信管理 { #manage-fallback }
+## 代替送信管理
 
 <a id="register-sms-appkey"></a>
 
-### SMS AppKey 登録 { #register-sms-appkey }
+### SMS AppKey 登録
 
 [URL]
 
@@ -4300,7 +4300,7 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 
 <a id="register-fallback-settings"></a>
 
-### 代替送信設定登録 { #register-fallback-settings }
+### 代替送信設定登録
 
 [URL]
 
