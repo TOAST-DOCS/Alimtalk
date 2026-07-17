@@ -1904,29 +1904,6 @@ Content-Type: application/json;charset=UTF-8
 * The Add Channel (AC) button must be in the first position when registering the AD included (AD) or Mixed Purposes (MI) message type template.
 * The Add Channel (AC) button name must be registered as "Add channel".
 
-Refer to the table below for whether replacement variables (#{variable}) can be used for each field.
-
-| Category | Field | Replaceable |
-|------|------|---------|
-| Basic | templateContent | O |
-| Basic | templateTitle | O |
-| Basic | templateSubtitle | X |
-| Basic | templateHeader | O |
-| Basic | templateExtra | X |
-| Basic | templateAd | X |
-| Button | name | X |
-| Button | linkMo, linkPc, schemeIos, schemeAndroid | O |
-| Quick Reply | name | X |
-| Quick Reply | linkMo, linkPc, schemeIos, schemeAndroid | O |
-| Template item | title | X |
-| Template item | description | O |
-| Template item summary | title | X |
-| Template item summary | description | O |
-| Template item highlight | title | O |
-| Template item highlight | description | O |
-| Template item highlight | imageUrl | X |
-| Representative link | linkMo, linkPc, schemeIos, schemeAndroid | O |
-
 <a id="response-13"></a>
 
 #### Response
