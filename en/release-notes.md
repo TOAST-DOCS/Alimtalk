@@ -3,6 +3,20 @@
 <a id="release-notes"></a>
 
 ## Notification > KakaoTalk Bizmessage > Release Notes { #release-notes }
+<a id="july-28-2026"></a>
+
+### July 28, 2026
+<a id="feature-additions"></a>
+
+#### Feature Updates
+* [API] Added Brand Message result update query API
+    * An API to query brand message delivery results by result update date (`result_date`) has been added.
+        * Endpoint: `GET /brand-message/v1.0/appkeys/{appKey}/message-results`
+    * The queryable period is within the last 90 days, and the query range per request is up to 31 days.
+
+* [API] Changed the maximum length of the Brand Message 080 opt-out verification number
+    * The maximum allowed length of the 080 opt-out verification number has been changed from 9 to 10 characters.
+
 ### June 23, 2026
 #### Added Features
 * [Console] Added brand message video upload feature
