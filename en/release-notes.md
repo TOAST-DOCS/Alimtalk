@@ -17,33 +17,23 @@
 * [API] Changed the maximum length of the Brand Message 080 opt-out verification number
     * The maximum allowed length of the 080 opt-out verification number has been changed from 9 to 10 characters.
 
+<a id="june-23-2026"></a>
+
 ### June 23, 2026
+
+<a id="feature-additions"></a>
+
 #### Added Features
 * [Console] Added brand message video upload feature
     * You can now directly upload and manage videos for brand message premium video in the console.
 * [API] Added brand message video upload API
     * Added an API to upload videos for brand message premium video.
-#### Bug Fixes
-* [API] Improved 080 opt-out number handling for brand message and FriendTalk ad fallback sending
-    * Fixed an issue where messages were sent as general messages in some cases where no 080 opt-out number was registered during brand message and FriendTalk ad fallback sending.
-
-<a id="june-23-2026"></a>
-
-### June 23, 2026
-
-<!-- TODO: translate body -->
-
-<a id="feature-additions"></a>
-
-#### Feature Additions
-
-<!-- TODO: translate body -->
 
 <a id="bug-fixes"></a>
 
 #### Bug Fixes
-
-<!-- TODO: translate body -->
+* [API] Improved 080 opt-out number handling for brand message and FriendTalk ad fallback sending
+    * Fixed an issue where messages were sent as general messages in some cases where no 080 opt-out number was registered during brand message and FriendTalk ad fallback sending.
 
 <a id="may-27-2026"></a>
 
