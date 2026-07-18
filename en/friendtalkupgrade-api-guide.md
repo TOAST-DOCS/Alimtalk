@@ -1,6 +1,6 @@
 <a id="friendtalkupgrade-api-guide"></a>
 
-## Notification > KakaoTalk Bizmessage > Brand Message > API v1.0 Guide { #friendtalkupgrade-api-guide }
+## Notification > KakaoTalk Bizmessage > 브랜드 메시지 > API v1.0 Guide { #friendtalkupgrade-api-guide }
 
 <a id="brand-message"></a>
 
@@ -93,7 +93,7 @@ Content-Type: multipart/form-data
 
 <a id="apply-for-using-non-friend-message-sending-targeting-m-n"></a>
 
-### Apply for Non-Friend Message Sending (Targeting M, N) { #apply-for-using-non-friend-message-sending-targeting-m-n }
+### Apply for Using Non-Friend Message Sending (Targeting M, N) { #apply-for-using-non-friend-message-sending-targeting-m-n }
 
 <a id="requested-2"></a>
 
@@ -148,7 +148,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="request-to-send-a-free-form-message"></a>
 
-## Send Freestyle Messages { #request-to-send-a-free-form-message }
+## Request to Send a Free-Form Message { #request-to-send-a-free-form-message }
 
 * Marketing consent-based sending can be used.
     * You can specify the message target type by setting the targeting field.
@@ -267,7 +267,7 @@ Content-Type: application/json;charset=UTF-8
 | pushAlarm | boolean | X | Whether to send a push notification for the message (default: true) |
 | requestDate | String | X | Date and time of request (yyyy-MM-dd HH:mm)<br>(to be sent immediately if field is not sent)<br>Can be scheduled up to 60 days in advance |
 | unsubscribeNo | String | X | 080 toll-free opt-out phone number (if neither field is entered, the opt-out information registered in the Sender Profile is used)<br>- 080-xxx-xxxx <br>- 080-xxxx-xxxx <br>- 080xxxxxxx <br>- 080xxxxxxxx |
-| unsubscribeAuthNo | String | X | 080 toll-free opt-out authentication number (up to 10 characters; if neither field is entered, the opt-out information registered in the Sender Profile is used)<br>Cannot enter unsubscribeAuthNo without unsubscribeNo<br>Example: 1234 |
+| unsubscribeAuthNo   | String  | X  | 080 toll-free opt-out verification number (up to 10 characters; if all opt-out fields are left blank, the message is sent using the opt-out information registered in the sender's profile)<br>Cannot enter unsubscribeAuthNo without unsubscribeNo<br>Example: 1234        |
 | adult | boolean | X | Whether the message is for adults only (default: false) |
 | content | String | O | - For TEXT type: up to 1,300 characters (line breaks: up to 99, URL format allowed)<br>- For IMAGE type: up to 1,300 characters (line breaks: up to 99, URL format allowed)<br>- For WIDE type: up to 76 characters (line breaks: up to 5)<br>- For PREMIUM_VIDEO type: this field is optional. Up to 76 characters (line breaks: up to 5)<br>- For all other types: this field is not used |
 | buttons | List | X | List of buttons<br>- For TEXT and IMAGE types: up to 4 buttons when a coupon is applied, up to 5 otherwise<br>- For WIDE and WIDE_ITEM_LIST types: up to 2 buttons<br>- For PREMIUM_VIDEO type: up to 1 button<br>- For COMMERCE type: minimum 1, maximum 2 buttons |
@@ -298,7 +298,7 @@ Content-Type: application/json;charset=UTF-8
 | -- resendUnsubscribeNo | String  | X  | Alternative delivery 080 opt-out number<br><span style="color:red">(If it is not the 080 opt-out number registered in the SMS service, alternative delivery may fail.)</span>                                                                                                                                                                       |
 | - targeting         | String  | X  | Target type of the message (M: users who agreed to receive marketing messages, N: users who agreed to receive marketing messages but are not friends, I: users who are friends)                                                                |
 | - unsubscribeNo       | String  | X  | 080 free opt-out phone number (if not entered, the opt-out information registered in the Sender Profile is used)<br>- 080-xxx-xxxx <br>- 080-xxxx-xxxx <br>- 080xxxxxxx <br>- 080xxxxxxxx         |
-| - unsubscribeAuthNo   | String  | X  | 080 free opt-out authentication number (up to 10 characters; if not entered, the opt-out information registered in the Sender Profile is used)<br>Cannot enter unsubscribeAuthNo without unsubscribeNo<br>Example: 1234        |
+| - unsubscribeAuthNo   | String  | X  | 080 opt-out authentication number (up to 10 characters; if not entered, the message is sent using the opt-out information registered in the sender profile)<br>Cannot enter unsubscribeAuthNo without unsubscribeNo<br>Example: 1234        |
 | - recipientGroupingKey | String  | X  | Recipient's grouping key (a grouping key can be specified per recipient, up to 100 characters)                                                                                                                                                                                                                   |
 | senderGroupingKey    | String  | X  | Sender's grouping key (a grouping key can be specified per sender, up to 100 characters)                                                                                                                                                                                                                   |
 | resellerCode          | String  | X  | Reseller code (used when a reseller sends messages)                                                                                                                                                                                                                                                       |
@@ -377,7 +377,7 @@ Content-Type: application/json;charset=UTF-8
 | pushAlarm              | boolean | X  | Whether to send a push notification for the message (default: true)                                                                                                                                                                                                                                                   |
 | requestDate            | String  | X  | Date and time of request (yyyy-MM-dd HH:mm)<br>(to be sent immediately if not entered)<br>Can be scheduled up to 60 days in advance                                                                                                                                                                                                                                                   |
 | unsubscribeNo       | String  | X  | 080 opt-out phone number (if all fields are left blank, the message is sent using the opt-out information registered in the Sender Profile)<br>- 080-xxx-xxxx <br>- 080-xxxx-xxxx <br>- 080xxxxxxx <br>- 080xxxxxxxx         |
-| unsubscribeAuthNo   | String  | X  | 080 opt-out authentication number (up to 10 characters; if all fields are left blank, the message is sent using the opt-out information registered in the Sender Profile)<br>Cannot enter unsubscribeAuthNo without unsubscribeNo<br>Example: 1234        |
+| unsubscribeAuthNo   | String  | X  | 080 opt-out authentication number (up to 10 characters; if all fields are left blank, the message is sent using the opt-out information registered in the sender profile)<br>Cannot enter unsubscribeAuthNo without unsubscribeNo<br>Example: 1234        |
 | adult                  | boolean | X  | Whether the message is for adults only (default: false)                                                                                                                                                                                                                                                       |
 | content                | String  | O  | - For the TEXT type: up to 1,300 characters (line breaks: up to 99; URL format input allowed)<br>- For the IMAGE type: up to 1,300 characters (line breaks: up to 99; URL format input allowed)<br>- For the WIDE type: up to 76 characters (line breaks: up to 5)<br>- For the PREMIUM_VIDEO type: this field is optional. Up to 76 characters (line breaks: up to 5)<br>- For all other types: this field is not used                           |
 | image                  | Object  | O  | Image element<br>- Required field for the IMAGE, WIDE, and COMMERCE types                                                                                                                                                                                                                                |
@@ -411,7 +411,7 @@ Content-Type: application/json;charset=UTF-8
 | -- resendUnsubscribeNo | String  | X  | Alternative delivery 080 opt-out number<br><span style="color:red">(If it is not the 080 opt-out number registered in the SMS service, alternative delivery may fail.)</span>                                                                                                                                                                       |
 | - targeting         | String  | X  | Target type for the message (M: users who have consented to marketing, N: users who have consented to marketing but are not friends, I: users who are friends)                                                                |
 | - unsubscribeNo       | String  | X  | 080 toll-free opt-out number (if not entered, the opt-out information registered in the Sender Profile is used)<br>- 080-xxx-xxxx <br>- 080-xxxx-xxxx <br>- 080xxxxxxx <br>- 080xxxxxxxx         |
-| - unsubscribeAuthNo   | String  | X  | 080 toll-free opt-out authentication number (up to 10 characters; if not entered, the opt-out information registered in the Sender Profile is used)<br>Cannot enter unsubscribeAuthNo without unsubscribeNo<br>Example: 1234        |
+| - unsubscribeAuthNo   | String  | X  | 080 opt-out authentication number (up to 10 characters; if all fields are left blank, the message is sent using the opt-out information registered in the sender profile)<br>Cannot enter unsubscribeAuthNo without unsubscribeNo<br>Example: 1234        |
 | - recipientGroupingKey | String  | X  | Recipient grouping key (you can specify a grouping key per recipient; up to 100 characters)                                                                                                                                                                                                                   |
 | senderGroupingKey    | String  | X  | Sender grouping key (you can specify a grouping key per sender; up to 100 characters)                                                                                                                                                                                                                   |
 | resellerCode          | String  | X  | Reseller code (used when a reseller sends messages)                                                                                                                                                                                                                                                       |
@@ -490,7 +490,7 @@ Content-Type: application/json;charset=UTF-8
 | pushAlarm              | boolean | X  | Whether to send a push notification for the message (default: true)                                                                                                                                                                                                           |
 | requestDate            | String  | X  | Date and time of request (yyyy-MM-dd HH:mm)<br>(to be sent immediately if not entered)<br>Can be scheduled up to 60 days in advance                                                                                                                                           |
 | unsubscribeNo       | String  | X  | 080 free opt-out phone number (if none entered, the opt-out information registered in the Sender Profile is used)<br>- 080-xxx-xxxx <br>- 080-xxxx-xxxx <br>- 080xxxxxxx <br>- 080xxxxxxxx         |
-| unsubscribeAuthNo   | String  | X  | 080 free opt-out authentication number (up to 10 characters; if none entered, the opt-out information registered in the Sender Profile is used)<br>Cannot enter unsubscribeAuthNo without unsubscribeNo<br>Example: 1234        |
+| unsubscribeAuthNo   | String  | X  | 080 free opt-out authentication number (up to 10 characters; if all fields are left blank, the message is sent using the opt-out information registered in the sender profile)<br>Cannot enter unsubscribeAuthNo without unsubscribeNo<br>Example: 1234        |
 | adult                  | boolean | X  | Whether the message is for adults (default: false)                                                                                                                                                                                                                            |
 | content                | String  | O  | - For TEXT type: up to 1,300 characters (line breaks: up to 99, URL format allowed)<br>- For IMAGE type: up to 1,300 characters (line breaks: up to 99, URL format allowed)<br>- For WIDE type: up to 76 characters (line breaks: up to 5)<br>- For PREMIUM_VIDEO type: this field can be used optionally, up to 76 characters (line breaks: up to 5)<br>- For all other types: this field is not used |
 | image                  | Object  | O  | Image element<br>- Required field for IMAGE, WIDE, and COMMERCE types                                                                                                                                                                                                         |
@@ -524,7 +524,7 @@ Content-Type: application/json;charset=UTF-8
 | -- resendUnsubscribeNo | String  | X  | Alternative delivery 080 opt-out number<br><span style="color:red">(If it is not the 080 opt-out number registered in the SMS service, alternative delivery may fail.)</span>                                                                                                                                                                       |
 | - targeting         | String  | X  | Type of message target (M: users who have consented to marketing, N: users who have consented to marketing but are not friends, I: users who are friends)                                                                |
 | - unsubscribeNo       | String  | X  | 080 free opt-out phone number (if none is entered, the opt-out information registered in the Sender Profile is used)<br>- 080-xxx-xxxx <br>- 080-xxxx-xxxx <br>- 080xxxxxxx <br>- 080xxxxxxxx         |
-| - unsubscribeAuthNo   | String  | X  | 080 free opt-out authentication number (up to 10 characters; if none is entered, the opt-out information registered in the Sender Profile is used)<br>Cannot enter unsubscribeAuthNo without unsubscribeNo<br>Example: 1234        |
+| - unsubscribeAuthNo   | String  | X  | 080 free opt-out authentication number (up to 10 characters; if all fields are left empty, the message is sent using the opt-out information registered in the sender profile)<br>Cannot enter unsubscribeAuthNo without unsubscribeNo<br>Example: 1234        |
 | - recipientGroupingKey | String  | X  | Recipient grouping key (a grouping key can be specified for each recipient, up to 100 characters)                                                                                                                                                                                                                   |
 | senderGroupingKey    | String  | X  | Sender grouping key (a grouping key can be specified for each sender, up to 100 characters)                                                                                                                                                                                                                   |
 | resellerCode          | String  | X  | Reseller code (used when a reseller sends a message)                                                                                                                                                                                                                                                       |
@@ -627,7 +627,7 @@ Content-Type: application/json;charset=UTF-8
 | pushAlarm | boolean | X | Whether to send a push notification for the message (default: true) |
 | requestDate | String | X | Date and time of request (yyyy-MM-dd HH:mm)<br>(Sent immediately if not entered)<br>Scheduling is available up to 60 days in advance. |
 | unsubscribeNo | String | X | 080 toll-free opt-out phone number (if neither field is entered, the opt-out information registered in the Sender Profile is used)<br>- 080-xxx-xxxx <br>- 080-xxxx-xxxx <br>- 080xxxxxxx <br>- 080xxxxxxxx |
-| unsubscribeAuthNo | String | X | 080 toll-free opt-out authentication number (up to 10 characters; if neither field is entered, the opt-out information registered in the Sender Profile is used)<br>Cannot enter unsubscribeAuthNo without unsubscribeNo<br>Example: 1234 |
+| unsubscribeAuthNo   | String  | X  | 080 free opt-out authentication number (up to 10 characters; if not entered, the message is sent using the free opt-out information registered in the sender profile)<br>Cannot enter unsubscribeAuthNo without unsubscribeNo<br>Example: 1234        |
 | adult | boolean | X | Whether the message is for adults (default: false) |
 | header | String | O | Header<br>- Required for the WIDE_ITEM_LIST type; up to 20 characters (line breaks not allowed)<br>- Optional for the PREMIUM_VIDEO type; up to 20 characters (line breaks not allowed) |
 | item | Object | O | Wide list element (available only for the WIDE_ITEM_LIST type) |
@@ -666,7 +666,7 @@ Content-Type: application/json;charset=UTF-8
 | -- resendUnsubscribeNo | String  | X  | 080 opt-out number for alternative delivery<br><span style="color:red">(If it is not the 080 opt-out number registered in the SMS service, alternative delivery may fail.)</span>                                                                                                                                                                       |
 | - targeting         | String  | X  | Target type for the message (M: users who agreed to receive marketing messages, N: users who agreed to receive marketing messages but are not friends, I: users who are friends)                                                                |
 | - unsubscribeNo       | String  | X  | 080 free opt-out phone number (if not entered, the opt-out information registered in the Sender Profile is used)<br>- 080-xxx-xxxx <br>- 080-xxxx-xxxx <br>- 080xxxxxxx <br>- 080xxxxxxxx         |
-| - unsubscribeAuthNo   | String  | X  | 080 free opt-out authentication number (up to 10 characters; if not entered, the opt-out information registered in the Sender Profile is used)<br>Cannot enter unsubscribeAuthNo without unsubscribeNo<br>Example: 1234        |
+| - unsubscribeAuthNo   | String  | X  | 080 free opt-out authentication number (up to 10 characters; if all are left blank, the message is sent using the free opt-out information registered in the sender profile)<br>Cannot enter unsubscribeAuthNo without unsubscribeNo<br>Example: 1234        |
 | - recipientGroupingKey | String  | X  | Recipient grouping key (a grouping key can be assigned per recipient, up to 100 characters)                                                                                                                                                                                                                   |
 | senderGroupingKey    | String  | X  | Sender grouping key (a grouping key can be assigned per sender, up to 100 characters)                                                                                                                                                                                                                   |
 | resellerCode          | String  | X  | Reseller code (used when a reseller sends a message)                                                                                                                                                                                                                                                       |
@@ -746,7 +746,7 @@ Content-Type: application/json;charset=UTF-8
 | pushAlarm | boolean | X | Whether to send a push alarm for the message (default: true) |
 | requestDate | String | X | Date and time of request (yyyy-MM-dd HH:mm)<br>(to be sent immediately if not entered)<br>Can be scheduled up to 60 days in advance |
 | unsubscribeNo | String | X | 080 free opt-out phone number (if none is entered, the opt-out information registered in the Sender Profile is used for sending)<br>- 080-xxx-xxxx<br>- 080-xxxx-xxxx<br>- 080xxxxxxx<br>- 080xxxxxxxx |
-| unsubscribeAuthNo | String | X | 080 free opt-out authentication number (up to 10 characters; if none is entered, the opt-out information registered in the Sender Profile is used for sending)<br>Cannot enter unsubscribeAuthNo without unsubscribeNo<br>Example: 1234 |
+| unsubscribeAuthNo   | String  | X  | 080 free opt-out authentication number (up to 10 characters; if all opt-out fields are left blank, the message is sent using the opt-out information registered in the sender profile)<br>Cannot enter unsubscribeAuthNo without unsubscribeNo<br>Example: 1234        |
 | adult | boolean | X | Whether the message is for adults (default: false) |
 | content | String | X | - For the TEXT type: up to 1,300 characters (line breaks: up to 99, URL format allowed)<br>- For the IMAGE type: up to 1,300 characters (line breaks: up to 99, URL format allowed)<br>- For the WIDE type: up to 76 characters (line breaks: up to 5)<br>- For the PREMIUM_VIDEO type: this field is optional, up to 76 characters (line breaks: up to 5)<br>- For all other types: this field is not used |
 | header | String | X | Header<br>- For the WIDE_ITEM_LIST type: required field, up to 20 characters (line breaks: not allowed)<br>- For the PREMIUM_VIDEO type: optional field, up to 20 characters (line breaks: not allowed) |
@@ -781,7 +781,7 @@ Content-Type: application/json;charset=UTF-8
 | -- resendUnsubscribeNo | String  | X  | Alternative delivery 080 opt-out number<br><span style="color:red">(If it is not the 080 opt-out number registered in the SMS service, alternative delivery may fail.)</span>                                                                                                                                                                       |
 | - targeting         | String  | X  | Type of message target (M: users who agreed to receive marketing messages, N: users who agreed to receive marketing messages but are not friends, I: users who are friends)                                                                |
 | - unsubscribeNo       | String  | X  | 080 free opt-out phone number (if all are left blank, sent with the opt-out information registered in the Sender Profile)<br>- 080-xxx-xxxx <br>- 080-xxxx-xxxx <br>- 080xxxxxxx <br>- 080xxxxxxxx         |
-| - unsubscribeAuthNo   | String  | X  | 080 free opt-out authentication number (up to 10 characters; if all are left blank, sent with the opt-out information registered in the Sender Profile)<br>Cannot enter unsubscribeAuthNo without unsubscribeNo<br>Example: 1234        |
+| - unsubscribeAuthNo   | String  | X  | 080 opt-out authentication number (up to 10 characters; if all are left blank, the message is sent using the opt-out information registered in the sender's profile)<br>Cannot enter unsubscribeAuthNo without unsubscribeNo<br>Example: 1234        |
 | - recipientGroupingKey | String  | X  | Recipient grouping key (you can specify a grouping key per recipient; up to 100 characters)                                                                                                                                                                                                                   |
 | senderGroupingKey    | String  | X  | Sender grouping key (you can specify a grouping key per sender; up to 100 characters)                                                                                                                                                                                                                   |
 | resellerCode          | String  | X  | Reseller code (used when a reseller sends messages)                                                                                                                                                                                                                                                       |
@@ -867,7 +867,7 @@ Content-Type: application/json;charset=UTF-8
 | pushAlarm | boolean | X | Whether to send a push notification for the message (default: true) |
 | requestDate | String | X | Request date and time (yyyy-MM-dd HH:mm)<br>(If not entered, the message is sent immediately.)<br>Can be scheduled up to 60 days in advance. |
 | unsubscribeNo | String | X | 080 toll-free opt-out number (if neither field is entered, the opt-out information registered in the Sender Profile is used for sending)<br>- 080-xxx-xxxx <br>- 080-xxxx-xxxx <br>- 080xxxxxxx <br>- 080xxxxxxxx |
-| unsubscribeAuthNo | String | X | 080 toll-free opt-out authentication number (up to 10 characters; if neither field is entered, the opt-out information registered in the Sender Profile is used for sending)<br>Cannot enter unsubscribeAuthNo without unsubscribeNo<br>Example: 1234 |
+| unsubscribeAuthNo   | String  | X  | 080 free opt-out authentication number (up to 10 characters; if neither field is entered, the message is sent using the opt-out information registered in the sender profile)<br>Cannot enter unsubscribeAuthNo without unsubscribeNo<br>Example: 1234        |
 | adult | boolean | X | Whether the message is for adults only (default: false) |
 | additionalContent | String | X | Additional information (up to 34 characters, line breaks: up to 1). Available only for the Commerce type. |
 | image | Object | O | Image element<br>- Required for the IMAGE, WIDE, and COMMERCE types |
@@ -907,7 +907,7 @@ Content-Type: application/json;charset=UTF-8
 | -- resendUnsubscribeNo | String  | X  | 080 opt-out number for alternative delivery<br><span style="color:red">(If it is not the 080 opt-out number registered in the SMS service, alternative delivery may fail.)</span>                                                                                                                                                                       |
 | - targeting         | String  | X  | Target type for the message (M: users who have consented to marketing, N: users who have consented to marketing but are not friends, I: users who are friends)                                                                |
 | - unsubscribeNo       | String  | X  | 080 toll-free opt-out phone number (if all fields are left blank, the opt-out information registered in the Sender Profile is used for delivery)<br>- 080-xxx-xxxx <br>- 080-xxxx-xxxx <br>- 080xxxxxxx <br>- 080xxxxxxxx         |
-| - unsubscribeAuthNo   | String  | X  | 080 toll-free opt-out authentication number (up to 10 characters; if all fields are left blank, the opt-out information registered in the Sender Profile is used for delivery)<br>Cannot enter unsubscribeAuthNo alone without unsubscribeNo<br>Example: 1234        |
+| - unsubscribeAuthNo   | String  | X  | 080 free opt-out authentication number (up to 10 characters; if all fields are left empty, the message is sent using the free opt-out information registered in the sender profile)<br>Cannot enter unsubscribeAuthNo without unsubscribeNo<br>Example: 1234        |
 | - recipientGroupingKey | String  | X  | Recipient grouping key (you can specify a grouping key per recipient, up to 100 characters)                                                                                                                                                                                                                   |
 | senderGroupingKey    | String  | X  | Sender grouping key (you can specify a grouping key per sender, up to 100 characters)                                                                                                                                                                                                                   |
 | resellerCode          | String  | X  | Reseller code (used when a reseller sends messages)                                                                                                                                                                                                                                                       |
@@ -1045,7 +1045,7 @@ In the carousel type, you can apply different replacement variable values to eac
 | pushAlarm              | boolean | X  | Whether to send a push notification for the message (default: true)                                                                                                                                                                                                                                                   |
 | requestDate            | String  | X  | Date and time of request (yyyy-MM-dd HH:mm)<br>(to be sent immediately if not entered)<br>Can be scheduled up to 60 days in advance                                                                                                                                                                                                                                                   |
 | unsubscribeNo       | String  | X  | 080 toll-free opt-out number (if neither field is entered, the message is sent using the opt-out information registered in the Sender Profile)<br>- 080-xxx-xxxx <br>- 080-xxxx-xxxx <br>- 080xxxxxxx <br>- 080xxxxxxxx         |
-| unsubscribeAuthNo   | String  | X  | 080 toll-free opt-out authentication number (up to 10 characters; if neither field is entered, the message is sent using the opt-out information registered in the Sender Profile)<br>Cannot enter unsubscribeAuthNo without unsubscribeNo<br>Example: 1234        |
+| unsubscribeAuthNo   | String  | X  | 080 free opt-out authentication number (up to 10 characters; if all fields are left blank, the message is sent using the opt-out information registered in the sender profile)<br>Cannot enter unsubscribeAuthNo without unsubscribeNo<br>Example: 1234        |
 | adult                  | boolean | X  | Whether the message is for adults (default: false)                                                                                                                                                                                                                                                                       |
 | carousel               | Object  | O  | Carousel                                                                                                                                                                                                                                                                           |
 | - list                 | List    | O  | Carousel list (minimum 2, maximum 6)                                                                                                                                                                                                                                                        |
@@ -1086,7 +1086,7 @@ In the carousel type, you can apply different replacement variable values to eac
 | -- resendUnsubscribeNo | String  | X  | Alternative delivery 080 opt-out number<br><span style="color:red">(If it is not the 080 opt-out number registered in the SMS service, alternative delivery may fail.)</span>                                                                                                                                                                       |
 | - targeting         | String  | X  | Target type of the message (M: users who agreed to receive marketing messages, N: users who are not friends but agreed to receive marketing messages, I: users who are friends)                                                                |
 | - unsubscribeNo       | String  | X  | 080 free opt-out phone number (if all fields are left blank, the opt-out information registered in the Sender Profile is used)<br>- 080-xxx-xxxx <br>- 080-xxxx-xxxx <br>- 080xxxxxxx <br>- 080xxxxxxxx         |
-| - unsubscribeAuthNo   | String  | X  | 080 free opt-out authentication number (up to 10 characters; if all fields are left blank, the opt-out information registered in the Sender Profile is used)<br>Cannot enter unsubscribeAuthNo without unsubscribeNo<br>Example: 1234        |
+| - unsubscribeAuthNo   | String  | X  | 080 free opt-out authentication number (up to 10 characters; if all fields are left blank, the message is sent using the opt-out information registered in the sender profile)<br>Cannot enter unsubscribeAuthNo without unsubscribeNo<br>Example: 1234        |
 | - recipientGroupingKey | String  | X  | Recipient grouping key (you can specify a grouping key per recipient, up to 100 characters)                                                                                                                                                                                                                   |
 | senderGroupingKey    | String  | X  | Sender grouping key (you can specify a grouping key per sender, up to 100 characters)                                                                                                                                                                                                                   |
 | resellerCode          | String  | X  | Reseller code (used when a reseller sends messages)                                                                                                                                                                                                                                                       |
@@ -1191,7 +1191,7 @@ In the carousel type, you can apply different replacement variable values to eac
 | pushAlarm            | boolean | X  | Whether to send a message push alarm (default: true)                                                                                                                                                                                                                                                   |
 | requestDate          | String  | X  | Date and time of request (yyyy-MM-dd HH:mm)<br>(to be sent immediately if not entered)<br>Can be scheduled up to 60 days in advance                                                                                                                                                                                                                                                   |
 | unsubscribeNo       | String  | X  | 080 opt-out toll-free number (if none is entered, the opt-out information registered in the Sender Profile is used)<br>- 080-xxx-xxxx <br>- 080-xxxx-xxxx <br>- 080xxxxxxx <br>- 080xxxxxxxx         |
-| unsubscribeAuthNo   | String  | X  | 080 opt-out authentication number (up to 10 characters; if none is entered, the opt-out information registered in the Sender Profile is used)<br>Cannot enter unsubscribeAuthNo without unsubscribeNo<br>Example: 1234        |
+| unsubscribeAuthNo   | String  | X  | 080 opt-out authentication number (up to 10 characters; if all opt-out fields are left blank, the message is sent using the opt-out information registered in the sender profile)<br>Cannot enter unsubscribeAuthNo without unsubscribeNo<br>Example: 1234        |
 | adult                | boolean | X  | Whether the message is for adults (default: false)                                                                                                                                                                                                                                                       |
 | carousel             | Object  | O  | Carousel                                                                                                                                                                                                                                                                           |
 | - head               | Object  | X  | Carousel intro                                                                                                                                                                                                                                                                       |
@@ -1244,7 +1244,7 @@ In the carousel type, you can apply different replacement variable values to eac
 | -- resendSendNo      | String  | X  | Sender number for alternative delivery<br><span style="color:red">(Fallback may fail, if the sender number is not registered on the SMS service.)</span>                                                                                                                                                                                 |
 | - targeting         | String  | X  | Type of message target (M: users who agreed to receive marketing messages, N: users who agreed to receive marketing messages but are not friends, I: users who are friends)                                                                |
 | - unsubscribeNo       | String  | X  | 080 opt-out phone number (if none is entered, the opt-out information registered in the Sender Profile is used)<br>- 080-xxx-xxxx <br>- 080-xxxx-xxxx <br>- 080xxxxxxx <br>- 080xxxxxxxx         |
-| - unsubscribeAuthNo   | String  | X  | 080 opt-out authentication number (up to 10 characters; if none is entered, the opt-out information registered in the Sender Profile is used)<br>Cannot enter unsubscribeAuthNo without unsubscribeNo<br>Example: 1234        |
+| - unsubscribeAuthNo   | String  | X  | 080 free opt-out authentication number (up to 10 characters; if all opt-out fields are left blank, the message is sent using the free opt-out information registered in the sender profile)<br>Cannot enter unsubscribeAuthNo without unsubscribeNo<br>Example: 1234        |
 | - recipientGroupingKey | String  | X  | Recipient grouping key (you can specify a grouping key per recipient, up to 100 characters)                                                                                                                                                                                                                   |
 | senderGroupingKey    | String  | X  | Sender grouping key (you can specify a grouping key per sender, up to 100 characters)                                                                                                                                                                                                                   |
 | resellerCode          | String  | X  | Reseller code (used when a reseller sends messages)                                                                                                                                                                                                                                                                       |
@@ -1292,7 +1292,7 @@ In the carousel type, you can apply different replacement variable values to eac
 
 <a id="request-to-send-basic-message"></a>
 
-## Send Basic Message Request { #request-to-send-basic-message }
+## Request to Send a Basic Message { #request-to-send-basic-message }
 
 * This delivery uses a template.
 * Marketing consent-based sending can be used.
@@ -1310,7 +1310,7 @@ In the carousel type, you can apply different replacement variable values to eac
 
 <a id="cautions-for-use"></a>
 
-### Notes on Usage { #cautions-for-use }
+### Cautions for Use { #cautions-for-use }
 
 - `unsubscribeNo` and `unsubscribeAuthNo` are the 080 toll-free opt-out phone number and authentication number. If either one is not entered, the message will be sent using the opt-out information registered in the Sender Profile.
 - If you enter `unsubscribeNo` and `unsubscribeAuthNo` when sending, the message will be sent using the entered values instead of the opt-out information registered in the Sender Profile.
@@ -1388,7 +1388,7 @@ Content-Type: application/json;charset=UTF-8
 | pushAlarm              | boolean | X  | Whether to send a message push notification (default: true) |
 | requestDate            | String  | X  | Date and time of request (yyyy-MM-dd HH:mm)<br>(to be sent immediately if not entered)<br>Can be scheduled up to 60 days in advance |
 | unsubscribeNo          | String  | X  | 080 free opt-out phone number (if all fields are left blank, the opt-out information registered in the Sender Profile is used for delivery)<br>- 080-xxx-xxxx <br>- 080-xxxx-xxxx <br>- 080xxxxxxx <br>- 080xxxxxxxx |
-| unsubscribeAuthNo      | String  | X  | 080 free opt-out authentication number (up to 10 characters; if all fields are left blank, the opt-out information registered in the Sender Profile is used for delivery)<br>Cannot enter unsubscribeAuthNo without unsubscribeNo<br>Example: 1234 |
+| unsubscribeAuthNo      | String  | X  | 080 free opt-out authentication number (up to 10 characters; if all fields are left blank, the message is sent using the free opt-out information registered in the sender's profile)<br>Cannot enter unsubscribeAuthNo without unsubscribeNo<br>Example: 1234                                                                                                           |
 | recipientList          | List    | O  | List of recipients (up to 1,000) |
 | - recipientNo          | String  | O  | Recipient number |
 | - targeting            | String  | O  | Type of message target (M: users who agreed to receive marketing messages, N: users who are not friends but agreed to receive marketing messages only, I: users who are friends) |
@@ -1406,7 +1406,7 @@ Content-Type: application/json;charset=UTF-8
 | -- resendContent       | String  | X  | Alternative delivery content<br>(If value is unavailable, the [message body] is used for alternative delivery.) |
 | -- resendSendNo        | String  | X  | Sender number for alternative delivery<br><span style="color:red">(Fallback may fail, if the sender number is not registered on the SMS service.)</span> |
 | - unsubscribeNo        | String  | X  | 080 free opt-out phone number (if all fields are left blank, the opt-out information registered in the Sender Profile is used for delivery)<br>- 080-xxx-xxxx <br>- 080-xxxx-xxxx <br>- 080xxxxxxx <br>- 080xxxxxxxx |
-| - unsubscribeAuthNo    | String  | X  | 080 free opt-out authentication number (up to 10 characters; if all fields are left blank, the opt-out information registered in the Sender Profile is used for delivery)<br>Cannot enter unsubscribeAuthNo without unsubscribeNo<br>Example: 1234 |
+| - unsubscribeAuthNo    | String  | X  | 080 free opt-out authentication number (up to 10 characters; if all fields are left blank, the message is sent using the free opt-out information registered in the sender's profile)<br>Cannot enter unsubscribeAuthNo without unsubscribeNo<br>Example: 1234                                                                                                           |
 | - recipientGroupingKey | String  | X  | Recipient grouping key (a grouping key can be specified per recipient; up to 100 characters) |
 | senderGroupingKey      | String  | X  | Sender grouping key (a grouping key can be specified per sender; up to 100 characters) |
 | resellerCode           | String  | X  | Reseller code (used when a reseller sends a message) |
@@ -1581,7 +1581,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="view-single-sending"></a>
 
-## Get Delivery { #view-single-sending }
+## Get Deliveries { #view-single-sending }
 
 <a id="requested-6"></a>
 
@@ -1878,7 +1878,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="message-results"></a>
 
-## Query Message Result Updates { #message-results }
+## Query Updated Message Results { #message-results }
 
 <a id="requested-25"></a>
 
@@ -1893,10 +1893,9 @@ Content-Type: application/json;charset=UTF-8
 
 [Path parameter]
 
-| Name   | Type   | Description    |
-|--------|--------|----------------|
-| appKey | String | Unique app key |
-
+| Name | Type | Description |
+|--------|--------|--------|
+| appKey | String | Unique appkey |
 [Header]
 
 ```
@@ -1905,22 +1904,20 @@ Content-Type: application/json;charset=UTF-8
 }
 ```
 
-| Name         | Type   | Required | Description                          |
-|--------------|--------|----------|--------------------------------------|
-| X-Secret-Key | String | O        | Can be created in the console. |
-
+| Name           | Type     | Required | Description               |
+|--------------|--------|----|------------------|
+| X-Secret-Key | String | O  | Can be created in the console. |
 [Query parameter]
 
-| Name            | Type    | Required | Description                                                                                                                              |
-|-----------------|---------|----------|------------------------------------------------------------------------------------------------------------------------------------------|
-| startUpdateDate | String  | O        | Start time of querying result updates (yyyy-MM-dd HH:mm)                                                                                 |
-| endUpdateDate   | String  | O        | End time of querying result updates (yyyy-MM-dd HH:mm)                                                                                   |
-| targeting       | String  | X        | Type of message target (M: users who agreed to receive marketing, N: users who agreed to receive marketing but are not friends, I: friend users) |
-| pageNum         | Integer | X        | Page number (default: 1)                                                                                                                 |
-| pageSize        | Integer | X        | Number of results to retrieve (default: 15)                                                                                              |
-
+| Name              | Type      | Required | Description                                                                  |
+|-----------------|---------|----|---------------------------------------------------------------------|
+| startUpdateDate | String  | O  | Start time of querying result updates (yyyy-MM-dd HH:mm)                                  |
+| endUpdateDate   | String  | O  | End time of querying result updates (yyyy-MM-dd HH:mm)                                  |
+| targeting       | String  | X  | Type of message target (M: users who have consented to marketing messages, N: users who have consented to marketing messages but are not friends, I: users who are friends) |
+| pageNum         | Integer | X  | Page number (default: 1)                                                       |
+| pageSize        | Integer | X  | Number of queries (default: 15)                                                       |
 !!! tip "Note"
-    The queryable period is within the last 90 days, and the maximum range per query is 31 days.
+    The search period is within the last 90 days, and the range for a single search is up to 31 days.
 
 <a id="response-25"></a>
 
@@ -1957,39 +1954,38 @@ Content-Type: application/json;charset=UTF-8
 }
 ```
 
-| Name                        | Type    | Not Null | Description                                                                                                                              |
-|:----------------------------|:--------|:---------|:-----------------------------------------------------------------------------------------------------------------------------------------|
-| header                      | Object  | O        | Header area                                                                                                                              |
-| - resultCode                | Integer | O        | Result code                                                                                                                              |
-| - resultMessage             | String  | O        | Result message                                                                                                                           |
-| - isSuccessful              | Boolean | O        | Success                                                                                                                                  |
-| messageSearchResultResponse | Object  | X        | Body area                                                                                                                                |
-| - messages                  | Array   | X        | Message list                                                                                                                             |
-| -- requestId                | String  | O        | Request ID                                                                                                                               |
-| -- recipientSeq             | Integer | O        | Recipient sequence number                                                                                                                |
-| -- plusFriendId             | String  | O        | Sender Profile ID                                                                                                                        |
-| -- recipientNo              | String  | O        | Recipient number                                                                                                                         |
-| -- targeting                | String  | O        | Type of message target (M: users who agreed to receive marketing, N: users who agreed to receive marketing but are not friends, I: friend users) |
-| -- requestDate              | String  | O        | Request date and time                                                                                                                    |
-| -- messageStatus            | String  | O        | Request status (COMPLETED: successful, FAILED: failed, CANCEL: canceled)                                                                 |
-| -- isAddedChannel           | Boolean | O        | Whether the channel is a friend                                                                                                          |
-| -- resendStatus             | String  | X        | Alternative delivery status code                                                                                                         |
-| -- resendStatusName         | String  | X        | Alternative delivery status code name                                                                                                    |
-| -- resultCode               | String  | X        | Receipt result code                                                                                                                      |
-| -- resultCodeName           | String  | X        | Receipt result code name                                                                                                                 |
-| -- senderGroupingKey        | String  | X        | Sender grouping key                                                                                                                      |
-| -- recipientGroupingKey     | String  | X        | Recipient grouping key                                                                                                                   |
-| - totalCount                | Integer | X        | Total count                                                                                                                              |
-
+| Name | Type | Not Null | Description |
+|:----------------------------|:--------|:---------|:----------------------------------------------------------------------|
+| header                      | Object  | O        | Header area                                                                 |
+| - resultCode                | Integer | O        | Result code                                                                 |
+| - resultMessage             | String  | O        | Result message                                                                |
+| - isSuccessful              | Boolean | O        | Success                                                                 |
+| messageSearchResultResponse | Object  | X        | Body area                                                                 |
+| - messages                  | Array   | X        | Message list                                                               |
+| -- requestId                | String  | O        | Request ID                                                                 |
+| -- recipientSeq             | Integer | O        | Recipient sequence number                                                            |
+| -- plusFriendId             | String  | O        | Outgoing Profile ID                                                             |
+| -- recipientNo              | String  | O        | Recipient number                                                                 |
+| -- targeting                | String  | O        | Type of message target (M: users who consented to marketing, N: only users who consented to marketing but are not friends, I: users who are friends) |
+| -- requestDate              | String  | O        | Requested on                                                                 |
+| -- messageStatus            | String  | O        | Request status (COMPLETED: successful, FAILED: failed, CANCEL: canceled)                         |
+| -- isAddedChannel           | Boolean | O        | Whether the user is a channel friend                                                              |
+| -- resendStatus             | String  | X        | Fallback status code                                                           |
+| -- resendStatusName         | String  | X        | Status code name of resending                                                          |
+| -- resultCode               | String  | X        | Result code of receiving                                                              |
+| -- resultCodeName           | String  | X        | Result code name of receiving                                                             |
+| -- senderGroupingKey        | String  | X        | Sender's grouping key                                                             |
+| -- recipientGroupingKey     | String  | X        | Recipient's grouping key                                                            |
+| - totalCount                | Integer | X        | Total count                                                                  |
 [Example]
 
 ```
 curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" "https://kakaotalk-bizmessage.api.nhncloudservice.com/brand-message/v1.0/appkeys/{appKey}/message-results?startUpdateDate=2026-06-01%2000:00&endUpdateDate=2026-06-30%2023:59"
 ```
 
-<a id="cancel-message-sending"></a>
+<a id="message-results"></a>
 
-## Cancel Message Delivery { #cancel-message-sending }
+## Cancel Sending Messages { #cancel-message-sending }
 
 <a id="requested-7"></a>
 
@@ -2332,7 +2328,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="view-single-template"></a>
 
-### Get a Template { #view-single-template }
+### Get Templates { #view-single-template }
 
 [URL]
 
@@ -3366,7 +3362,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="delete-template"></a>
 
-### Delete Template { #delete-template }
+### Delete a Template { #delete-template }
 
 <a id="requested-12"></a>
 
@@ -3422,7 +3418,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="manage-image"></a>
 
-## Image Management { #manage-image }
+## Manage Image { #manage-image }
 
 <a id="upload-image"></a>
 
@@ -3642,7 +3638,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="manage-video"></a>
 
-## Video Management { #manage-video }
+## Manage Video { #manage-video }
 
 This API is used to register, view, and delete videos for use in Brand Message. Registered videos can be used for sending after encoding by the Kakao Biz Center, and only videos with a status of `PUBLIC` can be used for template registration and sending (`PRIVATE` allows template registration only).
 
@@ -3757,7 +3753,7 @@ Content-Type: application/json;charset=UTF-8
 | - uploadUrl     | String  | O        | Kakao endpoint to which the video file is uploaded directly                                                     |
 | - token         | String  | O        | Upload authentication token. Passed via the `x-kamp-upload-token` header.                                          |
 
-> The `thumbnailUrl`, `videoUrl`, `playUrl`, and `updateDate` fields, which are populated after encoding is complete, can be retrieved using the [Query Video](#view-video) API.
+> The `thumbnailUrl`, `videoUrl`, `playUrl`, and `updateDate` fields, which are populated after encoding is complete, can be obtained through the [View Video](#view-video) API.
 
 <a id="video-file-upload-step-2"></a>
 
@@ -3816,14 +3812,14 @@ Content-Type: multipart/form-data
 | Maximum resolution | 8K                       |
 | File name length   | Up to 250 characters     |
 
-* Uploaded videos are available after encoding is complete in the Kakao Biz Center. Encoding time varies depending on the video length and typically takes 5 to 10 minutes.
-* Immediately after upload, the video status starts as `REGISTERED`, transitions through `ENCODING`, and then changes to either `PUBLIC` or `PRIVATE`. You can check the status in the console or via the [Query Video](#view-video) API.
-* Registered videos are permanently retained by Kakao. Even if a template is deleted, the videos in the Kakao Biz Center are not automatically removed. The KakaoTalk Channel administrator can manually delete them from the management screen on the channel's business home.
-* If the Step 2 file upload fails or is delayed after Step 1 registration and the token (valid for 5 minutes) expires, you must call the registration again. Videos that were registered but never actually uploaded will be automatically marked with a status of `ERROR` after a certain period of time.
+* Uploaded videos become available after encoding is completed in the Kakao Biz Center. Encoding time varies depending on the video length and usually takes from 5 to 10 minutes.
+* Immediately after upload, the video status starts as `REGISTERED`, transitions through `ENCODING`, and then changes to either `PUBLIC` or `PRIVATE`. You can check the status in the console or by using the [View Video](#view-video) API.
+* Registered videos are permanently retained by Kakao, and even if a template is deleted, videos in the Kakao Biz Center are not automatically removed. The KakaoTalk Channel administrator can delete them directly from the management screen in the channel business home.
+* If the file upload in step 2 fails or is delayed after step 1 registration and the token (5 minutes) expires, you must call the registration again. Videos that were registered but not actually uploaded will be automatically marked with the status `ERROR` after a certain period of time.
 
 <a id="view-video"></a>
 
-### Query Video { #view-video }
+### View Video { #view-video }
 
 <a id="requested-18"></a>
 
@@ -3910,7 +3906,7 @@ Content-Type: application/json;charset=UTF-8
 | - - title           | String  | X        | Video title (immediately after upload, set to the file name; synced with the value modified in Kakao Biz Center after encoding is complete) |
 | - - fileName        | String  | O        | Uploaded file name |
 | - - fileSize        | Long    | O        | File size (bytes) |
-| - - status          | String  | O        | Video status (see [Video Status](#video-status)) |
+| - - status          | String  | O        | Video status (See [Video status](#video-status))                              |
 | - - thumbnailUrl    | String  | X        | Thumbnail URL (provided after encoding is complete) |
 | - - videoUrl        | String  | X        | URL for sending and management (provided in `PUBLIC` status) |
 | - - playUrl         | String  | X        | Playback URL |
@@ -3923,7 +3919,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="delete-video"></a>
 
-### Delete a Video { #delete-video }
+### Delete a video { #delete-video }
 
 <a id="requested-19"></a>
 
@@ -3992,7 +3988,7 @@ Describes the `status` field values in the video query response.
 | REGISTERED | Upload registered                                                           |
 | ENCODING   | Encoding in progress                                                        |
 | PUBLIC     | Public status (delivery and template registration available)                |
-| PRIVATE    | Private status (template registration only; delivery fails)                 |
+| PRIVATE    | Private status (template registration only; sending will fail)        |
 | VIOLATED   | Policy-violating video                                                      |
 | ILLEGAL    | Illegally filmed video                                                      |
 | DELETED    | Deleted video                                                               |
@@ -4004,7 +4000,7 @@ Describes the `status` field values in the video query response.
 
 <a id="upload-bizform-key"></a>
 
-### Upload Biz Form Key { #upload-bizform-key }
+### Upload a BizForm Key { #upload-bizform-key }
 
 <a id="requested-20"></a>
 
@@ -4059,11 +4055,11 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="manage-outgoing-profiles"></a>
 
-## Sender Profile Management { #manage-outgoing-profiles }
+## Manage Outgoing Profiles { #manage-outgoing-profiles }
 
 <a id="view-outgoing-profile"></a>
 
-### View Sender Profile { #view-outgoing-profile }
+### View Outgoing Profiles { #view-outgoing-profile }
 
 <a id="requested-21"></a>
 
@@ -4168,7 +4164,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="modify-outgoing-profile-080-opt-out-number"></a>
 
-### Modify Sender Profile 080 Opt-Out Number { #modify-outgoing-profile-080-opt-out-number }
+### Modify Outgoing Profile 080 Opt-Out Number { #modify-outgoing-profile-080-opt-out-number }
 
 <a id="requested-22"></a>
 
@@ -4212,8 +4208,7 @@ Content-Type: application/json;charset=UTF-8
 | Name              | Type   | Required | Description                                                                                                                                                                                                          |
 |-------------------|--------|----------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | unsubscribeNo     | String | O        | 080 toll-free opt-out phone number (if neither field is entered, the message is sent using the opt-out information registered in the sender profile)<br>- 080-xxx-xxxx <br>- 080-xxxx-xxxx <br>- 080xxxxxxx <br>- 080xxxxxxxx |
-| unsubscribeAuthNo | String | X        | 080 toll-free opt-out authentication number (up to 10 characters; if neither field is entered, the message is sent using the opt-out information registered in the sender profile)<br>Cannot enter unsubscribeAuthNo without unsubscribeNo<br>Example: 1234 |
-
+| unsubscribeAuthNo | 	String | 	X  | 080 opt-out authentication number (up to 10 characters; if all fields are left blank, the message is sent using the opt-out information registered in the sender's profile)<br>Cannot enter unsubscribeAuthNo without unsubscribeNo<br>Example: 1234 |
 <a id="response-22"></a>
 
 #### Response
@@ -4237,11 +4232,11 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="manage-fallback"></a>
 
-## Alternative Delivery Management { #manage-fallback }
+## Manage Fallback { #manage-fallback }
 
 <a id="register-sms-appkey"></a>
 
-### Register SMS AppKey { #register-sms-appkey }
+### Register an SMS AppKey { #register-sms-appkey }
 
 [URL]
 
@@ -4303,7 +4298,7 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 
 <a id="register-fallback-settings"></a>
 
-### Register Alternative Delivery Settings { #register-fallback-settings }
+### Register Fallback Settings { #register-fallback-settings }
 
 [URL]
 
