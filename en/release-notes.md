@@ -3,15 +3,18 @@
 <a id="release-notes"></a>
 
 ## Notification > KakaoTalk Bizmessage > Release Notes { #release-notes }
-### June 23, 2026
-#### Added Features
-* [Console] Added brand message video upload feature
-    * You can now directly upload and manage videos for brand message premium video in the console.
-* [API] Added brand message video upload API
-    * Added an API to upload videos for brand message premium video.
-#### Bug Fixes
-* [API] Improved 080 opt-out number handling for brand message and FriendTalk ad fallback sending
-    * Fixed an issue where messages were sent as general messages in some cases where no 080 opt-out number was registered during brand message and FriendTalk ad fallback sending.
+
+### July 28, 2026
+<a id="feature-additions"></a>
+
+#### Feature Updates
+* [API] Brand Message Result Update Query API Added
+    * Added an API to query Brand Message delivery results based on the result update date (result_date).
+        * Endpoint: `GET /brand-message/v1.0/appkeys/{appKey}/message-results`
+    * The queryable period is within the last 90 days, and the query range per request is up to 31 days.
+
+* [API] Changed Maximum Length of Brand Message 080 Opt-out Verification Number
+    * The maximum allowed length of the 080 opt-out verification number has been changed from 9 to 10 characters.
 
 <a id="june-23-2026"></a>
 
@@ -21,9 +24,13 @@
 
 <a id="feature-additions"></a>
 
-#### Feature Additions
-
-<!-- TODO: translate body -->
+#### Feature Updates
+* [Console] Added a Brand Message video upload feature
+    * You can directly upload and manage videos for Brand Message Premium Video in the console.
+* [API] Added a Brand Message video upload API
+    * Added an API to upload videos for Brand Message Premium Video.
+* [API] Added a channel friend status field to the Brand Message result reception webhook
+    * Added the `isAddedChannel` (Boolean) field to the Brand Message result reception webhook response to indicate whether the recipient has added the Kakao Channel.
 
 <a id="bug-fixes"></a>
 
