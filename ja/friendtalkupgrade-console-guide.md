@@ -1,4 +1,4 @@
-<!-- pre-align:aligned sig=8265ba6ef405 -->
+<!-- pre-align:aligned sig=3b443c0f0141 -->
 
 <a id="friendtalkupgrade-console-guide"></a>
 
