@@ -20,7 +20,7 @@
 
 <a id="manage-non-friend-message-sending-targeting-m-n"></a>
 
-## 非フレンドメッセージ送信（ターゲティング M、N）管理 { #manage-non-friend-message-sending-targeting-m-n }
+## 非フレンドメッセージ送信(ターゲティング M、N)管理 { #manage-non-friend-message-sending-targeting-m-n }
 
 非フレンドメッセージ送信（ターゲティング M、N）は、以下の条件をすべて満たす場合に送信できます。
 
@@ -32,7 +32,7 @@
 
 <a id="upload-marketing-consent-records"></a>
 
-### マーケティング受信同意証跡資料のアップロード { #upload-marketing-consent-records }
+### マーケティング受信同意証跡資料アップロード { #upload-marketing-consent-records }
 
 <a id="requested"></a>
 
@@ -93,7 +93,7 @@ Content-Type: multipart/form-data
 
 <a id="apply-for-using-non-friend-message-sending-targeting-m-n"></a>
 
-### 非フレンドメッセージ送信（ターゲティング M、N）の利用申請 { #apply-for-using-non-friend-message-sending-targeting-m-n }
+### 非フレンドメッセージ送信(ターゲティング M、N)利用申請 { #apply-for-using-non-friend-message-sending-targeting-m-n }
 
 <a id="requested-2"></a>
 
@@ -267,7 +267,7 @@ Content-Type: application/json;charset=UTF-8
 | pushAlarm | boolean | X | メッセージのプッシュ通知送信有無（デフォルト値: true） |
 | requestDate | String | X | リクエスト日時（yyyy-MM-dd HH:mm）<br>（入力しない場合は即時送信）<br>最大60日後まで予約可能 |
 | unsubscribeNo | String | X | 080受信拒否無料電話番号（すべて未入力の場合、発信プロフィールに登録された受信拒否情報で送信されます）<br>- 080-xxx-xxxx <br>- 080-xxxx-xxxx <br>- 080xxxxxxx <br>- 080xxxxxxxx |
-| unsubscribeAuthNo | String | X | 080受信拒否認証番号（最大10文字、すべて未入力の場合、発信プロフィールに登録された受信拒否情報で送信されます）<br>unsubscribeNo なしで unsubscribeAuthNo のみの入力は不可<br>例: 1234 |
+| unsubscribeAuthNo   | String  | X  | 080無料受信拒否認証番号（最大10文字、すべて未入力の場合は発信プロフィールに登録された無料受信拒否情報で送信されます）<br>unsubscribeNoなしでunsubscribeAuthNoのみの入力は不可<br>例: 1234        |
 | adult | boolean | X | 成人向けメッセージ有無（デフォルト値: false） |
 | content | String | O | - TEXT タイプの場合、最大1,300文字（改行: 最大99個、URL形式入力可能）<br>- IMAGE タイプの場合、最大1,300文字（改行: 最大99個、URL形式入力可能）<br>- WIDE タイプの場合、最大76文字（改行: 最大5個）<br>- PREMIUM_VIDEO タイプの場合、このフィールドは任意で使用できます。最大76文字（改行: 最大5個）<br>- その他のタイプの場合、このフィールドは使用しません |
 | buttons | List | X | ボタンリスト<br>- TEXT、IMAGE タイプの場合、クーポン適用時は最大4個、それ以外は最大5個<br>- WIDE、WIDE_ITEM_LIST タイプの場合、最大2個<br>- PREMIUM_VIDEO タイプの場合、最大1個<br>- COMMERCE タイプの場合、最小1個、最大2個 |
@@ -298,7 +298,7 @@ Content-Type: application/json;charset=UTF-8
 | -- resendUnsubscribeNo | String  | X  | 代替送信の 080 受信拒否番号<br><span style="color:red">(SMS サービスに登録されている 080 受信拒否番号でない場合、代替送信に失敗する可能性があります。)</span>                                                                                                                                                                       |
 | - targeting         | String  | X  | メッセージ対象のタイプ(M: マーケティング受信同意ユーザー、N: フレンドではないマーケティング受信同意ユーザーのみ、I: フレンドのユーザー)                                                                |
 | - unsubscribeNo       | String  | X  | 080 無料受信拒否電話番号(すべて未入力の場合、発信プロフィールに登録されている無料受信拒否情報で送信されます)<br>- 080-xxx-xxxx <br>- 080-xxxx-xxxx <br>- 080xxxxxxx <br>- 080xxxxxxxx         |
-| - unsubscribeAuthNo   | String  | X  | 080 無料受信拒否認証番号(最大 10 文字、すべて未入力の場合、発信プロフィールに登録されている無料受信拒否情報で送信されます)<br>unsubscribeNo なしで unsubscribeAuthNo のみ入力不可<br>例: 1234        |
+| - unsubscribeAuthNo   | String  | X  | 080無料受信拒否認証番号（最大10文字、すべて未入力の場合は発信プロフィールに登録された無料受信拒否情報で送信されます）<br>unsubscribeNoなしでunsubscribeAuthNoのみ入力不可<br>例: 1234        |
 | - recipientGroupingKey | String  | X  | 受信者グルーピングキー(受信者ごとにグルーピングキーを指定できます。最大 100 文字)                                                                                                                                                                                                                   |
 | senderGroupingKey    | String  | X  | 発信者グルーピングキー(発信者ごとにグルーピングキーを指定できます。最大 100 文字)                                                                                                                                                                                                                   |
 | resellerCode          | String  | X  | リセラーコード(リセラーが送信する際に使用)                                                                                                                                                                                                                                                       |
@@ -377,7 +377,7 @@ Content-Type: application/json;charset=UTF-8
 | pushAlarm              | boolean | X  | メッセージプッシュ通知の送信有無（デフォルト値: true）                                                                                                                                                                                                                                                   |
 | requestDate            | String  | X  | リクエスト日時（yyyy-MM-dd HH:mm）<br>（入力しない場合は即時送信）<br>最大60日後まで予約可能                                                                                                                                                                                                                                                   |
 | unsubscribeNo       | String  | X  | 080受信拒否無料電話番号（すべて未入力の場合は発信プロフィールに登録された受信拒否情報で送信されます）<br>- 080-xxx-xxxx <br>- 080-xxxx-xxxx <br>- 080xxxxxxx <br>- 080xxxxxxxx         |
-| unsubscribeAuthNo   | String  | X  | 080受信拒否認証番号（最大10文字、すべて未入力の場合は発信プロフィールに登録された受信拒否情報で送信されます）<br>unsubscribeNo なしで unsubscribeAuthNo のみ入力不可<br>例: 1234        |
+| unsubscribeAuthNo   | String  | X  | 080無料受信拒否認証番号（最大10文字、すべて未入力の場合は発信プロフィールに登録された無料受信拒否情報で送信されます）<br>unsubscribeNoなしでunsubscribeAuthNoのみの入力は不可<br>例：1234        |
 | adult                  | boolean | X  | 成人向けメッセージかどうか（デフォルト値: false）                                                                                                                                                                                                                                                       |
 | content                | String  | O  | - TEXT タイプの場合、最大1,300文字（改行: 最大99個、URL形式の入力可能）<br>- IMAGE タイプの場合、最大1,300文字（改行: 最大99個、URL形式の入力可能）<br>- WIDE タイプの場合、最大76文字（改行: 最大5個）<br>- PREMIUM_VIDEO タイプの場合、このフィールドを任意で使用できます。最大76文字（改行: 最大5個）<br>- その他のタイプの場合、このフィールドは使用しません                           |
 | image                  | Object  | O  | 画像要素<br>- IMAGE、WIDE、COMMERCE タイプの場合は必須フィールド                                                                                                                                                                                                                                |
@@ -411,7 +411,7 @@ Content-Type: application/json;charset=UTF-8
 | -- resendUnsubscribeNo | String  | X  | 代替送信の080受信拒否番号<br><span style="color:red">(SMSサービスに登録された080受信拒否番号でない場合、代替送信に失敗する可能性があります。)</span>                                                                                                                                                                       |
 | - targeting         | String  | X  | メッセージ対象のタイプ(M: マーケティング受信同意ユーザー、N: フレンドではないマーケティング受信同意ユーザーのみ、I: フレンドであるユーザー)                                                                |
 | - unsubscribeNo       | String  | X  | 080無料受信拒否電話番号(すべて未入力の場合、発信プロフィールに登録された無料受信拒否情報で送信されます)<br>- 080-xxx-xxxx <br>- 080-xxxx-xxxx <br>- 080xxxxxxx <br>- 080xxxxxxxx         |
-| - unsubscribeAuthNo   | String  | X  | 080無料受信拒否認証番号(最大10文字、すべて未入力の場合、発信プロフィールに登録された無料受信拒否情報で送信されます)<br>unsubscribeNoなしでunsubscribeAuthNoのみの入力は不可<br>例: 1234        |
+| - unsubscribeAuthNo   | String  | X  | 080無料受信拒否認証番号（最大10文字、すべて未入力の場合は発信プロフィールに登録された無料受信拒否情報で送信されます）<br>unsubscribeNoなしでunsubscribeAuthNoのみの入力は不可<br>例: 1234        |
 | - recipientGroupingKey | String  | X  | 受信者グループキー(受信者ごとにグループキーを指定できます。最大100文字)                                                                                                                                                                                                                   |
 | senderGroupingKey    | String  | X  | 発信者グループキー(発信者ごとにグループキーを指定できます。最大100文字)                                                                                                                                                                                                                   |
 | resellerCode          | String  | X  | リセラーコード(リセラーが送信時に使用)                                                                                                                                                                                                                                                       |
@@ -490,7 +490,7 @@ Content-Type: application/json;charset=UTF-8
 | pushAlarm              | boolean | X  | メッセージのプッシュ通知送信有無（デフォルト値: true）                                                                                                                                                                                                                                                   |
 | requestDate            | String  | X  | リクエスト日時（yyyy-MM-dd HH:mm）<br>（入力しない場合は即時送信）<br>最大60日後まで予約可能                                                                                                                                                                                                                                                   |
 | unsubscribeNo       | String  | X  | 080受信拒否無料電話番号（すべて未入力の場合、発信プロフィールに登録された受信拒否情報で送信）<br>- 080-xxx-xxxx <br>- 080-xxxx-xxxx <br>- 080xxxxxxx <br>- 080xxxxxxxx         |
-| unsubscribeAuthNo   | String  | X  | 080受信拒否認証番号（最大10文字、すべて未入力の場合、発信プロフィールに登録された受信拒否情報で送信）<br>unsubscribeNo なしで unsubscribeAuthNo のみの入力は不可<br>例: 1234        |
+| unsubscribeAuthNo   | String  | X  | 080受信拒否無料番号の認証番号（最大10文字、すべて未入力の場合は発信プロフィールに登録された受信拒否情報で送信されます）<br>unsubscribeNoなしでunsubscribeAuthNoのみの入力は不可<br>例: 1234        |
 | adult                  | boolean | X  | 成人向けメッセージかどうか（デフォルト値: false）                                                                                                                                                                                                                                                       |
 | content                | String  | O  | - TEXT タイプの場合、最大1,300文字（改行: 最大99個、URL形式での入力可能）<br>- IMAGE タイプの場合、最大1,300文字（改行: 最大99個、URL形式での入力可能）<br>- WIDE タイプの場合、最大76文字（改行: 最大5個）<br>- PREMIUM_VIDEO タイプの場合、当該フィールドを任意で使用可能。最大76文字（改行: 最大5個）<br>- その他のタイプの場合、当該フィールドは使用しない                           |
 | image                  | Object  | O  | 画像要素<br>- IMAGE、WIDE、COMMERCE タイプの場合、必須フィールド                                                                                                                                                                                                                                |
@@ -524,7 +524,7 @@ Content-Type: application/json;charset=UTF-8
 | -- resendUnsubscribeNo | String  | X  | 代替送信の080受信拒否番号<br><span style="color:red">(SMSサービスに登録された080受信拒否番号でない場合、代替送信に失敗する可能性があります。)</span>                                                                                                                                                                       |
 | - targeting         | String  | X  | メッセージ対象のタイプ(M: マーケティング受信同意ユーザー、N: フレンドではないマーケティング受信同意ユーザーのみ、I: フレンドであるユーザー)                                                                |
 | - unsubscribeNo       | String  | X  | 080無料受信拒否電話番号(すべて未入力の場合、発信プロフィールに登録された無料受信拒否情報で送信されます)<br>- 080-xxx-xxxx <br>- 080-xxxx-xxxx <br>- 080xxxxxxx <br>- 080xxxxxxxx         |
-| - unsubscribeAuthNo   | String  | X  | 080無料受信拒否認証番号(最大10文字、すべて未入力の場合、発信プロフィールに登録された無料受信拒否情報で送信されます)<br>unsubscribeNoなしでunsubscribeAuthNoのみ入力不可<br>例: 1234        |
+| - unsubscribeAuthNo   | String  | X  | 080無料受信拒否認証番号（最大10文字、すべて未入力の場合は発信プロフィールに登録された無料受信拒否情報で送信されます）<br>unsubscribeNo なしで unsubscribeAuthNo のみの入力不可<br>例: 1234        |
 | - recipientGroupingKey | String  | X  | 受信者グルーピングキー(受信者ごとにグルーピングキーを指定できます。最大100文字)                                                                                                                                                                                                                   |
 | senderGroupingKey    | String  | X  | 発信者グルーピングキー(発信者ごとにグルーピングキーを指定できます。最大100文字)                                                                                                                                                                                                                   |
 | resellerCode          | String  | X  | リセラーコード(リセラーが送信時に使用)                                                                                                                                                                                                                                                       |
@@ -627,7 +627,7 @@ Content-Type: application/json;charset=UTF-8
 | pushAlarm              | boolean | X  | メッセージプッシュ通知の送信有無（デフォルト値: true）                                                                                                                                                                                                                                                   |
 | requestDate            | String  | X  | リクエスト日時（yyyy-MM-dd HH:mm）<br>（入力しない場合は即時送信）<br>最大60日後まで予約可能                                                                                                                                                                                                                                                   |
 | unsubscribeNo       | String  | X  | 080受信拒否無料電話番号（すべて未入力の場合は発信プロフィールに登録された受信拒否情報で送信されます）<br>- 080-xxx-xxxx <br>- 080-xxxx-xxxx <br>- 080xxxxxxx <br>- 080xxxxxxxx         |
-| unsubscribeAuthNo   | String  | X  | 080受信拒否認証番号（最大10文字、すべて未入力の場合は発信プロフィールに登録された受信拒否情報で送信されます）<br>unsubscribeNo なしで unsubscribeAuthNo のみの入力は不可<br>例: 1234        |
+| unsubscribeAuthNo   | String  | X  | 080無料受信拒否認証番号（最大10文字、すべて未入力の場合は発信プロフィールに登録された無料受信拒否情報で送信されます）<br>unsubscribeNoなしでunsubscribeAuthNoのみの入力は不可<br>例: 1234        |
 | adult                  | boolean | X  | 成人向けメッセージかどうか（デフォルト値: false）                                                                                                                                                                                                                                                       |
 | header                 | String  | O  | ヘッダー<br>- WIDE_ITEM_LIST タイプの場合は必須フィールドで最大20文字（改行: 不可）<br>- PREMIUM_VIDEO タイプの場合は任意フィールドで最大20文字（改行: 不可）                                                                                                                                                                     |
 | item                   | Object  | O  | ワイドリスト要素（WIDE_ITEM_LIST タイプでのみ使用可能）                                                                                                                                                                                                                                       |
@@ -666,7 +666,7 @@ Content-Type: application/json;charset=UTF-8
 | -- resendUnsubscribeNo | String  | X  | 代替送信の 080 受信拒否番号<br><span style="color:red">（SMS サービスに登録された 080 受信拒否番号でない場合、代替送信に失敗する可能性があります。）</span>                                                                                                                                                                       |
 | - targeting         | String  | X  | メッセージ対象のタイプ（M: マーケティング受信同意ユーザー、N: フレンドではないマーケティング受信同意ユーザーのみ、I: フレンドであるユーザー）                                                                |
 | - unsubscribeNo       | String  | X  | 080 無料受信拒否電話番号（すべて未入力の場合、発信プロフィールに登録された無料受信拒否情報で送信されます）<br>- 080-xxx-xxxx <br>- 080-xxxx-xxxx <br>- 080xxxxxxx <br>- 080xxxxxxxx         |
-| - unsubscribeAuthNo   | String  | X  | 080 無料受信拒否認証番号（最大 10 文字、すべて未入力の場合、発信プロフィールに登録された無料受信拒否情報で送信されます）<br>unsubscribeNo なしで unsubscribeAuthNo のみの入力は不可<br>例: 1234        |
+| - unsubscribeAuthNo   | String  | X  | 080無料受信拒否認証番号（最大10文字、すべて未入力の場合は発信プロフィールに登録された無料受信拒否情報で送信されます）<br>unsubscribeNoなしでunsubscribeAuthNoのみの入力は不可<br>例: 1234        |
 | - recipientGroupingKey | String  | X  | 受信者グルーピングキー（受信者ごとにグルーピングキーを指定できます。最大 100 文字）                                                                                                                                                                                                                   |
 | senderGroupingKey    | String  | X  | 発信者グルーピングキー（発信者ごとにグルーピングキーを指定できます。最大 100 文字）                                                                                                                                                                                                                   |
 | resellerCode          | String  | X  | リセラーコード（リセラーが送信する際に使用）                                                                                                                                                                                                                                                       |
@@ -746,7 +746,7 @@ Content-Type: application/json;charset=UTF-8
 | pushAlarm              | boolean | X  | メッセージプッシュ通知の送信有無（デフォルト値: true）                                                                                                                                                                                                                                                   |
 | requestDate            | String  | X  | リクエスト日時（yyyy-MM-dd HH:mm）<br>（入力しない場合は即時送信）<br>最大60日後まで予約可能                                                                                                                                                                                                                                                   |
 | unsubscribeNo       | String  | X  | 080受信拒否無料電話番号（すべて未入力の場合、発信プロフィールに登録された受信拒否情報で送信されます）<br>- 080-xxx-xxxx <br>- 080-xxxx-xxxx <br>- 080xxxxxxx <br>- 080xxxxxxxx         |
-| unsubscribeAuthNo   | String  | X  | 080受信拒否認証番号（最大10文字、すべて未入力の場合、発信プロフィールに登録された受信拒否情報で送信されます）<br>unsubscribeNo なしに unsubscribeAuthNo のみ入力不可<br>例: 1234        |
+| unsubscribeAuthNo   | String  | X  | 080受信拒否無料番号の認証番号（最大10文字、すべて未入力の場合は発信プロフィールに登録された受信拒否情報で送信されます）<br>unsubscribeNo なしで unsubscribeAuthNo のみの入力は不可<br>例: 1234        |
 | adult                  | boolean | X  | 成人向けメッセージかどうか（デフォルト値: false）                                                                                                                                                                                                                                                       |
 | content                | String  | X  | - TEXT タイプの場合、最大1,300文字（改行: 最大99個、URL形式の入力可能）<br>- IMAGE タイプの場合、最大1,300文字（改行: 最大99個、URL形式の入力可能）<br>- WIDE タイプの場合、最大76文字（改行: 最大5個）<br>- PREMIUM_VIDEO タイプの場合、このフィールドは任意で使用可能、最大76文字（改行: 最大5個）<br>- その他のタイプの場合、このフィールドは使用しません                           |
 | header                 | String  | X  | ヘッダー<br>- WIDE_ITEM_LIST タイプの場合、必須フィールドで最大20文字（改行: 不可）<br>- PREMIUM_VIDEO タイプの場合、任意フィールドで最大20文字（改行: 不可）                                                                                                                                                                     |
@@ -781,7 +781,7 @@ Content-Type: application/json;charset=UTF-8
 | -- resendUnsubscribeNo | String  | X  | 代替送信080受信拒否番号<br><span style="color:red">（SMSサービスに登録された080受信拒否番号でない場合、代替送信に失敗する可能性があります。）</span>                                                                                                                                                                       |
 | - targeting         | String  | X  | メッセージ対象のタイプ（M: マーケティング受信同意ユーザー、N: フレンドではないマーケティング受信同意ユーザーのみ、I: フレンドであるユーザー）                                                |
 | - unsubscribeNo       | String  | X  | 080無料受信拒否電話番号（すべて未入力の場合、発信プロフィールに登録された無料受信拒否情報で送信されます）<br>- 080-xxx-xxxx <br>- 080-xxxx-xxxx <br>- 080xxxxxxx <br>- 080xxxxxxxx         |
-| - unsubscribeAuthNo   | String  | X  | 080無料受信拒否認証番号（最大10文字、すべて未入力の場合、発信プロフィールに登録された無料受信拒否情報で送信されます）<br>unsubscribeNoなしでunsubscribeAuthNoのみ入力不可<br>例: 1234        |
+| - unsubscribeAuthNo   | String  | X  | 080受信拒否無料認証番号（最大10文字、すべて未入力の場合は発信プロフィールに登録されている受信拒否無料情報で送信されます）<br>unsubscribeNoなしでunsubscribeAuthNoのみ入力不可<br>例: 1234        |
 | - recipientGroupingKey | String  | X  | 受信者グルーピングキー（受信者ごとにグルーピングキーを指定できます。最大100文字）                                                                                                                                                                                                                   |
 | senderGroupingKey    | String  | X  | 発信者グルーピングキー（発信者ごとにグルーピングキーを指定できます。最大100文字）                                                                                                                                                                                                                   |
 | resellerCode          | String  | X  | リセラーコード（リセラーが送信する際に使用）                                                                                                                                                                                                                                                       |
@@ -867,7 +867,7 @@ Content-Type: application/json;charset=UTF-8
 | pushAlarm              | boolean | X  | メッセージのプッシュ通知送信有無（デフォルト値: true）                                                                                                                                                                                                                                                   |
 | requestDate            | String  | X  | リクエスト日時（yyyy-MM-dd HH:mm）<br>（入力しない場合は即時送信）<br>最大60日後まで予約可能                                                                                                                                                                                                                                                   |
 | unsubscribeNo       | String  | X  | 080受信拒否無料電話番号（すべて未入力の場合、発信プロフィールに登録された受信拒否情報で送信されます）<br>- 080-xxx-xxxx <br>- 080-xxxx-xxxx <br>- 080xxxxxxx <br>- 080xxxxxxxx         |
-| unsubscribeAuthNo   | String  | X  | 080受信拒否認証番号（最大10文字、すべて未入力の場合、発信プロフィールに登録された受信拒否情報で送信されます）<br>unsubscribeNo なしで unsubscribeAuthNo のみの入力は不可<br>例: 1234        |
+| unsubscribeAuthNo   | String  | X  | 080無料受信拒否認証番号（最大10文字、すべて未入力の場合は発信プロフィールに登録された無料受信拒否情報で送信されます）<br>unsubscribeNoなしでunsubscribeAuthNoのみの入力は不可<br>例：1234        |
 | adult                  | boolean | X  | 成人向けメッセージかどうか（デフォルト値: false）                                                                                                                                                                                                                                                       |
 | additionalContent      | String  | X  | 付加情報（最大34文字、改行: 最大1個）、コマース型のみ使用可能                                                                                                                                                                                                                                      |
 | image                  | Object  | O  | 画像要素<br>- IMAGE、WIDE、COMMERCE タイプの場合は必須フィールド                                                                                                                                                                                                                                |
@@ -907,7 +907,7 @@ Content-Type: application/json;charset=UTF-8
 | -- resendUnsubscribeNo | String  | X  | 代替送信の 080 受信拒否番号<br><span style="color:red">（SMS サービスに登録された 080 受信拒否番号でない場合、代替送信に失敗する可能性があります。）</span>                                                                                                                                                                       |
 | - targeting         | String  | X  | メッセージ対象のタイプ（M: マーケティング受信同意ユーザー、N: フレンドではないマーケティング受信同意ユーザーのみ、I: フレンドであるユーザー）                                                |
 | - unsubscribeNo       | String  | X  | 080 無料受信拒否電話番号（すべて未入力の場合、発信プロフィールに登録された無料受信拒否情報で送信されます）<br>- 080-xxx-xxxx <br>- 080-xxxx-xxxx <br>- 080xxxxxxx <br>- 080xxxxxxxx         |
-| - unsubscribeAuthNo   | String  | X  | 080 無料受信拒否認証番号（最大 10 文字、すべて未入力の場合、発信プロフィールに登録された無料受信拒否情報で送信されます）<br>unsubscribeNo なしで unsubscribeAuthNo のみ入力不可<br>例: 1234        |
+| - unsubscribeAuthNo   | String  | X  | 080無料受信拒否認証番号（最大10文字、すべて未入力の場合は発信プロフィールに登録された無料受信拒否情報で送信されます）<br>unsubscribeNoなしでunsubscribeAuthNoのみ入力不可<br>例: 1234        |
 | - recipientGroupingKey | String  | X  | 受信者グループキー（受信者ごとにグループキーを指定できます。最大 100 文字）                                                                                                                                                                                                                   |
 | senderGroupingKey    | String  | X  | 発信者グループキー（発信者ごとにグループキーを指定できます。最大 100 文字）                                                                                                                                                                                                                   |
 | resellerCode          | String  | X  | リセラーコード（リセラーが送信時に使用）                                                                                                                                                                                                                                                       |
@@ -1045,7 +1045,7 @@ Content-Type: application/json;charset=UTF-8
 | pushAlarm              | boolean | X  | メッセージプッシュ通知送信有無（デフォルト値: true）                                                                                                                                                                                                                                                   |
 | requestDate            | String  | X  | リクエスト日時（yyyy-MM-dd HH:mm）<br>（入力しない場合は即時送信）<br>最大60日後まで予約可能                                                                                                                                                                                                                                                   |
 | unsubscribeNo       | String  | X  | 080受信拒否無料電話番号（すべて未入力の場合、発信プロフィールに登録された受信拒否情報で送信されます）<br>- 080-xxx-xxxx <br>- 080-xxxx-xxxx <br>- 080xxxxxxx <br>- 080xxxxxxxx         |
-| unsubscribeAuthNo   | String  | X  | 080受信拒否認証番号（最大10文字、すべて未入力の場合、発信プロフィールに登録された受信拒否情報で送信されます）<br>unsubscribeNoなしでunsubscribeAuthNoのみの入力は不可<br>例: 1234        |
+| unsubscribeAuthNo   | String  | X  | 080無料受信拒否認証番号（最大10文字、すべて未入力の場合は発信プロフィールに登録された無料受信拒否情報で送信されます）<br>unsubscribeNoなしにunsubscribeAuthNoのみ入力不可<br>例: 1234        |
 | adult                  | boolean | X  | 成人向けメッセージ有無（デフォルト値: false）                                                                                                                                                                                                                                                       |
 | carousel               | Object  | O  | カルーセル                                                                                                                                                                                                                                                                           |
 | - list                 | List    | O  | カルーセルリスト（最小2個、最大6個）                                                                                                                                                                                                                                                        |
@@ -1086,7 +1086,7 @@ Content-Type: application/json;charset=UTF-8
 | -- resendUnsubscribeNo | String  | X  | 代替送信の080受信拒否番号<br><span style="color:red">（SMSサービスに登録された080受信拒否番号でない場合、代替送信に失敗する可能性があります。）</span>                                                                                                                                                                       |
 | - targeting         | String  | X  | メッセージ対象のタイプ（M: マーケティング受信同意ユーザー、N: フレンドではないマーケティング受信同意ユーザーのみ、I: フレンドであるユーザー）                                                |
 | - unsubscribeNo       | String  | X  | 080無料受信拒否電話番号（すべて未入力の場合、発信プロフィールに登録された無料受信拒否情報で送信されます）<br>- 080-xxx-xxxx <br>- 080-xxxx-xxxx <br>- 080xxxxxxx <br>- 080xxxxxxxx         |
-| - unsubscribeAuthNo   | String  | X  | 080無料受信拒否認証番号（最大10文字、すべて未入力の場合、発信プロフィールに登録された無料受信拒否情報で送信されます）<br>unsubscribeNoなしでunsubscribeAuthNoのみの入力は不可<br>例: 1234        |
+| - unsubscribeAuthNo   | String  | X  | 080無料受信拒否認証番号（最大10文字、すべて未入力の場合は発信プロフィールに登録された無料受信拒否情報で送信されます）<br>unsubscribeNoなしでunsubscribeAuthNoのみ入力不可<br>例: 1234        |
 | - recipientGroupingKey | String  | X  | 受信者グルーピングキー（受信者ごとにグルーピングキーを指定できます。最大100文字）                                                                                                                                                                                                                   |
 | senderGroupingKey    | String  | X  | 発信者グルーピングキー（発信者ごとにグルーピングキーを指定できます。最大100文字）                                                                                                                                                                                                                   |
 | resellerCode          | String  | X  | リセラーコード（リセラーが送信時に使用）                                                                                                                                                                                                                                                       |
@@ -1191,7 +1191,7 @@ Content-Type: application/json;charset=UTF-8
 | pushAlarm            | boolean | X  | メッセージプッシュ通知の送信有無（デフォルト値: true）                                                                                                                                                                                                                                                   |
 | requestDate          | String  | X  | リクエスト日時（yyyy-MM-dd HH:mm）<br>（入力しない場合は即時送信）<br>最大60日後まで予約可能                                                                                                                                                                                                                                                   |
 | unsubscribeNo       | String  | X  | 080受信拒否無料電話番号（すべて未入力の場合、発信プロフィールに登録された受信拒否情報で送信されます）<br>- 080-xxx-xxxx <br>- 080-xxxx-xxxx <br>- 080xxxxxxx <br>- 080xxxxxxxx         |
-| unsubscribeAuthNo   | String  | X  | 080受信拒否無料認証番号（最大10文字、すべて未入力の場合、発信プロフィールに登録された受信拒否情報で送信されます）<br>unsubscribeNo なしで unsubscribeAuthNo のみの入力は不可<br>例: 1234        |
+| unsubscribeAuthNo   | String  | X  | 080受信拒否無料認証番号（最大10文字、すべて未入力の場合は発信プロフィールに登録された受信拒否無料情報で送信されます）<br>unsubscribeNo なしで unsubscribeAuthNo のみ入力不可<br>例: 1234        |
 | adult                | boolean | X  | 成人向けメッセージかどうか（デフォルト値: false）                                                                                                                                                                                                                                                       |
 | carousel             | Object  | O  | カルーセル                                                                                                                                                                                                                                                                           |
 | - head               | Object  | X  | カルーセルイントロ                                                                                                                                                                                                                                                                       |
@@ -1244,7 +1244,7 @@ Content-Type: application/json;charset=UTF-8
 | -- resendSendNo      | String  | X  | 代替送信の発信番号<br><span style="color:red">（SMS サービスに登録された発信番号でない場合、代替送信が失敗する可能性があります。）</span>                                                                                                                                                                                 |
 | - targeting         | String  | X  | メッセージ対象のタイプ（M: マーケティング受信同意ユーザー、N: フレンドではないマーケティング受信同意ユーザーのみ、I: フレンドであるユーザー）                                                                |
 | - unsubscribeNo       | String  | X  | 080 無料受信拒否電話番号（すべて未入力の場合、発信プロフィールに登録された無料受信拒否情報で送信されます）<br>- 080-xxx-xxxx <br>- 080-xxxx-xxxx <br>- 080xxxxxxx <br>- 080xxxxxxxx         |
-| - unsubscribeAuthNo   | String  | X  | 080 無料受信拒否認証番号（最大 10 文字、すべて未入力の場合、発信プロフィールに登録された無料受信拒否情報で送信されます）<br>unsubscribeNo なしで unsubscribeAuthNo のみ入力不可<br>例: 1234        |
+| - unsubscribeAuthNo   | String  | X  | 080無料受信拒否認証番号（最大10文字、すべて未入力の場合は発信プロフィールに登録された無料受信拒否情報で送信されます）<br>unsubscribeNoなしでunsubscribeAuthNoのみ入力不可<br>例：1234        |
 | - recipientGroupingKey | String  | X  | 受信者グルーピングキー（受信者ごとにグルーピングキーを指定できます。最大 100 文字）                                                                                                                                                                                                                   |
 | senderGroupingKey    | String  | X  | 発信者グルーピングキー（発信者ごとにグルーピングキーを指定できます。最大 100 文字）                                                                                                                                                                                                                   |
 | resellerCode          | String  | X  | リセラーコード（リセラーが送信する際に使用）                                                                                                                                                                                                                                                       |
@@ -1292,7 +1292,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="request-to-send-basic-message"></a>
 
-## メッセージ基本型送信リクエスト { #request-to-send-basic-message }
+## メッセージ基本型の送信リクエスト { #request-to-send-basic-message }
 
 * テンプレートを使用した送信です。
 * マーケティング受信同意送信を使用できます。
@@ -1388,7 +1388,7 @@ Content-Type: application/json;charset=UTF-8
 | pushAlarm              | boolean | X  | メッセージプッシュ通知の送信有無(デフォルト値: true)                                                                                                                                                                                                              |
 | requestDate            | String  | X  | リクエスト日時(yyyy-MM-dd HH:mm)<br>(入力しない場合は即時送信)<br>最大60日後まで予約可能                                                                                                                                                                      |
 | unsubscribeNo          | String  | X  | 080無料受信拒否電話番号(すべて未入力の場合、発信プロフィールに登録された受信拒否情報で送信されます)<br>- 080-xxx-xxxx <br>- 080-xxxx-xxxx <br>- 080xxxxxxx <br>- 080xxxxxxxx                                                                                                           |
-| unsubscribeAuthNo      | String  | X  | 080無料受信拒否認証番号(最大10文字、すべて未入力の場合、発信プロフィールに登録された受信拒否情報で送信されます)<br>unsubscribeNoなしでunsubscribeAuthNoのみの入力は不可<br>例: 1234                                                                                                           |
+| unsubscribeAuthNo      | String  | X  | 080無料受信拒否認証番号（最大10文字、すべて未入力の場合は発信プロフィールに登録された無料受信拒否情報で送信されます）<br>unsubscribeNo なしに unsubscribeAuthNo のみ入力不可<br>例: 1234                                                                                                           |
 | recipientList          | List    | O  | 受信者リスト(最大1,000名)                                                                                                                                                                                                                       |
 | - recipientNo          | String  | O  | 受信番号                                                                                                                                                                                                                                   |
 | - targeting            | String  | O  | メッセージ対象のタイプ(M: マーケティング受信同意ユーザー、N: フレンドではないマーケティング受信同意ユーザーのみ、I: フレンドであるユーザー)                                                                                                                                                                       |
@@ -1406,7 +1406,7 @@ Content-Type: application/json;charset=UTF-8
 | -- resendContent       | String  | X  | 代替送信内容<br>(値がない場合、[メッセージ本文]で代替送信されます。)                                                                                                                                                                                            |
 | -- resendSendNo        | String  | X  | 代替送信の発信番号<br><span style="color:red">(SMSサービスに登録された発信番号でない場合、代替送信に失敗する可能性があります。)</span>                                                                                                                                           |
 | - unsubscribeNo        | String  | X  | 080無料受信拒否電話番号(すべて未入力の場合、発信プロフィールに登録された受信拒否情報で送信されます)<br>- 080-xxx-xxxx <br>- 080-xxxx-xxxx <br>- 080xxxxxxx <br>- 080xxxxxxxx                                                                                                           |
-| - unsubscribeAuthNo    | String  | X  | 080無料受信拒否認証番号(最大10文字、すべて未入力の場合、発信プロフィールに登録された受信拒否情報で送信されます)<br>unsubscribeNoなしでunsubscribeAuthNoのみの入力は不可<br>例: 1234                                                                                                           |
+| - unsubscribeAuthNo    | String  | X  | 080無料受信拒否認証番号（最大10文字、すべて未入力の場合は発信プロフィールに登録された無料受信拒否情報で送信されます）<br>unsubscribeNo なしで unsubscribeAuthNo のみの入力は不可<br>例: 1234                                                                                                           |
 | - recipientGroupingKey | String  | X  | 受信者グループキー(受信者ごとにグループキーを指定できます。最大100文字)                                                                                                                                                                                             |
 | senderGroupingKey      | String  | X  | 発信者グループキー(発信者ごとにグループキーを指定できます。最大100文字)                                                                                                                                                                                             |
 | resellerCode           | String  | X  | リセラーコード(リセラーが送信する際に使用)                                                                                                                                                                                                                    |
@@ -1896,7 +1896,6 @@ Content-Type: application/json;charset=UTF-8
 | 名前     | タイプ     | 説明     |
 |--------|--------|--------|
 | appKey | String | 固有のアプリキー |
-
 [Header]
 
 ```
@@ -1907,20 +1906,18 @@ Content-Type: application/json;charset=UTF-8
 
 | 名前           | タイプ     | 必須 | 説明               |
 |--------------|--------|----|------------------|
-| X-Secret-Key | String | O  | コンソールで作成できます。 |
-
+| X-Secret-Key | String | O  | コンソールで生成できます。 |
 [Query parameter]
 
 | 名前              | タイプ      | 必須 | 説明                                                                  |
 |-----------------|---------|----|---------------------------------------------------------------------|
-| startUpdateDate | String  | O  | 結果更新照会の開始日時(yyyy-MM-dd HH:mm)                                  |
-| endUpdateDate   | String  | O  | 結果更新照会の終了日時(yyyy-MM-dd HH:mm)                                  |
-| targeting       | String  | X  | メッセージ対象のタイプ(M: マーケティング受信同意ユーザー、N: フレンドではないマーケティング受信同意ユーザーのみ、I: フレンドであるユーザー) |
-| pageNum         | Integer | X  | ページ番号(デフォルト: 1)                                                       |
-| pageSize        | Integer | X  | 照会件数(デフォルト: 15)                                                       |
-
+| startUpdateDate | String  | O  | 結果更新の照会開始時間（yyyy-MM-dd HH:mm）                                  |
+| endUpdateDate   | String  | O  | 結果更新照会終了時間(yyyy-MM-dd HH:mm)                                  |
+| targeting       | String  | X  | メッセージ対象のタイプ（M: マーケティング受信同意ユーザー、N: 友だちではないマーケティング受信同意ユーザーのみ、I: 友だちであるユーザー） |
+| pageNum         | Integer | X  | ページ番号（デフォルト: 1）                                                       |
+| pageSize        | Integer | X  | 照会件数（デフォルト: 15）                                                       |
 !!! tip "ヒント"
-    照会可能な期間は直近90日以内で、1回の照会範囲は最大31日です。
+    照会可能な期間は直近90日以内であり、1回の照会範囲は最大31日です。
 
 <a id="response-25"></a>
 
@@ -1962,32 +1959,31 @@ Content-Type: application/json;charset=UTF-8
 | header                      | Object  | O        | ヘッダー領域                                                                 |
 | - resultCode                | Integer | O        | 結果コード                                                                 |
 | - resultMessage             | String  | O        | 結果メッセージ                                                                |
-| - isSuccessful              | Boolean | O        | 成功かどうか                                                                 |
+| - isSuccessful              | Boolean | O        | 成功したかどうか                                                                 |
 | messageSearchResultResponse | Object  | X        | 本文領域                                                                 |
 | - messages                  | Array   | X        | メッセージリスト                                                               |
 | -- requestId                | String  | O        | リクエスト ID                                                                 |
 | -- recipientSeq             | Integer | O        | 受信者シーケンス番号                                                            |
 | -- plusFriendId             | String  | O        | 発信プロフィール ID                                                             |
 | -- recipientNo              | String  | O        | 受信番号                                                                 |
-| -- targeting                | String  | O        | メッセージ対象のタイプ(M: マーケティング受信同意ユーザー、N: フレンドではないマーケティング受信同意ユーザーのみ、I: フレンドであるユーザー) |
+| -- targeting                | String  | O        | メッセージ対象のタイプ（M: マーケティング受信同意ユーザー、N: 友達ではないマーケティング受信同意ユーザーのみ、I: 友達であるユーザー） |
 | -- requestDate              | String  | O        | リクエスト日時                                                                 |
-| -- messageStatus            | String  | O        | リクエスト状態(COMPLETED: 成功、FAILED: 失敗、CANCEL: 取消)                         |
-| -- isAddedChannel           | Boolean | O        | チャンネルフレンドかどうか                                                              |
-| -- resendStatus             | String  | X        | 代替送信状態コード                                                           |
-| -- resendStatusName         | String  | X        | 代替送信状態コード名                                                          |
+| -- messageStatus            | String  | O        | リクエスト状態（COMPLETED: 成功、FAILED: 失敗、CANCEL: 取消）                         |
+| -- isAddedChannel           | Boolean | O        | チャンネル友達かどうか                                                              |
+| -- resendStatus             | String  | X        | 代替送信ステータスコード                                                           |
+| -- resendStatusName         | String  | X        | 代替送信ステータスコード名                                                          |
 | -- resultCode               | String  | X        | 受信結果コード                                                              |
 | -- resultCodeName           | String  | X        | 受信結果コード名                                                             |
-| -- senderGroupingKey        | String  | X        | 発信グルーピングキー                                                             |
+| -- senderGroupingKey        | String  | X        | 発信グループキー                                                             |
 | -- recipientGroupingKey     | String  | X        | 受信者グルーピングキー                                                            |
 | - totalCount                | Integer | X        | 総件数                                                                  |
-
 [例]
 
 ```
 curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" "https://kakaotalk-bizmessage.api.nhncloudservice.com/brand-message/v1.0/appkeys/{appKey}/message-results?startUpdateDate=2026-06-01%2000:00&endUpdateDate=2026-06-30%2023:59"
 ```
 
-<a id="cancel-message-sending"></a>
+<a id="message-results"></a>
 
 ## メッセージ送信取消 { #cancel-message-sending }
 
@@ -3430,7 +3426,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="requested-13"></a>
 
-#### 要求
+#### リクエスト
 
 [URL]
 
@@ -3510,11 +3506,11 @@ Content-Type: multipart/form-data
 
 <a id="view-image"></a>
 
-### 画像照会 { #view-image }
+### 画像の照会 { #view-image }
 
 <a id="requested-14"></a>
 
-#### 要求
+#### リクエスト
 
 [URL]
 
@@ -3581,11 +3577,11 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="delete-image"></a>
 
-### 画像削除 { #delete-image }
+### イメージの削除 { #delete-image }
 
 <a id="requested-15"></a>
 
-#### 要求
+#### リクエスト
 
 [URL]
 
@@ -3647,7 +3643,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="video-upload-flow"></a>
 
-### 動画アップロードの流れ { #video-upload-flow }
+### 動画アップロードフロー { #video-upload-flow }
 
 動画のアップロードは2段階で行います。
 
@@ -3760,7 +3756,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="video-file-upload-step-2"></a>
 
-### 動画ファイルアップロード (ステップ 2) { #video-file-upload-step-2 }
+### 動画ファイルのアップロード (ステップ 2) { #video-file-upload-step-2 }
 
 上記レスポンスの `uploadInfo.uploadUrl` に対して動画ファイルを直接呼び出します。このリクエストは NHN Cloud サーバーではなく、カカオ側のアップロードサーバーに直接送信されます。
 
@@ -3815,10 +3811,10 @@ Content-Type: multipart/form-data
 | 最大解像度      | 8K                                          |
 | ファイル名の長さ   | 250文字以内                                    |
 
-* アップロードされた動画は、カカオビズセンターでエンコードが完了した後に使用できます。エンコード時間は映像の長さによって異なり、通常 5〜10 分かかります。
-* アップロード直後の動画ステータスは `REGISTERED` から始まり、`ENCODING` を経て `PUBLIC` または `PRIVATE` に移行します。ステータスはコンソールまたは[動画照会](#view-video) API で確認できます。
-* 登録された動画はカカオ側で永久保存され、テンプレートが削除されてもカカオビズセンターの動画は自動的に削除されません。カカオチャンネル管理者がチャンネルビジネスホームの管理画面から直接削除できます。
-* ステップ 1 の登録後にステップ 2 のファイルアップロードが失敗または遅延してトークン（5 分）が期限切れになった場合は、新しい登録を再度呼び出す必要があります。登録のみ行われ実際のアップロードが完了していない動画は、一定時間経過後にステータスが `ERROR` に自動的にマークされます。
+* アップロードされた動画は、カカオビズセンターでエンコードが完了した後に使用できます。エンコード時間は動画の長さによって異なり、通常 5〜10 分かかります。
+* アップロード直後の動画の状態は `REGISTERED` から始まり、`ENCODING` を経て `PUBLIC` または `PRIVATE` に遷移します。状態はコンソールまたは[動画照会](#view-video) API で確認できます。
+* 登録された動画はカカオ側で永続的に保存され、テンプレートが削除されてもカカオビズセンターの動画は自動的に削除されません。カカオチャンネルの管理者がチャンネルビジネスホームの管理画面から直接削除できます。
+* ステップ 1 の登録後、ステップ 2 のファイルアップロードが失敗または遅延してトークン（5 分）が期限切れになった場合は、新規登録を再度呼び出す必要があります。登録のみ行われ実際のアップロードが完了していない動画は、一定時間が経過すると状態が `ERROR` に自動的にマークされます。
 
 <a id="view-video"></a>
 
@@ -3982,7 +3978,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="video-status"></a>
 
-### 動画ステータス { #video-status }
+### 動画のステータス { #video-status }
 
 動画照会レスポンスの `status` フィールド値について説明します。
 
@@ -3991,7 +3987,7 @@ Content-Type: application/json;charset=UTF-8
 | REGISTERED | アップロード登録                                  |
 | ENCODING   | エンコード中                                    |
 | PUBLIC     | 公開状態（送信およびテンプレート登録可能）                     |
-| PRIVATE    | 非公開状態（テンプレート登録のみ可能、送信時は失敗）               |
+| PRIVATE    | 非公開状態（テンプレート登録のみ可能、送信時に失敗）        |
 | VIOLATED   | 違反動画                                      |
 | ILLEGAL    | 不法撮影物動画                                   |
 | DELETED    | 削除済み動画                                    |
@@ -4062,7 +4058,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="view-outgoing-profile"></a>
 
-### 発信プロフィール照会 { #view-outgoing-profile }
+### 発信プロフィールの照会 { #view-outgoing-profile }
 
 <a id="requested-21"></a>
 
@@ -4211,8 +4207,7 @@ Content-Type: application/json;charset=UTF-8
 | 名前                | タイプ     | 必須 | 説明                                                                                                                                                         |
 |-------------------|---------|-----|------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | unsubscribeNo     | String  | O   | 080 無料受信拒否電話番号(未入力の場合、発信プロフィールに登録された受信拒否情報で送信されます)<br>- 080-xxx-xxxx <br>- 080-xxxx-xxxx <br>- 080xxxxxxx <br>- 080xxxxxxxx                              |
-| unsubscribeAuthNo | String  | X   | 080 無料受信拒否認証番号(最大 10 文字。未入力の場合、発信プロフィールに登録された受信拒否情報で送信されます)<br>unsubscribeNo なしに unsubscribeAuthNo のみの入力は不可<br>例: 1234 |
-
+| unsubscribeAuthNo | 	String | 	X  | 080無料受信拒否認証番号（最大10文字。すべて未入力の場合、発信プロフィールに登録された無料受信拒否情報で送信されます）<br>unsubscribeNoなしにunsubscribeAuthNoのみ入力不可<br>例: 1234 |
 <a id="response-22"></a>
 
 #### レスポンス
