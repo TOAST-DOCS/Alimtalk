@@ -382,7 +382,6 @@
 |Http method| URI|
 |---|---|
 |GET| /common/v2.2/appkeys/{appKey}/kakao-statistics/delivery-statistics/BRANDMESSAGE |
-
 [Path parameter]
 
 | 名前 | タイプ | 説明 |
@@ -409,14 +408,13 @@
 | periodType | String | O | 統計区分(DAILY：日別、MONTHLY：月別) |
 | startDate | String | O | 照会開始日<br/>DAILY：yyyy-MM-dd(直近90日以内)、MONTHLY：yyyy-MM(直近3か月以内) |
 | endDate | String | O | 照会終了日<br/>DAILY：yyyy-MM-dd(最大範囲90日)、MONTHLY：yyyy-MM(最大範囲3か月) |
-| messageSpec | String | X | メッセージスペック(BASIC：基本型、FREESTYLE：自由型) |
+| messageSpec | String | X | メッセージ仕様（BASIC: 基本型、FREESTYLE: 自由型） |
+| chatBubbleType | String | X | 吹き出しタイプ（TEXT: テキスト型、IMAGE: 画像型、WIDE: ワイド画像型、WIDE_ITEM_LIST: ワイドアイテムリスト型、CAROUSEL_FEED: カルーセルフィード型、PREMIUM_VIDEO: プレミアム動画型、COMMERCE: コマース型、CAROUSEL_COMMERCE: カルーセルコマース型） |
+| targeting | String | X | ターゲティング（M: マーケティング受信同意ユーザー全体、N: マーケティング受信同意ユーザーのうちチャンネルフレンドを除く、I: マーケティング受信同意ユーザーのうちチャンネルフレンドのみ、F: チャンネルフレンド全体、O: マーケティング受信同意ユーザーのうちチャンネルフレンドのみ（ブランドメッセージ v2）） |
+| friendType | String | X | フレンドタイプ（F: フレンド、N: 非フレンド） |
 | chatBubbleType | String | X | 吹き出しのタイプ(TEXT：テキスト型、IMAGE：画像型、WIDE：ワイド画像型、WIDE_ITEM_LIST：ワイドアイテムリスト型、CAROUSEL_FEED：カルーセルフィード型、PREMIUM_VIDEO：プレミアム動画型、COMMERCE：コマース型、CAROUSEL_COMMERCE：カルーセルコマース型) |
 | targeting | String | X | ターゲティング(M：マーケティング受信同意ユーザー全体、N：チャンネルフレンドを除く、I：チャンネルフレンドのみ、F：チャンネルフレンド全体) |
 | friendType | String | X | 友だちのタイプ(F：友だち、N：非友だち) |
-| receiveUserType | String | X | 受信者のタイプ(PhoneNumber：電話番号、None：受信者の識別子なし) |
-| limit | Integer | X | 照会件数(Default：500、Max：1000) |
-| offset | Integer | X | 開始位置(Default：0) |
-
 <a id="response-3"></a>
 
 #### レスポンス
@@ -455,16 +453,15 @@
 | totalCount | Integer | O | 総数 |
 | brandmessageDeliveryStatistics | List | O | ブランドメッセージ送信統計リスト |
 | - date | String | O | 日付 |
-| - messageSpec | String | O | メッセージスペック(BASIC：基本型、FREESTYLE：自由型) |
+| - messageSpec | String | O | メッセージスペック (BASIC: 基本型、FREESTYLE: 自由型) |
+| - chatBubbleType | String | O | 吹き出しタイプ（TEXT: テキスト型、IMAGE: 画像型、WIDE: ワイド画像型、WIDE_ITEM_LIST: ワイドアイテムリスト型、CAROUSEL_FEED: カルーセルフィード型、PREMIUM_VIDEO: プレミアム動画型、COMMERCE: コマース型、CAROUSEL_COMMERCE: カルーセルコマース型） |
+| - targeting | String | O | ターゲティング(M: マーケティング受信同意ユーザー全体、N: マーケティング受信同意ユーザーのうちチャンネルフレンドを除く、I: マーケティング受信同意ユーザーのうちチャンネルフレンドのみ、F: チャンネルフレンド全体、O: マーケティング受信同意ユーザーのうちチャンネルフレンドのみ(ブランドメッセージ v2)) |
+| - friendType | String | O | フレンドタイプ(F: フレンド、N: 非フレンド) |
 | - chatBubbleType | String | O | 吹き出しのタイプ(TEXT：テキスト型、IMAGE：画像型、WIDE：ワイド画像型、WIDE_ITEM_LIST：ワイドアイテムリスト型、CAROUSEL_FEED：カルーセルフィード型、PREMIUM_VIDEO：プレミアム動画型、COMMERCE：コマース型、CAROUSEL_COMMERCE：カルーセルコマース型) |
 | - targeting | String | O | ターゲティング(M：マーケティング受信同意ユーザー全体、N：チャンネルフレンドを除く、I：チャンネルフレンドのみ、F：チャンネルフレンド全体) |
 | - friendType | String | O | 友だちのタイプ(F：友だち、N：非友だち) |
 | - receiveUserType | String | O | 受信者のタイプ(PhoneNumber：電話番号、None：受信者の識別子なし) |
-| - totalSendRequestCount | Integer | O | 総送信リクエスト数 |
-| - validSendRequestCount | Integer | O | 有効送信リクエスト数 |
-| - validReadCount | Integer | O | 有効既読数 |
 | - totalClickCount | Integer | O | 総クリック数 |
-
 <a id="retrieve-brand-message-template-statistics"></a>
 
 ### ブランドメッセージテンプレート統計の照会 { #retrieve-brand-message-template-statistics }
@@ -478,7 +475,6 @@
 |Http method| URI|
 |---|---|
 |GET| /common/v2.2/appkeys/{appKey}/kakao-statistics/template-statistics/BRANDMESSAGE |
-
 [Path parameter]
 
 | 名前 | タイプ | 説明 |
@@ -505,15 +501,14 @@
 | periodType | String | O | 統計区分(DAILY：日別、MONTHLY：月別) |
 | startDate | String | O | 照会開始日<br/>DAILY：yyyy-MM-dd(直近90日以内)、MONTHLY：yyyy-MM(直近3か月以内) |
 | endDate | String | O | 照会終了日<br/>DAILY：yyyy-MM-dd(最大範囲90日)、MONTHLY：yyyy-MM(最大範囲3か月) |
-| kakaoTemplateCode | String | X | Kakaoのテンプレートコード |
+| kakaoTemplateCode | String | X | カカオテンプレートコード |
 | groupTagKey | String | X | グループタグキー |
+| messageSpec | String | X | メッセージ仕様（BASIC: 基本型、FREESTYLE: 自由型） |
+| chatBubbleType | String | X | 吹き出しタイプ（TEXT: テキスト型、IMAGE: 画像型、WIDE: ワイド画像型、WIDE_ITEM_LIST: ワイドアイテムリスト型、CAROUSEL_FEED: カルーセルフィード型、PREMIUM_VIDEO: プレミアム動画型、COMMERCE: コマース型、CAROUSEL_COMMERCE: カルーセルコマース型） |
+| targeting | String | X | ターゲティング（M: マーケティング受信同意ユーザー全体、N: マーケティング受信同意ユーザーのうちチャンネルフレンドを除く、I: マーケティング受信同意ユーザーのうちチャンネルフレンドのみ、F: チャンネルフレンド全体、O: マーケティング受信同意ユーザーのうちチャンネルフレンドのみ（ブランドメッセージ v2）） |
+| friendType | String | X | フレンドタイプ（F: フレンド、N: 非フレンド） |
 | messageSpec | String | X | メッセージスペック(BASIC：基本型、FREESTYLE：自由型) |
 | chatBubbleType | String | X | 吹き出しのタイプ(TEXT：テキスト型、IMAGE：画像型、WIDE：ワイド画像型、WIDE_ITEM_LIST：ワイドアイテムリスト型、CAROUSEL_FEED：カルーセルフィード型、PREMIUM_VIDEO：プレミアム動画型、COMMERCE：コマース型、CAROUSEL_COMMERCE：カルーセルコマース型) |
-| targeting | String | X | ターゲティング(M：マーケティング受信同意ユーザー全体、N：チャンネルフレンドを除く、I：チャンネルフレンドのみ、F：チャンネルフレンド全体) |
-| friendType | String | X | 友だちのタイプ(F：友だち、N：非友だち) |
-| limit | Integer | X | 照会件数(Default：500、Max：1000) |
-| offset | Integer | X | 開始位置(Default：0) |
-
 <a id="response-4"></a>
 
 #### レスポンス
@@ -554,10 +549,10 @@
 | - date | String | O | 日付 |
 | - templateCode | String | O | テンプレートコード |
 | - groupTagKey | String | X | グループタグキー |
-| - messageSpec | String | O | メッセージスペック(BASIC：基本型、FREESTYLE：自由型) |
-| - chatBubbleType | String | O | 吹き出しのタイプ(TEXT：テキスト型、IMAGE：画像型、WIDE：ワイド画像型、WIDE_ITEM_LIST：ワイドアイテムリスト型、CAROUSEL_FEED：カルーセルフィード型、PREMIUM_VIDEO：プレミアム動画型、COMMERCE：コマース型、CAROUSEL_COMMERCE：カルーセルコマース型) |
-| - targeting | String | O | ターゲティング(M：マーケティング受信同意ユーザー全体、N：チャンネルフレンドを除く、I：チャンネルフレンドのみ、F：チャンネルフレンド全体) |
-| - friendType | String | O | 友だちのタイプ(F：友だち、N：非友だち) |
+| - messageSpec | String | O | メッセージスペック (BASIC: 基本型、FREESTYLE: 自由型) |
+| - chatBubbleType | String | O | 吹き出しタイプ（TEXT: テキスト型、IMAGE: 画像型、WIDE: ワイド画像型、WIDE_ITEM_LIST: ワイドアイテムリスト型、CAROUSEL_FEED: カルーセルフィード型、PREMIUM_VIDEO: プレミアム動画型、COMMERCE: コマース型、CAROUSEL_COMMERCE: カルーセルコマース型） |
+| - targeting | String | O | ターゲティング(M: マーケティング受信同意ユーザー全体、N: マーケティング受信同意ユーザーのうちチャンネルフレンドを除く、I: マーケティング受信同意ユーザーのうちチャンネルフレンドのみ、F: チャンネルフレンド全体、O: マーケティング受信同意ユーザーのうちチャンネルフレンドのみ(ブランドメッセージ v2)) |
+| - friendType | String | O | フレンドタイプ(F: フレンド、N: 非フレンド) |
 | - totalSendSuccessCount | Integer | O | 総送信成功数 |
-| - validReadCount | Integer | O | 有効既読数 |
+| - targeting | String | O | ターゲティング(M：マーケティング受信同意ユーザー全体、N：チャンネルフレンドを除く、I：チャンネルフレンドのみ、F：チャンネルフレンド全体) |
 | - totalClickCount | Integer | O | 総クリック数 |
