@@ -382,7 +382,6 @@ Retrieves the daily send count, valid read count, and click count by template an
 |Http method| URI|
 |---|---|
 |GET| /common/v2.2/appkeys/{appKey}/kakao-statistics/delivery-statistics/BRANDMESSAGE |
-
 [Path parameter]
 
 | Name | Type | Description |
@@ -409,14 +408,13 @@ Retrieves the daily send count, valid read count, and click count by template an
 | periodType | String | O | Statistics unit (DAILY: daily, MONTHLY: monthly) |
 | startDate | String | O | Retrieval start date<br/>DAILY: yyyy-MM-dd (within the last 90 days), MONTHLY: yyyy-MM (within the last 3 months) |
 | endDate | String | O | Retrieval end date<br/>DAILY: yyyy-MM-dd (maximum range: 90 days), MONTHLY: yyyy-MM (maximum range: 3 months) |
-| messageSpec | String | X | Message spec (BASIC: basic, FREESTYLE: freestyle) |
+| messageSpec | String | X | Message specification (BASIC: basic type, FREESTYLE: free-form type) |
+| chatBubbleType | String | X | Chat bubble type (TEXT: Text, IMAGE: Image, WIDE: Wide image, WIDE_ITEM_LIST: Wide item list, CAROUSEL_FEED: Carousel feed, PREMIUM_VIDEO: Premium video, COMMERCE: Commerce, CAROUSEL_COMMERCE: Carousel Commerce) |
+| targeting | String | X | Targeting (M: All users who agreed to receive marketing, N: Users who agreed to receive marketing, excluding channel friends, I: Only channel friends among users who agreed to receive marketing, F: All channel friends, O: Only channel friends among users who agreed to receive marketing (Brand Message v2)) |
+| friendType | String | X | Friend type (F: friend, N: non-friend) |
 | chatBubbleType | String | X | Chat bubble type (TEXT: text, IMAGE: image, WIDE: wide image, WIDE_ITEM_LIST: wide item list, CAROUSEL_FEED: carousel feed, PREMIUM_VIDEO: premium video, COMMERCE: commerce, CAROUSEL_COMMERCE: carousel commerce) |
 | targeting | String | X | Targeting (M: all users who agreed to receive marketing, N: excluding channel friends, I: channel friends only, F: all channel friends) |
 | friendType | String | X | Friend type (F: friend, N: non-friend) |
-| receiveUserType | String | X | Recipient type (PhoneNumber: phone number, None: no recipient identifier) |
-| limit | Integer | X | Number of results to retrieve (Default: 500, Max: 1,000) |
-| offset | Integer | X | Start position (Default: 0) |
-
 <a id="response-3"></a>
 
 #### Response
@@ -453,18 +451,17 @@ Retrieves the daily send count, valid read count, and click count by template an
 | - resultMessage | String | O | Result message |
 | - isSuccessful | Boolean | O | Whether the request was successful |
 | totalCount | Integer | O | Total count |
-| brandmessageDeliveryStatistics | List | O | Brand message delivery statistics list |
+| brandmessageDeliveryStatistics | List | O | List of brand message delivery statistics |
 | - date | String | O | Date |
-| - messageSpec | String | O | Message spec (BASIC: basic, FREESTYLE: freestyle) |
+| - messageSpec | String | O | Message specification (BASIC: Basic type, FREESTYLE: Free-form) |
+| - chatBubbleType | String | O | Chat bubble type (TEXT: Text type, IMAGE: Image type, WIDE: Wide image type, WIDE_ITEM_LIST: Wide item list type, CAROUSEL_FEED: Carousel feed type, PREMIUM_VIDEO: Premium video type, COMMERCE: Commerce type, CAROUSEL_COMMERCE: Carousel commerce type) |
+| - targeting | String | O | Targeting (M: all users who have agreed to receive marketing, N: users who have agreed to receive marketing, excluding channel friends, I: only channel friends among users who have agreed to receive marketing, F: all channel friends, O: only channel friends among users who have agreed to receive marketing (Brand Message v2)) |
+| - friendType | String | O | Friend type (F: friend, N: non-friend) |
 | - chatBubbleType | String | O | Chat bubble type (TEXT: text, IMAGE: image, WIDE: wide image, WIDE_ITEM_LIST: wide item list, CAROUSEL_FEED: carousel feed, PREMIUM_VIDEO: premium video, COMMERCE: commerce, CAROUSEL_COMMERCE: carousel commerce) |
 | - targeting | String | O | Targeting (M: all users who agreed to receive marketing, N: excluding channel friends, I: channel friends only, F: all channel friends) |
 | - friendType | String | O | Friend type (F: friend, N: non-friend) |
 | - receiveUserType | String | O | Recipient type (PhoneNumber: phone number, None: no recipient identifier) |
-| - totalSendRequestCount | Integer | O | Total send request count |
-| - validSendRequestCount | Integer | O | Valid send request count |
-| - validReadCount | Integer | O | Valid read count |
 | - totalClickCount | Integer | O | Total click count |
-
 <a id="retrieve-brand-message-template-statistics"></a>
 
 ### Retrieve Brand Message Template Statistics { #retrieve-brand-message-template-statistics }
@@ -478,7 +475,6 @@ Retrieves the daily send count, valid read count, and click count by template an
 |Http method| URI|
 |---|---|
 |GET| /common/v2.2/appkeys/{appKey}/kakao-statistics/template-statistics/BRANDMESSAGE |
-
 [Path parameter]
 
 | Name | Type | Description |
@@ -505,15 +501,14 @@ Retrieves the daily send count, valid read count, and click count by template an
 | periodType | String | O | Statistics unit (DAILY: daily, MONTHLY: monthly) |
 | startDate | String | O | Retrieval start date<br/>DAILY: yyyy-MM-dd (within the last 90 days), MONTHLY: yyyy-MM (within the last 3 months) |
 | endDate | String | O | Retrieval end date<br/>DAILY: yyyy-MM-dd (maximum range: 90 days), MONTHLY: yyyy-MM (maximum range: 3 months) |
-| kakaoTemplateCode | String | X | Kakao template code |
+| kakaoTemplateCode | String | X | Kakao Template Code |
 | groupTagKey | String | X | Group tag key |
+| messageSpec | String | X | Message specification (BASIC: basic type, FREESTYLE: free-form type) |
+| chatBubbleType | String | X | Chat bubble type (TEXT: Text, IMAGE: Image, WIDE: Wide image, WIDE_ITEM_LIST: Wide item list, CAROUSEL_FEED: Carousel feed, PREMIUM_VIDEO: Premium video, COMMERCE: Commerce, CAROUSEL_COMMERCE: Carousel Commerce) |
+| targeting | String | X | Targeting (M: All users who agreed to receive marketing, N: Users who agreed to receive marketing, excluding channel friends, I: Only channel friends among users who agreed to receive marketing, F: All channel friends, O: Only channel friends among users who agreed to receive marketing (Brand Message v2)) |
+| friendType | String | X | Friend type (F: friend, N: non-friend) |
 | messageSpec | String | X | Message spec (BASIC: basic, FREESTYLE: freestyle) |
 | chatBubbleType | String | X | Chat bubble type (TEXT: text, IMAGE: image, WIDE: wide image, WIDE_ITEM_LIST: wide item list, CAROUSEL_FEED: carousel feed, PREMIUM_VIDEO: premium video, COMMERCE: commerce, CAROUSEL_COMMERCE: carousel commerce) |
-| targeting | String | X | Targeting (M: all users who agreed to receive marketing, N: excluding channel friends, I: channel friends only, F: all channel friends) |
-| friendType | String | X | Friend type (F: friend, N: non-friend) |
-| limit | Integer | X | Number of results to retrieve (Default: 500, Max: 1,000) |
-| offset | Integer | X | Start position (Default: 0) |
-
 <a id="response-4"></a>
 
 #### Response
@@ -550,14 +545,14 @@ Retrieves the daily send count, valid read count, and click count by template an
 | - resultMessage | String | O | Result message |
 | - isSuccessful | Boolean | O | Whether the request was successful |
 | totalCount | Integer | O | Total count |
-| brandmessageTemplateStatistics | List | O | Brand message template statistics list |
+| brandmessageTemplateStatistics | List | O | List of brand message template statistics |
 | - date | String | O | Date |
-| - templateCode | String | O | Template code |
+| - templateCode | String | O | Template Code |
 | - groupTagKey | String | X | Group tag key |
-| - messageSpec | String | O | Message spec (BASIC: basic, FREESTYLE: freestyle) |
-| - chatBubbleType | String | O | Chat bubble type (TEXT: text, IMAGE: image, WIDE: wide image, WIDE_ITEM_LIST: wide item list, CAROUSEL_FEED: carousel feed, PREMIUM_VIDEO: premium video, COMMERCE: commerce, CAROUSEL_COMMERCE: carousel commerce) |
-| - targeting | String | O | Targeting (M: all users who agreed to receive marketing, N: excluding channel friends, I: channel friends only, F: all channel friends) |
+| - messageSpec | String | O | Message specification (BASIC: Basic type, FREESTYLE: Free-form) |
+| - chatBubbleType | String | O | Chat bubble type (TEXT: Text type, IMAGE: Image type, WIDE: Wide image type, WIDE_ITEM_LIST: Wide item list type, CAROUSEL_FEED: Carousel feed type, PREMIUM_VIDEO: Premium video type, COMMERCE: Commerce type, CAROUSEL_COMMERCE: Carousel commerce type) |
+| - targeting | String | O | Targeting (M: all users who have agreed to receive marketing, N: users who have agreed to receive marketing, excluding channel friends, I: only channel friends among users who have agreed to receive marketing, F: all channel friends, O: only channel friends among users who have agreed to receive marketing (Brand Message v2)) |
 | - friendType | String | O | Friend type (F: friend, N: non-friend) |
-| - totalSendSuccessCount | Integer | O | Total send success count |
-| - validReadCount | Integer | O | Valid read count |
+| - totalSendSuccessCount | Integer | O | Total number of successful deliveries |
+| - targeting | String | O | Targeting (M: all users who agreed to receive marketing, N: excluding channel friends, I: channel friends only, F: all channel friends) |
 | - totalClickCount | Integer | O | Total click count |
