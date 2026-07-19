@@ -1,4 +1,4 @@
-<!-- pre-align:aligned sig=8c7be9b338eb -->
+<!-- pre-align:aligned sig=13eee0b1c3c5 -->
 
 <a id="common-api-guide"></a>
 
