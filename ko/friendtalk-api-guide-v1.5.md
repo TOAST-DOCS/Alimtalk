@@ -1,10 +1,12 @@
 <!-- pre-align:aligned sig=f3806dc222dc -->
 
-## Notification > KakaoTalk Bizmessage > 친구톡 > API v1.5 가이드
+<a id="friendtalk-api-guide-v1-5"></a>
+
+## Notification > KakaoTalk Bizmessage > 친구톡 > API v1.5 가이드 { #friendtalk-api-guide-v1-5 }
 
 <a id="friendtalk-service-termination-notice"></a>
 
-## 친구톡 서비스 종료 안내
+## 친구톡 서비스 종료 안내 { #friendtalk-service-termination-notice }
 * 2025-12-31(수) 친구톡 서비스 지원을 종료합니다.
 * 기존에 이용 중이신 고객께는 브랜드 메시지로 전환하실 것을 권장드립니다.
 * 자세한 사항은 [브랜드 메시지 전환 가이드](https://docs.nhncloud.com/ko/Notification/KakaoTalk%20Bizmessage/ko/friendtalk-compatible-api-guide)를 참고해주시기 바랍니다.
@@ -13,7 +15,7 @@
 
 <a id="friendtalk"></a>
 
-## 친구톡
+## 친구톡 { #friendtalk }
 
 <a id="api-domain"></a>
 
@@ -34,7 +36,7 @@
 
 <a id="send-messages"></a>
 
-## 메시지 발송
+## 메시지 발송 { #send-messages }
 <a id="request-of-sending"></a>
 
 #### 발송 요청
@@ -188,7 +190,7 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 
 <a id="list-deliveries"></a>
 
-## 발송 목록 조회
+## 발송 목록 조회 { #list-deliveries }
 
 <a id="request"></a>
 
@@ -314,7 +316,7 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 
 <a id="get-deliveries"></a>
 
-## 발송 단건 조회
+## 발송 단건 조회 { #get-deliveries }
 
 <a id="request-2"></a>
 
@@ -447,10 +449,10 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 
 <a id="message"></a>
 
-## 메시지
+## 메시지 { #message }
 <a id="cancel-message-delivery"></a>
 
-### 메시지 발송 취소
+### 메시지 발송 취소 { #cancel-message-delivery }
 
 <a id="request-3"></a>
 
@@ -515,7 +517,7 @@ curl -X DELETE -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Ke
 
 <a id="query-updated-message-results"></a>
 
-### 메시지 결과 업데이트 조회
+### 메시지 결과 업데이트 조회 { #query-updated-message-results }
 
 <a id="request-4"></a>
 
@@ -618,11 +620,11 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 
 <a id="image-management"></a>
 
-## 이미지 관리
+## 이미지 관리 { #image-management }
 
 <a id="register-images"></a>
 
-### 이미지 등록
+### 이미지 등록 { #register-images }
 <a id="request-5"></a>
 
 #### 요청
@@ -695,7 +697,7 @@ curl -X POST -H "Content-Type: multipart/form-data" -H "X-Secret-Key:{secretkey}
 
 <a id="query-images"></a>
 
-### 이미지 조회
+### 이미지 조회 { #query-images }
 <a id="request-6"></a>
 
 #### 요청
@@ -781,7 +783,7 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 
 <a id="delete-images"></a>
 
-### 이미지 삭제
+### 이미지 삭제 { #delete-images }
 <a id="request-7"></a>
 
 #### 요청
@@ -844,10 +846,10 @@ curl -X DELETE -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Ke
 
 <a id="alternative-delivery-management"></a>
 
-## 대체 발송 관리
+## 대체 발송 관리 { #alternative-delivery-management }
 <a id="register-sms-appkey"></a>
 
-### SMS AppKey 등록
+### SMS AppKey 등록 { #register-sms-appkey }
 
 [URL]
 
@@ -906,7 +908,7 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 
 <a id="register-alternative-sending-settings"></a>
 
-### 대체 발송 설정 등록
+### 대체 발송 설정 등록 { #register-alternative-sending-settings }
 
 [URL]
 

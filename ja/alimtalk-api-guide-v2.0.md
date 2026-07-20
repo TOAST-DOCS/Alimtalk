@@ -1,8 +1,12 @@
-## Notification > KakaoTalk Bizmessage > お知らせトーク > API v2.0 Guide
+<!-- pre-align:aligned sig=6622ebb72190 -->
+
+<a id="alimtalk-api-guide-v2-0"></a>
+
+## Notification > KakaoTalk Bizmessage > お知らせトーク > API v2.0 Guide { #alimtalk-api-guide-v2-0 }
 
 <a id="alimtalk"></a>
 
-## お知らせトーク
+## お知らせトーク { #alimtalk }
 
 <a id="api-domain"></a>
 
@@ -23,17 +27,17 @@
 
 <a id="overview-of-v20-api"></a>
 
-## v2.0 API紹介
+## v2.0 API紹介 { #overview-of-v20-api }
 1. カカオチャンネル追加時、発行されたsenderKeyフィールドでAPI呼び出しが行われるように変更しました。
 2. カカオチャンネルグループ機能が追加されました。
 
 <a id="general-messages"></a>
 
-## 一般メッセージ
+## 一般メッセージ { #general-messages }
 
 <a id="request-of-sending-replaced-messages"></a>
 
-### メッセージ置換送信リクエスト
+### メッセージ置換送信リクエスト { #request-of-sending-replaced-messages }
 
 [URL]
 
@@ -170,7 +174,7 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 
 <a id="request-of-sending-full-text"></a>
 
-### メッセージ全文送信リクエスト
+### メッセージ全文送信リクエスト { #request-of-sending-full-text }
 
 [URL]
 
@@ -324,7 +328,7 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 
 <a id="list-messages"></a>
 
-### メッセージリストの照会
+### メッセージリストの照会 { #list-messages }
 
 <a id="request"></a>
 
@@ -466,18 +470,9 @@ Content-Type: application/json;charset=UTF-8
 curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" "https://kakaotalk-bizmessage.api.nhncloudservice.com/alimtalk/v2.0/appkeys/{appkey}/messages?startRequestDate=2018-05-01%20:00&endRequestDate=2018-05-30%20:59"
 ```
 
-#### SMS/LMS再送信ステータス
-| 値 | 説明                      |
-| ----- | ------------------------------- |
-| RSC01 | 再送信の対象ではない                 |
-| RSC02 | 再送信の対象(送信結果が失敗の時、再送信が行われます。) |
-| RSC03 | 再送信中                    |
-| RSC04 | 再送信成功                  |
-| RSC05 | 再送信失敗                  |
-
 <a id="get-messages"></a>
 
-### メッセージ単件照会
+### メッセージ単件照会 { #get-messages }
 
 <a id="request-2"></a>
 
@@ -609,7 +604,7 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 
 <a id="authentication-messages"></a>
 
-## 認証メッセージ
+## 認証メッセージ { #authentication-messages }
 
 <span id="precautions-authword"></span>
 1. 認証メッセージの送信時、含まれる必要がある認証文言案内
@@ -624,7 +619,7 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 
 <a id="request-of-sending-replaced-messages-2"></a>
 
-### メッセージ置換送信リクエスト
+### メッセージ置換送信リクエスト { #request-of-sending-replaced-messages-2 }
 
 [URL]
 
@@ -757,7 +752,7 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 
 <a id="request-of-sending-full-text-2"></a>
 
-### メッセージ全文送信リクエスト
+### メッセージ全文送信リクエスト { #request-of-sending-full-text-2 }
 
 [URL]
 
@@ -908,7 +903,9 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 
 <a id="list-messages-2"></a>
 
-### メッセージリストの照会
+### メッセージリストの照会 { #list-messages-2 }
+
+<a id="request-3"></a>
 
 #### リクエスト
 
@@ -958,7 +955,7 @@ Content-Type: application/json;charset=UTF-8
 * 90日以上前の送信リクエストデータは照会されません。
 * 送信リクエスト日時の範囲は最大30日です。
 
-<a id="request-3"></a>
+<a id="response-7"></a>
 
 #### レスポンス
 ```
@@ -1048,20 +1045,9 @@ Content-Type: application/json;charset=UTF-8
 curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" "https://kakaotalk-bizmessage.api.nhncloudservice.com/alimtalk/v2.0/appkeys/{appkey}/auth/messages?startRequestDate=2018-05-01%20:00&endRequestDate=2018-05-30%20:59"
 ```
 
-<a id="response-7"></a>
-
-#### SMS/LMS再送信ステータス
-| 値 | 説明                      |
-| ----- | ------------------------------- |
-| RSC01 | 再送信の対象ではない                 |
-| RSC02 | 再送信の対象(送信結果が失敗の時、再送信が行われます。) |
-| RSC03 | 再送信中                    |
-| RSC04 | 再送信成功                  |
-| RSC05 | 再送信失敗                  |
-
 <a id="get-messages-2"></a>
 
-### メッセージ単件照会
+### メッセージ単件照会 { #get-messages-2 }
 
 <a id="request-4"></a>
 
@@ -1196,10 +1182,10 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 
 <a id="messages"></a>
 
-## メッセージ
+## メッセージ { #messages }
 <a id="cancel-sending-messages"></a>
 
-### メッセージ送信取消
+### メッセージ送信取消 { #cancel-sending-messages }
 
 <a id="request-5"></a>
 
@@ -1264,7 +1250,7 @@ curl -X DELETE -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Ke
 
 <a id="query-updates-of-message-result"></a>
 
-### メッセージ結果アップデートの照会
+### メッセージ結果アップデートの照会 { #query-updates-of-message-result }
 
 <a id="request-6"></a>
 
@@ -1360,17 +1346,17 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 
 <a id="messages-1"></a>
 
-### SMS/LMS 대체 발송 상태 코드
+### SMS/LMS 대체 발송 상태 코드 { #messages-1 }
 
 <!-- TODO: translate body -->
 
 <a id="templates"></a>
 
-## テンプレート
+## テンプレート { #templates }
 
 <a id="list-template-categories"></a>
 
-### テンプレートカテゴリー照会
+### テンプレートカテゴリー照会 { #list-template-categories }
 <a id="request-7"></a>
 
 #### リクエスト
@@ -1442,7 +1428,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="register-templates"></a>
 
-### テンプレートの登録
+### テンプレートの登録 { #register-templates }
 <a id="request-8"></a>
 
 #### リクエスト
@@ -1542,7 +1528,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="modify-templates"></a>
 
-### テンプレートの修正
+### テンプレートの修正 { #modify-templates }
 <a id="request-9"></a>
 
 #### リクエスト
@@ -1640,7 +1626,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="delete-templates"></a>
 
-### テンプレートの削除
+### テンプレートの削除 { #delete-templates }
 <a id="request-10"></a>
 
 #### リクエスト
@@ -1688,7 +1674,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="inquire-of-templates"></a>
 
-### テンプレートの問い合わせをする
+### テンプレートの問い合わせをする { #inquire-of-templates }
 <a id="request-11"></a>
 
 #### リクエスト
@@ -1751,7 +1737,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="attach-files-to-send-inquiry-on-templates"></a>
 
-### ファイルを添付してテンプレートお問い合わせ
+### ファイルを添付してテンプレートお問い合わせ { #attach-files-to-send-inquiry-on-templates }
 <a id="request-12"></a>
 
 #### リクエスト
@@ -1816,7 +1802,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="list-templates"></a>
 
-### テンプレートリストの照会
+### テンプレートリストの照会 { #list-templates }
 
 <a id="request-13"></a>
 
@@ -1970,7 +1956,7 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 
 <a id="list-template-modifications"></a>
 
-### テンプレートの修正リスト照会
+### テンプレートの修正リスト照会 { #list-template-modifications }
 
 <a id="request-14"></a>
 
@@ -2114,10 +2100,10 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 
 <a id="section-1"></a>
 
-## 代替送信管理
+## 代替送信管理 { #section-1 }
 <a id="section-1-1"></a>
 
-### SMS AppKey登録
+### SMS AppKey登録 { #section-1-1 }
 
 [URL]
 
@@ -2177,7 +2163,7 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 
 <a id="section-1-2"></a>
 
-### 代替送信設定登録
+### 代替送信設定登録 { #section-1-2 }
 
 [URL]
 

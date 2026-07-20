@@ -1,16 +1,18 @@
 <!-- pre-align:aligned sig=f3806dc222dc -->
 
-## Notification > KakaoTalk Bizmessage > カカともへのメッセージ > API v1.5 Guide
+<a id="friendtalk-api-guide-v1-5"></a>
+
+## Notification > KakaoTalk Bizmessage > カカともへのメッセージ > API v1.5 Guide { #friendtalk-api-guide-v1-5 }
 
 <a id="friendtalk-service-termination-notice"></a>
 
-## フレンドトークサービス終了のお知らせ
+## フレンドトークサービス終了のお知らせ { #friendtalk-service-termination-notice }
 
 <!-- TODO: translate body -->
 
 <a id="friendtalk"></a>
 
-## カカともへのメッセージ
+## カカともへのメッセージ { #friendtalk }
 
 <a id="api-domain"></a>
 
@@ -31,7 +33,7 @@
 
 <a id="send-messages"></a>
 
-## メッセージの送信
+## メッセージの送信 { #send-messages }
 <a id="request-of-sending"></a>
 
 #### 送信リクエスト
@@ -185,7 +187,7 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 
 <a id="list-deliveries"></a>
 
-## 送信リスト照会
+## 送信リスト照会 { #list-deliveries }
 
 <a id="request"></a>
 
@@ -311,7 +313,7 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 
 <a id="get-deliveries"></a>
 
-## 送信単件照会
+## 送信単件照会 { #get-deliveries }
 
 <a id="request-2"></a>
 
@@ -442,10 +444,10 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 
 <a id="message"></a>
 
-## メッセージ
+## メッセージ { #message }
 <a id="cancel-message-delivery"></a>
 
-### メッセージ送信取消
+### メッセージ送信取消 { #cancel-message-delivery }
 
 <a id="request-3"></a>
 
@@ -510,7 +512,7 @@ curl -X DELETE -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Ke
 
 <a id="query-updated-message-results"></a>
 
-### メッセージ結果アップデート照会
+### メッセージ結果アップデート照会 { #query-updated-message-results }
 
 <a id="request-4"></a>
 
@@ -613,11 +615,11 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 
 <a id="image-management"></a>
 
-## イメージの管理
+## イメージの管理 { #image-management }
 
 <a id="register-images"></a>
 
-### イメージの登録
+### イメージの登録 { #register-images }
 <a id="request-5"></a>
 
 #### リクエスト
@@ -690,7 +692,7 @@ curl -X POST -H "Content-Type: multipart/form-data" -H "X-Secret-Key:{secretkey}
 
 <a id="query-images"></a>
 
-### イメージの照会
+### イメージの照会 { #query-images }
 <a id="request-6"></a>
 
 #### リクエスト
@@ -776,7 +778,7 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 
 <a id="delete-images"></a>
 
-### イメージの削除
+### イメージの削除 { #delete-images }
 <a id="request-7"></a>
 
 #### リクエスト
@@ -839,10 +841,10 @@ curl -X DELETE -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Ke
 
 <a id="alternative-delivery-management"></a>
 
-## 代替送信管理
+## 代替送信管理 { #alternative-delivery-management }
 <a id="register-sms-appkey"></a>
 
-### SMS AppKey 登録
+### SMS AppKey 登録 { #register-sms-appkey }
 
 [URL]
 
@@ -901,7 +903,7 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 
 <a id="register-alternative-sending-settings"></a>
 
-### 代替送信設定登録
+### 代替送信設定登録 { #register-alternative-sending-settings }
 
 [URL]
 

@@ -1,13 +1,15 @@
 <!-- pre-align:aligned sig=cf26af3116e5 -->
 
-## Notification > KakaoTalk Bizmessage > 알림톡 > 개요
+<a id="alimtalk-overview"></a>
+
+## Notification > KakaoTalk Bizmessage > 알림톡 > 개요 { #alimtalk-overview }
 
 알림톡은 휴대폰 번호를 기반으로 친구 추가 없이 카카오톡 사용자에게 배송, 예약 시간 등의 정보성 메시지를 발송할 수 있는 서비스입니다.
 손쉬운 연동을 위한 RESTful API를 제공합니다.
 
 <a id="characteristics"></a>
 
-## 특징
+## 특징 { #characteristics }
 * SMS보다 저렴한 비용으로 1,000자까지 장문의 메시지를 보낼 수 있습니다.
 * 공지, 알림, 안내 등 영리성 목적이 없는 정보성 메시지를 채널 친구 추가 여부와 관계없이 발송할 수 있습니다.
 * 알림톡은 템플릿 기반으로 검수를 완료한 후, 발송할 수 있습니다.
@@ -18,7 +20,7 @@
 
 <a id="main-features"></a>
 
-## 주요 기능
+## 주요 기능 { #main-features }
 * NHN Cloud는 알림톡 템플릿을 수정할 수 있는 차별화 기능을 제공합니다. (API 연동에 사용되는 templateCode 변경 없음)
 * 발송, 조회 등의 RESTful API를 제공합니다.
 * 발송 결과 업데이트, 템플릿 상태 업데이트 Webhook을 제공합니다.
@@ -26,7 +28,7 @@
 
 <a id="alimtalk-template-precautions"></a>
 
-## 알림톡 템플릿 유의 사항
+## 알림톡 템플릿 유의 사항 { #alimtalk-template-precautions }
 알림톡은 카카오톡 채널을 추가하지 않은 이용자에게도 발송 가능한 정보성 메시지입니다.<br/> 불법스팸 방지를 위한 정보통신망법 안내서의 영리목적의 광고성 정보의 예외 중 카카오톡 이용자 보호 차원에서 적합하다고 심사된 템플릿에 한하여 발송 가능합니다. [[정보성 메시지(알림톡) 준수사항 안내]](https://kakaobusiness.gitbook.io/main/ad/infotalk/operations)
 
 <a id="alert-talk-message-maximum-character-guide"></a>
@@ -73,7 +75,7 @@
 
 <a id="template-inspection-and-creation-guide"></a>
 
-## 템플릿 검수 및 작성 가이드
+## 템플릿 검수 및 작성 가이드 { #template-inspection-and-creation-guide }
 * [[알림톡 제작 가이드]](https://kakaobusiness.gitbook.io/main/ad/bizmessage/notice-friend/content-guide)
 * [[알림톡 심사 가이드]](https://kakaobusiness.gitbook.io/main/ad/bizmessage/notice-friend/audit)
 * [[알림톡 이미지 제작 가이드]](https://kakaobusiness.gitbook.io/main/ad/infotalk/audit#id-3)

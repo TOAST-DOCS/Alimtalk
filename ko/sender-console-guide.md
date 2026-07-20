@@ -1,17 +1,19 @@
 <!-- pre-align:aligned sig=f530f01ac2b8 -->
 
-## Notification > KakaoTalk Bizmessage > 발신 프로필 > 콘솔 사용 가이드
+<a id="sender-console-guide"></a>
+
+## Notification > KakaoTalk Bizmessage > 발신 프로필 > 콘솔 사용 가이드 { #sender-console-guide }
 
 <a id="registerauthenticate-sender-profiles"></a>
 
-## 발신 프로필 등록/인증
+## 발신 프로필 등록/인증 { #registerauthenticate-sender-profiles }
 * 카카오톡 비즈 메시지를 발송하려면 발신 프로필을 먼저 등록해야 합니다.
 * 카카오톡 채널은 카카오톡 홈페이지(https://center-pf.kakao.com)에서 무료로 만들 수 있습니다.
 * 비즈니스 인증을 받은 카카오톡 채널만 NHN Cloud KakaoTalk Bizmessage 서비스에 추가할 수 있습니다.([플러스친구 비즈니스 인증](https://static.toastoven.net/prod_alimtalk/plusfriend_business_certify_guide_20190311.pdf) 참고)
 
 <a id="add-a-sender-profile"></a>
 
-## 발신 프로필 추가
+## 발신 프로필 추가 { #add-a-sender-profile }
 
 발신 프로필 등록이 완료되면 관리자 휴대폰으로 카카오톡 토큰 메시지가 전달됩니다.
 관리자로 등록된 휴대폰으로만 카카오톡 토큰 메시지가 전달됩니다.
@@ -23,7 +25,7 @@
 
 <a id="token-registration"></a>
 
-## 토큰 등록
+## 토큰 등록 { #token-registration }
 
 관리자 휴대폰으로 받은 토큰 메시지를 입력하면 등록이 완료됩니다.
 
@@ -34,7 +36,7 @@
 
 <a id="manage-a-fallback-delivery"></a>
 
-## 대체 발송 관리
+## 대체 발송 관리 { #manage-a-fallback-delivery }
 
 발신 프로필별로 **대체 발송 설정**을 할 수 있습니다.
 
@@ -45,7 +47,7 @@
 
 <a id="view-kakao-statistics"></a>
 
-## 카카오 통계 조회
+## 카카오 통계 조회 { #view-kakao-statistics }
 
 발신 프로필 관리에서 **카카오 통계 바로가기**를 클릭하면 새 창에서 카카오 통계를 조회할 수 있습니다. 통계 기준은 발송 통계와 템플릿 통계가 있으며, 메시지 채널에 따라 조회 조건이 달라집니다. 조회 결과를 차트와 표로 확인할 수 있습니다.
 
@@ -57,13 +59,13 @@
 
 <a id="delivery-statistics"></a>
 
-### 발송 통계
+### 발송 통계 { #delivery-statistics }
 
 발신 프로필을 기준으로 일별 발송 수, 유효 읽음 수, 클릭 수를 조회합니다. 기간, 발송 식별자, 메시지 타입 등을 설정해 조회할 수 있습니다.
 
 <a id="template-statistics"></a>
 
-### 템플릿 통계
+### 템플릿 통계 { #template-statistics }
 
 템플릿 및 그룹 태그를 기준으로 일별 발송 수, 유효 읽음 수, 클릭 수를 조회합니다. 기간, 메시지 타입 등을 설정해 조회할 수 있습니다.
 
@@ -71,7 +73,7 @@
 
 <a id="group-tag-management"></a>
 
-## 그룹 태그 관리
+## 그룹 태그 관리 { #group-tag-management }
 
 그룹 태그는 브랜드 메시지의 템플릿 통계 조회 시 사용하는 식별 태그입니다. **카카오 통계 바로가기** 새 창에서 **그룹 태그 관리** 탭을 클릭해 관리할 수 있습니다.
 
@@ -82,7 +84,7 @@
 
 <a id="notice-of-personal-information-consignee"></a>
 
-## 개인정보 수탁사 고지 안내
+## 개인정보 수탁사 고지 안내 { #notice-of-personal-information-consignee }
 '고객'이 NHN Cloud > Notification > KakaoTalk Bizmessage 서비스를 이용하면 '고객'과 '당사' 간 개인정보 처리에 관한 업무 위수탁 관계가 발생합니다. 정보통신망법 및 개인정보보호법에 따라 위탁자인 '고객'은 개인정보 처리방침을 통해 '당사'에 개인정보를 위탁한 현황(수탁자 및 업무의 내용)을 공개해야 합니다.
 
 '당사'에서는 '고객'이 NHN Cloud의 KakaoTalk Bizmessage 서비스를 이용할 때 관련 법령을 준수하고, 위탁 현황 미공개로 인해 과태료 등의 불이익을 받지 않도록 아래와 같이 안내합니다.

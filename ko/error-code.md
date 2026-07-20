@@ -1,10 +1,12 @@
 <!-- pre-align:aligned sig=2a9da7055af6 -->
 
-## Notification > KakaoTalk Bizmessage > 오류 코드
+<a id="error-code"></a>
+
+## Notification > KakaoTalk Bizmessage > 오류 코드 { #error-code }
 
 <a id="api-response-code"></a>
 
-## API 응답 코드
+## API 응답 코드 { #api-response-code }
 
 | 카테고리      | 성공 여부 | 결과 코드 | 결과 코드 메시지                                                                                                                                         | API 응답 메시지                                                                                                                                                                                                                                                                                                                                                                 |
 |-----------|-------|-------|---------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -89,7 +91,7 @@
 | 공통        | false | -3337 | 채널 추가 버튼이 없는 가로 버튼 배열 시, BF 버튼은 오른쪽(두 번째)이어야 합니다.                                                                                                 | BF button must be the second (right side) button in horizontal layout without channel-add button.                                                                                                                                                                                                                                                                          |
 | 공통        | false | -3338 | 채널 추가 버튼이 있는 가로 버튼 배열 시, BF 버튼은 왼쪽(첫 번째)이어야 합니다.                                                                                                  | BF button must be the first (left side) button in horizontal layout with channel-add button.                                                                                                                                                                                                                                                                               |
 | 공통        | false | -3340 | 잘못된 080 수신거부번호                                                                                                                                    | Invalid unsubscribeNo format. Expected format: 080-xxx-xxxx or 080-xxxx-xxxx or 080xxxxxxx or 080xxxxxxxx.                                                                                                                                                                                                                                                                 |
-| 공통        | false | -3341 | 잘못된 080 인증번호                                                                                                                                      | Invalid format. Only digits are allowed, up to a maximum of 9.                                                                                                                                                                                                                                                                                                             |
+| 공통        | false | -3341 | 잘못된 080 인증 번호                                                                                                                                      | Invalid format. Only digits are allowed, up to a maximum of 10.                                                                                                                                                                                                                                                                                                             |
 | 공통        | false | -3347 | 템플릿 파라미터 키에 '@' 문자를 사용할 수 없음                                                                                                                      | Template parameter key cannot contain '@' character. Invalid key: {}                                                                                                                                                                                                                                                                                                       |
 | 공통        | false | -3348 | AC 타입 버튼 이름은 '채널 추가'여야 함                                                                                                                           | AC type button name must be '채널 추가'.                                                                                                                                                                                                                                                                                                                                    |
 | 공통        | false | -3349 | 캐러셀 전체에서 AC 버튼은 1개만 사용 가능                                                                                                                         | AC button can only be used once across all carousel items.                                                                                                                                                                                                                                                                                                                  |
@@ -241,7 +243,7 @@
 
 <a id="delivery-result-code"></a>
 
-## 발송 결과 코드
+## 발송 결과 코드 { #delivery-result-code }
 
 <table class="table table-striped table-hover">
 <thead>
@@ -421,7 +423,7 @@
 	</tr>
 	<tr>
 		<td>3023</td>
-		<td>메시지 문법 오류(JSON 형식 오류)</td>
+		<td>메시지에 포함된 비디오를 전송할 수 없음(비디오 주소 또는 섬네일 이미지 주소가 올바르지 않거나 섬네일 이미지가 규격에 맞지 않음)</td>
 	</tr>
 	<tr>
 		<td>3024</td>

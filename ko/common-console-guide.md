@@ -1,10 +1,12 @@
 <!-- pre-align:aligned sig=872af16524aa -->
 
-## Notification > KakaoTalk Bizmessage > 콘솔 사용 가이드
+<a id="common-console-guide"></a>
+
+## Notification > KakaoTalk Bizmessage > 콘솔 사용 가이드 { #common-console-guide }
 
 <a id="identity-verification"></a>
 
-## 본인 인증
+## 본인 인증 { #identity-verification }
 * 어뷰징 방지를 위한 카카오톡 정책으로 KakaoTalk Bizmessage 서비스에 강화된 본인 인증 사전등록제가 적용되었습니다.
     * 2023년 4월 25일 이후 가입한 회원에 한함
 * 본인 인증은 기본적으로 휴대폰 본인 인증과 회원 유형에 따른 추가 서류 심사가 필요합니다.
@@ -15,7 +17,7 @@
 
 <a id="required-documents-for-identity-verification"></a>
 
-### 본인 인증에 따른 필요한 서류
+### 본인 인증에 따른 필요한 서류 { #required-documents-for-identity-verification }
 | 회원 유형   | 인증 방법     | 필요 서류         |
 |---------|-----------|---------------|
 | 사업자 대표  | 휴대폰 본인 인증 | 사업자등록증, 재직증명서 |
@@ -23,7 +25,7 @@
 
 <a id="authentication-representative"></a>
 
-### 본인 인증 대표
+### 본인 인증 대표 { #authentication-representative }
 ![KTB_01_20230926.png](https://static.toastoven.net/prod_alimtalk/KTB_01_20230926.png)
 1. <b>본인 인증</b> 탭을 선택합니다. 
 2. <b>휴대폰 본인 인증 및 필요 서류 첨부하기</b>를 클릭하여 절차를 시작합니다.
@@ -35,18 +37,18 @@
 
 <a id="identity-verification-status-settings"></a>
 
-### 본인 인증 상태 설정
+### 본인 인증 상태 설정 { #identity-verification-status-settings }
 * 심사중: 등록한 본인 인증에 대한 인증 서류를 관리자가 검토하고 있는 상태
 * 거부: 본인 인증이 반려되어 서류 재등록이 필요한 상태
 * 승인: 본인 인증 승인 완료 상태
 
 <a id="manage-sender-profiles"></a>
 
-## 발신프로필 관리
+## 발신프로필 관리 { #manage-sender-profiles }
 
 <a id="add-sender-profiles"></a>
 
-### 발신프로필 추가
+### 발신프로필 추가 { #add-sender-profiles }
 카카오톡 채널 개설 완료 후 발신 프로필을 등록합니다. 카카오톡 채널 생성 상세 가이드는 [발신 프로필](https://docs.nhncloud.com/ko/Notification/KakaoTalk%20Bizmessage/ko/sender-overview/ )에서 확인할 수 있습니다.
 발신 프로필 등록이 완료되면 관리자 휴대폰으로 카카오톡 토큰 메시지가 전달됩니다.
 ![KTB_02_20230926.png](https://static.toastoven.net/prod_alimtalk/KTB_02_20230926.png)
@@ -58,7 +60,7 @@
 
 <a id="register-token"></a>
 
-### 토큰 등록
+### 토큰 등록 { #register-token }
 관리자 휴대폰으로 받은 토큰 메시지를 입력하면 발신 프로필 등록이 완료됩니다.
 
 ![KTB_03_20230926.png](https://static.toastoven.net/prod_alimtalk/KTB_03_20230926.png)
@@ -69,7 +71,7 @@
 
 <a id="kakaotalk-channel-status"></a>
 
-### 카카오톡 채널 상태
+### 카카오톡 채널 상태 { #kakaotalk-channel-status }
 <a id="nhn-cloud-sender-profile-status"></a>
 
 #### NHN Cloud 발신프로필 상태
@@ -82,6 +84,7 @@
 * 알림톡/친구톡을 발송하기 위한 발신 키 상태를 의미합니다.
 * 프로필 장기 미사용, 사업자 정보 불일치 등의 경우 차단될 수 있습니다.
 * 해당 상태가 정상이 아닌 경우 NHN Cloud 고객 센터로 카카오톡 채널 ID와 함께 차단 해제를 요청해 주시기 바랍니다.
+* 프로필 상태가 비활성화(`C`)인 경우, 카카오 관리자 페이지에서 홈 공개를 "ON"으로 변경하면 채널 상태가 정상(`A`)으로 변경됩니다. 상태 동기화는 최대 15분 간격으로 이루어지므로, 카카오 반영 시점에 따라 반영까지 시간이 더 소요될 수 있습니다.
 
 <a id="kakao-channel-status"></a>
 
@@ -92,7 +95,7 @@
 
 <a id="sender-profile-status"></a>
 
-### 발신프로필 상태
+### 발신프로필 상태 { #sender-profile-status }
 <a id="sender-profile-dormant-status"></a>
 
 #### 발신프로필 휴면 상태
@@ -109,7 +112,7 @@
 
 <a id="kakaotalk-channel-spam-status"></a>
 
-### 카카오톡 채널 스팸 상태
+### 카카오톡 채널 스팸 상태 { #kakaotalk-channel-spam-status }
 <a id="kakaotalk-channel-spam-status-2"></a>
 
 #### 카카오톡 채널 스팸 상태
@@ -126,7 +129,7 @@
 
 <a id="first-time-user-restrictions"></a>
 
-### 최초 사용자 제한
+### 최초 사용자 제한 { #first-time-user-restrictions }
 특정 기준을 충족하지 못한 발신 프로필은 어뷰징 방지를 위해 최초 사용자 제한이 적용되어 일부 기능에 제약을 받게 됩니다.
 
 <a id="first-time-user-restriction-items"></a>
@@ -145,20 +148,20 @@
 
 <a id="sending-settings"></a>
 
-## 발송 설정
+## 발송 설정 { #sending-settings }
 * 메시지 보관 기간 정책에 따라 90일이 지난 발송 이력 데이터를 백업할 수 있습니다.
 * 알림톡 백업 여부, 파일 확장자, 파일을 업로드할 저장소 정보를 입력하면 해당 저장소에 백업 일자가 포함된 파일이 생성됩니다.
 
 <a id="data-retention-period"></a>
 
-### 데이터 보관 기간
+### 데이터 보관 기간 { #data-retention-period }
 * 데이터 보관 정책에 따라 최근 90일의 발송 이력을 보관합니다. 이 기간 동안 발송 내역 조회가 가능하며, 보관 기간이 만료되면 관련 법령에 따라 데이터를 삭제합니다.
 * 통계 데이터는 최근 90일의 정보를 보관합니다.
 * 카카오 서비스에 업로드된 이미지는 카카오 CDN 서버에 영구 보관됩니다.
 
 <a id="webhook-management"></a>
 
-## 웹훅 관리
+## 웹훅 관리 { #webhook-management }
 지정한 이벤트 발생 시 URL을 지정하여 웹훅 이벤트를 받을 수 있습니다.
 ![KTB_04_20230926.png](https://static.toastoven.net/prod_alimtalk/KTB_04_20230926.png)
 1. 등록할 이벤트 타입을 선택합니다.
@@ -170,7 +173,7 @@
 
 <a id="statistical-event-key-settings"></a>
 
-## 통계 이벤트 키 설정
+## 통계 이벤트 키 설정 { #statistical-event-key-settings }
 이벤트 키를 등록하여 해당 키로 발송 시 통계 이벤트 키별로 통계 데이터를 수집할 수 있습니다.
 통계 이벤트 키 용어의 의미는 <b>참고</b>에서 확인하십시오.
 ![KTB_05_20230926.png](https://static.toastoven.net/prod_alimtalk/KTB_05_20230926.png)
@@ -183,10 +186,10 @@
 
 <a id="statistics"></a>
 
-## 통계
+## 통계 { #statistics }
 <a id="query-statistics"></a>
 
-### 통계 조회
+### 통계 조회 { #query-statistics }
 * 발송 요청 기간, 통계 이벤트 키, 템플릿 등 타입별로 통계를 조회할 수 있습니다.
 * 발송 요청, 성공, 실패 등 발송 상태를 그래프와 표로 확인할 수 있습니다.
 
@@ -205,10 +208,10 @@
 
 <a id="note"></a>
 
-## 참고
+## 참고 { #note }
 <a id="statistics-event-keys-and-statistics"></a>
 
-### 통계 이벤트 키와 통계
+### 통계 이벤트 키와 통계 { #statistics-event-keys-and-statistics }
 
 | 용어       | 설명                                    |
 |----------|---------------------------------------|

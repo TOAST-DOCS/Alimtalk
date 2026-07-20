@@ -1,21 +1,23 @@
 <!-- pre-align:aligned sig=3b443c0f0141 -->
 
-## Notification > KakaoTalk Bizmessage > ブランドメッセージ > コンソール利用ガイド
+<a id="friendtalkupgrade-console-guide"></a>
+
+## Notification > KakaoTalk Bizmessage > ブランドメッセージ > コンソール利用ガイド { #friendtalkupgrade-console-guide }
 
 <a id="brand-message-sending"></a>
 
-## ブランドメッセージの送信
+## ブランドメッセージの送信 { #brand-message-sending }
 
 <a id="regular-send"></a>
 
-### 一般送信
+### 一般送信 { #regular-send }
 
 送信プロフィールを設定し、内容を入力してブランドメッセージ形式のメッセージを送信できます。
 ブランドメッセージを送信するには、コンソールで **Notification > KakaoTalk Bizmessage > ブランドメッセージ** を選択します。
 
 <a id="when-using-a-template"></a>
 
-### テンプレートを使用する場合
+### テンプレートを使用する場合 { #when-using-a-template }
 
 ![friendtalkupgrade_04_20250616.png](https://static.toastoven.net/prod_alimtalk/friendtalkupgrade/friendtalkupgrade_04_20250729.png)
 
@@ -46,7 +48,7 @@
 
 <a id="when-not-using-a-template"></a>
 
-### テンプレートを使用しない場合
+### テンプレートを使用しない場合 { #when-not-using-a-template }
 
 ![friendtalkupgrade_05_20250616.png](https://static.toastoven.net/prod_alimtalk/friendtalkupgrade/friendtalkupgrade_05_20250729.png)
 
@@ -94,7 +96,7 @@
 
 <a id="mass-delivery"></a>
 
-### 大量送信
+### 大量送信 { #mass-delivery }
 
 Excel/CSVフォーマットのテンプレートファイルを使用して、複数の受信番号にブランドメッセージを送信できる機能です。下部のタブから**一括送信**を選択します。
 
@@ -117,7 +119,7 @@ Excel/CSVフォーマットのテンプレートファイルを使用して、�
 
 <a id="fallback"></a>
 
-### 代替送信
+### 代替送信 { #fallback }
 ブランドメッセージの送信に失敗した場合、その内容をテキストメッセージで代替送信できる機能です。
 **共通の内容で送信**または**ユーザー別に異なるメッセージを設定**を選択して送信できます。
 
@@ -167,11 +169,11 @@ Excel/CSVフォーマットのテンプレートファイルを使用して、�
 
 <a id="view-send"></a>
 
-## 送信照会
+## 送信照会 { #view-send }
 
 <a id="view-send-result"></a>
 
-### 送信結果の照会
+### 送信結果の照会 { #view-send-result }
 
 ![friendtalkupgrade_07_20250616.png](https://static.toastoven.net/prod_alimtalk/friendtalkupgrade/friendtalkupgrade_07_20250729.png)
 
@@ -182,7 +184,7 @@ Excel/CSVフォーマットのテンプレートファイルを使用して、�
 
 <a id="cancel-send"></a>
 
-### 送信キャンセル
+### 送信キャンセル { #cancel-send }
 一般送信のうち、送信リクエスト日時を未来に設定した予約送信の場合はキャンセルが可能です。
 
 * 予約送信リクエストを照会すると、リクエストIDの左側にチェックボックスを確認できます。
@@ -192,11 +194,11 @@ Excel/CSVフォーマットのテンプレートファイルを使用して、�
 
 <a id="view-mass-delivery"></a>
 
-## 大量送信の照会
+## 大量送信の照会 { #view-mass-delivery }
 
 <a id="view-send-result-2"></a>
 
-### 送信結果の照会
+### 送信結果の照会 { #view-send-result-2 }
 
 ![friendtalkupgrade_masssearch01_20250729.png](https://static.toastoven.net/prod_alimtalk/friendtalkupgrade/friendtalkupgrade_masssearch01_20250729.png)
 
@@ -208,7 +210,7 @@ Excel/CSVフォーマットのテンプレートファイルを使用して、�
 
 <a id="manage-image"></a>
 
-## 画像管理
+## 画像管理 { #manage-image }
 
 ![friendtalkupgrade_8_20250616.png](https://static.toastoven.net/prod_alimtalk/friendtalkupgrade/friendtalkupgrade_8_20250616.png)
 
@@ -232,7 +234,7 @@ Excel/CSVフォーマットのテンプレートファイルを使用して、�
 
 <a id="manage-video"></a>
 
-## 動画管理
+## 動画管理 { #manage-video }
 
 ![friendtalkupgrade_video_management.png](TODO: コンソールキャプチャ後、NHN staticホストURLに置換)
 
@@ -241,7 +243,8 @@ Excel/CSVフォーマットのテンプレートファイルを使用して、�
 * 送信プロフィールを選択した後、動画を登録または削除できます。
 * 動画のアップロードはコンソール画面でファイルを選択した後、アップロードボタンを押すと進行状況が表示されます。アップロード中はページをリフレッシュしたり閉じたりしないよう注意してください。進行中にリフレッシュが発生するとアップロードが中断され、再度アップロードする必要があります。
 * 登録した動画はカカオビジネスセンターでエンコーディングが完了した後に送信に使用できます。エンコーディングは通常5～10分かかり、動画の長さによっては最大3日かかることがあります。3日を超えると自動的に`ERROR`ステータスとして処理されます。
-* 動画のステータスはカカオビジネスセンターと定期的に同期されます。`PUBLIC`ステータスの動画のみテンプレート登録及び送信が可能で、`PRIVATE`ステータスの動画はテンプレート登録のみ可能です。
+* 動画のステータスはカカオビジネスセンターと3分間隔で同期されます。カカオビジネスセンターのステータス変更のタイミングによっては、反映までしばらく時間がかかることがあります。
+* `PUBLIC`ステータスの動画のみテンプレート登録及び送信が可能で、`PRIVATE`ステータスの動画はテンプレート登録のみ可能です。`PRIVATE`ステータスの動画が含まれたテンプレートで送信を試みると、送信が失敗します。
 * 登録された動画はカカオ側で永久保存され、コンソールで動画を削除してもカカオビジネスセンターの動画は自動的に整理されません。カカオチャネル管理者がチャネルビジネスホームの管理画面で直接削除できます。
 * 動画の削除時、該当の動画が使用されたテンプレートでは送信できなくなるため、注意が必要です。
 
@@ -256,7 +259,7 @@ Excel/CSVフォーマットのテンプレートファイルを使用して、�
 
 <a id="manage-templates"></a>
 
-## テンプレート管理
+## テンプレート管理 { #manage-templates }
 
 ![friendtalkupgrade_09_20250616.png](https://static.toastoven.net/prod_alimtalk/friendtalkupgrade/friendtalkupgrade_09_20250729.png)
 
@@ -266,13 +269,13 @@ Excel/CSVフォーマットのテンプレートファイルを使用して、�
 
 <a id="080-opt-out-management"></a>
 
-## 080受信拒否管理
+## 080受信拒否管理 { #080-opt-out-management }
 
 * ブランドメッセージでは、NHN CloudのSMSサービス連携を通じて、「080受信拒否管理」と「代替送信」機能を1つのsmsAppKeyで統合管理します。
 
 <a id="register-and-manage-080-opt-out-numbers"></a>
 
-### 080受信拒否番号の登録及び管理
+### 080受信拒否番号の登録及び管理 { #register-and-manage-080-opt-out-numbers }
 * ブランドメッセージのマーケティング受信同意ユーザーへの送信では、送信プロフィールと友だちになっていない受信者にもメッセージを送信できるため、送信プロフィールに080受信拒否番号を登録する必要があります。
     * 送信プロフィールの080受信拒否番号は、同一トークチャネルの他組織、他プロジェクト、他の販売代理店の送信プロフィール全体に一括適用されるデータであるため、慎重に変更する必要があります。
 * 送信プロフィールに080受信拒否番号を登録したり、修正が必要な場合は、**NHN Cloudのカスタマーセンター**にお問い合わせください。
@@ -291,7 +294,7 @@ Excel/CSVフォーマットのテンプレートファイルを使用して、�
 
 <a id="manage-fallback"></a>
 
-### 代替送信管理
+### 代替送信管理 { #manage-fallback }
 * ブランドメッセージの送信に失敗した場合、その内容をテキストメッセージで代替送信するように設定できます。
 * NHN Cloud SMSサービスを利用している必要があり、メッセージの長さに応じてSMS/LMSとして送信されます(各タイプ別のテキストメッセージ送信時に別途利用料金が発生します)。
 * SMS アプリキーを修正すると、全ての検索用IDのチャネルで代替送信設定が初期化されます。
@@ -306,7 +309,7 @@ Excel/CSVフォーマットのテンプレートファイルを使用して、�
 
 <a id="apply-for-using-non-friend-message-sending-targeting-m-n"></a>
 
-## 非友だちメッセージ送信(ターゲティング M, N)の利用申請
+## 非友だちメッセージ送信(ターゲティング M, N)の利用申請 { #apply-for-using-non-friend-message-sending-targeting-m-n }
 
 * 非友だちメッセージ送信(ターゲティング M, N)の利用をご希望の場合は、利用申請を行う必要があります。利用申請をしない場合、送信時にM/Nタイプが表示されません。
 * 利用申請は、以下の条件を満たす場合に承認されます。
@@ -318,7 +321,7 @@ Excel/CSVフォーマットのテンプレートファイルを使用して、�
 
 <a id="cautions"></a>
 
-### 注意事項
+### 注意事項 { #cautions }
 * ビジネス認証が解除された場合、非友だちメッセージ送信(ターゲティング M, N)の利用権限が解除されます。ビジネス認証の再審査後に、再度利用申請を行う必要があります。
 * 広告性情報の受信同意に関する証跡資料ファイルはトークチャネル単位で保存されるため、変更すると同一トークチャネルの他の販売代理店の送信プロフィールに一括で適用されます。
 * 他の販売代理店がアップロードしたファイルが既に存在する場合、ファイルアップロードのプロセスを省略して非友だちメッセージ送信(ターゲティング M, N)の利用申請が可能です。

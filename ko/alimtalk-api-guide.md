@@ -1,8 +1,10 @@
-## Notification > KakaoTalk Bizmessage > 알림톡 > API v2.3 Guide
+<a id="alimtalk-api-guide"></a>
+
+## Notification > KakaoTalk Bizmessage > 알림톡 > API v2.3 Guide { #alimtalk-api-guide }
 
 <a id="alimtalk"></a>
 
-## 알림톡
+## 알림톡 { #alimtalk }
 
 <a id="api-domain"></a>
 
@@ -23,7 +25,7 @@
 
 <a id="overview-of-v23-api"></a>
 
-## Overview of v2.3 API
+## Overview of v2.3 API { #overview-of-v23-api }
 
 1. 알림톡 바로 연결, 아이템리스트, 톡 비즈 플러그인, 대표 링크, 비즈니스폼 버튼 기능이 추가되었습니다.
 2. 알림톡 아이템 하이라이트 이미지 등록 API가 추가되었습니다.
@@ -32,11 +34,11 @@
 
 <a id="general-messages"></a>
 
-## 일반 메시지
+## 일반 메시지 { #general-messages }
 
 <a id="request-of-sending-replaced-messages"></a>
 
-### 메시지 치환 발송 요청
+### 메시지 치환 발송 요청 { #request-of-sending-replaced-messages }
 
 [URL]
 
@@ -209,7 +211,7 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 
 <a id="request-of-sending-full-text"></a>
 
-### 메시지 전문 발송 요청
+### 메시지 전문 발송 요청 { #request-of-sending-full-text }
 
 [URL]
 
@@ -452,7 +454,7 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 
 <a id="list-messages"></a>
 
-### 메시지 리스트 조회
+### 메시지 리스트 조회 { #list-messages }
 
 <a id="request"></a>
 
@@ -581,7 +583,7 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 
 <a id="get-messages"></a>
 
-### 메시지 단건 조회
+### 메시지 단건 조회 { #get-messages }
 
 <a id="request-2"></a>
 
@@ -804,7 +806,7 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 
 <a id="authentication-messages"></a>
 
-## 인증 메시지
+## 인증 메시지 { #authentication-messages }
 
 <span id="precautions-authword"></span>
 
@@ -819,7 +821,7 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 
 <a id="request-of-sending-replaced-messages-2"></a>
 
-### 메시지 치환 발송 요청
+### 메시지 치환 발송 요청 { #request-of-sending-replaced-messages-2 }
 
 [URL]
 
@@ -852,7 +854,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="request-of-sending-full-text-2"></a>
 
-### 메시지 전문 발송 요청
+### 메시지 전문 발송 요청 { #request-of-sending-full-text-2 }
 
 [URL]
 
@@ -885,7 +887,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="list-messages-2"></a>
 
-### 메시지 리스트 조회
+### 메시지 리스트 조회 { #list-messages-2 }
 
 <a id="request-3"></a>
 
@@ -921,7 +923,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="get-messages-2"></a>
 
-### 메시지 단건 조회
+### 메시지 단건 조회 { #get-messages-2 }
 
 <a id="request-4"></a>
 
@@ -968,11 +970,11 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 
 <a id="message"></a>
 
-## 메시지
+## 메시지 { #message }
 
 <a id="cancel-sending-messages"></a>
 
-### 메시지 발송 취소
+### 메시지 발송 취소 { #cancel-sending-messages }
 
 <a id="request-5"></a>
 
@@ -1041,7 +1043,7 @@ curl -X DELETE -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Ke
 
 <a id="query-updates-of-message-result"></a>
 
-### 메시지 결과 업데이트 조회
+### 메시지 결과 업데이트 조회 { #query-updates-of-message-result }
 
 <a id="request-6"></a>
 
@@ -1140,7 +1142,7 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 
 <a id="query-the-number-of-message-result-updates"></a>
 
-### 메시지 결과 업데이트 건수 조회
+### 메시지 결과 업데이트 건수 조회 { #query-the-number-of-message-result-updates }
 
 <a id="request-7"></a>
 
@@ -1210,7 +1212,7 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 
 <a id="status-code-of-smslms-resending"></a>
 
-### SMS/LMS 대체 발송 상태 코드
+### SMS/LMS 대체 발송 상태 코드 { #status-code-of-smslms-resending }
 
 | 이름    | 	설명                                  |
 |-------|--------------------------------------|
@@ -1222,11 +1224,11 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 
 <a id="mass-delivery"></a>
 
-## 대량 발송
+## 대량 발송 { #mass-delivery }
 
 <a id="list-mass-delivery-requests"></a>
 
-### 대량 발송 요청 목록 조회
+### 대량 발송 요청 목록 조회 { #list-mass-delivery-requests }
 
 <a id="request-8"></a>
 
@@ -1339,7 +1341,7 @@ curl -X GET \
 
 <a id="list-mass-delivery-recipients"></a>
 
-### 대량 발송 수신자 목록 조회
+### 대량 발송 수신자 목록 조회 { #list-mass-delivery-recipients }
 
 <a id="request-9"></a>
 
@@ -1441,7 +1443,7 @@ curl -X GET \
 
 <a id="get-a-mass-delivery-recipient"></a>
 
-### 대량 발송 수신자 조회
+### 대량 발송 수신자 조회 { #get-a-mass-delivery-recipient }
 
 <a id="request-10"></a>
 
@@ -1666,11 +1668,11 @@ curl -X GET \
 
 <a id="templates"></a>
 
-## 템플릿
+## 템플릿 { #templates }
 
 <a id="list-template-categories"></a>
 
-### 템플릿 카테고리 조회
+### 템플릿 카테고리 조회 { #list-template-categories }
 
 <a id="request-11"></a>
 
@@ -1747,7 +1749,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="register-templates"></a>
 
-### 템플릿 등록
+### 템플릿 등록 { #register-templates }
 
 <a id="request-12"></a>
 
@@ -1901,6 +1903,28 @@ Content-Type: application/json;charset=UTF-8
 * 채널 추가형(AD) 또는 복합형(MI) 메시지 유형 템플릿 등록 시 templateAd 값이 고정됩니다.
 * 채널 추가형(AD) 또는 복합형(MI) 메시지 유형 템플릿 등록 시 채널 추가(AC) 버튼이 첫 번째 순서에 위치해야 합니다.
 * 채널 추가(AC) 버튼의 버튼명은 "채널 추가"로 고정하여 등록해야 합니다.
+필드별 치환 변수(#{변수}) 사용 가능 여부는 아래를 참고하세요.
+
+| 구분 | 필드 | 치환 가능 |
+|------|------|---------|
+| 기본 | templateContent | O |
+| 기본 | templateTitle | O |
+| 기본 | templateSubtitle | X |
+| 기본 | templateHeader | O |
+| 기본 | templateExtra | X |
+| 기본 | templateAd | X |
+| 버튼 | name | X |
+| 버튼 | linkMo, linkPc, schemeIos, schemeAndroid | O |
+| 바로연결 | name | X |
+| 바로연결 | linkMo, linkPc, schemeIos, schemeAndroid | O |
+| 템플릿 아이템 | title | X |
+| 템플릿 아이템 | description | O |
+| 템플릿 아이템 summary | title | X |
+| 템플릿 아이템 summary | description | O |
+| 템플릿 아이템 하이라이트 | title | O |
+| 템플릿 아이템 하이라이트 | description | O |
+| 템플릿 아이템 하이라이트 | imageUrl | X |
+| 대표링크 | linkMo, linkPc, schemeIos, schemeAndroid | O |
 
 <a id="response-13"></a>
 
@@ -1925,7 +1949,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="modify-templates"></a>
 
-### 템플릿 수정
+### 템플릿 수정 { #modify-templates }
 
 <a id="request-13"></a>
 
@@ -2102,7 +2126,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="delete-templates"></a>
 
-### 템플릿 삭제
+### 템플릿 삭제 { #delete-templates }
 
 <a id="request-14"></a>
 
@@ -2158,7 +2182,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="inquire-of-templates"></a>
 
-### 템플릿 문의하기
+### 템플릿 문의하기 { #inquire-of-templates }
 
 <a id="request-15"></a>
 
@@ -2228,7 +2252,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="send-inquiry-on-templates-with-file-attachment"></a>
 
-### 파일 첨부하여 템플릿 문의하기
+### 파일 첨부하여 템플릿 문의하기 { #send-inquiry-on-templates-with-file-attachment }
 
 <a id="request-16"></a>
 
@@ -2300,7 +2324,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="change-template-to-channel-add-type"></a>
 
-### 템플릿 채널 추가형으로 변경
+### 템플릿 채널 추가형으로 변경 { #change-template-to-channel-add-type }
 
 <a id="request-17"></a>
 
@@ -2358,7 +2382,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="single-query-for-template"></a>
 
-### 템플릿 단건 조회
+### 템플릿 단건 조회 { #single-query-for-template }
 
 <a id="request-18"></a>
 
@@ -2587,7 +2611,7 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 
 <a id="list-templates"></a>
 
-### 템플릿 리스트 조회
+### 템플릿 리스트 조회 { #list-templates }
 
 <a id="request-19"></a>
 
@@ -2827,7 +2851,7 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 
 <a id="list-template-modifications"></a>
 
-### 템플릿 수정 리스트 조회
+### 템플릿 수정 리스트 조회 { #list-template-modifications }
 
 <a id="request-20"></a>
 
@@ -3047,7 +3071,7 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 
 <a id="register-template-image"></a>
 
-### 템플릿 이미지 등록
+### 템플릿 이미지 등록 { #register-template-image }
 
 <a id="request-21"></a>
 
@@ -3120,7 +3144,7 @@ curl -X POST -H "Content-Type: multipart/form-data" -H "X-Secret-Key:{secretkey}
 
 <a id="register-template-item-highlight-images"></a>
 
-### 템플릿 아이템 하이라이트 이미지 등록
+### 템플릿 아이템 하이라이트 이미지 등록 { #register-template-item-highlight-images }
 
 <a id="request-22"></a>
 
@@ -3193,7 +3217,7 @@ curl -X POST -H "Content-Type: multipart/form-data" -H "X-Secret-Key:{secretkey}
 
 <a id="register-template-plugin"></a>
 
-### 템플릿 플러그인 등록
+### 템플릿 플러그인 등록 { #register-template-plugin }
 
 <a id="request-23"></a>
 
@@ -3264,7 +3288,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="modify-template-plugin"></a>
 
-### 템플릿 플러그인 수정
+### 템플릿 플러그인 수정 { #modify-template-plugin }
 
 <a id="request-24"></a>
 
@@ -3334,7 +3358,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="modify-template-plugin-2"></a>
 
-### 템플릿 플러그인 삭제
+### 템플릿 플러그인 삭제 { #modify-template-plugin-2 }
 
 <a id="request-25"></a>
 
@@ -3390,7 +3414,7 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="retrieve-template-plugin"></a>
 
-### 템플릿 플러그인 조회
+### 템플릿 플러그인 조회 { #retrieve-template-plugin }
 
 <a id="request-26"></a>
 
@@ -3463,11 +3487,11 @@ Content-Type: application/json;charset=UTF-8
 
 <a id="manage-alternative-delivery"></a>
 
-## 대체 발송 관리
+## 대체 발송 관리 { #manage-alternative-delivery }
 
 <a id="register-an-sms-appkey"></a>
 
-### SMS AppKey 등록
+### SMS AppKey 등록 { #register-an-sms-appkey }
 
 [URL]
 
@@ -3536,7 +3560,7 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 
 <a id="register-alternative-delivery-settings"></a>
 
-### 대체 발송 설정 등록
+### 대체 발송 설정 등록 { #register-alternative-delivery-settings }
 
 [URL]
 

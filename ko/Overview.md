@@ -1,13 +1,15 @@
 <!-- pre-align:aligned sig=e451b6f6f6d1 -->
 
-## Notification > KakaoTalk Bizmessage > 개요
+<a id="overview"></a>
+
+## Notification > KakaoTalk Bizmessage > 개요 { #overview }
 
 KakaoTalk Bizmessage는 휴대폰 번호를 기반으로 친구 추가 없이 카카오톡 사용자에게 알림톡, 친구톡 형태의 메시지를 발송할 수 있는 서비스입니다.
 손쉬운 연동을 위한 RESTful API를 제공합니다.
 
 <a id="alimtalk-vs-friendtalk"></a>
 
-## 알림톡 vs 친구톡
+## 알림톡 vs 친구톡 { #alimtalk-vs-friendtalk }
 | 구분    | 알림톡                                    | 친구톡                                                                                 |
 | ----- |----------------------------------------|-------------------------------------------------------------------------------------|
 | 발송 내용 | 정보성 메시지 발송 가능                          | 광고성 메시지 발송 가능                                                                       |
@@ -17,7 +19,7 @@ KakaoTalk Bizmessage는 휴대폰 번호를 기반으로 친구 추가 없이 �
 
 <a id="precautions-before-delivery"></a>
 
-## 발송 전 유의 사항
+## 발송 전 유의 사항 { #precautions-before-delivery }
 * 알림톡 이용 시, 고객사는 다음과 같은 서비스 이용 유의 사항을 수신자에게 안내해야 합니다.
   * 알림톡을 수신하는 과정에서 와이파이 환경이 아닌 경우, 데이터통신 요금이 발생할 수 있습니다.
   * 알림톡 수신을 원하지 않을 경우에 대해 다음의 내용을 참고하십시오.
@@ -26,7 +28,7 @@ KakaoTalk Bizmessage는 휴대폰 번호를 기반으로 친구 추가 없이 �
 
 <a id="notice-of-personal-information-consignee"></a>
 
-## 개인정보 수탁사 고지 안내
+## 개인정보 수탁사 고지 안내 { #notice-of-personal-information-consignee }
 고객사에서 NHN Cloud > Notification > KakaoTalk Bizmessage 서비스 이용 시, 고객사와 당사 간 개인정보 처리에 관한 업무 위수탁 관계가 발생하는 바 정보통신망법 및 개인정보보호법에 따라 위탁자인 고객사는 개인정보 처리방침을 통해 당사에 개인정보를 위탁한 현황(수탁자 및 업무의 내용)을 공개해야 합니다.
 
 이에, 당사에서는 고객사가 NHN Cloud의 KakaoTalk Bizmessage 서비스를 이용함에 있어 관련 법령을 준수하고, 위탁 현황 미공개로 인하여 과태료 등의 불이익을 받지 않도록 아래와 같이 가이드할 수 있습니다.

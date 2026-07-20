@@ -1,16 +1,18 @@
 <!-- pre-align:aligned sig=7343fc9458a2 -->
 
-## Notification > KakaoTalk Bizmessage > FriendTalk > API v2.3 Guide
+<a id="friendtalk-api-guide-v2-3"></a>
+
+## Notification > KakaoTalk Bizmessage > FriendTalk > API v2.3 Guide { #friendtalk-api-guide-v2-3 }
 
 <a id="friendtalk-service-end-of-service-notice"></a>
 
-## FriendTalk Service End of Service Notice
+## FriendTalk Service End of Service Notice { #friendtalk-service-end-of-service-notice }
 
 <!-- TODO: translate body -->
 
 <a id="friendtalk"></a>
 
-## FriendTalk
+## FriendTalk { #friendtalk }
 
 <a id="api-domain"></a>
 
@@ -31,7 +33,7 @@
 
 <a id="overview-of-v23-api"></a>
 
-## Overview of v2.3 API
+## Overview of v2.3 API { #overview-of-v23-api }
 1. Added FriendTalk wide item list, carousel feed, coupon, and business form button features.
 2. Added wide item list image registration and carousel image registration APIs.
 3. Added the imageType field when querying images.
@@ -39,7 +41,7 @@
 
 <a id="send-messages"></a>
 
-## Send Messages
+## Send Messages { #send-messages }
 
 [URL]
 
@@ -578,7 +580,7 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 
 <a id="list-deliveries"></a>
 
-## List Deliveries
+## List Deliveries { #list-deliveries }
 
 <a id="request"></a>
 
@@ -708,7 +710,7 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 
 <a id="get-deliveries"></a>
 
-## Get Deliveries
+## Get Deliveries { #get-deliveries }
 
 <a id="request-2"></a>
 
@@ -953,10 +955,10 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 
 <a id="message"></a>
 
-## Message
+## Message { #message }
 <a id="cancel-sending-messages"></a>
 
-### Cancel Sending Messages
+### Cancel Sending Messages { #cancel-sending-messages }
 
 <a id="request-3"></a>
 
@@ -1021,7 +1023,7 @@ curl -X DELETE -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Ke
 
 <a id="query-updated-message-results"></a>
 
-### Query Updated Message Results
+### Query Updated Message Results { #query-updated-message-results }
 
 <a id="request-4"></a>
 
@@ -1126,7 +1128,7 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 
 <a id="list-mass-delivery-requests"></a>
 
-### List Mass Delivery Requests
+### List Mass Delivery Requests { #list-mass-delivery-requests }
 
 <a id="request-5"></a>
 
@@ -1239,7 +1241,7 @@ curl -X GET \
 
 <a id="list-mass-delivery-recipients"></a>
 
-### List Mass Delivery Recipients
+### List Mass Delivery Recipients { #list-mass-delivery-recipients }
 
 <a id="request-6"></a>
 
@@ -1338,7 +1340,7 @@ curl -X GET \
 
 <a id="get-a-mass-delivery-recipient"></a>
 
-### Get a Mass Delivery Recipient
+### Get a Mass Delivery Recipient { #get-a-mass-delivery-recipient }
 
 <a id="request-7"></a>
 
@@ -1582,11 +1584,11 @@ curl -X GET \
 
 <a id="image-management"></a>
 
-## Image Management
+## Image Management { #image-management }
 
 <a id="register-images"></a>
 
-### Register Images
+### Register Images { #register-images }
 <a id="request-8"></a>
 
 #### Request
@@ -1658,7 +1660,7 @@ curl -X POST -H "Content-Type: multipart/form-data" -H "X-Secret-Key:{secretkey}
 
 <a id="register-wide-item-list-images"></a>
 
-### Register Wide Item List Images
+### Register Wide Item List Images { #register-wide-item-list-images }
 <a id="request-9"></a>
 
 #### Request
@@ -1729,7 +1731,7 @@ curl -X POST -H "Content-Type: multipart/form-data" -H "X-Secret-Key:{secretkey}
 
 <a id="register-carousel-image"></a>
 
-### Register Carousel Image
+### Register Carousel Image { #register-carousel-image }
 <a id="request-10"></a>
 
 #### Request
@@ -1800,7 +1802,7 @@ curl -X POST -H "Content-Type: multipart/form-data" -H "X-Secret-Key:{secretkey}
 
 <a id="query-images"></a>
 
-### Query Images
+### Query Images { #query-images }
 <a id="request-11"></a>
 
 #### Request
@@ -1887,7 +1889,7 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 
 <a id="delete-images"></a>
 
-### Delete Images
+### Delete Images { #delete-images }
 <a id="request-12"></a>
 
 #### Request
@@ -1950,10 +1952,10 @@ curl -X DELETE -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Ke
 
 <a id="upload"></a>
 
-## Upload
+## Upload { #upload }
 <a id="register-a-business-form"></a>
 
-### Register a business form
+### Register a business form { #register-a-business-form }
 [URL]
 
 ```
@@ -2022,10 +2024,10 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 
 <a id="manage-alternative-delivery"></a>
 
-## Manage Alternative Delivery
+## Manage Alternative Delivery { #manage-alternative-delivery }
 <a id="sms-app-key-registration"></a>
 
-### SMS app key registration
+### SMS app key registration { #sms-app-key-registration }
 
 [URL]
 
@@ -2084,7 +2086,7 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 
 <a id="register-alternative-delivery-settings"></a>
 
-### Register Alternative Delivery Settings
+### Register Alternative Delivery Settings { #register-alternative-delivery-settings }
 
 [URL]
 

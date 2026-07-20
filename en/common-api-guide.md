@@ -1,14 +1,16 @@
 <!-- pre-align:aligned sig=8c7be9b338eb -->
 
-## Notification > KakaoTalk Bizmessage > Common > API v2.2 Guide
+<a id="common-api-guide"></a>
+
+## Notification > KakaoTalk Bizmessage > Common > API v2.2 Guide { #common-api-guide }
 
 <a id="statistics"></a>
 
-## Statistics
+## Statistics { #statistics }
 
 <a id="api-domain"></a>
 
-### [API Domain]
+### [API Domain] { #api-domain }
 
 <table>
 <thead>
@@ -26,7 +28,7 @@
 
 <a id="statistics-search---event-based"></a>
 
-### Statistics Search - Event Based
+### Statistics Search - Event Based { #statistics-search---event-based }
 * Statistics collected based on the time when the event occurs.
 * Statistics are collected based on the following times:
     * Request count (REQUESTED): Time when the scheduled delivery is registered
@@ -38,7 +40,7 @@
 
 <a id="get-statistics-information"></a>
 
-### Get Statistics Information
+### Get Statistics Information { #get-statistics-information }
 
 [URL]
 
@@ -116,7 +118,7 @@
 
 <a id="get-count-per-event"></a>
 
-### Get Count per Event
+### Get Count per Event { #get-count-per-event }
 
 [URL]
 
@@ -168,7 +170,7 @@
 
 <a id="kakao-statistics"></a>
 
-## Kakao Statistics
+## Kakao Statistics { #kakao-statistics }
 
 * Retrieves statistics data provided by KakaoBizCenter.
 * Statistics data can be retrieved on a daily (DAILY) or monthly (MONTHLY) basis by sender key.
@@ -185,13 +187,13 @@ Clicking **Go to Kakao Statistics** in Sender Profile Management opens Kakao Sta
 
 <a id="delivery-statistics"></a>
 
-### Delivery Statistics
+### Delivery Statistics { #delivery-statistics }
 
 Retrieves the daily send count, valid read count, and click count by sender profile. You can filter by period, send identifier, message type, and more.
 
 <a id="template-statistics"></a>
 
-### Template Statistics
+### Template Statistics { #template-statistics }
 
 Retrieves the daily send count, valid read count, and click count by template and group tag. You can filter by period, message type, and more.
 
@@ -199,7 +201,7 @@ Retrieves the daily send count, valid read count, and click count by template an
 
 <a id="retrieve-alimtalk-delivery-statistics"></a>
 
-### Retrieve AlimTalk Delivery Statistics
+### Retrieve AlimTalk Delivery Statistics { #retrieve-alimtalk-delivery-statistics }
 
 <a id="request"></a>
 
@@ -284,7 +286,7 @@ Retrieves the daily send count, valid read count, and click count by template an
 
 <a id="retrieve-alimtalk-template-statistics"></a>
 
-### Retrieve AlimTalk Template Statistics
+### Retrieve AlimTalk Template Statistics { #retrieve-alimtalk-template-statistics }
 
 <a id="request-2"></a>
 
@@ -369,7 +371,7 @@ Retrieves the daily send count, valid read count, and click count by template an
 
 <a id="retrieve-brand-message-delivery-statistics"></a>
 
-### Retrieve Brand Message Delivery Statistics
+### Retrieve Brand Message Delivery Statistics { #retrieve-brand-message-delivery-statistics }
 
 <a id="request-3"></a>
 
@@ -465,7 +467,7 @@ Retrieves the daily send count, valid read count, and click count by template an
 
 <a id="retrieve-brand-message-template-statistics"></a>
 
-### Retrieve Brand Message Template Statistics
+### Retrieve Brand Message Template Statistics { #retrieve-brand-message-template-statistics }
 
 <a id="request-4"></a>
 
