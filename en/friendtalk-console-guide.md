@@ -1,20 +1,22 @@
 <!-- pre-align:aligned sig=00da575a6590 -->
 
-## Notification > KakaoTalk Bizmessage > FriendTalk > Console Guide
+<a id="friendtalk-console-guide"></a>
+
+## Notification > KakaoTalk Bizmessage > FriendTalk > Console Guide { #friendtalk-console-guide }
 
 <a id="friendtalk-service-termination-notice"></a>
 
-## FriendTalk Service Termination Notice
+## FriendTalk Service Termination Notice { #friendtalk-service-termination-notice }
 
 <!-- TODO: translate body -->
 
 <a id="send-friendtalk"></a>
 
-## Send FriendTalk
+## Send FriendTalk { #send-friendtalk }
 
 <a id="general-delivery"></a>
 
-### General Delivery
+### General Delivery { #general-delivery }
 
 You can send a message in the form of a FriendTalk by setting the sender profile and entering the content. 
 To send a FriendTalk, select **Notification > KakaoTalk Bizmessage > FriendTalk** from the console.
@@ -75,7 +77,7 @@ To send a FriendTalk, select **Notification > KakaoTalk Bizmessage > FriendTalk*
 
 <a id="mass-delivery"></a>
 
-### Mass Delivery
+### Mass Delivery { #mass-delivery }
 
 It is the feature to send AlimTalk to multiple recipients numbers through an Excel/CSV format template file. Select <b>Mass Delivery</b> from bottom tab.
 
@@ -98,7 +100,7 @@ If you click on <b>Send</b> button, you can select <b>Inspect and proceed</b> or
 
 <a id="alternative-delivery"></a>
 
-### Alternative Delivery
+### Alternative Delivery { #alternative-delivery }
 It is the feature to send a text message alternatively if you fail to send FriendTalk. 
 <b>Send with common content </b> or <b>Set different messages for each user </b> can be selected to send.
 
@@ -124,7 +126,7 @@ It is the feature to send a text message alternatively if you fail to send Frien
 
 <a id="precautions-for-sending-advertising-messages"></a>
 
-### Precautions for sending advertising messages
+### Precautions for sending advertising messages { #precautions-for-sending-advertising-messages }
 What is an advertising message? 
 It corresponds to a message about information, goods, or services that the sender sends for the purpose of obtaining economic benefits.
 
@@ -151,11 +153,11 @@ If an advertising message is sent after release it, you may be restricted to use
 
 <a id="view-delivery"></a>
 
-## View Delivery 
+## View Delivery { #view-delivery }
 
 <a id="retrieve-send-results"></a>
 
-### Retrieve send results 
+### Retrieve send results { #retrieve-send-results }
 You can view FriendTalk message in **Retrieve Send Results** tab.
 
 ![friendtalk_05_20250403.jpg](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_alimtalk/friendtalk_05_20250403.png)
@@ -168,7 +170,7 @@ You can view FriendTalk message in **Retrieve Send Results** tab.
 
 <a id="cancel-send"></a>
 
-### Cancel Send
+### Cancel Send { #cancel-send }
 You can cancel scheduled delivery if the date and time of the sending request set to the future during normal delivery.
 
 * You can check the check box on the left side of request ID by inquiring about scheduled delivery request.
@@ -178,7 +180,7 @@ You can cancel scheduled delivery if the date and time of the sending request se
 
 <a id="view-mass-delivery"></a>
 
-### View Mass Delivery
+### View Mass Delivery { #view-mass-delivery }
 You can view the mass delivery of your FriendTalk.
 
 ![friendtalk_06_20250403.jpg](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_alimtalk/friendtalk_06_20250403.jpg)
@@ -215,11 +217,11 @@ On <b>View by receiver</b>, you can select the corresponding receiver to see if 
 
 <a id="image-management"></a>
 
-## Image Management
+## Image Management { #image-management }
 
 <a id="register-delete-look-up-images"></a>
 
-### Register, delete, look up images
+### Register, delete, look up images { #register-delete-look-up-images }
 You can register or delete the images you want to use for FriendTalk and check the information of the registered images.
 
 ![friendtalk_09_20231227.png](https://static.toastoven.net/prod_alimtalk/friendtalk_09_20231227.png)
@@ -247,7 +249,7 @@ You can register or delete the images you want to use for FriendTalk and check t
 
 <a id="manage-alternative-delivery"></a>
 
-## Manage Alternative Delivery
+## Manage Alternative Delivery { #manage-alternative-delivery }
 
 * It is the feature to send the same contents as a text message alternatively if you fail to send FriendTalk.
 * The NHN Cloud SMS service must be in use and will be sent by SMS/LMS depending on the length of the message. (A separate fee will be charged for sending text messages for each type.)

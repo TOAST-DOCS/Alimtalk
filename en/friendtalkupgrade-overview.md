@@ -1,6 +1,8 @@
 <!-- pre-align:aligned sig=7eb2dbb75382 -->
 
-## Notification > KakaoTalk Bizmessage > Brand Message > Overview
+<a id="friendtalkupgrade-overview"></a>
+
+## Notification > KakaoTalk Bizmessage > Brand Message > Overview { #friendtalkupgrade-overview }
 
 Brand Message is a message product that allows advertisers (clients) to send advertising messages to members who have agreed to receive marketing messages (hereinafter referred to as “marketing consent”), regardless of whether they are KakaoTalk channel friends.
 
@@ -8,7 +10,7 @@ The service provides RESTful API for easy integration.
 
 <a id="features"></a>
 
-## Features
+## Features { #features }
 
 * Allow you to send various promotional messages including advertising messages for users who have become friends.
 * Even for users who have not become friends, allow you to send advertising messages to users with marketing consent.
@@ -20,7 +22,7 @@ The service provides RESTful API for easy integration.
 
 <a id="main-features"></a>
 
-## Main features
+## Main features { #main-features }
 
 * Provide RESTful API for sending messages, viewing, and managing images.
 * Allow you to view the history of sending messages, viewing, and managing images on the console.
@@ -29,13 +31,13 @@ The service provides RESTful API for easy integration.
 
 <a id="brand-message-targeting"></a>
 
-## Brand Message targeting
+## Brand Message targeting { #brand-message-targeting }
 
 ![friendtalkupgrade_1_20250508.png](https://static.toastoven.net/prod_alimtalk/friendtalkupgrade/friendtalkupgrade_1_20250508.png)
 
 <a id="m-advertisers-users-with-marketing-consent"></a>
 
-### M: Advertisers’ users with marketing consent
+### M: Advertisers’ users with marketing consent { #m-advertisers-users-with-marketing-consent }
 
 * Send advertising messages to Advertisers’ users with marketing consent (KakaoTalk message consent)
 * If the recipient is not a friend of the send channel, the message will be sent as an N-type channel message containing free opt-out information.
@@ -45,7 +47,7 @@ The service provides RESTful API for easy integration.
 
 <a id="n-advertisers-users-with-marketing-consent--channel-friend"></a>
 
-### N: Advertisers’ users with marketing consent- channel friend
+### N: Advertisers’ users with marketing consent- channel friend { #n-advertisers-users-with-marketing-consent--channel-friend }
 
 * Send advertising messages to advertisers’ users with marketing consent (KakaoTalk message consent), except channel friends.
 * As the recipient is not a friend of the send channel, the message will be sent as an N-type channel message containing free opt-out information.
@@ -55,13 +57,13 @@ The service provides RESTful API for easy integration.
 
 <a id="i-target-of-advertiser-sending-request-channel-friend"></a>
 
-### I: Target of advertiser sending request ∩ Channel friend
+### I: Target of advertiser sending request ∩ Channel friend { #i-target-of-advertiser-sending-request-channel-friend }
 
 * For advertiser sending requests, advertising messages are sent only to channel friends.
 
 <a id="brand-message-sending-support-type"></a>
 
-## Brand message sending support type
+## Brand message sending support type { #brand-message-sending-support-type }
 
 - **When registering as a basic type (template), you can use targeting options M and N to target users with “marketing consent” for all sending support types.**<br>
   - If you want to send to channel friends, you must use the targeting option I.
@@ -79,7 +81,7 @@ The service provides RESTful API for easy integration.
 
 <a id="precautions-before-sending"></a>
 
-## Precautions before sending
+## Precautions before sending { #precautions-before-sending }
 
 Non-friend message sending (targeting M, N) can be sent if all the conditions below are met:
 
@@ -95,7 +97,7 @@ Resellers must additionally register a reseller code to be transmitted to KISA w
 
 <a id="notice-of-personal-information-consignee"></a>
 
-## Notice of personal information consignee
+## Notice of personal information consignee { #notice-of-personal-information-consignee }
 
 When a customer uses NHN Cloud > Notification > KakaoTalk Bizmessage service, a business entrustment relationship regarding the processing of personal information occurs between the customer and our company. Therefore, in accordance with the Information and Communications Network Act and the Personal Information Protection Act, the customer, as the consignor, must disclose the status of the personal information entrusted to us (the trustee and the details of the work) through the personal information processing policy.
 

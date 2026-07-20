@@ -1,10 +1,12 @@
 <!-- pre-align:aligned sig=00da575a6590 -->
 
-## Notification > KakaoTalk Bizmessage > 친구톡 > 콘솔 사용 가이드
+<a id="friendtalk-console-guide"></a>
+
+## Notification > KakaoTalk Bizmessage > 친구톡 > 콘솔 사용 가이드 { #friendtalk-console-guide }
 
 <a id="friendtalk-service-termination-notice"></a>
 
-## 친구톡 서비스 종료 안내
+## 친구톡 서비스 종료 안내 { #friendtalk-service-termination-notice }
 * 2025-12-31(수) 친구톡 서비스 지원을 종료합니다.
 * 기존에 이용 중이신 고객께는 브랜드 메시지로 전환하실 것을 권장드립니다.
 * 자세한 사항은 [브랜드 메시지 전환 가이드](https://docs.nhncloud.com/ko/Notification/KakaoTalk%20Bizmessage/ko/friendtalk-compatible-api-guide)를 참고해주시기 바랍니다.
@@ -13,11 +15,11 @@
 
 <a id="send-friendtalk"></a>
 
-## 친구톡 발송
+## 친구톡 발송 { #send-friendtalk }
 
 <a id="general-delivery"></a>
 
-### 일반 발송
+### 일반 발송 { #general-delivery }
 
 발신프로필을 설정하고 내용을 입력하여 친구톡 형태의 메시지를 발송할 수 있습니다.
 친구톡을 발송하려면  콘솔에서 **Notification > KakaoTalk Bizmessage > 친구톡**을 선택합니다.
@@ -79,7 +81,7 @@
 
 <a id="mass-delivery"></a>
 
-### 대량 발송
+### 대량 발송 { #mass-delivery }
 
 Excel/CSV 포맷의 템플릿 파일을 통해 여러 수신 번호로 알림톡을 발송할 수 있는 기능입니다. 하단 탭에서 <b>대량 발송</b>을 선택합니다.
 
@@ -102,7 +104,7 @@ Excel/CSV 포맷의 템플릿 파일을 통해 여러 수신 번호로 알림톡
 
 <a id="alternative-delivery"></a>
 
-### 대체 발송
+### 대체 발송 { #alternative-delivery }
 친구톡 발송을 실패한 경우 해당 내용을 문자 메시지로 대체 발송할 수 있는 기능입니다.
 <b>공통된 내용으로 발송</b> 또는 <b>사용자별 다른 메시지 설정</b>을 선택해 발송할 수 있습니다.
 
@@ -128,7 +130,7 @@ Excel/CSV 포맷의 템플릿 파일을 통해 여러 수신 번호로 알림톡
 
 <a id="precautions-for-sending-advertising-messages"></a>
 
-### 광고성 메시지 전송 시 유의 사항
+### 광고성 메시지 전송 시 유의 사항 { #precautions-for-sending-advertising-messages }
 광고성 메시지란?
 전송자가 경제적 이득을 취할 목적으로 전송하는 정보나 재화, 서비스에 관한 메시지에 해당합니다.
 
@@ -155,11 +157,11 @@ Excel/CSV 포맷의 템플릿 파일을 통해 여러 수신 번호로 알림톡
 
 <a id="view-delivery"></a>
 
-## 발송 조회
+## 발송 조회 { #view-delivery }
 
 <a id="retrieve-send-results"></a>
 
-### 발송 결과 조회
+### 발송 결과 조회 { #retrieve-send-results }
 **발송 결과 조회** 탭에서 친구톡 메시지를 조회할 수 있습니다.
 
 ![friendtalk_05_20250403.jpg](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_alimtalk/friendtalk_05_20250403.png)
@@ -172,7 +174,7 @@ Excel/CSV 포맷의 템플릿 파일을 통해 여러 수신 번호로 알림톡
 
 <a id="cancel-send"></a>
 
-### 발송 취소
+### 발송 취소 { #cancel-send }
 일반 발송 중 발신 요청 일시를 미래로 설정한 예약 발송의 경우 취소가 가능합니다.
 
 * 예약 발신 요청을 조회하면 요청 ID 좌측에 체크 박스를 확인할 수 있습니다.
@@ -182,7 +184,7 @@ Excel/CSV 포맷의 템플릿 파일을 통해 여러 수신 번호로 알림톡
 
 <a id="view-mass-delivery"></a>
 
-### 대량 발송 조회
+### 대량 발송 조회 { #view-mass-delivery }
 친구톡의 대량 발송 건을 조회할 수 있습니다.
 
 ![friendtalk_06_20250403.jpg](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_alimtalk/friendtalk_06_20250403.jpg)
@@ -219,11 +221,11 @@ Excel/CSV 포맷의 템플릿 파일을 통해 여러 수신 번호로 알림톡
 
 <a id="image-management"></a>
 
-## 이미지 관리
+## 이미지 관리 { #image-management }
 
 <a id="register-delete-look-up-images"></a>
 
-### 이미지 등록, 삭제, 조회
+### 이미지 등록, 삭제, 조회 { #register-delete-look-up-images }
 친구톡에 사용할 이미지를 등록 또는 삭제하고 등록된 이미지의 정보를 확인할 수 있습니다.
 
 ![friendtalk_09_20231227.png](https://static.toastoven.net/prod_alimtalk/friendtalk_09_20231227.png)
@@ -251,7 +253,7 @@ Excel/CSV 포맷의 템플릿 파일을 통해 여러 수신 번호로 알림톡
 
 <a id="manage-alternative-delivery"></a>
 
-## 대체 발송 관리
+## 대체 발송 관리 { #manage-alternative-delivery }
 
 * 친구톡 발송을 실패할 경우 해당 내용을 문자 메시지로 대체 발송하도록 설정할 수 있습니다.
 * NHN Cloud SMS 서비스를 이용 중이어야 하며, 메시지 길이에 따라 SMS/LMS로 발송됩니다.(각 타입별 문자 발송 시 별도의 이용료 부과)
