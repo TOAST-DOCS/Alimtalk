@@ -1,13 +1,23 @@
-## Notification > KakaoTalk Bizmessage > 친구톡 > API v2.2 가이드
+<!-- pre-align:aligned sig=29f20c5fe5db -->
 
-## 친구톡 서비스 종료 안내
+<a id="friendtalk-api-guide-v2-2"></a>
+
+## Notification > KakaoTalk Bizmessage > 친구톡 > API v2.2 가이드 { #friendtalk-api-guide-v2-2 }
+
+<a id="friendtalk-service-termination-notice"></a>
+
+## 친구톡 서비스 종료 안내 { #friendtalk-service-termination-notice }
 * 2025-12-31(수) 친구톡 서비스 지원을 종료합니다.
 * 기존에 이용 중이신 고객께는 브랜드 메시지로 전환하실 것을 권장드립니다.
 * 자세한 사항은 [브랜드 메시지 전환 가이드](https://docs.nhncloud.com/ko/Notification/KakaoTalk%20Bizmessage/ko/friendtalk-compatible-api-guide)를 참고해주시기 바랍니다.
 
 ---
 
-## 친구톡
+<a id="friendtalk"></a>
+
+## 친구톡 { #friendtalk }
+
+<a id="api-domain"></a>
 
 #### [API 도메인]
 
@@ -24,12 +34,18 @@
 </tbody>
 </table>
 
-## v2.2 API 소개
+<a id="overview-of-v22-api"></a>
+
+## v2.2 API 소개 { #overview-of-v22-api }
 1. 친구톡 대량 발송 조회가 추가되었습니다.
 2. 메시지 발송 시, buttons 필드에 `chatExtra`, `chatEvent`, `target` 필드가 추가되었습니다.
 3. 메시지 조회 시, buttons 필드에 `chatExtra`, `chatEvent`, `target` 필드가 추가되었습니다.
 
-## 메시지 발송
+<a id="send-messages"></a>
+
+## 메시지 발송 { #send-messages }
+<a id="request-of-sending"></a>
+
 #### 발송 요청
 
 [URL]
@@ -144,6 +160,8 @@ Content-Type: application/json;charset=UTF-8
 curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" https://kakaotalk-bizmessage.api.nhncloudservice.com/friendtalk/v2.2/appkeys/{appkey}/messages -d '{"senderKey":"9e0afe2c12aaaaaaaaaa7520052880b555f1a60a","requestDate":"yyyy-MM-dd HH:mm","recipientList":[{"recipientNo":"010-0000-0000","imageSeq":1,"imageLink":"https://toast.com","content":"내용","buttons":[{"ordering":1,"type":"WL","name":"버튼1","linkMo":"https://toast.com","linkPc":"https://toast.com"}]}]}'
 ```
 
+<a id="response"></a>
+
 #### 응답
 
 ```
@@ -185,7 +203,11 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 |-- resultMessage | String | 발송 요청 결과 메시지 |
 |-- recipientGroupingKey | String | 수신자 그룹핑 키 |
 
-## 발송 목록 조회
+<a id="list-deliveries"></a>
+
+## 발송 목록 조회 { #list-deliveries }
+
+<a id="request"></a>
 
 #### 요청
 
@@ -230,6 +252,8 @@ Content-Type: application/json;charset=UTF-8
 |createUser| String | X | 등록자(콘솔에서 발송 시 사용자 UUID로 저장) |
 |pageNum|	Integer|	X|	페이지 번호(Default: 1)|
 |pageSize|	Integer|	X|	조회 건수(Default: 15, Max: 1000)|
+
+<a id="response-2"></a>
 
 #### 응답
 ```
@@ -298,6 +322,8 @@ Content-Type: application/json;charset=UTF-8
 curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" "https://kakaotalk-bizmessage.api.nhncloudservice.com/friendtalk/v2.2/appkeys/{appkey}/messages?startRequestDate=2018-05-01%2000:00&endRequestDate=2018-05-30%2023:59"
 ```
 
+<a id="status-of-resending"></a>
+
 #### 재발송 상태
 | 이름 |	설명|
 |---|---|
@@ -307,7 +333,11 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 |RSC04|	재발송 성공|
 |RSC05|	재발송 실패|
 
-## 발송 단건 조회
+<a id="get-deliveries"></a>
+
+## 발송 단건 조회 { #get-deliveries }
+
+<a id="request-2"></a>
 
 #### 요청
 
@@ -345,6 +375,8 @@ Content-Type: application/json;charset=UTF-8
 ```
 curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" "https://kakaotalk-bizmessage.api.nhncloudservice.com/friendtalk/v2.2/appkeys/{appkey}/messages/{requestId}/{recipientSeq}"
 ```
+
+<a id="response-3"></a>
 
 #### 응답
 ```
@@ -442,8 +474,14 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 |- senderGroupingKey | String | 발신 그룹핑 키 |
 |- recipientGroupingKey | String |	수신자 그룹핑 키 |
 
-## 메시지
-### 메시지 발송 취소
+<a id="message"></a>
+
+## 메시지 { #message }
+<a id="cancel-sending-messages"></a>
+
+### 메시지 발송 취소 { #cancel-sending-messages }
+
+<a id="request-3"></a>
 
 #### 요청
 
@@ -479,6 +517,8 @@ Content-Type: application/json;charset=UTF-8
 
 * 일반/인증 메시지 모두 동일한 API로 취소할 수 있습니다.
 
+<a id="response-4"></a>
+
 #### 응답
 ```
 {
@@ -502,7 +542,11 @@ Content-Type: application/json;charset=UTF-8
 curl -X DELETE -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" "https://kakaotalk-bizmessage.api.nhncloudservice.com/friendtalk/v2.2/appkeys/{appkey}/messages/{requestId}?recipientSeq=1,2,3"
 ```
 
-### 메시지 결과 업데이트 조회
+<a id="query-updated-message-results"></a>
+
+### 메시지 결과 업데이트 조회 { #query-updated-message-results }
+
+<a id="request-4"></a>
 
 #### 요청
 
@@ -537,6 +581,8 @@ Content-Type: application/json;charset=UTF-8
 |endUpdateDate|	String| O |	결과 업데이트 조회 종료 시간(yyyy-MM-dd HH:mm) |
 |pageNum|	Integer|	X|	페이지 번호(기본: 1)|
 |pageSize|	Integer|	X|	조회 건수(기본: 15)|
+
+<a id="response-5"></a>
 
 #### 응답
 ```
@@ -601,7 +647,11 @@ Content-Type: application/json;charset=UTF-8
 curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" "https://kakaotalk-bizmessage.api.nhncloudservice.com/friendtalk/v2.2/appkeys/{appkey}/message-results?startUpdateDate=2018-05-01%20:00&endUpdateDate=2018-05-30%20:59"
 ```
 
-### 대량 발송 요청 목록 조회
+<a id="list-mass-delivery-requests"></a>
+
+### 대량 발송 요청 목록 조회 { #list-mass-delivery-requests }
+
+<a id="request-5"></a>
 
 #### 요청
 [URL]
@@ -641,6 +691,8 @@ Content-Type: application/json;charset=UTF-8
 | pageNum | optional, Integer | - | X | 페이지 번호 |
 | pageSize | optional, Integer | 1000 | X | 검색 수 |
 
+<a id="curl"></a>
+
 #### cURL
 ```
 curl -X GET \
@@ -648,6 +700,8 @@ curl -X GET \
 -H 'Content-Type: application/json;charset=UTF-8' \
 -H 'X-Secret-Key:{secretkey}'
 ```
+
+<a id="response-6"></a>
 
 #### 응답
 ```
@@ -731,7 +785,11 @@ curl -X GET \
 | - totalCount | Integer | 총개수 |
 
 
-### 대량 발송 수신자 목록 조회
+<a id="list-mass-delivery-recipients"></a>
+
+### 대량 발송 수신자 목록 조회 { #list-mass-delivery-recipients }
+
+<a id="request-6"></a>
 
 #### 요청
 [URL]
@@ -770,6 +828,8 @@ Content-Type: application/json;charset=UTF-8
 | pageNum | optional, Integer | - | X | 페이지 번호 |
 | pageSize | optional, Integer | 1000 | X | 검색 수 |
 
+<a id="curl-2"></a>
+
 #### cURL
 ```
 curl -X GET \
@@ -777,6 +837,8 @@ curl -X GET \
 -H 'Content-Type: application/json;charset=UTF-8' \
 -H 'X-Secret-Key:{secretkey}'
 ```
+
+<a id="response-7"></a>
 
 #### 응답
 ```
@@ -822,7 +884,11 @@ curl -X GET \
 | -- resultCodeName | String | 수신 결과 코드명 |
 | - totalCount | Integer | 총개수 |
 
-### 대량 발송 수신자 조회
+<a id="get-a-mass-delivery-recipient"></a>
+
+### 대량 발송 수신자 조회 { #get-a-mass-delivery-recipient }
+
+<a id="request-7"></a>
 
 #### 요청
 [URL]
@@ -861,6 +927,8 @@ Content-Type: application/json;charset=UTF-8
 | endCreateDate |	String| - |	X |	등록 날짜 종료 |
 
 
+<a id="curl-3"></a>
+
 #### cURL
 ```
 curl -X GET \
@@ -868,6 +936,8 @@ curl -X GET \
 -H 'Content-Type: application/json;charset=UTF-8' \
 -H 'X-Secret-Key:{secretkey}'
 ```
+
+<a id="response-8"></a>
 
 #### 응답
 ```
@@ -954,9 +1024,15 @@ curl -X GET \
 | - createDate | String | 생성 날짜 |
 
 
-## 이미지 관리
+<a id="image-management"></a>
 
-### 이미지 등록
+## 이미지 관리 { #image-management }
+
+<a id="register-images"></a>
+
+### 이미지 등록 { #register-images }
+<a id="request-8"></a>
+
 #### 요청
 
 [URL]
@@ -994,6 +1070,8 @@ Content-Type: multipart/form-data
 curl -X POST -H "Content-Type: multipart/form-data" -H "X-Secret-Key:{secretkey}" "https://kakaotalk-bizmessage.api.nhncloudservice.com/friendtalk/v2.2/appkeys/{appkey}/images" -F "image=@friend-ricecake02.jpeg"
 ```
 
+<a id="response-9"></a>
+
 #### 응답
 ```
 
@@ -1023,7 +1101,11 @@ curl -X POST -H "Content-Type: multipart/form-data" -H "X-Secret-Key:{secretkey}
 |- imageName | String |	이미지명(업로드한 파일명) |
 
 
-### 이미지 조회
+<a id="query-images"></a>
+
+### 이미지 조회 { #query-images }
+<a id="request-9"></a>
+
 #### 요청
 
 [URL]
@@ -1060,6 +1142,8 @@ Content-Type: application/json;charset=UTF-8
 ```
 curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" "https://kakaotalk-bizmessage.api.nhncloudservice.com/friendtalk/v2.2/appkeys/{appkey}/images?pageNum=1&pageSize=15"
 ```
+
+<a id="response-10"></a>
 
 #### 응답
 ```
@@ -1103,7 +1187,11 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 
 * 이미지는 최근 등록한 순대로 정렬되어 응답합니다.
 
-### 이미지 삭제
+<a id="delete-images"></a>
+
+### 이미지 삭제 { #delete-images }
+<a id="request-10"></a>
+
 #### 요청
 
 [URL]
@@ -1140,6 +1228,8 @@ Content-Type: application/json;charset=UTF-8
 curl -X DELETE -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" "https://kakaotalk-bizmessage.api.nhncloudservice.com/friendtalk/v2.2/appkeys/{appkey}/images?imageSeq=1,2,3"
 ```
 
+<a id="response-11"></a>
+
 #### 응답
 ```
 
@@ -1160,8 +1250,12 @@ curl -X DELETE -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Ke
 |- isSuccessful|	Boolean| 성공 여부|
 
 
-## 대체 발송 관리
-### SMS AppKey 등록
+<a id="manage-alternative-delivery"></a>
+
+## 대체 발송 관리 { #manage-alternative-delivery }
+<a id="register-an-sms-appkey"></a>
+
+### SMS AppKey 등록 { #register-an-sms-appkey }
 
 [URL]
 
@@ -1204,6 +1298,8 @@ Content-Type: application/json;charset=UTF-8
 curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" https://kakaotalk-bizmessage.api.nhncloudservice.com/friendtalk/v2.2/appkeys/{appkey}/failback/appkey -d '{"resendAppKey": "smsAppKey"}
 ```
 
+<a id="response-12"></a>
+
 #### 응답
 ```
 
@@ -1216,7 +1312,9 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 }
 ```
 
-### 대체 발송 설정 등록
+<a id="register-alternative-delivery-settings"></a>
+
+### 대체 발송 설정 등록 { #register-alternative-delivery-settings }
 
 [URL]
 
@@ -1264,6 +1362,8 @@ Content-Type: application/json;charset=UTF-8
 ```
 curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" https://kakaotalk-bizmessage.api.nhncloudservice.com/friendtalk/v2.2/appkeys/{appkey}/failback/appkey -d '{"senderKey": "9e0afe2c12aaaaaaaaaa7520052880b555f1a60a","isResend": true,"resendSendNo": "01012341234", "resendUnsubscribeNo": "0801234567" }
 ```
+
+<a id="response-13"></a>
 
 #### 응답
 ```

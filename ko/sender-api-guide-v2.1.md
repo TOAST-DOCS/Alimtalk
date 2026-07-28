@@ -1,8 +1,18 @@
-## Notification > KakaoTalk Bizmessage > Sender > API v2.1 Guide
+<!-- pre-align:aligned sig=ee87b06908ec -->
 
-## v2.1 API 소개
+<a id="sender-api-guide-v2-1"></a>
+
+## Notification > KakaoTalk Bizmessage > Sender > API v2.1 Guide { #sender-api-guide-v2-1 }
+
+<a id="overview-of-v21-api"></a>
+
+## v2.1 API 소개 { #overview-of-v21-api }
+<a id="whats-the-diffrence"></a>
+
 #### 개선된 점
 1. 발신 프로필 조회 API에 차단, 휴면 상태 필드가 추가되었습니다.
+
+<a id="api-domain"></a>
 
 #### [API 도메인]
 
@@ -19,9 +29,15 @@
 </tbody>
 </table>
 
-## 발신 프로필
+<a id="senders"></a>
 
-### 발신 프로필 카테고리 조회
+## 발신 프로필 { #senders }
+
+<a id="query-sender-by-category"></a>
+
+### 발신 프로필 카테고리 조회 { #query-sender-by-category }
+
+<a id="request"></a>
 
 #### 요청
 [URL]
@@ -46,6 +62,8 @@ Content-Type: application/json;charset=UTF-8
 | 이름 |	타입|	필수|	설명|
 |---|---|---|---|
 |X-Secret-Key|	String| O | 콘솔에서 생성할 수 있습니다.  |
+
+<a id="response"></a>
 
 #### 응답
 ```
@@ -104,7 +122,11 @@ Content-Type: application/json;charset=UTF-8
 |--- code | String |	카테고리 코드 |
 |--- name | String |	카테고리 이름 |
 
-### 발신 프로필 등록
+<a id="register-senders"></a>
+
+### 발신 프로필 등록 { #register-senders }
+<a id="request-2"></a>
+
 #### 요청
 [URL]
 
@@ -145,6 +167,8 @@ Content-Type: application/json;charset=UTF-8
 |phoneNo|	String |	O | 관리자 핸드폰 번호(최대 15자) |
 |categoryCode|	String |	O | 카테고리 코드(11자)<br>카테고리 조회 API의 응답 참고<br>ex) 00100010001 건강(001) - 병원(0001) - 종합병원(0001) |
 
+<a id="response-2"></a>
+
 #### 응답
 ```
 {
@@ -163,7 +187,11 @@ Content-Type: application/json;charset=UTF-8
 |- resultMessage|	String| 결과 메시지|
 |- isSuccessful|	Boolean| 성공 여부|
 
-### 발신 프로필 토큰 인증
+<a id="authenticate-tokens-for-senders"></a>
+
+### 발신 프로필 토큰 인증 { #authenticate-tokens-for-senders }
+<a id="request-3"></a>
+
 #### 요청
 [URL]
 
@@ -202,6 +230,8 @@ Content-Type: application/json;charset=UTF-8
 |plusFriendId|	String|	O | 카카오톡 채널 검색용 ID |
 |token|	Integer |	O | 인증 토큰(플러스친구 등록 API 호출 후, 카카오톡 앱으로 받은 인증 토큰) |
 
+<a id="response-3"></a>
+
 #### 응답
 ```
 {
@@ -231,7 +261,11 @@ Content-Type: application/json;charset=UTF-8
 |- categoryCode | String |	카테고리 코드 |
 |- status | String |	NHN Cloud 플러스친구 상태 코드 <br>(YSC02: 등록 대기 중, YSC03: 정상 등록) |
 
-### 발신 프로필 삭제
+<a id="delete-sender"></a>
+
+### 발신 프로필 삭제 { #delete-sender }
+<a id="request-4"></a>
+
 #### 요청
 
 [URL]
@@ -261,6 +295,8 @@ Content-Type: application/json;charset=UTF-8
 * 발신프로필 삭제 시, 등록한 템플릿 데이터가 함께 삭제됩니다.
 * 발신프로필 삭제 시, 복구가 불가능합니다.
 
+<a id="response-4"></a>
+
 #### 응답
 ```
 {  
@@ -279,7 +315,11 @@ Content-Type: application/json;charset=UTF-8
 |- resultMessage|	String| 결과 메시지|
 |- isSuccessful|	Boolean| 성공 여부|
 
-### 발신 프로필 단건 조회
+<a id="get-sender"></a>
+
+### 발신 프로필 단건 조회 { #get-sender }
+<a id="request-5"></a>
+
 #### 요청
 
 [URL]
@@ -305,6 +345,8 @@ Content-Type: application/json;charset=UTF-8
 | 이름 |	타입|	필수|	설명|
 |---|---|---|---|
 |X-Secret-Key|	String| O | 콘솔에서 생성할 수 있습니다.  |
+
+<a id="response-5"></a>
 
 #### 응답
 ```
@@ -379,7 +421,11 @@ Content-Type: application/json;charset=UTF-8
 |- block | Boolean | 	발신프로필 차단 여부                                                                                                              |
 |- createDate | String | 	등록 일자                                                                                                                    |
 
-### 발신 프로필 리스트 조회
+<a id="list-sender"></a>
+
+### 발신 프로필 리스트 조회 { #list-sender }
+<a id="request-6"></a>
+
 #### 요청
 
 [URL]
@@ -414,6 +460,8 @@ Content-Type: application/json;charset=UTF-8
 |status|	String|	X | 플러스친구 상태 코드 <br>(YSC02: 토큰 인증 대기 중, YSC03: 정상 등록)|
 |pageNum|	Integer|	X|	페이지 번호(Default: 1)|
 |pageSize|	Integer|	X|	조회 건수(Default: 15, Max: 1000)|
+
+<a id="response-6"></a>
 
 #### 응답
 ```
@@ -492,9 +540,15 @@ Content-Type: application/json;charset=UTF-8
 |- createDate | String |	등록 일자 |
 |totalCount | Integer | 총개수 |
 
-## 발신 프로필 그룹
+<a id="sender-group"></a>
 
-### 발신 프로필 그룹 조회
+## 발신 프로필 그룹 { #sender-group }
+
+<a id="get-sender-group"></a>
+
+### 발신 프로필 그룹 조회 { #get-sender-group }
+
+<a id="request-7"></a>
 
 #### 요청
 [URL]
@@ -520,6 +574,8 @@ Content-Type: application/json;charset=UTF-8
 | 이름 |	타입|	필수|	설명|
 |---|---|---|---|
 |X-Secret-Key|	String| O | 콘솔에서 생성할 수 있습니다.  |
+
+<a id="response-7"></a>
 
 #### 응답
 ```
@@ -563,7 +619,11 @@ Content-Type: application/json;charset=UTF-8
 |- createDate | String | 등록 일자 |
 |- updateDate |	String|	수정 일자 |
 
-### 그룹에 발신 프로필 추가
+<a id="add-sender-to-group"></a>
+
+### 그룹에 발신 프로필 추가 { #add-sender-to-group }
+
+<a id="request-8"></a>
 
 #### 요청
 [URL]
@@ -593,6 +653,8 @@ Content-Type: application/json;charset=UTF-8
 
 * 발신 프로필 최대 5,000개까지 그룹에 추가할 수 있습니다.
 
+<a id="response-8"></a>
+
 #### 응답
 ```
 {
@@ -611,7 +673,11 @@ Content-Type: application/json;charset=UTF-8
 |- resultMessage|	String| 결과 메시지|
 |- isSuccessful|	Boolean| 성공 여부|
 
-### 그룹에 발신 프로필 삭제
+<a id="delete-sender-from-group"></a>
+
+### 그룹에 발신 프로필 삭제 { #delete-sender-from-group }
+
+<a id="request-9"></a>
 
 #### 요청
 [URL]
@@ -638,6 +704,8 @@ Content-Type: application/json;charset=UTF-8
 | 이름 |	타입|	필수|	설명|
 |---|---|---|---|
 |X-Secret-Key|	String| O | 콘솔에서 생성할 수 있습니다.  |
+
+<a id="response-9"></a>
 
 #### 응답
 ```

@@ -1,8 +1,16 @@
-## Notification > KakaoTalk Bizmessage > Common > API v2.2 Guide
+<!-- pre-align:aligned sig=8c7be9b338eb -->
 
-## Statistics
+<a id="common-api-guide"></a>
 
-### [API Domain]
+## Notification > KakaoTalk Bizmessage > Common > API v2.2 Guide { #common-api-guide }
+
+<a id="statistics"></a>
+
+## Statistics { #statistics }
+
+<a id="api-domain"></a>
+
+### [API Domain] { #api-domain }
 
 <table>
 <thead>
@@ -18,7 +26,9 @@
 </table>
 
 
-### Statistics Search - Event Based
+<a id="statistics-search---event-based"></a>
+
+### Statistics Search - Event Based { #statistics-search---event-based }
 * Statistics collected based on the time when the event occurs.
 * Statistics are collected based on the following times:
     * Request count (REQUESTED): Time when the scheduled delivery is registered
@@ -28,7 +38,9 @@
     * Alternative delivery request count (RESENT): Time when the alternative delivery is requested
     * Alternative delivery failure count (RESENT_FAILED): Time when the alternate delivery request fails
 
-### Get Statistics Information
+<a id="get-statistics-information"></a>
+
+### Get Statistics Information { #get-statistics-information }
 
 [URL]
 
@@ -104,7 +116,9 @@
 }
 ```
 
-### Get Count per Event
+<a id="get-count-per-event"></a>
+
+### Get Count per Event { #get-count-per-event }
 
 [URL]
 
@@ -154,7 +168,9 @@
 }
 ```
 
-## Kakao Statistics
+<a id="kakao-statistics"></a>
+
+## Kakao Statistics { #kakao-statistics }
 
 * Retrieves statistics data provided by KakaoBizCenter.
 * Statistics data can be retrieved on a daily (DAILY) or monthly (MONTHLY) basis by sender key.
@@ -169,17 +185,25 @@ Clicking **Go to Kakao Statistics** in Sender Profile Management opens Kakao Sta
 * Click counts are duplicated for the same message.
 * If the number of successful sends is 10 or fewer, valid read counts and click counts are not provided.
 
-### Delivery Statistics
+<a id="delivery-statistics"></a>
+
+### Delivery Statistics { #delivery-statistics }
 
 Retrieves the daily send count, valid read count, and click count by sender profile. You can filter by period, send identifier, message type, and more.
 
-### Template Statistics
+<a id="template-statistics"></a>
+
+### Template Statistics { #template-statistics }
 
 Retrieves the daily send count, valid read count, and click count by template and group tag. You can filter by period, message type, and more.
 
 * Brand message freestyle is only provided when a group tag is used.
 
-### Retrieve AlimTalk Delivery Statistics
+<a id="retrieve-alimtalk-delivery-statistics"></a>
+
+### Retrieve AlimTalk Delivery Statistics { #retrieve-alimtalk-delivery-statistics }
+
+<a id="request"></a>
 
 #### Request
 
@@ -220,6 +244,8 @@ Retrieves the daily send count, valid read count, and click count by template an
 | limit | Integer | X | Number of results to retrieve (Default: 500, Max: 1,000) |
 | offset | Integer | X | Start position (Default: 0) |
 
+<a id="response"></a>
+
 #### Response
 
 ```json
@@ -258,7 +284,11 @@ Retrieves the daily send count, valid read count, and click count by template an
 | - validSendRequestCount | Integer | O | Valid send request count |
 | - validReadCount | Integer | O | Valid read count |
 
-### Retrieve AlimTalk Template Statistics
+<a id="retrieve-alimtalk-template-statistics"></a>
+
+### Retrieve AlimTalk Template Statistics { #retrieve-alimtalk-template-statistics }
+
+<a id="request-2"></a>
 
 #### Request
 
@@ -299,6 +329,8 @@ Retrieves the daily send count, valid read count, and click count by template an
 | limit | Integer | X | Number of results to retrieve (Default: 500, Max: 1,000) |
 | offset | Integer | X | Start position (Default: 0) |
 
+<a id="response-2"></a>
+
 #### Response
 
 ```json
@@ -337,7 +369,11 @@ Retrieves the daily send count, valid read count, and click count by template an
 | - validReadCount | Integer | O | Valid read count |
 | - totalClickCount | Integer | O | Total click count |
 
-### Retrieve Brand Message Delivery Statistics
+<a id="retrieve-brand-message-delivery-statistics"></a>
+
+### Retrieve Brand Message Delivery Statistics { #retrieve-brand-message-delivery-statistics }
+
+<a id="request-3"></a>
 
 #### Request
 
@@ -380,6 +416,8 @@ Retrieves the daily send count, valid read count, and click count by template an
 | receiveUserType | String | X | Recipient type (PhoneNumber: phone number, None: no recipient identifier) |
 | limit | Integer | X | Number of results to retrieve (Default: 500, Max: 1,000) |
 | offset | Integer | X | Start position (Default: 0) |
+
+<a id="response-3"></a>
 
 #### Response
 
@@ -427,7 +465,11 @@ Retrieves the daily send count, valid read count, and click count by template an
 | - validReadCount | Integer | O | Valid read count |
 | - totalClickCount | Integer | O | Total click count |
 
-### Retrieve Brand Message Template Statistics
+<a id="retrieve-brand-message-template-statistics"></a>
+
+### Retrieve Brand Message Template Statistics { #retrieve-brand-message-template-statistics }
+
+<a id="request-4"></a>
 
 #### Request
 
@@ -471,6 +513,8 @@ Retrieves the daily send count, valid read count, and click count by template an
 | friendType | String | X | Friend type (F: friend, N: non-friend) |
 | limit | Integer | X | Number of results to retrieve (Default: 500, Max: 1,000) |
 | offset | Integer | X | Start position (Default: 0) |
+
+<a id="response-4"></a>
 
 #### Response
 

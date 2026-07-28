@@ -1,13 +1,23 @@
-## Notification > KakaoTalk Bizmessage > 브랜드 메시지 > 콘솔 사용 가이드
+<!-- pre-align:aligned sig=3b443c0f0141 -->
 
-## 브랜드 메시지 발송
+<a id="friendtalkupgrade-console-guide"></a>
 
-### 일반 발송
+## Notification > KakaoTalk Bizmessage > 브랜드 메시지 > 콘솔 사용 가이드 { #friendtalkupgrade-console-guide }
+
+<a id="brand-message-sending"></a>
+
+## 브랜드 메시지 발송 { #brand-message-sending }
+
+<a id="regular-send"></a>
+
+### 일반 발송 { #regular-send }
 
 발신 프로필을 설정하고 내용을 입력하여 브랜드 메시지 형태의 메시지를 발송할 수 있습니다.
 브랜드 메시지를 발송하려면 콘솔에서 **Notification > KakaoTalk Bizmessage > 브랜드 메시지**를 선택합니다.
 
-### 템플릿 사용 시
+<a id="when-using-a-template"></a>
+
+### 템플릿 사용 시 { #when-using-a-template }
 
 ![friendtalkupgrade_04_20250616.png](https://static.toastoven.net/prod_alimtalk/friendtalkupgrade/friendtalkupgrade_04_20250729.png)
 
@@ -36,7 +46,9 @@
             * 광고주 발송 요청 대상에서, 채널 친구인 경우에만 광고성 메시지를 발송합니다.
 8. 입력을 완료한 뒤 **발송**을 클릭하여 전송합니다.
 
-### 템플릿 미사용 시
+<a id="when-not-using-a-template"></a>
+
+### 템플릿 미사용 시 { #when-not-using-a-template }
 
 ![friendtalkupgrade_05_20250616.png](https://static.toastoven.net/prod_alimtalk/friendtalkupgrade/friendtalkupgrade_05_20250729.png)
 
@@ -92,7 +104,9 @@
             * 광고주 발송 요청 대상에서, 채널 친구인 경우에만 광고성 메시지를 발송합니다.
 11. 입력을 완료한 뒤 **발송**을 클릭하여 전송합니다.
 
-### 대량 발송
+<a id="mass-delivery"></a>
+
+### 대량 발송 { #mass-delivery }
 
 Excel/CSV 포맷의 템플릿 파일을 사용해 여러 수신 번호로 브랜드 메시지를 발송할 수 있는 기능입니다. 하단 탭에서 **대량 발송**을 선택합니다.
 
@@ -112,7 +126,9 @@ Excel/CSV 포맷의 템플릿 파일을 사용해 여러 수신 번호로 브랜
 * 검수 후 진행: **대량 발송 조회** 탭에서 7일 이내에 메시지 수신자 확인 후 알림톡을 발송합니다. (예약 발송 시 지원하지 않습니다.)
 * 즉시 발송: 알림톡 수신자를 확인하지 않고 즉시 발송합니다. 발송 상태는 **대량 발송 조회** 탭에서 확인할 수 있습니다.
 
-### 대체 발송
+<a id="fallback"></a>
+
+### 대체 발송 { #fallback }
 브랜드 메시지 발송에 실패한 경우 해당 내용을 문자 메시지로 대체 발송할 수 있는 기능입니다.
 **공통된 내용으로 발송** 또는 **사용자별 다른 메시지 설정**을 선택해 발송할 수 있습니다.
 
@@ -124,12 +140,16 @@ Excel/CSV 포맷의 템플릿 파일을 사용해 여러 수신 번호로 브랜
 * 메시지에 따라 버튼, 링크 등 일부 내용이 카카오톡 메시지와 다르게 보일 수 있습니다.
 * 메시지 길이에 따라 SMS/LMS로 대체 발송됩니다(각 타입별 문자 발송 시 별도의 이용료 부과).
 
+<a id="set-as-common-content"></a>
+
 #### 공통된 내용으로 발송
 
 ![friendtalkupgrade_resend01_20250729.png](https://static.toastoven.net/prod_alimtalk/friendtalkupgrade/friendtalkupgrade_resend01_20250729.png)
 
 * **발신 프로필**을 선택한 뒤 **공통된 내용으로 발송**을 클릭해 대체 발송 메시지를 설정합니다.
 * 대체 발송 메시지를 입력하지 않으면 [메시지 본문]으로 발송됩니다.
+
+<a id="set-by-different-messages-per-user"></a>
 
 #### 사용자별 다른 메시지 설정
 * **발신 프로필**을 선택한 뒤 **사용자별 다른 메시지 설정**을 클릭해 하단의 **수신자 추가** 탭에서 대체 발송 메시지를 설정합니다.
@@ -156,9 +176,13 @@ Excel/CSV 포맷의 템플릿 파일을 사용해 여러 수신 번호로 브랜
 
 ![\[그림 3\] 친구톡 광고 메시지](https://static.toastoven.net/prod_alimtalk/friendtalk_02.png)
 
-## 발송 조회
+<a id="view-send"></a>
 
-### 발송 결과 조회
+## 발송 조회 { #view-send }
+
+<a id="view-send-result"></a>
+
+### 발송 결과 조회 { #view-send-result }
 
 ![friendtalkupgrade_07_20250616.png](https://static.toastoven.net/prod_alimtalk/friendtalkupgrade/friendtalkupgrade_07_20250729.png)
 
@@ -167,7 +191,9 @@ Excel/CSV 포맷의 템플릿 파일을 사용해 여러 수신 번호로 브랜
 * **요청 상태** 열에서 발송 요청에 대한 상태를 확인할 수 있습니다.
 * **발송 결과** 열에서 발송 처리에 대한 성공 여부를 확인할 수 있습니다.
 
-### 발송 취소
+<a id="cancel-send"></a>
+
+### 발송 취소 { #cancel-send }
 일반 발송 중 발신 요청 일시를 미래로 설정한 예약 발송의 경우 취소가 가능합니다.
 
 * 예약 발신 요청을 조회하면 요청 ID 좌측에 체크 박스를 확인할 수 있습니다.
@@ -175,9 +201,13 @@ Excel/CSV 포맷의 템플릿 파일을 사용해 여러 수신 번호로 브랜
 * 취소를 원하는 요청의 체크 박스를 선택한 후 상단의 **선택 예약 취소** 버튼을 누르면 해당 요청이 취소됩니다.
 * 조회 목록 머리글에 있는 체크 박스로 해당 목록 전체 선택 및 취소가 가능합니다.
 
-## 대량 발송 조회
+<a id="view-mass-delivery"></a>
 
-### 발송 결과 조회
+## 대량 발송 조회 { #view-mass-delivery }
+
+<a id="view-send-result-2"></a>
+
+### 발송 결과 조회 { #view-send-result-2 }
 
 ![friendtalkupgrade_masssearch01_20250729.png](https://static.toastoven.net/prod_alimtalk/friendtalkupgrade/friendtalkupgrade_masssearch01_20250729.png)
 
@@ -187,7 +217,9 @@ Excel/CSV 포맷의 템플릿 파일을 사용해 여러 수신 번호로 브랜
 * **요청 상태** 열에서 발송 요청에 대한 상태를 확인할 수 있습니다.
 * **발송 결과** 열에서 발송 처리에 대한 성공 여부를 확인할 수 있습니다.
 
-## 이미지 관리
+<a id="manage-image"></a>
+
+## 이미지 관리 { #manage-image }
 
 ![friendtalkupgrade_8_20250616.png](https://static.toastoven.net/prod_alimtalk/friendtalkupgrade/friendtalkupgrade_8_20250616.png)
 
@@ -202,12 +234,16 @@ Excel/CSV 포맷의 템플릿 파일을 사용해 여러 수신 번호로 브랜
 * [\[비즈니스폼 등록 바로 가기\]](https://business.kakao.com/talkbizform/)
 * [\[비즈니스폼 등록 가이드 바로 가기\]](https://kakaobusiness.gitbook.io/main/tool/bizform)
 
+<a id="image-upload-allowance"></a>
+
 #### 이미지 업로드 허용 범위
 
 * 파일 형식: JPG, PNG
 * 각 이미지 업로드 API 사양을 확인하세요.
 
-## 동영상 관리
+<a id="manage-video"></a>
+
+## 동영상 관리 { #manage-video }
 
 ![friendtalkupgrade_video_management.png](TODO: 콘솔 캡처 후 NHN static 호스트 URL 교체)
 
@@ -216,9 +252,12 @@ Excel/CSV 포맷의 템플릿 파일을 사용해 여러 수신 번호로 브랜
 * 발신 프로필을 선택한 후 동영상을 등록하거나 삭제할 수 있습니다.
 * 동영상 업로드는 콘솔 화면에서 파일 선택 후 업로드 버튼을 누르면 진행률이 함께 표시됩니다. 업로드가 진행되는 동안에는 페이지를 새로고침하거나 닫지 않도록 주의해 주세요. 진행 중 새로고침이 발생하면 업로드가 중단되며 다시 업로드해야 합니다.
 * 등록한 동영상은 카카오 비즈센터에서 인코딩이 완료된 후 발송에 사용할 수 있습니다. 인코딩은 보통 5~10분이 소요되며 영상 길이에 따라 최대 3일까지 소요될 수 있습니다. 3일이 초과되면 자동으로 `ERROR` 상태로 처리됩니다.
-* 동영상 상태는 카카오 비즈센터와 주기적으로 동기화됩니다. `PUBLIC` 상태인 동영상만 템플릿 등록 및 발송이 가능하며 `PRIVATE` 상태인 동영상은 템플릿 등록만 가능합니다.
+* 동영상 상태는 카카오 비즈센터와 3분 간격으로 동기화됩니다. 카카오 비즈센터의 상태 변경 시점에 따라 반영까지 다소 시간이 소요될 수 있습니다.
+* `PUBLIC` 상태인 동영상만 템플릿 등록 및 발송이 가능하며 `PRIVATE` 상태인 동영상은 템플릿 등록만 가능합니다. `PRIVATE` 상태 동영상이 포함된 템플릿으로 발송을 시도하면 발송이 실패합니다.
 * 등록된 동영상은 카카오 측에서 영구 보존되며, 콘솔에서 동영상을 삭제해도 카카오 비즈센터의 동영상은 자동으로 정리되지 않습니다. 카카오 채널 관리자가 채널 비즈니스 홈의 관리 화면에서 직접 삭제할 수 있습니다.
 * 동영상 삭제 시 해당 동영상이 사용된 템플릿에서는 발송할 수 없으므로 주의가 필요합니다.
+
+<a id="video-upload-allowance"></a>
 
 #### 동영상 업로드 허용 범위
 
@@ -227,7 +266,9 @@ Excel/CSV 포맷의 템플릿 파일을 사용해 여러 수신 번호로 브랜
 * 최대 영상 길이: 4시간
 * 최대 해상도: 8K
 
-## 템플릿 관리
+<a id="manage-templates"></a>
+
+## 템플릿 관리 { #manage-templates }
 
 ![friendtalkupgrade_09_20250616.png](https://static.toastoven.net/prod_alimtalk/friendtalkupgrade/friendtalkupgrade_09_20250729.png)
 
@@ -235,11 +276,15 @@ Excel/CSV 포맷의 템플릿 파일을 사용해 여러 수신 번호로 브랜
 * 브랜드 메시지는 검수 과정이 없으며 생성, 수정, 삭제가 자유롭습니다.
 * 알림톡과 다르게 템플릿 코드를 사용자가 등록하는 방식이 아닌 카카오로부터 랜덤한 식별자를 부여받는 형태입니다.
 
-## 080 수신거부 관리
+<a id="080-opt-out-management"></a>
+
+## 080 수신거부 관리 { #080-opt-out-management }
 
 * 브랜드 메시지에서는 NHN Cloud의 SMS 서비스 연동으로 '080 수신거부 관리'와 '대체 발송' 기능을 하나의 SMS AppKey로 통합 관리합니다.
 
-### 080 수신거부번호 등록 및 관리
+<a id="register-and-manage-080-opt-out-numbers"></a>
+
+### 080 수신거부번호 등록 및 관리 { #register-and-manage-080-opt-out-numbers }
 * 브랜드 메시지 마수동 유저 발송의 경우 발신 프로필 친구를 맺지 않은 수신자에게 메시지를 발송할 수 있기 때문에 발신 프로필에 080 수신거부번호를 등록해야 합니다.
     * 발신 프로필 080 수신거부번호는 동일 톡채널의 타 조직, 타 프로젝트, 타 딜러사의 발신 프로필 전체에 일괄 적용되는 데이터이기 때문에 신중하게 변경해야 합니다.
 * 발신 프로필에 080 수신거부번호를 등록하거나 수정이 필요할 경우 **NHN Cloud 고객지원 > 문의하기**로 문의하세요.
@@ -256,7 +301,9 @@ Excel/CSV 포맷의 템플릿 파일을 사용해 여러 수신 번호로 브랜
 * SMS 서비스 앱키를 비우고 저장한 경우
     * 고객이 직접 수신거부 수신자를 관리해야 하며 브랜드 메시지 발송 과정에서 수신자에 대한 검증을 하지 않습니다.
 
-### 대체 발송 관리
+<a id="manage-fallback"></a>
+
+### 대체 발송 관리 { #manage-fallback }
 * 브랜드 메시지 발송에 실패할 경우 해당 내용을 문자 메시지로 대체 발송하도록 설정할 수 있습니다.
 * NHN Cloud SMS 서비스를 이용 중이어야 하며, 메시지 길이에 따라 SMS/LMS로 발송됩니다(각 타입별 문자 발송 시 별도의 이용료 부과).
 * SMS 앱키를 수정하면 모든 검색용 아이디의 채널은 대체 발송 설정이 초기화됩니다.
@@ -269,7 +316,9 @@ Excel/CSV 포맷의 템플릿 파일을 사용해 여러 수신 번호로 브랜
 * 브랜드 메시지 광고 메시지의 resendContent 필드를 입력할 경우, SMS 광고 API의 광고 문구를 필수로 입력해야 대체 발송됩니다. `(광고)내용[무료 수신거부]080XXXXXXX`
 * 브랜드 메시지 광고 메시지의 resendContent 필드가 없다면, 등록된 080 수신거부번호로 광고 문구를 자동 생성해서 대체 발송됩니다.
 
-## 비친구 메시지 발송(타겟팅 M, N) 사용 신청
+<a id="apply-for-using-non-friend-message-sending-targeting-m-n"></a>
+
+## 비친구 메시지 발송(타겟팅 M, N) 사용 신청 { #apply-for-using-non-friend-message-sending-targeting-m-n }
 
 * 비친구 메시지 발송(타겟팅 M, N)을 사용하려는 경우 사용 신청을 진행해야 합니다. 사용 신청을 하지 않는 경우 발송 간 M/N 타입이 노출되지 않습니다.
 * 사용 신청은 아래의 조건을 만족할 경우 승인됩니다.
@@ -279,7 +328,9 @@ Excel/CSV 포맷의 템플릿 파일을 사용해 여러 수신 번호로 브랜
     * 채널 친구 수 5만 이상
     * 3개월 내 알림톡 발송 성공 이력 보유
 
-### 주의 사항
+<a id="cautions"></a>
+
+### 주의 사항 { #cautions }
 * 비즈니스 인증이 해제될 경우 비친구 메시지 발송(타겟팅 M, N) 사용 권한이 해제됩니다. 비즈니스 인증 재심사 이후 다시 사용 신청을 진행해야 합니다.
 * 광고성 정보 수신동의 증적자료 파일은 톡채널 단위로 저장되므로 변경 시 동일 톡채널의 타 딜러사 발신 프로필에 일괄 적용됩니다.
 * 타 딜러사에서 업로드한 파일이 이미 존재하는 경우 파일 업로드 과정을 생략하고 비친구 메시지 발송(타겟팅 M, N) 사용 신청이 가능합니다.

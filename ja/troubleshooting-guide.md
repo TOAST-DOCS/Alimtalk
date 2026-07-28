@@ -1,6 +1,12 @@
-## Notification > KakaoTalk Bizmessage > 問題解決ガイド
+<!-- pre-align:aligned sig=f86d36730580 -->
 
-### 配送照会ボタン文言
+<a id="troubleshooting-guide"></a>
+
+## Notification > KakaoTalk Bizmessage > 問題解決ガイド { #troubleshooting-guide }
+
+<a id="message-for-query-delivery-button"></a>
+
+### 配送照会ボタン文言 { #message-for-query-delivery-button }
 
 カカオメッセージに運送会社名と送り状番号を記載し、配送照会ボタンを追加すると、メッセージ内容から運送会社名と送り状番号を抽出して、各運送会社が提供する照会ページへのリンクが自動的に作成されます。カカオでサポートしていない運送会社と送り状番号がメッセージに含まれる場合は、配送照会ボタンが露出されません。
 

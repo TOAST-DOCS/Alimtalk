@@ -1,6 +1,14 @@
-## Notification > KakaoTalk Bizmessage > 알림톡 > API v2.2 Guide
+<!-- pre-align:aligned sig=ff88f5bc1ceb -->
 
-## 알림톡
+<a id="alimtalk-api-guide-v2-2"></a>
+
+## Notification > KakaoTalk Bizmessage > 알림톡 > API v2.2 Guide { #alimtalk-api-guide-v2-2 }
+
+<a id="alimtalk"></a>
+
+## 알림톡 { #alimtalk }
+
+<a id="api-domain"></a>
 
 #### [API Domain]
 
@@ -17,15 +25,21 @@
 </tbody>
 </table>
 
-## Overview of v2.2 API
+<a id="overview-of-v22-api"></a>
+
+## Overview of v2.2 API { #overview-of-v22-api }
 1. 알림톡 대량 발송 조회, 통계 조회 API가 추가되었습니다.
 2. 메시지 치환 발송 API 응답 본문에 `buttons` 필드가 추가되었습니다.
 3. 메시지 전문 발송 API 응답 본문의 `buttons` 필드에 `chatExtra`, `chatEvent`, `target` 필드가 추가되었습니다.
 4. 메시지 조회 API 응답 본문의 `buttons` 필드에 `chatExtra`, `chatEvent`, `target` 필드가 추가되었습니다.
 
-## 일반 메시지
+<a id="general-messages"></a>
 
-### 메시지 치환 발송 요청
+## 일반 메시지 { #general-messages }
+
+<a id="request-of-sending-replaced-messages"></a>
+
+### 메시지 치환 발송 요청 { #request-of-sending-replaced-messages }
 
 [URL]
 
@@ -131,6 +145,8 @@ Content-Type: application/json;charset=UTF-8
 curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" https://kakaotalk-bizmessage.api.nhncloudservice.com/alimtalk/v2.2/appkeys/{appkey}/messages -d '{"senderKey":"{발신 키}","templateCode":"{템플릿 코드}","requestDate":"2018-10-01 00:00","recipientList":[{"recipientNo":"{수신번호}","templateParameter":{"{치환자 필드}":"{치환 데이터}"}}]}'
 ```
 
+<a id="response"></a>
+
 #### 응답
 
 ```
@@ -172,7 +188,9 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 |-- resultMessage | String | 발송 요청 결과 메시지 |
 |-- recipientGroupingKey | String | 수신자 그룹핑 키 |
 
-### 메시지 전문 발송 요청
+<a id="request-of-sending-full-text"></a>
+
+### 메시지 전문 발송 요청 { #request-of-sending-full-text }
 
 [URL]
 
@@ -291,6 +309,8 @@ Content-Type: application/json;charset=UTF-8
 curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" https://kakaotalk-bizmessage.api.nhncloudservice.com/alimtalk/v2.2/appkeys/{appkey}/raw-messages -d '{"senderKey":"{발신 키}","templateCode":"{템플릿 코드}","requestDate":"2018-10-01 00:00","recipientList":[{"recipientNo":"{수신번호}","content":"{내용}","buttons":[{"ordering":"{버튼 순서}","type":"{버튼 타입}","name":"{버튼 이름}","linkMo":"{모바일 웹 링크}"}]}]}'
 ```
 
+<a id="response-2"></a>
+
 #### 응답
 
 ```
@@ -332,7 +352,11 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 |-- resultMessage | String | 발송 요청 결과 메시지 |
 |-- recipientGroupingKey | String | 수신자 그룹핑 키 |
 
-### 메시지 리스트 조회
+<a id="list-messages"></a>
+
+### 메시지 리스트 조회 { #list-messages }
+
+<a id="request"></a>
 
 #### 요청
 
@@ -381,6 +405,8 @@ Content-Type: application/json;charset=UTF-8
 
 * 90일 이전 발송 요청 데이터는 조회되지 않습니다.
 * 발송 요청 일시의 범위는 최대 30일입니다.
+
+<a id="response-3"></a>
 
 #### 응답
 ```
@@ -476,7 +502,11 @@ Content-Type: application/json;charset=UTF-8
 curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" "https://kakaotalk-bizmessage.api.nhncloudservice.com/alimtalk/v2.2/appkeys/{appkey}/messages?startRequestDate=2018-05-01%20:00&endRequestDate=2018-05-30%20:59"
 ```
 
-### 메시지 단건 조회
+<a id="get-messages"></a>
+
+### 메시지 단건 조회 { #get-messages }
+
+<a id="request-2"></a>
 
 #### 요청
 
@@ -509,6 +539,8 @@ Content-Type: application/json;charset=UTF-8
 ```
 curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" "https://kakaotalk-bizmessage.api.nhncloudservice.com/alimtalk/v2.2/appkeys/{appkey}/messages/{requestId}/{recipientSeq}"
 ```
+
+<a id="response-4"></a>
 
 #### 응답
 ```
@@ -611,7 +643,9 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 |- senderGroupingKey | String | 발신 그룹핑 키 |
 |- recipientGroupingKey | String |	수신자 그룹핑 키 |
 
-## 인증 메시지
+<a id="authentication-messages"></a>
+
+## 인증 메시지 { #authentication-messages }
 
 <span id="precautions-authword"></span>
 1. 인증 메시지 발송 시 포함되어야 할 인증 문구 안내
@@ -624,7 +658,9 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 - 예시 1-2) 인증 문구가 영문인 경우 대소문자 구분 없이 유효성 검사가 진행됩니다.
 
 
-### 메시지 치환 발송 요청
+<a id="request-of-sending-replaced-messages-2"></a>
+
+### 메시지 치환 발송 요청 { #request-of-sending-replaced-messages-2 }
 
 [URL]
 
@@ -727,6 +763,8 @@ Content-Type: application/json;charset=UTF-8
 curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" https://kakaotalk-bizmessage.api.nhncloudservice.com/alimtalk/v2.2/appkeys/{appkey}/auth/messages -d '{"senderKey":"{발신 키}","templateCode":"{템플릿 코드}","requestDate":"2018-10-01 00:00","recipientList":[{"recipientNo":"{수신번호}","templateParameter":{"{치환자 필드}":"{치환 데이터}"}}]}'
 ```
 
+<a id="response-5"></a>
+
 #### 응답
 
 ```
@@ -768,7 +806,9 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 |-- resultMessage | String | 발송 요청 결과 메시지 |
 |-- recipientGroupingKey | String | 수신자 그룹핑 키 |
 
-### 메시지 전문 발송 요청
+<a id="request-of-sending-full-text-2"></a>
+
+### 메시지 전문 발송 요청 { #request-of-sending-full-text-2 }
 
 [URL]
 
@@ -882,6 +922,8 @@ Content-Type: application/json;charset=UTF-8
 curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" https://kakaotalk-bizmessage.api.nhncloudservice.com/alimtalk/v2.2/appkeys/{appkey}/auth/raw-messages -d '{"senderKey":"{발신 키}","templateCode":"{템플릿 코드}","requestDate":"2018-10-01 00:00","recipientList":[{"recipientNo":"{수신번호}","content":"{내용}","buttons":[{"ordering":"{버튼 순서}","type":"{버튼 타입}","name":"{버튼 이름}","linkMo":"{모바일 웹 링크}"}]}]}'
 ```
 
+<a id="response-6"></a>
+
 #### 응답
 
 ```
@@ -923,7 +965,11 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 |-- resultMessage | String | 발송 요청 결과 메시지 |
 |-- recipientGroupingKey | String | 수신자 그룹핑 키 |
 
-### 메시지 리스트 조회
+<a id="list-messages-2"></a>
+
+### 메시지 리스트 조회 { #list-messages-2 }
+
+<a id="request-3"></a>
 
 #### 요청
 
@@ -972,6 +1018,8 @@ Content-Type: application/json;charset=UTF-8
 
 * 90일 이전 발송 요청 데이터는 조회되지 않습니다.
 * 발송 요청 일시의 범위는 최대 30일입니다.
+
+<a id="response-7"></a>
 
 #### 응답
 ```
@@ -1067,7 +1115,11 @@ Content-Type: application/json;charset=UTF-8
 curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" "https://kakaotalk-bizmessage.api.nhncloudservice.com/alimtalk/v2.2/appkeys/{appkey}/auth/messages?startRequestDate=2018-05-01%20:00&endRequestDate=2018-05-30%20:59"
 ```
 
-### 메시지 단건 조회
+<a id="get-messages-2"></a>
+
+### 메시지 단건 조회 { #get-messages-2 }
+
+<a id="request-4"></a>
 
 #### 요청
 
@@ -1100,6 +1152,8 @@ Content-Type: application/json;charset=UTF-8
 ```
 curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" "https://kakaotalk-bizmessage.api.nhncloudservice.com/alimtalk/v2.2/appkeys/{appkey}/auth/messages/{requestId}/{recipientSeq}"
 ```
+
+<a id="response-8"></a>
 
 #### 응답
 ```
@@ -1202,8 +1256,14 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 |- senderGroupingKey | String | 발신 그룹핑 키 |
 |- recipientGroupingKey | String |	수신자 그룹핑 키 |
 
-## 메시지
-### 메시지 발송 취소
+<a id="messages"></a>
+
+## 메시지 { #messages }
+<a id="cancel-sending-messages"></a>
+
+### 메시지 발송 취소 { #cancel-sending-messages }
+
+<a id="request-5"></a>
 
 #### 요청
 
@@ -1239,6 +1299,8 @@ Content-Type: application/json;charset=UTF-8
 
 * 일반/인증 메시지 모두 동일한 API로 취소할 수 있습니다.
 
+<a id="response-9"></a>
+
 #### 응답
 ```
 {
@@ -1262,7 +1324,11 @@ Content-Type: application/json;charset=UTF-8
 curl -X DELETE -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" "https://kakaotalk-bizmessage.api.nhncloudservice.com/alimtalk/v2.2/appkeys/{appkey}/messages/{requestId}?recipientSeq=1,2,3"
 ```
 
-### 메시지 결과 업데이트 조회
+<a id="query-updates-of-message-result"></a>
+
+### 메시지 결과 업데이트 조회 { #query-updates-of-message-result }
+
+<a id="request-6"></a>
 
 #### 요청
 
@@ -1298,6 +1364,8 @@ Content-Type: application/json;charset=UTF-8
 |alimtalkMessageType|	String| X |	알림톡 메시지 타입(NORMAL, AUTH) |
 |pageNum|	Integer|	X|	페이지 번호(기본: 1)|
 |pageSize|	Integer|	X|	조회 건수(Default: 15, Max: 1000)|
+
+<a id="response-10"></a>
 
 #### 응답
 ```
@@ -1351,7 +1419,9 @@ Content-Type: application/json;charset=UTF-8
 curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" "https://kakaotalk-bizmessage.api.nhncloudservice.com/alimtalk/v2.2/appkeys/{appkey}/message-results?startUpdateDate=2018-05-01%20:00&endUpdateDate=2018-05-30%20:59"
 ```
 
-### SMS/LMS 대체 발송 상태 코드
+<a id="status-code-of-smslms-resending"></a>
+
+### SMS/LMS 대체 발송 상태 코드 { #status-code-of-smslms-resending }
 | 이름 |	설명|
 |---|---|
 |RSC01|	대체 발송 미대상|
@@ -1360,8 +1430,14 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 |RSC04|	대체 발송 성공|
 |RSC05|	대체 발송 실패|
 
-## 대량 발송
-### 대량 발송 요청 목록 조회
+<a id="mass-delivery"></a>
+
+## 대량 발송 { #mass-delivery }
+<a id="list-mass-delivery-requests"></a>
+
+### 대량 발송 요청 목록 조회 { #list-mass-delivery-requests }
+
+<a id="request-7"></a>
 
 #### 요청
 [URL]
@@ -1401,6 +1477,8 @@ Content-Type: application/json;charset=UTF-8
 | pageNum | optional, Integer | - | X | 페이지 번호 |
 | pageSize | optional, Integer | 1000 | X | 검색 수 |
 
+<a id="curl"></a>
+
 #### cURL
 ```
 curl -X GET \
@@ -1408,6 +1486,8 @@ curl -X GET \
 -H 'Content-Type: application/json;charset=UTF-8' \
 -H 'X-Secret-Key:{secretkey}'
 ```
+
+<a id="response-11"></a>
 
 #### 응답
 ```
@@ -1497,7 +1577,11 @@ curl -X GET \
 | - totalCount | Integer | 총개수 |
 
 
-### 대량 발송 수신자 목록 조회
+<a id="list-mass-delivery-recipients"></a>
+
+### 대량 발송 수신자 목록 조회 { #list-mass-delivery-recipients }
+
+<a id="request-8"></a>
 
 #### 요청
 [URL]
@@ -1536,6 +1620,8 @@ Content-Type: application/json;charset=UTF-8
 | pageNum | optional, Integer | - | X | 페이지 번호 |
 | pageSize | optional, Integer | 1000 | X | 검색 수 |
 
+<a id="curl-2"></a>
+
 #### cURL
 ```
 curl -X GET \
@@ -1543,6 +1629,8 @@ curl -X GET \
 -H 'Content-Type: application/json;charset=UTF-8' \
 -H 'X-Secret-Key:{secretkey}'
 ```
+
+<a id="response-12"></a>
 
 #### 응답
 ```
@@ -1588,7 +1676,11 @@ curl -X GET \
 | -- resultCodeName | String | 결과 코드 내용 |
 | - totalCount | Integer | 총개수 |
 
-### 대량 발송 수신자 조회
+<a id="get-a-mass-delivery-recipient"></a>
+
+### 대량 발송 수신자 조회 { #get-a-mass-delivery-recipient }
+
+<a id="request-9"></a>
 
 #### 요청
 [URL]
@@ -1628,6 +1720,8 @@ Content-Type: application/json;charset=UTF-8
 | pageNum | optional, Integer | - | X | 페이지 번호 |
 | pageSize | optional, Integer | 1000 | X | 검색 수 |
 
+<a id="curl-3"></a>
+
 #### cURL
 ```
 curl -X GET \
@@ -1635,6 +1729,8 @@ curl -X GET \
 -H 'Content-Type: application/json;charset=UTF-8' \
 -H 'X-Secret-Key:{secretkey}'
 ```
+
+<a id="response-13"></a>
 
 #### 응답
 ```
@@ -1726,9 +1822,15 @@ curl -X GET \
 | -- chatEvent | String | BT: 봇 전환 시 연결할 봇 이벤트명 |
 | -- target|	String|	웹 링크 버튼일 경우, "target":"out" 속성 추가 시 아웃 링크<br>기본 인앱 링크로 발송 |
 
-## 템플릿
+<a id="templates"></a>
 
-### 템플릿 카테고리 조회
+## 템플릿 { #templates }
+
+<a id="list-template-categories"></a>
+
+### 템플릿 카테고리 조회 { #list-template-categories }
+<a id="request-10"></a>
+
 #### 요청
 [URL]
 
@@ -1752,6 +1854,8 @@ Content-Type: application/json;charset=UTF-8
 | 이름 |	타입|	필수|	설명|
 |---|---|---|---|
 |X-Secret-Key|	String| O | 콘솔에서 생성할 수 있습니다.  |
+
+<a id="response-14"></a>
 
 #### 응답
 ```
@@ -1794,7 +1898,11 @@ Content-Type: application/json;charset=UTF-8
 |-- inclusion | String |	카테고리 적용 대상 템플릿 설명 |
 |-- exclusion| String| 카테고리 제외 대상 템플릿 설명 |
 
-### 템플릿 등록
+<a id="register-templates"></a>
+
+### 템플릿 등록 { #register-templates }
+<a id="request-11"></a>
+
 #### 요청
 [URL]
 
@@ -1878,6 +1986,8 @@ Content-Type: application/json;charset=UTF-8
 * 채널 추가(AC) 버튼의 버튼명은 "채널 추가"로 고정하여 등록해야 합니다.
 
 
+<a id="response-15"></a>
+
 #### 응답
 ```
 {
@@ -1896,7 +2006,11 @@ Content-Type: application/json;charset=UTF-8
 |- resultMessage|	String| 결과 메시지|
 |- isSuccessful|	Boolean| 성공 여부|
 
-### 템플릿 수정
+<a id="modify-templates"></a>
+
+### 템플릿 수정 { #modify-templates }
+<a id="request-12"></a>
+
 #### 요청
 [URL]
 
@@ -1978,6 +2092,8 @@ Content-Type: application/json;charset=UTF-8
 * 채널 추가형(AD)과 복합형(MI) 메시지 유형 템플릿 수정 시, 채널 추가(AC) 버튼이 첫 번째 순서에 위치해야 합니다.
 * 채널 추가(AC) 버튼의 버튼명은 "채널 추가"로 고정하여, 수정해야 합니다.
 
+<a id="response-16"></a>
+
 #### 응답
 ```
 {
@@ -1996,7 +2112,11 @@ Content-Type: application/json;charset=UTF-8
 |- resultMessage|	String| 결과 메시지|
 |- isSuccessful|	Boolean| 성공 여부|
 
-### 템플릿 삭제
+<a id="delete-templates"></a>
+
+### 템플릿 삭제 { #delete-templates }
+<a id="request-13"></a>
+
 #### 요청
 [URL]
 
@@ -2024,6 +2144,8 @@ Content-Type: application/json;charset=UTF-8
 * 카카오에 남아 있는 템플릿은 1년 미사용 시 휴면 처리되고, 휴면 상태가 1년간 지속되면 삭제 처리됩니다.(카카오에서 템플릿이 휴면 전환되거나 삭제되면 담당자에게 알림이 발송됩니다.)
 
 
+<a id="response-17"></a>
+
 #### 응답
 ```
 {
@@ -2042,7 +2164,11 @@ Content-Type: application/json;charset=UTF-8
 |- resultMessage|	String| 결과 메시지|
 |- isSuccessful|	Boolean| 성공 여부|
 
-### 템플릿 문의하기
+<a id="inquire-of-templates"></a>
+
+### 템플릿 문의하기 { #inquire-of-templates }
+<a id="request-14"></a>
+
 #### 요청
 [URL]
 
@@ -2083,6 +2209,8 @@ Content-Type: application/json;charset=UTF-8
 
 * 반려 상태의 템플릿에 문의를 남길 경우, 검수 중(REQ) 상태로 변경됩니다.
 
+<a id="response-18"></a>
+
 #### 응답
 ```
 {
@@ -2101,7 +2229,11 @@ Content-Type: application/json;charset=UTF-8
 |- resultMessage|	String| 결과 메시지|
 |- isSuccessful|	Boolean| 성공 여부|
 
-### 파일 첨부하여 템플릿 문의하기
+<a id="attach-files-to-send-inquiry-on-templates"></a>
+
+### 파일 첨부하여 템플릿 문의하기 { #attach-files-to-send-inquiry-on-templates }
+<a id="request-15"></a>
+
 #### 요청
 [URL]
 
@@ -2144,6 +2276,8 @@ Content-Type: application/json;charset=UTF-8
 
 * 반려 상태의 템플릿에 문의를 남길 경우, 검수 중(REQ) 상태로 변경됩니다.
 
+<a id="response-19"></a>
+
 #### 응답
 ```
 {
@@ -2162,7 +2296,11 @@ Content-Type: application/json;charset=UTF-8
 |- resultMessage|	String| 결과 메시지|
 |- isSuccessful|	Boolean| 성공 여부|
 
-### 템플릿 리스트 조회
+<a id="list-templates"></a>
+
+### 템플릿 리스트 조회 { #list-templates }
+
+<a id="request-16"></a>
 
 #### 요청
 
@@ -2211,6 +2349,8 @@ Content-Type: application/json;charset=UTF-8
 ```
 curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" "https://kakaotalk-bizmessage.api.nhncloudservice.com/alimtalk/v2.2/appkeys/{appkey}/senders/{senderKey}/templates?templateStatus={템플릿 상태 코드}"
 ```
+
+<a id="response-20"></a>
 
 #### 응답
 ```
@@ -2322,7 +2462,11 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 |-- updateDate | String | 수정일자                                                                                            |
 |- totalCount | Integer | 총개수                                                                                             |
 
-### 템플릿 수정 리스트 조회
+<a id="list-template-modifications"></a>
+
+### 템플릿 수정 리스트 조회 { #list-template-modifications }
+
+<a id="request-17"></a>
 
 #### 요청
 
@@ -2355,6 +2499,8 @@ Content-Type: application/json;charset=UTF-8
 ```
 curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" "https://kakaotalk-bizmessage.api.nhncloudservice.com/alimtalk/v2.2/appkeys/{appkey}/senders/{senderKey}/templates/{templateCode}/modifications"
 ```
+
+<a id="response-21"></a>
 
 #### 응답
 ```
@@ -2468,7 +2614,11 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 |-- updateDate | String | 수정일자 |
 |- totalCount | Integer | 총개수 |
 
-### 템플릿 이미지 등록
+<a id="register-template-image"></a>
+
+### 템플릿 이미지 등록 { #register-template-image }
+<a id="request-18"></a>
+
 #### 요청
 [URL]
 
@@ -2504,6 +2654,8 @@ Content-Type: multipart/form-data
 curl -X POST -H "Content-Type: multipart/form-data" -H "X-Secret-Key:{secretkey}" "https://kakaotalk-bizmessage.api.nhncloudservice.com/alimtalk/v2.2/appkeys/{appkey}/template-image" -F "file=@alimtalk-template-image.jpeg"
 ```
 
+<a id="response-22"></a>
+
 #### 응답
 ```
 {
@@ -2529,8 +2681,12 @@ curl -X POST -H "Content-Type: multipart/form-data" -H "X-Secret-Key:{secretkey}
 |- templateImageName | String |	이미지명(업로드한 파일명) |
 |- templateImageUrl | String |	이미지 URL |
 
-## 대체 발송 관리
-### SMS AppKey 등록
+<a id="manage-alternative-delivery"></a>
+
+## 대체 발송 관리 { #manage-alternative-delivery }
+<a id="register-an-sms-appkey"></a>
+
+### SMS AppKey 등록 { #register-an-sms-appkey }
 
 [URL]
 
@@ -2573,6 +2729,8 @@ Content-Type: application/json;charset=UTF-8
 curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" https://kakaotalk-bizmessage.api.nhncloudservice.com/alimtalk/v2.2/appkeys/{appkey}/failback/appkey -d '{"resendAppKey": "smsAppKey"}
 ```
 
+<a id="response-23"></a>
+
 #### 응답
 ```
 
@@ -2585,7 +2743,9 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 }
 ```
 
-### 대체 발송 설정 등록
+<a id="register-alternative-delivery-settings"></a>
+
+### 대체 발송 설정 등록 { #register-alternative-delivery-settings }
 
 [URL]
 
@@ -2631,6 +2791,8 @@ Content-Type: application/json;charset=UTF-8
 ```
 curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" https://kakaotalk-bizmessage.api.nhncloudservice.com/alimtalk/v2.2/appkeys/{appkey}/failback/appkey -d '{"senderKey": "0be23c29de88d6888798aeda57062516354d74ba","isResend": true,"resendSendNo": "01012341234" }
 ```
+
+<a id="response-24"></a>
 
 #### 응답
 ```

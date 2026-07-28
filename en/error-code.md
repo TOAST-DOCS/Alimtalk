@@ -1,6 +1,12 @@
-## Notification > KakaoTalk Bizmessage > Error Code
+<!-- pre-align:aligned sig=2a9da7055af6 -->
 
-## API Response Code
+<a id="error-code"></a>
+
+## Notification > KakaoTalk Bizmessage > Error Code { #error-code }
+
+<a id="api-response-code"></a>
+
+## API Response Code { #api-response-code }
 
 | Category      | Success | Result code | Result code message                                                                                                                                       | API response message                                                                                                                                                                                                                                                                                                                                                                 |
 |-----------|-------|-------|-------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -85,7 +91,7 @@
 | Common        | false | -3337 | When arranging horizontal buttons without an Add Channel button, the BF button should be on the right (second) side.                                                                                               | BF button must be the second (right side) button in horizontal layout without channel-add button.                                                                                                                                                                                                                                                                          |
 | Common        | false | -3338 | When arranging horizontal buttons with an add channel button, the BF button should be on the left (first).                                                                                                | BF button must be the first (left side) button in horizontal layout with channel-add button.                                                                                                                                                                                                                                                                               |
 | Common        | false | -3340 | Invalid 080 opt-out number                                                                                                                                  | Invalid unsubscribeNo format. Expected format: 080-xxx-xxxx or 080-xxxx-xxxx or 080xxxxxxx or 080xxxxxxxx.                                                                                                                                                                                                                                                                 |
-| Common        | false | -3341 | Invalid 080 verification number                                                                                                                                    | Invalid format. Only digits are allowed, up to a maximum of 9.                                                                                                                                                                                                                                                                                                             |
+| Common        | false | -3341 | Invalid 080 verification number                                                                                                                                    | Invalid format. Only digits are allowed, up to a maximum of 10.                                                                                                                                                                                                                                                                                                             |
 | Common        | false | -3347 | Template parameter key cannot contain '@' character                                                                                                                      | Template parameter key cannot contain '@' character. Invalid key: {}                                                                                                                                                                                                                                                                                                       |
 | Common        | false | -3348 | AC type button name must be 'Add Channel'                                                                                                                           | AC type button name must be '채널 추가'.                                                                                                                                                                                                                                                                                                                                    |
 | Common        | false | -3349 | AC button can only be used once across all carousel items                                                                                                                         | AC button can only be used once across all carousel items.                                                                                                                                                                                                                                                                                                                  |
@@ -235,7 +241,9 @@
 | Friendtalk Fallback Send | false | -3225 | Invalid carousel button. Carousel feed type cannot have more than 2 buttons, while carousel commerce type requires 1-2 buttons.                                                                   | Friendtalk carousel button size is invalid. If the message type is friendtalk carousel-feed, the button size must be 2 or less. If the message type is friendtalk carousel-commerce, the button size must be 1 ~ 2.                                                                                                                                                        |
 | Friendtalk Fallback Send | false | -3226 | If commerce has 'discountPrice' field, commerce must have a 'discountRate' or 'discountFixed' field                                                                                  | If commerce has 'discountPrice' field, commerce must have a 'discountRate' or 'discountFixed' field.                                                                                                                                                                                                                                                                       |
 
-## Delivery Result Code
+<a id="delivery-result-code"></a>
+
+## Delivery Result Code { #delivery-result-code }
 
 <table class="table table-striped table-hover">
 <thead>
@@ -415,7 +423,7 @@
 	</tr>
 	<tr>
 		<td>3023</td>
-		<td>Message grammar error (JSON format error)</td>
+		<td>Unable to send video included in message (video address or thumbnail image address is incorrect, or thumbnail image does not meet specifications)</td>
 	</tr>
 	<tr>
 		<td>3024</td>

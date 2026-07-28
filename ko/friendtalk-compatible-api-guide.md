@@ -1,6 +1,12 @@
-## Notification > KakaoTalk Bizmessage > 친구톡 > 브랜드 메시지 전환 가이드
+<!-- pre-align:aligned sig=492516bf9d3d -->
 
-## 개요
+<a id="friendtalk-compatible-api-guide"></a>
+
+## Notification > KakaoTalk Bizmessage > 친구톡 > 브랜드 메시지 전환 가이드 { #friendtalk-compatible-api-guide }
+
+<a id="overview"></a>
+
+## 개요 { #overview }
 
 *카카오의 **친구톡 서비스**가 **2025년 12월 31일(수)** 을 마지막으로 종료됩니다.*
 *이에 따라 **NHN Cloud**에서도 **2025년 12월 31일(수)** 부로 친구톡 서비스를 종료합니다.*
@@ -16,22 +22,30 @@
 1. **(권장)브랜드 메시지 자유형 발송 API로 전환**
 2. (임시) 기존 친구톡 API를 활용한 친구톡 호환 발송 기능
 
-## 1\. \(권장\) **브랜드 메시지 자유형 발송 API로 전환**
+<a id="recommended-migrate-to-the-brand-message-free-form-send-api"></a>
+
+## 1\. \(권장\) **브랜드 메시지 자유형 발송 API로 전환** { #recommended-migrate-to-the-brand-message-free-form-send-api }
 
 * 보다 안정적이고 장기적인 발송을 위해 **브랜드 메시지 전용 API로 직접 전환** 하는 것을 권장드립니다.
 
-### 브랜드 메시지 전환의 이점
+<a id="benefits-of-migrating-to-brand-message"></a>
+
+### 브랜드 메시지 전환의 이점 { #benefits-of-migrating-to-brand-message }
 
 * 브랜드 메시지 자유형 발송은 I타겟팅 사용시 기존 친구톡 발송 API와 사용성이 동일하여 전환에 큰 어려움이 없습니다.
 * 브랜드 메시지는 기존 친구톡에서 지원하는 기능을 모두 지원하는 상위 호환 서비스입니다.
 * 브랜드 메시지는 타겟팅을 지정하여 발신 채널 친구가 아닌 고객에게도 광고 발송이 가능합니다.
 * 자세한 내용은 [브랜드 메시지 가이드](https://docs.nhncloud.com/ko/Notification/KakaoTalk%20Bizmessage/ko/friendtalkupgrade-overview/)를 참고해주시기 바랍니다.
 
-## 2\. \(임시\) 친구톡 호환 발송 기능
+<a id="temporary-friendtalk-compatibility-send"></a>
+
+## 2\. \(임시\) 친구톡 호환 발송 기능 { #temporary-friendtalk-compatibility-send }
 
 * 친구톡 호환 발송 기능은 친구톡 메시지 전문을 브랜드 메시지 포맷으로 전환하여 발송해주는 서비스입니다.
 
-### 친구톡 호환 발송 기능 제공사항
+<a id="items-provided-by-the-friendtalk-compatibility-send"></a>
+
+### 친구톡 호환 발송 기능 제공사항 { #items-provided-by-the-friendtalk-compatibility-send }
 
 | 항목 | 내용                                                              |
 | :--- |:----------------------------------------------------------------|
@@ -45,7 +59,9 @@
 * fade-out 이후 바로 전환 발송을 이용할 고객께서는 발송 테스트가 필요할 수 있습니다.
 * 자세한 스펙 차이는 아래 표를 참고해주세요.
 
-### 친구톡 호환 발송 이용 방법
+<a id="how-to-use-the-friendtalk-compatibility-send"></a>
+
+### 친구톡 호환 발송 이용 방법 { #how-to-use-the-friendtalk-compatibility-send }
 
 * 기존 이용하시던 친구톡 API 요청에 헤더로 ```X-Convert-To-Brand-Message: true``` 값을 추가해주시면 친구톡 호환 발송 기능을 이용할 수 있습니다.
 * 호환 발송이 잘 이루어졌는지 명시적으로 확인할 방법을 따로 제공하지는 않는 점 참고 부탁드립니다.
@@ -63,11 +79,15 @@
 | :--- | :--- | :--- |:-------------------------------------------------------------------------------------------------------------|
 | X-Convert-To-Brand-Message | Boolean | X | 친구톡 호환 발송을 위한 요청 헤더 (2025년 12월 30일 부터 ```X-Convert-To-Brand-Message: true``` 헤더가 없는 값은 요청 단계에서 발송 실패 처리됩니다.) |
 
-### 카카오 제공 스펙 변경 비교표
+<a id="kakao-provided-spec-change-comparison"></a>
+
+### 카카오 제공 스펙 변경 비교표 { #kakao-provided-spec-change-comparison }
 
 ![friendtalk_compatible_spec_01.png](https://static.toastoven.net/prod_alimtalk/friendtalk_compatible_spec_01.png)
 
-### 그 외의 확인된 스펙 차이
+<a id="other-confirmed-spec-differences"></a>
+
+### 그 외의 확인된 스펙 차이 { #other-confirmed-spec-differences }
 
 * 캐러셀 피드
     * 각 캐러셀 당 버튼 옵셔널 -> 각 캐러셀 당 버튼 필수

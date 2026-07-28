@@ -1,7 +1,15 @@
-## Notification > KakaoTalk Bizmessage > AlimTalk > Console Guide
+<!-- pre-align:aligned sig=3fddaef1a9f4 -->
 
-## Send AlimTalk
-### General Delivery
+<a id="alimtalk-console-guide"></a>
+
+## Notification > KakaoTalk Bizmessage > AlimTalk > Console Guide { #alimtalk-console-guide }
+
+<a id="send-alimtalk"></a>
+
+## Send AlimTalk { #send-alimtalk }
+<a id="general-delivery"></a>
+
+### General Delivery { #general-delivery }
 This is general delivery screen of AlimTalk
 
 ![KTB_09_20230926.png](https://static.toastoven.net/prod_alimtalk/KTB_09_20230926.png)
@@ -22,7 +30,9 @@ This is general delivery screen of AlimTalk
 
 7. After completing the entry, click on <b>Send</b> to send it immediately.
 
-### Mass Delivery
+<a id="mass-delivery"></a>
+
+### Mass Delivery { #mass-delivery }
 It is the feature to send AlimTalk to multiple recipient numbers through an Excel/CSV format template file. Select <b>Mass Delivery </b> from bottom tab. 
 ![KTB_10_20230926.png](https://static.toastoven.net/prod_alimtalk/KTB_10_20230926.png)
 * Select a template and click on <b>Download Template</b> to download the CSV, XLSX files containing the template replacement. If the template replacement is not included, the delivery will be processed as fail.
@@ -39,7 +49,9 @@ If you click on <b>Send</b> button, you can select <b>Inspect and proceed</b> or
 * Immediate Delivery: Send immediately without checking AlimTalk recipient. Delivery status can be found on the <b> View Mass Delivery </b> tab.
 
 
-### Alternative Delivery
+<a id="alternative-delivery"></a>
+
+### Alternative Delivery { #alternative-delivery }
 It is the feature to send a text message alternatively if you fail to send AlimTalk. 
 <b>Send with common content </b> or <b>Set different messages for each user </b> can be selected to send. 
 ![KTB_12_20230926.png](https://static.toastoven.net/prod_alimtalk/KTB_12_20230926.png)
@@ -50,16 +62,24 @@ It is the feature to send a text message alternatively if you fail to send AlimT
 * If you delete or block the selected sender number, or stop using the SMS service, the text will not be replaced for sending and will need to be set up again.
 * Depending on the length of the message, it will be replaced by SMS/LMS. (A separate fee will be charged for sending text messages for each type.)
 
+<a id="send-with-common-contents"></a>
+
 #### Send with common contents
 * Select <b>Sender Profile/Template</b> and click <b>Send with common contents</b> to set up an alternative sending message.
 * If you do not enter an alternative delivery message, it will be sent as [Message Body].
+
+<a id="set-different-messages-for-each-user"></a>
 
 #### Set different messages for each user
 * Select <b>Sender Profile/Template</b> and click on <b>Set different messages for each user</b> to set alternative sending messages on <b>Add Recipients</b> tab at the bottom.
 * Click on [Ballpoint Pen Icon] next to the added recipient number to view and modify the settings.
 
-## View Delivery 
-### Retrieve send results 
+<a id="view-delivery"></a>
+
+## View Delivery { #view-delivery }
+<a id="retrieve-send-results"></a>
+
+### Retrieve send results { #retrieve-send-results }
 You can view based on the message type. 
 (<b>Request ID</b> and <b>Request Date and Time</b> are required values.) 
 ![KTB_13_20250403.jpg](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_alimtalk/KTB_13_20250403.jpg)
@@ -69,7 +89,9 @@ You can view based on the message type.
 * You can check the status of the delivery request in <b>Request Status</b> column.
 * In the <b>send results</b> column, you can see whether the shipment was successful or not.
 
-### Cancel Send
+<a id="cancel-send"></a>
+
+### Cancel Send { #cancel-send }
 During normal delivery, scheduled delivery with sending request date and time set to the future can be canceled. 
 ![KTB_14_20250403.jpg](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_alimtalk/KTB_14_20250403.jpg)
 * You can see the check box on the left side of the request ID by querying the scheduled delivery request.
@@ -78,13 +100,17 @@ During normal delivery, scheduled delivery with sending request date and time se
 * By selecting the check box in the lookup list header, you can select or deselect the list entirely.
 
 
-### View Mass delivery
+<a id="view-mass-delivery"></a>
+
+### View Mass delivery { #view-mass-delivery }
 You can View Mass delivery of AlimTalk. 
 ![KTB_15_20250403.jpg](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_alimtalk/KTB_15_20250403.png)
 * View: You can look up mass AlimTalk messages sent in the inquiry form at the top. If you select the line of the inquiry list, you can check the receipt number and the sending information (sending contents, sending result) in the inquiry form at the bottom.
 * Send/Cancel: When sending mass AlimTalk, select <b> Inspect and proceed</b> to send or cancel items that are <b>ready to send</b> by clicking on <b>Send</b> or <b>Cancel</b>.
 * We recommend that you click on an item in the search results and check the replacement value in View in Detail window.
 * If <b>Progress Status</b> is <b>Delivering</b>, even if you click on <b>Cancel</b> and some messages that were already being sent may be forwarded to the recipient.
+
+<a id="mass-delivery-progress-status"></a>
 
 #### Mass Delivery Progress Status 
 
@@ -97,6 +123,8 @@ You can View Mass delivery of AlimTalk.
 * <b>Delivery Failed</b>: Error occurred during delivery.
 * <b>Delivery Canceled</b>: User has canceled delivery.
 
+<a id="query-sending-by-recipient"></a>
+
 #### Query Sending by Recipient
 If you select Mass AlimTalk Delivery (row in the list), you can view the AlimTalk delivery contents and the results of the delivery by receiving number from the list below. 
 ![KTB_16_20230926.png](https://static.toastoven.net/prod_alimtalk/KTB_16_20230926.png)
@@ -104,15 +132,21 @@ If you select Mass AlimTalk Delivery (row in the list), you can view the AlimTal
 You can select the recipient from <b>View by Recipient</b> to see if the delivery has been successfully replaced. 
 ![KTB_17_20230926.png](https://static.toastoven.net/prod_alimtalk/KTB_17_20230926.png)
 
-## Template Management
+<a id="template-management"></a>
+
+## Template Management { #template-management }
 You can register a template by clicking the <b>Register Template</b> button.
 
-### Template type
+<a id="template-type"></a>
+
+### Template type { #template-type }
 * Registrable message types include **Channel Add type, Basic type, Additional information type, and Complex type**.
 * Registrable highlights types include **Highlight type, Image type and Item list type **.
 * You can select the type you want to send and create a template.
 
-### Register Templates
+<a id="register-templates"></a>
+
+### Register Templates { #register-templates }
 * Kakao AlimTalk Guide
     * [[ AlimTalk Creation Guide]](https://kakaobusiness.gitbook.io/main/ad/bizmessage/notice-friend/content-guide), [[ AlimTalk Review Guide]](https://kakaobusiness.gitbook.io/main/ad/bizmessage/notice-friend/audit), [[ AlimTalk Precautions]](https://kakaobusiness.gitbook.io/main/ad/infotalk/operations)
 * Sender profile/Group
@@ -129,6 +163,8 @@ You can register a template by clicking the <b>Register Template</b> button.
 * Whether it is a security template
     * When securing the template, the message content is not exposed on devices other than mobile (expose the phrase 'Please check on mobile')
     * In case of general message, the setting value may change during Inspection and please check OTP, authentication number, password, credit information/grade change guide template.
+
+<a id="template-button"></a>
 
 #### Template button
 * You can register **up to 5 buttons** on a template.
@@ -151,6 +187,8 @@ You can register a template by clicking the <b>Register Template</b> button.
 | One-Click Payment Plugin | - Users can pay for the product without changing screens within the chat window.<br/> - As payment plug-in is not yet registered directly on the platform, please contact [Kakao Customer Center](https://cs.kakao.com/helps?service=127&category=572&locale=ko)  | 
 | Business Form | - If you created a business form and connected it to the current channel, the business form you set is called when you click the button.<br/> - Business Form Creation is required: [[Business Form Guide]](https://business.kakao.com/info/talkbizform/)
 
+<a id="template-inspection"></a>
+
 #### Template inspection
 The inspection and review of AlimTalk template will be conducted directly by Kakao, and will be processed sequentially within two business days after the inspection request.
 
@@ -160,9 +198,13 @@ The inspection and review of AlimTalk template will be conducted directly by Kak
     * Inquiries about the purpose of the template and reasons for return will be added to the inspection results.
     * If you reject the template, you can re-examine it by clicking **Register** and **Modify**.
 
+<a id="template-status"></a>
+
 #### Template status
 * When registering a template, it is updated in the order of **Request > Under Inspection > Approval/Return** status.
 * After registering the template, it will remain the same for a year or will switch to **Dormant** status, if there is no additional sending. Please check [AlimTalk Template Precautions](https://docs.nhncloud.com/ko/Notification/KakaoTalk%20Bizmessage/ko/alimtalk-overview/#_3) for related guides.
+
+<a id="modify-templates"></a>
 
 #### Modify Templates
 * You can modify only templates in ** Approval/Return ** state.
@@ -170,12 +212,16 @@ The inspection and review of AlimTalk template will be conducted directly by Kak
 * Sender profiles/groups and template codes cannot be modified.
 * Modified templates will be inspected again from ** Under Inspection** status.
 
+<a id="delete-templates"></a>
+
 #### Delete Templates
 * You can delete only templates with <b><span style="color:red">Request/Return</span></b> status.
 * The returned template can be re-registered after **Delete**.
 * Deleted template code can be reused.
 
-## Manage Alternative Delivery
+<a id="manage-alternative-delivery"></a>
+
+## Manage Alternative Delivery { #manage-alternative-delivery }
 
 * If AlimTalk fails to send, you can set it to be sent alternatively as a text message.
 * The NHN Cloud SMS service must be in use and will be sent by SMS/LMS depending on the length of the message. (A separate fee will be charged for sending text messages for each type.)
@@ -188,7 +234,9 @@ The inspection and review of AlimTalk template will be conducted directly by Kak
 
 ![KTB_19_20230926.png](https://static.toastoven.net/prod_alimtalk/KTB_19_20230926.png)
 
-## Manage sender profile group
+<a id="manage-sender-profile-group"></a>
+
+## Manage sender profile group { #manage-sender-profile-group }
 * You can group two or more sender profiles to register templates at once.
 * One sender profile can belong to multiple groups in duplicate.
 * Sender profile group ID can be up to 10 characters. (Korean/English)

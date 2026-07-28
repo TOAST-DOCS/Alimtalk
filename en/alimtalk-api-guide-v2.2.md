@@ -1,6 +1,14 @@
-## Notification > KakaoTalk Bizmessage > AlimTalk > API v2.2 Guide
+<!-- pre-align:aligned sig=ff88f5bc1ceb -->
 
-## AlimTalk
+<a id="alimtalk-api-guide-v2-2"></a>
+
+## Notification > KakaoTalk Bizmessage > AlimTalk > API v2.2 Guide { #alimtalk-api-guide-v2-2 }
+
+<a id="alimtalk"></a>
+
+## AlimTalk { #alimtalk }
+
+<a id="api-domain"></a>
 
 #### [API Domain]
 
@@ -17,15 +25,21 @@
 </tbody>
 </table>
 
-## Overview of v2.2 API
+<a id="overview-of-v22-api"></a>
+
+## Overview of v2.2 API { #overview-of-v22-api }
 1. Added AlimTalk mass delivery query and statistics query API.
 2. Added a `buttons` field to the response body of replaced message sending API.
 3. Added `chatExtra`, `chatEvent`, and `target` fields to the `buttons` field in the response body of the full text message sending API.
 4. Added `chatExtra`, `chatEvent`, and `target` fields to the `buttons` field in the response body of the message query API.
 
-## General Messages
+<a id="general-messages"></a>
 
-### Request of Sending Replaced Messages
+## General Messages { #general-messages }
+
+<a id="request-of-sending-replaced-messages"></a>
+
+### Request of Sending Replaced Messages { #request-of-sending-replaced-messages }
 
 [URL]
 
@@ -132,6 +146,8 @@ Content-Type: application/json;charset=UTF-8
 curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" https://kakaotalk-bizmessage.api.nhncloudservice.com/alimtalk/v2.2/appkeys/{appkey}/messages -d '{"senderkey":"{Sender key}","templateCode":"{template code}","requestDate":"2018-10-01 00:00","recipientList":[{"recipientNo":"{recipient number}","templateParameter":{"{replaced field}":"{replacement data}"}}]}'
 ```
 
+<a id="response"></a>
+
 #### Response
 
 ```
@@ -173,7 +189,9 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 |-- resultMessage | String | Result message of delivery request |
 |-- recipientGroupingKey | String | Recipient's grouping key |
 
-### Request of Sending Full Text
+<a id="request-of-sending-full-text"></a>
+
+### Request of Sending Full Text { #request-of-sending-full-text }
 
 [URL]
 
@@ -291,6 +309,8 @@ Content-Type: application/json;charset=UTF-8
 curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" https://kakaotalk-bizmessage.api.nhncloudservice.com/alimtalk/v2.2/appkeys/{appkey}/raw-messages -d '{"senderKey":"{Sender key}","templateCode":"{template code}","requestDate":"2018-10-01 00:00","recipientList":[{"recipientNo":"{recipient number}","content":"{body}","buttons":[{"ordering":"{button sequence}","type":"{button type}","name":"{button name}","linkMo":"{mobile web link}"}]}]}'
 ```
 
+<a id="response-2"></a>
+
 #### Response
 
 ```
@@ -332,7 +352,11 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 |-- resultMessage | String | Result message of delivery request |
 |-- recipientGroupingKey | String | Recipient's grouping key |
 
-### List Messages
+<a id="list-messages"></a>
+
+### List Messages { #list-messages }
+
+<a id="request"></a>
 
 #### Request
 
@@ -381,6 +405,8 @@ Content-Type: application/json;charset=UTF-8
 
 * Cannot query data requested for delivery which are dated before 90 days.
 * The maximum available days for delivery request is 30 days.
+
+<a id="response-3"></a>
 
 #### Response
 ```
@@ -476,7 +502,11 @@ Content-Type: application/json;charset=UTF-8
 curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" "https://kakaotalk-bizmessage.api.nhncloudservice.com/alimtalk/v2.2/appkeys/{appkey}/messages?startRequestDate=2018-05-01%20:00&endRequestDate=2018-05-30%20:59"
 ```
 
-### Get Messages
+<a id="get-messages"></a>
+
+### Get Messages { #get-messages }
+
+<a id="request-2"></a>
 
 #### Request
 
@@ -509,6 +539,8 @@ Content-Type: application/json;charset=UTF-8
 ```
 curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" "https://kakaotalk-bizmessage.api.nhncloudservice.com/alimtalk/v2.2/appkeys/{appkey}/messages/{requestId}/{recipientSeq}"
 ```
+
+<a id="response-4"></a>
 
 #### Response
 ```
@@ -611,7 +643,9 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 |- senderGroupingKey | String | Sender's grouping key |
 |- recipientGroupingKey | String |  Recipient grouping key |
 
-## Authentication Messages
+<a id="authentication-messages"></a>
+
+## Authentication Messages { #authentication-messages }
 
 <span id="precautions-authword"></span>
 1. Guide for authentication words required to be included for Authentication Messages API
@@ -624,7 +658,9 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 - Example 1-2) Validity for English words shall be checked regardless of small or capital letters
 
 
-### Request of Sending Replaced Messages
+<a id="request-of-sending-replaced-messages-2"></a>
+
+### Request of Sending Replaced Messages { #request-of-sending-replaced-messages-2 }
 
 [URL]
 
@@ -726,6 +762,8 @@ Content-Type: application/json;charset=UTF-8
 curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" https://kakaotalk-bizmessage.api.nhncloudservice.com/alimtalk/v2.2/appkeys/{appkey}/auth/messages -d '{"senderKey":"{Sender Key}","templateCode":"{template code}","requestDate":"2018-10-01 00:00","recipientList":[{"recipientNo":"{recipient number}","templateParameter":{"{replaced field}":"{replacement data}"}}]}'
 ```
 
+<a id="response-5"></a>
+
 #### Response
 
 ```
@@ -767,7 +805,9 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 |-- resultMessage | String | Result message of delivery request |
 |-- recipientGroupingKey | String | Recipient's grouping key |
 
-### Request of Sending Full Text
+<a id="request-of-sending-full-text-2"></a>
+
+### Request of Sending Full Text { #request-of-sending-full-text-2 }
 
 [URL]
 
@@ -880,6 +920,8 @@ Content-Type: application/json;charset=UTF-8
 curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" https://kakaotalk-bizmessage.api.nhncloudservice.com/alimtalk/v2.2/appkeys/{appkey}/auth/raw-messages -d '{"senderKey":"{Sender Key}","templateCode":"{template code}","requestDate":"2018-10-01 00:00","recipientList":[{"recipientNo":"{recipient number}","content":"{body message}","buttons":[{"ordering":"{button sequence}","type":"{button type}","name":"{button name}","linkMo":"{mobile web link}"}]}]}'
 ```
 
+<a id="response-6"></a>
+
 #### Response
 
 ```
@@ -921,7 +963,11 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 |-- resultMessage | String | Result message of delivery request |
 |-- recipientGroupingKey | String | Recipient's grouping key |
 
-### List Messages
+<a id="list-messages-2"></a>
+
+### List Messages { #list-messages-2 }
+
+<a id="request-3"></a>
 
 #### Request
 
@@ -970,6 +1016,8 @@ Content-Type: application/json;charset=UTF-8
 
 * Delivery request data before 90 days cannot be queried.
 * Delivery can be requested within 30 days to the maximum.   
+
+<a id="response-7"></a>
 
 #### Response
 ```
@@ -1065,7 +1113,11 @@ Content-Type: application/json;charset=UTF-8
 curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" "https://kakaotalk-bizmessage.api.nhncloudservice.com/alimtalk/v2.2/appkeys/{appkey}/auth/messages?startRequestDate=2018-05-01%20:00&endRequestDate=2018-05-30%20:59"
 ```
 
-### Get Messages
+<a id="get-messages-2"></a>
+
+### Get Messages { #get-messages-2 }
+
+<a id="request-4"></a>
 
 #### Request
 
@@ -1098,6 +1150,8 @@ Content-Type: application/json;charset=UTF-8
 ```
 curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" "https://kakaotalk-bizmessage.api.nhncloudservice.com/alimtalk/v2.2/appkeys/{appkey}/auth/messages/{requestId}/{recipientSeq}"
 ```
+
+<a id="response-8"></a>
 
 #### Response
 ```
@@ -1200,8 +1254,14 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 |- senderGroupingKey | String | Sender's grouping key |
 |- recipientGroupingKey | String |  Recipient's grouping key |
 
-## Messages
-### Cancel Sending Messages
+<a id="messages"></a>
+
+## Messages { #messages }
+<a id="cancel-sending-messages"></a>
+
+### Cancel Sending Messages { #cancel-sending-messages }
+
+<a id="request-5"></a>
 
 #### Request
 
@@ -1237,6 +1297,8 @@ Content-Type: application/json;charset=UTF-8
 
 * Both general and authentication messages can be canceled by the same API.
 
+<a id="response-9"></a>
+
 #### Response
 ```
 {
@@ -1260,7 +1322,11 @@ Content-Type: application/json;charset=UTF-8
 curl -X DELETE -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" "https://kakaotalk-bizmessage.api.nhncloudservice.com/alimtalk/v2.2/appkeys/{appkey}/messages/{requestId}?recipientSeq=1,2,3"
 ```
 
-### Query Updates of Message Result
+<a id="query-updates-of-message-result"></a>
+
+### Query Updates of Message Result { #query-updates-of-message-result }
+
+<a id="request-6"></a>
 
 #### Request
 
@@ -1296,6 +1362,8 @@ Content-Type: application/json;charset=UTF-8
 |alimtalkMessageType|   String| X | AlimTalk message type(NORMAL, AUTH) |
 |pageNum|   Integer|    X|  Page number(default: 1)|
 |pageSize|  Integer|    X|  Number of queries(default: 15, Max: 1000)|
+
+<a id="response-10"></a>
 
 #### Response
 ```
@@ -1349,7 +1417,9 @@ Content-Type: application/json;charset=UTF-8
 curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" "https://kakaotalk-bizmessage.api.nhncloudservice.com/alimtalk/v2.2/appkeys/{appkey}/message-results?startUpdateDate=2018-05-01%20:00&endUpdateDate=2018-05-30%20:59"
 ```
 
-### Status Code of SMS/LMS Resending
+<a id="status-code-of-smslms-resending"></a>
+
+### Status Code of SMS/LMS Resending { #status-code-of-smslms-resending }
 | Name |  Description|
 |---|---|
 |RSC01| No target of resending|
@@ -1358,8 +1428,14 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 |RSC04| Resending successful|
 |RSC05| Resending failed|
 
-## Mass Delivery
-### List Mass Delivery Requests
+<a id="mass-delivery"></a>
+
+## Mass Delivery { #mass-delivery }
+<a id="list-mass-delivery-requests"></a>
+
+### List Mass Delivery Requests { #list-mass-delivery-requests }
+
+<a id="request-7"></a>
 
 #### Request
 [URL]
@@ -1399,6 +1475,8 @@ Content-Type: application/json;charset=UTF-8
 | pageNum | optional, Integer | - | X | Page number |
 | pageSize | optional, Integer | 1000 | X | Search count |
 
+<a id="curl"></a>
+
 #### cURL
 ```
 curl -X GET \
@@ -1406,6 +1484,8 @@ curl -X GET \
 -H 'Content-Type: application/json;charset=UTF-8' \
 -H 'X-Secret-Key:{secretkey}'
 ```
+
+<a id="response-11"></a>
 
 #### Response
 ```
@@ -1495,7 +1575,11 @@ curl -X GET \
 | - totalCount | Integer | Total count |
 
 
-### List Mass Delivery Recipients
+<a id="list-mass-delivery-recipients"></a>
+
+### List Mass Delivery Recipients { #list-mass-delivery-recipients }
+
+<a id="request-8"></a>
 
 #### Request
 [URL]
@@ -1534,6 +1618,8 @@ Content-Type: application/json;charset=UTF-8
 | pageNum | optional, Integer | - | X | Page Number |
 | pageSize | optional, Integer | 1000 | X | Search count |
 
+<a id="curl-2"></a>
+
 #### cURL
 ```
 curl -X GET \
@@ -1541,6 +1627,8 @@ curl -X GET \
 -H 'Content-Type: application/json;charset=UTF-8' \
 -H 'X-Secret-Key:{secretkey}'
 ```
+
+<a id="response-12"></a>
 
 #### Response
 ```
@@ -1586,7 +1674,11 @@ curl -X GET \
 | -- resultCodeName | String | Result code content |
 | - totalCount | Integer | Total count |
 
-### Get a Mass Delivery Recipient
+<a id="get-a-mass-delivery-recipient"></a>
+
+### Get a Mass Delivery Recipient { #get-a-mass-delivery-recipient }
+
+<a id="request-9"></a>
 
 #### Request
 [URL]
@@ -1626,6 +1718,8 @@ Content-Type: application/json;charset=UTF-8
 | pageNum | optional, Integer | - | X | Page number |
 | pageSize | optional, Integer | 1000 | X | Search count |
 
+<a id="curl-3"></a>
+
 #### cURL
 ```
 curl -X GET \
@@ -1633,6 +1727,8 @@ curl -X GET \
 -H 'Content-Type: application/json;charset=UTF-8' \
 -H 'X-Secret-Key:{secretkey}'
 ```
+
+<a id="response-13"></a>
 
 #### Response
 ```
@@ -1724,9 +1820,15 @@ curl -X GET \
 | -- chatEvent | String | BT: Bot event name to connect when switching to bot |
 | -- target|    String| In the case of a web link button, out link used when adding "target":"out" attribute<br>Send with the default in-app link |
 
-## Templates
+<a id="templates"></a>
 
-### List Template Categories
+## Templates { #templates }
+
+<a id="list-template-categories"></a>
+
+### List Template Categories { #list-template-categories }
+<a id="request-10"></a>
+
 #### Request
 [URL]
 
@@ -1750,6 +1852,8 @@ Content-Type: application/json;charset=UTF-8
 | Name |  Type| Required| Description|
 |---|---|---|---|
 |X-Secret-Key|  String| O | Can be created on console.  |
+
+<a id="response-14"></a>
 
 #### Response
 ```
@@ -1792,7 +1896,11 @@ Content-Type: application/json;charset=UTF-8
 |-- inclusion | String |    Description of templates to which the category applies |
 |-- exclusion| String| Description of templates to which the category does not apply |
 
-### Register Templates
+<a id="register-templates"></a>
+
+### Register Templates { #register-templates }
+<a id="request-11"></a>
+
 #### Request
 [URL]
 
@@ -1871,6 +1979,8 @@ Content-Type: application/json;charset=UTF-8
 |-schemeIos | String | X |  iOS app link(required for the AL type, up to 500 characters) |
 |-schemeAndroid | String | X |  Android app link(required for the AL type, up to 500 characters) |
 
+<a id="response-15"></a>
+
 #### Response
 ```
 {
@@ -1889,7 +1999,11 @@ Content-Type: application/json;charset=UTF-8
 |- resultMessage|   String| Result message|
 |- isSuccessful|    Boolean| Successful or not|
 
-### Modify Templates
+<a id="modify-templates"></a>
+
+### Modify Templates { #modify-templates }
+<a id="request-12"></a>
+
 #### Request
 [URL]
 
@@ -1967,6 +2081,8 @@ Content-Type: application/json;charset=UTF-8
 |-schemeIos | String | X |  iOS app link(required for the AL type, up to 500 characters) |
 |-schemeAndroid | String | X |  Android app link(required for the AL type, up to 500 characters) |
 
+<a id="response-16"></a>
+
 #### Response
 ```
 {
@@ -1985,7 +2101,11 @@ Content-Type: application/json;charset=UTF-8
 |- resultMessage|   String| Result message|
 |- isSuccessful|    Boolean| Successful or not|
 
-### Delete Templates
+<a id="delete-templates"></a>
+
+### Delete Templates { #delete-templates }
+<a id="request-13"></a>
+
 #### Request
 [URL]
 
@@ -2013,6 +2133,8 @@ Content-Type: application/json;charset=UTF-8
 * In the case of an approved template, Kakao's internal data cannot be deleted due to the restrictions of KakaoTalk BizMessage.
 * A template remaining in Kakao becomes dormant if it is not used for 1 year, and gets deleted if it remains dormant for 1 year.(If a template becomes dormant or gets deleted on Kakao, the person in charge will be notified.)
 
+<a id="response-17"></a>
+
 #### Response
 ```
 {
@@ -2031,7 +2153,11 @@ Content-Type: application/json;charset=UTF-8
 |- resultMessage|   String| Result message|
 |- isSuccessful|    Boolean| Successful or not|
 
-### Inquire of Templates
+<a id="inquire-of-templates"></a>
+
+### Inquire of Templates { #inquire-of-templates }
+<a id="request-14"></a>
+
 #### Request
 [URL]
 
@@ -2072,6 +2198,8 @@ Content-Type: application/json;charset=UTF-8
 
 * When commenting a template in the REJ status, it will be changed to the REQ status.
 
+<a id="response-18"></a>
+
 #### Response
 ```
 {
@@ -2090,7 +2218,11 @@ Content-Type: application/json;charset=UTF-8
 |- resultMessage|   String| Result message|
 |- isSuccessful|    Boolean| Successful or not|
 
-### Attach files to send inquiry on templates
+<a id="attach-files-to-send-inquiry-on-templates"></a>
+
+### Attach files to send inquiry on templates { #attach-files-to-send-inquiry-on-templates }
+<a id="request-15"></a>
+
 #### Request
 [URL]
 
@@ -2133,6 +2265,8 @@ Content-Type: application/json;charset=UTF-8
 
 * When commenting a template in the REJ status, it will be changed to the REQ status.
 
+<a id="response-19"></a>
+
 #### Response
 ```
 {
@@ -2151,7 +2285,11 @@ Content-Type: application/json;charset=UTF-8
 |- resultMessage|   String| Result Message|
 |- isSuccessful|    Boolean| Successful or not|
 
-### List Templates
+<a id="list-templates"></a>
+
+### List Templates { #list-templates }
+
+<a id="request-16"></a>
 
 #### Request
 
@@ -2200,6 +2338,8 @@ Content-Type: application/json;charset=UTF-8
 ```
 curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" "https://kakaotalk-bizmessage.api.nhncloudservice.com/alimtalk/v2.2/appkeys/{appkey}/templates?templateStatus={template status code}"
 ```
+
+<a id="response-20"></a>
 
 #### Response
 ```
@@ -2311,7 +2451,11 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 |-- updateDate | String | Date of modification                                                                                                                                               |
 |- totalCount | Integer | Total count                                                                                                                                                        |
 
-### List Template modifications
+<a id="list-template-modifications"></a>
+
+### List Template modifications { #list-template-modifications }
+
+<a id="request-17"></a>
 
 #### Request
 
@@ -2344,6 +2488,8 @@ Content-Type: application/json;charset=UTF-8
 ```
 curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" "https://kakaotalk-bizmessage.api.nhncloudservice.com/alimtalk/v2.2/appkeys/{appkey}/senders/{senderKey}/templates/{templateCode}/modifications"
 ```
+
+<a id="response-21"></a>
 
 #### Response
 ```
@@ -2457,7 +2603,11 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 |-- updateDate | String | Date of modification                                                                                                                                               |
 |- totalCount | Integer | Total count                                                                                                                                                        |
 
-### Register Template Image
+<a id="register-template-image"></a>
+
+### Register Template Image { #register-template-image }
+<a id="request-18"></a>
+
 #### Request
 [URL]
 
@@ -2493,6 +2643,8 @@ Content-Type: multipart/form-data
 curl -X POST -H "Content-Type: multipart/form-data" -H "X-Secret-Key:{secretkey}" "https://kakaotalk-bizmessage.api.nhncloudservice.com/alimtalk/v2.2/appkeys/{appkey}/template-image" -F "file=@alimtalk-template-image.jpeg"
 ```
 
+<a id="response-22"></a>
+
 #### Response
 ```
 {
@@ -2518,8 +2670,12 @@ curl -X POST -H "Content-Type: multipart/form-data" -H "X-Secret-Key:{secretkey}
 |- templateImageName | String | Image name(name of uploaded file) |
 |- templateImageUrl | String |  Image URL |
 
-## Manage Alternative Delivery
-### Register an SMS AppKey
+<a id="manage-alternative-delivery"></a>
+
+## Manage Alternative Delivery { #manage-alternative-delivery }
+<a id="register-an-sms-appkey"></a>
+
+### Register an SMS AppKey { #register-an-sms-appkey }
 
 [URL]
 
@@ -2562,6 +2718,8 @@ Content-Type: application/json;charset=UTF-8
 curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" https://kakaotalk-bizmessage.api.nhncloudservice.com/alimtalk/v2.2/appkeys/{appkey}/failback/appkey -d '{"resendAppKey": "smsAppKey"}
 ```
 
+<a id="response-23"></a>
+
 #### Response
 ```
 
@@ -2574,7 +2732,9 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 }
 ```
 
-### Register Alternative Delivery Settings
+<a id="register-alternative-delivery-settings"></a>
+
+### Register Alternative Delivery Settings { #register-alternative-delivery-settings }
 
 [URL]
 
@@ -2620,6 +2780,8 @@ Content-Type: application/json;charset=UTF-8
 ```
 curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" https://kakaotalk-bizmessage.api.nhncloudservice.com/alimtalk/v2.2/appkeys/{appkey}/failback/appkey -d '{"senderKey": "0be23c29de88d6888798aeda57062516354d74ba","isResend": true,"resendSendNo": "01012341234" }
 ```
+
+<a id="response-24"></a>
 
 #### Response
 ```

@@ -1,6 +1,12 @@
-## Notification > KakaoTalk Bizmessage > Plus Friend> Console Guide
+<!-- pre-align:aligned sig=872af16524aa -->
 
-## Identity Verification
+<a id="common-console-guide"></a>
+
+## Notification > KakaoTalk Bizmessage > Plus Friend> Console Guide { #common-console-guide }
+
+<a id="identity-verification"></a>
+
+## Identity Verification { #identity-verification }
 * As a KakaoTalk policy to prevent abusing, the enhanced Identity verification of pre-registration system was applied to the KakaoTalk Bizmessage service.
     * Only for members who joined after December 15, 2023
 * Identity verification basically requires mobile phone identification and additional document screening according to the member type.
@@ -9,13 +15,17 @@
 * Non-business individual members are not allowed to use the service.
 * The certificate of employment is valid <b><span style="color:red">only documents with seal and marked with the date of issuance</span></b>. Make sure to mask (hide) the 6 digits after the resident number in the certificate of employment. Example) 000000-0\*\*\*\*\**
 
-### Required Documents for Identity verification
+<a id="required-documents-for-identity-verification"></a>
+
+### Required Documents for Identity verification { #required-documents-for-identity-verification }
 | Member type   | Verification Method     | Required Documents         |
 |---------|-----------|---------------|
 | Business Representative  | Mobile Phone Identification | Business Registration Certificate, Certificate of Employment |
 | Business Executives and Employees | Mobile Phone Identification | Business Registration Certificate, Certificate of Employment |
 
-### Authentication representative
+<a id="authentication-representative"></a>
+
+### Authentication representative { #authentication-representative }
 ![KTB_01_20230926.png](https://static.toastoven.net/prod_alimtalk/KTB_01_20230926.png)
 1. Select the <b>Identity Verification</b> tab.
 2. Click on <b>identifying with your mobile phone and attaching the required documents</b> to begin the process
@@ -25,14 +35,20 @@
 6. Wait for the operator inspection and approval process.
 7. Once the identity verification process is completed, the approval results will be sent to the mail registered with your account.
 
-### Identity Verification Status Settings
+<a id="identity-verification-status-settings"></a>
+
+### Identity Verification Status Settings { #identity-verification-status-settings }
 * Reviewing: The administrator is reviewing the authentication documents for registered identity verification.
 * Rejected: A state in which identity verification has been rejected and documents must be re-registered.
 * Approved: Identity verification approval completed
 
-## Manage Sender Profiles
+<a id="manage-sender-profiles"></a>
 
-### Add Sender Profiles
+## Manage Sender Profiles { #manage-sender-profiles }
+
+<a id="add-sender-profiles"></a>
+
+### Add Sender Profiles { #add-sender-profiles }
 Register your sender profile after opening KakaoTalk channel. Detailed guide to creating KakaoTalk channels can be found in [Sender Profile](https://docs.nhncloud.com/ko/Notification/KakaoTalk%20Bizmessage/ko/sender-overview/ ). 
 Once the sender profile registration is complete, a KakaoTalk token message will be sent to the administrator's phone. 
 ![KTB_02_20230926.png](https://static.toastoven.net/prod_alimtalk/KTB_02_20230926.png)
@@ -42,7 +58,9 @@ Once the sender profile registration is complete, a KakaoTalk token message will
 3. Sets the category of the channel. It can be different from the category you set when opening the channel.
 4. Click <b> Request Token</b> to request an authentication token.
 
-### Register Token
+<a id="register-token"></a>
+
+### Register Token { #register-token }
 If you enter the token message you received on your administrator's phone, your sender profile registration is complete.
 
 ![KTB_03_20230926.png](https://static.toastoven.net/prod_alimtalk/KTB_03_20230926.png)
@@ -51,66 +69,99 @@ If you enter the token message you received on your administrator's phone, your 
 * <b><span style="color:red">The initial daily maximum count of delivery limited to 1,000 when registering for a sender profile. </span></b>
 * If you want to change the maximum daily delivery volume, you will need to request it separately to customer center.
 
-### KakaoTalk Channel Status
+<a id="kakaotalk-channel-status"></a>
+
+### KakaoTalk Channel Status { #kakaotalk-channel-status }
+<a id="nhn-cloud-sender-profile-status"></a>
+
 #### NHN Cloud Sender Profile Status
 * It means the status of sender profile registered with NHN Cloud.
 * If you register a KakaoTalk channel and complete token authentication by referring to KakaoTalk channel creation and sender profile console usage guide, you can use it normally.
 
+<a id="kakaotalk-channel-profile-status"></a>
+
 #### KakaoTalk Channel Profile Status
-* It indicates the status of sender key for sending AlimTalk/FriendTalk.
-* It may be blocked in the case of long-term non-use of profiles, inconsistency of business information, etc.
-* If the condition is not normal, please request NHN Cloud Customer Center to release the block along with KakaoTalk Channel ID.
+* This refers to the status of the Sender Key used to send AlimTalk/FriendTalk messages.
+* The profile may be blocked if it has been unused for a long period of time, if the business information does not match, or for other reasons.
+* If the status is not normal, please contact NHN Cloud Customer Center with your KakaoTalk Channel ID to request that the block be released.
+* If the profile status is inactive (`C`), changing the home visibility to "ON" on the Kakao admin page changes the channel status to normal (`A`). Since status synchronization occurs at intervals of up to 15 minutes, it may take additional time for the changes to be reflected depending on when Kakao applies the update.
+
+<a id="kakao-channel-status"></a>
 
 #### Kakao Channel Status
 * This refers to the status of your KakaoTalk business ID.
 * Sender profiles may be blocked for long-term non-use, etc.
 * If the condition is not normal, please request NHN Cloud Customer Center to release the block along with KakaoTalk Channel ID.
 
-### Sender profile status
+<a id="sender-profile-status"></a>
+
+### Sender profile status { #sender-profile-status }
+<a id="sender-profile-dormant-status"></a>
+
 #### Sender profile dormant status
 * This means that the sender profile is dormant because there is no history of sending Kakao AlimTalk messages for one year.
 * If you do not release the dormant status for 1 year after becoming dormant, the sender profile will be deleted.
 * If the condition is not normal, please request NHN Cloud Customer Center to release the block along with KakaoTalk Channel ID.
+
+<a id="sender-profile-block-status"></a>
 
 #### Sender Profile Block Status
 * This means that the sender profile is deleted, as the dormant status was not released for 1 year after becoming dormant. 
 * Deleted sender profiles cannot be recovered and must be newly registered.
 * Please refer to the sender profile Console User Guide to register additional sender profiles.
 
-### KakaoTalk channel spam status
+<a id="kakaotalk-channel-spam-status"></a>
+
+### KakaoTalk channel spam status { #kakaotalk-channel-spam-status }
+<a id="kakaotalk-channel-spam-status-2"></a>
+
 #### KakaoTalk channel spam status
 * It indicates the spam status of KakaoTalk sender profile.
 * If violated the BizMessage operational policy, it leads to be classified as a spam channel and restrict activity using such profile.
 * If the spam status is not normal, please request NHN Cloud Customer Center to release the block along with the KakaoTalk channel ID.
+
+<a id="kakaotalk-message-spam-status"></a>
 
 #### KakaoTalk message spam status
 * This refers to the spam status of messages sent by the KakaoTalk sender profile.
 * If violated the BizMessage operational policy, it leads to be classified as a spam channel and restrict activity using such profile.
 * If the spam status is not normal, please request NHN Cloud Customer Center to release the block along with the KakaoTalk channel ID.
 
-### First-time user restrictions
+<a id="first-time-user-restrictions"></a>
+
+### First-time user restrictions { #first-time-user-restrictions }
 Sender profiles that do not meet certain criteria are subject to first-time user restrictions to prevent them from being abused, limiting some features.
+
+<a id="first-time-user-restriction-items"></a>
 
 #### First-time user restriction items
 * Daily delivery Limit
 * Not allowed to add as a member to a group profile
 * When a template variable is replaced, if there is a part where the difference exceeds 14 characters, the message is to be processed as delivery failure. 
 
+<a id="release-criteria-for-first-time-user-restrictions"></a>
+
 #### Release criteria for First-time user restrictions
 * The restriction is automatically lifted the following day if the sender profile of first-time user has more than 10 normal billing sending templates within a month of creation of such limit.
 * In addition, if you need to lift the user restriction for the first time, please contact NHN Cloud Customer Center separately along with the KakaoTalk channel ID.
 
 
-## Sending Settings
+<a id="sending-settings"></a>
+
+## Sending Settings { #sending-settings }
 * Depending on the message retention period policy, you can back up sending history data that is older than 90 days.
 * If you enter information about whether to back up AlimTalk, the file extension, and the storage to upload the file to, a file containing the backup date will be created in that storage.
 
-### Data Retention Period
+<a id="data-retention-period"></a>
+
+### Data Retention Period { #data-retention-period }
 * Retains the sending history for the last 90 days in accordance with the data retention policy.
 * Statistical data stores information from the last 90 days.
 * The images uploaded to the Kakao service will be permanently stored on Kakao CDN server.
 
-## Webhook Management
+<a id="webhook-management"></a>
+
+## Webhook Management { #webhook-management }
 You can receive webhook events by specifying a URL when the specified event occurs. 
 ![KTB_04_20230926.png](https://static.toastoven.net/prod_alimtalk/KTB_04_20230926.png)
 1. Select the event type to register.
@@ -120,7 +171,9 @@ You can receive webhook events by specifying a URL when the specified event occu
 
 Registered webhooks can be checked in the <b>webhook registration list</b>.
 
-## Statistical Event Key Settings
+<a id="statistical-event-key-settings"></a>
+
+## Statistical Event Key Settings { #statistical-event-key-settings }
 When registering an event key and sending with that key, you can collect statistical data by statistical event key.
 Please refer to the <b>note</b> for the meaning of statistical event key terms.
 ![KTB_05_20230926.png](https://static.toastoven.net/prod_alimtalk/KTB_05_20230926.png)
@@ -131,10 +184,16 @@ Please refer to the <b>note</b> for the meaning of statistical event key terms.
 When the data collection period ends, it is disabled and will no longer accumulate data. 
 <b>The ending point of time of data collection period can be modified if it is active.</b>
 
-## Statistics
-### Query Statistics
+<a id="statistics"></a>
+
+## Statistics { #statistics }
+<a id="query-statistics"></a>
+
+### Query Statistics { #query-statistics }
 * You can inquire statistics by type, such as the sending request period, statistical event key, template and etc.
 * You can check the status of delivery with graphs and tables, such as sending requests, successes, failures and etc.
+
+<a id="categorize-statistics"></a>
 
 #### Categorize Statistics
 * Message (event time): Statistics collected based on the time the event occurred.
@@ -147,8 +206,12 @@ When the data collection period ends, it is disabled and will no longer accumula
     * Received: Delivery Result Successful (Received Time)
 
 
-## [Note]
-### Statistics Event Keys and Statistics
+<a id="note"></a>
+
+## [Note] { #note }
+<a id="statistics-event-keys-and-statistics"></a>
+
+### Statistics Event Keys and Statistics { #statistics-event-keys-and-statistics }
 
 | Term       | Description                                    |
 |----------|---------------------------------------|

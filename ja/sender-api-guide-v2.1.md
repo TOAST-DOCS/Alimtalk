@@ -1,8 +1,18 @@
-## Notification > KakaoTalk Bizmessage > Sender > API v2.0 Guide
+<!-- pre-align:aligned sig=ee87b06908ec -->
 
-## v2.1 API紹介
+<a id="sender-api-guide-v2-1"></a>
+
+## Notification > KakaoTalk Bizmessage > Sender > API v2.0 Guide { #sender-api-guide-v2-1 }
+
+<a id="overview-of-v21-api"></a>
+
+## v2.1 API紹介 { #overview-of-v21-api }
+<a id="whats-the-diffrence"></a>
+
 #### 改善された点
 1. 発信プロフィール照会時、休眠/遮断状態フィールドが追加されました。
+
+<a id="api-domain"></a>
 
 #### [API 도메인]
 
@@ -19,9 +29,15 @@
 </tbody>
 </table>
 
-## Sender
+<a id="senders"></a>
 
-### Senderカテゴリーの照会
+## Sender { #senders }
+
+<a id="query-sender-by-category"></a>
+
+### Senderカテゴリーの照会 { #query-sender-by-category }
+
+<a id="request"></a>
 
 #### リクエスト
 [URL]
@@ -46,6 +62,8 @@ Content-Type: application/json;charset=UTF-8
 | 値    | タイプ | 必須 | 説明                               |
 | ------------ | ------ | ---- | ---------------------------------------- |
 | X-Secret-Key | String | O    | コンソールで作成できます。 |
+
+<a id="response"></a>
 
 #### レスポンス
 ```
@@ -104,7 +122,11 @@ Content-Type: application/json;charset=UTF-8
 | --- code         | String  | カテゴリーコード |
 | --- name         | String  | カテゴリー名 |
 
-### Senderの登録
+<a id="register-senders"></a>
+
+### Senderの登録 { #register-senders }
+<a id="request-2"></a>
+
 #### リクエスト
 [URL]
 
@@ -145,6 +167,8 @@ Content-Type: application/json;charset=UTF-8
 | phoneNo      | String  | O    | 管理者の携帯電話番号(最大15桁)                       |
 | categoryCode | String  | O    | カテゴリーコード(11文字)<br>カテゴリー照会APIのレスポンス参考<br>ex) 00100010001健康(001) - 病院(0001) - 総合病院(0001) |
 
+<a id="response-2"></a>
+
 #### レスポンス
 ```
 {
@@ -163,7 +187,11 @@ Content-Type: application/json;charset=UTF-8
 | - resultMessage | String  | 結果メッセージ |
 | - isSuccessful  | Boolean | 成否 |
 
-### Senderトークン認証
+<a id="authenticate-tokens-for-senders"></a>
+
+### Senderトークン認証 { #authenticate-tokens-for-senders }
+<a id="request-3"></a>
+
 #### リクエスト
 [URL]
 
@@ -202,6 +230,8 @@ Content-Type: application/json;charset=UTF-8
 | plusFriendId | String | O | プラスフレンドID |
 | token | Integer | O    | 認証トークン(プラスフレンド登録API呼び出し後、カカオトークアプリで受け取った認証トークン) |
 
+<a id="response-3"></a>
+
 #### レスポンス
 ```
 {
@@ -220,7 +250,11 @@ Content-Type: application/json;charset=UTF-8
 | - resultMessage | String  | 結果メッセージ |
 | - isSuccessful  | Boolean | 成否 |
 
-### Sender 削除
+<a id="delete-sender"></a>
+
+### Sender 削除 { #delete-sender }
+<a id="request-4"></a>
+
 #### リクエスト
 
 [URL]
@@ -250,6 +284,8 @@ Content-Type: application/json;charset=UTF-8
 * 발신 프로필 삭제 시, 등록한 템플릿 데이터가 함께 삭제 됩니다.
 * 발신 프로필 삭제 시, 복구가 불가능합니다.
 
+<a id="response-4"></a>
+
 #### レスポンス
 ```
 {  
@@ -269,7 +305,11 @@ Content-Type: application/json;charset=UTF-8
 | - isSuccessful  | Boolean | 成否 |
 
 
-### Sender 単件照会
+<a id="get-sender"></a>
+
+### Sender 単件照会 { #get-sender }
+<a id="request-5"></a>
+
 #### リクエスト
 
 [URL]
@@ -297,6 +337,8 @@ Content-Type: application/json;charset=UTF-8
 | ------------ | ------ | ---- | ---------------------------------------- |
 | X-Secret-Key | String | O    | コンソールで作成できます。 |
 
+
+<a id="response-5"></a>
 
 #### レスポンス
 ```
@@ -367,7 +409,11 @@ Content-Type: application/json;charset=UTF-8
 |- block | Boolean |	発信プロフィールブロックするかどうか |
 | - createDate              | String  | 登録日時                            |
 
-### Senderの照会
+<a id="list-sender"></a>
+
+### Senderの照会 { #list-sender }
+<a id="request-6"></a>
+
 #### リクエスト
 
 [URL]
@@ -402,6 +448,8 @@ Content-Type: application/json;charset=UTF-8
 | status              | String  | X    | プラスフレンドステータスコード <br>(YSC02：トークン認証待機中、YSC03：正常登録) |
 | pageNum        | Integer | X    | ページ番号(基本：1) |
 | pageSize       | Integer | X    | 照会件数(基本：15、最大: 1000) |
+
+<a id="response-6"></a>
 
 #### レスポンス
 ```
@@ -476,9 +524,15 @@ Content-Type: application/json;charset=UTF-8
 | - createDate              | String  | 登録日時                            |
 | totalCount                | Integer | 総個数                               |
 
-## Sender group
+<a id="sender-group"></a>
 
-### Sender group の照会
+## Sender group { #sender-group }
+
+<a id="get-sender-group"></a>
+
+### Sender group の照会 { #get-sender-group }
+
+<a id="request-7"></a>
 
 #### リクエスト
 [URL]
@@ -504,6 +558,8 @@ Content-Type: application/json;charset=UTF-8
 | 値    | タイプ | 必須 | 説明                               |
 | ------------ | ------ | ---- | ---------------------------------------- |
 | X-Secret-Key | String | O    | コンソールで作成できます。 |
+
+<a id="response-7"></a>
 
 #### レスポンス
 ```
@@ -547,7 +603,11 @@ Content-Type: application/json;charset=UTF-8
 |- createDate | String | 登録日時 |
 |- updateDate |	String|	変更日 |
 
-### グループにSender追加
+<a id="add-sender-to-group"></a>
+
+### グループにSender追加 { #add-sender-to-group }
+
+<a id="request-8"></a>
 
 #### リクエスト
 [URL]
@@ -577,6 +637,8 @@ Content-Type: application/json;charset=UTF-8
 
 * グループの最大メンバー数は5000人です。
 
+<a id="response-8"></a>
+
 #### レスポンス
 ```
 {  
@@ -595,7 +657,11 @@ Content-Type: application/json;charset=UTF-8
 | - resultMessage | String  | 結果メッセージ |
 | - isSuccessful  | Boolean | 成否 |
 
-### グループにSender削除
+<a id="delete-sender-from-group"></a>
+
+### グループにSender削除 { #delete-sender-from-group }
+
+<a id="request-9"></a>
 
 #### リクエスト
 [URL]
@@ -622,6 +688,8 @@ Content-Type: application/json;charset=UTF-8
 | 値    | タイプ | 必須 | 説明                               |
 | ------------ | ------ | ---- | ---------------------------------------- |
 | X-Secret-Key | String | O    | コンソールで作成できます。 |
+
+<a id="response-9"></a>
 
 #### レスポンス
 ```

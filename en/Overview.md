@@ -1,9 +1,15 @@
-## Notification > KakaoTalk Bizmessage > Overview
+<!-- pre-align:aligned sig=e451b6f6f6d1 -->
+
+<a id="overview"></a>
+
+## Notification > KakaoTalk Bizmessage > Overview { #overview }
 
 KakaoTalk Bizmessage is a service that can send messages, AlimTalk and FriendTalk type without adding friends based on their mobile phone number. 
 It provides RESTful API for easy interworking.
 
-## AlimTalk vs FriendTalk
+<a id="alimtalk-vs-friendtalk"></a>
+
+## AlimTalk vs FriendTalk { #alimtalk-vs-friendtalk }
 | Classification    | AlimTalk                                    | FriendTalk                                                                              |
 | ----- |----------------------------------------|------------------------------------------------------------------------------------|
 | Send contents | Able to send informational messages                          | Able to send advertising messages                                                                     |
@@ -11,14 +17,18 @@ It provides RESTful API for easy interworking.
 | Send type | Text type<br>Image Type                           | Text type<br>Image Type<br>Wide image type<br>Wide item list<br>Carousel feed type<br>Premium video type<br>Commerce type<br>Carousel commerce type |
 | Considerations | - Informational Biz messages only<br />- Send based on approved templates | - Delivery restricted during night (20:50~08:00 on the following day)                                                      |
 
-## Precautions Before Delivery
+<a id="precautions-before-delivery"></a>
+
+## Precautions Before Delivery { #precautions-before-delivery }
 * When using AlimTalk, the customer should inform the recipient of the following precautions for using the service.
   * In the process of receiving AlimTalk, data communication charges may be incurred if it is not in a Wi-Fi environment.
   * If you don't want to receive AlimTalk, refer to the following.
     * The caller's contact information (customer center, etc.) should be provided to inform the caller that he/she can unsubscribe.
     * You can block callers by selecting [Block AlimTalk] in top layer of the chat room where the notification talk was received.
 
-## Notice of Personal Information Consignee
+<a id="notice-of-personal-information-consignee"></a>
+
+## Notice of Personal Information Consignee { #notice-of-personal-information-consignee }
 When a customer uses the NHN Cloud > Notification > KakaoTalk Bizmessage service, there is a consignment relationship between the customer and the company regarding the processing of personal information, therefore, in line with the Information and Communication Network Act and the Personal Information Protection Act, the customer who is the consignor must disclose the status of entrusting personal information to the company (trustee and details of work) through the personal information processing policy.
 
 Accordingly, we can guide customers to comply with the relevant laws and regulations when using NHN Cloud's KakaoTalk Bizmessage service and not to be penalized for non-disclosure of consignment status as follows.

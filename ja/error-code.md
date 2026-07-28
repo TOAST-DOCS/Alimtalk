@@ -1,6 +1,12 @@
-## Notification > KakaoTalk Bizmessage > エラーコード
+<!-- pre-align:aligned sig=2a9da7055af6 -->
 
-## APIレスポンスコード
+<a id="error-code"></a>
+
+## Notification > KakaoTalk Bizmessage > エラーコード { #error-code }
+
+<a id="api-response-code"></a>
+
+## APIレスポンスコード { #api-response-code }
 
 | カテゴリー     | 成否 | 結果コード | 結果コードメッセージ                                                                                                                                          | APIレスポンスメッセージ                                                                                                                                                                                                                                                                                                                                                                |
 |-----------|-------|-------|-----------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -85,7 +91,7 @@
 | 共通 | false | -3337 | チャンネル追加ボタンがない横並びボタン配列の場合、BFボタンは右側(2番目)でなければなりません。 | BF button must be the second (right side) button in horizontal layout without channel-add button. |
 | 共通 | false | -3338 | チャンネル追加ボタンがある横並びボタン配列の場合、BFボタンは左側(1番目)でなければなりません。 | BF button must be the first (left side) button in horizontal layout with channel-add button. |
 | 共通 | false | -3340 | 無効な080受信拒否番号 | Invalid unsubscribeNo format. Expected format: 080-xxx-xxxx or 080-xxxx-xxxx or 080xxxxxxx or 080xxxxxxxx. |
-| 共通 | false | -3341 | 無効な080認証番号 | Invalid format. Only digits are allowed, up to a maximum of 9. |
+| 共通 | false | -3341 | 無効な080認証番号 | Invalid format. Only digits are allowed, up to a maximum of 10. |
 | 共通       | false | -3347 | テンプレートパラメータのキーに'@'文字は使用不可                                                                                                                     | Template parameter key cannot contain '@' character. Invalid key: {}                                                                                                                                                                                                                                                                                                       |
 | 共通       | false | -3348 | ACタイプのボタン名は「チャンネル追加」である必要がある                                                                                                                           | AC type button name must be 'チャンネル追加'.                                                                                                                                                                                                                                                                                                                                    |
 | 共通       | false | -3349 | カルーセル全体でACボタンは1つのみ使用可能                                                                                                                        | AC button can only be used once across all carousel items.                                                                                                                                                                                                                                                                                                                  |
@@ -235,7 +241,9 @@
 | カカともへのメッセージ互換送信 | false | -3225 | カルーセルボタンが無効。カルーセルフィードタイプはボタン2個超過不可、カルーセルコマースタイプは1～2個のボタンが必要 | Friendtalk carousel button size is invalid. If the message type is friendtalk carousel-feed, the button size must be 2 or less. If the message type is friendtalk carousel-commerce, the button size must be 1 ~ 2. |
 | カカともへのメッセージ互換送信 | false | -3226 | コマースにdiscountPriceフィールドがある場合、discountRateまたはdiscountFixedフィールドが必要 | If commerce has 'discountPrice' field, commerce must have a 'discountRate' or 'discountFixed' field. |
 
-## 送信結果コード
+<a id="delivery-result-code"></a>
+
+## 送信結果コード { #delivery-result-code }
 
 <table class="table table-striped table-hover">
 <thead>
@@ -415,7 +423,7 @@
 	</tr>
 	<tr>
 		<td>3023</td>
-		<td>メッセージ構文エラー(JSON形式エラー)</td>
+		<td>メッセージに含まれるビデオを転送できません(ビデオアドレスまたはサムネイル画像アドレスが正しくない、またはサムネイル画像が規格に合っていません)</td>
 	</tr>
 	<tr>
 		<td>3024</td>

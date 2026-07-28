@@ -1,12 +1,22 @@
-## Notification > KakaoTalk Bizmessage > Brand Message > Console User Guide
+<!-- pre-align:aligned sig=3b443c0f0141 -->
 
-## Brand Message sending
+<a id="friendtalkupgrade-console-guide"></a>
 
-### Regular send
+## Notification > KakaoTalk Bizmessage > Brand Message > Console User Guide { #friendtalkupgrade-console-guide }
+
+<a id="brand-message-sending"></a>
+
+## Brand Message sending { #brand-message-sending }
+
+<a id="regular-send"></a>
+
+### Regular send { #regular-send }
 
 You can set up an outgoing profile and enter content to send messages in the form of brand message. To send a brand message, select Notification > KakaoTalk Bizmessage > Brand Message on the console.
 
-### When using a template
+<a id="when-using-a-template"></a>
+
+### When using a template { #when-using-a-template }
 
 ![friendtalkupgrade_04_20250616.png](https://static.toastoven.net/prod_alimtalk/friendtalkupgrade/friendtalkupgrade_04_20250729.png)
 
@@ -35,7 +45,9 @@ You can set up an outgoing profile and enter content to send messages in the for
         * For advertiser sending requests, advertising messages are sent only to channel friends.
 8. After completing the input, click Send to send.
 
-### When not using a template
+<a id="when-not-using-a-template"></a>
+
+### When not using a template { #when-not-using-a-template }
 
 ![friendtalkupgrade_05_20250616.png](https://static.toastoven.net/prod_alimtalk/friendtalkupgrade/friendtalkupgrade_05_20250729.png)
 
@@ -91,7 +103,9 @@ You can set up an outgoing profile and enter content to send messages in the for
         * For advertiser sending requests, advertising messages are sent only to channel friends.
 11. After completing the input, click Send to send.
 
-### Mass Delivery
+<a id="mass-delivery"></a>
+
+### Mass Delivery { #mass-delivery }
 
 This feature allows you to send brand messages to multiple recipient numbers using a template file in Excel/CSV format. Select **Mass Delivery** from the bottom tab.
 
@@ -111,7 +125,9 @@ When clicking **Send** button, you can select **Proceed after Review** or **Imme
 * Proceed after Review: after confirming the recipient of the message within 7 days in the **View Mass Delivery** tab, a notification message will be sent. (unsupported for scheduled send.)
 * Immediate Send: AlimTalks are sent immediately without confirming the recipient. You can check the progress of your shipment in the **View Mass Delivery** tab.
 
-### Fallback
+<a id="fallback"></a>
+
+### Fallback { #fallback }
 
 A feature that allows you to replace a brand message with a text message if it fails to send. You can send it by selecting **Set as Common Content** or **Set by Different Messages per User**.
 
@@ -123,12 +139,16 @@ A feature that allows you to replace a brand message with a text message if it f
 * Depending on the message, some content, such as buttons and links, may appear differently from the KakaoTalk message.
 * Depending on the message length, it will be sent as SMS/LMS (separate fees apply for sending each type of text message).
 
+<a id="set-as-common-content"></a>
+
 #### Set as Common Content
 
 ![friendtalkupgrade_resend01_20250729.png](https://static.toastoven.net/prod_alimtalk/friendtalkupgrade/friendtalkupgrade_resend01_20250729.png)
 
 * Set a fallback message by selecting **Outgoing Profile** and clicking **Set as Common Content**.
 * If you do not enter a fallback message, it will be sent as [Message Body].
+
+<a id="set-by-different-messages-per-user"></a>
 
 #### Set by Different Messages per User
 
@@ -156,9 +176,13 @@ Advertising messages refer to messages about information, goods, or services tha
 
 ![[Figure 3] FriendTalk advertising message](https://static.toastoven.net/prod_alimtalk/friendtalk_02.png)
 
-## View Send
+<a id="view-send"></a>
 
-### View Send Result
+## View Send { #view-send }
+
+<a id="view-send-result"></a>
+
+### View Send Result { #view-send-result }
 
 ![friendtalkupgrade_07_20250616.png](https://static.toastoven.net/prod_alimtalk/friendtalkupgrade/friendtalkupgrade_07_20250729.png)
 
@@ -167,7 +191,9 @@ Advertising messages refer to messages about information, goods, or services tha
 * You can check the status of the sending request in the **Request Status** column.
 * You can check the sending process status in the **Send Result** column.
 
-### Cancel send
+<a id="cancel-send"></a>
+
+### Cancel send { #cancel-send }
 
 Cancellation is possible for scheduled send with a sending request date set to the future during regular send.
 
@@ -176,9 +202,13 @@ Cancellation is possible for scheduled send with a sending request date set to t
 * Select the checkbox for the request you wish to cancel and click the Cancel Selected Schedule button at the top to cancel the schedule.
 * You can select or deselect the entire list by checking the checkboxes in the header of the list.
 
-## View Mass Delivery
+<a id="view-mass-delivery"></a>
 
-### View Send Result
+## View Mass Delivery { #view-mass-delivery }
+
+<a id="view-send-result-2"></a>
+
+### View Send Result { #view-send-result-2 }
 
 ![friendtalkupgrade_masssearch01_20250729.png](https://static.toastoven.net/prod_alimtalk/friendtalkupgrade/friendtalkupgrade_masssearch01_20250729.png)
 
@@ -188,7 +218,9 @@ Cancellation is possible for scheduled send with a sending request date set to t
 * You can check the status of the sending request in the **Request Status** column.
 * You can check the sending process status in the **Send Result** column.
 
-## Manage Image
+<a id="manage-image"></a>
+
+## Manage Image { #manage-image }
 
 ![friendtalkupgrade_8_20250616.png](https://static.toastoven.net/prod_alimtalk/friendtalkupgrade/friendtalkupgrade_8_20250616.png)
 
@@ -204,12 +236,16 @@ File specifications and recommended/maximum sizes must be strictly followed.
 * [\[Go to Business Form Registration\]](https://business.kakao.com/talkbizform/)
 * [\[Go to Business Form Registration Guide\]](https://kakaobusiness.gitbook.io/main/tool/bizform)
 
+<a id="image-upload-allowance"></a>
+
 #### Image upload allowance
 
 * File format: JPG, PNG
 * Please check each image upload API specification.
 
-## Video Management
+<a id="manage-video"></a>
+
+## Video Management { #manage-video }
 
 ![friendtalkupgrade_video_management.png](TODO: 콘솔 캡처 후 NHN static 호스트 URL 교체)
 
@@ -218,9 +254,12 @@ You can register or delete videos to be used in brand messages and check the inf
 * After selecting a sender profile, you can register or delete videos.
 * When uploading a video, select a file on the console screen and click the Upload button. The progress will be displayed. Be careful not to refresh or close the page while the upload is in progress. If the page is refreshed during the upload, the upload will be interrupted and you will need to upload again.
 * Registered videos can be used for sending after encoding is complete in KakaoBizCenter. Encoding typically takes 5–10 minutes and may take up to 3 days depending on the video length. If 3 days are exceeded, the video is automatically set to `ERROR` status.
-* Video status is periodically synchronized with KakaoBizCenter. Only videos in `PUBLIC` status can be used for template registration and sending, and videos in `PRIVATE` status can only be used for template registration.
+* Video status is synchronized with KakaoBizCenter at 3-minute intervals. It may take some time for status changes in KakaoBizCenter to be reflected.
+* Only videos in `PUBLIC` status can be used for template registration and sending, and videos in `PRIVATE` status can only be used for template registration. If you attempt to send a message using a template that contains a `PRIVATE` video, the send will fail.
 * Registered videos are permanently stored on Kakao's side, and deleting a video in the console does not automatically remove the video from KakaoBizCenter. The KakaoTalk channel administrator can delete the video directly from the management screen on the channel business home.
 * Note that videos deleted from the console can no longer be used for sending in templates that used the video.
+
+<a id="video-upload-allowance"></a>
 
 #### Allowed Range for Video Upload
 
@@ -229,7 +268,9 @@ You can register or delete videos to be used in brand messages and check the inf
 * Maximum video length: 4 hours
 * Maximum resolution: 8K
 
-## Manage Templates
+<a id="manage-templates"></a>
+
+## Manage Templates { #manage-templates }
 
 ![friendtalkupgrade_09_20250616.png](https://static.toastoven.net/prod_alimtalk/friendtalkupgrade/friendtalkupgrade_09_20250729.png)
 
@@ -237,11 +278,15 @@ You can register or delete videos to be used in brand messages and check the inf
 * ******Brand messages are free to create, edit, and delete, with no review process.******
 * Unlike AlimTalk, this is a method where users do not register a template code, but instead receive a random identifier from Kakao.
 
-## 080 Opt-out management
+<a id="080-opt-out-management"></a>
+
+## 080 Opt-out management { #080-opt-out-management }
 
 * In brand messages, the “080 opt-out management” and “fallback” features are integrated into a single SMS AppKey with NHN Cloud's SMS service integration.
 
-### Register and manage 080 opt-out numbers
+<a id="register-and-manage-080-opt-out-numbers"></a>
+
+### Register and manage 080 opt-out numbers { #register-and-manage-080-opt-out-numbers }
 
 * When sending Brand Message marketing to users who have opted in, you must register a 080 number in your outgoing profile because messages can be sent to recipients who are not friends with your outgoing profile.
   * The 080 opt-out number for the outgoing profile is data that is applied to all outgoing profiles of other organizations, projects, and dealers in the same talk channel, so it must be changed carefully.
@@ -257,7 +302,9 @@ You can register or delete videos to be used in brand messages and check the inf
 * If you empty and save the SMS service app key
    * Customers must manage their own opt-out recipients, and there is no verification of recipients when sending brand messages.
 
-### Manage Fallback
+<a id="manage-fallback"></a>
+
+### Manage Fallback { #manage-fallback }
 
 * If a brand message fails to be sent, you can set it to be sent as a fallback message.
 * You must be using NHN Cloud SMS service, and messages will be sent via SMS/LMS depending on the message length (separate fees apply for sending each type of text message).
@@ -271,7 +318,9 @@ You can register or delete videos to be used in brand messages and check the inf
 * When entering the resendContent field of a brand message advertising message, you must enter the advertising text from the SMS advertising API to send it as a replacement. `(ads) content [toll-free opt out]080XXXXXXX`
 * If there is no resendContent field in the brand message advertising message, the advertising text will be automatically generated and sent to the registered 080 opt-out number.
 
-## Apply for using non-friend message sending (targeting M, N)
+<a id="apply-for-using-non-friend-message-sending-targeting-m-n"></a>
+
+## Apply for using non-friend message sending (targeting M, N) { #apply-for-using-non-friend-message-sending-targeting-m-n }
 
 * If you wish to use non-friend message sending (targeting M, N), you must apply for use. If you do not apply for use, the M/N type will not be displayed during send.
 * Applications for use will be approved if they meet the following conditions:
@@ -281,7 +330,9 @@ You can register or delete videos to be used in brand messages and check the inf
   * 50,000 or more channel friends
   * Successfully send notification messages within the past three months
 
-### Cautions
+<a id="cautions"></a>
+
+### Cautions { #cautions }
 * If your business verification is canceled, the permission to send non-friend messages (targeting M, N) will be canceled. You will need to reapply for use after your business verification has been re-reviewed.
 * The consent evidence file for receiving advertising information is saved per Talk channel, so any changes will be applied to all profiles sent by other dealers in the same Talk channel.
 * If a file uploaded by a dealer already exists, you can skip the file upload process and apply to send non-friend messages (targeting M, N).

@@ -1,6 +1,20 @@
-## Notification > KakaoTalk Bizmessage > FriendTalk > API v1.4 Guide
+<!-- pre-align:aligned sig=5073e45b7dd3 -->
 
-## FriendTalk
+<a id="friendtalk-api-guide-v1-4"></a>
+
+## Notification > KakaoTalk Bizmessage > FriendTalk > API v1.4 Guide { #friendtalk-api-guide-v1-4 }
+
+<a id="friendtalk-service-termination-notice"></a>
+
+## FriendTalk Service Termination Notice { #friendtalk-service-termination-notice }
+
+<!-- TODO: translate body -->
+
+<a id="friendtalk"></a>
+
+## FriendTalk { #friendtalk }
+
+<a id="api-domain"></a>
 
 #### [API Domain]
 
@@ -17,7 +31,11 @@
 </tbody>
 </table>
 
-## Send Messages
+<a id="send-messages"></a>
+
+## Send Messages { #send-messages }
+<a id="request-of-sending"></a>
+
 #### Request of Sending
 
 [URL]
@@ -101,6 +119,8 @@ Content-Type: application/json;charset=UTF-8
 curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" https://kakaotalk-bizmessage.api.nhncloudservice.com/friendtalk/v1.4/appkeys/{appkey}/messages -d '{"plusFriendId":"@Plus Friend","requestDate":"yyyy-MM-dd HH:mm","recipientList":[{"recipientNo":"010-0000-0000","imageSeq":1,"imageLink":"https://toast.com","content":"message","buttons":[{"ordering":1,"type":"WL","name":"button1","linkMo":"https://toast.com","linkPc":"https://toast.com"}]}]}'
 ```
 
+<a id="response"></a>
+
 #### Response
 
 ```
@@ -142,7 +162,11 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 | -- resultMessage        | String  | Result message of delivery request |
 | -- recipientGroupingKey | String  | Recipient's grouping key           |
 
-## List Deliveries
+<a id="list-deliveries"></a>
+
+## List Deliveries { #list-deliveries }
+
+<a id="request"></a>
 
 #### Request
 
@@ -184,6 +208,8 @@ Content-Type: application/json;charset=UTF-8
 | resultCode           | String  | X                             | Delivery result(MRC01: successful, MRC02: failed)     |
 | pageNum              | Integer | X                             | Page number(default: 1)                               |
 | pageSize             | Integer | X                             | Number of queries(default: 15, max: 1000)             |
+
+<a id="response-2"></a>
 
 #### Response
 ```
@@ -244,6 +270,8 @@ Content-Type: application/json;charset=UTF-8
 curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" "https://kakaotalk-bizmessage.api.nhncloudservice.com/friendtalk/v1.4/appkeys/{appkey}/messages?startRequestDate=2018-05-01%2000:00&endRequestDate=2018-05-30%2023:59"
 ```
 
+<a id="status-of-resending"></a>
+
 #### Status of Resending
 | Value | Description                                      |
 | ----- | ------------------------------------------------ |
@@ -253,7 +281,11 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 | RSC04 | Resending successful                             |
 | RSC05 | Resending failed                                 |
 
-## Get Deliveries
+<a id="get-deliveries"></a>
+
+## Get Deliveries { #get-deliveries }
+
+<a id="request-2"></a>
 
 #### Request
 
@@ -291,6 +323,8 @@ Content-Type: application/json;charset=UTF-8
 ```
 curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" "https://kakaotalk-bizmessage.api.nhncloudservice.com/friendtalk/v1.4/appkeys/{appkey}/messages/{requestId}/{recipientSeq}"
 ```
+
+<a id="response-3"></a>
 
 #### Response
 ```
@@ -370,7 +404,35 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 | - senderGroupingKey    | String  | Sender's grouping key                                        |
 | - recipientGroupingKey | String  | Recipient's grouping key                                     |
 
-### Query Updated Message Results
+<a id="messages"></a>
+
+## Messages { #messages }
+
+<!-- TODO: translate body -->
+
+<a id="cancel-message-delivery"></a>
+
+### Cancel Message Delivery { #cancel-message-delivery }
+
+<!-- TODO: translate body -->
+
+<a id="request-3"></a>
+
+#### Request
+
+<!-- TODO: translate body -->
+
+<a id="response-4"></a>
+
+#### Response
+
+<!-- TODO: translate body -->
+
+<a id="query-updated-message-results"></a>
+
+### Query Updated Message Results { #query-updated-message-results }
+
+<a id="request-4"></a>
 
 #### Request
 
@@ -406,6 +468,8 @@ Content-Type: application/json;charset=UTF-8
 | endUpdateDate   | String  | O        | End time of querying result updates(yyyy-MM-dd HH:mm)   |
 | pageNum         | Integer | X        | Page number(default: 1)                                 |
 | pageSize        | Integer | X        | Number of queries(default: 15)                          |
+
+<a id="response-5"></a>
 
 #### Response
 ```
@@ -469,9 +533,15 @@ Content-Type: application/json;charset=UTF-8
 curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" "https://kakaotalk-bizmessage.api.nhncloudservice.com/friendtalk/v1.4/appkeys/{appkey}/message-results?startUpdateDate=2018-05-01%20:00&endUpdateDate=2018-05-30%20:59"
 ```
 
-## Image Management
+<a id="image-management"></a>
 
-### Register Images
+## Image Management { #image-management }
+
+<a id="register-images"></a>
+
+### Register Images { #register-images }
+<a id="request-5"></a>
+
 #### Request
 
 [URL]
@@ -510,6 +580,8 @@ Content-Type: multipart/form-data
 curl -X POST -H "Content-Type: multipart/form-data" -H "X-Secret-Key:{secretkey}" "https://kakaotalk-bizmessage.api.nhncloudservice.com/friendtalk/v1.4/appkeys/{appkey}/images" -F "image=@friend-ricecake02.jpeg"
 ```
 
+<a id="response-6"></a>
+
 #### Response
 ```
 
@@ -539,7 +611,11 @@ curl -X POST -H "Content-Type: multipart/form-data" -H "X-Secret-Key:{secretkey}
 | - imageName     | String  | Image name(name of uploaded file)         |
 
 
-### Query Images
+<a id="query-images"></a>
+
+### Query Images { #query-images }
+<a id="request-6"></a>
+
 #### Request
 
 [URL]
@@ -578,6 +654,8 @@ Content-Type: application/json;charset=UTF-8
 ```
 curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" "https://kakaotalk-bizmessage.api.nhncloudservice.com/friendtalk/v1.4/appkeys/{appkey}/images?pageNum=1&pageSize=15"
 ```
+
+<a id="response-7"></a>
 
 #### Response
 ```
@@ -621,7 +699,11 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 
 * Response is sent in the order of latest registration.
 
-### Delete Images
+<a id="delete-images"></a>
+
+### Delete Images { #delete-images }
+<a id="request-7"></a>
+
 #### Request
 
 [URL]
@@ -659,6 +741,8 @@ Content-Type: application/json;charset=UTF-8
 curl -X DELETE -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" "https://kakaotalk-bizmessage.api.nhncloudservice.com/friendtalk/v1.4/appkeys/{appkey}/images?imageSeq=1,2,3"
 ```
 
+<a id="response-8"></a>
+
 #### Response
 ```
 
@@ -677,3 +761,33 @@ curl -X DELETE -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Ke
 | - resultCode    | Integer | Result code       |
 | - resultMessage | String  | Result message    |
 | - isSuccessful  | Boolean | Successful or not |
+<a id="alternative-delivery-management"></a>
+
+## Alternative Delivery Management { #alternative-delivery-management }
+
+<!-- TODO: translate body -->
+
+<a id="register-sms-appkey"></a>
+
+### Register SMS AppKey { #register-sms-appkey }
+
+<!-- TODO: translate body -->
+
+<a id="response-9"></a>
+
+#### Response
+
+<!-- TODO: translate body -->
+
+<a id="register-alternative-sending-settings"></a>
+
+### Register Alternative Sending Settings { #register-alternative-sending-settings }
+
+<!-- TODO: translate body -->
+
+<a id="response-10"></a>
+
+#### Response
+
+<!-- TODO: translate body -->
+

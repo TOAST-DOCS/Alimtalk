@@ -1,6 +1,12 @@
-## Notification > KakaoTalk Bizmessage > 문제 해결 가이드
+<!-- pre-align:aligned sig=f86d36730580 -->
 
-### Message for Query Delivery Button
+<a id="troubleshooting-guide"></a>
+
+## Notification > KakaoTalk Bizmessage > 문제 해결 가이드 { #troubleshooting-guide }
+
+<a id="message-for-query-delivery-button"></a>
+
+### Message for Query Delivery Button { #message-for-query-delivery-button }
 
 Fill out the courier name and invoice number, and add a button to query delivery. Then, the courier name and invoice number are exported from the message, and the links for each courier’s query delivery page are automatically created. In case an AlimTalk message includes any courier and invoice number which are not supported by KakaoTalk, the query delivery button is not created.
 

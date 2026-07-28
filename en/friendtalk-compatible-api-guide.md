@@ -1,6 +1,12 @@
-## Notification > KakaoTalk Bizmessage > FriendTalk > Brand Message Migration Guide
+<!-- pre-align:aligned sig=492516bf9d3d -->
 
-## Overview
+<a id="friendtalk-compatible-api-guide"></a>
+
+## Notification > KakaoTalk Bizmessage > FriendTalk > Brand Message Migration Guide { #friendtalk-compatible-api-guide }
+
+<a id="overview"></a>
+
+## Overview { #overview }
 
 * Kakao’s **FriendTalk service** will end on **Wednesday, December 31, 2025**.*  
 * Accordingly, **NHN Cloud** will discontinue FriendTalk on **Wednesday, December 31, 2025**.*
@@ -16,22 +22,30 @@ To support a smooth migration to Brand Message, we provide two options:
 1. **(Recommended) Migrate to the Brand Message Free-form Send API**
 2. (Temporary) Use the FriendTalk Compatibility Send via the existing FriendTalk API
 
-## 1. (Recommended) **Migrate to the Brand Message Free-form Send API**
+<a id="recommended-migrate-to-the-brand-message-free-form-send-api"></a>
+
+## 1. (Recommended) **Migrate to the Brand Message Free-form Send API** { #recommended-migrate-to-the-brand-message-free-form-send-api }
 
 * For more stable, long-term sending, we recommend **migrating directly to the Brand Message–specific API**.
 
-### Benefits of Migrating to Brand Message
+<a id="benefits-of-migrating-to-brand-message"></a>
+
+### Benefits of Migrating to Brand Message { #benefits-of-migrating-to-brand-message }
 
 * With **I-Targeting**, the Brand Message Free-form Send offers usage identical to the existing FriendTalk Send API, so migration requires minimal effort.
 * Brand Message is a superset of FriendTalk and supports all features previously available in FriendTalk.
 * Brand Message allows advertising to recipients **who are not friends of your sending channel** by specifying targeting.
 * For details, see the [Brand Message Guide](https://docs.nhncloud.com/en/Notification/KakaoTalk%20Bizmessage/en/friendtalkupgrade-overview/).
 
-## 2. (Temporary) FriendTalk Compatibility Send
+<a id="temporary-friendtalk-compatibility-send"></a>
+
+## 2. (Temporary) FriendTalk Compatibility Send { #temporary-friendtalk-compatibility-send }
 
 * The FriendTalk Compatibility Send converts a FriendTalk payload into the Brand Message format and delivers it.
 
-### Items Provided by the FriendTalk Compatibility Send
+<a id="items-provided-by-the-friendtalk-compatibility-send"></a>
+
+### Items Provided by the FriendTalk Compatibility Send { #items-provided-by-the-friendtalk-compatibility-send }
 
 | Item | Details |
 | :--- | :--- |
@@ -45,7 +59,9 @@ To support a smooth migration to Brand Message, we provide two options:
 * If you plan to use compatibility send immediately after the fade-out, prior testing may be required.
 * See the comparison below for spec differences.
 
-### How to Use the FriendTalk Compatibility Send
+<a id="how-to-use-the-friendtalk-compatibility-send"></a>
+
+### How to Use the FriendTalk Compatibility Send { #how-to-use-the-friendtalk-compatibility-send }
 
 * Add the header `X-Convert-To-Brand-Message: true` to your existing FriendTalk API requests to enable the compatibility send.
 * Note: We do **not** provide a separate, explicit method to confirm that the compatibility path was used.
@@ -61,11 +77,15 @@ To support a smooth migration to Brand Message, we provide two options:
 | :--- | :--- | :--- | :--- |
 | X-Convert-To-Brand-Message | Boolean | X | Request header for FriendTalk compatibility send. *(From **December 30, 2025**, requests **without** `X-Convert-To-Brand-Message: true` will be rejected at the request stage.)* |
 
-### Kakao-Provided Spec Change Comparison
+<a id="kakao-provided-spec-change-comparison"></a>
+
+### Kakao-Provided Spec Change Comparison { #kakao-provided-spec-change-comparison }
 
 ![friendtalk_compatible_spec_01.png](https://static.toastoven.net/prod_alimtalk/friendtalk_compatible_spec_01.png)
 
-### Other Confirmed Spec Differences
+<a id="other-confirmed-spec-differences"></a>
+
+### Other Confirmed Spec Differences { #other-confirmed-spec-differences }
 
 * **Carousel Feed**
     * Per-carousel button: **Optional → Required**

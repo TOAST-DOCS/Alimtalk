@@ -1,8 +1,16 @@
-## Notification > KakaoTalk Bizmessage > Common > API v2.2 Guide
+<!-- pre-align:aligned sig=8c7be9b338eb -->
 
-## 통계
+<a id="common-api-guide"></a>
 
-### [API 도메인]
+## Notification > KakaoTalk Bizmessage > Common > API v2.2 Guide { #common-api-guide }
+
+<a id="statistics"></a>
+
+## 통계 { #statistics }
+
+<a id="api-domain"></a>
+
+### [API 도메인] { #api-domain }
 
 <table>
 <thead>
@@ -18,7 +26,9 @@
 </table>
 
 
-### 통계 검색 - 이벤트 기반
+<a id="statistics-search---event-based"></a>
+
+### 통계 검색 - 이벤트 기반 { #statistics-search---event-based }
 * 이벤트 발생 시간 기준으로 수집된 통계입니다.
 * 다음 시간 기준으로 통계가 수집됩니다.
     * 요청 개수(REQUESTED): 예약 발송 등록 시간
@@ -28,7 +38,9 @@
     * 대체 발송 요청 개수(RESENT): 대체 발송 요청 시점
     * 대체 발송 실패 개수(RESENT_FAILED): 대체 발송 요청 실패 시점
 
-### 통계 정보 조회
+<a id="get-statistics-information"></a>
+
+### 통계 정보 조회 { #get-statistics-information }
 
 [URL]
 
@@ -106,7 +118,9 @@
 }
 ```
 
-### 이벤트별 개수 조회
+<a id="get-count-per-event"></a>
+
+### 이벤트별 개수 조회 { #get-count-per-event }
 
 [URL]
 
@@ -156,7 +170,9 @@
 }
 ```
 
-## 카카오 통계
+<a id="kakao-statistics"></a>
+
+## 카카오 통계 { #kakao-statistics }
 
 * 카카오비즈센터에서 제공하는 통계 데이터를 조회합니다.
 * 통계 데이터는 발신 키 기준으로 일별(DAILY) 또는 월별(MONTHLY)로 조회할 수 있습니다.
@@ -171,17 +187,25 @@
 * 클릭 수는 같은 메시지에 대해 중복 집계합니다.
 * 발송 성공 건수가 10건 이하이면 유효 읽음 수와 클릭 수를 제공하지 않습니다.
 
-### 발송 통계
+<a id="delivery-statistics"></a>
+
+### 발송 통계 { #delivery-statistics }
 
 발신 프로필을 기준으로 일별 발송 수, 유효 읽음 수, 클릭 수를 조회합니다. 기간, 발송 식별자, 메시지 타입 등을 설정해 조회할 수 있습니다.
 
-### 템플릿 통계
+<a id="template-statistics"></a>
+
+### 템플릿 통계 { #template-statistics }
 
 템플릿 및 그룹 태그를 기준으로 일별 발송 수, 유효 읽음 수, 클릭 수를 조회합니다. 기간, 메시지 타입 등을 설정해 조회할 수 있습니다.
 
 * 브랜드 메시지 자유형은 그룹 태그를 사용한 경우에만 제공합니다.
 
-### 알림톡 발송 통계 조회
+<a id="retrieve-alimtalk-delivery-statistics"></a>
+
+### 알림톡 발송 통계 조회 { #retrieve-alimtalk-delivery-statistics }
+
+<a id="request"></a>
 
 #### 요청
 
@@ -222,6 +246,8 @@
 | limit | Integer | X | 조회 건수(Default: 500, Max: 1000) |
 | offset | Integer | X | 시작 위치(Default: 0) |
 
+<a id="response"></a>
+
 #### 응답
 
 ```json
@@ -260,7 +286,11 @@
 | - validSendRequestCount | Integer | O | 유효 발송 요청 수 |
 | - validReadCount | Integer | O | 유효 열람 수 |
 
-### 알림톡 템플릿 통계 조회
+<a id="retrieve-alimtalk-template-statistics"></a>
+
+### 알림톡 템플릿 통계 조회 { #retrieve-alimtalk-template-statistics }
+
+<a id="request-2"></a>
 
 #### 요청
 
@@ -301,6 +331,8 @@
 | limit | Integer | X | 조회 건수(Default: 500, Max: 1000) |
 | offset | Integer | X | 시작 위치(Default: 0) |
 
+<a id="response-2"></a>
+
 #### 응답
 
 ```json
@@ -339,7 +371,11 @@
 | - validReadCount | Integer | O | 유효 열람 수 |
 | - totalClickCount | Integer | O | 총 클릭 수 |
 
-### 브랜드 메시지 발송 통계 조회
+<a id="retrieve-brand-message-delivery-statistics"></a>
+
+### 브랜드 메시지 발송 통계 조회 { #retrieve-brand-message-delivery-statistics }
+
+<a id="request-3"></a>
 
 #### 요청
 
@@ -377,11 +413,13 @@
 | endDate | String | O | 조회 종료 날짜<br/>DAILY: yyyy-MM-dd(최대 범위 90일), MONTHLY: yyyy-MM(최대 범위 3개월) |
 | messageSpec | String | X | 메시지 스펙(BASIC: 기본형, FREESTYLE: 자유형) |
 | chatBubbleType | String | X | 말풍선 유형(TEXT: 텍스트형, IMAGE: 이미지형, WIDE: 와이드 이미지형, WIDE_ITEM_LIST: 와이드 아이템리스트형, CAROUSEL_FEED: 캐러셀 피드형, PREMIUM_VIDEO: 프리미엄 비디오형, COMMERCE: 커머스형, CAROUSEL_COMMERCE: 캐러셀 커머스형) |
-| targeting | String | X | 타겟팅(M: 마케팅 수신동의 유저 전체, N: 채널 친구 제외, I: 채널 친구만, F: 채널 친구 전체) |
+| targeting | String | X | 타겟팅(M: 마케팅 수신동의 유저 전체, N: 마케팅 수신동의 유저 중 채널 친구 제외, I: 마케팅 수신동의 유저 중 채널 친구만, F: 채널 친구 전체, O: 마케팅 수신동의 유저 중 채널 친구만(브랜드 메시지 v2)) |
 | friendType | String | X | 친구 유형(F: 친구, N: 비친구) |
 | receiveUserType | String | X | 수신자 유형(PhoneNumber: 전화번호, None: 수신자 식별자 없음) |
 | limit | Integer | X | 조회 건수(Default: 500, Max: 1000) |
 | offset | Integer | X | 시작 위치(Default: 0) |
+
+<a id="response-3"></a>
 
 #### 응답
 
@@ -421,7 +459,7 @@
 | - date | String | O | 날짜 |
 | - messageSpec | String | O | 메시지 스펙(BASIC: 기본형, FREESTYLE: 자유형) |
 | - chatBubbleType | String | O | 말풍선 유형(TEXT: 텍스트형, IMAGE: 이미지형, WIDE: 와이드 이미지형, WIDE_ITEM_LIST: 와이드 아이템리스트형, CAROUSEL_FEED: 캐러셀 피드형, PREMIUM_VIDEO: 프리미엄 비디오형, COMMERCE: 커머스형, CAROUSEL_COMMERCE: 캐러셀 커머스형) |
-| - targeting | String | O | 타겟팅(M: 마케팅 수신동의 유저 전체, N: 채널 친구 제외, I: 채널 친구만, F: 채널 친구 전체) |
+| - targeting | String | O | 타겟팅(M: 마케팅 수신동의 유저 전체, N: 마케팅 수신동의 유저 중 채널 친구 제외, I: 마케팅 수신동의 유저 중 채널 친구만, F: 채널 친구 전체, O: 마케팅 수신동의 유저 중 채널 친구만(브랜드 메시지 v2)) |
 | - friendType | String | O | 친구 유형(F: 친구, N: 비친구) |
 | - receiveUserType | String | O | 수신자 유형(PhoneNumber: 전화번호, None: 수신자 식별자 없음) |
 | - totalSendRequestCount | Integer | O | 총 발송 요청 수 |
@@ -429,7 +467,11 @@
 | - validReadCount | Integer | O | 유효 열람 수 |
 | - totalClickCount | Integer | O | 총 클릭 수 |
 
-### 브랜드 메시지 템플릿 통계 조회
+<a id="retrieve-brand-message-template-statistics"></a>
+
+### 브랜드 메시지 템플릿 통계 조회 { #retrieve-brand-message-template-statistics }
+
+<a id="request-4"></a>
 
 #### 요청
 
@@ -469,10 +511,12 @@
 | groupTagKey | String | X | 그룹 태그 키 |
 | messageSpec | String | X | 메시지 스펙(BASIC: 기본형, FREESTYLE: 자유형) |
 | chatBubbleType | String | X | 말풍선 유형(TEXT: 텍스트형, IMAGE: 이미지형, WIDE: 와이드 이미지형, WIDE_ITEM_LIST: 와이드 아이템리스트형, CAROUSEL_FEED: 캐러셀 피드형, PREMIUM_VIDEO: 프리미엄 비디오형, COMMERCE: 커머스형, CAROUSEL_COMMERCE: 캐러셀 커머스형) |
-| targeting | String | X | 타겟팅(M: 마케팅 수신동의 유저 전체, N: 채널 친구 제외, I: 채널 친구만, F: 채널 친구 전체) |
+| targeting | String | X | 타겟팅(M: 마케팅 수신동의 유저 전체, N: 마케팅 수신동의 유저 중 채널 친구 제외, I: 마케팅 수신동의 유저 중 채널 친구만, F: 채널 친구 전체, O: 마케팅 수신동의 유저 중 채널 친구만(브랜드 메시지 v2)) |
 | friendType | String | X | 친구 유형(F: 친구, N: 비친구) |
 | limit | Integer | X | 조회 건수(Default: 500, Max: 1000) |
 | offset | Integer | X | 시작 위치(Default: 0) |
+
+<a id="response-4"></a>
 
 #### 응답
 
@@ -514,7 +558,7 @@
 | - groupTagKey | String | X | 그룹 태그 키 |
 | - messageSpec | String | O | 메시지 스펙(BASIC: 기본형, FREESTYLE: 자유형) |
 | - chatBubbleType | String | O | 말풍선 유형(TEXT: 텍스트형, IMAGE: 이미지형, WIDE: 와이드 이미지형, WIDE_ITEM_LIST: 와이드 아이템리스트형, CAROUSEL_FEED: 캐러셀 피드형, PREMIUM_VIDEO: 프리미엄 비디오형, COMMERCE: 커머스형, CAROUSEL_COMMERCE: 캐러셀 커머스형) |
-| - targeting | String | O | 타겟팅(M: 마케팅 수신동의 유저 전체, N: 채널 친구 제외, I: 채널 친구만, F: 채널 친구 전체) |
+| - targeting | String | O | 타겟팅(M: 마케팅 수신동의 유저 전체, N: 마케팅 수신동의 유저 중 채널 친구 제외, I: 마케팅 수신동의 유저 중 채널 친구만, F: 채널 친구 전체, O: 마케팅 수신동의 유저 중 채널 친구만(브랜드 메시지 v2)) |
 | - friendType | String | O | 친구 유형(F: 친구, N: 비친구) |
 | - totalSendSuccessCount | Integer | O | 총 발송 성공 수 |
 | - validReadCount | Integer | O | 유효 열람 수 |
