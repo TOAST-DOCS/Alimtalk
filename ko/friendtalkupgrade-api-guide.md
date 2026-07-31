@@ -254,6 +254,7 @@ Content-Type: application/json;charset=UTF-8
     }
   ],
   "senderGroupingKey": String,
+  "groupTagKey": String,
   "resellerCode": String,
   "createUser": String,
   "statsId": String
@@ -301,6 +302,7 @@ Content-Type: application/json;charset=UTF-8
 | - unsubscribeAuthNo   | String  | X  | 080 무료수신거부 인증 번호(최대 10자, 모두 미입력 시 발신 프로필에 등록된 무료수신거부 정보로 발송됨)<br>unsubscribeNo 없이 unsubscribeAuthNo만 입력 불가<br>예: 1234        |
 | - recipientGroupingKey | String  | X  | 수신자 그룹핑 키(수신자별로 그룹핑 키를 지정할 수 있습니다. 최대 100자)                                                                                                                                                                                                                   |
 | senderGroupingKey    | String  | X  | 발신자 그룹핑 키(발신자별로 그룹핑 키를 지정할 수 있습니다. 최대 100자)                                                                                                                                                                                                                   |
+| groupTagKey          | String  | X  | 그룹 태그 키(최대 40자)                                                                                                                                                                                                                                                              |
 | resellerCode          | String  | X  | 리셀러 코드(리셀러가 발송 시 사용)                                                                                                                                                                                                                                                       |
 | createUser             | String  | X  | 등록자(콘솔에서 발송 시 사용자 UUID로 저장)                                                                                                                                                                                                                                                   |
 | statsId                | String  | 	X | 통계 ID(발신 검색 조건에는 포함되지 않습니다. 최대 8자)                                                                                                                                                                                                                                            |
@@ -364,6 +366,7 @@ Content-Type: application/json;charset=UTF-8
     }
   ],
   "senderGroupingKey": String,
+  "groupTagKey": String,
   "resellerCode": String,
   "createUser": String,
   "statsId": String
@@ -414,6 +417,7 @@ Content-Type: application/json;charset=UTF-8
 | - unsubscribeAuthNo   | String  | X  | 080 무료수신거부 인증 번호(최대 10자, 모두 미입력 시 발신 프로필에 등록된 무료수신거부 정보로 발송됨)<br>unsubscribeNo 없이 unsubscribeAuthNo만 입력 불가<br>예: 1234        |
 | - recipientGroupingKey | String  | X  | 수신자 그룹핑 키(수신자별로 그룹핑 키를 지정할 수 있습니다. 최대 100자)                                                                                                                                                                                                                   |
 | senderGroupingKey    | String  | X  | 발신자 그룹핑 키(발신자별로 그룹핑 키를 지정할 수 있습니다. 최대 100자)                                                                                                                                                                                                                   |
+| groupTagKey          | String  | X  | 그룹 태그 키(최대 40자)                                                                                                                                                                                                                                                              |
 | resellerCode          | String  | X  | 리셀러 코드(리셀러가 발송 시 사용)                                                                                                                                                                                                                                                       |
 | createUser             | String  | X  | 등록자(콘솔에서 발송 시 사용자 UUID로 저장)                                                                                                                                                                                                                                                   |
 | statsId                | String  | 	X | 통계 ID(발신 검색 조건에는 포함되지 않습니다. 최대 8자)                                                                                                                                                                                                                                            |
@@ -476,7 +480,8 @@ Content-Type: application/json;charset=UTF-8
       "recipientGroupingKey": String
     }
   ],
-  "senderGroupingKey": String
+  "senderGroupingKey": String,
+  "groupTagKey": String,
   "resellerCode": String,
   "createUser": String,
   "statsId": String
@@ -527,6 +532,7 @@ Content-Type: application/json;charset=UTF-8
 | - unsubscribeAuthNo   | String  | X  | 080 무료수신거부 인증 번호(최대 10자, 모두 미입력 시 발신 프로필에 등록된 무료수신거부 정보로 발송됨)<br>unsubscribeNo 없이 unsubscribeAuthNo만 입력 불가<br>예: 1234        |
 | - recipientGroupingKey | String  | X  | 수신자 그룹핑 키(수신자별로 그룹핑 키를 지정할 수 있습니다. 최대 100자)                                                                                                                                                                                                                   |
 | senderGroupingKey    | String  | X  | 발신자 그룹핑 키(발신자별로 그룹핑 키를 지정할 수 있습니다. 최대 100자)                                                                                                                                                                                                                   |
+| groupTagKey          | String  | X  | 그룹 태그 키(최대 40자)                                                                                                                                                                                                                                                              |
 | resellerCode          | String  | X  | 리셀러 코드(리셀러가 발송 시 사용)                                                                                                                                                                                                                                                       |
 | createUser             | String  | X  | 등록자(콘솔에서 발송 시 사용자 UUID로 저장)                                                                                                                                                                                                                                                   |
 | statsId                | String  | 	X | 통계 ID(발신 검색 조건에는 포함되지 않습니다. 최대 8자)                                                                                                                                                                                                                                            |
@@ -614,6 +620,7 @@ Content-Type: application/json;charset=UTF-8
     }
   ],
   "senderGroupingKey": String,
+  "groupTagKey": String,
   "resellerCode": String,
   "createUser": String,
   "statsId": String
@@ -669,6 +676,7 @@ Content-Type: application/json;charset=UTF-8
 | - unsubscribeAuthNo   | String  | X  | 080 무료수신거부 인증 번호(최대 10자, 모두 미입력 시 발신 프로필에 등록된 무료수신거부 정보로 발송됨)<br>unsubscribeNo 없이 unsubscribeAuthNo만 입력 불가<br>예: 1234        |
 | - recipientGroupingKey | String  | X  | 수신자 그룹핑 키(수신자별로 그룹핑 키를 지정할 수 있습니다. 최대 100자)                                                                                                                                                                                                                   |
 | senderGroupingKey    | String  | X  | 발신자 그룹핑 키(발신자별로 그룹핑 키를 지정할 수 있습니다. 최대 100자)                                                                                                                                                                                                                   |
+| groupTagKey          | String  | X  | 그룹 태그 키(최대 40자)                                                                                                                                                                                                                                                              |
 | resellerCode          | String  | X  | 리셀러 코드(리셀러가 발송 시 사용)                                                                                                                                                                                                                                                       |
 | createUser             | String  | X  | 등록자(콘솔에서 발송 시 사용자 UUID로 저장)                                                                                                                                                                                                                                                   |
 | statsId                | String  | 	X | 통계 ID(발신 검색 조건에는 포함되지 않습니다. 최대 8자)                                                                                                                                                                                                                                            |
@@ -733,6 +741,7 @@ Content-Type: application/json;charset=UTF-8
     }
   ],
   "senderGroupingKey": String,
+  "groupTagKey": String,
   "resellerCode": String,
   "createUser": String,
   "statsId": String
@@ -784,6 +793,7 @@ Content-Type: application/json;charset=UTF-8
 | - unsubscribeAuthNo   | String  | X  | 080 무료수신거부 인증 번호(최대 10자, 모두 미입력 시 발신 프로필에 등록된 무료수신거부 정보로 발송됨)<br>unsubscribeNo 없이 unsubscribeAuthNo만 입력 불가<br>예: 1234        |
 | - recipientGroupingKey | String  | X  | 수신자 그룹핑 키(수신자별로 그룹핑 키를 지정할 수 있습니다. 최대 100자)                                                                                                                                                                                                                   |
 | senderGroupingKey    | String  | X  | 발신자 그룹핑 키(발신자별로 그룹핑 키를 지정할 수 있습니다. 최대 100자)                                                                                                                                                                                                                   |
+| groupTagKey          | String  | X  | 그룹 태그 키(최대 40자)                                                                                                                                                                                                                                                              |
 | resellerCode          | String  | X  | 리셀러 코드(리셀러가 발송 시 사용)                                                                                                                                                                                                                                                       |
 | createUser             | String  | X  | 등록자(콘솔에서 발송 시 사용자 UUID로 저장)                                                                                                                                                                                                                                                   |
 | statsId                | String  | 	X | 통계 ID(발신 검색 조건에는 포함되지 않습니다. 최대 8자)                                                                                                                                                                                                                                            |
@@ -854,6 +864,7 @@ Content-Type: application/json;charset=UTF-8
     }
   ],
   "senderGroupingKey": String,
+  "groupTagKey": String,
   "resellerCode": String,
   "createUser": String,
   "statsId": String
@@ -910,6 +921,7 @@ Content-Type: application/json;charset=UTF-8
 | - unsubscribeAuthNo   | String  | X  | 080 무료수신거부 인증 번호(최대 10자, 모두 미입력 시 발신 프로필에 등록된 무료수신거부 정보로 발송됨)<br>unsubscribeNo 없이 unsubscribeAuthNo만 입력 불가<br>예: 1234        |
 | - recipientGroupingKey | String  | X  | 수신자 그룹핑 키(수신자별로 그룹핑 키를 지정할 수 있습니다. 최대 100자)                                                                                                                                                                                                                   |
 | senderGroupingKey    | String  | X  | 발신자 그룹핑 키(발신자별로 그룹핑 키를 지정할 수 있습니다. 최대 100자)                                                                                                                                                                                                                   |
+| groupTagKey          | String  | X  | 그룹 태그 키(최대 40자)                                                                                                                                                                                                                                                              |
 | resellerCode          | String  | X  | 리셀러 코드(리셀러가 발송 시 사용)                                                                                                                                                                                                                                                       |
 | createUser             | String  | X  | 등록자(콘솔에서 발송 시 사용자 UUID로 저장)                                                                                                                                                                                                                                                   |
 | statsId                | String  | 	X | 통계 ID(발신 검색 조건에는 포함되지 않습니다. 최대 8자)                                                                                                                                                                                                                                            |
@@ -1032,6 +1044,7 @@ Content-Type: application/json;charset=UTF-8
     }
   ],
   "senderGroupingKey": String,
+  "groupTagKey": String,
   "resellerCode": String,
   "createUser": String,
   "statsId": String
@@ -1089,6 +1102,7 @@ Content-Type: application/json;charset=UTF-8
 | - unsubscribeAuthNo   | String  | X  | 080 무료수신거부 인증 번호(최대 10자, 모두 미입력 시 발신 프로필에 등록된 무료수신거부 정보로 발송됨)<br>unsubscribeNo 없이 unsubscribeAuthNo만 입력 불가<br>예: 1234        |
 | - recipientGroupingKey | String  | X  | 수신자 그룹핑 키(수신자별로 그룹핑 키를 지정할 수 있습니다. 최대 100자)                                                                                                                                                                                                                   |
 | senderGroupingKey    | String  | X  | 발신자 그룹핑 키(발신자별로 그룹핑 키를 지정할 수 있습니다. 최대 100자)                                                                                                                                                                                                                   |
+| groupTagKey          | String  | X  | 그룹 태그 키(최대 40자)                                                                                                                                                                                                                                                              |
 | resellerCode          | String  | X  | 리셀러 코드(리셀러가 발송 시 사용)                                                                                                                                                                                                                                                       |
 | createUser             | String  | X  | 등록자(콘솔에서 발송 시 사용자 UUID로 저장)                                                                                                                                                                                                                                                   |
 | statsId                | String  | 	X | 통계 ID(발신 검색 조건에는 포함되지 않습니다. 최대 8자)                                                                                                                                                                                                                                            |
@@ -1178,6 +1192,7 @@ Content-Type: application/json;charset=UTF-8
     }
   ],
   "senderGroupingKey": String,
+  "groupTagKey": String,
   "resellerCode": String,
   "createUser": String,
   "statsId": String
@@ -1247,6 +1262,7 @@ Content-Type: application/json;charset=UTF-8
 | - unsubscribeAuthNo   | String  | X  | 080 무료수신거부 인증 번호(최대 10자, 모두 미입력 시 발신 프로필에 등록된 무료수신거부 정보로 발송됨)<br>unsubscribeNo 없이 unsubscribeAuthNo만 입력 불가<br>예: 1234        |
 | - recipientGroupingKey | String  | X  | 수신자 그룹핑 키(수신자별로 그룹핑 키를 지정할 수 있습니다. 최대 100자)                                                                                                                                                                                                                   |
 | senderGroupingKey    | String  | X  | 발신자 그룹핑 키(발신자별로 그룹핑 키를 지정할 수 있습니다. 최대 100자)                                                                                                                                                                                                                   |
+| groupTagKey          | String  | X  | 그룹 태그 키(최대 40자)                                                                                                                                                                                                                                                              |
 | resellerCode          | String  | X  | 리셀러 코드(리셀러가 발송 시 사용)                                                                                                                                                                                                                                                       |
 | createUser           | String  | X  | 등록자(콘솔에서 발송 시 사용자 UUID로 저장)                                                                                                                                                                                                                                                   |
 | statsId              | String  | 	X | 통계 ID(발신 검색 조건에는 포함되지 않습니다. 최대 8자)                                                                                                                                                                                                                                            |
@@ -1375,6 +1391,7 @@ Content-Type: application/json;charset=UTF-8
     }
   ],
   "senderGroupingKey": String,
+  "groupTagKey": String,
   "resellerCode": String,
   "createUser": String,
   "statsId": String
@@ -1409,6 +1426,7 @@ Content-Type: application/json;charset=UTF-8
 | - unsubscribeAuthNo    | String  | X  | 080 무료수신거부 인증 번호(최대 10자, 모두 미입력 시 발신 프로필에 등록된 무료수신거부 정보로 발송됨)<br>unsubscribeNo 없이 unsubscribeAuthNo만 입력 불가<br>예: 1234                                                                                                           |
 | - recipientGroupingKey | String  | X  | 수신자 그룹핑 키(수신자별로 그룹핑 키를 지정할 수 있습니다. 최대 100자)                                                                                                                                                                                             |
 | senderGroupingKey      | String  | X  | 발신자 그룹핑 키(발신자별로 그룹핑 키를 지정할 수 있습니다. 최대 100자)                                                                                                                                                                                             |
+| groupTagKey            | String  | X  | 그룹 태그 키(최대 40자)                                                                                                                                                                                                                          |
 | resellerCode           | String  | X  | 리셀러 코드(리셀러가 발송 시 사용)                                                                                                                                                                                                                    |
 | createUser             | String  | X  | 등록자(콘솔에서 발송 시 사용자 UUID로 저장)                                                                                                                                                                                                             |
 | statsId                | String  | X  | 통계 ID(발신 검색 조건에는 포함되지 않습니다. 최대 8자)                                                                                                                                                                                                      |
@@ -1538,6 +1556,7 @@ Content-Type: application/json;charset=UTF-8
         "resultCodeName": String,
         "createUser": String,
         "senderGroupingKey": String,
+        "groupTagKey": String,
         "recipientGroupingKey": String
       }
     ],
@@ -1576,6 +1595,7 @@ Content-Type: application/json;charset=UTF-8
 | -- resultCodeName           | String  | X        | 수신 결과 코드명                                                             |
 | -- createUser               | String  | X        | 등록자(콘솔에서 발송 시 사용자 UUID로 저장)                                           |
 | -- senderGroupingKey        | String  | X        | 발신 그룹핑 키                                                 |
+| -- groupTagKey              | String  | X        | 그룹 태그 키                                                              |
 | -- recipientGroupingKey     | String  | X        | 수신자 그룹핑 키                                           |
 | - totalCount                | Integer | O        | 총 개수                                                                  |
 
@@ -1755,6 +1775,7 @@ Content-Type: application/json;charset=UTF-8
     "resendRequestId": String,
     "createUser": String,
     "senderGroupingKey": String,
+    "groupTagKey": String,
     "recipientGroupingKey": String
   }
 }
@@ -1874,6 +1895,7 @@ Content-Type: application/json;charset=UTF-8
 | - resendRequestId     | String  | X        | 대체 발송 요청 ID                                                                                      | 
 | - createUser          | String  | X        | 등록자(콘솔에서 발송 시 사용자 UUID로 저장)                                                                      |
 | - senderGroupingKey   | String  | X        | 발신 그룹핑 키                                                 |
+| - groupTagKey         | String  | X        | 그룹 태그 키                                                              |
 | - recipientGroupingKey | String  | X        | 수신자 그룹핑 키                                           |
 
 <a id="message-results"></a>
@@ -1949,6 +1971,7 @@ Content-Type: application/json;charset=UTF-8
         "resultCode": String,
         "resultCodeName": String,
         "senderGroupingKey": String,
+        "groupTagKey": String,
         "recipientGroupingKey": String
       }
     ],
@@ -1978,6 +2001,7 @@ Content-Type: application/json;charset=UTF-8
 | -- resultCode               | String  | X        | 수신 결과 코드                                                              |
 | -- resultCodeName           | String  | X        | 수신 결과 코드명                                                             |
 | -- senderGroupingKey        | String  | X        | 발신 그룹핑 키                                                             |
+| -- groupTagKey              | String  | X        | 그룹 태그 키                                                              |
 | -- recipientGroupingKey     | String  | X        | 수신자 그룹핑 키                                                            |
 | - totalCount                | Integer | X        | 총 개수                                                                  |
 
