@@ -1773,7 +1773,6 @@ Content-Type: application/json;charset=UTF-8
     "resendRequestId": String,
     "createUser": String,
     "senderGroupingKey": String,
-    "groupTagKey": String,
     "recipientGroupingKey": String
   }
 }
@@ -1893,7 +1892,6 @@ Content-Type: application/json;charset=UTF-8
 | - resendRequestId     | String  | X        | 대체 발송 요청 ID                                                                                      | 
 | - createUser          | String  | X        | 등록자(콘솔에서 발송 시 사용자 UUID로 저장)                                                                      |
 | - senderGroupingKey   | String  | X        | 발신 그룹핑 키                                                 |
-| - groupTagKey         | String  | X        | 그룹 태그 키                                                              |
 | - recipientGroupingKey | String  | X        | 수신자 그룹핑 키                                           |
 
 <a id="message-results"></a>
