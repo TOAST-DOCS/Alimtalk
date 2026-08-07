@@ -1,3 +1,5 @@
+<!-- machine_translated: true -->
+
 <!-- pre-align:aligned sig=3b443c0f0141 -->
 
 <a id="friendtalkupgrade-console-guide"></a>
@@ -43,7 +45,10 @@ You can set up an outgoing profile and enter content to send messages in the for
         * Send advertising messages to advertisers’ users with marketing consent (KakaoTalk message consent), except channel friends.
       * I: Target of advertiser sending request ∩ Channel friend
         * For advertiser sending requests, advertising messages are sent only to channel friends.
-8. After completing the input, click Send to send.
+8. Enter a group tag key. (Optional)
+    * If you specify a group tag key, you can check Kakao template statistics by group tag.
+    * Group tags can be registered in the **Notification > KakaoTalk Bizmessage > Group Tag Management** tab.
+9. After completing the input, click Send to send.
 
 <a id="when-not-using-a-template"></a>
 
@@ -101,7 +106,10 @@ You can set up an outgoing profile and enter content to send messages in the for
         * Send advertising messages to advertisers’ users with marketing consent (KakaoTalk message consent), except channel friends.
       * I: Target of advertiser sending request ∩ Channel friend
         * For advertiser sending requests, advertising messages are sent only to channel friends.
-11. After completing the input, click Send to send.
+11. Enter a group tag key. (Optional)
+    * If you specify a group tag key, you can check Kakao template statistics by group tag.
+    * Group tags can be registered in the **Notification > KakaoTalk Bizmessage > Group Tag Management** tab.
+12. After completing the input, click Send to send.
 
 <a id="mass-delivery"></a>
 
