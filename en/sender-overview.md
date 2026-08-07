@@ -1,13 +1,11 @@
-<!-- pre-align:aligned sig=0142a0759662 -->
+<!-- pre-align:aligned sig=645edce9c59c -->
 
 <a id="sender-overview"></a>
-
 ## Notification > KakaoTalk Bizmessage > Plus Friend > Overview { #sender-overview }
 According to the Kakao policy, in order to send a KakaoTalk Biz message, you must first open a business-certified channel at the KakaoTalk Channel Administrator Center to send an AlimTalk /FriendTalk.[[Create Kakao Channel and Business Certification Guide]](https://kakaobusiness.gitbook.io/main/channel/start)
 
 
 <a id="create-kakaotalk-channel"></a>
-
 ### Create KakaoTalk Channel { #create-kakaotalk-channel }
 Click 'Information Entry Guide' at the top of opening the channel to refer to the relevant guide.
 
@@ -22,7 +20,6 @@ Click 'Information Entry Guide' at the top of opening the channel to refer to th
 ![Figure 1](https://static.toastoven.net/prod_alimtalk/KTB_Image_1.png)
 
 <a id="set-kakaotalk-channel"></a>
-
 ### Set KakaoTalk Channel { #set-kakaotalk-channel }
 After opening channel, apply for a business channel by setting up channel information.
 
@@ -37,7 +34,6 @@ After opening channel, apply for a business channel by setting up channel inform
 ![Figure 2](https://static.toastoven.net/prod_alimtalk/KTB_Image_1.png)
 
 <a id="register-kakaotalk-channel"></a>
-
 ### Register KakaoTalk Channel { #register-kakaotalk-channel }
 1. If switching to a business channel has been completed (approved), register the correspodning sender profile (KakaoTalk channel) on **Notification > KakaoTalk Bizmessage > Manage outgoing Profiles** tab.
     * The Sender Profile Registration Detail Guide is available to check [Manage Sender Profiles](https://docs.nhncloud.com/ko/Notification/KakaoTalk%20Bizmessage/ko/common-console-guide/#_5).

@@ -1,11 +1,9 @@
-<!-- pre-align:aligned sig=29f20c5fe5db -->
+<!-- pre-align:aligned sig=4f8e70a69f3c -->
 
 <a id="friendtalk-api-guide-v2-2"></a>
-
 ## Notification > KakaoTalk Bizmessage > 친구톡 > API v2.2 가이드 { #friendtalk-api-guide-v2-2 }
 
 <a id="friendtalk-service-termination-notice"></a>
-
 ## 친구톡 서비스 종료 안내 { #friendtalk-service-termination-notice }
 * 2025-12-31(수) 친구톡 서비스 지원을 종료합니다.
 * 기존에 이용 중이신 고객께는 브랜드 메시지로 전환하실 것을 권장드립니다.
@@ -14,11 +12,9 @@
 ---
 
 <a id="friendtalk"></a>
-
 ## 친구톡 { #friendtalk }
 
 <a id="api-domain"></a>
-
 #### [API 도메인]
 
 <table>
@@ -35,17 +31,14 @@
 </table>
 
 <a id="overview-of-v22-api"></a>
-
 ## v2.2 API 소개 { #overview-of-v22-api }
 1. 친구톡 대량 발송 조회가 추가되었습니다.
 2. 메시지 발송 시, buttons 필드에 `chatExtra`, `chatEvent`, `target` 필드가 추가되었습니다.
 3. 메시지 조회 시, buttons 필드에 `chatExtra`, `chatEvent`, `target` 필드가 추가되었습니다.
 
 <a id="send-messages"></a>
-
 ## 메시지 발송 { #send-messages }
 <a id="request-of-sending"></a>
-
 #### 발송 요청
 
 [URL]
@@ -161,7 +154,6 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 ```
 
 <a id="response"></a>
-
 #### 응답
 
 ```
@@ -204,11 +196,9 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 |-- recipientGroupingKey | String | 수신자 그룹핑 키 |
 
 <a id="list-deliveries"></a>
-
 ## 발송 목록 조회 { #list-deliveries }
 
 <a id="request"></a>
-
 #### 요청
 
 [URL]
@@ -254,7 +244,6 @@ Content-Type: application/json;charset=UTF-8
 |pageSize|	Integer|	X|	조회 건수(Default: 15, Max: 1000)|
 
 <a id="response-2"></a>
-
 #### 응답
 ```
 {
@@ -323,7 +312,6 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 ```
 
 <a id="status-of-resending"></a>
-
 #### 재발송 상태
 | 이름 |	설명|
 |---|---|
@@ -334,11 +322,9 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 |RSC05|	재발송 실패|
 
 <a id="get-deliveries"></a>
-
 ## 발송 단건 조회 { #get-deliveries }
 
 <a id="request-2"></a>
-
 #### 요청
 
 [URL]
@@ -377,7 +363,6 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 ```
 
 <a id="response-3"></a>
-
 #### 응답
 ```
 {
@@ -475,14 +460,11 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 |- recipientGroupingKey | String |	수신자 그룹핑 키 |
 
 <a id="message"></a>
-
 ## 메시지 { #message }
 <a id="cancel-sending-messages"></a>
-
 ### 메시지 발송 취소 { #cancel-sending-messages }
 
 <a id="request-3"></a>
-
 #### 요청
 
 [URL]
@@ -518,7 +500,6 @@ Content-Type: application/json;charset=UTF-8
 * 일반/인증 메시지 모두 동일한 API로 취소할 수 있습니다.
 
 <a id="response-4"></a>
-
 #### 응답
 ```
 {
@@ -543,11 +524,9 @@ curl -X DELETE -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Ke
 ```
 
 <a id="query-updated-message-results"></a>
-
 ### 메시지 결과 업데이트 조회 { #query-updated-message-results }
 
 <a id="request-4"></a>
-
 #### 요청
 
 [URL]
@@ -583,7 +562,6 @@ Content-Type: application/json;charset=UTF-8
 |pageSize|	Integer|	X|	조회 건수(기본: 15)|
 
 <a id="response-5"></a>
-
 #### 응답
 ```
 {
@@ -648,11 +626,9 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 ```
 
 <a id="list-mass-delivery-requests"></a>
-
 ### 대량 발송 요청 목록 조회 { #list-mass-delivery-requests }
 
 <a id="request-5"></a>
-
 #### 요청
 [URL]
 ```
@@ -692,7 +668,6 @@ Content-Type: application/json;charset=UTF-8
 | pageSize | optional, Integer | 1000 | X | 검색 수 |
 
 <a id="curl"></a>
-
 #### cURL
 ```
 curl -X GET \
@@ -702,7 +677,6 @@ curl -X GET \
 ```
 
 <a id="response-6"></a>
-
 #### 응답
 ```
 {
@@ -786,11 +760,9 @@ curl -X GET \
 
 
 <a id="list-mass-delivery-recipients"></a>
-
 ### 대량 발송 수신자 목록 조회 { #list-mass-delivery-recipients }
 
 <a id="request-6"></a>
-
 #### 요청
 [URL]
 ```
@@ -829,7 +801,6 @@ Content-Type: application/json;charset=UTF-8
 | pageSize | optional, Integer | 1000 | X | 검색 수 |
 
 <a id="curl-2"></a>
-
 #### cURL
 ```
 curl -X GET \
@@ -839,7 +810,6 @@ curl -X GET \
 ```
 
 <a id="response-7"></a>
-
 #### 응답
 ```
 {
@@ -885,11 +855,9 @@ curl -X GET \
 | - totalCount | Integer | 총개수 |
 
 <a id="get-a-mass-delivery-recipient"></a>
-
 ### 대량 발송 수신자 조회 { #get-a-mass-delivery-recipient }
 
 <a id="request-7"></a>
-
 #### 요청
 [URL]
 ```
@@ -928,7 +896,6 @@ Content-Type: application/json;charset=UTF-8
 
 
 <a id="curl-3"></a>
-
 #### cURL
 ```
 curl -X GET \
@@ -938,7 +905,6 @@ curl -X GET \
 ```
 
 <a id="response-8"></a>
-
 #### 응답
 ```
 {
@@ -1025,14 +991,11 @@ curl -X GET \
 
 
 <a id="image-management"></a>
-
 ## 이미지 관리 { #image-management }
 
 <a id="register-images"></a>
-
 ### 이미지 등록 { #register-images }
 <a id="request-8"></a>
-
 #### 요청
 
 [URL]
@@ -1071,7 +1034,6 @@ curl -X POST -H "Content-Type: multipart/form-data" -H "X-Secret-Key:{secretkey}
 ```
 
 <a id="response-9"></a>
-
 #### 응답
 ```
 
@@ -1102,10 +1064,8 @@ curl -X POST -H "Content-Type: multipart/form-data" -H "X-Secret-Key:{secretkey}
 
 
 <a id="query-images"></a>
-
 ### 이미지 조회 { #query-images }
 <a id="request-9"></a>
-
 #### 요청
 
 [URL]
@@ -1144,7 +1104,6 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 ```
 
 <a id="response-10"></a>
-
 #### 응답
 ```
 
@@ -1188,10 +1147,8 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 * 이미지는 최근 등록한 순대로 정렬되어 응답합니다.
 
 <a id="delete-images"></a>
-
 ### 이미지 삭제 { #delete-images }
 <a id="request-10"></a>
-
 #### 요청
 
 [URL]
@@ -1229,7 +1186,6 @@ curl -X DELETE -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Ke
 ```
 
 <a id="response-11"></a>
-
 #### 응답
 ```
 
@@ -1251,10 +1207,8 @@ curl -X DELETE -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Ke
 
 
 <a id="manage-alternative-delivery"></a>
-
 ## 대체 발송 관리 { #manage-alternative-delivery }
 <a id="register-an-sms-appkey"></a>
-
 ### SMS AppKey 등록 { #register-an-sms-appkey }
 
 [URL]
@@ -1299,7 +1253,6 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 ```
 
 <a id="response-12"></a>
-
 #### 응답
 ```
 
@@ -1313,7 +1266,6 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 ```
 
 <a id="register-alternative-delivery-settings"></a>
-
 ### 대체 발송 설정 등록 { #register-alternative-delivery-settings }
 
 [URL]
@@ -1364,7 +1316,6 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 ```
 
 <a id="response-13"></a>
-
 #### 응답
 ```
 

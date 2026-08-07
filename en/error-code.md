@@ -1,11 +1,9 @@
-<!-- pre-align:aligned sig=2a9da7055af6 -->
+<!-- pre-align:aligned sig=130f1c16c96c -->
 
 <a id="error-code"></a>
-
 ## Notification > KakaoTalk Bizmessage > Error Code { #error-code }
 
 <a id="api-response-code"></a>
-
 ## API Response Code { #api-response-code }
 
 | Category      | Success | Result code | Result code message                                                                                                                                       | API response message                                                                                                                                                                                                                                                                                                                                                                 |
@@ -242,7 +240,6 @@
 | Friendtalk Fallback Send | false | -3226 | If commerce has 'discountPrice' field, commerce must have a 'discountRate' or 'discountFixed' field                                                                                  | If commerce has 'discountPrice' field, commerce must have a 'discountRate' or 'discountFixed' field.                                                                                                                                                                                                                                                                       |
 
 <a id="delivery-result-code"></a>
-
 ## Delivery Result Code { #delivery-result-code }
 
 <table class="table table-striped table-hover">

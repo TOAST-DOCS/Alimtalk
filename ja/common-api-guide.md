@@ -1,15 +1,12 @@
-<!-- pre-align:aligned sig=8c7be9b338eb -->
+<!-- pre-align:aligned sig=13eee0b1c3c5 -->
 
 <a id="common-api-guide"></a>
-
 ## Notification > KakaoTalk Bizmessage > Common > API v2.2 Guide { #common-api-guide }
 
 <a id="statistics"></a>
-
 ## 統計 { #statistics }
 
 <a id="api-domain"></a>
-
 ### [APIドメイン] { #api-domain }
 
 <table>
@@ -27,7 +24,6 @@
 
 
 <a id="statistics-search---event-based"></a>
-
 ### 統計検索 - イベントベース { #statistics-search---event-based }
 * イベント発生時間基準で収集された統計です。
 * 次の時間を基準に統計が収集されます。
@@ -39,7 +35,6 @@
     * 代替送信失敗数(RESENT_FAILED)：代替送信リクエスト失敗時点
 
 <a id="get-statistics-information"></a>
-
 ### 統計情報照会 { #get-statistics-information }
 
 [URL]
@@ -117,7 +112,6 @@
 ```
 
 <a id="get-count-per-event"></a>
-
 ### イベント別数照会 { #get-count-per-event }
 
 [URL]
@@ -169,7 +163,6 @@
 ```
 
 <a id="kakao-statistics"></a>
-
 ## Kakao統計 { #kakao-statistics }
 
 * Kakao Biz Centerで提供する統計データを照会します。
@@ -186,13 +179,11 @@
 * 送信成功件数が10件以下の場合は、有効既読数とクリック数を提供しません。
 
 <a id="delivery-statistics"></a>
-
 ### 送信統計 { #delivery-statistics }
 
 送信元プロフィールを基準として、日別の送信数、有効既読数、クリック数を照会します。期間、送信識別子、メッセージタイプなどを設定して照会できます。
 
 <a id="template-statistics"></a>
-
 ### テンプレート統計 { #template-statistics }
 
 テンプレート及びグループタグを基準として、日別の送信数、有効既読数、クリック数を照会します。期間、メッセージタイプなどを設定して照会できます。
@@ -200,11 +191,9 @@
 * ブランドメッセージ(自由型)はグループタグを使用した場合にのみ提供します。
 
 <a id="retrieve-alimtalk-delivery-statistics"></a>
-
 ### お知らせトーク送信統計の照会 { #retrieve-alimtalk-delivery-statistics }
 
 <a id="request"></a>
-
 #### リクエスト
 
 [URL]
@@ -245,7 +234,6 @@
 | offset | Integer | X | 開始位置(Default：0) |
 
 <a id="response"></a>
-
 #### レスポンス
 
 ```json
@@ -285,11 +273,9 @@
 | - validReadCount | Integer | O | 有効既読数 |
 
 <a id="retrieve-alimtalk-template-statistics"></a>
-
 ### お知らせトークテンプレート統計の照会 { #retrieve-alimtalk-template-statistics }
 
 <a id="request-2"></a>
-
 #### リクエスト
 
 [URL]
@@ -330,7 +316,6 @@
 | offset | Integer | X | 開始位置(Default：0) |
 
 <a id="response-2"></a>
-
 #### レスポンス
 
 ```json
@@ -370,11 +355,9 @@
 | - totalClickCount | Integer | O | 総クリック数 |
 
 <a id="retrieve-brand-message-delivery-statistics"></a>
-
 ### ブランドメッセージ送信統計の照会 { #retrieve-brand-message-delivery-statistics }
 
 <a id="request-3"></a>
-
 #### リクエスト
 
 [URL]
@@ -418,7 +401,6 @@
 | offset | Integer | X | 開始位置(Default：0) |
 
 <a id="response-3"></a>
-
 #### レスポンス
 
 ```json
@@ -466,11 +448,9 @@
 | - totalClickCount | Integer | O | 総クリック数 |
 
 <a id="retrieve-brand-message-template-statistics"></a>
-
 ### ブランドメッセージテンプレート統計の照会 { #retrieve-brand-message-template-statistics }
 
 <a id="request-4"></a>
-
 #### リクエスト
 
 [URL]
@@ -515,7 +495,6 @@
 | offset | Integer | X | 開始位置(Default：0) |
 
 <a id="response-4"></a>
-
 #### レスポンス
 
 ```json

@@ -1,21 +1,17 @@
-<!-- pre-align:aligned sig=29f20c5fe5db -->
+<!-- pre-align:aligned sig=4f8e70a69f3c -->
 
 <a id="friendtalk-api-guide-v2-2"></a>
-
 ## Notification > KakaoTalk Bizmessage > FriendTalk > API v2.2 Guide { #friendtalk-api-guide-v2-2 }
 
 <a id="friendtalk-service-termination-notice"></a>
-
 ## FriendTalk Service Termination Notice { #friendtalk-service-termination-notice }
 
 <!-- TODO: translate body -->
 
 <a id="friendtalk"></a>
-
 ## FriendTalk { #friendtalk }
 
 <a id="api-domain"></a>
-
 #### [API Domain]
 
 <table>
@@ -32,17 +28,14 @@
 </table>
 
 <a id="overview-of-v22-api"></a>
-
 ## Overview of v2.2 API { #overview-of-v22-api }
 1. Added FriendTalk mass delivery query API.
 2. Added `chatExtra`, `chatEvent`, and `target` fields to the buttons field when sending messages.
 3. Added `chatExtra`, `chatEvent`, and `target` fields to the buttons field when querying messages.
 
 <a id="send-messages"></a>
-
 ## Send Messages { #send-messages }
 <a id="request-of-sending"></a>
-
 #### Request of Sending
 
 [URL]
@@ -157,7 +150,6 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 ```
 
 <a id="response"></a>
-
 #### Response
 
 ```
@@ -200,11 +192,9 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 |-- recipientGroupingKey | String | Recipient's grouping key |
 
 <a id="list-deliveries"></a>
-
 ## List Deliveries { #list-deliveries }
 
 <a id="request"></a>
-
 #### Request
 
 [URL]
@@ -250,7 +240,6 @@ Content-Type: application/json;charset=UTF-8
 |pageSize|  Integer|    X|  Number of queries(default: 15, max: 1000)|
 
 <a id="response-2"></a>
-
 #### Response
 ```
 {
@@ -319,7 +308,6 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 ```
 
 <a id="status-of-resending"></a>
-
 #### Status of Resending
 | Name |  Description|
 |---|---|
@@ -330,11 +318,9 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 |RSC05| Resending failed|
 
 <a id="get-deliveries"></a>
-
 ## Get Deliveries { #get-deliveries }
 
 <a id="request-2"></a>
-
 #### Request
 
 [URL]
@@ -373,7 +359,6 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 ```
 
 <a id="response-3"></a>
-
 #### Response
 ```
 {
@@ -471,14 +456,11 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 |- recipientGroupingKey | String |  Recipient's grouping key |
 
 <a id="message"></a>
-
 ## Message { #message }
 <a id="cancel-sending-messages"></a>
-
 ### Cancel Sending Messages { #cancel-sending-messages }
 
 <a id="request-3"></a>
-
 #### Request
 
 [URL]
@@ -514,7 +496,6 @@ Content-Type: application/json;charset=UTF-8
 * Both general and authentication messages can be canceled by the same API.
 
 <a id="response-4"></a>
-
 #### Response
 ```
 {
@@ -539,11 +520,9 @@ curl -X DELETE -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Ke
 ```
 
 <a id="query-updated-message-results"></a>
-
 ### Query Updated Message Results { #query-updated-message-results }
 
 <a id="request-4"></a>
-
 #### Request
 
 [URL]
@@ -579,7 +558,6 @@ Content-Type: application/json;charset=UTF-8
 |pageSize|  Integer|    X|  Number of queries(default: 15)|
 
 <a id="response-5"></a>
-
 #### Response
 ```
 {
@@ -644,11 +622,9 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 ```
 
 <a id="list-mass-delivery-requests"></a>
-
 ### List Mass Delivery Requests { #list-mass-delivery-requests }
 
 <a id="request-5"></a>
-
 #### Request
 [URL]
 ```
@@ -688,7 +664,6 @@ Content-Type: application/json;charset=UTF-8
 | pageSize | optional, Integer | 1000 | X | Search count |
 
 <a id="curl"></a>
-
 #### cURL
 ```
 curl -X GET \
@@ -698,7 +673,6 @@ curl -X GET \
 ```
 
 <a id="response-6"></a>
-
 #### Response
 ```
 {
@@ -782,11 +756,9 @@ curl -X GET \
 
 
 <a id="list-mass-delivery-recipients"></a>
-
 ### List Mass Delivery Recipients { #list-mass-delivery-recipients }
 
 <a id="request-6"></a>
-
 #### Request
 [URL]
 ```
@@ -825,7 +797,6 @@ Content-Type: application/json;charset=UTF-8
 | pageSize | optional, Integer | 1000 | X | Search count |
 
 <a id="curl-2"></a>
-
 #### cURL
 ```
 curl -X GET \
@@ -835,7 +806,6 @@ curl -X GET \
 ```
 
 <a id="response-7"></a>
-
 #### Response
 ```
 {
@@ -881,11 +851,9 @@ curl -X GET \
 | - totalCount | Integer | Total count |
 
 <a id="get-a-mass-delivery-recipient"></a>
-
 ### Get a Mass Delivery Recipient { #get-a-mass-delivery-recipient }
 
 <a id="request-7"></a>
-
 #### Request
 [URL]
 ```
@@ -924,7 +892,6 @@ Content-Type: application/json;charset=UTF-8
 
 
 <a id="curl-3"></a>
-
 #### cURL
 ```
 curl -X GET \
@@ -934,7 +901,6 @@ curl -X GET \
 ```
 
 <a id="response-8"></a>
-
 #### Response
 ```
 {
@@ -1021,14 +987,11 @@ curl -X GET \
 
 
 <a id="image-management"></a>
-
 ## Image Management { #image-management }
 
 <a id="register-images"></a>
-
 ### Register Images { #register-images }
 <a id="request-8"></a>
-
 #### Request
 
 [URL]
@@ -1067,7 +1030,6 @@ curl -X POST -H "Content-Type: multipart/form-data" -H "X-Secret-Key:{secretkey}
 ```
 
 <a id="response-9"></a>
-
 #### Response
 ```
 
@@ -1098,10 +1060,8 @@ curl -X POST -H "Content-Type: multipart/form-data" -H "X-Secret-Key:{secretkey}
 
 
 <a id="query-images"></a>
-
 ### Query Images { #query-images }
 <a id="request-9"></a>
-
 #### Request
 
 [URL]
@@ -1140,7 +1100,6 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 ```
 
 <a id="response-10"></a>
-
 #### Response
 ```
 
@@ -1184,10 +1143,8 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 * Response is sent in the order of latest registration.
 
 <a id="delete-images"></a>
-
 ### Delete Images { #delete-images }
 <a id="request-10"></a>
-
 #### Request
 
 [URL]
@@ -1225,7 +1182,6 @@ curl -X DELETE -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Ke
 ```
 
 <a id="response-11"></a>
-
 #### Response
 ```
 
@@ -1247,10 +1203,8 @@ curl -X DELETE -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Ke
 
 
 <a id="manage-alternative-delivery"></a>
-
 ## Manage Alternative Delivery { #manage-alternative-delivery }
 <a id="register-an-sms-appkey"></a>
-
 ### Register an SMS AppKey { #register-an-sms-appkey }
 
 [URL]
@@ -1295,7 +1249,6 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 ```
 
 <a id="response-12"></a>
-
 #### Response
 ```
 
@@ -1309,7 +1262,6 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 ```
 
 <a id="register-alternative-delivery-settings"></a>
-
 ### Register Alternative Delivery Settings { #register-alternative-delivery-settings }
 
 [URL]
@@ -1360,7 +1312,6 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 ```
 
 <a id="response-13"></a>
-
 #### Response
 ```
 

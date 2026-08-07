@@ -1,15 +1,12 @@
-<!-- pre-align:aligned sig=8c7be9b338eb -->
+<!-- pre-align:aligned sig=13eee0b1c3c5 -->
 
 <a id="common-api-guide"></a>
-
 ## Notification > KakaoTalk Bizmessage > Common > API v2.2 Guide { #common-api-guide }
 
 <a id="statistics"></a>
-
 ## 통계 { #statistics }
 
 <a id="api-domain"></a>
-
 ### [API 도메인] { #api-domain }
 
 <table>
@@ -27,7 +24,6 @@
 
 
 <a id="statistics-search---event-based"></a>
-
 ### 통계 검색 - 이벤트 기반 { #statistics-search---event-based }
 * 이벤트 발생 시간 기준으로 수집된 통계입니다.
 * 다음 시간 기준으로 통계가 수집됩니다.
@@ -39,7 +35,6 @@
     * 대체 발송 실패 개수(RESENT_FAILED): 대체 발송 요청 실패 시점
 
 <a id="get-statistics-information"></a>
-
 ### 통계 정보 조회 { #get-statistics-information }
 
 [URL]
@@ -119,7 +114,6 @@
 ```
 
 <a id="get-count-per-event"></a>
-
 ### 이벤트별 개수 조회 { #get-count-per-event }
 
 [URL]
@@ -171,7 +165,6 @@
 ```
 
 <a id="kakao-statistics"></a>
-
 ## 카카오 통계 { #kakao-statistics }
 
 * 카카오비즈센터에서 제공하는 통계 데이터를 조회합니다.
@@ -188,13 +181,11 @@
 * 발송 성공 건수가 10건 이하이면 유효 읽음 수와 클릭 수를 제공하지 않습니다.
 
 <a id="delivery-statistics"></a>
-
 ### 발송 통계 { #delivery-statistics }
 
 발신 프로필을 기준으로 일별 발송 수, 유효 읽음 수, 클릭 수를 조회합니다. 기간, 발송 식별자, 메시지 타입 등을 설정해 조회할 수 있습니다.
 
 <a id="template-statistics"></a>
-
 ### 템플릿 통계 { #template-statistics }
 
 템플릿 및 그룹 태그를 기준으로 일별 발송 수, 유효 읽음 수, 클릭 수를 조회합니다. 기간, 메시지 타입 등을 설정해 조회할 수 있습니다.
@@ -202,11 +193,9 @@
 * 브랜드 메시지 자유형은 그룹 태그를 사용한 경우에만 제공합니다.
 
 <a id="retrieve-alimtalk-delivery-statistics"></a>
-
 ### 알림톡 발송 통계 조회 { #retrieve-alimtalk-delivery-statistics }
 
 <a id="request"></a>
-
 #### 요청
 
 [URL]
@@ -247,7 +236,6 @@
 | offset | Integer | X | 시작 위치(Default: 0) |
 
 <a id="response"></a>
-
 #### 응답
 
 ```json
@@ -287,11 +275,9 @@
 | - validReadCount | Integer | O | 유효 열람 수 |
 
 <a id="retrieve-alimtalk-template-statistics"></a>
-
 ### 알림톡 템플릿 통계 조회 { #retrieve-alimtalk-template-statistics }
 
 <a id="request-2"></a>
-
 #### 요청
 
 [URL]
@@ -332,7 +318,6 @@
 | offset | Integer | X | 시작 위치(Default: 0) |
 
 <a id="response-2"></a>
-
 #### 응답
 
 ```json
@@ -372,11 +357,9 @@
 | - totalClickCount | Integer | O | 총 클릭 수 |
 
 <a id="retrieve-brand-message-delivery-statistics"></a>
-
 ### 브랜드 메시지 발송 통계 조회 { #retrieve-brand-message-delivery-statistics }
 
 <a id="request-3"></a>
-
 #### 요청
 
 [URL]
@@ -420,7 +403,6 @@
 | offset | Integer | X | 시작 위치(Default: 0) |
 
 <a id="response-3"></a>
-
 #### 응답
 
 ```json
@@ -468,11 +450,9 @@
 | - totalClickCount | Integer | O | 총 클릭 수 |
 
 <a id="retrieve-brand-message-template-statistics"></a>
-
 ### 브랜드 메시지 템플릿 통계 조회 { #retrieve-brand-message-template-statistics }
 
 <a id="request-4"></a>
-
 #### 요청
 
 [URL]
@@ -517,7 +497,6 @@
 | offset | Integer | X | 시작 위치(Default: 0) |
 
 <a id="response-4"></a>
-
 #### 응답
 
 ```json

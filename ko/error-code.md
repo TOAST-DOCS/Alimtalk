@@ -1,11 +1,9 @@
-<!-- pre-align:aligned sig=2a9da7055af6 -->
+<!-- pre-align:aligned sig=130f1c16c96c -->
 
 <a id="error-code"></a>
-
 ## Notification > KakaoTalk Bizmessage > 오류 코드 { #error-code }
 
 <a id="api-response-code"></a>
-
 ## API 응답 코드 { #api-response-code }
 
 | 카테고리      | 성공 여부 | 결과 코드 | 결과 코드 메시지                                                                                                                                         | API 응답 메시지                                                                                                                                                                                                                                                                                                                                                                 |
@@ -242,7 +240,6 @@
 | 친구톡 호환 발송 | false | -3226 | 커머스에 discountPrice 필드가 있으면 discountRate 또는 discountFixed 필드 필요                                                                                    | If commerce has 'discountPrice' field, commerce must have a 'discountRate' or 'discountFixed' field.                                                                                                                                                                                                                                                                       |
 
 <a id="delivery-result-code"></a>
-
 ## 발송 결과 코드 { #delivery-result-code }
 
 <table class="table table-striped table-hover">
