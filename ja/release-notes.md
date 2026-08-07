@@ -1,8 +1,20 @@
+<!-- machine_translated: true -->
+
 <!-- pre-align:aligned sig=7e06fb48b072 -->
 
 <a id="release-notes"></a>
 
 ## Notification > KakaoTalk Bizmessage > リリースノート { #release-notes }
+
+<a id="july-28-2026"></a>
+
+### 2026. 08. 25.
+
+#### 機能追加
+* [API] ブランドメッセージ送信 API へのグループタグキーフィールド追加
+    * ブランドメッセージの自由型および基本型送信 API に、カカオ統計で使用するグループタグキーフィールドが追加されました。
+* [API] ブランドメッセージ一括送信照会 API 追加
+    * ブランドメッセージの一括送信履歴を照会できる API が追加されました。
 
 <a id="july-28-2026"></a>
 
