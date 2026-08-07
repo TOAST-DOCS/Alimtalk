@@ -1,6 +1,6 @@
 <!-- machine_translated: true -->
 
-<!-- pre-align:aligned sig=3b443c0f0141 -->
+<!-- pre-align:aligned sig=8265ba6ef405 -->
 
 <a id="friendtalkupgrade-console-guide"></a>
 ## Notification > KakaoTalk Bizmessage > Brand Message > Console User Guide { #friendtalkupgrade-console-guide }
