@@ -1,8 +1,20 @@
+<!-- machine_translated: true -->
+
 <!-- pre-align:aligned sig=7e06fb48b072 -->
 
 <a id="release-notes"></a>
 
 ## Notification > KakaoTalk Bizmessage > Release Notes { #release-notes }
+<a id="july-28-2026"></a>
+
+### August 25, 2026
+
+#### Added Features
+* [API] Added a group tag key field to the Brand Message Sending API
+    * Added a group tag key field to the Brand Message free-form and standard type sending APIs for use with Kakao statistics.
+* [API] Added a Brand Message mass delivery query API
+    * Added an API to query Brand Message mass delivery records.
+
 <a id="july-28-2026"></a>
 
 ### July 28, 2026
