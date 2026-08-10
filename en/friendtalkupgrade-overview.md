@@ -1,7 +1,6 @@
-<!-- pre-align:aligned sig=7eb2dbb75382 -->
+<!-- pre-align:aligned sig=4f53951e6d9e -->
 
 <a id="friendtalkupgrade-overview"></a>
-
 ## Notification > KakaoTalk Bizmessage > Brand Message > Overview { #friendtalkupgrade-overview }
 
 Brand Message is a message product that allows advertisers (clients) to send advertising messages to members who have agreed to receive marketing messages (hereinafter referred to as “marketing consent”), regardless of whether they are KakaoTalk channel friends.
@@ -9,7 +8,6 @@ Brand Message is a message product that allows advertisers (clients) to send adv
 The service provides RESTful API for easy integration.
 
 <a id="features"></a>
-
 ## Features { #features }
 
 * Allow you to send various promotional messages including advertising messages for users who have become friends.
@@ -21,7 +19,6 @@ The service provides RESTful API for easy integration.
 * If a brand message fails to be sent, it can be replaced with a text message.
 
 <a id="main-features"></a>
-
 ## Main features { #main-features }
 
 * Provide RESTful API for sending messages, viewing, and managing images.
@@ -30,13 +27,11 @@ The service provides RESTful API for easy integration.
 * Provide fallback feature by linking with SMS service.
 
 <a id="brand-message-targeting"></a>
-
 ## Brand Message targeting { #brand-message-targeting }
 
 ![friendtalkupgrade_1_20250508.png](https://static.toastoven.net/prod_alimtalk/friendtalkupgrade/friendtalkupgrade_1_20250508.png)
 
 <a id="m-advertisers-users-with-marketing-consent"></a>
-
 ### M: Advertisers’ users with marketing consent { #m-advertisers-users-with-marketing-consent }
 
 * Send advertising messages to Advertisers’ users with marketing consent (KakaoTalk message consent)
@@ -46,7 +41,6 @@ The service provides RESTful API for easy integration.
 ![friendtalkupgrade_02_20250508.png](https://static.toastoven.net/prod_alimtalk/friendtalkupgrade/friendtalkupgrade_2_20250508.png)
 
 <a id="n-advertisers-users-with-marketing-consent--channel-friend"></a>
-
 ### N: Advertisers’ users with marketing consent- channel friend { #n-advertisers-users-with-marketing-consent--channel-friend }
 
 * Send advertising messages to advertisers’ users with marketing consent (KakaoTalk message consent), except channel friends.
@@ -56,13 +50,11 @@ The service provides RESTful API for easy integration.
 ![friendtalkupgrade_03_20250508.png](https://static.toastoven.net/prod_alimtalk/friendtalkupgrade/friendtalkupgrade_3_20250508.png)
 
 <a id="i-target-of-advertiser-sending-request-channel-friend"></a>
-
 ### I: Target of advertiser sending request ∩ Channel friend { #i-target-of-advertiser-sending-request-channel-friend }
 
 * For advertiser sending requests, advertising messages are sent only to channel friends.
 
 <a id="brand-message-sending-support-type"></a>
-
 ## Brand message sending support type { #brand-message-sending-support-type }
 
 - **When registering as a basic type (template), you can use targeting options M and N to target users with “marketing consent” for all sending support types.**<br>
@@ -80,7 +72,6 @@ The service provides RESTful API for easy integration.
 | **Carousel commerce**| \- Carousel commerce type consists of "carousel intro + 1 to 6 carousel list + more".<br>- Carousel list is required, and carousel intro and more are optional.<br>- When using a carousel intro, the carousel list must consist of at least 1 and no more than 5 items.<br>- If you do not use a carousel intro, your carousel list must consist of at least 2 and no more than 6 items.<br>- For carousel intro and list images, you must use images uploaded using the carousel commerce image upload API.<br>- `chat_bubble_type: "CAROUSEL_COMMERCE"` is applicable for this. | Recommended size: 800 X 600px or 800 X 400px (500px or more in width)<br>Aspect ratio: 2:1 or more, 3:4 or less (same aspect ratio for the entire image) <br>File format and capacity limit: JPG, PNG / up to 5MB                                                                                          |
 
 <a id="precautions-before-sending"></a>
-
 ## Precautions before sending { #precautions-before-sending }
 
 Non-friend message sending (targeting M, N) can be sent if all the conditions below are met:
@@ -96,7 +87,6 @@ Resellers must additionally register a reseller code to be transmitted to KISA w
 - If you need to add a reseller code, please request one through [Customer Center > 1:1 Inquiry].
 
 <a id="notice-of-personal-information-consignee"></a>
-
 ## Notice of personal information consignee { #notice-of-personal-information-consignee }
 
 When a customer uses NHN Cloud > Notification > KakaoTalk Bizmessage service, a business entrustment relationship regarding the processing of personal information occurs between the customer and our company. Therefore, in accordance with the Information and Communications Network Act and the Personal Information Protection Act, the customer, as the consignor, must disclose the status of the personal information entrusted to us (the trustee and the details of the work) through the personal information processing policy.

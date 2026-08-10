@@ -1,21 +1,17 @@
-<!-- pre-align:aligned sig=29f20c5fe5db -->
+<!-- pre-align:aligned sig=4f8e70a69f3c -->
 
 <a id="friendtalk-api-guide-v2-2"></a>
-
 ## Notification > KakaoTalk Bizmessage > カカともへのメッセージ > API v2.2 Guide { #friendtalk-api-guide-v2-2 }
 
 <a id="friendtalk-service-termination-notice"></a>
-
 ## フレンドトークサービス終了のご案内 { #friendtalk-service-termination-notice }
 
 <!-- TODO: translate body -->
 
 <a id="friendtalk"></a>
-
 ## カカともへのメッセージ { #friendtalk }
 
 <a id="api-domain"></a>
-
 #### [APIドメイン]
 
 <table>
@@ -32,17 +28,14 @@
 </table>
 
 <a id="overview-of-v22-api"></a>
-
 ## v2.2 API紹介 { #overview-of-v22-api }
 1. カカともへのメッセージ大量送信照会が追加されました。
 2. メッセージ送信時、buttonsフィールドにchatExtra, chatEvent, targetフィールドが追加されました。
 3. メッセージ照会時、buttonsフィールドにchatExtra、chatEvent、targetフィールドが追加されました。
 
 <a id="send-messages"></a>
-
 ## メッセージの送信 { #send-messages }
 <a id="request-of-sending"></a>
-
 #### 送信リクエスト
 
 [URL]
@@ -158,7 +151,6 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 ```
 
 <a id="response"></a>
-
 #### レスポンス
 
 ```
@@ -201,11 +193,9 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 | -- recipientGroupingKey | String  | 受信者グルーピングキー  |
 
 <a id="list-deliveries"></a>
-
 ## 送信リスト照会 { #list-deliveries }
 
 <a id="request"></a>
-
 #### リクエスト
 
 [URL]
@@ -251,7 +241,6 @@ Content-Type: application/json;charset=UTF-8
 | pageSize             | Integer | X         | 照会件数(基本：15, 最大:1000)                     |
 
 <a id="response-2"></a>
-
 #### レスポンス
 ```
 {
@@ -316,7 +305,6 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 ```
 
 <a id="status-of-resending"></a>
-
 #### 再送信ステータス
 | 値 | 説明                        |
 | ----- | ------------------------------- |
@@ -327,11 +315,9 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 | RSC05 | 再送信失敗                    |
 
 <a id="get-deliveries"></a>
-
 ## 送信単件照会 { #get-deliveries }
 
 <a id="request-2"></a>
-
 #### リクエスト
 
 [URL]
@@ -370,7 +356,6 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 ```
 
 <a id="response-3"></a>
-
 #### レスポンス
 ```
 {
@@ -464,14 +449,11 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 | - recipientGroupingKey | String  | 受信者グルーピングキー                              |
 
 <a id="message"></a>
-
 ## メッセージ { #message }
 <a id="cancel-sending-messages"></a>
-
 ### メッセージ送信取消 { #cancel-sending-messages }
 
 <a id="request-3"></a>
-
 #### リクエスト
 
 [URL]
@@ -507,7 +489,6 @@ Content-Type: application/json;charset=UTF-8
 * 一般/認証メッセージは同じAPIでキャンセルできます。
 
 <a id="response-4"></a>
-
 #### レスポンス
 ```
 {
@@ -532,11 +513,9 @@ curl -X DELETE -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Ke
 ```
 
 <a id="query-updated-message-results"></a>
-
 ### メッセージ結果アップデート照会 { #query-updated-message-results }
 
 <a id="request-4"></a>
-
 #### リクエスト
 
 [URL]
@@ -572,7 +551,6 @@ Content-Type: application/json;charset=UTF-8
 | pageSize        | Integer | X    | 照会件数(基本：15, 最大:1000)          |
 
 <a id="response-5"></a>
-
 #### レスポンス
 ```
 {
@@ -636,11 +614,9 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 
 **大量送信**
 <a id="list-mass-delivery-requests"></a>
-
 ### 大量送信リクエストリスト照会 { #list-mass-delivery-requests }
 
 <a id="request-5"></a>
-
 #### リクエスト
 [URL]
 ```
@@ -680,7 +656,6 @@ Content-Type: application/json;charset=UTF-8
 | pageSize | optional, Integer | 1000 | X | 検索数 |
 
 <a id="curl"></a>
-
 #### cURL
 ```
 curl -X GET \
@@ -690,7 +665,6 @@ https://kakaotalk-bizmessage.api.nhncloudservice.com/friendtalk/v2.2/appkeys/{ap
 ```
 
 <a id="response-6"></a>
-
 #### レスポンス
 ```
 {
@@ -774,11 +748,9 @@ https://kakaotalk-bizmessage.api.nhncloudservice.com/friendtalk/v2.2/appkeys/{ap
 
 
 <a id="list-mass-delivery-recipients"></a>
-
 ### 大量送信大量送信受信者リスト照会 { #list-mass-delivery-recipients }
 
 <a id="request-6"></a>
-
 #### リクエスト
 [URL]
 ```
@@ -817,7 +789,6 @@ Content-Type: application/json;charset=UTF-8
 | pageSize | optional, Integer | 1000 | X | 検索数 |
 
 <a id="curl-2"></a>
-
 #### cURL
 ```
 curl -X GET \
@@ -827,7 +798,6 @@ https://kakaotalk-bizmessage.api.nhncloudservice.com/friendtalk/v2.2/appkeys/{ap
 ```
 
 <a id="response-7"></a>
-
 #### レスポンス
 ```
 {
@@ -873,11 +843,9 @@ https://kakaotalk-bizmessage.api.nhncloudservice.com/friendtalk/v2.2/appkeys/{ap
 | - totalCount | Integer | 総数
 
 <a id="get-a-mass-delivery-recipient"></a>
-
 ### 大量送信大量送信受信者照会 { #get-a-mass-delivery-recipient }
 
 <a id="request-7"></a>
-
 #### リクエスト
 [URL]
 ```
@@ -916,7 +884,6 @@ Content-Type: application/json;charset=UTF-8
 
 
 <a id="curl-3"></a>
-
 #### cURL
 ```
 curl -X GET \
@@ -926,7 +893,6 @@ https://kakaotalk-bizmessage.api.nhncloudservice.com/friendtalk/v2.2/appkeys/{ap
 ```
 
 <a id="response-8"></a>
-
 #### レスポンス
 ```
 {
@@ -1013,14 +979,11 @@ https://kakaotalk-bizmessage.api.nhncloudservice.com/friendtalk/v2.2/appkeys/{ap
 
 
 <a id="image-management"></a>
-
 ## イメージの管理 { #image-management }
 
 <a id="register-images"></a>
-
 ### イメージの登録 { #register-images }
 <a id="request-8"></a>
-
 #### リクエスト
 
 [URL]
@@ -1059,7 +1022,6 @@ curl -X POST -H "Content-Type: multipart/form-data" -H "X-Secret-Key:{secretkey}
 ```
 
 <a id="response-9"></a>
-
 #### レスポンス
 ```
 
@@ -1090,10 +1052,8 @@ curl -X POST -H "Content-Type: multipart/form-data" -H "X-Secret-Key:{secretkey}
 
 
 <a id="query-images"></a>
-
 ### イメージの照会 { #query-images }
 <a id="request-9"></a>
-
 #### リクエスト
 
 [URL]
@@ -1132,7 +1092,6 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 ```
 
 <a id="response-10"></a>
-
 #### レスポンス
 ```
 
@@ -1176,10 +1135,8 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 * イメージは、最近登録した順にソートされてレスポンスを返します。
 
 <a id="delete-images"></a>
-
 ### イメージの削除 { #delete-images }
 <a id="request-10"></a>
-
 #### リクエスト
 
 [URL]
@@ -1217,7 +1174,6 @@ curl -X DELETE -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Ke
 ```
 
 <a id="response-11"></a>
-
 #### レスポンス
 ```
 
@@ -1239,10 +1195,8 @@ curl -X DELETE -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Ke
 
 
 <a id="manage-alternative-delivery"></a>
-
 ## 代替送信管理 { #manage-alternative-delivery }
 <a id="register-an-sms-appkey"></a>
-
 ### SMS AppKey 登録 { #register-an-sms-appkey }
 
 [URL]
@@ -1287,7 +1241,6 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 ```
 
 <a id="response-12"></a>
-
 #### レスポンス
 ```
 
@@ -1301,7 +1254,6 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 ```
 
 <a id="register-alternative-delivery-settings"></a>
-
 ### 代替送信設定登録 { #register-alternative-delivery-settings }
 
 [URL]
@@ -1352,7 +1304,6 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 ```
 
 <a id="response-13"></a>
-
 #### レスポンス
 ```
 

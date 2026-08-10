@@ -1,15 +1,12 @@
-<!-- pre-align:aligned sig=59b3050f8882 -->
+<!-- pre-align:aligned sig=d6050828493f -->
 
 <a id="alimtalk-api-guide-v2-1"></a>
-
 ## Notification > KakaoTalk Bizmessage > お知らせトーク > API v2.1 Guide { #alimtalk-api-guide-v2-1 }
 
 <a id="alimtalk"></a>
-
 ## お知らせトーク { #alimtalk }
 
 <a id="api-domain"></a>
-
 #### [APIドメイン]
 
 <table>
@@ -26,18 +23,15 @@
 </table>
 
 <a id="overview-of-v21-api"></a>
-
 ## v2.1 API紹介 { #overview-of-v21-api }
 1. 通知フリックテンプレート画像のアップロードAPIが追加されました。
 2. templateEmphasizeType中、'IMAGE'が追加されました。
 3. テンプレート照会時、templateImageName、templateImageUrlフィールドが追加されました。
 
 <a id="general-messages"></a>
-
 ## 一般メッセージ { #general-messages }
 
 <a id="request-of-sending-replaced-messages"></a>
-
 ### メッセージ置換送信リクエスト { #request-of-sending-replaced-messages }
 
 [URL]
@@ -131,7 +125,6 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 ```
 
 <a id="response"></a>
-
 #### レスポンス
 
 ```
@@ -174,7 +167,6 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 | -- recipientGroupingKey | String  | 受信者グルーピングキー |
 
 <a id="request-of-sending-full-text"></a>
-
 ### メッセージ全文送信リクエスト { #request-of-sending-full-text }
 
 [URL]
@@ -285,7 +277,6 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 ```
 
 <a id="response-2"></a>
-
 #### レスポンス
 
 ```
@@ -328,11 +319,9 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 | -- recipientGroupingKey | String  | 受信者グルーピングキー |
 
 <a id="list-messages"></a>
-
 ### メッセージリストの照会 { #list-messages }
 
 <a id="request"></a>
-
 #### リクエスト
 
 [URL]
@@ -382,7 +371,6 @@ Content-Type: application/json;charset=UTF-8
 * 送信リクエスト日時の範囲は最大30日です。
 
 <a id="response-3"></a>
-
 #### レスポンス
 ```
 {
@@ -472,11 +460,9 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 ```
 
 <a id="get-messages"></a>
-
 ### メッセージ単件照会 { #get-messages }
 
 <a id="request-2"></a>
-
 #### リクエスト
 
 [URL]
@@ -510,7 +496,6 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 ```
 
 <a id="response-4"></a>
-
 #### レスポンス
 ```
 {
@@ -604,7 +589,6 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 | - recipientGroupingKey | String  | 受信者グルーピングキー                           |
 
 <a id="authentication-messages"></a>
-
 ## 認証メッセージ { #authentication-messages }
 
 <span id="precautions-authword"></span>
@@ -619,7 +603,6 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 
 
 <a id="request-of-sending-replaced-messages-2"></a>
-
 ### メッセージ置換送信リクエスト { #request-of-sending-replaced-messages-2 }
 
 [URL]
@@ -709,7 +692,6 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 ```
 
 <a id="response-5"></a>
-
 #### レスポンス
 
 ```
@@ -752,7 +734,6 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 | -- recipientGroupingKey | String  | 受信者グルーピングキー |
 
 <a id="request-of-sending-full-text-2"></a>
-
 ### メッセージ全文送信リクエスト { #request-of-sending-full-text-2 }
 
 [URL]
@@ -860,7 +841,6 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 ```
 
 <a id="response-6"></a>
-
 #### レスポンス
 
 ```
@@ -903,11 +883,9 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 | -- recipientGroupingKey | String  | 受信者グルーピングキー |
 
 <a id="list-messages-2"></a>
-
 ### メッセージリストの照会 { #list-messages-2 }
 
 <a id="request-3"></a>
-
 #### リクエスト
 
 [URL]
@@ -957,7 +935,6 @@ Content-Type: application/json;charset=UTF-8
 * 送信リクエスト日時の範囲は最大30日です。
 
 <a id="response-7"></a>
-
 #### レスポンス
 ```
 {
@@ -1047,11 +1024,9 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 ```
 
 <a id="get-messages-2"></a>
-
 ### メッセージ単件照会 { #get-messages-2 }
 
 <a id="request-4"></a>
-
 #### リクエスト
 
 [URL]
@@ -1085,7 +1060,6 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 ```
 
 <a id="response-8"></a>
-
 #### レスポンス
 ```
 {
@@ -1182,14 +1156,11 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 | - recipientGroupingKey | String  | 受信者グルーピングキー                           |
 
 <a id="messages"></a>
-
 ## メッセージ { #messages }
 <a id="cancel-sending-messages"></a>
-
 ### メッセージ送信取消 { #cancel-sending-messages }
 
 <a id="request-5"></a>
-
 #### リクエスト
 
 [URL]
@@ -1225,7 +1196,6 @@ Content-Type: application/json;charset=UTF-8
 * 一般/認証メッセージは同じAPIでキャンセルできます。
 
 <a id="response-9"></a>
-
 #### レスポンス
 ```
 {
@@ -1250,11 +1220,9 @@ curl -X DELETE -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Ke
 ```
 
 <a id="query-updates-of-message-result"></a>
-
 ### メッセージ結果アップデートの照会 { #query-updates-of-message-result }
 
 <a id="request-6"></a>
-
 #### リクエスト
 
 [URL]
@@ -1291,7 +1259,6 @@ Content-Type: application/json;charset=UTF-8
 | pageSize            | Integer | X    | 照会件数(基本：15、最大: 1000)          |
 
 <a id="response-10"></a>
-
 #### レスポンス
 ```
 {
@@ -1345,20 +1312,16 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 ```
 
 <a id="messages-1"></a>
-
 ### SMS/LMS 대체 발송 상태 코드 { #messages-1 }
 
 <!-- TODO: translate body -->
 
 <a id="templates"></a>
-
 ## テンプレート { #templates }
 
 <a id="list-template-categories"></a>
-
 ### テンプレートカテゴリー照会 { #list-template-categories }
 <a id="request-7"></a>
-
 #### リクエスト
 [URL]
 
@@ -1384,7 +1347,6 @@ Content-Type: application/json;charset=UTF-8
 | X-Secret-Key | String | O    | コンソールで作成できます。 |
 
 <a id="response-11"></a>
-
 #### レスポンス
 ```
 
@@ -1427,10 +1389,8 @@ Content-Type: application/json;charset=UTF-8
 |-- exclusion| String| カテゴリの除外対象のテンプレートの説明 |
 
 <a id="register-templates"></a>
-
 ### テンプレートの登録 { #register-templates }
 <a id="request-8"></a>
-
 #### リクエスト
 [URL]
 
@@ -1510,7 +1470,6 @@ Content-Type: application/json;charset=UTF-8
 | -schemeAndroid  | String  | X    | Androidアプリリンク(ALタイプの場合は必須フィールド、最大500文字)   |
 
 <a id="response-12"></a>
-
 #### レスポンス
 ```
 {
@@ -1530,10 +1489,8 @@ Content-Type: application/json;charset=UTF-8
 | - isSuccessful  | Boolean | 成否 |
 
 <a id="modify-templates"></a>
-
 ### テンプレートの修正 { #modify-templates }
 <a id="request-9"></a>
-
 #### リクエスト
 [URL]
 
@@ -1612,7 +1569,6 @@ Content-Type: application/json;charset=UTF-8
 | -schemeAndroid  | String  | X    | Androidアプリリンク(ALタイプの場合は必須フィールド、最大500文字)   |
 
 <a id="response-13"></a>
-
 #### レスポンス
 ```
 {
@@ -1632,10 +1588,8 @@ Content-Type: application/json;charset=UTF-8
 | - isSuccessful  | Boolean | 成否 |
 
 <a id="delete-templates"></a>
-
 ### テンプレートの削除 { #delete-templates }
 <a id="request-10"></a>
-
 #### リクエスト
 [URL]
 
@@ -1660,7 +1614,6 @@ Content-Type: application/json;charset=UTF-8
 ```
 
 <a id="response-14"></a>
-
 #### レスポンス
 ```
 {
@@ -1680,10 +1633,8 @@ Content-Type: application/json;charset=UTF-8
 | - isSuccessful  | Boolean | 成否 |
 
 <a id="inquire-of-templates"></a>
-
 ### テンプレートの問い合わせをする { #inquire-of-templates }
 <a id="request-11"></a>
-
 #### リクエスト
 [URL]
 
@@ -1723,7 +1674,6 @@ Content-Type: application/json;charset=UTF-8
 | comment | String | O    | お問い合わせ内容 |
 
 <a id="response-15"></a>
-
 #### レスポンス
 ```
 {
@@ -1743,10 +1693,8 @@ Content-Type: application/json;charset=UTF-8
 | - isSuccessful  | Boolean | 成否 |
 
 <a id="attach-files-to-send-inquiry-on-templates"></a>
-
 ### ファイルを添付してテンプレートお問い合わせ { #attach-files-to-send-inquiry-on-templates }
 <a id="request-12"></a>
-
 #### リクエスト
 [URL]
 
@@ -1788,7 +1736,6 @@ Content-Type: application/json;charset=UTF-8
 |attachments| List<File> | X | 添付ファイルリスト(最大10個) |
 
 <a id="response-16"></a>
-
 #### レスポンス
 ```
 {
@@ -1808,11 +1755,9 @@ Content-Type: application/json;charset=UTF-8
 |- isSuccessful|	Boolean| 成否|
 
 <a id="list-templates"></a>
-
 ### テンプレートリストの照会 { #list-templates }
 
 <a id="request-13"></a>
-
 #### リクエスト
 
 [URL]
@@ -1862,7 +1807,6 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 ```
 
 <a id="response-17"></a>
-
 #### レスポンス
 ```
 
@@ -1966,11 +1910,9 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 | - totalCount         | Integer | 総個数                              |
 
 <a id="list-template-modifications"></a>
-
 ### テンプレートの修正リスト照会 { #list-template-modifications }
 
 <a id="request-14"></a>
-
 #### リクエスト
 
 [URL]
@@ -2004,7 +1946,6 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 ```
 
 <a id="response-18"></a>
-
 #### レスポンス
 ```
 
@@ -2110,10 +2051,8 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 | - totalCount         | Integer | 総個数                              |
 
 <a id="register-template-image"></a>
-
 ### テンプレート画像の登録 { #register-template-image }
 <a id="request-15"></a>
-
 #### リクエスト
 [URL]
 
@@ -2150,7 +2089,6 @@ curl -X POST -H "Content-Type: multipart/form-data" -H "X-Secret-Key:{secretkey}
 ```
 
 <a id="response-19"></a>
-
 #### レスポンス
 ```
 {
@@ -2177,10 +2115,8 @@ curl -X POST -H "Content-Type: multipart/form-data" -H "X-Secret-Key:{secretkey}
 |- templateImageUrl     | String |	画像のURL |
 
 <a id="section-1"></a>
-
 ## 代替送信管理 { #section-1 }
 <a id="section-1-1"></a>
-
 ### SMS AppKey登録 { #section-1-1 }
 
 [URL]
@@ -2226,7 +2162,6 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 ```
 
 <a id="section-1-1-1"></a>
-
 #### レスポンス
 ```
 
@@ -2240,7 +2175,6 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 ```
 
 <a id="section-1-2"></a>
-
 ### 代替送信設定登録 { #section-1-2 }
 
 [URL]
@@ -2290,7 +2224,6 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 ```
 
 <a id="section-1-2-1"></a>
-
 #### レスポンス
 ```
 

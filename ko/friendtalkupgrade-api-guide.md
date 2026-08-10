@@ -1,13 +1,12 @@
-<a id="friendtalkupgrade-api-guide"></a>
+<!-- pre-align:aligned sig=37dadf289965 -->
 
+<a id="friendtalkupgrade-api-guide"></a>
 ## Notification > KakaoTalk Bizmessage > 브랜드 메시지 > API v1.0 Guide { #friendtalkupgrade-api-guide }
 
 <a id="brand-message"></a>
-
 ## 브랜드 메시지 { #brand-message }
 
 <a id="api-domain"></a>
-
 #### [API 도메인]
 
 | 도메인                                                                          |
@@ -15,11 +14,9 @@
 | [https://kakaotalk-bizmessage.api.nhncloudservice.com](https://kakaotalk-bizmessage.api.nhncloudservice.com) |
 
 <a id="introduce-v10-api"></a>
-
 ## v1.0 API 소개 { #introduce-v10-api }
 
 <a id="manage-non-friend-message-sending-targeting-m-n"></a>
-
 ## 비친구 메시지 발송(타겟팅 M, N) 관리 { #manage-non-friend-message-sending-targeting-m-n }
 
 비친구 메시지 발송(타겟팅 M, N)은 아래 조건을 모두 만족할 경우 발송할 수 있습니다.
@@ -31,11 +28,9 @@
 - 3개월 내 알림톡 발송 성공 이력 보유
 
 <a id="upload-marketing-consent-records"></a>
-
 ### 마케팅 수신 동의 증적 자료 업로드 { #upload-marketing-consent-records }
 
 <a id="requested"></a>
-
 #### 요청
 
 [URL]
@@ -71,7 +66,6 @@ Content-Type: multipart/form-data
 | file | File | O  | 마케팅 수신 동의 증적 자료 |
 
 <a id="response"></a>
-
 #### 응답
 
 ```
@@ -92,11 +86,9 @@ Content-Type: multipart/form-data
 | - isSuccessful  | boolean | O        | 성공 여부  |
 
 <a id="apply-for-using-non-friend-message-sending-targeting-m-n"></a>
-
 ### 비친구 메시지 발송(타겟팅 M, N) 사용 신청 { #apply-for-using-non-friend-message-sending-targeting-m-n }
 
 <a id="requested-2"></a>
-
 #### 요청
 
 [URL]
@@ -126,7 +118,6 @@ Content-Type: application/json;charset=UTF-8
 | X-Secret-Key | String | O  | 콘솔에서 생성할 수 있습니다. |
 
 <a id="response-2"></a>
-
 #### 응답
 
 ```
@@ -147,7 +138,6 @@ Content-Type: application/json;charset=UTF-8
 | - isSuccessful  | boolean | O        | 성공 여부  |
 
 <a id="request-to-send-a-free-form-message"></a>
-
 ## 메시지 자유형 발송 요청 { #request-to-send-a-free-form-message }
 
 * 마케팅 수신 동의 발송을 사용할 수 있습니다.
@@ -171,7 +161,6 @@ Content-Type: application/json;charset=UTF-8
 * **야간 발송 제한(20:50~다음 날 08:00)**
 
 <a id="requested-3"></a>
-
 #### 요청
 
 [URL]
@@ -200,7 +189,6 @@ Content-Type: application/json;charset=UTF-8
 | X-Secret-Key | String | O  | 콘솔에서 생성할 수 있습니다. |
 
 <a id="request-text-type-sending"></a>
-
 #### 텍스트형 발송 요청
 
 [Request body]
@@ -254,6 +242,7 @@ Content-Type: application/json;charset=UTF-8
     }
   ],
   "senderGroupingKey": String,
+  "groupTagKey": String,
   "resellerCode": String,
   "createUser": String,
   "statsId": String
@@ -301,12 +290,12 @@ Content-Type: application/json;charset=UTF-8
 | - unsubscribeAuthNo   | String  | X  | 080 무료수신거부 인증 번호(최대 10자, 모두 미입력 시 발신 프로필에 등록된 무료수신거부 정보로 발송됨)<br>unsubscribeNo 없이 unsubscribeAuthNo만 입력 불가<br>예: 1234        |
 | - recipientGroupingKey | String  | X  | 수신자 그룹핑 키(수신자별로 그룹핑 키를 지정할 수 있습니다. 최대 100자)                                                                                                                                                                                                                   |
 | senderGroupingKey    | String  | X  | 발신자 그룹핑 키(발신자별로 그룹핑 키를 지정할 수 있습니다. 최대 100자)                                                                                                                                                                                                                   |
+| groupTagKey          | String  | X  | 그룹 태그 키(최대 40자). 지정 시 해당 그룹 태그별 카카오 템플릿 통계를 확인할 수 있습니다.                                                                                                                                                                                                                                                              |
 | resellerCode          | String  | X  | 리셀러 코드(리셀러가 발송 시 사용)                                                                                                                                                                                                                                                       |
 | createUser             | String  | X  | 등록자(콘솔에서 발송 시 사용자 UUID로 저장)                                                                                                                                                                                                                                                   |
 | statsId                | String  | 	X | 통계 ID(발신 검색 조건에는 포함되지 않습니다. 최대 8자)                                                                                                                                                                                                                                            |
 
 <a id="request-image-type-sending"></a>
-
 #### 이미지형 발송 요청
 
 [Request body]
@@ -364,6 +353,7 @@ Content-Type: application/json;charset=UTF-8
     }
   ],
   "senderGroupingKey": String,
+  "groupTagKey": String,
   "resellerCode": String,
   "createUser": String,
   "statsId": String
@@ -414,12 +404,12 @@ Content-Type: application/json;charset=UTF-8
 | - unsubscribeAuthNo   | String  | X  | 080 무료수신거부 인증 번호(최대 10자, 모두 미입력 시 발신 프로필에 등록된 무료수신거부 정보로 발송됨)<br>unsubscribeNo 없이 unsubscribeAuthNo만 입력 불가<br>예: 1234        |
 | - recipientGroupingKey | String  | X  | 수신자 그룹핑 키(수신자별로 그룹핑 키를 지정할 수 있습니다. 최대 100자)                                                                                                                                                                                                                   |
 | senderGroupingKey    | String  | X  | 발신자 그룹핑 키(발신자별로 그룹핑 키를 지정할 수 있습니다. 최대 100자)                                                                                                                                                                                                                   |
+| groupTagKey          | String  | X  | 그룹 태그 키(최대 40자). 지정 시 해당 그룹 태그별 카카오 템플릿 통계를 확인할 수 있습니다.                                                                                                                                                                                                                                                              |
 | resellerCode          | String  | X  | 리셀러 코드(리셀러가 발송 시 사용)                                                                                                                                                                                                                                                       |
 | createUser             | String  | X  | 등록자(콘솔에서 발송 시 사용자 UUID로 저장)                                                                                                                                                                                                                                                   |
 | statsId                | String  | 	X | 통계 ID(발신 검색 조건에는 포함되지 않습니다. 최대 8자)                                                                                                                                                                                                                                            |
 
 <a id="request-wide-image-type-sending"></a>
-
 #### 와이드 이미지형 발송 요청
 
 [Request body]
@@ -476,7 +466,8 @@ Content-Type: application/json;charset=UTF-8
       "recipientGroupingKey": String
     }
   ],
-  "senderGroupingKey": String
+  "senderGroupingKey": String,
+  "groupTagKey": String,
   "resellerCode": String,
   "createUser": String,
   "statsId": String
@@ -527,12 +518,12 @@ Content-Type: application/json;charset=UTF-8
 | - unsubscribeAuthNo   | String  | X  | 080 무료수신거부 인증 번호(최대 10자, 모두 미입력 시 발신 프로필에 등록된 무료수신거부 정보로 발송됨)<br>unsubscribeNo 없이 unsubscribeAuthNo만 입력 불가<br>예: 1234        |
 | - recipientGroupingKey | String  | X  | 수신자 그룹핑 키(수신자별로 그룹핑 키를 지정할 수 있습니다. 최대 100자)                                                                                                                                                                                                                   |
 | senderGroupingKey    | String  | X  | 발신자 그룹핑 키(발신자별로 그룹핑 키를 지정할 수 있습니다. 최대 100자)                                                                                                                                                                                                                   |
+| groupTagKey          | String  | X  | 그룹 태그 키(최대 40자). 지정 시 해당 그룹 태그별 카카오 템플릿 통계를 확인할 수 있습니다.                                                                                                                                                                                                                                                              |
 | resellerCode          | String  | X  | 리셀러 코드(리셀러가 발송 시 사용)                                                                                                                                                                                                                                                       |
 | createUser             | String  | X  | 등록자(콘솔에서 발송 시 사용자 UUID로 저장)                                                                                                                                                                                                                                                   |
 | statsId                | String  | 	X | 통계 ID(발신 검색 조건에는 포함되지 않습니다. 최대 8자)                                                                                                                                                                                                                                            |
 
 <a id="request-to-send-wide-item-list-type"></a>
-
 #### 와이드 아이템리스트형 발송 요청
 
 [Request body]
@@ -614,6 +605,7 @@ Content-Type: application/json;charset=UTF-8
     }
   ],
   "senderGroupingKey": String,
+  "groupTagKey": String,
   "resellerCode": String,
   "createUser": String,
   "statsId": String
@@ -669,12 +661,12 @@ Content-Type: application/json;charset=UTF-8
 | - unsubscribeAuthNo   | String  | X  | 080 무료수신거부 인증 번호(최대 10자, 모두 미입력 시 발신 프로필에 등록된 무료수신거부 정보로 발송됨)<br>unsubscribeNo 없이 unsubscribeAuthNo만 입력 불가<br>예: 1234        |
 | - recipientGroupingKey | String  | X  | 수신자 그룹핑 키(수신자별로 그룹핑 키를 지정할 수 있습니다. 최대 100자)                                                                                                                                                                                                                   |
 | senderGroupingKey    | String  | X  | 발신자 그룹핑 키(발신자별로 그룹핑 키를 지정할 수 있습니다. 최대 100자)                                                                                                                                                                                                                   |
+| groupTagKey          | String  | X  | 그룹 태그 키(최대 40자). 지정 시 해당 그룹 태그별 카카오 템플릿 통계를 확인할 수 있습니다.                                                                                                                                                                                                                                                              |
 | resellerCode          | String  | X  | 리셀러 코드(리셀러가 발송 시 사용)                                                                                                                                                                                                                                                       |
 | createUser             | String  | X  | 등록자(콘솔에서 발송 시 사용자 UUID로 저장)                                                                                                                                                                                                                                                   |
 | statsId                | String  | 	X | 통계 ID(발신 검색 조건에는 포함되지 않습니다. 최대 8자)                                                                                                                                                                                                                                            |
 
 <a id="request-to-send-premium-video-type"></a>
-
 #### 프리미엄 동영상형 발송 요청
 
 [Request body]
@@ -733,6 +725,7 @@ Content-Type: application/json;charset=UTF-8
     }
   ],
   "senderGroupingKey": String,
+  "groupTagKey": String,
   "resellerCode": String,
   "createUser": String,
   "statsId": String
@@ -784,12 +777,12 @@ Content-Type: application/json;charset=UTF-8
 | - unsubscribeAuthNo   | String  | X  | 080 무료수신거부 인증 번호(최대 10자, 모두 미입력 시 발신 프로필에 등록된 무료수신거부 정보로 발송됨)<br>unsubscribeNo 없이 unsubscribeAuthNo만 입력 불가<br>예: 1234        |
 | - recipientGroupingKey | String  | X  | 수신자 그룹핑 키(수신자별로 그룹핑 키를 지정할 수 있습니다. 최대 100자)                                                                                                                                                                                                                   |
 | senderGroupingKey    | String  | X  | 발신자 그룹핑 키(발신자별로 그룹핑 키를 지정할 수 있습니다. 최대 100자)                                                                                                                                                                                                                   |
+| groupTagKey          | String  | X  | 그룹 태그 키(최대 40자). 지정 시 해당 그룹 태그별 카카오 템플릿 통계를 확인할 수 있습니다.                                                                                                                                                                                                                                                              |
 | resellerCode          | String  | X  | 리셀러 코드(리셀러가 발송 시 사용)                                                                                                                                                                                                                                                       |
 | createUser             | String  | X  | 등록자(콘솔에서 발송 시 사용자 UUID로 저장)                                                                                                                                                                                                                                                   |
 | statsId                | String  | 	X | 통계 ID(발신 검색 조건에는 포함되지 않습니다. 최대 8자)                                                                                                                                                                                                                                            |
 
 <a id="request-to-send-commerce"></a>
-
 #### 커머스형 발송 요청
 
 [Request body]
@@ -854,6 +847,7 @@ Content-Type: application/json;charset=UTF-8
     }
   ],
   "senderGroupingKey": String,
+  "groupTagKey": String,
   "resellerCode": String,
   "createUser": String,
   "statsId": String
@@ -877,7 +871,7 @@ Content-Type: application/json;charset=UTF-8
 | title                  | String  | O  | 상품 제목(최대 30자, 줄바꿈: 불가)                                                                                                                                                                                                                                                       |
 | regularPrice           | Integer | O  | 정상 가격(0~99,999,999)                                                                                                                                                                                                                                                        |
 | discountPrice          | Integer | X  | 할인 가격(0~99,999,999)                                                                                                                                                                                                                                                          |
-| discountRate           | Integer | X  | 할인율(0~100), 할인 가격 존재 시 할인율. 정액 할인 가격 중 하나는 필수                                                                                                                                                                                                                                   |
+| discountRate           | Integer | X  | 할인율(1~100), 할인 가격 존재 시 할인율. 정액 할인 가격 중 하나는 필수                                                                                                                                                                                                                                   |
 | discountFixed          | Integer | X  | 정액 할인 가격(0~999,999), 할인 가격 존재 시 할인율, 정액 할인 가격 중 하나는 필수                                                                                                                                                                                                                            |
 | buttons                | List    | O  | 버튼 목록<br>- TEXT, IMAGE 타입일 경우 쿠폰 적용 시 최대 4개, 그 외 최대 5개<br>- WIDE, WIDE_ITEM_LIST 타입일 경우 최대 2개<br>- PREMIUM_VIDEO 타입일 경우 최대 1개<br>- COMMERCE 타입일 경우 최소 1개 최대 2개                                                                                                                 |
 | - name                 | String  | O  | 버튼 제목<br>- TEXT, IMAGE 타입일 경우 최대 14자<br>- 이외의 타입일 경우 최대 8자                                                                                                                                                                                                                    |
@@ -910,12 +904,12 @@ Content-Type: application/json;charset=UTF-8
 | - unsubscribeAuthNo   | String  | X  | 080 무료수신거부 인증 번호(최대 10자, 모두 미입력 시 발신 프로필에 등록된 무료수신거부 정보로 발송됨)<br>unsubscribeNo 없이 unsubscribeAuthNo만 입력 불가<br>예: 1234        |
 | - recipientGroupingKey | String  | X  | 수신자 그룹핑 키(수신자별로 그룹핑 키를 지정할 수 있습니다. 최대 100자)                                                                                                                                                                                                                   |
 | senderGroupingKey    | String  | X  | 발신자 그룹핑 키(발신자별로 그룹핑 키를 지정할 수 있습니다. 최대 100자)                                                                                                                                                                                                                   |
+| groupTagKey          | String  | X  | 그룹 태그 키(최대 40자). 지정 시 해당 그룹 태그별 카카오 템플릿 통계를 확인할 수 있습니다.                                                                                                                                                                                                                                                              |
 | resellerCode          | String  | X  | 리셀러 코드(리셀러가 발송 시 사용)                                                                                                                                                                                                                                                       |
 | createUser             | String  | X  | 등록자(콘솔에서 발송 시 사용자 UUID로 저장)                                                                                                                                                                                                                                                   |
 | statsId                | String  | 	X | 통계 ID(발신 검색 조건에는 포함되지 않습니다. 최대 8자)                                                                                                                                                                                                                                            |
 
 <a id="request-to-send-carousel-feed-type"></a>
-
 #### 캐러셀 피드형 발송 요청
 
 ##### 캐러셀 고정 치환자(path 기반 템플릿 파라미터)
@@ -1032,6 +1026,7 @@ Content-Type: application/json;charset=UTF-8
     }
   ],
   "senderGroupingKey": String,
+  "groupTagKey": String,
   "resellerCode": String,
   "createUser": String,
   "statsId": String
@@ -1089,12 +1084,12 @@ Content-Type: application/json;charset=UTF-8
 | - unsubscribeAuthNo   | String  | X  | 080 무료수신거부 인증 번호(최대 10자, 모두 미입력 시 발신 프로필에 등록된 무료수신거부 정보로 발송됨)<br>unsubscribeNo 없이 unsubscribeAuthNo만 입력 불가<br>예: 1234        |
 | - recipientGroupingKey | String  | X  | 수신자 그룹핑 키(수신자별로 그룹핑 키를 지정할 수 있습니다. 최대 100자)                                                                                                                                                                                                                   |
 | senderGroupingKey    | String  | X  | 발신자 그룹핑 키(발신자별로 그룹핑 키를 지정할 수 있습니다. 최대 100자)                                                                                                                                                                                                                   |
+| groupTagKey          | String  | X  | 그룹 태그 키(최대 40자). 지정 시 해당 그룹 태그별 카카오 템플릿 통계를 확인할 수 있습니다.                                                                                                                                                                                                                                                              |
 | resellerCode          | String  | X  | 리셀러 코드(리셀러가 발송 시 사용)                                                                                                                                                                                                                                                       |
 | createUser             | String  | X  | 등록자(콘솔에서 발송 시 사용자 UUID로 저장)                                                                                                                                                                                                                                                   |
 | statsId                | String  | 	X | 통계 ID(발신 검색 조건에는 포함되지 않습니다. 최대 8자)                                                                                                                                                                                                                                            |
 
 <a id="request-to-send-carousel-commerce-type"></a>
-
 #### 캐러셀 커머스형 발송 요청
 
 [Request body]
@@ -1178,6 +1173,7 @@ Content-Type: application/json;charset=UTF-8
     }
   ],
   "senderGroupingKey": String,
+  "groupTagKey": String,
   "resellerCode": String,
   "createUser": String,
   "statsId": String
@@ -1210,7 +1206,7 @@ Content-Type: application/json;charset=UTF-8
 | --- title            | String  | O  | 상품 제목(최대 30자, 줄바꿈: 불가)                                                                                                                                                                                                                                                       |
 | --- regularPrice     | Integer | O  | 정상 가격(0~99,999,999)                                                                                                                                                                                                                                                        |
 | --- discountPrice    | Integer | X  | 할인 가격(0~99,999,999)                                                                                                                                                                                                                                                          |
-| --- discountRate     | Integer | X  | 할인율(0~100), 할인 가격 존재 시 할인율, 정액 할인 가격 중 하나는 필수                                                                                                                                                                                                                                   |
+| --- discountRate     | Integer | X  | 할인율(1~100), 할인 가격 존재 시 할인율, 정액 할인 가격 중 하나는 필수                                                                                                                                                                                                                                   |
 | --- discountFixed    | Integer | X  | 정액 할인 가격(0~999,999), 할인 가격 존재 시 할인율, 정액 할인 가격 중 하나는 필수                                                                                                                                                                                                                            |
 | -- buttons           | List    | O  | 캐러셀 리스트 버튼 목록 최소 1개, 최대 2개                                                                                                                                                                                                                                                    |
 | --- name             | String  | O  | 버튼 제목<br>- TEXT, IMAGE 타입일 경우 최대 14자<br>- 이외의 타입일 경우 최대 8자                                                                                                                                                                                                                    |
@@ -1247,12 +1243,12 @@ Content-Type: application/json;charset=UTF-8
 | - unsubscribeAuthNo   | String  | X  | 080 무료수신거부 인증 번호(최대 10자, 모두 미입력 시 발신 프로필에 등록된 무료수신거부 정보로 발송됨)<br>unsubscribeNo 없이 unsubscribeAuthNo만 입력 불가<br>예: 1234        |
 | - recipientGroupingKey | String  | X  | 수신자 그룹핑 키(수신자별로 그룹핑 키를 지정할 수 있습니다. 최대 100자)                                                                                                                                                                                                                   |
 | senderGroupingKey    | String  | X  | 발신자 그룹핑 키(발신자별로 그룹핑 키를 지정할 수 있습니다. 최대 100자)                                                                                                                                                                                                                   |
+| groupTagKey          | String  | X  | 그룹 태그 키(최대 40자). 지정 시 해당 그룹 태그별 카카오 템플릿 통계를 확인할 수 있습니다.                                                                                                                                                                                                                                                              |
 | resellerCode          | String  | X  | 리셀러 코드(리셀러가 발송 시 사용)                                                                                                                                                                                                                                                       |
 | createUser           | String  | X  | 등록자(콘솔에서 발송 시 사용자 UUID로 저장)                                                                                                                                                                                                                                                   |
 | statsId              | String  | 	X | 통계 ID(발신 검색 조건에는 포함되지 않습니다. 최대 8자)                                                                                                                                                                                                                                            |
 
 <a id="response-3"></a>
-
 #### 응답
 
 ```
@@ -1291,7 +1287,6 @@ Content-Type: application/json;charset=UTF-8
 | -- resultMessage | String  | O        | 수신자별 발송 결과 메시지(성공 시 "success" 또는 관련 메시지, 실패 시 실패 원인 상세 메시지) |
 
 <a id="request-to-send-basic-message"></a>
-
 ## 메시지 기본형 발송 요청 { #request-to-send-basic-message }
 
 * 템플릿을 이용한 발송입니다.
@@ -1309,7 +1304,6 @@ Content-Type: application/json;charset=UTF-8
 * **야간 발송 제한(20:50~다음 날 08:00)**
 
 <a id="cautions-for-use"></a>
-
 ### 사용 시 주의 사항 { #cautions-for-use }
 
 - unsubscribeNo, unsubscribeAuthNo는 080 무료수신거부 전화번호와 인증번호로, 둘 중 하나라도 입력하지 않으면 발신 프로필에 등록된 무료수신거부 정보로 발송됩니다.
@@ -1343,7 +1337,6 @@ Content-Type: application/json;charset=UTF-8
 | X-Secret-Key | String | O  | 콘솔에서 생성할 수 있습니다. |
 
 <a id="requested-4"></a>
-
 #### 발송 요청
 
 ```
@@ -1375,6 +1368,7 @@ Content-Type: application/json;charset=UTF-8
     }
   ],
   "senderGroupingKey": String,
+  "groupTagKey": String,
   "resellerCode": String,
   "createUser": String,
   "statsId": String
@@ -1409,12 +1403,12 @@ Content-Type: application/json;charset=UTF-8
 | - unsubscribeAuthNo    | String  | X  | 080 무료수신거부 인증 번호(최대 10자, 모두 미입력 시 발신 프로필에 등록된 무료수신거부 정보로 발송됨)<br>unsubscribeNo 없이 unsubscribeAuthNo만 입력 불가<br>예: 1234                                                                                                           |
 | - recipientGroupingKey | String  | X  | 수신자 그룹핑 키(수신자별로 그룹핑 키를 지정할 수 있습니다. 최대 100자)                                                                                                                                                                                             |
 | senderGroupingKey      | String  | X  | 발신자 그룹핑 키(발신자별로 그룹핑 키를 지정할 수 있습니다. 최대 100자)                                                                                                                                                                                             |
+| groupTagKey            | String  | X  | 그룹 태그 키(최대 40자). 지정 시 해당 그룹 태그별 카카오 템플릿 통계를 확인할 수 있습니다.                                                                                                                                                                                                                          |
 | resellerCode           | String  | X  | 리셀러 코드(리셀러가 발송 시 사용)                                                                                                                                                                                                                    |
 | createUser             | String  | X  | 등록자(콘솔에서 발송 시 사용자 UUID로 저장)                                                                                                                                                                                                             |
 | statsId                | String  | X  | 통계 ID(발신 검색 조건에는 포함되지 않습니다. 최대 8자)                                                                                                                                                                                                      |
 
 <a id="response-4"></a>
-
 #### 응답
 
 ```
@@ -1453,11 +1447,9 @@ Content-Type: application/json;charset=UTF-8
 | -- resultMessage | String  | O        | 수신자별 발송 결과 메시지(성공 시 "success" 또는 관련 메시지, 실패 시 실패 원인 상세 메시지) |
 
 <a id="view-sending-list"></a>
-
 ## 발송 목록 조회 { #view-sending-list }
 
 <a id="requested-5"></a>
-
 #### 요청
 
 [URL]
@@ -1503,7 +1495,6 @@ Content-Type: application/json;charset=UTF-8
 | pageSize         | String | X         | 조회 건수(Default: 15, Max: 1000)    |
 
 <a id="response-5"></a>
-
 #### 응답
 
 ```
@@ -1580,11 +1571,9 @@ Content-Type: application/json;charset=UTF-8
 | - totalCount                | Integer | O        | 총 개수                                                                  |
 
 <a id="view-single-sending"></a>
-
 ## 발송 단건 조회 { #view-single-sending }
 
 <a id="requested-6"></a>
-
 #### 요청
 
 [URL]
@@ -1615,7 +1604,6 @@ Content-Type: application/json;charset=UTF-8
 | X-Secret-Key | String | O  | 콘솔에서 생성할 수 있습니다. |
 
 <a id="response-6"></a>
-
 #### 응답
 
 ```
@@ -1877,11 +1865,9 @@ Content-Type: application/json;charset=UTF-8
 | - recipientGroupingKey | String  | X        | 수신자 그룹핑 키                                           |
 
 <a id="message-results"></a>
-
 ## 메시지 결과 업데이트 조회 { #message-results }
 
 <a id="requested-25"></a>
-
 #### 요청
 
 [URL]
@@ -1923,7 +1909,6 @@ Content-Type: application/json;charset=UTF-8
     조회 가능 기간은 최근 90일 이내이며, 1회 조회 범위는 최대 31일입니다.
 
 <a id="response-25"></a>
-
 #### 응답
 
 ```
@@ -1988,11 +1973,9 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 ```
 
 <a id="cancel-message-sending"></a>
-
 ## 메시지 발송 취소 { #cancel-message-sending }
 
 <a id="requested-7"></a>
-
 #### 요청
 
 [URL]
@@ -2028,7 +2011,6 @@ Content-Type: application/json;charset=UTF-8
 | recipientSeq | 	String | 	X  | 수신자 시퀀스 번호<br>(입력하지 않으면 요청 ID의 모든 발송 건을 취소) |
 
 <a id="response-7"></a>
-
 #### 응답
 
 ```
@@ -2053,16 +2035,566 @@ Content-Type: application/json;charset=UTF-8
 curl -X DELETE -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" "https://kakaotalk-bizmessage.api.nhncloudservice.com/brand-message/v1.0/appkeys/{appkey}/messages/{requestId}?recipientSeq=1,2,3"
 ```
 
-<a id="manage-templates"></a>
+<a id="section-1"></a>
+## 대량 발송 조회 { #section-1 }
 
+대량 발송 요청(마스터) 단위의 목록과 수신자별 발송 결과를 조회합니다.
+
+* 대량 발송 요청 목록 조회는 요청 단위의 정보만 반환합니다. 수신자별 결과는 수신자 목록 조회 또는 수신자 조회를 사용하세요.
+* 대량 발송 요청 목록 조회 응답의 본문 요소는 `content`, `image`, `buttons`만 제공합니다. 와이드 리스트, 쿠폰, 커머스, 동영상, 캐러셀 요소는 대량 발송 수신자 조회에서 확인할 수 있습니다.
+
+<a id="retrieve-mass-delivery-requests"></a>
+### 대량 발송 요청 목록 조회 { #retrieve-mass-delivery-requests }
+
+<a id="retrieve-mass-delivery-requests-request"></a>
+#### 요청
+
+[URL]
+
+```
+GET  /brand-message/v1.0/appkeys/{appkey}/mass-messages
+Content-Type: application/json;charset=UTF-8
+```
+
+[Path parameter]
+
+| 이름     | 타입     | 설명     |
+|--------|--------|--------|
+| appkey | String | 고유의 앱키 |
+
+[Header]
+
+```
+{
+  "X-Secret-Key": String
+}
+```
+
+| 이름           | 타입     | 필수 | 설명               |
+|--------------|--------|----|------------------|
+| X-Secret-Key | String | O  | 콘솔에서 생성할 수 있습니다. |
+
+[Query parameter] 1번 or 2번 조건 필수
+
+| 이름               | 타입      | 필수        | 설명                                                                                             |
+|------------------|---------|-----------|------------------------------------------------------------------------------------------------|
+| requestId        | String  | 조건 필수(1번) | 요청 ID                                                                                          |
+| startRequestDate | String  | 조건 필수(2번) | 발송 요청 날짜 시작 값(yyyy-MM-dd HH:mm)                                                                 |
+| endRequestDate   | String  | 조건 필수(2번) | 발송 요청 날짜 끝 값(yyyy-MM-dd HH:mm)                                                                  |
+| plusFriendId     | String  | X         | 발신 프로필 ID                                                                                      |
+| masterStatusCode | String  | X         | 대량 발송 상태(WAIT, READY, SENDREADY, SENDWAIT, SENDING, COMPLETE, CANCEL, FAIL)                     |
+| chatBubbleType   | String  | X         | 메시지 타입(TEXT, IMAGE, WIDE, WIDE_ITEM_LIST, PREMIUM_VIDEO, COMMERCE, CAROUSEL_FEED, CAROUSEL_COMMERCE) |
+| pageNum          | Integer | X         | 페이지 번호(Default: 1)                                                                             |
+| pageSize         | Integer | X         | 조회 건수(Default: 15, Max: 1000)                                                                  |
+
+<a id="retrieve-mass-delivery-requests-response"></a>
+#### 응답
+
+```
+{
+  "header": {
+    "resultCode": Integer,
+    "resultMessage": String,
+    "isSuccessful": boolean
+  },
+  "body": {
+    "messages": [
+      {
+        "requestId": String,
+        "requestDate": String,
+        "plusFriendId": String,
+        "senderKey": String,
+        "templateCode": String,
+        "masterStatusCode": String,
+        "chatBubbleType": String,
+        "content": String,
+        "image": {
+          "imageUrl": String,
+          "imageLink": String
+        },
+        "buttons": [
+          {
+            "name": String,
+            "type": String,
+            "linkMo": String,
+            "linkPc": String,
+            "schemeIos": String,
+            "schemeAndroid": String,
+            "chatExtra": String,
+            "chatEvent": String,
+            "bizFormKey": String
+          }
+        ],
+        "pushAlarm": boolean,
+        "fileId": String,
+        "isAutoSend": boolean,
+        "statsId": String,
+        "createUser": String,
+        "createDate": String
+      }
+    ],
+    "totalCount": Integer
+  }
+}
+```
+
+| 이름                 | 타입      | Not Null | 설명                                                                                                     |
+|:-------------------|:--------|:---------|:---------------------------------------------------------------------------------------------------------|
+| header             | Object  | O        | 헤더 영역                                                                                                  |
+| - resultCode       | Integer | O        | 결과 코드                                                                                                  |
+| - resultMessage    | String  | O        | 결과 메시지                                                                                                 |
+| - isSuccessful     | boolean | O        | 성공 여부                                                                                                  |
+| body               | Object  | X        | 본문 영역                                                                                                  |
+| - messages         | Array   | O        | 대량 발송 요청 목록                                                                                            |
+| -- requestId       | String  | O        | 요청 ID                                                                                                   |
+| -- requestDate     | String  | O        | 요청 일시(yyyy-MM-dd HH:mm)                                                                                 |
+| -- plusFriendId    | String  | O        | 발신 프로필 ID                                                                                              |
+| -- senderKey       | String  | O        | 발신 키                                                                                                    |
+| -- templateCode    | String  | X        | 템플릿 코드(기본형 발송 요청만 해당)                                                                                  |
+| -- masterStatusCode | String | O        | 대량 발송 상태(WAIT, READY, SENDREADY, SENDWAIT, SENDING, COMPLETE, CANCEL, FAIL)                              |
+| -- chatBubbleType  | String  | O        | 메시지 타입                                                                                                 |
+| -- content         | String  | X        | 메시지 내용                                                                                                 |
+| -- image           | Object  | X        | 이미지 요소                                                                                                 |
+| --- imageUrl       | String  | O        | 이미지 URL(image 객체 존재 시 Not Null)                                                                        |
+| --- imageLink      | String  | X        | 이미지 링크                                                                                                 |
+| -- buttons         | Array   | X        | 버튼 목록                                                                                                  |
+| --- name           | String  | O        | 버튼 제목(buttons 배열 항목 존재 시 Not Null)                                                                     |
+| --- type           | String  | O        | 버튼 타입(buttons 배열 항목 존재 시 Not Null)                                                                     |
+| --- linkMo         | String  | X        | 모바일 웹 링크                                                                                               |
+| --- linkPc         | String  | X        | PC 웹 링크                                                                                                 |
+| --- schemeIos      | String  | X        | iOS 앱 링크                                                                                                |
+| --- schemeAndroid  | String  | X        | Android 앱 링크                                                                                            |
+| --- chatExtra      | String  | X        | BT 타입 버튼일 경우 전달할 메타 정보                                                                                 |
+| --- chatEvent      | String  | X        | BT 타입 버튼일 경우 연결할 봇 이벤트명                                                                                |
+| --- bizFormKey     | String  | X        | BF 타입 버튼일 경우 비즈폼 키                                                                                     |
+| -- pushAlarm       | boolean | O        | 푸시 알람 여부                                                                                               |
+| -- fileId          | String  | X        | 수신자 파일 ID                                                                                              |
+| -- isAutoSend      | boolean | O        | 자동 발송 여부(수신자 파일 업로드 완료 후 자동으로 발송하면 true)                                                               |
+| -- statsId         | String  | X        | 통계 ID                                                                                                   |
+| -- createUser      | String  | X        | 등록자(콘솔에서 발송 시 사용자 UUID로 저장)                                                                            |
+| -- createDate      | String  | O        | 등록 일시                                                                                                  |
+| - totalCount       | Integer | O        | 총 개수                                                                                                   |
+
+[예시]
+```
+curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" "https://kakaotalk-bizmessage.api.nhncloudservice.com/brand-message/v1.0/appkeys/{appkey}/mass-messages?requestId={requestId}"
+```
+
+<a id="list-mass-delivery-recipients"></a>
+### 대량 발송 수신자 목록 조회 { #list-mass-delivery-recipients }
+
+<a id="list-mass-delivery-recipients-request"></a>
+#### 요청
+
+[URL]
+
+```
+GET  /brand-message/v1.0/appkeys/{appkey}/mass-messages/{requestId}/recipients
+Content-Type: application/json;charset=UTF-8
+```
+
+[Path parameter]
+
+| 이름        | 타입     | 설명     |
+|-----------|--------|--------|
+| appkey    | String | 고유의 앱키 |
+| requestId | String | 요청 ID  |
+
+[Header]
+
+```
+{
+  "X-Secret-Key": String
+}
+```
+
+| 이름           | 타입     | 필수 | 설명               |
+|--------------|--------|----|------------------|
+| X-Secret-Key | String | O  | 콘솔에서 생성할 수 있습니다. |
+
+[Query parameter]
+
+| 이름               | 타입      | 필수 | 설명                                                              |
+|------------------|---------|----|-----------------------------------------------------------------|
+| startReceiveDate | String  | X  | 수신 날짜 시작 값(yyyy-MM-dd HH:mm)                                     |
+| endReceiveDate   | String  | X  | 수신 날짜 끝 값(yyyy-MM-dd HH:mm)                                      |
+| recipientNo      | String  | X  | 수신 번호                                                           |
+| messageStatus    | String  | X  | 요청 상태(READY: 대기, COMPLETED: 성공, FAILED: 실패, CANCEL: 취소)          |
+| resultCode       | String  | X  | 발송 결과(MRC01: 성공, MRC02: 실패)                                     |
+| pageNum          | Integer | X  | 페이지 번호(Default: 1)                                              |
+| pageSize         | Integer | X  | 조회 건수(Default: 15, Max: 1000)                                   |
+
+<a id="list-mass-delivery-recipients-response"></a>
+#### 응답
+
+```
+{
+  "header": {
+    "resultCode": Integer,
+    "resultMessage": String,
+    "isSuccessful": boolean
+  },
+  "body": {
+    "recipients": [
+      {
+        "requestId": String,
+        "recipientSeq": Integer,
+        "recipientNo": String,
+        "targeting": String,
+        "messageStatus": String,
+        "isAddedChannel": boolean,
+        "templateCode": String,
+        "resultCode": String,
+        "resultCodeName": String,
+        "receiveDate": String,
+        "resultDate": String,
+        "resendStatusCode": String,
+        "resendStatusName": String,
+        "resendResultCode": String,
+        "resendRequestId": String
+      }
+    ],
+    "totalCount": Integer
+  }
+}
+```
+
+| 이름                 | 타입      | Not Null | 설명                                                                        |
+|:-------------------|:--------|:---------|:--------------------------------------------------------------------------|
+| header             | Object  | O        | 헤더 영역                                                                     |
+| - resultCode       | Integer | O        | 결과 코드                                                                     |
+| - resultMessage    | String  | O        | 결과 메시지                                                                    |
+| - isSuccessful     | boolean | O        | 성공 여부                                                                     |
+| body               | Object  | X        | 본문 영역                                                                     |
+| - recipients       | Array   | O        | 수신자 목록(조회 결과가 없으면 빈 배열)                                                   |
+| -- requestId       | String  | O        | 요청 ID                                                                     |
+| -- recipientSeq    | Integer | O        | 수신자 시퀀스 번호                                                                |
+| -- recipientNo     | String  | O        | 수신 번호                                                                     |
+| -- targeting       | String  | O        | 메시지 대상의 타입(M: 마케팅 수신 동의 유저, N: 친구가 아닌 마케팅 수신 동의 유저에게만, I: 친구인 유저)      |
+| -- messageStatus   | String  | O        | 요청 상태(READY: 대기, COMPLETED: 성공, FAILED: 실패, CANCEL: 취소)                   |
+| -- isAddedChannel  | boolean | X        | 채널 친구 여부(발송에 성공한 건에만 제공)                                                  |
+| -- templateCode    | String  | X        | 템플릿 코드(기본형 발송 요청만 해당)                                                     |
+| -- resultCode      | String  | X        | 수신 결과 코드                                                                  |
+| -- resultCodeName  | String  | X        | 수신 결과 코드명                                                                 |
+| -- receiveDate     | String  | X        | 수신 일시                                                                     |
+| -- resultDate      | String  | X        | 결과 수신 일시                                                                  |
+| -- resendStatusCode | String | X        | 대체 발송 상태 코드                                                               |
+| -- resendStatusName | String | X        | 대체 발송 상태 이름                                                               |
+| -- resendResultCode | String | X        | 대체 발송 결과 코드                                                               |
+| -- resendRequestId | String  | X        | 대체 발송 요청 ID                                                               |
+| - totalCount       | Integer | O        | 총 개수                                                                      |
+
+[예시]
+```
+curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" "https://kakaotalk-bizmessage.api.nhncloudservice.com/brand-message/v1.0/appkeys/{appkey}/mass-messages/{requestId}/recipients?pageNum=1&pageSize=15"
+```
+
+<a id="get-a-mass-delivery-recipient"></a>
+### 대량 발송 수신자 조회 { #get-a-mass-delivery-recipient }
+
+<a id="get-a-mass-delivery-recipient-request"></a>
+#### 요청
+
+[URL]
+
+```
+GET  /brand-message/v1.0/appkeys/{appkey}/mass-messages/{requestId}/recipients/{recipientSeq}
+Content-Type: application/json;charset=UTF-8
+```
+
+[Path parameter]
+
+| 이름           | 타입      | 설명         |
+|--------------|---------|------------|
+| appkey       | String  | 고유의 앱키     |
+| requestId    | String  | 요청 ID      |
+| recipientSeq | Integer | 수신자 시퀀스 번호 |
+
+[Header]
+
+```
+{
+  "X-Secret-Key": String
+}
+```
+
+| 이름           | 타입     | 필수 | 설명               |
+|--------------|--------|----|------------------|
+| X-Secret-Key | String | O  | 콘솔에서 생성할 수 있습니다. |
+
+<a id="get-a-mass-delivery-recipient-response"></a>
+#### 응답
+
+```
+{
+  "header": {
+    "resultCode": Integer,
+    "resultMessage": String,
+    "isSuccessful": boolean
+  },
+  "message": {
+    "requestId": String,
+    "recipientSeq": Integer,
+    "plusFriendId": String,
+    "senderKey": String,
+    "templateCode": String,
+    "recipientNo": String,
+    "targeting": String,
+    "chatBubbleType": String,
+    "content": String,
+    "adult": boolean,
+    "header": String,
+    "additionalContent": String,
+    "image": {
+      "imageUrl": String,
+      "imageLink": String
+    },
+    "buttons": [
+      {
+        "name": String,
+        "type": String,
+        "linkMo": String,
+        "linkPc": String,
+        "schemeIos": String,
+        "schemeAndroid": String,
+        "chatExtra": String,
+        "chatEvent": String,
+        "bizFormKey": String
+      }
+    ],
+    "item": {
+      "list": [
+        {
+          "title": String,
+          "imageUrl": String,
+          "linkMo": String,
+          "linkPc": String,
+          "schemeIos": String,
+          "schemeAndroid": String
+        }
+      ]
+    },
+    "coupon": {
+      "title": String,
+      "description": String,
+      "linkMo": String,
+      "linkPc": String,
+      "schemeAndroid": String,
+      "schemeIos": String
+    },
+    "commerce": {
+      "title": String,
+      "regularPrice": Integer,
+      "discountPrice": Integer,
+      "discountRate": Integer,
+      "discountFixed": Integer
+    },
+    "video": {
+      "videoUrl": String,
+      "thumbnailUrl": String
+    },
+    "carousel": {
+      "head": {
+        "header": String,
+        "content": String,
+        "imageUrl": String,
+        "linkMo": String,
+        "linkPc": String,
+        "schemeIos": String,
+        "schemeAndroid": String
+      },
+      "list": [
+        {
+          "header": String,
+          "message": String,
+          "additionalContent": String,
+          "imageUrl": String,
+          "imageLink": String,
+          "commerce": {
+            "title": String,
+            "regularPrice": Integer,
+            "discountPrice": Integer,
+            "discountRate": Integer,
+            "discountFixed": Integer
+          },
+          "buttons": [
+            {
+              "name": String,
+              "type": String,
+              "linkMo": String,
+              "linkPc": String,
+              "schemeAndroid": String,
+              "schemeIos": String,
+              "chatExtra": String,
+              "chatEvent": String,
+              "bizFormKey": String
+            }
+          ],
+          "coupon": {
+            "title": String,
+            "description": String,
+            "linkMo": String,
+            "linkPc": String,
+            "schemeAndroid": String,
+            "schemeIos": String
+          }
+        }
+      ],
+      "tail": {
+        "linkMo": String,
+        "linkPc": String,
+        "schemeAndroid": String,
+        "schemeIos": String
+      }
+    },
+    "templateParameter": String,
+    "imageParameters": String,
+    "videoParameter": String,
+    "pushAlarm": boolean,
+    "messageStatus": String,
+    "isAddedChannel": boolean,
+    "resultCode": String,
+    "resultCodeName": String,
+    "venderResultMessage": String,
+    "requestDate": String,
+    "createDate": String,
+    "receiveDate": String,
+    "resendStatusCode": String,
+    "resendStatusName": String,
+    "resendResultCode": String,
+    "resendRequestId": String
+  }
+}
+```
+
+| 이름                    | 타입      | Not Null | 설명                                                                                               |
+|:----------------------|:--------|:---------|:-------------------------------------------------------------------------------------------------|
+| header                | Object  | O        | 헤더 영역                                                                                            |
+| - resultCode          | Integer | O        | 결과 코드                                                                                            |
+| - resultMessage       | String  | O        | 결과 메시지                                                                                           |
+| - isSuccessful        | boolean | O        | 성공 여부                                                                                            |
+| message               | Object  | X        | 메시지 본문 영역                                                                                       |
+| - requestId           | String  | O        | 요청 ID(message 객체 존재 시 Not Null)                                                                 |
+| - recipientSeq        | Integer | O        | 수신자 시퀀스 번호(message 객체 존재 시 Not Null)                                                            |
+| - plusFriendId        | String  | O        | 발신 프로필 ID(message 객체 존재 시 Not Null)                                                             |
+| - senderKey           | String  | O        | 발신 키(message 객체 존재 시 Not Null)                                                                  |
+| - templateCode        | String  | X        | 템플릿 코드(기본형 발송 요청만 해당)                                                                            |
+| - recipientNo         | String  | O        | 수신 번호(message 객체 존재 시 Not Null)                                                                 |
+| - targeting           | String  | O        | 메시지 대상의 타입(M: 마케팅 수신 동의 유저, N: 친구가 아닌 마케팅 수신 동의 유저에게만, I: 친구인 유저)(message 객체 존재 시 Not Null) |
+| - chatBubbleType      | String  | O        | 메시지 타입(message 객체 존재 시 Not Null)                                                                |
+| - content             | String  | X        | 메시지 내용                                                                                           |
+| - adult               | boolean | X        | 성인용 메시지 여부                                                                                      |
+| - header              | String  | X        | 헤더(메시지 내)                                                                                       |
+| - additionalContent   | String  | X        | 부가 정보(메시지 내)                                                                                    |
+| - image               | Object  | X        | 이미지 요소                                                                                           |
+| -- imageUrl           | String  | O        | 이미지 URL(image 객체 존재 시 Not Null)                                                                 |
+| -- imageLink          | String  | X        | 이미지 링크                                                                                           |
+| - buttons             | Array   | X        | 버튼 목록                                                                                            |
+| -- name               | String  | O        | 버튼 제목(buttons 배열 항목 존재 시 Not Null)                                                              |
+| -- type               | String  | O        | 버튼 타입(buttons 배열 항목 존재 시 Not Null)                                                              |
+| -- linkMo             | String  | X        | 모바일 웹 링크                                                                                         |
+| -- linkPc             | String  | X        | PC 웹 링크                                                                                          |
+| -- schemeIos          | String  | X        | iOS 앱 링크                                                                                         |
+| -- schemeAndroid      | String  | X        | Android 앱 링크                                                                                     |
+| -- chatExtra          | String  | X        | BT 타입 버튼일 경우 전달할 메타 정보                                                                      |
+| -- chatEvent          | String  | X        | BT 타입 버튼일 경우 연결할 봇 이벤트명                                                                          |
+| -- bizFormKey         | String  | X        | BF 타입 버튼일 경우 비즈폼 키                                                                               |
+| - item                | Object  | X        | 와이드 리스트 요소                                                                                       |
+| -- list               | Array   | X        | 와이드 리스트(item 객체 존재 시 Nullable)                                                                  |
+| --- title             | String  | X        | 아이템 제목                                                                                           |
+| --- imageUrl          | String  | O        | 아이템 이미지 URL(item.list 항목 존재 시 Not Null)                                                         |
+| --- linkMo            | String  | O        | 모바일 웹 링크(item.list 항목 존재 시 Not Null)                                                            |
+| --- linkPc            | String  | X        | PC 웹 링크                                                                                          |
+| --- schemeIos         | String  | X        | iOS 앱 링크                                                                                         |
+| --- schemeAndroid     | String  | X        | Android 앱 링크                                                                                     |
+| - coupon              | Object  | X        | 쿠폰 요소                                                                                            |
+| -- title              | String  | O        | 쿠폰 제목(coupon 객체 존재 시 Not Null)                                                                  |
+| -- description        | String  | O        | 쿠폰 상세 설명(coupon 객체 존재 시 Not Null)                                                               |
+| -- linkMo             | String  | X        | 모바일 웹 링크                                                                                         |
+| -- linkPc             | String  | X        | PC 웹 링크                                                                                          |
+| -- schemeAndroid      | String  | X        | Android 앱 링크                                                                                     |
+| -- schemeIos          | String  | X        | iOS 앱 링크                                                                                         |
+| - commerce            | Object  | X        | 커머스 요소                                                                                           |
+| -- title              | String  | O        | 상품 제목(commerce 객체 존재 시 Not Null)                                                                |
+| -- regularPrice       | Integer | X        | 정상 가격                                                                                            |
+| -- discountPrice      | Integer | X        | 할인 가격                                                                                             |
+| -- discountRate       | Integer | X        | 할인율                                                                                              |
+| -- discountFixed      | Integer | X        | 정액 할인 가격                                                                                           |
+| - video               | Object  | X        | 동영상 요소                                                                                           |
+| -- videoUrl           | String  | O        | 카카오TV 동영상 URL(video 객체 존재 시 Not Null)                                                           |
+| -- thumbnailUrl       | String  | X        | 동영상 섬네일용 이미지 URL                                                                                 |
+| - carousel            | Object  | X        | 캐러셀                                                                                              |
+| -- head               | Object  | X        | 캐러셀 인트로(carousel 객체 존재 시 Nullable)                                                              |
+| --- header            | String  | O        | 캐러셀 인트로 헤더(head 객체 존재 시 Not Null)                                                               |
+| --- content           | String  | O        | 캐러셀 인트로 내용(head 객체 존재 시 Not Null)                                                               |
+| --- imageUrl          | String  | O        | 캐러셀 인트로 이미지 주소(head 객체 존재 시 Not Null)                                                           |
+| --- linkMo            | String  | X        | 모바일 웹 링크                                                                                         |
+| --- linkPc            | String  | X        | PC 웹 링크                                                                                          |
+| --- schemeIos         | String  | X        | iOS 앱 링크                                                                                         |
+| --- schemeAndroid     | String  | X        | Android 앱 링크                                                                                     |
+| -- list               | Array   | O        | 캐러셀 리스트(carousel 객체 존재 시 Not Null)                                                              |
+| --- header            | String  | X        | 캐러셀 아이템 헤더                                                                                       |
+| --- message           | String  | O        | 캐러셀 아이템 메시지(list 항목 존재 시 Not Null)                                                              |
+| --- additionalContent | String  | X        | 부가 정보                                                                                            |
+| --- imageUrl          | String  | X        | 이미지 URL                                                                                          |
+| --- imageLink         | String  | X        | 이미지 링크                                                                                           |
+| --- commerce          | Object  | X        | 커머스(캐러셀 내)                                                                                      |
+| ---- title            | String  | O        | 상품 제목(carousel.list.commerce 존재 시 Not Null)                                                     |
+| ---- regularPrice     | Integer | X        | 정상 가격                                                                                            |
+| ---- discountPrice    | Integer | X        | 할인 가격                                                                                             |
+| ---- discountRate     | Integer | X        | 할인율                                                                                              |
+| ---- discountFixed    | Integer | X        | 정액 할인 가격                                                                                           |
+| --- buttons           | Array   | X        | 버튼 목록(캐러셀 내)                                                                                    |
+| ---- name             | String  | O        | 버튼 제목(carousel.list.buttons 항목 존재 시 Not Null)                                                   |
+| ---- type             | String  | O        | 버튼 타입(carousel.list.buttons 항목 존재 시 Not Null)                                                   |
+| ---- linkMo           | String  | X        | 모바일 웹 링크                                                                                         |
+| ---- linkPc           | String  | X        | PC 웹 링크                                                                                          |
+| ---- schemeAndroid    | String  | X        | Android 앱 링크                                                                                     |
+| ---- schemeIos        | String  | X        | iOS 앱 링크                                                                                         |
+| ---- chatExtra        | String  | X        | BT 타입 버튼일 경우 전달할 메타 정보                                                                      |
+| ---- chatEvent        | String  | X        | BT 타입 버튼일 경우 연결할 봇 이벤트명                                                                          |
+| ---- bizFormKey       | String  | X        | BF 타입 버튼일 경우 비즈폼 키                                                                               |
+| --- coupon            | Object  | X        | 쿠폰(캐러셀 내)                                                                                       |
+| ---- title            | String  | O        | 쿠폰 제목(carousel.list.coupon 존재 시 Not Null)                                                       |
+| ---- description      | String  | O        | 쿠폰 상세 설명(carousel.list.coupon 존재 시 Not Null)                                                    |
+| ---- linkMo           | String  | X        | 모바일 웹 링크                                                                                         |
+| ---- linkPc           | String  | X        | PC 웹 링크                                                                                          |
+| ---- schemeAndroid    | String  | X        | Android 앱 링크                                                                                     |
+| ---- schemeIos        | String  | X        | iOS 앱 링크                                                                                         |
+| -- tail               | Object  | X        | 더보기 버튼 정보(carousel 객체 존재 시 Nullable)                                                            |
+| --- linkMo            | String  | O        | 모바일 웹 링크(tail 객체 존재 시 Not Null)                                                                 |
+| --- linkPc            | String  | X        | PC 웹 링크                                                                                          |
+| --- schemeAndroid     | String  | X        | Android 앱 링크                                                                                     |
+| --- schemeIos         | String  | X        | iOS 앱 링크                                                                                         |
+| - templateParameter   | String  | X        | 수신자 파일에 입력한 템플릿 치환 변수(JSON 문자열)<br>응답의 메시지 본문에는 이 값이 치환된 결과가 반영됩니다.                             |
+| - imageParameters     | String  | X        | 수신자 파일에 입력한 이미지 치환 값(JSON 문자열)                                                                   |
+| - videoParameter      | String  | X        | 수신자 파일에 입력한 동영상 치환 값(JSON 문자열)<br>수신자별로 지정한 값만 담기며, 값이 없으면 발송 요청 시 지정한 `video` 값으로 발송됩니다. |
+| - pushAlarm           | boolean | O        | 푸시 알람 여부(message 객체 존재 시 Not Null)                                                              |
+| - messageStatus       | String  | O        | 요청 상태(READY: 대기, COMPLETED: 성공, FAILED: 실패, CANCEL: 취소)(message 객체 존재 시 Not Null)               |
+| - isAddedChannel      | boolean | X        | 채널 친구 여부(발송에 성공한 건에만 제공)                                                                        |
+| - resultCode          | String  | X        | 수신 결과 코드                                                                                         |
+| - resultCodeName      | String  | X        | 수신 결과 코드명                                                                                        |
+| - venderResultMessage | String  | X        | 카카오에서 전달받은 결과 메시지                                                                               |
+| - requestDate         | String  | O        | 요청 일시(yyyy-MM-dd HH:mm)(message 객체 존재 시 Not Null)                                               |
+| - createDate          | String  | O        | 등록 일시(message 객체 존재 시 Not Null)                                                                 |
+| - receiveDate         | String  | X        | 수신 일시                                                                                            |
+| - resendStatusCode    | String  | X        | 대체 발송 상태 코드                                                                                      |
+| - resendStatusName    | String  | X        | 대체 발송 상태 코드명                                                                                     |
+| - resendResultCode    | String  | X        | 대체 발송 결과 코드                                                                                      |
+| - resendRequestId     | String  | X        | 대체 발송 요청 ID                                                                                      |
+
+[예시]
+```
+curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" "https://kakaotalk-bizmessage.api.nhncloudservice.com/brand-message/v1.0/appkeys/{appkey}/mass-messages/{requestId}/recipients/1"
+```
+
+<a id="manage-templates"></a>
 ## 템플릿 관리 { #manage-templates }
 
 <a id="view-template-list"></a>
-
 ### 템플릿 리스트 조회 { #view-template-list }
 
 <a id="requested-8"></a>
-
 #### 요청
 
 [URL]
@@ -2102,7 +2634,6 @@ Content-Type: application/json;charset=UTF-8
 | pageSize     | Integer | X  | 조회 건수(Default: 15, Max: 1000) |
 
 <a id="response-8"></a>
-
 #### 응답
 
 ```
@@ -2331,7 +2862,6 @@ Content-Type: application/json;charset=UTF-8
 | - totalCount            | Integer | O        | 총 개수                                   |
 
 <a id="view-single-template"></a>
-
 ### 템플릿 단건 조회 { #view-single-template }
 
 [URL]
@@ -2363,7 +2893,6 @@ Content-Type: application/json;charset=UTF-8
 |X-NC-API-IDEMPOTENCY-KEY|	String| X | 중복 메시지 발송 요청 기준 key<br>10분간 동일한 key로 요청 시 해당 요청을 실패 처리합니다. |
 
 <a id="response-9"></a>
-
 #### 응답
 
 ```
@@ -2586,11 +3115,9 @@ Content-Type: application/json;charset=UTF-8
 | - updateDate          | String  | X        | 수정 일시                |
 
 <a id="register-template"></a>
-
 ### 템플릿 등록 { #register-template }
 
 <a id="requested-10"></a>
-
 #### 요청
 
 [URL]
@@ -2620,7 +3147,6 @@ Content-Type: application/json;charset=UTF-8
 | X-Secret-Key | String | O  | 콘솔에서 생성할 수 있습니다. |
 
 <a id="note"></a>
-
 #### 유의 사항
 
 * 쿠폰 제목에 치환자를 적용할 경우 다음과 같은 고정 치환자를 사용해야 합니다.
@@ -2641,7 +3167,6 @@ Content-Type: application/json;charset=UTF-8
     * discountFixed -> #{정액할인가격}
 
 <a id="request-to-register-text-type-template"></a>
-
 #### 텍스트형 템플릿 등록 요청
 
 [Request body]
@@ -2697,7 +3222,6 @@ Content-Type: application/json;charset=UTF-8
 | - schemeIos     | String  | X  | iOS 앱 링크(AL 타입일 경우 필수 필드), 500자 제한<br>쿠폰에 linkMo 필드를 입력할 경우 나머지 필드는 선택 사항(옵션)이 되며,<br>scheme_android 또는 scheme_ios 필드에 채널 쿠폰 URL(형식: alimtalk=coupon://)을 입력할 경우 나머지 필드가 선택 사항(옵션)이 됩니다.                                                     |
 
 <a id="request-to-register-image-type-template"></a>
-
 #### 이미지형 템플릿 등록 요청
 
 [Request body]
@@ -2760,7 +3284,6 @@ Content-Type: application/json;charset=UTF-8
 | - schemeIos     | String  | X  | iOS 앱 링크(AL 타입일 경우 필수 필드), 500자 제한<br>쿠폰에 linkMo 필드를 입력할 경우 나머지 필드는 선택 사항(옵션)이 되며,<br>scheme_android 또는 scheme_ios 필드에 채널 쿠폰 URL(형식: alimtalk=coupon://)을 입력할 경우 나머지 필드가 선택 사항(옵션)이 됩니다.                                                         |
 
 <a id="request-to-register-wide-image-type-template"></a>
-
 #### 와이드 이미지형 템플릿 등록 요청
 
 [Request body]
@@ -2823,7 +3346,6 @@ Content-Type: application/json;charset=UTF-8
 | - schemeIos     | String  | X  | iOS 앱 링크(AL 타입일 경우 필수 필드), 500자 제한<br>쿠폰에 linkMo 필드를 입력할 경우 나머지 필드는 선택 사항(옵션)이 되며,<br>scheme_android 또는 scheme_ios 필드에 채널 쿠폰 URL(형식: alimtalk=coupon://)을 입력할 경우 나머지 필드가 선택 사항(옵션)이 됩니다.                                                         |
 
 <a id="request-to-register-wide-item-list-type-template"></a>
-
 #### 와이드 아이템리스트형 템플릿 등록 요청
 
 [Request body]
@@ -2915,7 +3437,6 @@ Content-Type: application/json;charset=UTF-8
 | - schemeIos      | String  | X  | iOS 앱 링크(AL 타입일 경우 필수 필드), 500자 제한<br>쿠폰에 linkMo 필드를 입력할 경우 나머지 필드는 선택 사항(옵션)이 되며,<br>scheme_android 또는 scheme_ios 필드에 채널 쿠폰 URL(형식: alimtalk=coupon://)을 입력할 경우 나머지 필드가 선택 사항(옵션)이 됩니다.                                       |
 
 <a id="request-to-register-premium-video-type-template"></a>
-
 #### 프리미엄 동영상형 템플릿 등록 요청
 
 [Request body]
@@ -2980,7 +3501,6 @@ Content-Type: application/json;charset=UTF-8
 | - schemeIos     | String  | X  | iOS 앱 링크(AL 타입일 경우 필수 필드), 500자 제한<br>쿠폰에 linkMo 필드를 입력할 경우 나머지 필드는 선택 사항(옵션)이 되며,<br>scheme_android 또는 scheme_ios 필드에 채널 쿠폰 URL(형식: alimtalk=coupon://)을 입력할 경우 나머지 필드가 선택 사항(옵션)이 됩니다.                                                         |
 
 <a id="request-to-register-commerce-type-template"></a>
-
 #### 커머스형 템플릿 등록 요청
 
 [Request body]
@@ -3038,7 +3558,7 @@ Content-Type: application/json;charset=UTF-8
 | title             | String  | O  | 상품 제목(최대 30자, 줄바꿈: 불가)                                                                                                                                                                                                           |
 | regularPrice      | Integer | O  | 정상 가격(0~99,999,999)<br>치환자 사용자 지정 불가능, 값을 비워두면 고정 치환자 `#{정상가격}`으로 저장됨                                                                                                                                                          |
 | discountPrice     | Integer | X  | 할인 가격(0~99,999,999)<br>치환자 사용자 지정 불가능, 값을 비워두면 고정 치환자 `#{할인가격}`으로 저장됨                                                                                                                                                            |
-| discountRate      | Integer | X  | 할인율(0~100), 할인 가격 존재 시 할인율, 정액 할인 가격 중 하나는 필수<br>치환자 사용자 지정 불가능, 값을 비워두면 고정 치환자 `#{할인율}`으로 저장됨                                                                                                                                      |
+| discountRate      | Integer | X  | 할인율(1~100), 할인 가격 존재 시 할인율, 정액 할인 가격 중 하나는 필수<br>치환자 사용자 지정 불가능, 값을 비워두면 고정 치환자 `#{할인율}`으로 저장됨                                                                                                                                      |
 | discountFixed     | Integer | X  | 정액 할인 가격(0~999,999), 할인 가격 존재 시 할인율, 정액 할인 가격 중 하나는 필수<br>치환자 사용자 지정 불가능, 값을 비워두면 고정 치환자 `#{정액할인가격}`으로 저장됨                                                                                                                            |
 | buttons           | List    | O  | 버튼 목록<br>- TEXT, IMAGE 타입일 경우 쿠폰 적용 시 최대 4개, 그 외 최대 5개<br>- WIDE, WIDE_ITEM_LIST 타입일 경우 최대 2개<br>- PREMIUM_VIDEO 타입일 경우 최대 1개<br>- COMMERCE 타입일 경우 최소 1개 최대 2개                                                                     |
 | - name            | String  | O  | 버튼 제목<br>- TEXT, IMAGE 타입일 경우 최대 14자<br>- 이외의 타입일 경우 최대 8자<br>치환자 사용 불가능                                                                                                                                                          |
@@ -3057,7 +3577,6 @@ Content-Type: application/json;charset=UTF-8
 | - schemeIos       | String  | X  | iOS 앱 링크(AL 타입일 경우 필수 필드), 500자 제한<br>쿠폰에 linkMo 필드를 입력할 경우 나머지 필드는 선택 사항(옵션)이 되며,<br>scheme_android 또는 scheme_ios 필드에 채널 쿠폰 URL(형식: alimtalk=coupon://)을 입력할 경우 나머지 필드가 선택 사항(옵션)이 됩니다.                                       |
 
 <a id="request-to-register-carousel-feed-type-template"></a>
-
 #### 캐러셀 피드형 템플릿 등록 요청
 
 [Request body]
@@ -3169,7 +3688,6 @@ Content-Type: application/json;charset=UTF-8
 | createUser        | String  | X  | 등록자(콘솔에서 발송 시 사용자 UUID로 저장)                                                                                                                                                                                                       |
 
 <a id="request-to-register-carousel-commerce-type-template"></a>
-
 #### 캐러셀 커머스형 템플릿 등록 요청
 
 [Request body]
@@ -3255,7 +3773,7 @@ Content-Type: application/json;charset=UTF-8
 | --- title            | String  | O  | 상품 제목(최대 30자, 줄바꿈: 불가)                                                                                                                                                                                                           |
 | --- regularPrice     | Integer | O  | 정상 가격(0~99,999,999)<br>치환자 사용자 지정 불가능, 값을 비워두면 고정 치환자 `#{정상가격}`으로 저장됨                                                                                                                                                          |
 | --- discountPrice    | Integer | X  | 할인 가격(0~99,999,999)<br>치환자 사용자 지정 불가능, 값을 비워두면 고정 치환자 `#{할인가격}`으로 저장됨                                                                                                                                                            |
-| --- discountRate     | Integer | X  | 할인율(0~100), 할인 가격 존재 시 할인율, 정액 할인 가격 중 하나는 필수<br>치환자 사용자 지정 불가능, 값을 비워두면 고정 치환자 `#{할인율}`으로 저장됨                                                                                                                                      |
+| --- discountRate     | Integer | X  | 할인율(1~100), 할인 가격 존재 시 할인율, 정액 할인 가격 중 하나는 필수<br>치환자 사용자 지정 불가능, 값을 비워두면 고정 치환자 `#{할인율}`으로 저장됨                                                                                                                                      |
 | --- discountFixed    | Integer | X  | 정액 할인 가격(0~999,999), 할인 가격 존재 시 할인율, 정액 할인 가격 중 하나는 필수<br>치환자 사용자 지정 불가능, 값을 비워두면 고정 치환자 `#{정액할인가격}`으로 저장됨                                                                                                                            |
 | -- buttons           | List    | O  | 캐러셀 리스트 버튼 목록 최소 1개, 최대 2개                                                                                                                                                                                                        |
 | --- name             | String  | O  | 버튼 제목<br>- TEXT, IMAGE 타입일 경우 최대 14자<br>- 이외의 타입일 경우 최대 8자<br>치환자 사용 불가능                                                                                                                                                          |
@@ -3279,7 +3797,6 @@ Content-Type: application/json;charset=UTF-8
 | -- schemeIos         | String  | X  | iOS 앱 링크, 500자 제한<br>치환자 사용 불가능                                                                                                                                                                                                 |
 
 <a id="response-10"></a>
-
 #### 응답
 
 ```
@@ -3305,11 +3822,9 @@ Content-Type: application/json;charset=UTF-8
 | - templateCode  | String  | O        | 템플릿 코드 |
 
 <a id="modify-template"></a>
-
 ### 템플릿 수정 { #modify-template }
 
 <a id="requested-11"></a>
-
 #### 요청
 
 [URL]
@@ -3344,7 +3859,6 @@ Content-Type: application/json;charset=UTF-8
 * 템플릿 등록과 스펙이 같음
 
 <a id="response-11"></a>
-
 #### 응답
 
 ```
@@ -3365,11 +3879,9 @@ Content-Type: application/json;charset=UTF-8
 | - isSuccessful  | boolean | O        | 성공 여부  |
 
 <a id="delete-template"></a>
-
 ### 템플릿 삭제 { #delete-template }
 
 <a id="requested-12"></a>
-
 #### 요청
 
 [URL]
@@ -3400,7 +3912,6 @@ Content-Type: application/json;charset=UTF-8
 | X-Secret-Key | String | O  | 콘솔에서 생성할 수 있습니다. |
 
 <a id="response-12"></a>
-
 #### 응답
 
 ```
@@ -3421,15 +3932,12 @@ Content-Type: application/json;charset=UTF-8
 | - isSuccessful  | boolean | O        | 성공 여부  |
 
 <a id="manage-image"></a>
-
 ## 이미지 관리 { #manage-image }
 
 <a id="upload-image"></a>
-
 ### 이미지 업로드 { #upload-image }
 
 <a id="requested-13"></a>
-
 #### 요청
 
 [URL]
@@ -3465,7 +3973,6 @@ Content-Type: multipart/form-data
 | imageType | String | O  | 이미지 타입 <br>(IMAGE, WIDE_IMAGE,MAIN_WIDE_ITEMLIST_IMAGE,NORMAL_WIDE_ITEMLIST_IMAGE,CAROUSEL_FEED_IMAGE,CAROUSEL_COMMERCE_IMAGE) |
 
 <a id="response-13"></a>
-
 #### 응답
 
 ```
@@ -3495,7 +4002,6 @@ Content-Type: multipart/form-data
 | - imageName     | String  | X        | 이미지명    |
 
 <a id="upload-image-specifications"></a>
-
 #### 업로드 이미지 규격
 | 이미지 타입                     | 사용처                                                     | 업로드 이미지 규격                                                                                                                              |
 |:---------------------------|:--------------------------------------------------------|:----------------------------------------------------------------------------------------------------------------------------------------|
@@ -3509,11 +4015,9 @@ Content-Type: multipart/form-data
 * 업로드된 이미지를 참조하는 템플릿이 모두 삭제되거나 다른 이미지로 변경되면 카카오 CDN에서 해당 이미지가 삭제되어 URL이 유효하지 않게 됩니다. 이미지 조회 API에서는 이미지 정보가 유지되지만, 실제 이미지에는 접근할 수 없으므로 원본 파일은 자체 서버에 별도로 보관하는 것을 권장합니다.
 
 <a id="view-image"></a>
-
 ### 이미지 조회 { #view-image }
 
 <a id="requested-14"></a>
-
 #### 요청
 
 [URL]
@@ -3550,7 +4054,6 @@ Content-Type: application/json;charset=UTF-8
 | pageSize   | String | X  | 조회 건수(기본: 15)                                                                                                                  |
 
 <a id="response-14"></a>
-
 #### 응답
 
 ```
@@ -3580,11 +4083,9 @@ Content-Type: application/json;charset=UTF-8
 | - imageName     | String  | X        | 이미지명    |
 
 <a id="delete-image"></a>
-
 ### 이미지 삭제 { #delete-image }
 
 <a id="requested-15"></a>
-
 #### 요청
 
 [URL]
@@ -3619,7 +4120,6 @@ Content-Type: application/json;charset=UTF-8
 | imageSeq | String | O  | 이미지 번호 |
 
 <a id="response-15"></a>
-
 #### 응답
 
 ```
@@ -3640,13 +4140,11 @@ Content-Type: application/json;charset=UTF-8
 | - isSuccessful  | boolean | O        | 성공 여부  |
 
 <a id="manage-video"></a>
-
 ## 동영상 관리 { #manage-video }
 
 브랜드 메시지에 사용할 동영상을 등록·조회·삭제하는 API입니다. 등록된 동영상은 카카오 비즈센터에서 인코딩 처리 후 발송에 사용할 수 있으며, 상태가 `PUBLIC`인 동영상만 템플릿 등록 및 발송이 가능합니다(`PRIVATE`는 템플릿 등록만 가능).
 
 <a id="video-upload-flow"></a>
-
 ### 동영상 업로드 흐름 { #video-upload-flow }
 
 동영상 업로드는 2단계로 진행됩니다.
@@ -3661,11 +4159,9 @@ Content-Type: application/json;charset=UTF-8
 > * 1단계 요청의 `fileSize`는 실제로 2단계에서 업로드할 파일의 크기와 정확히 일치해야 합니다(불일치 시 카카오 측에서 errCode 109로 거절).
 
 <a id="register-video-upload"></a>
-
 ### 동영상 업로드 등록 { #register-video-upload }
 
 <a id="requested-16"></a>
-
 #### 요청
 
 [URL]
@@ -3712,7 +4208,6 @@ Content-Type: application/json;charset=UTF-8
 | createUser | String | X  | 업로드 사용자 식별자 (최대 100자)                                                |
 
 <a id="response-16"></a>
-
 #### 응답
 
 ```
@@ -3759,13 +4254,11 @@ Content-Type: application/json;charset=UTF-8
 > 인코딩 완료 후 채워지는 `thumbnailUrl`, `videoUrl`, `playUrl`, `updateDate` 필드는 [동영상 조회](#view-video) API로 얻을 수 있습니다.
 
 <a id="video-file-upload-step-2"></a>
-
 ### 동영상 파일 업로드 (2단계) { #video-file-upload-step-2 }
 
 위 응답의 `uploadInfo.uploadUrl`로 동영상 파일을 직접 호출합니다. 이 요청은 NHN Cloud 서버가 아닌 카카오 측 업로드 서버로 직접 전송됩니다.
 
 <a id="requested-17"></a>
-
 #### 요청
 
 [URL]
@@ -3788,7 +4281,6 @@ Content-Type: multipart/form-data
 | file | File | O  | 동영상 파일. 1단계 요청의 `fileSize`와 정확히 일치해야 합니다             |
 
 <a id="response-17"></a>
-
 #### 응답
 
 ```
@@ -3804,7 +4296,6 @@ Content-Type: multipart/form-data
 * 실패 시 HTTP 4xx와 함께 `errCode`(100~110)와 `message`를 반환합니다. 자세한 에러 코드는 카카오 비즈메시지 가이드를 참고하세요.
 
 <a id="upload-video-specifications"></a>
-
 #### 업로드 동영상 규격
 
 | 항목       | 제한                                          |
@@ -3821,11 +4312,9 @@ Content-Type: multipart/form-data
 * 1단계 등록 후 2단계 파일 업로드가 실패하거나 지연되어 토큰(5분)이 만료되면 새 등록을 다시 호출해야 합니다. 등록만 되고 실제 업로드가 이루어지지 않은 동영상은 일정 시간이 지난 후 상태가 `ERROR`로 자동 마킹됩니다.
 
 <a id="view-video"></a>
-
 ### 동영상 조회 { #view-video }
 
 <a id="requested-18"></a>
-
 #### 요청
 
 [URL]
@@ -3862,7 +4351,6 @@ Content-Type: application/json;charset=UTF-8
 | pageSize   | String | X  | 조회 건수 (기본: 15)    |
 
 <a id="response-18"></a>
-
 #### 응답
 
 ```
@@ -3921,11 +4409,9 @@ Content-Type: application/json;charset=UTF-8
 > 업로드 등록 응답의 `video`는 등록 직후 시점이라 `status`가 항상 `REGISTERED`이며 `thumbnailUrl`·`videoUrl`·`playUrl`·`createDate`·`updateDate`·`createUser` 필드는 포함되지 않습니다. 이 필드들은 인코딩 완료 후 동영상 조회 API에서 확인할 수 있습니다.
 
 <a id="delete-video"></a>
-
 ### 동영상 삭제 { #delete-video }
 
 <a id="requested-19"></a>
-
 #### 요청
 
 [URL]
@@ -3960,7 +4446,6 @@ Content-Type: application/json;charset=UTF-8
 | videoSeq | String | O  | 동영상 시퀀스 (콤마로 구분하여 다건 전달 가능)        |
 
 <a id="response-19"></a>
-
 #### 응답
 
 ```
@@ -3981,7 +4466,6 @@ Content-Type: application/json;charset=UTF-8
 | - isSuccessful  | boolean | O        | 성공 여부  |
 
 <a id="video-status"></a>
-
 ### 동영상 상태 { #video-status }
 
 동영상 조회 응답의 `status` 필드 값을 설명합니다.
@@ -3998,15 +4482,12 @@ Content-Type: application/json;charset=UTF-8
 | ERROR      | 업로드 및 인코딩 중 오류 발생                   |
 
 <a id="upload"></a>
-
 ## 업로드 { #upload }
 
 <a id="upload-bizform-key"></a>
-
 ### 비즈폼 키 업로드 { #upload-bizform-key }
 
 <a id="requested-20"></a>
-
 #### 요청
 
 [URL]
@@ -4036,7 +4517,6 @@ Content-Type: application/json;charset=UTF-8
 | X-Secret-Key | String | O  | 콘솔에서 생성할 수 있습니다. |
 
 <a id="response-20"></a>
-
 #### 응답
 
 ```
@@ -4057,15 +4537,12 @@ Content-Type: application/json;charset=UTF-8
 | - isSuccessful  | boolean | O        | 성공 여부  |
 
 <a id="manage-outgoing-profiles"></a>
-
 ## 발신 프로필 관리 { #manage-outgoing-profiles }
 
 <a id="view-outgoing-profile"></a>
-
 ### 발신 프로필 조회 { #view-outgoing-profile }
 
 <a id="requested-21"></a>
-
 #### 요청
 
 [URL]
@@ -4095,7 +4572,6 @@ Content-Type: application/json;charset=UTF-8
 | X-Secret-Key | String | O  | 콘솔에서 생성할 수 있습니다. |
 
 <a id="response-21"></a>
-
 #### 응답
 
 ```
@@ -4166,11 +4642,9 @@ Content-Type: application/json;charset=UTF-8
 | - initialUserRestriction  | boolean | O        | 최초 사용자 제한 여부                                                                                                          |
 
 <a id="modify-outgoing-profile-080-opt-out-number"></a>
-
 ### 발신 프로필 080 수신거부번호 수정 { #modify-outgoing-profile-080-opt-out-number }
 
 <a id="requested-22"></a>
-
 #### 요청
 
 [URL]
@@ -4214,7 +4688,6 @@ Content-Type: application/json;charset=UTF-8
 | unsubscribeAuthNo | 	String | 	X  | 080 무료수신거부 인증 번호(최대 10자, 모두 미입력 시 발신 프로필에 등록된 무료수신거부 정보로 발송됨)<br>unsubscribeNo 없이 unsubscribeAuthNo만 입력 불가<br>예: 1234 |
 
 <a id="response-22"></a>
-
 #### 응답
 
 ```
@@ -4235,11 +4708,9 @@ Content-Type: application/json;charset=UTF-8
 | - isSuccessful  | boolean | O        | 성공 여부  |
 
 <a id="manage-fallback"></a>
-
 ## 대체 발송 관리 { #manage-fallback }
 
 <a id="register-sms-appkey"></a>
-
 ### SMS AppKey 등록 { #register-sms-appkey }
 
 [URL]
@@ -4286,7 +4757,6 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 ```
 
 <a id="response-23"></a>
-
 #### 응답
 
 ```
@@ -4301,7 +4771,6 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 ```
 
 <a id="register-fallback-settings"></a>
-
 ### 대체 발송 설정 등록 { #register-fallback-settings }
 
 [URL]
@@ -4354,7 +4823,6 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 ```
 
 <a id="response-24"></a>
-
 #### 응답
 
 ```

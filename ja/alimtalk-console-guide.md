@@ -1,14 +1,11 @@
-<!-- pre-align:aligned sig=3fddaef1a9f4 -->
+<!-- pre-align:aligned sig=ae151695d20b -->
 
 <a id="alimtalk-console-guide"></a>
-
 ## Notification > KakaoTalk Bizmessage > お知らせトーク > コンソール使用ガイド { #alimtalk-console-guide }
 
 <a id="send-alimtalk"></a>
-
 ## お知らせトーク送信 { #send-alimtalk }
 <a id="general-delivery"></a>
-
 ### 一般送信 { #general-delivery }
 お知らせトークの一般送信画面です。
 
@@ -31,7 +28,6 @@
 7. 入力完了後、<b>送信</b>をクリックして即時送信します。
 
 <a id="mass-delivery"></a>
-
 ### 大量送信 { #mass-delivery }
 Excel/CSVフォーマットのテンプレートファイルを通じて、複数の受信番号にお知らせトークを送信できる機能です。下段のタブで<b>大量送信</b>を選択します。
 ![KTB_10_20230926.png](https://static.toastoven.net/prod_alimtalk/KTB_10_20230926.png)
@@ -50,7 +46,6 @@ Excel/CSVフォーマットのテンプレートファイルを通じて、複�
 
 
 <a id="alternative-delivery"></a>
-
 ### 代替送信 { #alternative-delivery }
 お知らせトークの送信に失敗した場合、該当内容をテキストメッセージで代替送信できる機能です。
 <b>共通の内容で送信</b>または、<b>ユーザーごとに異なるメッセージを設定</b>を選択して送信できます。
@@ -63,22 +58,18 @@ Excel/CSVフォーマットのテンプレートファイルを通じて、複�
 * メッセージの長さによって、SMS/LMSで代替送信されます。(タイプごとに別途の利用料金が加算されます。)
 
 <a id="send-with-common-contents"></a>
-
 #### 共通の内容で送信
 * <b>発信プロフィール/テンプレート</b>を選択後、<b>共通の内容で送信</b>をクリックして、代替送信メッセージを設定します。
 * 代替送信メッセージを入力しない場合、[メッセージ本文]で送信されます。
 
 <a id="set-different-messages-for-each-user"></a>
-
 #### ユーザーごとに異なるメッセージを設定
 * <b>発信プロフィール/テンプレート</b>を選択後、<b>ユーザーごとに異なるメッセージを設定</b>をクリックして、下段の<b>受信者追加</b>タブで代替送信メッセージを設定します。
 * 追加された受信者番号の横にある[ペンアイコン]をクリックすると、設定された内容を確認/修正できます。
 
 <a id="view-delivery"></a>
-
 ## 送信照会 { #view-delivery }
 <a id="retrieve-send-results"></a>
-
 ### 送信結果の照会 { #retrieve-send-results }
 メッセージタイプを条件に照会できます。
 (<b>リクエストID</b>および<b>リクエスト日時</b>は必須値です。)
@@ -90,7 +81,6 @@ Excel/CSVフォーマットのテンプレートファイルを通じて、複�
 * <b>送信結果</b>列で送信処理の成否を確認できます。
 
 <a id="cancel-send"></a>
-
 ### 送信キャンセル { #cancel-send }
 一般送信中の発信リクエスト日時を未来に設定した予約送信は、キャンセルできます。
 ![KTB_14_20250403.jpg](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_alimtalk/KTB_14_20250403.jpg)
@@ -101,7 +91,6 @@ Excel/CSVフォーマットのテンプレートファイルを通じて、複�
 
 
 <a id="view-mass-delivery"></a>
-
 ### 大量送信照会 { #view-mass-delivery }
 お知らせトークの大量送信件を照会できます。
 ![KTB_15_20250403.jpg](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_alimtalk/KTB_15_20250403.png)
@@ -111,7 +100,6 @@ Excel/CSVフォーマットのテンプレートファイルを通じて、複�
 * <b>進行状態</b>が<b>送信中</b>の場合、<b>キャンセル</b>をクリックしても、すでに送信処理中だった一部のメッセージは受信者に送信されることがあります。
 
 <a id="mass-delivery-progress-status"></a>
-
 #### 大量送信の進行状態
 
 * <b>待機</b>：テンプレートファイルデータを読み込む作業を行う前の状態です。
@@ -124,7 +112,6 @@ Excel/CSVフォーマットのテンプレートファイルを通じて、複�
 * <b>送信キャンセル</b>：ユーザーが送信をキャンセルした状態です。
 
 <a id="query-sending-by-recipient"></a>
-
 #### 受信者別の送信照会
 大量お知らせトーク送信件(リストの行)を選択すると、下にあるリストで受信番号ごとのお知らせトーク送信内容および送信結果を照会できます。
 ![KTB_16_20230926.png](https://static.toastoven.net/prod_alimtalk/KTB_16_20230926.png)
@@ -133,19 +120,16 @@ Excel/CSVフォーマットのテンプレートファイルを通じて、複�
 ![KTB_17_20230926.png](https://static.toastoven.net/prod_alimtalk/KTB_17_20230926.png)
 
 <a id="template-management"></a>
-
 ## テンプレート管理 { #template-management }
 <b>テンプレート登録</b>ボタンをクリックして、テンプレートを登録できます。
 
 <a id="template-type"></a>
-
 ### テンプレートタイプ { #template-type }
 * 登録可能なメッセージタイプには、**チャンネル追加型、基本型、付加情報型、複合型**があります。
 * 登録可能な強調タイプには、**強調表記型、画像型、アイテムリスト型**があります。
 * 送信したいタイプを選択して、テンプレートを作成してください。
 
 <a id="register-templates"></a>
-
 ### テンプレート登録 { #register-templates }
 * カカオお知らせトークガイド
     * [[お知らせトーク作成ガイド]](https://kakaobusiness.gitbook.io/main/ad/bizmessage/notice-friend/content-guide)、[[お知らせトーク審査ガイド]](https://kakaobusiness.gitbook.io/main/ad/bizmessage/notice-friend/audit)、[[お知らせトーク注意事項]](https://kakaobusiness.gitbook.io/main/ad/infotalk/operations)
@@ -165,7 +149,6 @@ Excel/CSVフォーマットのテンプレートファイルを通じて、複�
     * 一般メッセージの場合、検収時に設定値が変更されることがあるため、OTP、認証番号、パスワード、信用情報/等級変更案内テンプレートは、必ずセキュリティチェックしてください。
 
 <a id="template-button"></a>
-
 #### テンプレートボタン
 * 1つのテンプレートには**最大5つのボタン**を登録できます。
 * すぐに接続
@@ -188,7 +171,6 @@ Excel/CSVフォーマットのテンプレートファイルを通じて、複�
 | ビジネスフォーム | - ビジネスフォームを作成して、現在のチャンネルと接続した場合、ボタンをクリックすると、設定したビジネスフォームが呼び出されます。<br/> - ビジネスフォームの作成が必要です。[[ビジネスフォームガイド]](https://business.kakao.com/info/talkbizform/)
 
 <a id="template-inspection"></a>
-
 #### テンプレート検収
 お知らせトークテンプレートの検収および審査はカカオが直接行い、検収リクエスト後、2営業日以内に順次処理されます。
 
@@ -199,13 +181,11 @@ Excel/CSVフォーマットのテンプレートファイルを通じて、複�
     * テンプレートが返却された場合、**お問い合わせ登録**および**修正**をクリックして再検収できます。
 
 <a id="template-status"></a>
-
 #### テンプレートの状態
 * テンプレート登録時、**リクエスト > 検収中 > 承認/返却**順序で状態がアップデートされます。
 * テンプレート登録後、1年間同じ状態が継続した場合や追加の送信がない場合、**休眠**状態に切り替えられます。関連するガイドは、[お知らせトークテンプレートの留意事項](https://docs.nhncloud.com/ko/Notification/KakaoTalk%20Bizmessage/ko/alimtalk-overview/#_3)でご確認ください。
 
 <a id="modify-templates"></a>
-
 #### テンプレートの修正
 * **承認/返却**状態のテンプレートのみ修正できます。
 * 承認されたテンプレートを修正後、検収が完了すると、既存のテンプレート内容が修正した内容に置き換えられます。
@@ -213,14 +193,12 @@ Excel/CSVフォーマットのテンプレートファイルを通じて、複�
 * 修正したテンプレートは**検収中**状態から再び検収が行われます。
 
 <a id="delete-templates"></a>
-
 #### テンプレートの削除
 * <b><span style="color:red">リクエスト/返却</span></b>状態のテンプレートのみ削除できます。
 * 返却されたテンプレートは**削除**後、再登録できます。
 * 削除されたテンプレートコードは再使用できます。
 
 <a id="manage-alternative-delivery"></a>
-
 ## 代替送信の管理 { #manage-alternative-delivery }
 
 * お知らせトークの送信に失敗した場合、該当内容をテキストメッセージで代替送信するように設定できます。
@@ -235,7 +213,6 @@ Excel/CSVフォーマットのテンプレートファイルを通じて、複�
 ![KTB_19_20230926.png](https://static.toastoven.net/prod_alimtalk/KTB_19_20230926.png)
 
 <a id="manage-sender-profile-group"></a>
-
 ## 発信プロフィールグループの管理 { #manage-sender-profile-group }
 * 2個以上の発信プロフィールをグループで作成して、テンプレートを一度に登録できます。
 * 1つの発信プロフィールは、複数のグループに重複して属すことができます。

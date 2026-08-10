@@ -1,21 +1,17 @@
-<!-- pre-align:aligned sig=509feeb5926b -->
+<!-- pre-align:aligned sig=b6481ba16a33 -->
 
 <a id="sender-api-guide-v2-3"></a>
-
 ## Notification > KakaoTalk Bizmessage > Sender > API v2.3 Guide { #sender-api-guide-v2-3 }
 
 <a id="overview-of-v23-api"></a>
-
 ## v2.3 API紹介 { #overview-of-v23-api }
 <a id="whats-the-diffrence"></a>
-
 #### 改善された点
 
 1. 발신 프로필 조회 API에 최초 사용자 제한 상태 필드가 추가되었습니다.
 2. 발신 프로필 조회 API에 카카오톡 채널 스팸 상태, 카카오톡 메시지 스팸 상태 필드가 추가되었습니다.
 
 <a id="api-domain"></a>
-
 #### [API 도메인]
 
 <table>
@@ -32,15 +28,12 @@
 </table>
 
 <a id="senders"></a>
-
 ## Sender { #senders }
 
 <a id="query-sender-by-category"></a>
-
 ### Senderカテゴリーの照会 { #query-sender-by-category }
 
 <a id="request"></a>
-
 #### リクエスト
 [URL]
 
@@ -66,7 +59,6 @@ Content-Type: application/json;charset=UTF-8
 | X-Secret-Key | String | O    | コンソールで作成できます。 |
 
 <a id="response"></a>
-
 #### レスポンス
 ```
 {
@@ -125,10 +117,8 @@ Content-Type: application/json;charset=UTF-8
 | --- name         | String  | カテゴリー名 |
 
 <a id="register-senders"></a>
-
 ### Senderの登録 { #register-senders }
 <a id="request-2"></a>
-
 #### リクエスト
 [URL]
 
@@ -170,7 +160,6 @@ Content-Type: application/json;charset=UTF-8
 | categoryCode | String  | O    | カテゴリーコード(11文字)<br>カテゴリー照会APIのレスポンス参考<br>ex) 00100010001健康(001) - 病院(0001) - 総合病院(0001) |
 
 <a id="response-2"></a>
-
 #### レスポンス
 ```
 {
@@ -190,10 +179,8 @@ Content-Type: application/json;charset=UTF-8
 | - isSuccessful  | Boolean | 成否 |
 
 <a id="authenticate-tokens-for-senders"></a>
-
 ### Senderトークン認証 { #authenticate-tokens-for-senders }
 <a id="request-3"></a>
-
 #### リクエスト
 [URL]
 
@@ -233,7 +220,6 @@ Content-Type: application/json;charset=UTF-8
 | token | Integer | O    | 認証トークン(プラスフレンド登録API呼び出し後、カカオトークアプリで受け取った認証トークン) |
 
 <a id="response-3"></a>
-
 #### レスポンス
 ```
 {
@@ -253,10 +239,8 @@ Content-Type: application/json;charset=UTF-8
 | - isSuccessful  | Boolean | 成否 |
 
 <a id="delete-sender"></a>
-
 ### Sender 削除 { #delete-sender }
 <a id="request-4"></a>
-
 #### リクエスト
 
 [URL]
@@ -287,7 +271,6 @@ Content-Type: application/json;charset=UTF-8
 * 발신 프로필 삭제 시, 복구가 불가능합니다.
 
 <a id="response-4"></a>
-
 #### レスポンス
 ```
 {  
@@ -308,10 +291,8 @@ Content-Type: application/json;charset=UTF-8
 
 
 <a id="get-sender"></a>
-
 ### Sender 単件照会 { #get-sender }
 <a id="request-5"></a>
-
 #### リクエスト
 
 [URL]
@@ -341,7 +322,6 @@ Content-Type: application/json;charset=UTF-8
 
 
 <a id="response-5"></a>
-
 #### レスポンス
 ```
 {  
@@ -418,10 +398,8 @@ Content-Type: application/json;charset=UTF-8
 | - initialUserRestriction | Boolean | 	최초 사용자 제한 여부                                                                                                          |
 
 <a id="list-sender"></a>
-
 ### Senderの照会 { #list-sender }
 <a id="request-6"></a>
-
 #### リクエスト
 
 [URL]
@@ -458,7 +436,6 @@ Content-Type: application/json;charset=UTF-8
 | pageSize       | Integer | X    | 照会件数(基本：15、最大: 1000) |
 
 <a id="response-6"></a>
-
 #### レスポンス
 ```
 {  
@@ -539,15 +516,12 @@ Content-Type: application/json;charset=UTF-8
 | totalCount                | Integer | 総個数                               |
 
 <a id="sender-group"></a>
-
 ## Sender group { #sender-group }
 
 <a id="get-sender-group"></a>
-
 ### Sender group の照会 { #get-sender-group }
 
 <a id="request-7"></a>
-
 #### リクエスト
 [URL]
 
@@ -574,7 +548,6 @@ Content-Type: application/json;charset=UTF-8
 | X-Secret-Key | String | O    | コンソールで作成できます。 |
 
 <a id="response-7"></a>
-
 #### レスポンス
 ```
 {
@@ -618,11 +591,9 @@ Content-Type: application/json;charset=UTF-8
 |- updateDate |	String|	変更日 |
 
 <a id="add-sender-to-group"></a>
-
 ### グループにSender追加 { #add-sender-to-group }
 
 <a id="request-8"></a>
-
 #### リクエスト
 [URL]
 
@@ -652,7 +623,6 @@ Content-Type: application/json;charset=UTF-8
 * グループの最大メンバー数は5000人です。
 
 <a id="response-8"></a>
-
 #### レスポンス
 ```
 {  
@@ -672,11 +642,9 @@ Content-Type: application/json;charset=UTF-8
 | - isSuccessful  | Boolean | 成否 |
 
 <a id="delete-sender-from-group"></a>
-
 ### グループにSender削除 { #delete-sender-from-group }
 
 <a id="request-9"></a>
-
 #### リクエスト
 [URL]
 
@@ -704,7 +672,6 @@ Content-Type: application/json;charset=UTF-8
 | X-Secret-Key | String | O    | コンソールで作成できます。 |
 
 <a id="response-9"></a>
-
 #### レスポンス
 ```
 {  

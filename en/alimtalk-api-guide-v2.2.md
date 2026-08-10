@@ -1,15 +1,12 @@
-<!-- pre-align:aligned sig=ff88f5bc1ceb -->
+<!-- pre-align:aligned sig=860851672e13 -->
 
 <a id="alimtalk-api-guide-v2-2"></a>
-
 ## Notification > KakaoTalk Bizmessage > AlimTalk > API v2.2 Guide { #alimtalk-api-guide-v2-2 }
 
 <a id="alimtalk"></a>
-
 ## AlimTalk { #alimtalk }
 
 <a id="api-domain"></a>
-
 #### [API Domain]
 
 <table>
@@ -26,7 +23,6 @@
 </table>
 
 <a id="overview-of-v22-api"></a>
-
 ## Overview of v2.2 API { #overview-of-v22-api }
 1. Added AlimTalk mass delivery query and statistics query API.
 2. Added a `buttons` field to the response body of replaced message sending API.
@@ -34,11 +30,9 @@
 4. Added `chatExtra`, `chatEvent`, and `target` fields to the `buttons` field in the response body of the message query API.
 
 <a id="general-messages"></a>
-
 ## General Messages { #general-messages }
 
 <a id="request-of-sending-replaced-messages"></a>
-
 ### Request of Sending Replaced Messages { #request-of-sending-replaced-messages }
 
 [URL]
@@ -147,7 +141,6 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 ```
 
 <a id="response"></a>
-
 #### Response
 
 ```
@@ -190,7 +183,6 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 |-- recipientGroupingKey | String | Recipient's grouping key |
 
 <a id="request-of-sending-full-text"></a>
-
 ### Request of Sending Full Text { #request-of-sending-full-text }
 
 [URL]
@@ -310,7 +302,6 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 ```
 
 <a id="response-2"></a>
-
 #### Response
 
 ```
@@ -353,11 +344,9 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 |-- recipientGroupingKey | String | Recipient's grouping key |
 
 <a id="list-messages"></a>
-
 ### List Messages { #list-messages }
 
 <a id="request"></a>
-
 #### Request
 
 [URL]
@@ -407,7 +396,6 @@ Content-Type: application/json;charset=UTF-8
 * The maximum available days for delivery request is 30 days.
 
 <a id="response-3"></a>
-
 #### Response
 ```
 {
@@ -503,11 +491,9 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 ```
 
 <a id="get-messages"></a>
-
 ### Get Messages { #get-messages }
 
 <a id="request-2"></a>
-
 #### Request
 
 [URL]
@@ -541,7 +527,6 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 ```
 
 <a id="response-4"></a>
-
 #### Response
 ```
 {
@@ -644,7 +629,6 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 |- recipientGroupingKey | String |  Recipient grouping key |
 
 <a id="authentication-messages"></a>
-
 ## Authentication Messages { #authentication-messages }
 
 <span id="precautions-authword"></span>
@@ -659,7 +643,6 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 
 
 <a id="request-of-sending-replaced-messages-2"></a>
-
 ### Request of Sending Replaced Messages { #request-of-sending-replaced-messages-2 }
 
 [URL]
@@ -763,7 +746,6 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 ```
 
 <a id="response-5"></a>
-
 #### Response
 
 ```
@@ -806,7 +788,6 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 |-- recipientGroupingKey | String | Recipient's grouping key |
 
 <a id="request-of-sending-full-text-2"></a>
-
 ### Request of Sending Full Text { #request-of-sending-full-text-2 }
 
 [URL]
@@ -921,7 +902,6 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 ```
 
 <a id="response-6"></a>
-
 #### Response
 
 ```
@@ -964,11 +944,9 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 |-- recipientGroupingKey | String | Recipient's grouping key |
 
 <a id="list-messages-2"></a>
-
 ### List Messages { #list-messages-2 }
 
 <a id="request-3"></a>
-
 #### Request
 
 [URL]
@@ -1018,7 +996,6 @@ Content-Type: application/json;charset=UTF-8
 * Delivery can be requested within 30 days to the maximum.   
 
 <a id="response-7"></a>
-
 #### Response
 ```
 {
@@ -1114,11 +1091,9 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 ```
 
 <a id="get-messages-2"></a>
-
 ### Get Messages { #get-messages-2 }
 
 <a id="request-4"></a>
-
 #### Request
 
 [URL]
@@ -1152,7 +1127,6 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 ```
 
 <a id="response-8"></a>
-
 #### Response
 ```
 {
@@ -1255,14 +1229,11 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 |- recipientGroupingKey | String |  Recipient's grouping key |
 
 <a id="messages"></a>
-
 ## Messages { #messages }
 <a id="cancel-sending-messages"></a>
-
 ### Cancel Sending Messages { #cancel-sending-messages }
 
 <a id="request-5"></a>
-
 #### Request
 
 [URL]
@@ -1298,7 +1269,6 @@ Content-Type: application/json;charset=UTF-8
 * Both general and authentication messages can be canceled by the same API.
 
 <a id="response-9"></a>
-
 #### Response
 ```
 {
@@ -1323,11 +1293,9 @@ curl -X DELETE -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Ke
 ```
 
 <a id="query-updates-of-message-result"></a>
-
 ### Query Updates of Message Result { #query-updates-of-message-result }
 
 <a id="request-6"></a>
-
 #### Request
 
 [URL]
@@ -1364,7 +1332,6 @@ Content-Type: application/json;charset=UTF-8
 |pageSize|  Integer|    X|  Number of queries(default: 15, Max: 1000)|
 
 <a id="response-10"></a>
-
 #### Response
 ```
 {
@@ -1418,7 +1385,6 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 ```
 
 <a id="status-code-of-smslms-resending"></a>
-
 ### Status Code of SMS/LMS Resending { #status-code-of-smslms-resending }
 | Name |  Description|
 |---|---|
@@ -1429,14 +1395,11 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 |RSC05| Resending failed|
 
 <a id="mass-delivery"></a>
-
 ## Mass Delivery { #mass-delivery }
 <a id="list-mass-delivery-requests"></a>
-
 ### List Mass Delivery Requests { #list-mass-delivery-requests }
 
 <a id="request-7"></a>
-
 #### Request
 [URL]
 ```
@@ -1476,7 +1439,6 @@ Content-Type: application/json;charset=UTF-8
 | pageSize | optional, Integer | 1000 | X | Search count |
 
 <a id="curl"></a>
-
 #### cURL
 ```
 curl -X GET \
@@ -1486,7 +1448,6 @@ curl -X GET \
 ```
 
 <a id="response-11"></a>
-
 #### Response
 ```
 {
@@ -1576,11 +1537,9 @@ curl -X GET \
 
 
 <a id="list-mass-delivery-recipients"></a>
-
 ### List Mass Delivery Recipients { #list-mass-delivery-recipients }
 
 <a id="request-8"></a>
-
 #### Request
 [URL]
 ```
@@ -1619,7 +1578,6 @@ Content-Type: application/json;charset=UTF-8
 | pageSize | optional, Integer | 1000 | X | Search count |
 
 <a id="curl-2"></a>
-
 #### cURL
 ```
 curl -X GET \
@@ -1629,7 +1587,6 @@ curl -X GET \
 ```
 
 <a id="response-12"></a>
-
 #### Response
 ```
 {
@@ -1675,11 +1632,9 @@ curl -X GET \
 | - totalCount | Integer | Total count |
 
 <a id="get-a-mass-delivery-recipient"></a>
-
 ### Get a Mass Delivery Recipient { #get-a-mass-delivery-recipient }
 
 <a id="request-9"></a>
-
 #### Request
 [URL]
 ```
@@ -1719,7 +1674,6 @@ Content-Type: application/json;charset=UTF-8
 | pageSize | optional, Integer | 1000 | X | Search count |
 
 <a id="curl-3"></a>
-
 #### cURL
 ```
 curl -X GET \
@@ -1729,7 +1683,6 @@ curl -X GET \
 ```
 
 <a id="response-13"></a>
-
 #### Response
 ```
 {
@@ -1821,14 +1774,11 @@ curl -X GET \
 | -- target|    String| In the case of a web link button, out link used when adding "target":"out" attribute<br>Send with the default in-app link |
 
 <a id="templates"></a>
-
 ## Templates { #templates }
 
 <a id="list-template-categories"></a>
-
 ### List Template Categories { #list-template-categories }
 <a id="request-10"></a>
-
 #### Request
 [URL]
 
@@ -1854,7 +1804,6 @@ Content-Type: application/json;charset=UTF-8
 |X-Secret-Key|  String| O | Can be created on console.  |
 
 <a id="response-14"></a>
-
 #### Response
 ```
 
@@ -1897,10 +1846,8 @@ Content-Type: application/json;charset=UTF-8
 |-- exclusion| String| Description of templates to which the category does not apply |
 
 <a id="register-templates"></a>
-
 ### Register Templates { #register-templates }
 <a id="request-11"></a>
-
 #### Request
 [URL]
 
@@ -1980,7 +1927,6 @@ Content-Type: application/json;charset=UTF-8
 |-schemeAndroid | String | X |  Android app link(required for the AL type, up to 500 characters) |
 
 <a id="response-15"></a>
-
 #### Response
 ```
 {
@@ -2000,10 +1946,8 @@ Content-Type: application/json;charset=UTF-8
 |- isSuccessful|    Boolean| Successful or not|
 
 <a id="modify-templates"></a>
-
 ### Modify Templates { #modify-templates }
 <a id="request-12"></a>
-
 #### Request
 [URL]
 
@@ -2082,7 +2026,6 @@ Content-Type: application/json;charset=UTF-8
 |-schemeAndroid | String | X |  Android app link(required for the AL type, up to 500 characters) |
 
 <a id="response-16"></a>
-
 #### Response
 ```
 {
@@ -2102,10 +2045,8 @@ Content-Type: application/json;charset=UTF-8
 |- isSuccessful|    Boolean| Successful or not|
 
 <a id="delete-templates"></a>
-
 ### Delete Templates { #delete-templates }
 <a id="request-13"></a>
-
 #### Request
 [URL]
 
@@ -2134,7 +2075,6 @@ Content-Type: application/json;charset=UTF-8
 * A template remaining in Kakao becomes dormant if it is not used for 1 year, and gets deleted if it remains dormant for 1 year.(If a template becomes dormant or gets deleted on Kakao, the person in charge will be notified.)
 
 <a id="response-17"></a>
-
 #### Response
 ```
 {
@@ -2154,10 +2094,8 @@ Content-Type: application/json;charset=UTF-8
 |- isSuccessful|    Boolean| Successful or not|
 
 <a id="inquire-of-templates"></a>
-
 ### Inquire of Templates { #inquire-of-templates }
 <a id="request-14"></a>
-
 #### Request
 [URL]
 
@@ -2199,7 +2137,6 @@ Content-Type: application/json;charset=UTF-8
 * When commenting a template in the REJ status, it will be changed to the REQ status.
 
 <a id="response-18"></a>
-
 #### Response
 ```
 {
@@ -2219,10 +2156,8 @@ Content-Type: application/json;charset=UTF-8
 |- isSuccessful|    Boolean| Successful or not|
 
 <a id="attach-files-to-send-inquiry-on-templates"></a>
-
 ### Attach files to send inquiry on templates { #attach-files-to-send-inquiry-on-templates }
 <a id="request-15"></a>
-
 #### Request
 [URL]
 
@@ -2266,7 +2201,6 @@ Content-Type: application/json;charset=UTF-8
 * When commenting a template in the REJ status, it will be changed to the REQ status.
 
 <a id="response-19"></a>
-
 #### Response
 ```
 {
@@ -2286,11 +2220,9 @@ Content-Type: application/json;charset=UTF-8
 |- isSuccessful|    Boolean| Successful or not|
 
 <a id="list-templates"></a>
-
 ### List Templates { #list-templates }
 
 <a id="request-16"></a>
-
 #### Request
 
 [URL]
@@ -2340,7 +2272,6 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 ```
 
 <a id="response-20"></a>
-
 #### Response
 ```
 
@@ -2452,11 +2383,9 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 |- totalCount | Integer | Total count                                                                                                                                                        |
 
 <a id="list-template-modifications"></a>
-
 ### List Template modifications { #list-template-modifications }
 
 <a id="request-17"></a>
-
 #### Request
 
 [URL]
@@ -2490,7 +2419,6 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 ```
 
 <a id="response-21"></a>
-
 #### Response
 ```
 
@@ -2604,10 +2532,8 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 |- totalCount | Integer | Total count                                                                                                                                                        |
 
 <a id="register-template-image"></a>
-
 ### Register Template Image { #register-template-image }
 <a id="request-18"></a>
-
 #### Request
 [URL]
 
@@ -2644,7 +2570,6 @@ curl -X POST -H "Content-Type: multipart/form-data" -H "X-Secret-Key:{secretkey}
 ```
 
 <a id="response-22"></a>
-
 #### Response
 ```
 {
@@ -2671,10 +2596,8 @@ curl -X POST -H "Content-Type: multipart/form-data" -H "X-Secret-Key:{secretkey}
 |- templateImageUrl | String |  Image URL |
 
 <a id="manage-alternative-delivery"></a>
-
 ## Manage Alternative Delivery { #manage-alternative-delivery }
 <a id="register-an-sms-appkey"></a>
-
 ### Register an SMS AppKey { #register-an-sms-appkey }
 
 [URL]
@@ -2719,7 +2642,6 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 ```
 
 <a id="response-23"></a>
-
 #### Response
 ```
 
@@ -2733,7 +2655,6 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 ```
 
 <a id="register-alternative-delivery-settings"></a>
-
 ### Register Alternative Delivery Settings { #register-alternative-delivery-settings }
 
 [URL]
@@ -2782,7 +2703,6 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 ```
 
 <a id="response-24"></a>
-
 #### Response
 ```
 

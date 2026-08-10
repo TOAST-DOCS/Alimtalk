@@ -1,20 +1,17 @@
-<!-- pre-align:aligned sig=33585d5af5a4 -->
+<!-- pre-align:aligned sig=bd3f19d0b406 -->
 
 <a id="friendtalk-overview"></a>
-
 ## Notification > KakaoTalk Bizmessage > FriendTalk > Overview { #friendtalk-overview }
 
 FriendTalk is a service that can send various messages, including advertising messages such as events and occasions, to customers with added friends on my Kakao channel based on their mobile phone number. 
 It provides RESTful API for easy integration.
 
 <a id="friendtalk-service-termination-notice"></a>
-
 ## FriendTalk Service Termination Notice { #friendtalk-service-termination-notice }
 
 <!-- TODO: translate body -->
 
 <a id="characteristics"></a>
-
 ## Characteristics { #characteristics }
 * Send various promotional messages, including advertising messages, to users who are friends with you.
 * Text and images can be attached and sent at a lower cost than LMS/MMS.
@@ -23,14 +20,12 @@ It provides RESTful API for easy integration.
 * According to the Information and Communication Network Act, sending advertising information is restricted from 20:50 to 08:00 the following day.
 
 <a id="main-features"></a>
-
 ## Main Features { #main-features }
 * It provides RESTful API for message sending, query, and image management.
 * From the console, you can send messages, query them, manage images, and query the statistics of messages you sent.
 
 
 <a id="friendtalk-delivery-supported-types"></a>
-
 ## FriendTalk Delivery Supported Types { #friendtalk-delivery-supported-types }
 
 |Classification	| Description                                                                                                                                                                                                                                                                                                 | Kakao Image Upload Specification |
