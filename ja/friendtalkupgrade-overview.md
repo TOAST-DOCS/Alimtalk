@@ -1,7 +1,6 @@
-<!-- pre-align:aligned sig=7eb2dbb75382 -->
+<!-- pre-align:aligned sig=4f53951e6d9e -->
 
 <a id="friendtalkupgrade-overview"></a>
-
 ## Notification > KakaoTalk Bizmessage > ブランドメッセージ > 概要 { #friendtalkupgrade-overview }
 
 ブランドメッセージは、広告主(クライアント企業)のマーケティング受信に同意した会員(以下、マーケティング受信同意)を対象に、カカオトークのチャネルの友だちであるかどうかにかかわらず、広告メッセージを送信できるメッセージ商品です。
@@ -9,7 +8,6 @@
 簡単な連携のためのRESTful APIを提供します。
 
 <a id="features"></a>
-
 ## 特徴 { #features }
 
 * 友だちになっているユーザーを対象に、広告メッセージを含む様々な広報メッセージを送信できます。
@@ -21,7 +19,6 @@
 * ブランドメッセージの送信に失敗した場合、テキストメッセージでの代替送信が可能です。
 
 <a id="main-features"></a>
-
 ## 主な機能 { #main-features }
 
 * メッセージの送信、照会、画像管理のためのRESTful APIを提供します。
@@ -30,13 +27,11 @@
 * SMSサービスと連携して代替送信機能を提供します。
 
 <a id="brand-message-targeting"></a>
-
 ## ブランドメッセージのターゲティング { #brand-message-targeting }
 
 ![friendtalkupgrade_1_20250508.png](https://static.toastoven.net/prod_alimtalk/friendtalkupgrade/friendtalkupgrade_1_20250508.png)
 
 <a id="m-advertisers-users-with-marketing-consent"></a>
-
 ### M: 広告主のマーケティング受信に同意したユーザー(カカオトークでの受信に同意) { #m-advertisers-users-with-marketing-consent }
 
 * 広告主のマーケティング受信に同意したユーザー(カカオトークでの受信に同意)を対象に広告メッセージを送信します。
@@ -46,7 +41,6 @@
 ![friendtalkupgrade_02_20250508.png](https://static.toastoven.net/prod_alimtalk/friendtalkupgrade/friendtalkupgrade_2_20250508.png)
 
 <a id="n-advertisers-users-with-marketing-consent--channel-friend"></a>
-
 ### N: 広告主のマーケティング受信に同意したユーザー(カカオトークでの受信に同意) - チャネルの友だち { #n-advertisers-users-with-marketing-consent--channel-friend }
 
 * 広告主のマーケティング受信に同意したユーザー(カカオトークでの受信に同意)から、チャネルの友だちを除いて広告メッセージを送信します。
@@ -56,13 +50,11 @@
 ![friendtalkupgrade_03_20250508.png](https://static.toastoven.net/prod_alimtalk/friendtalkupgrade/friendtalkupgrade_3_20250508.png)
 
 <a id="i-target-of-advertiser-sending-request-channel-friend"></a>
-
 ### I: 広告主の送信リクエスト対象 ∩ チャネルの友だち { #i-target-of-advertiser-sending-request-channel-friend }
 
 * 広告主の送信リクエスト対象のうち、チャネルの友だちである場合にのみ広告メッセージを送信します。
 
 <a id="brand-message-sending-support-type"></a>
-
 ## ブランドメッセージでサポートされる送信タイプ { #brand-message-sending-support-type }
 
 - **基本形式(テンプレート)で登録した場合、全ての送信サポートタイプにおいて「マーケティング受信同意」ユーザーを対象に、ターゲティングオプションMとNを使用して送信できます。**<br>
@@ -80,7 +72,6 @@
 | **カルーセルコマース**     | - カルーセルコマースタイプの場合、「カルーセルイントロ + 1～6 カルーセルリスト + もっと見る」で構成されます。<br>- カルーセルリストは必須で、カルーセルイントロと「もっと見る」は任意です。<br>- カルーセルイントロを使用する場合、カルーセルリストは最小1個以上、最大5個以下で構成する必要があります。<br>- カルーセルイントロを使用しない場合、カルーセルリストは最小2個以上、最大6個以下で構成する必要があります。<br>- カルーセルイントロ及びリストの画像の場合、カルーセルコマース画像アップロードAPIでアップロードした画像を使用する必要があります。<br>- `chat_bubble_type: "CAROUSEL_COMMERCE"`がこれに該当します。 | 推奨サイズ: 800 X 600px または 800 X 400px (横500px以上)<br>アスペクト比: 2:1以上、3:4以下 (全ての画像の比率が同一であること)<br>ファイル形式及び容量制限: JPG、PNG / 最大5MB                                                                              |
 
 <a id="precautions-before-sending"></a>
-
 ## 送信前の注意事項 { #precautions-before-sending }
 
 非友だちメッセージ送信(ターゲティング M, N)は、以下の条件を全て満たす場合に送信できます。
@@ -96,7 +87,6 @@
 - 販売代理店コードの追加が必要な場合は、[[カスタマーセンター > 1:1お問い合わせ]](https://www.nhncloud.com/kr/support/inquiry)からご依頼ください。
 
 <a id="notice-of-personal-information-consignee"></a>
-
 ## 個人情報委託先の告知に関するご案内 { #notice-of-personal-information-consignee }
 
 クライアント企業がNHN Cloud > Notification > KakaoTalk Bizmessageサービスを利用する際、クライアント企業と当社間において個人情報の取り扱いに関する業務委託関係が発生します。これに基づき、情報通信網法及び個人情報保護法に従い、委託者であるクライアント企業は個人情報処理方針を通じて当社に個人情報を

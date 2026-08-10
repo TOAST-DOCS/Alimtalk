@@ -1,21 +1,17 @@
-<!-- pre-align:aligned sig=f3806dc222dc -->
+<!-- pre-align:aligned sig=85ea3c2abeb1 -->
 
 <a id="friendtalk-api-guide-v1-5"></a>
-
 ## Notification > KakaoTalk Bizmessage > FriendTalk > API v1.5 Guide { #friendtalk-api-guide-v1-5 }
 
 <a id="friendtalk-service-termination-notice"></a>
-
 ## FriendTalk Service Termination Notice { #friendtalk-service-termination-notice }
 
 <!-- TODO: translate body -->
 
 <a id="friendtalk"></a>
-
 ## FriendTalk { #friendtalk }
 
 <a id="api-domain"></a>
-
 #### [API Domain]
 
 <table>
@@ -32,10 +28,8 @@
 </table>
 
 <a id="send-messages"></a>
-
 ## Send Messages { #send-messages }
 <a id="request-of-sending"></a>
-
 #### Request of Sending
 
 [URL]
@@ -127,7 +121,6 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 ```
 
 <a id="response"></a>
-
 #### Response
 
 ```
@@ -170,11 +163,9 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 | -- recipientGroupingKey | String  | Recipient's grouping key           |
 
 <a id="list-deliveries"></a>
-
 ## List Deliveries { #list-deliveries }
 
 <a id="request"></a>
-
 #### Request
 
 [URL]
@@ -220,7 +211,6 @@ Content-Type: application/json;charset=UTF-8
 | pageSize             | Integer | X                             | Number of queries(default: 15, max: 1000)             |
 
 <a id="response-2"></a>
-
 #### Response
 ```
 {
@@ -285,7 +275,6 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 ```
 
 <a id="status-of-resending"></a>
-
 #### Status of Resending
 | Value | Description                                      |
 | ----- | ------------------------------------------------ |
@@ -296,11 +285,9 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 | RSC05 | Resending failed                                 |
 
 <a id="get-deliveries"></a>
-
 ## Get Deliveries { #get-deliveries }
 
 <a id="request-2"></a>
-
 #### Request
 
 [URL]
@@ -339,7 +326,6 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 ```
 
 <a id="response-3"></a>
-
 #### Response
 ```
 {
@@ -427,35 +413,29 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 | - recipientGroupingKey | String  | Recipient's grouping key                                     |
 
 <a id="message"></a>
-
 ## Message { #message }
 
 <!-- TODO: translate body -->
 
 <a id="cancel-message-delivery"></a>
-
 ### Cancel Message Delivery { #cancel-message-delivery }
 
 <!-- TODO: translate body -->
 
 <a id="request-3"></a>
-
 #### Request
 
 <!-- TODO: translate body -->
 
 <a id="response-4"></a>
-
 #### Response
 
 <!-- TODO: translate body -->
 
 <a id="query-updated-message-results"></a>
-
 ### Query Updated Message Results { #query-updated-message-results }
 
 <a id="request-4"></a>
-
 #### Request
 
 [URL]
@@ -492,7 +472,6 @@ Content-Type: application/json;charset=UTF-8
 | pageSize        | Integer | X        | Number of queries(default: 15)                          |
 
 <a id="response-5"></a>
-
 #### Response
 ```
 {
@@ -556,14 +535,11 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 ```
 
 <a id="image-management"></a>
-
 ## Image Management { #image-management }
 
 <a id="register-images"></a>
-
 ### Register Images { #register-images }
 <a id="request-5"></a>
-
 #### Request
 
 [URL]
@@ -603,7 +579,6 @@ curl -X POST -H "Content-Type: multipart/form-data" -H "X-Secret-Key:{secretkey}
 ```
 
 <a id="response-6"></a>
-
 #### Response
 ```
 
@@ -634,10 +609,8 @@ curl -X POST -H "Content-Type: multipart/form-data" -H "X-Secret-Key:{secretkey}
 
 
 <a id="query-images"></a>
-
 ### Query Images { #query-images }
 <a id="request-6"></a>
-
 #### Request
 
 [URL]
@@ -678,7 +651,6 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 ```
 
 <a id="response-7"></a>
-
 #### Response
 ```
 
@@ -722,10 +694,8 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 * Response is sent in the order of latest registration.
 
 <a id="delete-images"></a>
-
 ### Delete Images { #delete-images }
 <a id="request-7"></a>
-
 #### Request
 
 [URL]
@@ -764,7 +734,6 @@ curl -X DELETE -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Ke
 ```
 
 <a id="response-8"></a>
-
 #### Response
 ```
 
@@ -784,31 +753,26 @@ curl -X DELETE -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Ke
 | - resultMessage | String  | Result message    |
 | - isSuccessful  | Boolean | Successful or not |
 <a id="alternative-delivery-management"></a>
-
 ## Alternative Delivery Management { #alternative-delivery-management }
 
 <!-- TODO: translate body -->
 
 <a id="register-sms-appkey"></a>
-
 ### Register SMS AppKey { #register-sms-appkey }
 
 <!-- TODO: translate body -->
 
 <a id="response-9"></a>
-
 #### Response
 
 <!-- TODO: translate body -->
 
 <a id="register-alternative-sending-settings"></a>
-
 ### Register Alternative Sending Settings { #register-alternative-sending-settings }
 
 <!-- TODO: translate body -->
 
 <a id="response-10"></a>
-
 #### Response
 
 <!-- TODO: translate body -->

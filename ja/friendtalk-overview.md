@@ -1,20 +1,17 @@
-<!-- pre-align:aligned sig=33585d5af5a4 -->
+<!-- pre-align:aligned sig=bd3f19d0b406 -->
 
 <a id="friendtalk-overview"></a>
-
 ## Notification > KakaoTalk Bizmessage > カカともへのメッセージ > 概要 { #friendtalk-overview }
 
 カカともへのメッセージは、携帯電話番号に基づいて、カカオチャンネルのフレンドに追加された顧客にイベントなどの広告性メッセージを含むさまざまなメッセージを送信できるサービスです。
 簡単に連携するためにRESTful APIを提供します。
 
 <a id="friendtalk-service-termination-notice"></a>
-
 ## フレンドトークサービス終了のお知らせ { #friendtalk-service-termination-notice }
 
 <!-- TODO: translate body -->
 
 <a id="characteristics"></a>
-
 ## 特徴 { #characteristics }
 * フレンドになったユーザーを対象に広告性メッセージを含むさまざまな広告メッセージを送信できます。
 * LMS/MMSより低コストで、テキストおよび画像を添付して送信できます。
@@ -23,14 +20,12 @@
 * 情報通信網法に基づき、広告性情報の送信は20:50～翌日08:00まで制限されます。
 
 <a id="main-features"></a>
-
 ## 主な機能 { #main-features }
 * メッセージ送信、照会、イメージ管理RESTful APIを提供します。
 * コンソールでは、メッセージ送信、照会、イメージ管理や送信したメッセージの統計履歴の照会を行うことができます。
 
 
 <a id="friendtalk-delivery-supported-types"></a>
-
 ## カカともへのメッセージ送信のサポートタイプ { #friendtalk-delivery-supported-types }
 
 |区分	| 説明                                                                                                                                                                                                                                                                                           | カカオ画像アップロード規格 |

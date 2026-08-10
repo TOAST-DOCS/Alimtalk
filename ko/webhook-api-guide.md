@@ -1,18 +1,15 @@
-<!-- pre-align:aligned sig=ea58471275ed -->
+<!-- pre-align:aligned sig=5759c1161cf3 -->
 
 <a id="webhook-api-guide"></a>
-
 ## Notification > KakaoTalk Bizmessage > Webhook > API Guide { #webhook-api-guide }
 
 <span id="webhook"></span>
 <a id="webhook"></a>
-
 ## 웹훅 { #webhook }
 KakaoTalk Bizmessage 서비스 내 특정 이벤트가 발생하면 웹훅 설정에 정의된 URL로 POST 요청을 생성합니다.<br>
 생성된 POST 요청에 대한 API 문서입니다.
 
 <a id="send-webhook"></a>
-
 ### 웹훅 발송 { #send-webhook }
 
 [URL]
@@ -39,7 +36,6 @@ KakaoTalk Bizmessage 서비스 내 특정 이벤트가 발생하면 웹훅 설�
 |hooks|	List\<Map\> | 웹훅 이벤트 발생 시 데이터<br>* 상세한 내용은 [이벤트 유형별 훅(hook) 정의](./webhook-api-guide/#event-hooks)를 참고해 주세요. |
 
 <a id="curl"></a>
-
 #### cURL
 ```
 curl -X POST \
@@ -64,11 +60,9 @@ curl -X POST \
 <span id="event-hooks"></span>
 
 <a id="definitions-of-hooks-by-event-type"></a>
-
 ### 이벤트 유형별 hooks 정의 { #definitions-of-hooks-by-event-type }
 웹훅 설정에 정의된 URL로 POST 요청을 생성할 때 이벤트 타입별 훅(hook) 데이터입니다.
 <a id="update-template-statusquestions"></a>
-
 #### 템플릿 상태/문의 업데이트
 |값| 	타입          | 	설명                                                   |
 |---|--------------|-------------------------------------------------------|
@@ -118,7 +112,6 @@ curl -X POST \
 ```
 
 <a id="update-the-message-sending-result-code"></a>
-
 #### 메시지 발송 결과 코드 업데이트
 |값|	타입| 	설명                                                                                                                                                   |
 |---|---|-------------------------------------------------------------------------------------------------------------------------------------------------------|

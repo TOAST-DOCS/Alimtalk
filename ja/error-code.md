@@ -1,11 +1,9 @@
-<!-- pre-align:aligned sig=2a9da7055af6 -->
+<!-- pre-align:aligned sig=130f1c16c96c -->
 
 <a id="error-code"></a>
-
 ## Notification > KakaoTalk Bizmessage > エラーコード { #error-code }
 
 <a id="api-response-code"></a>
-
 ## APIレスポンスコード { #api-response-code }
 
 | カテゴリー     | 成否 | 結果コード | 結果コードメッセージ                                                                                                                                          | APIレスポンスメッセージ                                                                                                                                                                                                                                                                                                                                                                |
@@ -242,7 +240,6 @@
 | カカともへのメッセージ互換送信 | false | -3226 | コマースにdiscountPriceフィールドがある場合、discountRateまたはdiscountFixedフィールドが必要 | If commerce has 'discountPrice' field, commerce must have a 'discountRate' or 'discountFixed' field. |
 
 <a id="delivery-result-code"></a>
-
 ## 送信結果コード { #delivery-result-code }
 
 <table class="table table-striped table-hover">

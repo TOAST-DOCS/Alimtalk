@@ -1,15 +1,14 @@
 <!-- machine_translated: true -->
 
-<a id="friendtalkupgrade-api-guide"></a>
+<!-- pre-align:aligned sig=37dadf289965 -->
 
+<a id="friendtalkupgrade-api-guide"></a>
 ## Notification > KakaoTalk Bizmessage > Brand Message > API v1.0 Guide { #friendtalkupgrade-api-guide }
 
 <a id="brand-message"></a>
-
 ## Brand Message { #brand-message }
 
 <a id="api-domain"></a>
-
 #### [API Domain]
 
 | Domain |
@@ -17,11 +16,9 @@
 | [https://kakaotalk-bizmessage.api.nhncloudservice.com](https://kakaotalk-bizmessage.api.nhncloudservice.com) |
 
 <a id="introduce-v10-api"></a>
-
 ## Introduction to v1.0 API { #introduce-v10-api }
 
 <a id="manage-non-friend-message-sending-targeting-m-n"></a>
-
 ## Manage Non-Friend Message Sending (Targeting M, N) { #manage-non-friend-message-sending-targeting-m-n }
 
 Non-friend message sending (Targeting M, N) can be used when all of the following conditions are met:
@@ -33,11 +30,9 @@ Non-friend message sending (Targeting M, N) can be used when all of the followin
 - History of successful AlimTalk deliveries within the last 3 months
 
 <a id="upload-marketing-consent-records"></a>
-
 ### Upload Marketing Consent Records { #upload-marketing-consent-records }
 
 <a id="requested"></a>
-
 #### Request
 
 [URL]
@@ -73,7 +68,6 @@ Content-Type: multipart/form-data
 | file | File | O        | Marketing consent records        |
 
 <a id="response"></a>
-
 #### Response
 
 ```
@@ -94,11 +88,9 @@ Content-Type: multipart/form-data
 | - isSuccessful  | boolean | O        | Success         |
 
 <a id="apply-for-using-non-friend-message-sending-targeting-m-n"></a>
-
 ### Apply for Using Non-Friend Message Sending (Targeting M, N) { #apply-for-using-non-friend-message-sending-targeting-m-n }
 
 <a id="requested-2"></a>
-
 #### Request
 
 [URL]
@@ -128,7 +120,6 @@ Content-Type: application/json;charset=UTF-8
 | X-Secret-Key | String | O        | Can be created in the console.       |
 
 <a id="response-2"></a>
-
 #### Response
 
 ```
@@ -149,7 +140,6 @@ Content-Type: application/json;charset=UTF-8
 | - isSuccessful  | boolean | O        | Success         |
 
 <a id="request-to-send-a-free-form-message"></a>
-
 ## Request to Send a Free-Form Message { #request-to-send-a-free-form-message }
 
 * Marketing consent-based sending can be used.
@@ -173,7 +163,6 @@ Content-Type: application/json;charset=UTF-8
 * **Delivery restricted during night (20:50~08:00 on the following day)**
 
 <a id="requested-3"></a>
-
 #### Request
 
 [URL]
@@ -202,7 +191,6 @@ Content-Type: application/json;charset=UTF-8
 | X-Secret-Key | String | O | Can be created in the console. |
 
 <a id="request-text-type-sending"></a>
-
 #### Send Text Type
 
 [Request body]
@@ -310,7 +298,6 @@ Content-Type: application/json;charset=UTF-8
 | statsId                | String  | 	X | Statistics ID (not included in the delivery search conditions, up to 8 characters)                                                                                                                                                            |
 
 <a id="request-image-type-sending"></a>
-
 #### Send Image Type
 
 [Request Body]
@@ -425,7 +412,6 @@ Content-Type: application/json;charset=UTF-8
 | statsId                | String  | 	X | Statistics ID (not included in the delivery search conditions, up to 8 characters)                                                                                                                                                                                                                                            |
 
 <a id="request-wide-image-type-sending"></a>
-
 #### Wide Image Type Delivery Request
 
 [Request body]
@@ -540,7 +526,6 @@ Content-Type: application/json;charset=UTF-8
 | statsId                | String  | 	X | Statistics ID (not included in the delivery search conditions, up to 8 characters)                                                                                                                                                                                                                                            |
 
 <a id="request-to-send-wide-item-list-type"></a>
-
 #### Wide Item List Type Delivery Request
 
 [Request body]
@@ -684,7 +669,6 @@ Content-Type: application/json;charset=UTF-8
 | statsId                | String  | 	X | Statistics ID (not included in the delivery search conditions, up to 8 characters)                                                                                                                                                                                                                                            |
 
 <a id="request-to-send-premium-video-type"></a>
-
 #### Send Premium Video Type
 
 [Request Body]
@@ -801,7 +785,6 @@ Content-Type: application/json;charset=UTF-8
 | statsId                | String  | 	X | Statistics ID (not included in the delivery search conditions, up to 8 characters)                                                                                                                                                            |
 
 <a id="request-to-send-commerce"></a>
-
 #### Commerce Type Delivery Request
 
 [Request Body]
@@ -929,7 +912,6 @@ Content-Type: application/json;charset=UTF-8
 | statsId                | String  | 	X | Statistics ID (not included in the delivery search conditions, up to 8 characters)                                                                                                                                                                                                                                            |
 
 <a id="request-to-send-carousel-feed-type"></a>
-
 #### Send Carousel Feed
 
 ##### Carousel Fixed Replacement Variables (Path-Based Template Parameters)
@@ -1110,7 +1092,6 @@ In the carousel type, you can apply different replacement variable values to eac
 | statsId                | String  | 	X | Statistics ID (not included in the delivery search conditions, up to 8 characters)                                                                                                                                                                                                                            |
 
 <a id="request-to-send-carousel-commerce-type"></a>
-
 #### Carousel Commerce Delivery Request
 
 [Request Body]
@@ -1270,7 +1251,6 @@ In the carousel type, you can apply different replacement variable values to eac
 | statsId              | String  | 	X | Statistics ID (not included in the delivery search conditions, up to 8 characters)                                                                                                                                                                                                                                            |
 
 <a id="response-3"></a>
-
 #### Response
 
 ```
@@ -1309,7 +1289,6 @@ In the carousel type, you can apply different replacement variable values to eac
 | -- resultMessage | String  | O        | Delivery result message per recipient ("success" or a related message on success, detailed failure message on failure) |
 
 <a id="request-to-send-basic-message"></a>
-
 ## Request to Send a Basic Message { #request-to-send-basic-message }
 
 * This delivery uses a template.
@@ -1327,7 +1306,6 @@ In the carousel type, you can apply different replacement variable values to eac
 * **Delivery restricted during night (20:50~08:00 on the following day)**
 
 <a id="cautions-for-use"></a>
-
 ### Cautions for Use { #cautions-for-use }
 
 - `unsubscribeNo` and `unsubscribeAuthNo` are the 080 toll-free opt-out phone number and authentication number. If either one is not entered, the message will be sent using the opt-out information registered in the Sender Profile.
@@ -1361,7 +1339,6 @@ Content-Type: application/json;charset=UTF-8
 | X-Secret-Key | String | O | Can be created in the console. |
 
 <a id="requested-4"></a>
-
 #### Delivery Request
 
 ```
@@ -1434,7 +1411,6 @@ Content-Type: application/json;charset=UTF-8
 | statsId                | String  | X  | Statistics ID (not included in the delivery search conditions, up to 8 characters) |
 
 <a id="response-4"></a>
-
 #### Response
 
 ```
@@ -1473,11 +1449,9 @@ Content-Type: application/json;charset=UTF-8
 | -- resultMessage | String  | O        | Delivery result message per recipient ("success" or a related message on success, detailed failure reason on failure)   |
 
 <a id="view-sending-list"></a>
-
 ## List Deliveries { #view-sending-list }
 
 <a id="requested-5"></a>
-
 #### Request
 
 [URL]
@@ -1523,7 +1497,6 @@ Content-Type: application/json;charset=UTF-8
 | pageSize             | String | X                     | Number of results (Default: 15, Max: 1000)                   |
 
 <a id="response-5"></a>
-
 #### Response
 
 ```
@@ -1600,11 +1573,9 @@ Content-Type: application/json;charset=UTF-8
 | - totalCount                | Integer | O        | Total count                                                                                                                  |
 
 <a id="view-single-sending"></a>
-
 ## Get Deliveries { #view-single-sending }
 
 <a id="requested-6"></a>
-
 #### Request
 
 [URL]
@@ -1635,7 +1606,6 @@ Content-Type: application/json;charset=UTF-8
 | X-Secret-Key | String | O  | Can be created in the console. |
 
 <a id="response-6"></a>
-
 #### Response
 
 ```
@@ -1897,11 +1867,9 @@ Content-Type: application/json;charset=UTF-8
 | - recipientGroupingKey | String  | X        | Recipient grouping key                                           |
 
 <a id="message-results"></a>
-
 ## Query Updated Message Results { #message-results }
 
 <a id="requested-25"></a>
-
 #### Request
 
 [URL]
@@ -1940,7 +1908,6 @@ Content-Type: application/json;charset=UTF-8
     The search period is within the last 90 days, and the range for a single search is up to 31 days.
 
 <a id="response-25"></a>
-
 #### Response
 
 ```
@@ -2003,10 +1970,10 @@ Content-Type: application/json;charset=UTF-8
 curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" "https://kakaotalk-bizmessage.api.nhncloudservice.com/brand-message/v1.0/appkeys/{appKey}/message-results?startUpdateDate=2026-06-01%2000:00&endUpdateDate=2026-06-30%2023:59"
 ```
 
+<a id="cancel-message-sending"></a>
 ## Cancel Sending Messages { #cancel-message-sending }
 
 <a id="requested-7"></a>
-
 #### Request
 
 [URL]
@@ -2042,7 +2009,6 @@ Content-Type: application/json;charset=UTF-8
 | recipientSeq | 	String | 	X  | Recipient sequence number<br>(to cancel all deliveries of request ID, if the value is left blank) |
 
 <a id="response-7"></a>
-
 #### Response
 
 ```
@@ -2067,17 +2033,18 @@ Content-Type: application/json;charset=UTF-8
 curl -X DELETE -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" "https://kakaotalk-bizmessage.api.nhncloudservice.com/brand-message/v1.0/appkeys/{appkey}/messages/{requestId}?recipientSeq=1,2,3"
 ```
 
-<a id="manage-templates"></a>
-
-## Mass Delivery Query { #mass-delivery }
+<a id="section-1"></a>
+## Mass Delivery Query { #section-1 }
 
 Retrieves a list of mass delivery requests (master) and delivery results per recipient.
 
 * Retrieve Mass Delivery Requests returns only request-level information. For per-recipient results, use List Mass Delivery Recipients or Get a Mass Delivery Recipient.
 * The response body of Retrieve Mass Delivery Requests provides only the `content`, `image`, and `buttons` elements. Wide list, coupon, commerce, video, and carousel elements are available in Get a Mass Delivery Recipient.
 
-### Retrieve Mass Delivery Requests { #list-mass-delivery-requests }
+<a id="retrieve-mass-delivery-requests"></a>
+### Retrieve Mass Delivery Requests { #retrieve-mass-delivery-requests }
 
+<a id="retrieve-mass-delivery-requests-request"></a>
 #### Request
 
 [URL]
@@ -2118,6 +2085,7 @@ Content-Type: application/json;charset=UTF-8
 | pageNum          | Integer | X                             | Page number (Default: 1)                                                                                     |
 | pageSize         | Integer | X                             | Number of results (Default: 15, Max: 1,000)                                                                  |
 
+<a id="retrieve-mass-delivery-requests-response"></a>
 #### Response
 
 ```
@@ -2210,8 +2178,10 @@ Content-Type: application/json;charset=UTF-8
 curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" "https://kakaotalk-bizmessage.api.nhncloudservice.com/brand-message/v1.0/appkeys/{appkey}/mass-messages?requestId={requestId}"
 ```
 
+<a id="list-mass-delivery-recipients"></a>
 ### List Mass Delivery Recipients { #list-mass-delivery-recipients }
 
+<a id="list-mass-delivery-recipients-request"></a>
 #### Request
 
 [URL]
@@ -2252,6 +2222,7 @@ Content-Type: application/json;charset=UTF-8
 | pageNum          | Integer | X        | Page number (Default: 1)                                                             |
 | pageSize         | Integer | X        | Number of results (Default: 15, Max: 1000)                                           |
 
+<a id="list-mass-delivery-recipients-response"></a>
 #### Response
 
 ```
@@ -2316,8 +2287,10 @@ Content-Type: application/json;charset=UTF-8
 curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" "https://kakaotalk-bizmessage.api.nhncloudservice.com/brand-message/v1.0/appkeys/{appkey}/mass-messages/{requestId}/recipients?pageNum=1&pageSize=15"
 ```
 
+<a id="get-a-mass-delivery-recipient"></a>
 ### Get a Mass Delivery Recipient { #get-a-mass-delivery-recipient }
 
+<a id="get-a-mass-delivery-recipient-request"></a>
 #### Request
 
 [URL]
@@ -2347,6 +2320,7 @@ Content-Type: application/json;charset=UTF-8
 |--------------|--------|----------|------------------------------------|
 | X-Secret-Key | String | O        | Can be created in the console. |
 
+<a id="get-a-mass-delivery-recipient-response"></a>
 #### Response
 
 ```
@@ -2613,15 +2587,12 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 ```
 
 <a id="manage-templates"></a>
-
 ## Template Management { #manage-templates }
 
 <a id="view-template-list"></a>
-
 ### List Templates { #view-template-list }
 
 <a id="requested-8"></a>
-
 #### Request
 
 [URL]
@@ -2661,7 +2632,6 @@ Content-Type: application/json;charset=UTF-8
 | pageSize     | Integer | X        | Number of results (Default: 15, Max: 1,000)  |
 
 <a id="response-8"></a>
-
 #### Response
 
 ```
@@ -2890,7 +2860,6 @@ Content-Type: application/json;charset=UTF-8
 | - totalCount            | Integer | O        | Total count                                          |
 
 <a id="view-single-template"></a>
-
 ### Get Templates { #view-single-template }
 
 [URL]
@@ -2922,7 +2891,6 @@ Content-Type: application/json;charset=UTF-8
 | X-NC-API-IDEMPOTENCY-KEY    | String | X        | Key used as the reference for duplicate message sending requests.<br>If a request is made with the same key for 10 minutes, the request will be failed. |
 
 <a id="response-9"></a>
-
 #### Response
 
 ```
@@ -3145,11 +3113,9 @@ Content-Type: application/json;charset=UTF-8
 | - updateDate          | String  | X        | Modification date and time               |
 
 <a id="register-template"></a>
-
 ### Template Registration { #register-template }
 
 <a id="requested-10"></a>
-
 #### Request
 
 [URL]
@@ -3179,7 +3145,6 @@ Content-Type: application/json;charset=UTF-8
 | X-Secret-Key | String | O        | Can be created in the console. |
 
 <a id="note"></a>
-
 #### Notes
 
 * When applying replacement variables to a coupon title, you must use the following fixed replacement variables.
@@ -3200,7 +3165,6 @@ Content-Type: application/json;charset=UTF-8
     * discountFixed -> #{Discount fixed amount}
 
 <a id="request-to-register-text-type-template"></a>
-
 #### Register Text Type Template Request
 
 [Request body]
@@ -3256,7 +3220,6 @@ Content-Type: application/json;charset=UTF-8
 | - schemeIos     | String  | X  | iOS app link (required for the AL type), for up to 500 characters<br>If the linkMo field is entered for a coupon, the remaining fields become optional.<br>If a channel coupon URL (format: alimtalk=coupon://) is entered in the scheme_android or scheme_ios field, the remaining fields become optional.                                                  |
 
 <a id="request-to-register-image-type-template"></a>
-
 #### Request to Register Image Type Template
 
 [Request body]
@@ -3319,7 +3282,6 @@ Content-Type: application/json;charset=UTF-8
 | - schemeIos     | String  | X        | iOS app link (required for the AL type), limited to 500 characters<br>If the linkMo field is entered for the coupon, the remaining fields become optional.<br>If a channel coupon URL (format: alimtalk=coupon://) is entered in the scheme_android or scheme_ios field, the remaining fields become optional.                                                                                                   |
 
 <a id="request-to-register-wide-image-type-template"></a>
-
 #### Request to Register Wide Image Type Template
 
 [Request body]
@@ -3382,7 +3344,6 @@ Content-Type: application/json;charset=UTF-8
 | - schemeIos     | String  | X        | iOS app link (required for the AL type), limited to 500 characters<br>If the linkMo field is entered for the coupon, the remaining fields become optional.<br>If a channel coupon URL (format: alimtalk=coupon://) is entered in the scheme_android or scheme_ios field, the remaining fields become optional.                                                                                        |
 
 <a id="request-to-register-wide-item-list-type-template"></a>
-
 #### Register Wide Item List Type Template Request
 
 [Request body]
@@ -3474,7 +3435,6 @@ Content-Type: application/json;charset=UTF-8
 | - schemeIos | String | X | iOS app link (required for the AL type), up to 500 characters<br>If the linkMo field is entered for a coupon, the remaining fields become optional.<br>If a channel coupon URL (format: alimtalk=coupon://) is entered in the scheme_android or scheme_ios field, the remaining fields become optional. |
 
 <a id="request-to-register-premium-video-type-template"></a>
-
 #### Register Premium Video Type Template
 
 [Request body]
@@ -3539,7 +3499,6 @@ Content-Type: application/json;charset=UTF-8
 | - schemeIos | String | X | iOS app link (required for the AL type), up to 500 characters<br>If the linkMo field is entered for a coupon, the remaining fields become optional.<br>If a channel coupon URL (format: alimtalk=coupon://) is entered in the scheme_android or scheme_ios field, the remaining fields become optional. |
 
 <a id="request-to-register-commerce-type-template"></a>
-
 #### Register Commerce Type Template Request
 
 [Request body]
@@ -3616,7 +3575,6 @@ Content-Type: application/json;charset=UTF-8
 | - schemeIos | String | X | iOS app link (required for the AL type), limited to 500 characters<br>If the linkMo field is entered for the coupon, the remaining fields become optional;<br>if a channel coupon URL (format: alimtalk=coupon://) is entered in the scheme_android or scheme_ios field, the remaining fields become optional. |
 
 <a id="request-to-register-carousel-feed-type-template"></a>
-
 #### Register Carousel Feed Template
 
 [Request Body]
@@ -3728,7 +3686,6 @@ Content-Type: application/json;charset=UTF-8
 | createUser        | String  | X  | Registrant (saved as user UUID when sending from the console)                                                                                                                                                                                                                                                                                                  |
 
 <a id="request-to-register-carousel-commerce-type-template"></a>
-
 #### Register Template Request for Carousel Commerce Type
 
 [Request Body]
@@ -3838,7 +3795,6 @@ Content-Type: application/json;charset=UTF-8
 | -- schemeIos         | String  | X  | iOS app link, up to 500 characters<br>Replacement variables cannot be used.                                                                                                                                                                                                 |
 
 <a id="response-10"></a>
-
 #### Response
 
 ```
@@ -3864,11 +3820,9 @@ Content-Type: application/json;charset=UTF-8
 | - templateCode  | String  | O        | Template Code   |
 
 <a id="modify-template"></a>
-
 ### Modify Template { #modify-template }
 
 <a id="requested-11"></a>
-
 #### Request
 
 [URL]
@@ -3903,7 +3857,6 @@ Content-Type: application/json;charset=UTF-8
 * Same specifications as template registration
 
 <a id="response-11"></a>
-
 #### Response
 
 ```
@@ -3924,11 +3877,9 @@ Content-Type: application/json;charset=UTF-8
 | - isSuccessful  | boolean | O        | Success        |
 
 <a id="delete-template"></a>
-
 ### Delete a Template { #delete-template }
 
 <a id="requested-12"></a>
-
 #### Request
 
 [URL]
@@ -3959,7 +3910,6 @@ Content-Type: application/json;charset=UTF-8
 | X-Secret-Key | String | O        | Can be created in the console.     |
 
 <a id="response-12"></a>
-
 #### Response
 
 ```
@@ -3980,15 +3930,12 @@ Content-Type: application/json;charset=UTF-8
 | - isSuccessful  | boolean | O        | Success        |
 
 <a id="manage-image"></a>
-
 ## Manage Image { #manage-image }
 
 <a id="upload-image"></a>
-
 ### Upload Image { #upload-image }
 
 <a id="requested-13"></a>
-
 #### Request
 
 [URL]
@@ -4024,7 +3971,6 @@ Content-Type: multipart/form-data
 | imageType | String | O  | Image type <br>(IMAGE, WIDE_IMAGE, MAIN_WIDE_ITEMLIST_IMAGE, NORMAL_WIDE_ITEMLIST_IMAGE, CAROUSEL_FEED_IMAGE, CAROUSEL_COMMERCE_IMAGE) |
 
 <a id="response-13"></a>
-
 #### Response
 
 ```
@@ -4054,7 +4000,6 @@ Content-Type: multipart/form-data
 | - imageName     | String  | X        | Image name |
 
 <a id="upload-image-specifications"></a>
-
 #### Upload Image Specifications
 
 | Image Type | Usage | Upload Image Specifications |
@@ -4069,11 +4014,9 @@ Content-Type: multipart/form-data
 * If all templates that reference an uploaded image are deleted or changed to a different image, the image is deleted from the Kakao CDN and the URL becomes invalid. Although image information is retained in the image retrieval API, the actual image cannot be accessed, so it is recommended to keep the original file separately on your own server.
 
 <a id="view-image"></a>
-
 ### View Image { #view-image }
 
 <a id="requested-14"></a>
-
 #### Request
 
 [URL]
@@ -4110,7 +4053,6 @@ Content-Type: application/json;charset=UTF-8
 | pageSize   | String | X  | Number of results (default: 15) |
 
 <a id="response-14"></a>
-
 #### Response
 
 ```
@@ -4140,11 +4082,9 @@ Content-Type: application/json;charset=UTF-8
 | - imageName     | String  | X        | Image name |
 
 <a id="delete-image"></a>
-
 ### Delete Image { #delete-image }
 
 <a id="requested-15"></a>
-
 #### Request
 
 [URL]
@@ -4179,7 +4119,6 @@ Content-Type: application/json;charset=UTF-8
 | imageSeq | String | O  | Image number |
 
 <a id="response-15"></a>
-
 #### Response
 
 ```
@@ -4200,13 +4139,11 @@ Content-Type: application/json;charset=UTF-8
 | - isSuccessful  | boolean | O        | Success |
 
 <a id="manage-video"></a>
-
 ## Manage Video { #manage-video }
 
 This API is used to register, view, and delete videos for use in Brand Message. Registered videos can be used for sending after encoding by the Kakao Biz Center, and only videos with a status of `PUBLIC` can be used for template registration and sending (`PRIVATE` allows template registration only).
 
 <a id="video-upload-flow"></a>
-
 ### Video Upload Flow { #video-upload-flow }
 
 Video upload is a two-step process.
@@ -4221,11 +4158,9 @@ The video file is sent directly to the Kakao upload server without passing throu
 > * The `fileSize` in the step 1 request must exactly match the size of the file that will be uploaded in step 2. If the sizes do not match, Kakao will reject the request with errCode 109.
 
 <a id="register-video-upload"></a>
-
 ### Register Video Upload { #register-video-upload }
 
 <a id="requested-16"></a>
-
 #### Request
 
 [URL]
@@ -4272,7 +4207,6 @@ Content-Type: application/json;charset=UTF-8
 | createUser | String | X  | Upload user identifier (up to 100 characters)                                                |
 
 <a id="response-16"></a>
-
 #### Response
 
 ```
@@ -4319,13 +4253,11 @@ Content-Type: application/json;charset=UTF-8
 > The `thumbnailUrl`, `videoUrl`, `playUrl`, and `updateDate` fields, which are populated after encoding is complete, can be obtained through the [View Video](#view-video) API.
 
 <a id="video-file-upload-step-2"></a>
-
 ### Upload Video File (Step 2) { #video-file-upload-step-2 }
 
 Call the video file directly to `uploadInfo.uploadUrl` from the response above. This request is sent directly to the Kakao upload server, not to the NHN Cloud server.
 
 <a id="requested-17"></a>
-
 #### Request
 
 [URL]
@@ -4348,7 +4280,6 @@ Content-Type: multipart/form-data
 | file | File | O        | Video file. Must exactly match the `fileSize` specified in the Step 1 request  |
 
 <a id="response-17"></a>
-
 #### Response
 
 ```
@@ -4364,7 +4295,6 @@ Content-Type: multipart/form-data
 * On failure, HTTP 4xx is returned along with `errCode` (100–110) and `message`. For detailed error codes, refer to the Kakao Biz Message guide.
 
 <a id="upload-video-specifications"></a>
-
 #### Uploaded Video Specifications
 
 | Item               | Limit                    |
@@ -4381,11 +4311,9 @@ Content-Type: multipart/form-data
 * If the file upload in step 2 fails or is delayed after step 1 registration and the token (5 minutes) expires, you must call the registration again. Videos that were registered but not actually uploaded will be automatically marked with the status `ERROR` after a certain period of time.
 
 <a id="view-video"></a>
-
 ### View Video { #view-video }
 
 <a id="requested-18"></a>
-
 #### Request
 
 [URL]
@@ -4422,7 +4350,6 @@ Content-Type: application/json;charset=UTF-8
 | pageSize   | String | X  | Number of records to query (default: 15) |
 
 <a id="response-18"></a>
-
 #### Response
 
 ```
@@ -4481,11 +4408,9 @@ Content-Type: application/json;charset=UTF-8
 > The `video` in the upload registration response represents the state immediately after registration, so `status` is always `REGISTERED`, and the `thumbnailUrl`, `videoUrl`, `playUrl`, `createDate`, `updateDate`, and `createUser` fields are not included. These fields can be checked in the Query Video API after encoding is complete.
 
 <a id="delete-video"></a>
-
 ### Delete a video { #delete-video }
 
 <a id="requested-19"></a>
-
 #### Request
 
 [URL]
@@ -4520,7 +4445,6 @@ Content-Type: application/json;charset=UTF-8
 | videoSeq | String | O  | Video sequence (multiple values can be passed separated by commas) |
 
 <a id="response-19"></a>
-
 #### Response
 
 ```
@@ -4541,7 +4465,6 @@ Content-Type: application/json;charset=UTF-8
 | - isSuccessful  | boolean | O        | Success         |
 
 <a id="video-status"></a>
-
 ### Video Status { #video-status }
 
 Describes the `status` field values in the video query response.
@@ -4558,15 +4481,12 @@ Describes the `status` field values in the video query response.
 | ERROR      | Error occurred during upload or encoding                                    |
 
 <a id="upload"></a>
-
 ## Upload { #upload }
 
 <a id="upload-bizform-key"></a>
-
 ### Upload a BizForm Key { #upload-bizform-key }
 
 <a id="requested-20"></a>
-
 #### Request
 
 [URL]
@@ -4596,7 +4516,6 @@ Content-Type: application/json;charset=UTF-8
 | X-Secret-Key | String | O        | Can be created in the console. |
 
 <a id="response-20"></a>
-
 #### Response
 
 ```
@@ -4617,15 +4536,12 @@ Content-Type: application/json;charset=UTF-8
 | - isSuccessful  | boolean | O        | Success        |
 
 <a id="manage-outgoing-profiles"></a>
-
 ## Manage Outgoing Profiles { #manage-outgoing-profiles }
 
 <a id="view-outgoing-profile"></a>
-
 ### View Outgoing Profiles { #view-outgoing-profile }
 
 <a id="requested-21"></a>
-
 #### Request
 
 [URL]
@@ -4655,7 +4571,6 @@ Content-Type: application/json;charset=UTF-8
 | X-Secret-Key | String | O        | Can be created in the console. |
 
 <a id="response-21"></a>
-
 #### Response
 
 ```
@@ -4726,11 +4641,9 @@ Content-Type: application/json;charset=UTF-8
 | - initialUserRestriction  | boolean | O        | Whether the initial user restriction is applied                                                                                                                       |
 
 <a id="modify-outgoing-profile-080-opt-out-number"></a>
-
 ### Modify Outgoing Profile 080 Opt-Out Number { #modify-outgoing-profile-080-opt-out-number }
 
 <a id="requested-22"></a>
-
 #### Request
 
 [URL]
@@ -4773,7 +4686,6 @@ Content-Type: application/json;charset=UTF-8
 | unsubscribeNo     | String | O        | 080 toll-free opt-out phone number (if neither field is entered, the message is sent using the opt-out information registered in the sender profile)<br>- 080-xxx-xxxx <br>- 080-xxxx-xxxx <br>- 080xxxxxxx <br>- 080xxxxxxxx |
 | unsubscribeAuthNo | 	String | 	X  | 080 opt-out authentication number (up to 10 characters; if all fields are left blank, the message is sent using the opt-out information registered in the sender's profile)<br>Cannot enter unsubscribeAuthNo without unsubscribeNo<br>Example: 1234 |
 <a id="response-22"></a>
-
 #### Response
 
 ```
@@ -4794,11 +4706,9 @@ Content-Type: application/json;charset=UTF-8
 | - isSuccessful  | boolean | O        | Success         |
 
 <a id="manage-fallback"></a>
-
 ## Manage Fallback { #manage-fallback }
 
 <a id="register-sms-appkey"></a>
-
 ### Register an SMS AppKey { #register-sms-appkey }
 
 [URL]
@@ -4845,7 +4755,6 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 ```
 
 <a id="response-23"></a>
-
 #### Response
 
 ```
@@ -4860,7 +4769,6 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 ```
 
 <a id="register-fallback-settings"></a>
-
 ### Register Fallback Settings { #register-fallback-settings }
 
 [URL]
@@ -4913,7 +4821,6 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 ```
 
 <a id="response-24"></a>
-
 #### Response
 
 ```

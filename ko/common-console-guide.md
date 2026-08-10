@@ -1,11 +1,9 @@
-<!-- pre-align:aligned sig=872af16524aa -->
+<!-- pre-align:aligned sig=81b14e4f383d -->
 
 <a id="common-console-guide"></a>
-
 ## Notification > KakaoTalk Bizmessage > 콘솔 사용 가이드 { #common-console-guide }
 
 <a id="identity-verification"></a>
-
 ## 본인 인증 { #identity-verification }
 * 어뷰징 방지를 위한 카카오톡 정책으로 KakaoTalk Bizmessage 서비스에 강화된 본인 인증 사전등록제가 적용되었습니다.
     * 2023년 4월 25일 이후 가입한 회원에 한함
@@ -16,7 +14,6 @@
 * 재직증명서는 <b><span style="color:red">발급일이 표기되어 있고, 직인이 날인된 서류</span></b>만 가능합니다. 재직증명서 내 주민번호 뒤 6자리는 반드시 마스킹(숨김) 처리하십시오. 예) 000000-0******
 
 <a id="required-documents-for-identity-verification"></a>
-
 ### 본인 인증에 따른 필요한 서류 { #required-documents-for-identity-verification }
 | 회원 유형   | 인증 방법     | 필요 서류         |
 |---------|-----------|---------------|
@@ -24,7 +21,6 @@
 | 사업자 임직원 | 휴대폰 본인 인증 | 사업자등록증, 재직증명서 |
 
 <a id="authentication-representative"></a>
-
 ### 본인 인증 대표 { #authentication-representative }
 ![KTB_01_20230926.png](https://static.toastoven.net/prod_alimtalk/KTB_01_20230926.png)
 1. <b>본인 인증</b> 탭을 선택합니다. 
@@ -36,18 +32,15 @@
 7. 본인 인증 절차가 완료되면 계정에 등록된 메일로 승인 결과가 전송됩니다.
 
 <a id="identity-verification-status-settings"></a>
-
 ### 본인 인증 상태 설정 { #identity-verification-status-settings }
 * 심사중: 등록한 본인 인증에 대한 인증 서류를 관리자가 검토하고 있는 상태
 * 거부: 본인 인증이 반려되어 서류 재등록이 필요한 상태
 * 승인: 본인 인증 승인 완료 상태
 
 <a id="manage-sender-profiles"></a>
-
 ## 발신프로필 관리 { #manage-sender-profiles }
 
 <a id="add-sender-profiles"></a>
-
 ### 발신프로필 추가 { #add-sender-profiles }
 카카오톡 채널 개설 완료 후 발신 프로필을 등록합니다. 카카오톡 채널 생성 상세 가이드는 [발신 프로필](https://docs.nhncloud.com/ko/Notification/KakaoTalk%20Bizmessage/ko/sender-overview/ )에서 확인할 수 있습니다.
 발신 프로필 등록이 완료되면 관리자 휴대폰으로 카카오톡 토큰 메시지가 전달됩니다.
@@ -59,7 +52,6 @@
 4. <b>토큰 요청</b>을 클릭해 인증 토큰을 요청합니다.
 
 <a id="register-token"></a>
-
 ### 토큰 등록 { #register-token }
 관리자 휴대폰으로 받은 토큰 메시지를 입력하면 발신 프로필 등록이 완료됩니다.
 
@@ -70,16 +62,13 @@
 * 일별 최대 발송량을 변경하려면 고객 센터에 별도로 요청해야 합니다.
 
 <a id="kakaotalk-channel-status"></a>
-
 ### 카카오톡 채널 상태 { #kakaotalk-channel-status }
 <a id="nhn-cloud-sender-profile-status"></a>
-
 #### NHN Cloud 발신프로필 상태
 * NHN Cloud에 등록한 발신 프로필의 상태를 의미합니다.
 * 카카오톡 채널 생성 및 발신 프로필 콘솔 사용 가이드를 참고하여 카카오톡 채널을 등록하고 토큰 인증까지 완료하면 정상 사용 가능합니다.
 
 <a id="kakaotalk-channel-profile-status"></a>
-
 #### 카카오톡 채널 프로필 상태
 * 알림톡/친구톡을 발송하기 위한 발신 키 상태를 의미합니다.
 * 프로필 장기 미사용, 사업자 정보 불일치 등의 경우 차단될 수 있습니다.
@@ -87,80 +76,67 @@
 * 프로필 상태가 비활성화(`C`)인 경우, 카카오 관리자 페이지에서 홈 공개를 "ON"으로 변경하면 채널 상태가 정상(`A`)으로 변경됩니다. 상태 동기화는 최대 15분 간격으로 이루어지므로, 카카오 반영 시점에 따라 반영까지 시간이 더 소요될 수 있습니다.
 
 <a id="kakao-channel-status"></a>
-
 #### 카카오 채널 상태
 * 카카오톡 비즈니스 ID의 상태를 의미합니다.
 * 발신 프로필 장기 미사용 등의 경우 차단될 수 있습니다.
 * 해당 상태가 정상이 아닌 경우 NHN Cloud 고객 센터로 카카오톡 채널 ID와 함께 차단 해제를 요청해 주시기 바랍니다.
 
 <a id="sender-profile-status"></a>
-
 ### 발신프로필 상태 { #sender-profile-status }
 <a id="sender-profile-dormant-status"></a>
-
 #### 발신프로필 휴면 상태
 * 1년간 카카오 알림톡 발신 이력이 없어 발신 프로필이 휴면된 상태를 의미합니다.
 * 휴면 전환 후 1년간 휴면 해제하지 않는 경우 발신 프로필이 삭제됩니다.
 * 해당 상태가 정상이 아닌 경우 NHN Cloud 고객 센터로 카카오톡 채널 ID와 함께 차단 해제를 요청해 주시기 바랍니다.
 
 <a id="sender-profile-block-status"></a>
-
 #### 발신프로필 차단 상태
 * 발신 프로필 휴면 전환 후 1년간 휴면 해제하지 않아 발신 프로필이 삭제된 상태를 의미합니다.
 * 삭제된 발신 프로필은 복구가 불가하여 신규로 등록해야 합니다.
 * 발신프로필 콘솔 사용 가이드를 참고하여 발신 프로필을 추가 등록하시기 바랍니다.
 
 <a id="kakaotalk-channel-spam-status"></a>
-
 ### 카카오톡 채널 스팸 상태 { #kakaotalk-channel-spam-status }
 <a id="kakaotalk-channel-spam-status-2"></a>
-
 #### 카카오톡 채널 스팸 상태
 * 카카오톡 발신 프로필의 스팸 상태를 의미합니다.
 * 비즈메시지 운영정책을 위반할 경우 스팸 채널로 분류되어 해당 프로필을 이용한 활동이 제한될 수 있습니다.
 * 스팸 상태가 정상이 아닌 경우 NHN Cloud 고객 센터로 카카오톡 채널 ID와 함께 차단 해제를 요청해 주시기 바랍니다.
 
 <a id="kakaotalk-message-spam-status"></a>
-
 #### 카카오톡 메시지 스팸 상태
 * 카카오톡 발신 프로필에서 발송하는 메시지의 스팸 상태를 의미합니다.
 * 비즈메시지 운영정책을 위반할 경우 스팸 채널로 분류되어 해당 프로필을 이용한 활동이 제한될 수 있습니다.
 * 스팸 상태가 정상이 아닌 경우 NHN Cloud 고객 센터로 카카오톡 채널 ID와 함께 차단 해제를 요청해 주시기 바랍니다.
 
 <a id="first-time-user-restrictions"></a>
-
 ### 최초 사용자 제한 { #first-time-user-restrictions }
 특정 기준을 충족하지 못한 발신 프로필은 어뷰징 방지를 위해 최초 사용자 제한이 적용되어 일부 기능에 제약을 받게 됩니다.
 
 <a id="first-time-user-restriction-items"></a>
-
 #### 최초 사용자 제한 사항
 * 일별 발송량 제한
 * 그룹 프로필에 멤버로 추가 불가
 * 템플릿 변수가 치환될 때 그 차이가 14개 글자를 초과하는 부분이 있는 경우, 메시지 발송 실패 처리
 
 <a id="release-criteria-for-first-time-user-restrictions"></a>
-
 #### 최초 사용자 제한 해제 기준
 * 최초 사용자 제한 발신 프로필이 생성 후 한 달 이내에 과금 정상 발송 템플릿 건수가 10건 이상인 경우 다음날 자동으로 제한이 해제됩니다.
 * 이외 최초 사용자 제한 해제가 필요한 경우 NHN Cloud 고객 센터로 카카오톡 채널 ID와 함께 별도로 문의 바랍니다.
 
 
 <a id="sending-settings"></a>
-
 ## 발송 설정 { #sending-settings }
 * 메시지 보관 기간 정책에 따라 90일이 지난 발송 이력 데이터를 백업할 수 있습니다.
 * 알림톡 백업 여부, 파일 확장자, 파일을 업로드할 저장소 정보를 입력하면 해당 저장소에 백업 일자가 포함된 파일이 생성됩니다.
 
 <a id="data-retention-period"></a>
-
 ### 데이터 보관 기간 { #data-retention-period }
 * 데이터 보관 정책에 따라 최근 90일의 발송 이력을 보관합니다. 이 기간 동안 발송 내역 조회가 가능하며, 보관 기간이 만료되면 관련 법령에 따라 데이터를 삭제합니다.
 * 통계 데이터는 최근 90일의 정보를 보관합니다.
 * 카카오 서비스에 업로드된 이미지는 카카오 CDN 서버에 영구 보관됩니다.
 
 <a id="webhook-management"></a>
-
 ## 웹훅 관리 { #webhook-management }
 지정한 이벤트 발생 시 URL을 지정하여 웹훅 이벤트를 받을 수 있습니다.
 ![KTB_04_20230926.png](https://static.toastoven.net/prod_alimtalk/KTB_04_20230926.png)
@@ -172,7 +148,6 @@
 등록 완료된 웹훅은 <b>웹훅 등록 목록</b>에서 확인 가능합니다.
 
 <a id="statistical-event-key-settings"></a>
-
 ## 통계 이벤트 키 설정 { #statistical-event-key-settings }
 이벤트 키를 등록하여 해당 키로 발송 시 통계 이벤트 키별로 통계 데이터를 수집할 수 있습니다.
 통계 이벤트 키 용어의 의미는 <b>참고</b>에서 확인하십시오.
@@ -185,16 +160,13 @@
 <b>데이터 수집 기간 종료 시점은 활성화 상태인 경우에 수정이 가능합니다.</b>
 
 <a id="statistics"></a>
-
 ## 통계 { #statistics }
 <a id="query-statistics"></a>
-
 ### 통계 조회 { #query-statistics }
 * 발송 요청 기간, 통계 이벤트 키, 템플릿 등 타입별로 통계를 조회할 수 있습니다.
 * 발송 요청, 성공, 실패 등 발송 상태를 그래프와 표로 확인할 수 있습니다.
 
 <a id="categorize-statistics"></a>
-
 #### 통계 분류
 * 메시지(이벤트 시간) : 이벤트 발생 시간 기준으로 수집된 통계입니다.
 * 다음 시간 기준으로 통계가 수집됩니다.
@@ -207,10 +179,8 @@
 
 
 <a id="note"></a>
-
 ## 참고 { #note }
 <a id="statistics-event-keys-and-statistics"></a>
-
 ### 통계 이벤트 키와 통계 { #statistics-event-keys-and-statistics }
 
 | 용어       | 설명                                    |

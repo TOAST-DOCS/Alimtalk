@@ -1,14 +1,11 @@
-<!-- pre-align:aligned sig=3fddaef1a9f4 -->
+<!-- pre-align:aligned sig=ae151695d20b -->
 
 <a id="alimtalk-console-guide"></a>
-
 ## Notification > KakaoTalk Bizmessage > 알림톡 > 콘솔 사용 가이드 { #alimtalk-console-guide }
 
 <a id="send-alimtalk"></a>
-
 ## 알림톡 발송 { #send-alimtalk }
 <a id="general-delivery"></a>
-
 ### 일반 발송 { #general-delivery }
 알림톡 일반 발송 화면입니다.
 
@@ -31,7 +28,6 @@
 7. 입력을 완료한 뒤 <b>발송</b>을 클릭하여 즉시 전송합니다.
 
 <a id="mass-delivery"></a>
-
 ### 대량 발송 { #mass-delivery }
 Excel/CSV 포맷의 템플릿 파일을 통해 여러 수신 번호로 알림톡을 발송할 수 있는 기능입니다. 하단 탭에서 <b>대량 발송</b>을 선택합니다.
 ![KTB_10_20230926.png](https://static.toastoven.net/prod_alimtalk/KTB_10_20230926.png)
@@ -50,7 +46,6 @@ Excel/CSV 포맷의 템플릿 파일을 통해 여러 수신 번호로 알림톡
 
 
 <a id="alternative-delivery"></a>
-
 ### 대체 발송 { #alternative-delivery }
 알림톡 발송을 실패할 경우 해당 내용을 문자 메시지로 대체 발송할 수 있는 기능입니다.
 <b>공통된 내용으로 발송</b> 또는 <b>사용자별 다른 메시지 설정</b>을 선택해 발송할 수 있습니다.
@@ -63,22 +58,18 @@ Excel/CSV 포맷의 템플릿 파일을 통해 여러 수신 번호로 알림톡
 * 메시지 길이에 따라 SMS/LMS로 대체 발송됩니다.(각 타입별 문자 발송 시 별도의 이용료 부과)
 
 <a id="send-with-common-contents"></a>
-
 #### 공통된 내용으로 발송
 * <b>발신 프로필/템플릿</b>을 선택한 뒤 <b>공통된 내용으로 발송</b>을 클릭해 대체 발송 메시지를 설정합니다.
 * 대체 발송 메시지를 입력하지 않으면 [메시지 본문]으로 발송됩니다.
 
 <a id="set-different-messages-for-each-user"></a>
-
 #### 사용자별 다른 메시지 설정
 * <b>발신 프로필/템플릿</b>을 선택한 뒤 <b>사용자별 다른 메시지 설정</b>을 클릭해 하단의 <b>수신자 추가</b> 탭에서 대체 발송 메시지를 설정합니다.
 * 추가된 수신자 번호 옆의 [볼펜 아이콘]을 클릭하면 설정된 내용을 확인하고 수정할 수 있습니다.
 
 <a id="view-delivery"></a>
-
 ## 발송 조회 { #view-delivery }
 <a id="retrieve-send-results"></a>
-
 ### 발송 결과 조회 { #retrieve-send-results }
 메시지 타입을 조건으로 조회할 수 있습니다.
 (<b>요청ID</b> 및 <b>요청 일시</b>는 필수값 입니다.)
@@ -90,7 +81,6 @@ Excel/CSV 포맷의 템플릿 파일을 통해 여러 수신 번호로 알림톡
 * <b>발송 결과</b> 열에서 발송 처리에 대한 성공 여부를 확인할 수 있습니다.
 
 <a id="cancel-send"></a>
-
 ### 발송 취소 { #cancel-send }
 일반 발송 중 발신 요청 일시를 미래로 설정한 예약 발송은 취소할 수 있습니다.
 ![KTB_14_20250403.jpg](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_alimtalk/KTB_14_20250403.jpg)
@@ -101,7 +91,6 @@ Excel/CSV 포맷의 템플릿 파일을 통해 여러 수신 번호로 알림톡
 
 
 <a id="view-mass-delivery"></a>
-
 ### 대량 발송 조회 { #view-mass-delivery }
 알림톡의 대량 발송 건을 조회할 수 있습니다.
 ![KTB_15_20250403.jpg](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_alimtalk/KTB_15_20250403.png)
@@ -111,7 +100,6 @@ Excel/CSV 포맷의 템플릿 파일을 통해 여러 수신 번호로 알림톡
 * <b>진행 상태</b>가 <b>발송 중</b>일 경우 <b>취소</b>를 클릭하더라도 이미 발송 처리 중이던 일부 메시지는 수신자에게 전달될 수 있습니다.
 
 <a id="mass-delivery-progress-status"></a>
-
 #### 대량 발송 진행 상태
 
 * <b>대기</b>: 템플릿 파일 데이터를 읽는 작업을 진행하기 전 상태입니다.
@@ -124,7 +112,6 @@ Excel/CSV 포맷의 템플릿 파일을 통해 여러 수신 번호로 알림톡
 * <b>발송 취소</b>: 사용자가 발송을 취소한 상태입니다.
 
 <a id="query-sending-by-recipient"></a>
-
 #### 수신자별 발송 조회
 대량 알림톡 발송 건(목록의 행)을 선택하면 하단의 목록에서 수신 번호별 알림톡 발송 내용 및 발송 결과를 조회할 수 있습니다.
 ![KTB_16_20230926.png](https://static.toastoven.net/prod_alimtalk/KTB_16_20230926.png)
@@ -133,19 +120,16 @@ Excel/CSV 포맷의 템플릿 파일을 통해 여러 수신 번호로 알림톡
 ![KTB_17_20230926.png](https://static.toastoven.net/prod_alimtalk/KTB_17_20230926.png)
 
 <a id="template-management"></a>
-
 ## 템플릿 관리 { #template-management }
 <b>템플릿 등록</b> 버튼을 클릭해 템플릿을 등록할 수 있습니다.
 
 <a id="template-type"></a>
-
 ### 템플릿 유형 { #template-type }
 * 등록 가능한 메시지 유형으로는 **채널추가형, 기본형, 부가정보형, 복합형**이 있습니다.
 * 등록 가능한 강조 유형으로는 **강조 표기형, 이미지형, 아이템리스트형**이 있습니다.
 * 발송을 원하시는 유형을 선택하여 템플릿을 작성해 주시면 됩니다.
 
 <a id="register-templates"></a>
-
 ### 템플릿 등록 { #register-templates }
 * 카카오 알림톡 가이드
     * [[알림톡 제작가이드]](https://kakaobusiness.gitbook.io/main/ad/bizmessage/notice-friend/content-guide), [[알림톡 심사가이드]](https://kakaobusiness.gitbook.io/main/ad/bizmessage/notice-friend/audit), [[알림톡 유의사항]](https://kakaobusiness.gitbook.io/main/ad/infotalk/operations)
@@ -165,7 +149,6 @@ Excel/CSV 포맷의 템플릿 파일을 통해 여러 수신 번호로 알림톡
     * 일반 메시지인 경우, 검수 시 설정 값이 변경될 수 있으며 OTP, 인증번호, 비밀번호, 신용정보/등급 변경 안내 템플릿은 반드시 보안 체크해 주시기 바랍니다.
 
 <a id="template-button"></a>
-
 #### 템플릿 버튼
 * 1개의 템플릿에는 **최대 5개의 버튼**을 등록하실 수 있습니다.
 * 바로연결
@@ -188,7 +171,6 @@ Excel/CSV 포맷의 템플릿 파일을 통해 여러 수신 번호로 알림톡
 | 비즈니스폼 | - 비즈니스폼을 생성하여 현재 채널과 연결한 경우, 버튼 클릭 시 설정한 비즈니스폼이 호출됩니다.<br/> - 비즈니스폼 생성이 필요합니다. [[비즈니스폼 가이드]](https://business.kakao.com/info/talkbizform/)
 
 <a id="template-inspection"></a>
-
 #### 템플릿 검수
 알림톡 템플릿의 검수 및 심사는 카카오에서 직접 진행하며, 검수 요청 후 영업일 기준 2일 이내 순차적으로 처리됩니다.
 
@@ -199,13 +181,11 @@ Excel/CSV 포맷의 템플릿 파일을 통해 여러 수신 번호로 알림톡
     * 템플릿 반려 시 **문의 등록** 및 **수정**을 클릭해 재검수할 수 있습니다.
 
 <a id="template-status"></a>
-
 #### 템플릿 상태
 * 템플릿 등록 시, **요청 > 검수 중 > 승인/반려** 상태의 순서로 업데이트됩니다.
 * 템플릿 등록 후, 1년간 동일한 상태로 유지되거나 추가 발송이 없는 경우 **휴면** 상태로 전환됩니다. 관련 가이드는 [알림톡 템플릿 유의사항](https://docs.nhncloud.com/ko/Notification/KakaoTalk%20Bizmessage/ko/alimtalk-overview/#_3)에서 확인 바랍니다.
 
 <a id="modify-templates"></a>
-
 #### 템플릿 수정
 * **승인/반려** 상태의 템플릿만 수정할 수 있습니다.
 * 승인된 템플릿을 수정한 후 검수가 완료되면, 기존 템플릿 내용이 수정한 내용으로 대체됩니다.
@@ -213,14 +193,12 @@ Excel/CSV 포맷의 템플릿 파일을 통해 여러 수신 번호로 알림톡
 * 수정한 템플릿은 **검수 중** 상태부터 다시 검수가 진행됩니다.
 
 <a id="delete-templates"></a>
-
 #### 템플릿 삭제
 * <b><span style="color:red">요청/반려</span></b> 상태의 템플릿만 삭제할 수 있습니다.
 * 반려된 템플릿은 **삭제** 후, 재등록할 수 있습니다.
 * 삭제된 템플릿 코드는 재사용할 수 있습니다.
 
 <a id="manage-alternative-delivery"></a>
-
 ## 대체 발송 관리 { #manage-alternative-delivery }
 
 * 알림톡 발송을 실패할 경우 해당 내용을 문자 메시지로 대체 발송하도록 설정할 수 있습니다.
@@ -235,7 +213,6 @@ Excel/CSV 포맷의 템플릿 파일을 통해 여러 수신 번호로 알림톡
 ![KTB_19_20230926.png](https://static.toastoven.net/prod_alimtalk/KTB_19_20230926.png)
 
 <a id="manage-sender-profile-group"></a>
-
 ## 발신프로필 그룹 관리 { #manage-sender-profile-group }
 * 2개 이상의 발신프로필을 그룹으로 만들어 템플릿을 한번에 등록할 수 있습니다.
 * 하나의 발신프로필은 여러 그룹에 중복으로 속할 수 있습니다.

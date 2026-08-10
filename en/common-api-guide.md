@@ -1,15 +1,12 @@
-<!-- pre-align:aligned sig=8c7be9b338eb -->
+<!-- pre-align:aligned sig=13eee0b1c3c5 -->
 
 <a id="common-api-guide"></a>
-
 ## Notification > KakaoTalk Bizmessage > Common > API v2.2 Guide { #common-api-guide }
 
 <a id="statistics"></a>
-
 ## Statistics { #statistics }
 
 <a id="api-domain"></a>
-
 ### [API Domain] { #api-domain }
 
 <table>
@@ -27,7 +24,6 @@
 
 
 <a id="statistics-search---event-based"></a>
-
 ### Statistics Search - Event Based { #statistics-search---event-based }
 * Statistics collected based on the time when the event occurs.
 * Statistics are collected based on the following times:
@@ -39,7 +35,6 @@
     * Alternative delivery failure count (RESENT_FAILED): Time when the alternate delivery request fails
 
 <a id="get-statistics-information"></a>
-
 ### Get Statistics Information { #get-statistics-information }
 
 [URL]
@@ -117,7 +112,6 @@
 ```
 
 <a id="get-count-per-event"></a>
-
 ### Get Count per Event { #get-count-per-event }
 
 [URL]
@@ -169,7 +163,6 @@
 ```
 
 <a id="kakao-statistics"></a>
-
 ## Kakao Statistics { #kakao-statistics }
 
 * Retrieves statistics data provided by KakaoBizCenter.
@@ -186,13 +179,11 @@ Clicking **Go to Kakao Statistics** in Sender Profile Management opens Kakao Sta
 * If the number of successful sends is 10 or fewer, valid read counts and click counts are not provided.
 
 <a id="delivery-statistics"></a>
-
 ### Delivery Statistics { #delivery-statistics }
 
 Retrieves the daily send count, valid read count, and click count by sender profile. You can filter by period, send identifier, message type, and more.
 
 <a id="template-statistics"></a>
-
 ### Template Statistics { #template-statistics }
 
 Retrieves the daily send count, valid read count, and click count by template and group tag. You can filter by period, message type, and more.
@@ -200,11 +191,9 @@ Retrieves the daily send count, valid read count, and click count by template an
 * Brand message freestyle is only provided when a group tag is used.
 
 <a id="retrieve-alimtalk-delivery-statistics"></a>
-
 ### Retrieve AlimTalk Delivery Statistics { #retrieve-alimtalk-delivery-statistics }
 
 <a id="request"></a>
-
 #### Request
 
 [URL]
@@ -245,7 +234,6 @@ Retrieves the daily send count, valid read count, and click count by template an
 | offset | Integer | X | Start position (Default: 0) |
 
 <a id="response"></a>
-
 #### Response
 
 ```json
@@ -285,11 +273,9 @@ Retrieves the daily send count, valid read count, and click count by template an
 | - validReadCount | Integer | O | Valid read count |
 
 <a id="retrieve-alimtalk-template-statistics"></a>
-
 ### Retrieve AlimTalk Template Statistics { #retrieve-alimtalk-template-statistics }
 
 <a id="request-2"></a>
-
 #### Request
 
 [URL]
@@ -330,7 +316,6 @@ Retrieves the daily send count, valid read count, and click count by template an
 | offset | Integer | X | Start position (Default: 0) |
 
 <a id="response-2"></a>
-
 #### Response
 
 ```json
@@ -370,11 +355,9 @@ Retrieves the daily send count, valid read count, and click count by template an
 | - totalClickCount | Integer | O | Total click count |
 
 <a id="retrieve-brand-message-delivery-statistics"></a>
-
 ### Retrieve Brand Message Delivery Statistics { #retrieve-brand-message-delivery-statistics }
 
 <a id="request-3"></a>
-
 #### Request
 
 [URL]
@@ -418,7 +401,6 @@ Retrieves the daily send count, valid read count, and click count by template an
 | offset | Integer | X | Start position (Default: 0) |
 
 <a id="response-3"></a>
-
 #### Response
 
 ```json
@@ -466,11 +448,9 @@ Retrieves the daily send count, valid read count, and click count by template an
 | - totalClickCount | Integer | O | Total click count |
 
 <a id="retrieve-brand-message-template-statistics"></a>
-
 ### Retrieve Brand Message Template Statistics { #retrieve-brand-message-template-statistics }
 
 <a id="request-4"></a>
-
 #### Request
 
 [URL]
@@ -515,7 +495,6 @@ Retrieves the daily send count, valid read count, and click count by template an
 | offset | Integer | X | Start position (Default: 0) |
 
 <a id="response-4"></a>
-
 #### Response
 
 ```json
