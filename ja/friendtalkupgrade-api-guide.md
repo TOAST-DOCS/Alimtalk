@@ -1,3 +1,5 @@
+<!-- machine_translated: true -->
+
 <a id="friendtalkupgrade-api-guide"></a>
 
 ## Notification > KakaoTalk Bizmessage > ブランドメッセージ > API v1.0 Guide { #friendtalkupgrade-api-guide }
@@ -254,6 +256,7 @@ Content-Type: application/json;charset=UTF-8
     }
   ],
   "senderGroupingKey": String,
+  "groupTagKey": String,
   "resellerCode": String,
   "createUser": String,
   "statsId": String
@@ -301,6 +304,7 @@ Content-Type: application/json;charset=UTF-8
 | - unsubscribeAuthNo   | String  | X  | 080無料受信拒否認証番号（最大10文字、すべて未入力の場合は発信プロフィールに登録された無料受信拒否情報で送信されます）<br>unsubscribeNoなしでunsubscribeAuthNoのみ入力不可<br>例: 1234        |
 | - recipientGroupingKey | String  | X  | 受信者グルーピングキー(受信者ごとにグルーピングキーを指定できます。最大 100 文字)                                                                                                                                                                                                                   |
 | senderGroupingKey    | String  | X  | 発信者グルーピングキー(発信者ごとにグルーピングキーを指定できます。最大 100 文字)                                                                                                                                                                                                                   |
+| groupTagKey          | String  | X  | グループタグキー（最大 40 文字）。指定した場合、該当グループタグ別のカカオテンプレートの統計を確認できます。                                                                                                                                                                                                                                                                              |
 | resellerCode          | String  | X  | リセラーコード(リセラーが送信する際に使用)                                                                                                                                                                                                                                                       |
 | createUser             | String  | X  | 登録者(コンソールから送信する際にユーザー UUID で保存)                                                                                                                                                                                                                                                   |
 | statsId                | String  | 	X | 統計 ID(発信検索条件には含まれません。最大 8 文字)                                                                                                                                                                                                                                            |
@@ -364,6 +368,7 @@ Content-Type: application/json;charset=UTF-8
     }
   ],
   "senderGroupingKey": String,
+  "groupTagKey": String,
   "resellerCode": String,
   "createUser": String,
   "statsId": String
@@ -414,6 +419,7 @@ Content-Type: application/json;charset=UTF-8
 | - unsubscribeAuthNo   | String  | X  | 080無料受信拒否認証番号（最大10文字、すべて未入力の場合は発信プロフィールに登録された無料受信拒否情報で送信されます）<br>unsubscribeNoなしでunsubscribeAuthNoのみの入力は不可<br>例: 1234        |
 | - recipientGroupingKey | String  | X  | 受信者グループキー(受信者ごとにグループキーを指定できます。最大100文字)                                                                                                                                                                                                                   |
 | senderGroupingKey    | String  | X  | 発信者グループキー(発信者ごとにグループキーを指定できます。最大100文字)                                                                                                                                                                                                                   |
+| groupTagKey          | String  | X  | グループタグキー（最大 40 文字）。指定した場合、該当グループタグ別のカカオテンプレートの統計を確認できます。                                                                                                                                                                                                                                                                              |
 | resellerCode          | String  | X  | リセラーコード(リセラーが送信時に使用)                                                                                                                                                                                                                                                       |
 | createUser             | String  | X  | 登録者(コンソールから送信時、ユーザーUUIDで保存)                                                                                                                                                                                                                                                   |
 | statsId                | String  | 	X | 統計ID(発信検索条件には含まれません。最大8文字)                                                                                                                                                                                                                                            |
@@ -476,7 +482,8 @@ Content-Type: application/json;charset=UTF-8
       "recipientGroupingKey": String
     }
   ],
-  "senderGroupingKey": String
+  "senderGroupingKey": String,
+  "groupTagKey": String,
   "resellerCode": String,
   "createUser": String,
   "statsId": String
@@ -527,6 +534,7 @@ Content-Type: application/json;charset=UTF-8
 | - unsubscribeAuthNo   | String  | X  | 080無料受信拒否認証番号（最大10文字、すべて未入力の場合は発信プロフィールに登録された無料受信拒否情報で送信されます）<br>unsubscribeNo なしで unsubscribeAuthNo のみの入力不可<br>例: 1234        |
 | - recipientGroupingKey | String  | X  | 受信者グルーピングキー(受信者ごとにグルーピングキーを指定できます。最大100文字)                                                                                                                                                                                                                   |
 | senderGroupingKey    | String  | X  | 発信者グルーピングキー(発信者ごとにグルーピングキーを指定できます。最大100文字)                                                                                                                                                                                                                   |
+| groupTagKey          | String  | X  | グループタグキー（最大 40 文字）。指定した場合、該当グループタグ別のカカオテンプレートの統計を確認できます。                                                                                                                                                                                                                                                                              |
 | resellerCode          | String  | X  | リセラーコード(リセラーが送信時に使用)                                                                                                                                                                                                                                                       |
 | createUser             | String  | X  | 登録者(コンソールから送信時にユーザーUUIDで保存)                                                                                                                                                                                                                                                   |
 | statsId                | String  | 	X | 統計ID(発信検索条件には含まれません。最大8文字)                                                                                                                                                                                                                                            |
@@ -614,6 +622,7 @@ Content-Type: application/json;charset=UTF-8
     }
   ],
   "senderGroupingKey": String,
+  "groupTagKey": String,
   "resellerCode": String,
   "createUser": String,
   "statsId": String
@@ -669,6 +678,7 @@ Content-Type: application/json;charset=UTF-8
 | - unsubscribeAuthNo   | String  | X  | 080無料受信拒否認証番号（最大10文字、すべて未入力の場合は発信プロフィールに登録された無料受信拒否情報で送信されます）<br>unsubscribeNoなしでunsubscribeAuthNoのみの入力は不可<br>例: 1234        |
 | - recipientGroupingKey | String  | X  | 受信者グルーピングキー（受信者ごとにグルーピングキーを指定できます。最大 100 文字）                                                                                                                                                                                                                   |
 | senderGroupingKey    | String  | X  | 発信者グルーピングキー（発信者ごとにグルーピングキーを指定できます。最大 100 文字）                                                                                                                                                                                                                   |
+| groupTagKey          | String  | X  | グループタグキー（最大 40 文字）。指定した場合、該当グループタグ別のカカオテンプレートの統計を確認できます。                                                                                                                                                                                                                                                                              |
 | resellerCode          | String  | X  | リセラーコード（リセラーが送信する際に使用）                                                                                                                                                                                                                                                       |
 | createUser             | String  | X  | 登録者（コンソールから送信する際にユーザー UUID として保存）                                                                                                                                                                                                                                                   |
 | statsId                | String  | 	X | 統計 ID（発信検索条件には含まれません。最大 8 文字）                                                                                                                                                                                                                                            |
@@ -733,6 +743,7 @@ Content-Type: application/json;charset=UTF-8
     }
   ],
   "senderGroupingKey": String,
+  "groupTagKey": String,
   "resellerCode": String,
   "createUser": String,
   "statsId": String
@@ -784,6 +795,7 @@ Content-Type: application/json;charset=UTF-8
 | - unsubscribeAuthNo   | String  | X  | 080受信拒否無料認証番号（最大10文字、すべて未入力の場合は発信プロフィールに登録されている受信拒否無料情報で送信されます）<br>unsubscribeNoなしでunsubscribeAuthNoのみ入力不可<br>例: 1234        |
 | - recipientGroupingKey | String  | X  | 受信者グルーピングキー（受信者ごとにグルーピングキーを指定できます。最大100文字）                                                                                                                                                                                                                   |
 | senderGroupingKey    | String  | X  | 発信者グルーピングキー（発信者ごとにグルーピングキーを指定できます。最大100文字）                                                                                                                                                                                                                   |
+| groupTagKey          | String  | X  | グループタグキー（最大 40 文字）。指定した場合、該当グループタグ別のカカオテンプレートの統計を確認できます。                                                                                                                                                                                                                                                                              |
 | resellerCode          | String  | X  | リセラーコード（リセラーが送信する際に使用）                                                                                                                                                                                                                                                       |
 | createUser             | String  | X  | 登録者（コンソールから送信する場合、ユーザーのUUIDで保存されます）                                                                                                                                                                                                                                                   |
 | statsId                | String  | 	X | 統計ID（発信検索条件には含まれません。最大8文字）                                                                                                                                                                                                                                            |
@@ -854,6 +866,7 @@ Content-Type: application/json;charset=UTF-8
     }
   ],
   "senderGroupingKey": String,
+  "groupTagKey": String,
   "resellerCode": String,
   "createUser": String,
   "statsId": String
@@ -877,7 +890,7 @@ Content-Type: application/json;charset=UTF-8
 | title                  | String  | O  | 商品タイトル（最大30文字、改行: 不可）                                                                                                                                                                                                                                                       |
 | regularPrice           | Integer | O  | 通常価格（0〜99,999,999）                                                                                                                                                                                                                                                        |
 | discountPrice          | Integer | X  | 割引価格（0〜99,999,999）                                                                                                                                                                                                                                                          |
-| discountRate           | Integer | X  | 割引率（0〜100）。割引価格が存在する場合、割引率と定額割引価格のいずれか一方は必須                                                                                                                                                                                                                                   |
+| discountRate           | Integer | X  | 割引率 (1〜100)、割引価格が存在する場合の割引率。定額割引価格のいずれかは必須                                                                                                                                                                                                                                   |
 | discountFixed          | Integer | X  | 定額割引価格（0〜999,999）。割引価格が存在する場合、割引率と定額割引価格のいずれか一方は必須                                                                                                                                                                                                                            |
 | buttons                | List    | O  | ボタンリスト<br>- TEXT、IMAGE タイプの場合、クーポン適用時は最大4個、それ以外は最大5個<br>- WIDE、WIDE_ITEM_LIST タイプの場合は最大2個<br>- PREMIUM_VIDEO タイプの場合は最大1個<br>- COMMERCE タイプの場合は最小1個・最大2個                                                                                                                 |
 | - name                 | String  | O  | ボタンタイトル<br>- TEXT、IMAGE タイプの場合は最大14文字<br>- その他のタイプの場合は最大8文字                                                                                                                                                                                                                    |
@@ -910,6 +923,7 @@ Content-Type: application/json;charset=UTF-8
 | - unsubscribeAuthNo   | String  | X  | 080無料受信拒否認証番号（最大10文字、すべて未入力の場合は発信プロフィールに登録された無料受信拒否情報で送信されます）<br>unsubscribeNoなしでunsubscribeAuthNoのみ入力不可<br>例: 1234        |
 | - recipientGroupingKey | String  | X  | 受信者グループキー（受信者ごとにグループキーを指定できます。最大 100 文字）                                                                                                                                                                                                                   |
 | senderGroupingKey    | String  | X  | 発信者グループキー（発信者ごとにグループキーを指定できます。最大 100 文字）                                                                                                                                                                                                                   |
+| groupTagKey          | String  | X  | グループタグキー（最大 40 文字）。指定した場合、該当グループタグ別のカカオテンプレートの統計を確認できます。                                                                                                                                                                                                                                                                              |
 | resellerCode          | String  | X  | リセラーコード（リセラーが送信時に使用）                                                                                                                                                                                                                                                       |
 | createUser             | String  | X  | 登録者（コンソールから送信時、ユーザー UUID として保存）                                                                                                                                                                                                                                                   |
 | statsId                | String  | 	X | 統計 ID（発信検索条件には含まれません。最大 8 文字）                                                                                                                                                                                                                                            |
@@ -1032,6 +1046,7 @@ Content-Type: application/json;charset=UTF-8
     }
   ],
   "senderGroupingKey": String,
+  "groupTagKey": String,
   "resellerCode": String,
   "createUser": String,
   "statsId": String
@@ -1089,6 +1104,7 @@ Content-Type: application/json;charset=UTF-8
 | - unsubscribeAuthNo   | String  | X  | 080無料受信拒否認証番号（最大10文字、すべて未入力の場合は発信プロフィールに登録された無料受信拒否情報で送信されます）<br>unsubscribeNoなしでunsubscribeAuthNoのみ入力不可<br>例: 1234        |
 | - recipientGroupingKey | String  | X  | 受信者グルーピングキー（受信者ごとにグルーピングキーを指定できます。最大100文字）                                                                                                                                                                                                                   |
 | senderGroupingKey    | String  | X  | 発信者グルーピングキー（発信者ごとにグルーピングキーを指定できます。最大100文字）                                                                                                                                                                                                                   |
+| groupTagKey          | String  | X  | グループタグキー（最大 40 文字）。指定した場合、該当グループタグ別のカカオテンプレートの統計を確認できます。                                                                                                                                                                                                                                                                              |
 | resellerCode          | String  | X  | リセラーコード（リセラーが送信時に使用）                                                                                                                                                                                                                                                       |
 | createUser             | String  | X  | 登録者（コンソールから送信時にユーザーUUIDで保存）                                                                                                                                                                                                                                                   |
 | statsId                | String  | 	X | 統計ID（発信検索条件には含まれません。最大8文字）                                                                                                                                                                                                                                            |
@@ -1178,6 +1194,7 @@ Content-Type: application/json;charset=UTF-8
     }
   ],
   "senderGroupingKey": String,
+  "groupTagKey": String,
   "resellerCode": String,
   "createUser": String,
   "statsId": String
@@ -1210,7 +1227,7 @@ Content-Type: application/json;charset=UTF-8
 | --- title            | String  | O  | 商品タイトル（最大30文字、改行: 不可）                                                                                                                                                                                                                                                       |
 | --- regularPrice     | Integer | O  | 通常価格（0〜99,999,999）                                                                                                                                                                                                                                                        |
 | --- discountPrice    | Integer | X  | 割引価格（0〜99,999,999）                                                                                                                                                                                                                                                          |
-| --- discountRate     | Integer | X  | 割引率（0〜100）、割引価格が存在する場合、割引率または定額割引価格のいずれかが必須                                                                                                                                                                                                                                   |
+| --- discountRate     | Integer | X  | 割引率（1〜100）、割引価格が存在する場合は割引率、定額割引価格のいずれか一方は必須                                                                                                                                                                                                                                   |
 | --- discountFixed    | Integer | X  | 定額割引価格（0〜999,999）、割引価格が存在する場合、割引率または定額割引価格のいずれかが必須                                                                                                                                                                                                                            |
 | -- buttons           | List    | O  | カルーセルリストボタン一覧（最小1個、最大2個）                                                                                                                                                                                                                                                    |
 | --- name             | String  | O  | ボタンタイトル<br>- TEXT、IMAGE タイプの場合は最大14文字<br>- それ以外のタイプの場合は最大8文字                                                                                                                                                                                                                    |
@@ -1247,6 +1264,7 @@ Content-Type: application/json;charset=UTF-8
 | - unsubscribeAuthNo   | String  | X  | 080無料受信拒否認証番号（最大10文字、すべて未入力の場合は発信プロフィールに登録された無料受信拒否情報で送信されます）<br>unsubscribeNoなしでunsubscribeAuthNoのみ入力不可<br>例：1234        |
 | - recipientGroupingKey | String  | X  | 受信者グルーピングキー（受信者ごとにグルーピングキーを指定できます。最大 100 文字）                                                                                                                                                                                                                   |
 | senderGroupingKey    | String  | X  | 発信者グルーピングキー（発信者ごとにグルーピングキーを指定できます。最大 100 文字）                                                                                                                                                                                                                   |
+| groupTagKey          | String  | X  | グループタグキー（最大 40 文字）。指定した場合、該当グループタグ別のカカオテンプレートの統計を確認できます。                                                                                                                                                                                                                                                                              |
 | resellerCode          | String  | X  | リセラーコード（リセラーが送信する際に使用）                                                                                                                                                                                                                                                       |
 | createUser           | String  | X  | 登録者（コンソールから送信する際にユーザー UUID として保存）                                                                                                                                                                                                                                                   |
 | statsId              | String  | 	X | 統計 ID（発信検索条件には含まれません。最大 8 文字）                                                                                                                                                                                                                                                        |
@@ -1375,6 +1393,7 @@ Content-Type: application/json;charset=UTF-8
     }
   ],
   "senderGroupingKey": String,
+  "groupTagKey": String,
   "resellerCode": String,
   "createUser": String,
   "statsId": String
@@ -1409,6 +1428,7 @@ Content-Type: application/json;charset=UTF-8
 | - unsubscribeAuthNo    | String  | X  | 080無料受信拒否認証番号（最大10文字、すべて未入力の場合は発信プロフィールに登録された無料受信拒否情報で送信されます）<br>unsubscribeNo なしで unsubscribeAuthNo のみの入力は不可<br>例: 1234                                                                                                           |
 | - recipientGroupingKey | String  | X  | 受信者グループキー(受信者ごとにグループキーを指定できます。最大100文字)                                                                                                                                                                                             |
 | senderGroupingKey      | String  | X  | 発信者グループキー(発信者ごとにグループキーを指定できます。最大100文字)                                                                                                                                                                                             |
+| groupTagKey            | String  | X  | グループタグキー（最大 40 文字）。指定した場合、該当グループタグごとのカカオテンプレート統計を確認できます。                                                                                                                                                                                                                          |
 | resellerCode           | String  | X  | リセラーコード(リセラーが送信する際に使用)                                                                                                                                                                                                                    |
 | createUser             | String  | X  | 登録者(コンソールから送信する場合、ユーザーUUIDで保存されます)                                                                                                                                                                                                             |
 | statsId                | String  | X  | 統計ID(発信検索条件には含まれません。最大8文字)                                                                                                                                                                                                      |
@@ -1983,8 +2003,6 @@ Content-Type: application/json;charset=UTF-8
 curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" "https://kakaotalk-bizmessage.api.nhncloudservice.com/brand-message/v1.0/appkeys/{appKey}/message-results?startUpdateDate=2026-06-01%2000:00&endUpdateDate=2026-06-30%2023:59"
 ```
 
-<a id="message-results"></a>
-
 ## メッセージ送信取消 { #cancel-message-sending }
 
 <a id="requested-7"></a>
@@ -2047,6 +2065,551 @@ Content-Type: application/json;charset=UTF-8
 [例]
 ```
 curl -X DELETE -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" "https://kakaotalk-bizmessage.api.nhncloudservice.com/brand-message/v1.0/appkeys/{appkey}/messages/{requestId}?recipientSeq=1,2,3"
+```
+
+<a id="manage-templates"></a>
+
+## 一括送信照会 { #mass-delivery }
+
+一括送信リクエスト（マスター）単位の一覧と受信者別の送信結果を照会します。
+
+* 一括送信リクエスト一覧照会は、リクエスト単位の情報のみ返します。受信者別の結果は、受信者一覧照会または受信者照会を使用してください。
+* 一括送信リクエスト一覧照会のレスポンスの本文要素は、`content`、`image`、`buttons`のみ提供します。ワイドリスト、クーポン、コマース、動画、カルーセル要素は一括送信受信者照会で確認できます。
+
+### 一括送信リクエスト一覧照会 { #list-mass-delivery-requests }
+
+#### リクエスト
+
+[URL]
+
+```
+GET  /brand-message/v1.0/appkeys/{appkey}/mass-messages
+Content-Type: application/json;charset=UTF-8
+```
+
+[Path parameter]
+
+| 名前     | タイプ     | 説明     |
+|--------|--------|--------|
+| appkey | String | 固有のアプリキー |
+
+[Header]
+
+```
+{
+  "X-Secret-Key": String
+}
+```
+
+| 名前           | タイプ     | 必須 | 説明               |
+|--------------|--------|----|------------------|
+| X-Secret-Key | String | O  | コンソールで作成できます。 |
+
+[Query parameter] 条件1または条件2のいずれかが必須
+
+| 名前               | タイプ      | 必須        | 説明                                                                                             |
+|------------------|---------|-----------|------------------------------------------------------------------------------------------------|
+| requestId        | String  | 条件必須（1）  | リクエストID                                                                                        |
+| startRequestDate | String  | 条件必須（2） | 送信リクエスト日時の開始値（yyyy-MM-dd HH:mm）                                                               |
+| endRequestDate   | String  | 条件必須（2） | 送信リクエスト日時の終了値（yyyy-MM-dd HH:mm）                                                                |
+| plusFriendId     | String  | X         | 発信プロフィールID                                                                                      |
+| masterStatusCode | String  | X         | 一括送信ステータス（WAIT, READY, SENDREADY, SENDWAIT, SENDING, COMPLETE, CANCEL, FAIL）                  |
+| chatBubbleType   | String  | X         | メッセージタイプ（TEXT, IMAGE, WIDE, WIDE_ITEM_LIST, PREMIUM_VIDEO, COMMERCE, CAROUSEL_FEED, CAROUSEL_COMMERCE） |
+| pageNum          | Integer | X         | ページ番号（Default: 1）                                                                              |
+| pageSize         | Integer | X         | 照会件数（Default: 15、Max: 1000）                                                                    |
+
+#### レスポンス
+
+```
+{
+  "header": {
+    "resultCode": Integer,
+    "resultMessage": String,
+    "isSuccessful": boolean
+  },
+  "body": {
+    "messages": [
+      {
+        "requestId": String,
+        "requestDate": String,
+        "plusFriendId": String,
+        "senderKey": String,
+        "templateCode": String,
+        "masterStatusCode": String,
+        "chatBubbleType": String,
+        "content": String,
+        "image": {
+          "imageUrl": String,
+          "imageLink": String
+        },
+        "buttons": [
+          {
+            "name": String,
+            "type": String,
+            "linkMo": String,
+            "linkPc": String,
+            "schemeIos": String,
+            "schemeAndroid": String,
+            "chatExtra": String,
+            "chatEvent": String,
+            "bizFormKey": String
+          }
+        ],
+        "pushAlarm": boolean,
+        "fileId": String,
+        "isAutoSend": boolean,
+        "statsId": String,
+        "createUser": String,
+        "createDate": String
+      }
+    ],
+    "totalCount": Integer
+  }
+}
+```
+
+| 名前                 | タイプ      | Not Null | 説明                                                                                                     |
+|:-------------------|:--------|:---------|:---------------------------------------------------------------------------------------------------------|
+| header             | Object  | O        | ヘッダー領域                                                                                                 |
+| - resultCode       | Integer | O        | 結果コード                                                                                                  |
+| - resultMessage    | String  | O        | 結果メッセージ                                                                                                |
+| - isSuccessful     | boolean | O        | 成功の可否                                                                                                  |
+| body               | Object  | X        | 本文領域                                                                                                   |
+| - messages         | Array   | O        | 一括送信リクエストリスト                                                                                           |
+| -- requestId       | String  | O        | リクエストID                                                                                                |
+| -- requestDate     | String  | O        | リクエスト日時（yyyy-MM-dd HH:mm）                                                                              |
+| -- plusFriendId    | String  | O        | 発信プロフィールID                                                                                             |
+| -- senderKey       | String  | O        | 発信キー                                                                                                   |
+| -- templateCode    | String  | X        | テンプレートコード（基本型送信リクエストのみ対象）                                                                             |
+| -- masterStatusCode | String | O        | 一括送信ステータス（WAIT, READY, SENDREADY, SENDWAIT, SENDING, COMPLETE, CANCEL, FAIL）                            |
+| -- chatBubbleType  | String  | O        | メッセージタイプ                                                                                               |
+| -- content         | String  | X        | メッセージ内容                                                                                                |
+| -- image           | Object  | X        | 画像要素                                                                                                   |
+| --- imageUrl       | String  | O        | 画像URL（imageオブジェクトが存在する場合はNot Null）                                                                    |
+| --- imageLink      | String  | X        | 画像リンク                                                                                                  |
+| -- buttons         | Array   | X        | ボタンリスト                                                                                                 |
+| --- name           | String  | O        | ボタンタイトル（buttonsの配列項目が存在する場合はNot Null）                                                                |
+| --- type           | String  | O        | ボタンタイプ（buttonsの配列項目が存在する場合はNot Null）                                                                 |
+| --- linkMo         | String  | X        | モバイルWebリンク                                                                                             |
+| --- linkPc         | String  | X        | PC Webリンク                                                                                              |
+| --- schemeIos      | String  | X        | iOSアプリリンク                                                                                              |
+| --- schemeAndroid  | String  | X        | Androidアプリリンク                                                                                          |
+| --- chatExtra      | String  | X        | BTタイプボタンの場合に渡すメタ情報                                                                                    |
+| --- chatEvent      | String  | X        | BTタイプボタンの場合に接続するボットイベント名                                                                              |
+| --- bizFormKey     | String  | X        | BFタイプボタンの場合のビズフォームキー                                                                                  |
+| -- pushAlarm       | boolean | O        | プッシュアラームの有無                                                                                            |
+| -- fileId          | String  | X        | 受信者ファイルID                                                                                              |
+| -- isAutoSend      | boolean | O        | 自動送信の可否（受信者ファイルのアップロード完了後に自動的に送信する場合はtrue）                                                            |
+| -- statsId         | String  | X        | 統計ID                                                                                                   |
+| -- createUser      | String  | X        | 登録者（コンソールから送信する場合はユーザーUUIDとして保存）                                                                     |
+| -- createDate      | String  | O        | 登録日時                                                                                                   |
+| - totalCount       | Integer | O        | 合計件数                                                                                                   |
+
+[例]
+```
+curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" "https://kakaotalk-bizmessage.api.nhncloudservice.com/brand-message/v1.0/appkeys/{appkey}/mass-messages?requestId={requestId}"
+```
+
+### 一括送信受信者リスト照会 { #list-mass-delivery-recipients }
+
+#### リクエスト
+
+[URL]
+
+```
+GET  /brand-message/v1.0/appkeys/{appkey}/mass-messages/{requestId}/recipients
+Content-Type: application/json;charset=UTF-8
+```
+
+[Path parameter]
+
+| 名前        | タイプ     | 説明     |
+|-----------|--------|--------|
+| appkey    | String | 固有のアプリキー |
+| requestId | String | リクエストID  |
+
+[Header]
+
+```
+{
+  "X-Secret-Key": String
+}
+```
+
+| 名前           | タイプ     | 必須 | 説明               |
+|--------------|--------|----|------------------|
+| X-Secret-Key | String | O  | コンソールで作成できます。 |
+
+[Query parameter]
+
+| 名前               | タイプ      | 必須 | 説明                                                              |
+|------------------|---------|----|-----------------------------------------------------------------|
+| startReceiveDate | String  | X  | 受信日付の開始値(yyyy-MM-dd HH:mm)                                     |
+| endReceiveDate   | String  | X  | 受信日付の終了値(yyyy-MM-dd HH:mm)                                      |
+| recipientNo      | String  | X  | 受信番号                                                           |
+| messageStatus    | String  | X  | リクエスト状態(READY: 待機、COMPLETED: 成功、FAILED: 失敗、CANCEL: キャンセル)          |
+| resultCode       | String  | X  | 送信結果(MRC01: 成功、MRC02: 失敗)                                     |
+| pageNum          | Integer | X  | ページ番号(Default: 1)                                              |
+| pageSize         | Integer | X  | 照会件数(Default: 15、Max: 1000)                                   |
+
+#### レスポンス
+
+```
+{
+  "header": {
+    "resultCode": Integer,
+    "resultMessage": String,
+    "isSuccessful": boolean
+  },
+  "body": {
+    "recipients": [
+      {
+        "requestId": String,
+        "recipientSeq": Integer,
+        "recipientNo": String,
+        "targeting": String,
+        "messageStatus": String,
+        "isAddedChannel": boolean,
+        "templateCode": String,
+        "resultCode": String,
+        "resultCodeName": String,
+        "receiveDate": String,
+        "resultDate": String,
+        "resendStatusCode": String,
+        "resendStatusName": String,
+        "resendResultCode": String,
+        "resendRequestId": String
+      }
+    ],
+    "totalCount": Integer
+  }
+}
+```
+
+| 名前                 | タイプ      | Not Null | 説明                                                                        |
+|:-------------------|:--------|:---------|:--------------------------------------------------------------------------|
+| header             | Object  | O        | ヘッダー領域                                                                     |
+| - resultCode       | Integer | O        | 結果コード                                                                     |
+| - resultMessage    | String  | O        | 結果メッセージ                                                                    |
+| - isSuccessful     | boolean | O        | 成功の可否                                                                     |
+| body               | Object  | X        | 本文領域                                                                     |
+| - recipients       | Array   | O        | 受信者リスト（照会結果がない場合は空の配列）                                                   |
+| -- requestId       | String  | O        | リクエストID                                                                     |
+| -- recipientSeq    | Integer | O        | 受信者シーケンス番号                                                                |
+| -- recipientNo     | String  | O        | 受信番号                                                                     |
+| -- targeting       | String  | O        | メッセージ対象のタイプ（M: マーケティング受信同意ユーザー、N: フレンドではないマーケティング受信同意ユーザーのみ、I: フレンドのユーザー）      |
+| -- messageStatus   | String  | O        | リクエスト状態（READY: 待機、COMPLETED: 成功、FAILED: 失敗、CANCEL: 取消）                   |
+| -- isAddedChannel  | boolean | X        | チャンネルフレンドかどうか（送信に成功した件のみ提供）                                                  |
+| -- templateCode    | String  | X        | テンプレートコード（基本型送信リクエストのみ対象）                                                     |
+| -- resultCode      | String  | X        | 受信結果コード                                                                  |
+| -- resultCodeName  | String  | X        | 受信結果コード名                                                                 |
+| -- receiveDate     | String  | X        | 受信日時                                                                     |
+| -- resultDate      | String  | X        | 結果受信日時                                                                  |
+| -- resendStatusCode | String | X        | 代替送信ステータスコード                                                               |
+| -- resendStatusName | String | X        | 代替送信ステータス名                                                               |
+| -- resendResultCode | String | X        | 代替送信結果コード                                                               |
+| -- resendRequestId | String  | X        | 代替送信リクエストID                                                               |
+| - totalCount       | Integer | O        | 総件数                                                                      |
+
+[例]
+```
+curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" "https://kakaotalk-bizmessage.api.nhncloudservice.com/brand-message/v1.0/appkeys/{appkey}/mass-messages/{requestId}/recipients?pageNum=1&pageSize=15"
+```
+
+### 一括送信受信者照会 { #get-a-mass-delivery-recipient }
+
+#### リクエスト
+
+[URL]
+
+```
+GET  /brand-message/v1.0/appkeys/{appkey}/mass-messages/{requestId}/recipients/{recipientSeq}
+Content-Type: application/json;charset=UTF-8
+```
+
+[Path parameter]
+
+| 名前           | タイプ      | 説明         |
+|--------------|---------|------------|
+| appkey       | String  | 固有のアプリキー     |
+| requestId    | String  | リクエストID      |
+| recipientSeq | Integer | 受信者シーケンス番号 |
+
+[Header]
+
+```
+{
+  "X-Secret-Key": String
+}
+```
+
+| 名前           | タイプ     | 必須 | 説明               |
+|--------------|--------|----|------------------|
+| X-Secret-Key | String | O  | コンソールで生成できます。 |
+
+#### レスポンス
+
+```
+{
+  "header": {
+    "resultCode": Integer,
+    "resultMessage": String,
+    "isSuccessful": boolean
+  },
+  "message": {
+    "requestId": String,
+    "recipientSeq": Integer,
+    "plusFriendId": String,
+    "senderKey": String,
+    "templateCode": String,
+    "recipientNo": String,
+    "targeting": String,
+    "chatBubbleType": String,
+    "content": String,
+    "adult": boolean,
+    "header": String,
+    "additionalContent": String,
+    "image": {
+      "imageUrl": String,
+      "imageLink": String
+    },
+    "buttons": [
+      {
+        "name": String,
+        "type": String,
+        "linkMo": String,
+        "linkPc": String,
+        "schemeIos": String,
+        "schemeAndroid": String,
+        "chatExtra": String,
+        "chatEvent": String,
+        "bizFormKey": String
+      }
+    ],
+    "item": {
+      "list": [
+        {
+          "title": String,
+          "imageUrl": String,
+          "linkMo": String,
+          "linkPc": String,
+          "schemeIos": String,
+          "schemeAndroid": String
+        }
+      ]
+    },
+    "coupon": {
+      "title": String,
+      "description": String,
+      "linkMo": String,
+      "linkPc": String,
+      "schemeAndroid": String,
+      "schemeIos": String
+    },
+    "commerce": {
+      "title": String,
+      "regularPrice": Integer,
+      "discountPrice": Integer,
+      "discountRate": Integer,
+      "discountFixed": Integer
+    },
+    "video": {
+      "videoUrl": String,
+      "thumbnailUrl": String
+    },
+    "carousel": {
+      "head": {
+        "header": String,
+        "content": String,
+        "imageUrl": String,
+        "linkMo": String,
+        "linkPc": String,
+        "schemeIos": String,
+        "schemeAndroid": String
+      },
+      "list": [
+        {
+          "header": String,
+          "message": String,
+          "additionalContent": String,
+          "imageUrl": String,
+          "imageLink": String,
+          "commerce": {
+            "title": String,
+            "regularPrice": Integer,
+            "discountPrice": Integer,
+            "discountRate": Integer,
+            "discountFixed": Integer
+          },
+          "buttons": [
+            {
+              "name": String,
+              "type": String,
+              "linkMo": String,
+              "linkPc": String,
+              "schemeAndroid": String,
+              "schemeIos": String,
+              "chatExtra": String,
+              "chatEvent": String,
+              "bizFormKey": String
+            }
+          ],
+          "coupon": {
+            "title": String,
+            "description": String,
+            "linkMo": String,
+            "linkPc": String,
+            "schemeAndroid": String,
+            "schemeIos": String
+          }
+        }
+      ],
+      "tail": {
+        "linkMo": String,
+        "linkPc": String,
+        "schemeAndroid": String,
+        "schemeIos": String
+      }
+    },
+    "templateParameter": String,
+    "imageParameters": String,
+    "videoParameter": String,
+    "pushAlarm": boolean,
+    "messageStatus": String,
+    "isAddedChannel": boolean,
+    "resultCode": String,
+    "resultCodeName": String,
+    "venderResultMessage": String,
+    "requestDate": String,
+    "createDate": String,
+    "receiveDate": String,
+    "resendStatusCode": String,
+    "resendStatusName": String,
+    "resendResultCode": String,
+    "resendRequestId": String
+  }
+}
+```
+
+| 名前                    | タイプ      | Not Null | 説明                                                                                               |
+|:----------------------|:--------|:---------|:-------------------------------------------------------------------------------------------------|
+| header                | Object  | O        | ヘッダー領域                                                                                           |
+| - resultCode          | Integer | O        | 結果コード                                                                                            |
+| - resultMessage       | String  | O        | 結果メッセージ                                                                                          |
+| - isSuccessful        | boolean | O        | 成功かどうか                                                                                           |
+| message               | Object  | X        | メッセージ本文領域                                                                                        |
+| - requestId           | String  | O        | リクエストID（messageオブジェクト存在時はNot Null）                                                              |
+| - recipientSeq        | Integer | O        | 受信者シーケンス番号（messageオブジェクト存在時はNot Null）                                                           |
+| - plusFriendId        | String  | O        | 発信プロフィールID（messageオブジェクト存在時はNot Null）                                                           |
+| - senderKey           | String  | O        | 発信キー（messageオブジェクト存在時はNot Null）                                                                 |
+| - templateCode        | String  | X        | テンプレートコード（基本型送信リクエストのみ）                                                                         |
+| - recipientNo         | String  | O        | 受信番号（messageオブジェクトが存在する場合はNot Null）                                                             |
+| - targeting           | String  | O        | メッセージ対象のタイプ（M: マーケティング受信同意ユーザー、N: フレンドではないマーケティング受信同意ユーザーのみ、I: フレンドであるユーザー）（messageオブジェクトが存在する場合はNot Null） |
+| - chatBubbleType      | String  | O        | メッセージタイプ（messageオブジェクトが存在する場合はNot Null）                                                        |
+| - content             | String  | X        | メッセージ内容                                                                                         |
+| - adult               | boolean | X        | 成人向けメッセージかどうか                                                                                   |
+| - header              | String  | X        | ヘッダー（メッセージ内）                                                                                    |
+| - additionalContent   | String  | X        | 追加情報（メッセージ内）                                                                                    |
+| - image               | Object  | X        | 画像要素                                                                                            |
+| -- imageUrl           | String  | O        | 画像URL（imageオブジェクトが存在する場合はNot Null）                                                             |
+| -- imageLink          | String  | X        | 画像リンク                                                                                           |
+| - buttons             | Array   | X        | ボタンリスト                                                                                           |
+| -- name               | String  | O        | ボタンタイトル（buttons 配列項目が存在する場合は Not Null）                                                         |
+| -- type               | String  | O        | ボタンタイプ（buttons 配列項目が存在する場合は Not Null）                                                           |
+| -- linkMo             | String  | X        | モバイル Web リンク                                                                                     |
+| -- linkPc             | String  | X        | PC Web リンク                                                                                       |
+| -- schemeIos          | String  | X        | iOS アプリリンク                                                                                       |
+| -- schemeAndroid      | String  | X        | Android アプリリンク                                                                                   |
+| -- chatExtra          | String  | X        | BT タイプボタンの場合に渡すメタ情報                                                                             |
+| -- chatEvent          | String  | X        | BT タイプボタンの場合に接続するボットイベント名                                                                       |
+| -- bizFormKey         | String  | X        | BF タイプボタンの場合のビズフォームキー                                                                           |
+| - item                | Object  | X        | ワイドリスト要素                                                                                       |
+| -- list               | Array   | X        | ワイドリスト（itemオブジェクト存在時はNullable）                                                                  |
+| --- title             | String  | X        | アイテムタイトル                                                                                           |
+| --- imageUrl          | String  | O        | アイテム画像URL（item.listの項目存在時はNot Null）                                                         |
+| --- linkMo            | String  | O        | モバイルWebリンク（item.listの項目存在時はNot Null）                                                            |
+| --- linkPc            | String  | X        | PC Webリンク                                                                                          |
+| --- schemeIos         | String  | X        | iOSアプリリンク                                                                                         |
+| --- schemeAndroid     | String  | X        | Androidアプリリンク                                                                                     |
+| - coupon              | Object  | X        | クーポン要素                                                                                            |
+| -- title              | String  | O        | クーポンタイトル（couponオブジェクト存在時はNot Null）                                                                  |
+| -- description        | String  | O        | クーポンの詳細説明（couponオブジェクトが存在する場合はNot Null）                                                               |
+| -- linkMo             | String  | X        | モバイルWebリンク                                                                                         |
+| -- linkPc             | String  | X        | PC Webリンク                                                                                          |
+| -- schemeAndroid      | String  | X        | Androidアプリリンク                                                                                     |
+| -- schemeIos          | String  | X        | iOSアプリリンク                                                                                         |
+| - commerce            | Object  | X        | コマース要素                                                                                           |
+| -- title              | String  | O        | 商品タイトル（commerceオブジェクトが存在する場合はNot Null）                                                                |
+| -- regularPrice       | Integer | X        | 通常価格                                                                                            |
+| -- discountPrice      | Integer | X        | 割引価格                                                                                             |
+| -- discountRate       | Integer | X        | 割引率                                                                                              |
+| -- discountFixed      | Integer | X        | 定額割引価格                                                                                           |
+| - video               | Object  | X        | 動画要素                                                                                           |
+| -- videoUrl           | String  | O        | カカオTV 動画 URL（video オブジェクトが存在する場合 Not Null）                                                           |
+| -- thumbnailUrl       | String  | X        | 動画サムネイル用画像 URL                                                                                 |
+| - carousel            | Object  | X        | カルーセル                                                                                              |
+| -- head               | Object  | X        | カルーセルイントロ（carousel オブジェクトが存在する場合 Nullable）                                                              |
+| --- header            | String  | O        | カルーセルイントロヘッダー（head オブジェクトが存在する場合 Not Null）                                                               |
+| --- content           | String  | O        | カルーセルイントロ内容（head オブジェクトが存在する場合 Not Null）                                                               |
+| --- imageUrl          | String  | O        | カルーセルイントロ画像アドレス（head オブジェクトが存在する場合 Not Null）                                                           |
+| --- linkMo            | String  | X        | モバイル Web リンク                                                                                         |
+| --- linkPc            | String  | X        | PC Webリンク                                                                                          |
+| --- schemeIos         | String  | X        | iOSアプリリンク                                                                                         |
+| --- schemeAndroid     | String  | X        | Androidアプリリンク                                                                                     |
+| -- list               | Array   | O        | カルーセルリスト（carouselオブジェクトが存在する場合はNot Null）                                                              |
+| --- header            | String  | X        | カルーセルアイテムヘッダー                                                                                       |
+| --- message           | String  | O        | カルーセルアイテムメッセージ（list項目が存在する場合はNot Null）                                                              |
+| --- additionalContent | String  | X        | 付加情報                                                                                            |
+| --- imageUrl          | String  | X        | 画像URL                                                                                          |
+| --- imageLink         | String  | X        | 画像リンク                                                                                           |
+| --- commerce          | Object  | X        | コマース（カルーセル内）                                                                                      |
+| ---- title            | String  | O        | 商品タイトル(carousel.list.commerce が存在する場合は Not Null)                                                     |
+| ---- regularPrice     | Integer | X        | 通常価格                                                                                            |
+| ---- discountPrice    | Integer | X        | 割引価格                                                                                             |
+| ---- discountRate     | Integer | X        | 割引率                                                                                              |
+| ---- discountFixed    | Integer | X        | 定額割引価格                                                                                           |
+| --- buttons           | Array   | X        | ボタンリスト(カルーセル内)                                                                                    |
+| ---- name             | String  | O        | ボタンタイトル(carousel.list.buttons の項目が存在する場合は Not Null)                                                   |
+| ---- type             | String  | O        | ボタンタイプ(carousel.list.buttons の項目が存在する場合は Not Null)                                                   |
+| ---- linkMo           | String  | X        | モバイル Web リンク                                                                                         |
+| ---- linkPc           | String  | X        | PC Web リンク                                                                                          |
+| ---- schemeAndroid    | String  | X        | Android アプリリンク                                                                                     |
+| ---- schemeIos        | String  | X        | iOS アプリリンク                                                                                         |
+| ---- chatExtra        | String  | X        | BT タイプのボタンの場合に渡すメタ情報                                                                      |
+| ---- chatEvent        | String  | X        | BT タイプのボタンの場合に連結するボットイベント名                                                                          |
+| ---- bizFormKey       | String  | X        | BF タイプのボタンの場合のビズフォームキー                                                                               |
+| --- coupon            | Object  | X        | クーポン（カルーセル内）                                                                                       |
+| ---- title            | String  | O        | クーポンタイトル（carousel.list.coupon が存在する場合は Not Null）                                                       |
+| ---- description      | String  | O        | クーポン詳細説明（carousel.list.coupon が存在する場合は Not Null）                                                    |
+| ---- linkMo           | String  | X        | モバイルウェブリンク                                                                                         |
+| ---- linkPc           | String  | X        | PC ウェブリンク                                                                                          |
+| ---- schemeAndroid    | String  | X        | Android アプリリンク                                                                                     |
+| ---- schemeIos        | String  | X        | iOS アプリリンク                                                                                         |
+| -- tail               | Object  | X        | もっと見るボタン情報（carouselオブジェクトが存在する場合はNullable）                                                            |
+| --- linkMo            | String  | O        | モバイルウェブリンク（tailオブジェクトが存在する場合はNot Null）                                                                 |
+| --- linkPc            | String  | X        | PC ウェブリンク                                                                                          |
+| --- schemeAndroid     | String  | X        | Android アプリリンク                                                                                     |
+| --- schemeIos         | String  | X        | iOS アプリリンク                                                                                         |
+| - templateParameter   | String  | X        | 受信者ファイルに入力したテンプレート置換変数（JSON文字列）<br>レスポンスのメッセージ本文には、この値が置換された結果が反映されます。                             |
+| - imageParameters     | String  | X        | 受信者ファイルに入力した画像置換値（JSON文字列）                                                                   |
+| - videoParameter      | String  | X        | 受信者ファイルに入力した動画置換値（JSON文字列）<br>受信者ごとに指定した値のみが含まれ、値がない場合は送信リクエスト時に指定した`video`値で送信されます。 |
+| - pushAlarm           | boolean | O        | プッシュアラームの有無（messageオブジェクト存在時はNot Null）                                                              |
+| - messageStatus       | String  | O        | リクエスト状態（READY: 待機、COMPLETED: 成功、FAILED: 失敗、CANCEL: 取消）（messageオブジェクト存在時はNot Null）               |
+| - isAddedChannel      | boolean | X        | チャンネルフレンドの有無（送信成功件のみ提供）                                                                        |
+| - resultCode          | String  | X        | 受信結果コード                                                                                         |
+| - resultCodeName      | String  | X        | 受信結果コード名                                                                                        |
+| - venderResultMessage | String  | X        | カカオから受信した結果メッセージ                                                                               |
+| - requestDate         | String  | O        | リクエスト日時（yyyy-MM-dd HH:mm）（messageオブジェクト存在時はNot Null）                                               |
+| - createDate          | String  | O        | 登録日時（messageオブジェクト存在時はNot Null）                                                                 |
+| - receiveDate         | String  | X        | 受信日時                                                                                            |
+| - resendStatusCode    | String  | X        | 代替送信ステータスコード                                                                                      |
+| - resendStatusName    | String  | X        | 代替送信ステータスコード名                                                                                     |
+| - resendResultCode    | String  | X        | 代替送信結果コード                                                                                      |
+| - resendRequestId     | String  | X        | 代替送信リクエストID                                                                                      |
+
+[例]
+```
+curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" "https://kakaotalk-bizmessage.api.nhncloudservice.com/brand-message/v1.0/appkeys/{appkey}/mass-messages/{requestId}/recipients/1"
 ```
 
 <a id="manage-templates"></a>
@@ -3034,7 +3597,7 @@ Content-Type: application/json;charset=UTF-8
 | title             | String  | O  | 商品タイトル（最大30文字、改行: 不可）                                                                                                                                                                                                           |
 | regularPrice      | Integer | O  | 通常価格（0〜99,999,999）<br>置換子のカスタマイズ不可。値を空にすると固定置換子 `#{정상가격}` として保存されます                                                                                                                                                          |
 | discountPrice     | Integer | X  | 割引価格（0〜99,999,999）<br>置換子のカスタマイズ不可。値を空にすると固定置換子 `#{할인가격}` として保存されます                                                                                                                                                            |
-| discountRate      | Integer | X  | 割引率（0〜100）、割引価格が存在する場合、割引率と定額割引価格のいずれか一方が必須<br>置換子のカスタマイズ不可。値を空にすると固定置換子 `#{할인율}` として保存されます                                                                                                                                      |
+| discountRate      | Integer | X  | 割引率 (1〜100)、割引価格が存在する場合、割引率と定額割引価格のいずれかが必須<br>置換変数のカスタマイズは不可。値を空にすると、固定置換変数 `#{할인율}` として保存されます。 |
 | discountFixed     | Integer | X  | 定額割引価格（0〜999,999）、割引価格が存在する場合、割引率と定額割引価格のいずれか一方が必須<br>置換子のカスタマイズ不可。値を空にすると固定置換子 `#{정액할인가격}` として保存されます                                                                                                                            |
 | buttons           | List    | O  | ボタンリスト<br>- TEXT、IMAGE タイプの場合、クーポン適用時は最大4個、それ以外は最大5個<br>- WIDE、WIDE_ITEM_LIST タイプの場合は最大2個<br>- PREMIUM_VIDEO タイプの場合は最大1個<br>- COMMERCE タイプの場合は最小1個、最大2個                                                                     |
 | - name            | String  | O  | ボタンタイトル<br>- TEXT、IMAGE タイプの場合は最大14文字<br>- その他のタイプの場合は最大8文字<br>置換子は使用不可                                                                                                                                                          |
@@ -3251,7 +3814,7 @@ Content-Type: application/json;charset=UTF-8
 | --- title            | String  | O  | 商品タイトル（最大 30 文字、改行: 不可）                                                                                                                                                                                                           |
 | --- regularPrice     | Integer | O  | 通常価格（0〜99,999,999）<br>置換子のカスタマイズ不可。値を空白にすると固定置換子 `#{정상가격}` として保存されます                                                                                                                                                          |
 | --- discountPrice    | Integer | X  | 割引価格（0〜99,999,999）<br>置換子のカスタマイズ不可。値を空白にすると固定置換子 `#{할인가격}` として保存されます                                                                                                                                                            |
-| --- discountRate     | Integer | X  | 割引率（0〜100）。割引価格が存在する場合、割引率と定額割引価格のいずれかが必須<br>置換子のカスタマイズ不可。値を空白にすると固定置換子 `#{할인율}` として保存されます                                                                                                                                     |
+| --- discountRate     | Integer | X  | 割引率 (1〜100)、割引価格が存在する場合は割引率、定額割引価格のいずれかが必須<br>置換変数のカスタマイズは不可、値を空にすると固定置換変数 `#{할인율}` として保存されます                                                                                                                                      |
 | --- discountFixed    | Integer | X  | 定額割引価格（0〜999,999）。割引価格が存在する場合、割引率と定額割引価格のいずれかが必須<br>置換子のカスタマイズ不可。値を空白にすると固定置換子 `#{정액할인가격}` として保存されます                                                                                                                          |
 | -- buttons           | List    | O  | カルーセルリストボタン一覧（最小 1 個、最大 2 個）                                                                                                                                                                                                     |
 | --- name             | String  | O  | ボタンタイトル<br>- TEXT、IMAGE タイプの場合は最大 14 文字<br>- その他のタイプの場合は最大 8 文字<br>置換子の使用不可                                                                                                                                                       |
