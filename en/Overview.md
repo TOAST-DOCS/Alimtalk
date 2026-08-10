@@ -1,14 +1,12 @@
-<!-- pre-align:aligned sig=e451b6f6f6d1 -->
+<!-- pre-align:aligned sig=c20092262b32 -->
 
 <a id="overview"></a>
-
 ## Notification > KakaoTalk Bizmessage > Overview { #overview }
 
 KakaoTalk Bizmessage is a service that can send messages, AlimTalk and FriendTalk type without adding friends based on their mobile phone number. 
 It provides RESTful API for easy interworking.
 
 <a id="alimtalk-vs-friendtalk"></a>
-
 ## AlimTalk vs FriendTalk { #alimtalk-vs-friendtalk }
 | Classification    | AlimTalk                                    | FriendTalk                                                                              |
 | ----- |----------------------------------------|------------------------------------------------------------------------------------|
@@ -18,7 +16,6 @@ It provides RESTful API for easy interworking.
 | Considerations | - Informational Biz messages only<br />- Send based on approved templates | - Delivery restricted during night (20:50~08:00 on the following day)                                                      |
 
 <a id="precautions-before-delivery"></a>
-
 ## Precautions Before Delivery { #precautions-before-delivery }
 * When using AlimTalk, the customer should inform the recipient of the following precautions for using the service.
   * In the process of receiving AlimTalk, data communication charges may be incurred if it is not in a Wi-Fi environment.
@@ -27,7 +24,6 @@ It provides RESTful API for easy interworking.
     * You can block callers by selecting [Block AlimTalk] in top layer of the chat room where the notification talk was received.
 
 <a id="notice-of-personal-information-consignee"></a>
-
 ## Notice of Personal Information Consignee { #notice-of-personal-information-consignee }
 When a customer uses the NHN Cloud > Notification > KakaoTalk Bizmessage service, there is a consignment relationship between the customer and the company regarding the processing of personal information, therefore, in line with the Information and Communication Network Act and the Personal Information Protection Act, the customer who is the consignor must disclose the status of entrusting personal information to the company (trustee and details of work) through the personal information processing policy.
 

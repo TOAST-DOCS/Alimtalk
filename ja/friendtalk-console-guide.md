@@ -1,21 +1,17 @@
-<!-- pre-align:aligned sig=00da575a6590 -->
+<!-- pre-align:aligned sig=314527acb4bf -->
 
 <a id="friendtalk-console-guide"></a>
-
 ## Notification > KakaoTalk Bizmessage > カカともへのメッセージ > コンソール使用ガイド { #friendtalk-console-guide }
 
 <a id="friendtalk-service-termination-notice"></a>
-
 ## フレンドトークサービス終了のお知らせ { #friendtalk-service-termination-notice }
 
 <!-- TODO: translate body -->
 
 <a id="send-friendtalk"></a>
-
 ## カカともへのメッセージ送信 { #send-friendtalk }
 
 <a id="general-delivery"></a>
-
 ### 一般送信 { #general-delivery }
 
 発信プロフィールを設定し、内容を入力してカカともへのメッセージ形式のメッセージを送信できます。
@@ -77,7 +73,6 @@
 12. 入力完了後、<b>送信</b>をクリックして送信します。
 
 <a id="mass-delivery"></a>
-
 ### 大量送信 { #mass-delivery }
 
 Excel/CSVフォーマットのテンプレートファイルによって、複数の受信番号にお知らせトークを送信できる機能です。下にあるタブで<b>大量送信</b>を選択します。
@@ -100,7 +95,6 @@ Excel/CSVフォーマットのテンプレートファイルによって、複�
 * 即時送信：カカともへのメッセージ受信者を確認せずに、即時送信します。送信ステータスは<b>大量送信照会</b>タブで確認できます。
 
 <a id="alternative-delivery"></a>
-
 ### 代替送信 { #alternative-delivery }
 カカともへのメッセージ送信に失敗した場合、該当内容をテキストメッセージで代替送信できる機能です。
 <b>共通の内容で送信</b>または<b>ユーザーごとに異なるメッセージ設定</b>を選択して送信できます。
@@ -114,19 +108,16 @@ Excel/CSVフォーマットのテンプレートファイルによって、複�
 * メッセージの長さによって、SMS/LMSで代替送信されます。(タイプごとに別途の利用料金が加算されます。)
 
 <a id="send-with-common-contents"></a>
-
 #### 共通の内容で送信
 * <b>発信プロフィール</b>を選択後、<b>共通の内容で送信</b>をクリックして、代替送信メッセージを設定します。
 * 代替送信メッセージを入力しない場合、[メッセージ本文]で送信されます。
 
 <a id="set-different-messages-for-each-user"></a>
-
 #### ユーザーごとに異なるメッセージを設定
 * <b>発信プロフィール</b>を選択後、<b>ユーザーごとに異なるメッセージ設定</b>をクリックして、下にある<b>受信者追加</b>タブで代替送信メッセージを設定します。
 * 追加された受信者番号の横にある[ペンアイコン]をクリックすると、設定された内容を確認/修正できます。
 
 <a id="precautions-for-sending-advertising-messages"></a>
-
 ### 広告性メッセージ送信時の注意事項 { #precautions-for-sending-advertising-messages }
 広告性メッセージとは？
 送信者が経済的利益を得る目的で送信する情報や財貨、サービスに関するメッセージが該当します。
@@ -153,11 +144,9 @@ Excel/CSVフォーマットのテンプレートファイルによって、複�
 解除後に広告性メッセージを送信した場合、カカオチャンネルサービスの利用が制限されることがあります。
 
 <a id="view-delivery"></a>
-
 ## 送信照会 { #view-delivery }
 
 <a id="retrieve-send-results"></a>
-
 ### 送信結果の照会 { #retrieve-send-results }
 **送信結果照会**タブでカカともへのメッセージを照会できます。
 
@@ -170,7 +159,6 @@ Excel/CSVフォーマットのテンプレートファイルによって、複�
 * <b>送信結果</b>列で送信処理の成否を確認できます。
 
 <a id="cancel-send"></a>
-
 ### 送信キャンセル { #cancel-send }
 一般送信中の発信リクエストの日時を未来に設定した予約送信の場合は、キャンセルが可能です。
 
@@ -180,7 +168,6 @@ Excel/CSVフォーマットのテンプレートファイルによって、複�
 * 照会リストヘッダーにあるチェックボックスで該当リストの全体選択およびキャンセルが可能です。
 
 <a id="view-mass-delivery"></a>
-
 ### 大量送信の照会 { #view-mass-delivery }
 カカともへのメッセージの大量送信件を照会できます。
 
@@ -192,7 +179,6 @@ Excel/CSVフォーマットのテンプレートファイルによって、複�
 * <b>進行状態</b>が<b>送信中</b>の場合、<b>キャンセル</b>をクリックしても、すでに送信処理中だった一部のメッセージは受信者に送信されることがあります。
 
 <a id="mass-delivery-status"></a>
-
 #### 大量送信の進行状態
 
 * <b>待機</b>：テンプレートファイルデータを読み込む作業を行う前の状態です。
@@ -205,7 +191,6 @@ Excel/CSVフォーマットのテンプレートファイルによって、複�
 * <b>送信キャンセル</b>：ユーザーが送信をキャンセルした状態です。
 
 <a id="query-sending-by-recipient"></a>
-
 #### 受信者ごとの送信照会
 大量カカともへのメッセージ送信件(リストの行)を選択すると、下にあるリストで受信番号ごとのカカともへのメッセージの送信内容および送信結果を照会できます。
 
@@ -217,11 +202,9 @@ Excel/CSVフォーマットのテンプレートファイルによって、複�
 
 
 <a id="image-management"></a>
-
 ## 画像管理 { #image-management }
 
 <a id="register-delete-look-up-images"></a>
-
 ### 画像の登録、削除、照会 { #register-delete-look-up-images }
 カカともへのメッセージに使用する画像を登録または削除し、登録された画像の情報を確認できます。
 
@@ -236,7 +219,6 @@ Excel/CSVフォーマットのテンプレートファイルによって、複�
   * [[ビジネスフォームの登録ガイドを確認する]](https://kakaobusiness.gitbook.io/main/tool/bizform)
 
 <a id="range-that-allows-image-upload"></a>
-
 #### 画像アップロードの許容範囲
 * ファイル形式：JPG、PNG
 * ファイルサイズ：一般[5MB以下]/ワイド[5MB以下]/ワイドアイテムリスト、カルーセルフィード、カルーセルコマース[5MB以下]
@@ -249,7 +231,6 @@ Excel/CSVフォーマットのテンプレートファイルによって、複�
 
 
 <a id="manage-alternative-delivery"></a>
-
 ## 代替送信の管理 { #manage-alternative-delivery }
 
 * カカともへのメッセージ送信に失敗した場合、該当内容をテキストメッセージで代替送信するように設定できます。

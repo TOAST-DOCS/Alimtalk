@@ -1,15 +1,12 @@
-<!-- pre-align:aligned sig=a21bd637e7f0 -->
+<!-- pre-align:aligned sig=8038e3f27378 -->
 
 <a id="alimtalk-api-guide-v1-5"></a>
-
 ## Notification > KakaoTalk Bizmessage > AlimTalk > API v1.5 Guide { #alimtalk-api-guide-v1-5 }
 
 <a id="alimtalk"></a>
-
 ## AlimTalk { #alimtalk }
 
 <a id="api-domain"></a>
-
 #### [API Domain]
 
 <table>
@@ -26,7 +23,6 @@
 </table>
 
 <a id="overview-of-v15-api"></a>
-
 ## Overview of v1.5 API { #overview-of-v15-api }
 1. It has been changed to allow emphasized template for Register Template API(for a full-text delivery, the title value can be configured.)
 2. Expanded the template type. Ad or additional information can be added.
@@ -36,11 +32,9 @@
 
 
 <a id="general-messages"></a>
-
 ## General Messages { #general-messages }
 
 <a id="request-of-sending-replaced-messages"></a>
-
 ### Request of Sending Replaced Messages { #request-of-sending-replaced-messages }
 
 [URL]
@@ -126,7 +120,6 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 ```
 
 <a id="response"></a>
-
 #### Response
 
 ```
@@ -169,7 +162,6 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 | -- recipientGroupingKey | String  | Recipient's grouping key           |
 
 <a id="request-of-sending-full-text"></a>
-
 ### Request of Sending Full Text { #request-of-sending-full-text }
 
 [URL]
@@ -274,7 +266,6 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 ```
 
 <a id="response-2"></a>
-
 #### Response
 
 ```
@@ -317,11 +308,9 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 | -- recipientGroupingKey | String  | Recipient's grouping key           |
 
 <a id="list-messages"></a>
-
 ### List Messages { #list-messages }
 
 <a id="request"></a>
-
 #### Request
 
 [URL]
@@ -372,7 +361,6 @@ Content-Type: application/json;charset=UTF-8
 * The maximum available days for delivery request is 30 days.
 
 <a id="response-3"></a>
-
 #### Response
 ```
 {
@@ -460,7 +448,6 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 ```
 
 <a id="status-of-sending-smslms"></a>
-
 #### Status of Sending SMS/LMS
 | Value | Description                                      |
 | ----- | ------------------------------------------------ |
@@ -471,11 +458,9 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 | RSC05 | Resending failed                                 |
 
 <a id="get-messages"></a>
-
 ### Get Messages { #get-messages }
 
 <a id="request-2"></a>
-
 #### Request
 
 [URL]
@@ -509,7 +494,6 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 ```
 
 <a id="response-4"></a>
-
 #### Response
 ```
 {
@@ -594,7 +578,6 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 | - recipientGroupingKey | String  | Recipient grouping key                                       |
 
 <a id="authentication-messages"></a>
-
 ## Authentication Messages { #authentication-messages }
 
 <span id="precautions-authword"></span>
@@ -609,7 +592,6 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 
 
 <a id="request-of-sending-replaced-messages-2"></a>
-
 ### Request of Sending Replaced Messages { #request-of-sending-replaced-messages-2 }
 
 [URL]
@@ -688,7 +670,6 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 ```
 
 <a id="response-5"></a>
-
 #### Response
 
 ```
@@ -731,7 +712,6 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 | -- recipientGroupingKey | String  | Recipient's grouping key           |
 
 <a id="request-of-sending-full-text-2"></a>
-
 ### Request of Sending Full Text { #request-of-sending-full-text-2 }
 
 [URL]
@@ -830,7 +810,6 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 ```
 
 <a id="response-6"></a>
-
 #### Response
 
 ```
@@ -873,11 +852,9 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 | -- recipientGroupingKey | String  | Recipient's grouping key           |
 
 <a id="list-messages-2"></a>
-
 ### List Messages { #list-messages-2 }
 
 <a id="request-3"></a>
-
 #### Request
 
 [URL]
@@ -927,7 +904,6 @@ Content-Type: application/json;charset=UTF-8
 * Delivery can be requested within 30 days to the maximum.   
 
 <a id="response-7"></a>
-
 #### Response
 ```
 {
@@ -1015,7 +991,6 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 ```
 
 <a id="status-of-resending-smslms"></a>
-
 #### Status of Resending SMS/LMS
 | Value | Description                                     |
 | ----- | ----------------------------------------------- |
@@ -1026,11 +1001,9 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 | RSC05 | Resending failed                                |
 
 <a id="get-messages-2"></a>
-
 ### Get Messages { #get-messages-2 }
 
 <a id="request-4"></a>
-
 #### Request
 
 [URL]
@@ -1064,7 +1037,6 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 ```
 
 <a id="response-8"></a>
-
 #### Response
 ```
 {
@@ -1152,14 +1124,11 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 | - recipientGroupingKey | String  | Recipient's grouping key                                     |
 
 <a id="messages"></a>
-
 ## Messages { #messages }
 <a id="cancel-sending-messages"></a>
-
 ### Cancel Sending Messages { #cancel-sending-messages }
 
 <a id="request-5"></a>
-
 #### Request
 
 [URL]
@@ -1195,7 +1164,6 @@ Content-Type: application/json;charset=UTF-8
 * Both general and authentication messages can be canceled by same API.
 
 <a id="response-9"></a>
-
 #### Response
 ```
 {
@@ -1220,11 +1188,9 @@ curl -X DELETE -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Ke
 ```
 
 <a id="query-updates-of-message-result"></a>
-
 ### Query Updates of Message Result { #query-updates-of-message-result }
 
 <a id="request-6"></a>
-
 #### Request
 
 [URL]
@@ -1261,7 +1227,6 @@ Content-Type: application/json;charset=UTF-8
 | pageSize            | Integer | X        | Number of queries(default: 15, Max: 1000)              |
 
 <a id="response-10"></a>
-
 #### Response
 ```
 {
@@ -1346,15 +1311,12 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 ```
 
 <a id="plusfriends"></a>
-
 ## PlusFriends { #plusfriends }
 
 <a id="query-plusfriend-by-category"></a>
-
 ### Query PlusFriend by Category { #query-plusfriend-by-category }
 
 <a id="request-7"></a>
-
 #### Request
 [URL]
 
@@ -1380,7 +1342,6 @@ Content-Type: application/json;charset=UTF-8
 | X-Secret-Key | String | O        | Can be created on console.  |
 
 <a id="response-11"></a>
-
 #### Response
 ```
 {
@@ -1439,11 +1400,9 @@ Content-Type: application/json;charset=UTF-8
 | --- name         | String  | Category name     |
 
 <a id="register-plusfriends"></a>
-
 ### Register PlusFriends { #register-plusfriends }
 
 <a id="request-8"></a>
-
 #### Request
 
 [URL]
@@ -1489,7 +1448,6 @@ Content-Type: application/json;charset=UTF-8
 | fileSeq      | Integer | O        | File sequence                                                |
 
 <a id="response-12"></a>
-
 #### Response
 
 ```
@@ -1510,11 +1468,9 @@ Content-Type: application/json;charset=UTF-8
 | - isSuccessful  | Boolean | Successful or not |
 
 <a id="authenticate-tokens-for-plusfriends"></a>
-
 ### Authenticate Tokens for PlusFriends { #authenticate-tokens-for-plusfriends }
 
 <a id="request-9"></a>
-
 #### Request
 
 [URL]
@@ -1555,7 +1511,6 @@ Content-Type: application/json;charset=UTF-8
 | token | Integer | O        | Authentication token(received on KakaoTalk app, after Register PlusFriend API call) |
 
 <a id="response-13"></a>
-
 #### Response
 
 ```
@@ -1576,10 +1531,8 @@ Content-Type: application/json;charset=UTF-8
 | - isSuccessful  | Boolean | Successful or not |
 
 <a id="get-plusfriend"></a>
-
 ### Get PlusFriend { #get-plusfriend }
 <a id="request-10"></a>
-
 #### Request
 
 [URL]
@@ -1607,7 +1560,6 @@ Content-Type: application/json;charset=UTF-8
 | X-Secret-Key | String | O        | Can be created on console.  |
 
 <a id="response-14"></a>
-
 #### Response
 ```
 {  
@@ -1682,11 +1634,9 @@ Content-Type: application/json;charset=UTF-8
 | totalCount                | Integer | Total count                                                  |
 
 <a id="list-plusfriends"></a>
-
 ### List PlusFriends { #list-plusfriends }
 
 <a id="request-11"></a>
-
 #### Request
 
 [URL]
@@ -1720,7 +1670,6 @@ Content-Type: application/json;charset=UTF-8
 | status              | String  | X        | Status code of PlusFriend(YSC02: Ready for token authenticated, YSC03: Normally registered) |
 
 <a id="response-15"></a>
-
 #### Response
 
 ```
@@ -1798,14 +1747,11 @@ Content-Type: application/json;charset=UTF-8
 | totalCount                | Integer | Total count                                                  |
 
 <a id="templates"></a>
-
 ## Templates { #templates }
 
 <a id="list-template-categories"></a>
-
 ### List Template Categories { #list-template-categories }
 <a id="request-12"></a>
-
 #### Request
 [URL]
 
@@ -1831,7 +1777,6 @@ Content-Type: application/json;charset=UTF-8
 | X-Secret-Key | String | O        | Can be created on console.  |
 
 <a id="response-16"></a>
-
 #### Response
 ```
 
@@ -1874,11 +1819,9 @@ Content-Type: application/json;charset=UTF-8
 | -- exclusion    | String  | Description of templates to which the category does not apply |
 
 <a id="register-templates"></a>
-
 ### Register Templates { #register-templates }
 
 <a id="request-13"></a>
-
 #### Request
 
 [URL]
@@ -1955,7 +1898,6 @@ Content-Type: application/json;charset=UTF-8
 | -schemeAndroid  | String  | X        | Android app link(required for the AL type, up to 500 characters) |
 
 <a id="response-17"></a>
-
 #### Response
 
 ```
@@ -1976,11 +1918,9 @@ Content-Type: application/json;charset=UTF-8
 | - isSuccessful  | Boolean | Successful or not |
 
 <a id="modify-templates"></a>
-
 ### Modify Templates { #modify-templates }
 
 <a id="request-14"></a>
-
 #### Request
 
 [URL]
@@ -2056,7 +1996,6 @@ Content-Type: application/json;charset=UTF-8
 | -schemeAndroid  | String  | X        | Android app link(required for the AL type, up to 500 characters) |
 
 <a id="response-18"></a>
-
 #### Response
 
 ```
@@ -2077,11 +2016,9 @@ Content-Type: application/json;charset=UTF-8
 | - isSuccessful  | Boolean | Successful or not |
 
 <a id="delete-templates"></a>
-
 ### Delete Templates { #delete-templates }
 
 <a id="request-15"></a>
-
 #### Request
 
 [URL]
@@ -2107,7 +2044,6 @@ Content-Type: application/json;charset=UTF-8
 ```
 
 <a id="response-19"></a>
-
 #### Response
 ```
 {
@@ -2127,11 +2063,9 @@ Content-Type: application/json;charset=UTF-8
 | - isSuccessful  | Boolean | Successful or not |
 
 <a id="inquire-of-templates"></a>
-
 ### Inquire of Templates { #inquire-of-templates }
 
 <a id="request-16"></a>
-
 #### Request
 
 [URL]
@@ -2172,7 +2106,6 @@ Content-Type: application/json;charset=UTF-8
 | comment | String | O        | Inquiries   |
 
 <a id="response-20"></a>
-
 #### Response
 ```
 {
@@ -2192,10 +2125,8 @@ Content-Type: application/json;charset=UTF-8
 | - isSuccessful  | Boolean | Successful or not |
 
 <a id="attach-files-to-send-inquiry-on-templates"></a>
-
 ### Attach files to send inquiry on templates { #attach-files-to-send-inquiry-on-templates }
 <a id="request-17"></a>
-
 #### Request
 [URL]
 
@@ -2237,7 +2168,6 @@ Content-Type: application/json;charset=UTF-8
 |attachments| List<File> | X | List of Attachment(Up to 10) |
 
 <a id="response-21"></a>
-
 #### Response
 ```
 {
@@ -2257,11 +2187,9 @@ Content-Type: application/json;charset=UTF-8
 |- isSuccessful|	Boolean| Successful or not|
 
 <a id="list-templates"></a>
-
 ### List Templates { #list-templates }
 
 <a id="request-18"></a>
-
 #### Request
 
 [URL]
@@ -2312,7 +2240,6 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 ```
 
 <a id="response-22"></a>
-
 #### Response
 ```
 
@@ -2405,11 +2332,9 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 | - totalCount         | Integer | Total count                                                  |
 
 <a id="list-template-modifications"></a>
-
 ### List Template modifications { #list-template-modifications }
 
 <a id="request-19"></a>
-
 #### Request
 
 [URL]
@@ -2443,7 +2368,6 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 ```
 
 <a id="response-23"></a>
-
 #### Response
 ```
 
@@ -2537,31 +2461,26 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 | -- createDate        | String  | Date and time of creation                                    |
 | - totalCount         | Integer | Total count                                                  |
 <a id="alternative-delivery-management"></a>
-
 ## Alternative Delivery Management { #alternative-delivery-management }
 
 <!-- TODO: translate body -->
 
 <a id="register-sms-appkey"></a>
-
 ### Register SMS AppKey { #register-sms-appkey }
 
 <!-- TODO: translate body -->
 
 <a id="response-24"></a>
-
 #### Response
 
 <!-- TODO: translate body -->
 
 <a id="register-alternative-sending-settings"></a>
-
 ### Register Alternative Sending Settings { #register-alternative-sending-settings }
 
 <!-- TODO: translate body -->
 
 <a id="response-25"></a>
-
 #### Response
 
 <!-- TODO: translate body -->
