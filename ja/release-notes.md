@@ -6,7 +6,6 @@
 ## Notification > KakaoTalk Bizmessage > リリースノート { #release-notes }
 
 <a id="august-25-2026"></a>
-
 ### 2026. 08. 25. { #august-25-2026 }
 
 <a id="august-25-2026-added-features"></a>
@@ -16,6 +15,7 @@
 * [API] ブランドメッセージ一括送信照会 API 追加
     * ブランドメッセージの一括送信履歴を照会できる API が追加されました。
 
+<a id="august-25-2026-feature-updates"></a>
 #### 機能改善/変更
 * [API] ブランドメッセージ コマース/カルーセルコマース 割引率の許容範囲変更
   * カカオの仕様変更に伴い、コマースおよびカルーセルコマースタイプの割引率（`discountRate`）の許容範囲が 0〜100 から 1〜100 に変更されました。
