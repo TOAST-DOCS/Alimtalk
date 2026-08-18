@@ -5,7 +5,6 @@
 <a id="release-notes"></a>
 ## Notification > KakaoTalk Bizmessage > Release Notes { #release-notes }
 <a id="august-25-2026"></a>
-
 ### August 25, 2026 { #august-25-2026 }
 
 <a id="august-25-2026-added-features"></a>
@@ -15,6 +14,7 @@
 * [API] Added a Brand Message mass delivery query API
     * Added an API to query Brand Message mass delivery records.
 
+<a id="august-25-2026-feature-updates"></a>
 #### Feature Updates
 * [API] Changed the allowed range for discount rates in Brand Message Commerce/Carousel Commerce
   * Following a Kakao specification change, the allowed range for the discount rate (`discountRate`) in Commerce and Carousel Commerce types has been changed from 0–100 to 1–100.
