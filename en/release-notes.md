@@ -1,6 +1,6 @@
 <!-- machine_translated: true -->
 
-<!-- pre-align:aligned sig=0aaefcde2aad -->
+<!-- pre-align:aligned sig=262dba70bc7f -->
 
 <a id="release-notes"></a>
 ## Notification > KakaoTalk Bizmessage > Release Notes { #release-notes }
@@ -13,6 +13,11 @@
     * Added a group tag key field to the Brand Message free-form and standard type sending APIs for use with Kakao statistics.
 * [API] Added a Brand Message mass delivery query API
     * Added an API to query Brand Message mass delivery records.
+
+<a id="august-25-2026-feature-updates"></a>
+#### Feature Updates
+* [API] Changed the allowed range for discount rates in Brand Message Commerce/Carousel Commerce
+  * Following a Kakao specification change, the allowed range for the discount rate (`discountRate`) in Commerce and Carousel Commerce types has been changed from 0–100 to 1–100.
 
 <a id="july-28-2026"></a>
 ### July 28, 2026 { #july-28-2026 }
