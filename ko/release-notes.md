@@ -1,4 +1,4 @@
-<!-- pre-align:aligned sig=0aaefcde2aad -->
+<!-- pre-align:aligned sig=262dba70bc7f -->
 
 <a id="release-notes"></a>
 ## Notification > KakaoTalk Bizmessage > 릴리스 노트 { #release-notes }
@@ -12,6 +12,11 @@
     * 브랜드 메시지 자유형 및 기본형 발송 API에 카카오 통계에 사용하기 위한 그룹 태그 키 필드가 추가되었습니다.
 * [API] 브랜드 메시지 대량 발송 조회 API 추가
     * 브랜드 메시지 대량 발송 내역을 조회할 수 있는 API가 추가되었습니다.
+
+<a id="august-25-2026-feature-updates"></a>
+#### 기능 개선/변경
+* [API] 브랜드 메시지 커머스/캐러셀 커머스 할인율 허용 범위 변경
+  * 카카오 스펙 변경에 따라 커머스 및 캐러셀 커머스 타입의 할인율(`discountRate`) 허용 범위가 0~100에서 1~100으로 변경되었습니다.
 
 <a id="july-28-2026"></a>
 ### 2026. 07. 28. { #july-28-2026 }
