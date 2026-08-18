@@ -1,6 +1,6 @@
 <!-- machine_translated: true -->
 
-<!-- pre-align:aligned sig=0aaefcde2aad -->
+<!-- pre-align:aligned sig=262dba70bc7f -->
 
 <a id="release-notes"></a>
 ## Notification > KakaoTalk Bizmessage > リリースノート { #release-notes }
