@@ -1,14 +1,12 @@
-<!-- pre-align:aligned sig=e451b6f6f6d1 -->
+<!-- pre-align:aligned sig=c20092262b32 -->
 
 <a id="overview"></a>
-
 ## Notification > KakaoTalk Bizmessage > 概要 { #overview }
 
 KakaoTalk Bizmessageは、携帯電話番号に基づいて、フレンド追加せずにカカオトークユーザーにお知らせトーク、カカともへのメッセージ形式のメッセージを送信できるサービスです。
 簡単に連携するためにRESTful APIを提供します。
 
 <a id="alimtalk-vs-friendtalk"></a>
-
 ## お知らせトークvsカカともへのメッセージ { #alimtalk-vs-friendtalk }
 | 区分 | お知らせトーク                              | カカともへのメッセージ                                                                           |
 | ----- |----------------------------------------|-------------------------------------------------------------------------------------|
@@ -18,7 +16,6 @@ KakaoTalk Bizmessageは、携帯電話番号に基づいて、フレンド追加
 | 特記事項 | - 情報型Bizメッセージに限る<br />- 承認されたテンプレートベースで送信 | - 夜間送信制限(20:50～翌日08:00)                                                        |
 
 <a id="precautions-before-delivery"></a>
-
 ## 送信前の注意事項 { #precautions-before-delivery }
 * お知らせトークを利用する場合、顧客社は次のようなサービス利用に関する注意事項を受信者に案内する必要があります。
   * お知らせトークを受信した際、Wi-Fi環境ではない場合、データ通信料金が発生することがあります。
@@ -27,7 +24,6 @@ KakaoTalk Bizmessageは、携帯電話番号に基づいて、フレンド追加
     * お知らせトークを受信したチャットルームの上にあるレイヤーで[お知らせトークブロック]を選択して発信者をブロックできます。
 
 <a id="notice-of-personal-information-consignee"></a>
-
 ## 個人情報受託社の告知案内 { #notice-of-personal-information-consignee }
 顧客社がNHN Cloud > Notification > KakaoTalk Bizmessageサービスを利用する時、顧客社と当社間で個人情報処理に関する業務委託関係が発生するため、情報通信網法および個人情報保護法に基づき、委託者である顧客社は、個人情報処理ポリシーを通して当社に個人情報を委託した状況(受託者および業務の内容)を公開する必要があります。
 

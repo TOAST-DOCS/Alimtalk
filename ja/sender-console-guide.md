@@ -1,18 +1,15 @@
-<!-- pre-align:aligned sig=f530f01ac2b8 -->
+<!-- pre-align:aligned sig=3d4c5fafe732 -->
 
 <a id="sender-console-guide"></a>
-
 ## Notification > KakaoTalk Bizmessage > 送信元プロフィール > コンソールガイド { #sender-console-guide }
 
 <a id="registerauthenticate-sender-profiles"></a>
-
 ## 発信プロフィールの登録/認証 { #registerauthenticate-sender-profiles }
 * カカオトークBizメッセージを送信するには、発信プロフィールを先に登録する必要があります。
 * カカオトークチャンネルはカカオトークWebサイト( https://center-pf.kakao.com )にて無料で作成できます。
 * ビジネス認証済みのカカオトークチャンネルのみNHN Cloud KakaoTalk Bizmessageサービスに追加できます。([プラスフレンドビジネス認証](https://static.toastoven.net/prod_alimtalk/plusfriend_business_certify_guide_20190311.pdf)参考)
 
 <a id="add-a-sender-profile"></a>
-
 ## 発信プロフィールの追加 { #add-a-sender-profile }
 
 発信プロフィールの登録が完了すると、管理者の携帯電話にカカオトークトークンメッセージが送信されます。
@@ -24,7 +21,6 @@
 * 顧客が受け取るカカオトークBizメッセージは、カカオトークに登録したプラスフレンドの名前で表示されます。
 
 <a id="token-registration"></a>
-
 ## トークンの登録 { #token-registration }
 
 管理者の携帯電話で受け取ったトークンメッセージを入力すると、登録が完了します。
@@ -35,7 +31,6 @@
 一日の最大送信量を変更するには、サポート(support@toast.com)にリクエストする必要があります。
 
 <a id="manage-a-fallback-delivery"></a>
-
 ## 代替送信の管理 { #manage-a-fallback-delivery }
 
 発信プロフィールごとに**代替送信設定**が可能です。
@@ -46,7 +41,6 @@
 ![代替送信管理](https://static.toastoven.net/prod_alimtalk/plusfriend_03_201812.png)
 
 <a id="view-kakao-statistics"></a>
-
 ## カカオ統計照会 { #view-kakao-statistics }
 
 発信プロフィール管理で**カカオ統計ショートカット**をクリックすると、新しいウィンドウでカカオ統計を照会できます。統計基準には送信統計とテンプレート統計があり、メッセージチャネルによって照会条件が異なります。照会結果をチャートと表で確認できます。
@@ -58,13 +52,11 @@
 * 送信成功件数が10件以下の場合は、有効既読数とクリック数を提供しません。
 
 <a id="delivery-statistics"></a>
-
 ### 送信統計 { #delivery-statistics }
 
 発信プロフィールを基準に、日別の送信数、有効既読数、クリック数を照会します。期間、送信識別子、メッセージタイプなどを設定して照会できます。
 
 <a id="template-statistics"></a>
-
 ### テンプレート統計 { #template-statistics }
 
 テンプレート及びグループタグを基準に、日別の送信数、有効既読数、クリック数を照会します。期間、メッセージタイプなどを設定して照会できます。
@@ -72,7 +64,6 @@
 * ブランドメッセージのフリータイプは、グループタグを使用した場合にのみ提供します。
 
 <a id="group-tag-management"></a>
-
 ## グループタグ管理 { #group-tag-management }
 
 グループタグは、ブランドメッセージのテンプレート統計照会時に使用する識別タグです。**カカオ統計ショートカット**の新しいウィンドウで**グループタグ管理**タブをクリックして管理できます。
@@ -83,7 +74,6 @@
 * 修正または削除するグループタグのチェックボックスを選択し、**グループタグ修正**または**グループタグ削除**をクリックします。
 
 <a id="notice-of-personal-information-consignee"></a>
-
 ## 個人情報受託社告知案内 { #notice-of-personal-information-consignee }
 'お客様がNHN Cloud > Notification > KakaoTalk Bizmessageサービスを利用すると、お客様と当社との間に個人情報の取り扱いに関する業務委受託関係が発生します。 情報通信網法及び個人情報保護法に基づき、委託者である｢顧客｣は、個人情報処理ポリシーを通して｢当社｣に個人情報を委託した状況(受託者及び業務の内容)を公開する必要があります。
 

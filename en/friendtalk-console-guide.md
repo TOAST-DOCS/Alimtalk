@@ -1,21 +1,17 @@
-<!-- pre-align:aligned sig=00da575a6590 -->
+<!-- pre-align:aligned sig=314527acb4bf -->
 
 <a id="friendtalk-console-guide"></a>
-
 ## Notification > KakaoTalk Bizmessage > FriendTalk > Console Guide { #friendtalk-console-guide }
 
 <a id="friendtalk-service-termination-notice"></a>
-
 ## FriendTalk Service Termination Notice { #friendtalk-service-termination-notice }
 
 <!-- TODO: translate body -->
 
 <a id="send-friendtalk"></a>
-
 ## Send FriendTalk { #send-friendtalk }
 
 <a id="general-delivery"></a>
-
 ### General Delivery { #general-delivery }
 
 You can send a message in the form of a FriendTalk by setting the sender profile and entering the content. 
@@ -76,7 +72,6 @@ To send a FriendTalk, select **Notification > KakaoTalk Bizmessage > FriendTalk*
 12. Click <b>Send</b> to send after completing the entry.
 
 <a id="mass-delivery"></a>
-
 ### Mass Delivery { #mass-delivery }
 
 It is the feature to send AlimTalk to multiple recipients numbers through an Excel/CSV format template file. Select <b>Mass Delivery</b> from bottom tab.
@@ -99,7 +94,6 @@ If you click on <b>Send</b> button, you can select <b>Inspect and proceed</b> or
 * Immediate Delivery: Send immediately without checking FriendTalk recipient. Delivery status can be found on the <b> View Mass Delivery </b> tab.
 
 <a id="alternative-delivery"></a>
-
 ### Alternative Delivery { #alternative-delivery }
 It is the feature to send a text message alternatively if you fail to send FriendTalk. 
 <b>Send with common content </b> or <b>Set different messages for each user </b> can be selected to send.
@@ -113,19 +107,16 @@ It is the feature to send a text message alternatively if you fail to send Frien
 * Depending on the length of the message, it will be replaced by SMS/LMS. (A separate fee will be charged for sending text messages for each type.)
 
 <a id="send-with-common-contents"></a>
-
 #### Send with common contents
 * Select <b>Sender Profile</b> and click on <b>Send with common contents</b> to set up an alternative message.
 * If you do not enter an alternative delivery message, it will be sent as [Message Body].
 
 <a id="set-different-messages-for-each-user"></a>
-
 #### Set different messages for each user
 * Select <b>Sender Profile</b> and click on <b>Set different messages for each user</b> to set alternative sending messages on <b>Add Recipients</b> tab at the bottom.
 * Click on [Ballpoint Pen Icon] next to the added recipient number to view and modify the settings.
 
 <a id="precautions-for-sending-advertising-messages"></a>
-
 ### Precautions for sending advertising messages { #precautions-for-sending-advertising-messages }
 What is an advertising message? 
 It corresponds to a message about information, goods, or services that the sender sends for the purpose of obtaining economic benefits.
@@ -152,11 +143,9 @@ c. Even if the most contents is about ‘information’, [a, b] above are mixed 
 If an advertising message is sent after release it, you may be restricted to use of the Kakao Channel service.
 
 <a id="view-delivery"></a>
-
 ## View Delivery { #view-delivery }
 
 <a id="retrieve-send-results"></a>
-
 ### Retrieve send results { #retrieve-send-results }
 You can view FriendTalk message in **Retrieve Send Results** tab.
 
@@ -169,7 +158,6 @@ You can view FriendTalk message in **Retrieve Send Results** tab.
 * In the <b>Send results</b> column, you can see whether the shipment was successful or not.
 
 <a id="cancel-send"></a>
-
 ### Cancel Send { #cancel-send }
 You can cancel scheduled delivery if the date and time of the sending request set to the future during normal delivery.
 
@@ -179,7 +167,6 @@ You can cancel scheduled delivery if the date and time of the sending request se
 * You can select and cancel the entire list through the check box in the query list header.
 
 <a id="view-mass-delivery"></a>
-
 ### View Mass Delivery { #view-mass-delivery }
 You can view the mass delivery of your FriendTalk.
 
@@ -191,7 +178,6 @@ You can view the mass delivery of your FriendTalk.
 * If <b>Progress Status</b> is <b>Delivering</b>, even if you click on <b>Cancel</b> and some messages that were already being sent may be forwarded to the recipient.
 
 <a id="mass-delivery-status"></a>
-
 #### Mass Delivery Status
 
 * <b>Waiting</b>: Template file data are yet to be read.
@@ -204,7 +190,6 @@ You can view the mass delivery of your FriendTalk.
 * <b>Delivery Canceled</b>: User has canceled delivery.
 
 <a id="query-sending-by-recipient"></a>
-
 #### Query Sending by Recipient
 If you select Mass FriendTalk delivery (row in the list), you can look up your FriendTalk delivery contents and sending result by recipients’ number from the list below.
 
@@ -216,11 +201,9 @@ On <b>View by receiver</b>, you can select the corresponding receiver to see if 
 
 
 <a id="image-management"></a>
-
 ## Image Management { #image-management }
 
 <a id="register-delete-look-up-images"></a>
-
 ### Register, delete, look up images { #register-delete-look-up-images }
 You can register or delete the images you want to use for FriendTalk and check the information of the registered images.
 
@@ -235,7 +218,6 @@ You can register or delete the images you want to use for FriendTalk and check t
 * Go to [Business Form Registration Guide](https://kakaobusiness.gitbook.io/main/tool/bizform)
 
 <a id="range-that-allows-image-upload"></a>
-
 #### Range that allows Image upload 
 * File format: JPG, PNG
 * File size: General [5MB or less] / Wide [5MB or less] / Wide item list, carousel feed, carousel commerce [5MB or less]
@@ -248,7 +230,6 @@ You can register or delete the images you want to use for FriendTalk and check t
 
 
 <a id="manage-alternative-delivery"></a>
-
 ## Manage Alternative Delivery { #manage-alternative-delivery }
 
 * It is the feature to send the same contents as a text message alternatively if you fail to send FriendTalk.

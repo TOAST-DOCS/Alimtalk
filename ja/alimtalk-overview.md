@@ -1,14 +1,12 @@
-<!-- pre-align:aligned sig=cf26af3116e5 -->
+<!-- pre-align:aligned sig=733730d7c7f8 -->
 
 <a id="alimtalk-overview"></a>
-
 ## Notification > KakaoTalk Bizmessage > お知らせトーク > 概要 { #alimtalk-overview }
 
 お知らせトークは携帯電話番号を基づいて、フレンド追加せずにカカオトークユーザーに配送、予約時間などの情報性メッセージを送信できるサービスです。
 簡単に連携するためのRESTful APIを提供しています。
 
 <a id="characteristics"></a>
-
 ## 特徴 { #characteristics }
 * SMSよりも低コストで1,000文字まで長文メッセージを送信できます。
 * 告知、通知、案内などの営利性目的ではない情報性メッセージをチャンネルの追加登録に関係なく送信できます。
@@ -19,7 +17,6 @@
 * カカオトークを使用していない受信者には、テキストメッセージで代替送信できるため、高いメッセージ到達率を誇ります。
 
 <a id="main-features"></a>
-
 ## 主な機能 { #main-features }
 * NHN Cloudは、お知らせトークテンプレートを修正できる差別化機能を提供します。(API連動に使用されるtemplateCodeの変更はなし)
 * 送信、照会などのRESTful APIを提供します。
@@ -27,12 +24,10 @@
 * コンソールでも送信、送信履歴の照会、テンプレートの管理ができます。
 
 <a id="alimtalk-template-precautions"></a>
-
 ## お知らせトークテンプレートの注意事項 { #alimtalk-template-precautions }
 お知らせトークは、カカオトークチャンネルを追加せずにユーザーにも送信可能な情報性メッセージです。<br/>不法スパム防止のための情報通信網法案内書にある営利目的の広告性情報の例外のうち、カカオトークユーザー保護の観点に適していると審査されたテンプレートに限り送信可能です。[[情報性メッセージ(お知らせトーク)の遵守事項案内]](https://kakaobusiness.gitbook.io/main/ad/infotalk/operations)
 
 <a id="alert-talk-message-maximum-character-guide"></a>
-
 #### お知らせトークメッセージの最大文字数ガイド
 お知らせトークメッセージの最大文字数は、メッセージタイプごとに基本および画像1,000文字/アイテムリスト700文字まで可能であり、次の2点を追加でご参照ください。
 
@@ -42,17 +37,14 @@
     * チャンネル追加ボタンを使用するメッセージタイプの場合、チャンネルの追加に関する案内の文字数(約40文字)を除き、｢本文+変数+付加情報｣メッセージの最大文字数を考慮してください。
 
 <a id="number-of-variable-limits-in-alimtalk-template"></a>
-
 #### お知らせトークテンプレート内の変数制限数
 * 1個のテンプレート内で最大40個を超える変数が存在するテンプレートは登録ができません。
 
 <a id="validating-alimtalk-template-button"></a>
-
 #### お知らせトークテンプレートボタンの有効性検証
 * 顧客に送信されるお知らせトークのボタンのうち、正常なリンク接続ができない場合は、送信に失敗するためご注意ください。[[関連する告知]](https://www.nhncloud.com/kr/support/notice/detail/5287)
 
 <a id="alimtalk-template-dormant-policy"></a>
-
 #### お知らせトークテンプレートの休眠ポリシー
 * テンプレート登録後、1年間同じ状態が継続した場合や追加の送信がない場合、**休眠**状態に切り替えられます。
     * 休眠状態で1年が経過した場合、テンプレートが削除され、削除されたテンプレートは復元できません。
@@ -61,12 +53,10 @@
     * テンプレートの休眠解除リクエストフォーム<br/>- 休眠を解除するカカオテンプレートコード:<br/> - 発信プロフィール名:
 
 <a id="alimtalk-template-review-time"></a>
-
 #### お知らせトークテンプレートの審査にかかる時間
 * お知らせトークテンプレートの検収および審査はカカオが直接行い、検収リクエスト後、2営業日以内に順次処理されます。
 
 <a id="request-for-emergency-inspection-of-alimtalk-template"></a>
-
 #### お知らせトークテンプレートの緊急検収申請
 * テンプレートの緊急検収は、障害/エラー、誤送信に関する緊急告知メッセージのみ可能であり、該当する内容ではない場合、緊急検収リクエストは受付できません。
 * 緊急検収基準に該当する場合[[技術サポート1:1お問い合わせ]](https://www.nhncloud.com/kr/support/inquiry)パスでリクエストフォームを提出すると、サポートいたします。
@@ -74,7 +64,6 @@
     * カカオテンプレートコードの確認方法<br/>- NHN Cloudコンソール > KakaoTalk Bizmessage > お知らせトーク > テンプレート > 緊急検収をリクエストするテンプレート > カカオテンプレートコードの確認
 
 <a id="template-inspection-and-creation-guide"></a>
-
 ## テンプレート検収および作成ガイド { #template-inspection-and-creation-guide }
 * [[お知らせトークの作成ガイド]](https://kakaobusiness.gitbook.io/main/ad/bizmessage/notice-friend/content-guide)
 * [[お知らせトークの審査ガイド]](https://kakaobusiness.gitbook.io/main/ad/bizmessage/notice-friend/audit)

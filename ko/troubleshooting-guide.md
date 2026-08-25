@@ -1,11 +1,9 @@
-<!-- pre-align:aligned sig=f86d36730580 -->
+<!-- pre-align:aligned sig=800defce3427 -->
 
 <a id="troubleshooting-guide"></a>
-
 ## Notification > KakaoTalk Bizmessage > 문제 해결 가이드 { #troubleshooting-guide }
 
 <a id="message-for-query-delivery-button"></a>
-
 ### 배송 조회 버튼 { #message-for-query-delivery-button }
 
 

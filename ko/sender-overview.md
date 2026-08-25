@@ -1,13 +1,11 @@
-<!-- pre-align:aligned sig=0142a0759662 -->
+<!-- pre-align:aligned sig=645edce9c59c -->
 
 <a id="sender-overview"></a>
-
 ## Notification > KakaoTalk Bizmessage > 발신 프로필 > 발송 전 준비사항 { #sender-overview }
 카카오 정책에 따라 카카오톡 비즈 메시지를 발송하려면 먼저 카카오톡채널 관리자센터에서 비즈니스 인증을 받은 채널을 개설해야 알림톡/친구톡 발송이 가능합니다. [[카카오 채널 생성 및 비즈니스 인증 가이드]](https://kakaobusiness.gitbook.io/main/channel/start)
 
 
 <a id="create-kakaotalk-channel"></a>
-
 ### 카카오톡 채널 생성 { #create-kakaotalk-channel }
 채널 개설하기 상단 '정보 입력 가이드'를 클릭하면 관련 가이드를 참고할 수 있습니다.
 
@@ -22,7 +20,6 @@
 ![그림1](https://static.toastoven.net/prod_alimtalk/KTB_Image_1.png)
 
 <a id="set-kakaotalk-channel"></a>
-
 ### 카카오톡 채널 설정 { #set-kakaotalk-channel }
 채널 개설 완료 후 채널 정보를 설정하여 비즈니스 채널을 신청합니다.
 
@@ -37,7 +34,6 @@
 ![그림2](https://static.toastoven.net/prod_alimtalk/KTB_Image_2.png)
 
 <a id="register-kakaotalk-channel"></a>
-
 ### 카카오톡 채널 등록 { #register-kakaotalk-channel }
 1. 비즈니스 채널 전환이 완료(승인)되었다면, **Notification > KakaoTalk Bizmessage > 발신 프로필 관리** 탭에서 해당 발신 프로필(카카오톡 채널)을 등록합니다.
     * 발신 프로필 등록 상세 가이드는 [발신 프로필 관리](https://docs.nhncloud.com/ko/Notification/KakaoTalk%20Bizmessage/ko/common-console-guide/#_5)에서 확인할 수 있습니다.
