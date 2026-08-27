@@ -1303,6 +1303,7 @@ In the carousel type, you can apply different replacement variable values to eac
 * When using the BF button, you can upload the business form ID issued by Kakao to receive a BizForm key and use it.
 * Alternative delivery can be configured per recipient using resendParameter.
     * To use alternative delivery, you must register an SMS AppKey and configure delivery settings via the Alternative Delivery Management API.
+* For basic message delivery, group tags are not applied, and Kakao statistics are aggregated based on the template code.
 * **Delivery restricted during night (20:50~08:00 on the following day)**
 
 <a id="cautions-for-use"></a>
@@ -1370,7 +1371,6 @@ Content-Type: application/json;charset=UTF-8
     }
   ],
   "senderGroupingKey": String,
-  "groupTagKey": String,
   "resellerCode": String,
   "createUser": String,
   "statsId": String
@@ -1405,7 +1405,6 @@ Content-Type: application/json;charset=UTF-8
 | - unsubscribeAuthNo    | String  | X  | 080 free opt-out authentication number (up to 10 characters; if all fields are left blank, the message is sent using the free opt-out information registered in the sender's profile)<br>Cannot enter unsubscribeAuthNo without unsubscribeNo<br>Example: 1234                                                                                                           |
 | - recipientGroupingKey | String  | X  | Recipient grouping key (a grouping key can be specified per recipient; up to 100 characters) |
 | senderGroupingKey      | String  | X  | Sender grouping key (a grouping key can be specified per sender; up to 100 characters) |
-| groupTagKey            | String  | X  | Group tag key (up to 40 characters). When specified, you can check Kakao template statistics for each group tag.                                                                                                                                                                                                                          |
 | resellerCode           | String  | X  | Reseller code (used when a reseller sends a message) |
 | createUser             | String  | X  | Registrant (saved as user UUID when sending from console) |
 | statsId                | String  | X  | Statistics ID (not included in the delivery search conditions, up to 8 characters) |
