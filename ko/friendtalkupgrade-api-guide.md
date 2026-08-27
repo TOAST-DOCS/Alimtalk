@@ -1301,6 +1301,7 @@ Content-Type: application/json;charset=UTF-8
 * BF 버튼 사용 시 카카오에서 발급받은 비즈니스폼 ID를 업로드하여 비즈폼 키를 발급받아 사용할 수 있습니다.
 * 대체 발송은 수신자별 resendParameter로 설정할 수 있습니다.
     * 대체 발송을 이용할 경우 대체 발송 관리 API로 SMS AppKey 등록 및 발송 설정이 필요합니다.
+* 기본형 발송의 경우 그룹 태그가 적용되지 않으며, 템플릿 코드 기반으로 카카오 통계에 집계됩니다.
 * **야간 발송 제한(20:50~다음 날 08:00)**
 
 <a id="cautions-for-use"></a>
@@ -1368,7 +1369,6 @@ Content-Type: application/json;charset=UTF-8
     }
   ],
   "senderGroupingKey": String,
-  "groupTagKey": String,
   "resellerCode": String,
   "createUser": String,
   "statsId": String
@@ -1403,7 +1403,6 @@ Content-Type: application/json;charset=UTF-8
 | - unsubscribeAuthNo    | String  | X  | 080 무료수신거부 인증 번호(최대 10자, 모두 미입력 시 발신 프로필에 등록된 무료수신거부 정보로 발송됨)<br>unsubscribeNo 없이 unsubscribeAuthNo만 입력 불가<br>예: 1234                                                                                                           |
 | - recipientGroupingKey | String  | X  | 수신자 그룹핑 키(수신자별로 그룹핑 키를 지정할 수 있습니다. 최대 100자)                                                                                                                                                                                             |
 | senderGroupingKey      | String  | X  | 발신자 그룹핑 키(발신자별로 그룹핑 키를 지정할 수 있습니다. 최대 100자)                                                                                                                                                                                             |
-| groupTagKey            | String  | X  | 그룹 태그 키(최대 40자). 지정 시 해당 그룹 태그별 카카오 템플릿 통계를 확인할 수 있습니다.                                                                                                                                                                                                                          |
 | resellerCode           | String  | X  | 리셀러 코드(리셀러가 발송 시 사용)                                                                                                                                                                                                                    |
 | createUser             | String  | X  | 등록자(콘솔에서 발송 시 사용자 UUID로 저장)                                                                                                                                                                                                             |
 | statsId                | String  | X  | 통계 ID(발신 검색 조건에는 포함되지 않습니다. 최대 8자)                                                                                                                                                                                                      |
