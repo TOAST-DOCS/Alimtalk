@@ -1303,6 +1303,7 @@ Content-Type: application/json;charset=UTF-8
 * BF ボタン使用時は、カカオから発行されたビジネスフォーム ID をアップロードしてビズフォームキーを発行して使用できます。
 * 代替送信は受信者ごとの resendParameter で設定できます。
     * 代替送信を利用する場合、代替送信管理 API で SMS AppKey の登録および送信設定が必要です。
+* 基本型送信の場合、グループタグは適用されず、テンプレートコード基準でカカオ統計に集計されます。
 * **夜間送信制限（20:50〜翌日 08:00）**
 
 <a id="cautions-for-use"></a>
@@ -1370,7 +1371,6 @@ Content-Type: application/json;charset=UTF-8
     }
   ],
   "senderGroupingKey": String,
-  "groupTagKey": String,
   "resellerCode": String,
   "createUser": String,
   "statsId": String
@@ -1405,7 +1405,6 @@ Content-Type: application/json;charset=UTF-8
 | - unsubscribeAuthNo    | String  | X  | 080無料受信拒否認証番号（最大10文字、すべて未入力の場合は発信プロフィールに登録された無料受信拒否情報で送信されます）<br>unsubscribeNo なしで unsubscribeAuthNo のみの入力は不可<br>例: 1234                                                                                                           |
 | - recipientGroupingKey | String  | X  | 受信者グループキー(受信者ごとにグループキーを指定できます。最大100文字)                                                                                                                                                                                             |
 | senderGroupingKey      | String  | X  | 発信者グループキー(発信者ごとにグループキーを指定できます。最大100文字)                                                                                                                                                                                             |
-| groupTagKey            | String  | X  | グループタグキー（最大 40 文字）。指定した場合、該当グループタグごとのカカオテンプレート統計を確認できます。                                                                                                                                                                                                                          |
 | resellerCode           | String  | X  | リセラーコード(リセラーが送信する際に使用)                                                                                                                                                                                                                    |
 | createUser             | String  | X  | 登録者(コンソールから送信する場合、ユーザーUUIDで保存されます)                                                                                                                                                                                                             |
 | statsId                | String  | X  | 統計ID(発信検索条件には含まれません。最大8文字)                                                                                                                                                                                                      |
