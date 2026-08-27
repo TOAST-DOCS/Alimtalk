@@ -3,6 +3,15 @@
 <a id="release-notes"></a>
 ## Notification > KakaoTalk Bizmessage > 릴리스 노트 { #release-notes }
 
+<a id="september-29-2026"></a>
+### 2026. 09. 29. { #september-29-2026 }
+
+<a id="september-29-2026-feature-updates"></a>
+#### 기능 개선/변경
+* [API, 콘솔] 브랜드 메시지 기본형 발송 시 그룹 태그 키 필드 제거
+    * 카카오 스펙에 따라 브랜드 메시지 기본형 발송 시 그룹 태그 키(`groupTagKey`) 필드가 제거되었습니다.
+    * 자유형 발송의 그룹 태그 기능은 기존과 동일하게 유지됩니다.
+
 <a id="august-25-2026"></a>
 ### 2026. 08. 25. { #august-25-2026 }
 
