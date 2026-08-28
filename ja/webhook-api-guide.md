@@ -3,7 +3,6 @@
 <a id="webhook-api-guide"></a>
 ## Notification > KakaoTalk Bizmessage > Webhook > API Guide { #webhook-api-guide }
 
-<span id="webhook"></span>
 <a id="webhook"></a>
 ## Webフック { #webhook }
 KakaoTalk Bizmessageサービス内で特定のイベントが発生すると、Webhook設定で定義されたURLにPOSTリクエストを作成します。<br>
@@ -33,7 +32,7 @@ KakaoTalk Bizmessageサービス内で特定のイベントが発生すると、
 |productName|	String|	Webフックイベントが発生したサービス名 |
 |appKey|	String| Webフックイベントが発生したサービスアプリケーションキー |
 |event|	String| Webフックイベント名 |
-|hooks|	List\<Map\> | Webフックイベント発生時のデータ<br>* 詳細は[イベントタイプ別フック(hook)定義](./webhook-api-guide/#event-hooks)を参照してください。 |
+|hooks|	List\<Map\> | Webフックイベント発生時のデータ<br>* 詳細は[イベントタイプ別フック(hook)定義](./webhook-api-guide/#definitions-of-hooks-by-event-type)を参照してください。 |
 
 <a id="curl"></a>
 #### cURL
@@ -56,8 +55,6 @@ curl -X POST \
         ]
     }'
 ```
-
-<span id="event-hooks"></span>
 
 <a id="definitions-of-hooks-by-event-type"></a>
 ### イベントタイプ別hooks定義 { #definitions-of-hooks-by-event-type }
