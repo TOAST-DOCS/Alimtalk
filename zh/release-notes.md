@@ -412,7 +412,7 @@
 ### October 29, 2019
 * [API] Tighter validity checks for the delivery of certification messages
     * Message delivery is unavailable when authentication message is not included
-    * For more details, see [[API User Guide](./alimtalk-api-guide/#authentication-messages)].
+    * For more details, see [[API User Guide](./alimtalk-api-guide/#precautions-authword)].
 
 ### September 24, 2019
 * [Console] Canceling Scheduled Delivery of AlimTalk/FriendTalk
