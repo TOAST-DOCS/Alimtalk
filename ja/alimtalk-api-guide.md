@@ -794,8 +794,6 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 <a id="authentication-messages"></a>
 ## 認証メッセージ { #authentication-messages }
 
-<span id="precautions-authword"></span>
-
 1. 認証メッセージ送信時に含める必要がある認証文言のご案内
 
 | 区分       | 認証文言                                          |
