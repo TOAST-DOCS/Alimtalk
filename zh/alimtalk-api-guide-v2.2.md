@@ -609,6 +609,7 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 
 ## Authentication Messages
 
+<span id="precautions-authword"></span>
 1. Guide for authentication words required to be included for Authentication Messages API
 
 | Category  | Authentication Words |

@@ -19,7 +19,7 @@
 
 ## Overview of v1.4 API
 1. Validity checks for the main text for Authentication Messages API has been added.
-   - For more details, see [[Authentication Messages API](./alimtalk-api-guide/#authentication-messages)].
+   - For more details, see [[Authentication Messages API](./alimtalk-api-guide/#precautions-authword)].
 
 
 ## General Messages
@@ -530,6 +530,7 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 
 ## Authentication Messages
 
+<span id="precautions-authword"></span>
 1. Guide for authentication words required to be included for Authentication Messages API
 
 | Category | Authentication Words |
