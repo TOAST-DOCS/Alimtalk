@@ -9,7 +9,14 @@
 <a id="friendtalk-service-termination-notice"></a>
 ## フレンドトークサービス終了のお知らせ { #friendtalk-service-termination-notice }
 
-<!-- TODO: translate body -->
+* 2025-12-31（水）フレンドトークサービスのサポートを終了します。
+* 現在ご利用中のお客様には、ブランドメッセージへの移行をお勧めします。
+* 詳細については、[ブランドメッセージ移行ガイド](https://docs.nhncloud.com/ko/Notification/KakaoTalk%20Bizmessage/ko/friendtalk-compatible-api-guide)を参照してください。
+
+---
+
+フレンドトークは、携帯電話番号をベースに、カカオチャンネルをフレンド追加しているお客様に対して、イベントや行事などの広告性メッセージを含むさまざまなメッセージを送信できるサービスです。
+簡単に連携できる RESTful API を提供します。
 
 <a id="characteristics"></a>
 ## 特徴 { #characteristics }

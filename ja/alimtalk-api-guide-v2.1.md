@@ -1314,7 +1314,13 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 <a id="messages-1"></a>
 ### SMS/LMS 대체 발송 상태 코드 { #messages-1 }
 
-<!-- TODO: translate body -->
+| 名前 |	説明|
+|---|---|
+|RSC01|	代替送信非対象|
+|RSC02|	代替送信対象（送信結果が失敗した場合、代替送信が行われます。）|
+|RSC03|	代替送信中|
+|RSC04|	代替送信成功|
+|RSC05|	代替送信失敗|
 
 <a id="templates"></a>
 ## テンプレート { #templates }

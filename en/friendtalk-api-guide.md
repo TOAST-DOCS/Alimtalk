@@ -1379,7 +1379,119 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 <a id="message-field-description"></a>
 ## Message Field Description { #message-field-description }
 
-<!-- TODO: translate body -->
+| Name                   | Type    | Not Null | Description                                                  |
+|------------------------|---------|:--------:|--------------------------------------------------------------|
+| header                 | Object  |    O     | Header area                                                  |
+| - resultCode           | Integer |    O     | Result code                                                  |
+| - resultMessage        | String  |    O     | Result message                                               |
+| - isSuccessful         | Boolean |    O     | Success                                                      |
+| message                | Object  |    X     | Message                                                      |
+| - requestId            | String  |    O     | Request ID                                                   |
+| - recipientSeq         | Integer |    O     | Recipient sequence number                                    |
+| - plusFriendId         | String  |    O     | PlusFriend ID                                                |
+| - senderKey            | String  |    O     | Sender Key                                                   |
+| - recipientNo          | String  |    X     | Recipient number                                             |
+| - requestDate          | String  |    O     | Request date and time                                        |
+| - createDate           | String  |    O     | Registration date and time                                   |
+| - receiveDate          | String  |    X     | Received date and time                                       |
+| - content              | String  |    X     | Body                                                         |
+| - messageStatus        | String  |    O     | Request status (COMPLETED: successful, FAILED: failed)       |
+| - resendStatus         | String  |    O     | Resending status code                                        |
+| - resendStatusName     | String  |    O     | Resending status code name                                   |
+| - resendResultCode     | String  |    X     | Alternative delivery result code SMS result code             |
+| - resendRequestId      | String  |    X     | Resending SMS request ID                                     |
+| - resultCode           | String  |    X     | Result code of receiving                                     |
+| - resultCodeName       | String  |    X     | Receipt result code name                                                                        |
+| - createUser           | String  |    X     | Registrant (saved as user UUID when sending from console)                                       |
+| - imageSeq             | Integer |    X     | Image number                                                                                    |
+| - imageName            | String  |    X     | Image name (uploaded file name)                                                                 |
+| - imageUrl             | String  |    X     | Image URL                                                                                       |
+| - imageLink            | String  |    X     | Image link                                                                                      |
+| - wide                 | boolean |    X     | Whether wide image is included                                                                  |
+| - buttons              | List    |    X     | Button list                                                                                     |
+| -- ordering            | Integer |    X     | Button order                                                                                    |
+| -- type                | String  |    X     | Button type (WL: Web Link, AL: App Link, BK: Bot Keyword, MD: Message Delivery)                |
+| -- name                | String  |    X     | Button name (up to 28 characters; up to 9 characters for the wide item list)                                                 |
+| -- linkMo              | String  |    X     | Mobile web link (required for the WL type)                                                                                   |
+| -- linkPc              | String  |    X     | PC web link (optional for the WL type)                                                                                       |
+| -- schemeIos           | String  |    X     | iOS app link (required for the AL type)                                                                                      |
+| -- schemeAndroid       | String  |    X     | Android app link (required for the AL type)                                                                                  |
+| -- chatExtra           | String  |    X     | Meta information to send for BC (Bot for Consultation) or BT (Bot Transfer) type buttons                                     |
+| -- chatEvent           | String  |    X     | Bot event name to connect for BT (Bot Transfer) type button                                                                  |
+| -- bizFormKey          | String  |    X     | Biz Form key for BF (Business Form) type button                                                                              |
+| -- target              | String  |    X     | For web link buttons, adding the "target":"out" attribute sends the link as an out-link\<br\>By default, sent as an in-app link |
+| - header               | String  |    X     | Header (required when using the wide item list message type, up to 25 characters)                                            |
+| - additionalContent    | String  |    X     | Additional information (up to 34 characters), only available for the Commerce type                                 |
+| - item                 | Object  |    X     | Wide item                                                                                                          |
+| -- list                | List    |    X     | Wide item list (at least 3, up to 4)                                                                               |
+| --- title              | String  |    X     | Item title (up to 25 characters for the first item, up to 30 characters for items 2-4)                            |
+| --- imageUrl           | String  |    X     | Item image URL                                                                                                     |
+| --- linkMo             | String  |    X     | Mobile web link                                                                                                    |
+| --- linkPc             | String  |    X     | PC web link                                                                                                        |
+| --- schemeIos          | String  |    X     | iOS app link                                                                                                       |
+| --- schemeAndroid      | String  |    X     | Android app link                                                                                                   |
+| - carousel             | Object  |    X     | Carousel                                                                                                           |
+| -- head                | String  |    X     | Carousel intro information                                                  |
+| --- header             | String  |    X     | Carousel intro header (up to 20 characters)                                 |
+| --- content            | String  |    X     | Carousel intro content (up to 50 characters)                                |
+| --- imageUrl           | String  |    X     | Carousel intro image URL                                                    |
+| --- linkMo             | String  |    X     | Web link to navigate to when the intro is clicked on a mobile device        |
+| --- linkPc             | String  |    X     | Web link to navigate to when the intro is clicked on a PC                   |
+| --- schemeIos          | String  |    X     | App link to navigate to when the intro is clicked on an iOS device          |
+| --- schemeAndroid      | String  |    X     | App link to navigate to when the intro is clicked on an Android device      |
+| -- list                | List    |    X     | Carousel list (at least 2, up to 10)                                        |
+| --- header             | String  |    X     | Carousel item title (up to 20 characters)                                   |
+| --- message            | String  |    X     | Carousel item message (up to 180 characters)                                                                   |
+| --- additionalContent  | String  |    X     | Additional information (up to 34 characters)                                                                   |
+| --- attachment         | Object  |    X     | Carousel item image and button information                                                                     |
+| ---- buttons           | List    |    X     | Button list (up to 2 buttons)                                                                                  |
+| ----- name             | String  |    X     | Button name (required if there is a button, for up to 8 characters)                                           |
+| ----- type             | String  |    X     | Button type (WL: Web Link, AL: App Link, BK: Bot Keyword, MD: Message Delivery, BF: Business Form)            |
+| ----- linkMo           | String  |    X     | Mobile web link (required for the WL type)                                                                     |
+| ----- linkPc           | String  |    X     | PC web link (optional for the WL type)                                                                         |
+| ----- schemeIos        | String  |    X     | iOS app link (required for the AL type)                                                                        |
+| ----- schemeAndroid    | String  |    X     | Android app link (required for the AL type)                                                                    |
+| ---- image             | Object  |    X     | Image                                                         |
+| ----- imageUrl         | String  |    X     | Image URL                                                     |
+| ----- imageLink        | String  |    X     | Image link                                                    |
+| ---- coupon            | Object  |    X     | Coupon                                                        |
+| ----- title            | String  |    X     | Coupon title                                                  |
+| ----- description      | String  |    X     | Coupon description                                            |
+| ----- linkMo           | String  |    X     | Mobile web link                                               |
+| ----- linkPc           | String  |    X     | PC web link                                                   |
+| ----- schemeIos        | String  |    X     | iOS app link                                                  |
+| ----- schemeAndroid    | String  |    X     | Android app link                                              |
+| ---- commerce          | Object  |    X     | Commerce                                                                            |
+| ----- title            | String  |    X     | Product title (up to 30 characters)                                                 |
+| ----- regularPrice     | Integer |    X     | Regular price (0 to 99,999,999)                                                     |
+| ----- discountPrice    | Integer |    X     | Discount price (0 to 99,999,999)                                                    |
+| ----- discountRate     | Integer |    X     | Discount rate (0 to 100); discount rate when a discount price exists                |
+| ----- discountFixed    | Integer |    X     | Fixed discount price (0 to 999,999)                                                 |
+| -- tail                | Object  |    X     | Learn more button information                                                       |
+| --- linkMo             | String  |    X     | Mobile web link                                                                     |
+| --- linkPc             | String  |    X     | PC web link                                                                         |
+| --- schemeIos          | String  |    X     | iOS app link                                                                        |
+| --- schemeAndroid      | String  |    X     | Android app link                                              |
+| - coupon               | Object  |    X     | Coupon                                                        |
+| -- title               | String  |    X     | Coupon title                                                  |
+| -- description         | String  |    X     | Coupon detailed description                                   |
+| -- linkMo              | String  |    X     | Mobile web link                                               |
+| -- linkPc              | String  |    X     | PC web link                                                   |
+| -- schemeIos           | String  |    X     | iOS app link                                                  |
+| -- schemeAndroid       | String  |    X     | Android app link                                              |
+| - video                | Object  |    X     | Video                                                         |
+| -- videoUrl            | String  |    X     | KakaoTV video URL                                             |
+| -- thumbnailUrl        | String  |    X     | Image URL for video thumbnail                                         |
+| - commerce             | Object  |    X     | Commerce                                                              |
+| -- title               | String  |    X     | Product title (up to 30 characters)                                   |
+| -- regularPrice        | Integer |    X     | Regular price (0 to 99,999,999)                                       |
+| -- discountPrice       | Integer |    X     | Discounted price (0 to 99,999,999)                                    |
+| -- discountRate        | Integer |    X     | Discount rate (0 to 100); discount rate when a discounted price exists |
+| -- discountFixed       | Integer |    X     | Fixed discount price (0 to 999,999)                                   |
+| - isAd                 | Boolean |    X     | Whether the message is an advertisement                               |
+| - adult                | Boolean |    X     | Whether the message is for adults                                     |
+| - senderGroupingKey    | String  |    X     | Sender's grouping key                                                 |
+| - recipientGroupingKey | String  |    X     | Recipient's grouping key                                      |
 
 <a id="message"></a>
 ## Message { #message }

@@ -415,22 +415,68 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 <a id="messages"></a>
 ## Messages { #messages }
 
-<!-- TODO: translate body -->
-
 <a id="message-delivery-cancelled"></a>
 ### Message Delivery Cancelled { #message-delivery-cancelled }
-
-<!-- TODO: translate body -->
 
 <a id="request-3"></a>
 #### Request
 
-<!-- TODO: translate body -->
+[URL]
+
+```
+DELETE  /friendtalk/v2.0/appkeys/{appkey}/messages/{requestId}
+Content-Type: application/json;charset=UTF-8
+```
+
+[Path parameter]
+
+| Name | Type | Description |
+|---|---|---|
+| appkey | String | Unique app key |
+| requestId | String | Request ID |
+
+[Header]
+```
+{
+  "X-Secret-Key": String
+}
+```
+| Name | Type | Required | Description |
+|---|---|---|---|
+| X-Secret-Key | String | O | Can be created in the console. |
+
+[Query parameter]
+
+| Name | Type | Required | Description |
+|---|---|---|---|
+| recipientSeq | String | X | Recipient sequence number<br>(to cancel all deliveries of request ID, if the value is left blank) |
+
+* Both general and authentication messages can be canceled by the same API.
 
 <a id="response-4"></a>
 #### Response
 
-<!-- TODO: translate body -->
+```
+{
+  "header": {
+      "resultCode": Integer,
+      "resultMessage": String,
+      "isSuccessful": boolean
+  }
+}
+```
+
+| Name | Type | Description |
+|---|---|---|
+| header | Object | Header area |
+| - resultCode | Integer | Result code |
+| - resultMessage | String | Result message |
+| - isSuccessful | Boolean | Success |
+
+[Example]
+```
+curl -X DELETE -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" "https://kakaotalk-bizmessage.api.nhncloudservice.com/friendtalk/v2.0/appkeys/{appkey}/messages/{requestId}?recipientSeq=1,2,3"
+```
 
 <a id="query-updated-message-results"></a>
 ### Query Updated Message Results { #query-updated-message-results }
@@ -755,25 +801,125 @@ curl -X DELETE -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Ke
 <a id="alternative-delivery-management"></a>
 ## Alternative Delivery Management { #alternative-delivery-management }
 
-<!-- TODO: translate body -->
-
 <a id="register-sms-appkey"></a>
 ### Register SMS AppKey { #register-sms-appkey }
 
-<!-- TODO: translate body -->
+[URL]
+
+```
+POST  /friendtalk/v2.0/appkeys/{appkey}/failback/appkey
+Content-Type: application/json;charset=UTF-8
+```
+
+[Path parameter]
+
+| Name |	Type|	Description|
+|---|---|---|
+|appkey|	String|	Unique app key|
+
+[Header]
+```
+{
+  "X-Secret-Key": String
+}
+```
+| Name |	Type|	Required|	Description|
+|---|---|---|---|
+|X-Secret-Key|	String| O | Can be created in the console.  |
+
+
+[Request body]
+
+```
+{
+    "resendAppKey": String
+}
+```
+
+| Name |	Type|	Required|	Description|
+|---|---|---|---|
+|resendAppKey|	String|	O | SMS service appkey to set for fallback |
+
+[Example]
+```
+curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" https://kakaotalk-bizmessage.api.nhncloudservice.com/friendtalk/v2.0/appkeys/{appkey}/failback/appkey -d '{"resendAppKey": "smsAppKey"}
+```
 
 <a id="response-9"></a>
 #### Response
 
-<!-- TODO: translate body -->
+```
+
+{
+  "header": {
+      "resultCode": Integer,
+      "resultMessage": String,
+      "isSuccessful": boolean
+  }
+}
+```
 
 <a id="register-alternative-sending-settings"></a>
 ### Register Alternative Sending Settings { #register-alternative-sending-settings }
 
-<!-- TODO: translate body -->
+[URL]
+
+```
+POST  /friendtalk/v2.0/appkeys/{appkey}/failback
+Content-Type: application/json;charset=UTF-8
+```
+
+[Path parameter]
+
+| Name |	Type|	Description|
+|---|---|---|
+|appkey|	String|	Unique app key|
+
+[Header]
+```
+{
+  "X-Secret-Key": String
+}
+```
+| Name |	Type|	Required|	Description|
+|---|---|---|---|
+|X-Secret-Key|	String| O | Can be created in the console.  |
+
+
+[Request body]
+
+```
+{  
+   "senderKey": String,
+   "isResend": Boolean,
+   "resendSendNo": String,
+   "resendUnsubscribeNo": String
+}
+```
+
+| Name |	Type|	Required|	Description|
+|---|---|---|---|
+|senderKey|	String|	O | Sender Key |
+|isResend|	Boolean|	O | Whether to resend text, if delivery fails<br>Resent by default, if fallback is set on console. |
+|resendSendNo|	String|	O | Alternative delivery sender number<br><span style="color:red">(Alternative delivery may fail, if the sender number is not registered on the SMS service.)</span> |
+|resendUnsubscribeNo|	String|	X | Alternative delivery 080 opt-out number<br><span style="color:red">(If it is not the 080 opt-out number registered in the SMS service, alternative delivery may fail.)</span> |
+
+[Example]
+```
+curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" https://kakaotalk-bizmessage.api.nhncloudservice.com/friendtalk/v2.0/appkeys/{appkey}/failback/appkey -d '{"senderKey": "9e0afe2c12aaaaaaaaaa7520052880b555f1a60a","isResend": true,"resendSendNo": "01012341234", "resendUnsubscribeNo": "0801234567" }
+```
 
 <a id="response-10"></a>
 #### Response
 
-<!-- TODO: translate body -->
+```
+
+{
+  "header": {
+      "resultCode": Integer,
+      "resultMessage": String,
+      "isSuccessful": boolean
+  }
+}
+```
 
