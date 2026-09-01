@@ -36,5 +36,5 @@
 <a id="register-kakaotalk-channel"></a>
 ### 카카오톡 채널 등록 { #register-kakaotalk-channel }
 1. 비즈니스 채널 전환이 완료(승인)되었다면, **Notification > KakaoTalk Bizmessage > 발신 프로필 관리** 탭에서 해당 발신 프로필(카카오톡 채널)을 등록합니다.
-    * 발신 프로필 등록 상세 가이드는 [발신 프로필 관리](https://docs.nhncloud.com/ko/Notification/KakaoTalk%20Bizmessage/ko/common-console-guide/#_5)에서 확인할 수 있습니다.
+    * 발신 프로필 등록 상세 가이드는 [발신 프로필 관리](./common-console-guide/#_5)에서 확인할 수 있습니다.
 

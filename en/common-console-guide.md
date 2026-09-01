@@ -42,7 +42,7 @@
 
 <a id="add-sender-profiles"></a>
 ### Add Sender Profiles { #add-sender-profiles }
-Register your sender profile after opening KakaoTalk channel. Detailed guide to creating KakaoTalk channels can be found in [Sender Profile](https://docs.nhncloud.com/ko/Notification/KakaoTalk%20Bizmessage/ko/sender-overview/ ). 
+Register your sender profile after opening KakaoTalk channel. Detailed guide to creating KakaoTalk channels can be found in [Sender Profile](./sender-overview/ ). 
 Once the sender profile registration is complete, a KakaoTalk token message will be sent to the administrator's phone. 
 ![KTB_02_20230926.png](https://static.toastoven.net/prod_alimtalk/KTB_02_20230926.png)
 1. Enter the ID for the search that starts with @.

@@ -31,7 +31,7 @@
 * 브랜드 메시지 자유형 발송은 I타겟팅 사용시 기존 친구톡 발송 API와 사용성이 동일하여 전환에 큰 어려움이 없습니다.
 * 브랜드 메시지는 기존 친구톡에서 지원하는 기능을 모두 지원하는 상위 호환 서비스입니다.
 * 브랜드 메시지는 타겟팅을 지정하여 발신 채널 친구가 아닌 고객에게도 광고 발송이 가능합니다.
-* 자세한 내용은 [브랜드 메시지 가이드](https://docs.nhncloud.com/ko/Notification/KakaoTalk%20Bizmessage/ko/friendtalkupgrade-overview/)를 참고해주시기 바랍니다.
+* 자세한 내용은 [브랜드 메시지 가이드](./friendtalkupgrade-overview/)를 참고해주시기 바랍니다.
 
 <a id="temporary-friendtalk-compatibility-send"></a>
 ## 2\. \(임시\) 친구톡 호환 발송 기능 { #temporary-friendtalk-compatibility-send }

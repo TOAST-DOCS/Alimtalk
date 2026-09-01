@@ -36,4 +36,4 @@
 <a id="register-kakaotalk-channel"></a>
 ### カカオトークチャンネルの登録 { #register-kakaotalk-channel }
 1. ビジネスチャンネルへの切り替えが完了(承認)したら、**Notification > KakaoTalk Bizmessage > 発信プロフィール管理**タブで該当発信プロフィール(カカオトークチャンネル)を登録します。
-    * 発信プロフィールの登録に関する詳細ガイドは、[発信プロフィール管理](https://docs.nhncloud.com/ko/Notification/KakaoTalk%20Bizmessage/ko/common-console-guide/#_5)で確認できます。
+    * 発信プロフィールの登録に関する詳細ガイドは、[発信プロフィール管理](./common-console-guide/#_5)で確認できます。

@@ -42,7 +42,7 @@
 
 <a id="add-sender-profiles"></a>
 ### 발신프로필 추가 { #add-sender-profiles }
-카카오톡 채널 개설 완료 후 발신 프로필을 등록합니다. 카카오톡 채널 생성 상세 가이드는 [발신 프로필](https://docs.nhncloud.com/ko/Notification/KakaoTalk%20Bizmessage/ko/sender-overview/ )에서 확인할 수 있습니다.
+카카오톡 채널 개설 완료 후 발신 프로필을 등록합니다. 카카오톡 채널 생성 상세 가이드는 [발신 프로필](./sender-overview/ )에서 확인할 수 있습니다.
 발신 프로필 등록이 완료되면 관리자 휴대폰으로 카카오톡 토큰 메시지가 전달됩니다.
 ![KTB_02_20230926.png](https://static.toastoven.net/prod_alimtalk/KTB_02_20230926.png)
 1. @로 시작하는 검색용 아이디를 입력합니다.

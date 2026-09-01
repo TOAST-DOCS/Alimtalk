@@ -42,7 +42,7 @@
 
 <a id="add-sender-profiles"></a>
 ### 発信プロフィールの追加 { #add-sender-profiles }
-カカオトークチャンネルの開設完了後、発信プロフィールを登録します。カカオトークチャンネル作成についての詳細ガイドは、[発信プロフィール](https://docs.nhncloud.com/ko/Notification/KakaoTalk%20Bizmessage/ko/sender-overview/ )で確認できます。
+カカオトークチャンネルの開設完了後、発信プロフィールを登録します。カカオトークチャンネル作成についての詳細ガイドは、[発信プロフィール](./sender-overview/ )で確認できます。
 発信プロフィールの登録が完了すると、管理者の携帯電話にカカオトークトークンメッセージが送信されます。
 ![KTB_02_20230926.png](https://static.toastoven.net/prod_alimtalk/KTB_02_20230926.png)
 1. @で始まる検索用IDを入力します。

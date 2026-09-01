@@ -31,7 +31,7 @@ To support a smooth migration to Brand Message, we provide two options:
 * With **I-Targeting**, the Brand Message Free-form Send offers usage identical to the existing FriendTalk Send API, so migration requires minimal effort.
 * Brand Message is a superset of FriendTalk and supports all features previously available in FriendTalk.
 * Brand Message allows advertising to recipients **who are not friends of your sending channel** by specifying targeting.
-* For details, see the [Brand Message Guide](https://docs.nhncloud.com/en/Notification/KakaoTalk%20Bizmessage/en/friendtalkupgrade-overview/).
+* For details, see the [Brand Message Guide](./friendtalkupgrade-overview/).
 
 <a id="temporary-friendtalk-compatibility-send"></a>
 ## 2. (Temporary) FriendTalk Compatibility Send { #temporary-friendtalk-compatibility-send }

@@ -7,7 +7,7 @@
 ## 친구톡 서비스 종료 안내 { #friendtalk-service-termination-notice }
 * 2025-12-31(수) 친구톡 서비스 지원을 종료합니다.
 * 기존에 이용 중이신 고객께는 브랜드 메시지로 전환하실 것을 권장드립니다.
-* 자세한 사항은 [브랜드 메시지 전환 가이드](https://docs.nhncloud.com/ko/Notification/KakaoTalk%20Bizmessage/ko/friendtalk-compatible-api-guide)를 참고해주시기 바랍니다.
+* 자세한 사항은 [브랜드 메시지 전환 가이드](./friendtalk-compatible-api-guide/)를 참고해주시기 바랍니다.
 
 ---
 
@@ -35,7 +35,7 @@
 
 5. 내용을 입력합니다.
 
-6. 메시지 타입을 선택합니다. 타입별 상세 가이드는 [친구톡 발송 지원 타입](https://docs.nhncloud.com/ko/Notification/KakaoTalk%20Bizmessage/ko/friendtalk-overview/#_3)에서 확인하세요.
+6. 메시지 타입을 선택합니다. 타입별 상세 가이드는 [친구톡 발송 지원 타입](./friendtalk-overview/#friendtalk-delivery-supported-types)에서 확인하세요.
     * 기본형(텍스트/이미지/와이드 이미지)
         * 텍스트: 한/영 구분 없이 띄어쓰기 포함 1,000자 텍스트+링크 버튼 최대 5(세로 배열)
         * 이미지: 한/영 구분 없이 띄어쓰기 포함 400자 텍스트+이미지 1장+링크 버튼 최대 5(세로 배열)

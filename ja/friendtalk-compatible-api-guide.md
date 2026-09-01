@@ -31,7 +31,7 @@
 * **Iターゲティング** を用いると、ブランドメッセージの自由型送信は既存フレンドトーク送信 API とほぼ同一の操作性で、移行の負荷が小さいです。  
 * ブランドメッセージはフレンドトークで提供していた機能をすべて包含する**上位互換**のサービスです。  
 * ターゲティング指定により、送信チャネルの友だちでない顧客にも広告送信が可能です。  
-* 詳細は [ブランドメッセージガイド](https://docs.nhncloud.com/jp/Notification/KakaoTalk%20Bizmessage/jp/friendtalkupgrade-overview/) をご参照ください。
+* 詳細は [ブランドメッセージガイド](./friendtalkupgrade-overview/) をご参照ください。
 
 <a id="temporary-friendtalk-compatibility-send"></a>
 ## 2\. （暫定）フレンドトーク互換送信 { #temporary-friendtalk-compatibility-send }

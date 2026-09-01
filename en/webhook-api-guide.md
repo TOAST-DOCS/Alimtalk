@@ -33,7 +33,7 @@ API documentation for the generated POST request.
 |productName|	String|	The name of the service where a webhook event occurred |
 |appKey|	String| The service appkey where the webhook event occurred |
 |event|	String| Webhook event name |
-|hooks|	List<Map> | Data when a webhook event occurs<br>\* For more information, see  [Hook definitions by event type](./webhook-api-guide/#event-hooks). |
+|hooks|	List<Map> | Data when a webhook event occurs<br>\* For more information, see  [Hook definitions by event type](#event-hooks). |
 
 <a id="curl"></a>
 #### cURL

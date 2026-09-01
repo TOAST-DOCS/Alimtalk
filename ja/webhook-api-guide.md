@@ -33,7 +33,7 @@ KakaoTalk Bizmessageサービス内で特定のイベントが発生すると、
 |productName|	String|	Webフックイベントが発生したサービス名 |
 |appKey|	String| Webフックイベントが発生したサービスアプリケーションキー |
 |event|	String| Webフックイベント名 |
-|hooks|	List\<Map\> | Webフックイベント発生時のデータ<br>* 詳細は[イベントタイプ別フック(hook)定義](./webhook-api-guide/#event-hooks)を参照してください。 |
+|hooks|	List\<Map\> | Webフックイベント発生時のデータ<br>* 詳細は[イベントタイプ別フック(hook)定義](#event-hooks)を参照してください。 |
 
 <a id="curl"></a>
 #### cURL
