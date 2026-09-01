@@ -63,7 +63,17 @@
 <a id="may-27-2026-2"></a>
 ### May 27, 2026 { #may-27-2026-2 }
 
-<!-- TODO: translate body -->
+* [API] Added KakaoBizCenter Statistics Query API
+    * Added an API to retrieve sending statistics and template statistics for AlimTalk and brand messages provided by KakaoBizCenter.
+    * Daily (DAILY) or monthly (MONTHLY) statistics data can be retrieved based on the sender key.
+
+* [API, Console] Updated guide on brand message image deletion
+    * Updated the guide to clarify that changing the image when updating a brand message template deletes the existing image from the Kakao CDN, and that other templates using the same image are also affected.
+
+* [API, Console] Changed content length limits by brand message type
+    * The content length limit for the IMAGE type has been changed from a maximum of 400 characters to a maximum of 1,300 characters.
+    * The line break limit for the IMAGE type has been changed from a maximum of 29 to a maximum of 99.
+    * The line break limit for the WIDE and PREMIUM_VIDEO types has been changed from a maximum of 1 to a maximum of 5.
 
 <a id="april-28-2026"></a>
 ### April 28, 2026 { #april-28-2026 }
@@ -76,7 +86,11 @@
 <a id="april-28-2026-2"></a>
 ### April 28, 2026 { #april-28-2026-2 }
 
-<!-- TODO: translate body -->
+* [API] Automatic cleanup of sender profiles and template data deleted after dormancy
+    * Synchronizes and automatically cleans up sender profiles and template data that were deleted by Kakao after remaining dormant for over 1 year.
+* [API] Added channel add button (AC type) support for free-form brand message delivery
+    * Expanded the channel add button for free-form delivery to be available for all targeting options.
+    * If the recipient is a friend, the delivery will not fail, but the channel add button will not be displayed.
 
 <a id="march-24-2026"></a>
 ### March 24, 2026 { #march-24-2026 }
@@ -266,7 +280,12 @@
 <a id="may-27-2025"></a>
 ### May 27, 2025 { #may-27-2025 }
 
-<!-- TODO: translate body -->
+* [Console] Added template blocking status to the AlimTalk Template Query tab
+    * Template blocking status is now displayed in the AlimTalk Template Query tab.
+* [Console] Added bulk sending feature for Brand Messages
+    * Added bulk sending using CSV and XLSX files.
+* [Console] Added Brand Message delivery statistics screen
+    * Statistics screens by date, time slot, and day of the week are provided.
 
 <a id="may-13-2025"></a>
 ### May 13, 2025 { #may-13-2025 }

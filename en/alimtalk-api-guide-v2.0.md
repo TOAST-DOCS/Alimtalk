@@ -1314,7 +1314,13 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 <a id="messages-1"></a>
 ### SMS/LMS 대체 발송 상태 코드 { #messages-1 }
 
-<!-- TODO: translate body -->
+| Name |	Description|
+|---|---|
+|RSC01|	No target of resending|
+|RSC02|	Target of resending (If sending fails, resending is performed.)|
+|RSC03|	Resending in progress|
+|RSC04|	Resending successful|
+|RSC05|	Resending failed|
 
 <a id="templates"></a>
 ## Templates { #templates }
@@ -2051,25 +2057,123 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 <a id="section-1"></a>
 ## 대체 발송 관리 { #section-1 }
 
-<!-- TODO: translate body -->
-
 <a id="section-1-1"></a>
 ### SMS AppKey 등록 { #section-1-1 }
 
-<!-- TODO: translate body -->
+[URL]
+
+```
+POST  /alimtalk/v2.0/appkeys/{appkey}/failback/appkey
+Content-Type: application/json;charset=UTF-8
+```
+
+[Path parameter]
+
+| Name |	Type|	Description|
+|---|---|---|
+|appkey|	String|	Unique app key|
+
+[Header]
+```
+{
+  "X-Secret-Key": String
+}
+```
+| Name |	Type|	Required|	Description|
+|---|---|---|---|
+|X-Secret-Key|	String| O | Can be created in the console.  |
+
+
+[Request body]
+
+```
+{
+    "resendAppKey": String
+}
+```
+
+| Name |	Type|	Required|	Description|
+|---|---|---|---|
+|resendAppKey|	String|	O | SMS service appkey to set for fallback |
+
+[Example]
+```
+curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" https://kakaotalk-bizmessage.api.nhncloudservice.com/alimtalk/v2.0/appkeys/{appkey}/failback/appkey -d '{"resendAppKey": "smsAppKey"}
+```
 
 <a id="section-1-1-1"></a>
 #### 응답
 
-<!-- TODO: translate body -->
+```
+
+{
+  "header": {
+      "resultCode": Integer,
+      "resultMessage": String,
+      "isSuccessful": boolean
+  }
+}
+```
 
 <a id="section-1-2"></a>
 ### 대체 발송 설정 등록 { #section-1-2 }
 
-<!-- TODO: translate body -->
+[URL]
+
+```
+POST  /alimtalk/v2.0/appkeys/{appkey}/failback
+Content-Type: application/json;charset=UTF-8
+```
+
+[Path parameter]
+
+| Name |	Type|	Description|
+|---|---|---|
+|appkey|	String|	Unique app key|
+
+[Header]
+```
+{
+  "X-Secret-Key": String
+}
+```
+| Name |	Type|	Required|	Description|
+|---|---|---|---|
+|X-Secret-Key|	String| O | Can be created in the console.  |
+
+
+[Request body]
+
+```
+{  
+   "senderKey": String,
+   "isResend": Boolean,
+   "resendSendNo": String
+}
+```
+
+| Name |	Type|	Required|	Description|
+|---|---|---|---|
+|senderKey|	String|	O | Sender Key |
+|isResend|	Boolean|	O | Whether to resend text, if delivery fails<br>Resent by default, if fallback is set on console. |
+|resendSendNo|	String|	O | Alternative delivery sender number<br><span style="color:red">(Alternative delivery may fail, if the sender number is not registered on the SMS service.)</span> |
+
+[Example]
+```
+curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" https://kakaotalk-bizmessage.api.nhncloudservice.com/alimtalk/v2.0/appkeys/{appkey}/failback/appkey -d '{"senderKey": "0be23c29de88d6888798aeda57062516354d74ba","isResend": true,"resendSendNo": "01012341234" }
+```
 
 <a id="section-1-2-1"></a>
 #### 응답
 
-<!-- TODO: translate body -->
+```
+
+{
+  "header": {
+      "resultCode": Integer,
+      "resultMessage": String,
+      "isSuccessful": boolean
+  }
+}
+```
 
