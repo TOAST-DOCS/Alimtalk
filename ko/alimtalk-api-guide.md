@@ -794,8 +794,6 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 <a id="authentication-messages"></a>
 ## 인증 메시지 { #authentication-messages }
 
-<span id="precautions-authword"></span>
-
 1. 인증 메시지 발송 시 포함되어야 할 인증 문구 안내
 
 | 구분     | 인증 문구                                      |
