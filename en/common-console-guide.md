@@ -1,3 +1,5 @@
+<!-- machine_translated: true -->
+
 <!-- pre-align:aligned sig=81b14e4f383d -->
 
 <a id="common-console-guide"></a>
@@ -165,6 +167,15 @@ When the data collection period ends, it is disabled and will no longer accumula
 ### Query Statistics { #query-statistics }
 * You can inquire statistics by type, such as the sending request period, statistical event key, template and etc.
 * You can check the status of delivery with graphs and tables, such as sending requests, successes, failures and etc.
+
+!!! danger "Caution"
+    Difference Between Statistics Count and Billing Count
+
+    The count provided in the Statistics menu is aggregated in real time at the point of sending. Due to the nature of real-time aggregation, some items may not be reflected in the statistics.
+
+    The billing count is finalized each month through a separate verification process covering all delivery records. For this reason, the count shown in the Statistics menu may differ from the billing count, and the billing records are the authoritative source for accurate usage counts.
+
+    For billing verification or reconciliation purposes, use the billing records instead of the count in the Statistics menu. Use the Statistics menu to monitor delivery trends and result distribution.
 
 <a id="categorize-statistics"></a>
 #### Categorize Statistics
