@@ -889,6 +889,7 @@ Content-Type: application/json;charset=UTF-8
 | plusFriendId           | String  | O    | プラスフレンドID(最大30文字)                         |
 | isResend             | boolean | O    | 送信失敗時、代替送信するかどうか<br>コンソールで送信失敗設定をした時、デフォルト設定は再送信になっています。 |
 | resendSendNo         | String  | O    | 代替送信発信番号(最大13桁)<br><span style="color:red">(SMSサービスに登録された発信番号ではない場合、代替送信が失敗することがあります。)</span> |
+|resendUnsubscribeNo|	String|	X | 代替送信 080 受信拒否番号<br><span style="color:red">(SMSサービスに登録された080受信拒否番号ではない場合、代替送信が失敗することがあります。)</span> |
 
 [例]
 ```
