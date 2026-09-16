@@ -1291,19 +1291,19 @@ In the carousel type, you can apply different replacement variable values to eac
 <a id="request-to-send-basic-message"></a>
 ## Request to Send a Basic Message { #request-to-send-basic-message }
 
-* This delivery uses a template.
+* Messages are sent using a template.
 * Marketing consent-based sending can be used.
-    * You can specify the message target type by setting the targeting field.
-        * M: Users who have consented to receive advertising information from the customer company (KakaoTalk consent)
-        * N: Users who have consented to receive advertising information from the customer company (KakaoTalk consent) — channel friends
-        * I: Intersection of the customer company's requested delivery targets ∩ channel friends
-* All 8 message types from the existing FriendTalk can be used.
+    * You can specify the type of message target by setting the targeting field.
+        * M: Users who have agreed to receive advertising information from the customer (KakaoTalk consent)
+        * N: Users who have agreed to receive advertising information from the customer (KakaoTalk consent) - Channel friends
+        * I: Customer's send request targets ∩ channel friends
+* You can use all 8 message types available in the existing FriendTalk.
 * The BT button type cannot be used.
-* The AC (Add Channel) button can be used.
-* When using the BF button, you can upload the business form ID issued by Kakao to receive a BizForm key and use it.
-* Alternative delivery can be configured per recipient using resendParameter.
-    * To use alternative delivery, you must register an SMS AppKey and configure delivery settings via the Alternative Delivery Management API.
-* For basic message delivery, group tags are not applied, and Kakao statistics are aggregated based on the template code.
+* You can use the AC (Add Channel) button.
+* When using the BF button, you can upload the Business Form ID issued by Kakao to obtain and use a BizForm key.
+* Alternative Delivery can be configured using resendParameter for each recipient.
+    * If you use Alternative Delivery, you must register an SMS AppKey and configure the delivery settings using the Alternative Delivery Management API.
+* For basic type sending, group tags are not applied, and statistics are aggregated in Kakao based on the template code.
 * **Delivery restricted during night (20:50~08:00 on the following day)**
 
 <a id="cautions-for-use"></a>
