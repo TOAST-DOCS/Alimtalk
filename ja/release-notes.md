@@ -676,7 +676,7 @@
 ### 2019. 10. 29. { #october-29-2019 }
 * [API]認証用メッセージの送信時、認証文言の有効性チェックを強化
     * 認証用メッセージの送信時、認証文言が含まれていない場合、メッセージを送信できません。
-    * 詳細は[[APIガイド](./alimtalk-api-guide/#precautions-authword)]を参照してください.
+    * 詳細は[[APIガイド](./alimtalk-api-guide/#authentication-messages)]を参照してください.
 
 <a id="september-24-2019"></a>
 ### 2019. 09. 24. { #september-24-2019 }
