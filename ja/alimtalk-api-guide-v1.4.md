@@ -2042,9 +2042,37 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 }
 ```
 
-| 値             | タイプ | 説明                                |
-| -------------------- | ------- | ---------------------------------------- |
 | 名前 |	タイプ| 	説明                                                          |
+|---|---|----------------------------------------------------------------|
+|header|	Object| 	ヘッダー領域                                                        |
+|- resultCode|	Integer| 	結果コード                                                         |
+|- resultMessage|	String| 結果メッセージ                                                         |
+|- isSuccessful|	Boolean| 成功かどうか                                                          |
+|templateListResponse|	Object| 	本文領域                                                          |
+|- templates | List | 	テンプレートリスト                                                       |
+|-- plusFriendId | String | 	プラスフレンドID                                                      |
+|-- plusFriendType | String | プラスフレンドタイプ(NORMAL, GROUP)                                        |
+|-- templateCode | String | 	テンプレートコード                                                       |
+|-- templateName | String | 	テンプレート名                                                         |
+|-- templateContent | String | 	テンプレート本文                                                        |
+|-- buttons | List | 	ボタンリスト                                                          |
+|--- ordering | Integer | 	ボタンの順序(1〜5)                                                     |
+|--- type | String | 	ボタンタイプ(WL: Webリンク、AL: アプリリンク、DS: 配送照会、BK: Botキーワード、MD: メッセージ転送) |
+|--- name | String | 	ボタン名                                                            |
+|--- linkMo | String | 	モバイルWebリンク(WLタイプの場合、必須フィールド)                                    |
+|--- linkPc | String | 	PC Webリンク(WLタイプの場合、任意フィールド)                                     |
+|--- schemeIos | String | 	iOSアプリリンク(ALタイプの場合、必須フィールド)                                     |
+|--- schemeAndroid | String | 	Androidアプリリンク(ALタイプの場合、必須フィールド)                                 |
+|-- comments | List | 検収結果                                                            |
+|--- id | Integer | お問い合わせID                                                          |
+|--- content |  String | お問い合わせ内容                                                          |
+|---userName | String | 作成者                                                              |
+|---createAt | String | 登録日                                                              |
+|---status | String | コメント状態(INQ: 問い合わせ、APR: 承認、REJ: 反映、REP: 返答、REQ: 検収中)             |
+|-- status| String | テンプレート状態                                                          |
+|-- statusName | String | テンプレート状態名                                                         |
+|-- createDate | String | 作成日時                                                             |
+|- totalCount | Integer | 総件数                                                              |
 |---|---|----------------------------------------------------------------|
 |header|	Object| 	ヘッダ領域                                                       |
 |- resultCode|	Integer| 	結果コード                                                       |
