@@ -75,7 +75,7 @@
 <a id="kakao-provided-spec-change-comparison"></a>
 ### 카카오 제공 스펙 변경 비교표 { #kakao-provided-spec-change-comparison }
 
-![friendtalk_compatible_spec_01.png](https://static.toastoven.net/prod_alimtalk/friendtalk_compatible_spec_01.png)
+![friendtalk_compatible_spec_01.png](../static/images/friendtalk_compatible_guide_01_20260916.png)
 
 <a id="other-confirmed-spec-differences"></a>
 ### 그 외의 확인된 스펙 차이 { #other-confirmed-spec-differences }

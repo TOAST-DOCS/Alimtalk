@@ -25,7 +25,7 @@
 <a id="overview-of-v14-api"></a>
 ## v1.4 API紹介 { #overview-of-v14-api }
 1. 認証メッセージAPIに対する本文の有効性チェックが追加されました。
-   - 詳細は[[認証用SMS送信API](./alimtalk-api-guide/#precautions-authword)]を参照してください。
+   - 詳細は[[認証用SMS送信API](./alimtalk-api-guide/#authentication-messages)]を参照してください。
 
 <a id="general-messages"></a>
 ## 一般メッセージ { #general-messages }
@@ -548,7 +548,6 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 <a id="authentication-messages"></a>
 ## 認証メッセージ { #authentication-messages }
 
-<span id="precautions-authword"></span>
 1. 認証メッセージの送信時、含まれる必要がある認証文言案内
 
 | 区分 | 認証文言 |

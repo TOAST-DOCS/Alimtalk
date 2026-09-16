@@ -671,7 +671,7 @@
 ### October 29, 2019 { #october-29-2019 }
 * [API] Tighter validity checks for the delivery of certification messages
     * Message delivery is unavailable when authentication message is not included
-    * For more details, see [API User Guide](./alimtalk-api-guide/#precautions-authword).
+    * For more details, see [API User Guide](./alimtalk-api-guide/#authentication-messages).
 
 <a id="september-24-2019"></a>
 ### September 24, 2019 { #september-24-2019 }

@@ -693,7 +693,7 @@
 ### 2019. 10. 29. { #october-29-2019 }
 * [API] 인증 메시지 발송 시 인증 문구 유효성 검사 강화
     * 인증용 메시지 발송 시 인증 문구가 포함되어 있지 않은 경우 메시지 발송이 불가능합니다.
-    * 자세한 사항은 [API 가이드](./alimtalk-api-guide/#precautions-authword)를 참고하세요
+    * 자세한 사항은 [API 가이드](./alimtalk-api-guide/#authentication-messages)를 참고하세요
 
 <a id="september-24-2019"></a>
 ### 2019. 09. 24. { #september-24-2019 }
