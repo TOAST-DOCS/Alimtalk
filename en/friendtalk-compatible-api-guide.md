@@ -73,7 +73,7 @@ To support a smooth migration to Brand Message, we provide two options:
 <a id="kakao-provided-spec-change-comparison"></a>
 ### Kakao-Provided Spec Change Comparison { #kakao-provided-spec-change-comparison }
 
-![friendtalk_compatible_spec_01.png](https://static.toastoven.net/prod_alimtalk/friendtalk_compatible_spec_01.png)
+![friendtalk_compatible_spec_01.png](../static/images/friendtalk_compatible_guide_01_20260916.png)
 
 <a id="other-confirmed-spec-differences"></a>
 ### Other Confirmed Spec Differences { #other-confirmed-spec-differences }

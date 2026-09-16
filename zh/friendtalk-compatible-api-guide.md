@@ -64,7 +64,7 @@ To support a smooth migration to Brand Message, we provide two options:
 
 ### Kakao-Provided Spec Change Comparison
 
-![friendtalk_compatible_spec_01.png](https://static.toastoven.net/prod_alimtalk/friendtalk_compatible_spec_01.png)
+![friendtalk_compatible_spec_01.png](../static/images/friendtalk_compatible_guide_01_20260916.png)
 
 ### Other Confirmed Spec Differences
 
