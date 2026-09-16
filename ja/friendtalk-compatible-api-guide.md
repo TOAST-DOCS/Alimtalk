@@ -1,3 +1,5 @@
+<!-- machine_translated: true -->
+
 <!-- pre-align:aligned sig=ef7359707013 -->
 
 <a id="friendtalk-compatible-api-guide"></a>
@@ -74,7 +76,7 @@
 <a id="kakao-provided-spec-change-comparison"></a>
 ### Kakao 提供の仕様変更比較表 { #kakao-provided-spec-change-comparison }
 
-![friendtalk_compatible_spec_01.png](https://static.toastoven.net/prod_alimtalk/friendtalk_compatible_spec_01.png)
+![friendtalk_compatible_spec_01.png](../static/images/friendtalk_compatible_guide_01_20260916.png)
 
 <a id="other-confirmed-spec-differences"></a>
 ### その他で確認済みの仕様差 { #other-confirmed-spec-differences }

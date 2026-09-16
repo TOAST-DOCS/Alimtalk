@@ -3,7 +3,6 @@
 <a id="webhook-api-guide"></a>
 ## Notification > KakaoTalk Bizmessage > Webhook > API Guide { #webhook-api-guide }
 
-<span id="webhook"></span>
 <a id="webhook"></a>
 ## WebHook { #webhook }
 When a specific event occurs within the KakaoTalk Bizmessage service, it generates a POST request to the URL defined in the webhook settings.<br>
@@ -33,7 +32,7 @@ API documentation for the generated POST request.
 |productName|	String|	The name of the service where a webhook event occurred |
 |appKey|	String| The service appkey where the webhook event occurred |
 |event|	String| Webhook event name |
-|hooks|	List<Map> | Data when a webhook event occurs<br>\* For more information, see  [Hook definitions by event type](./webhook-api-guide/#event-hooks). |
+|hooks|	List<Map> | Data when a webhook event occurs<br>\* For more information, see  [Hook definitions by event type](./webhook-api-guide/#definitions-of-hooks-by-event-type). |
 
 <a id="curl"></a>
 #### cURL
@@ -56,8 +55,6 @@ curl -X POST \
         ]
     }'
 ```
-
-<span id="event-hooks"></span>
 
 <a id="definitions-of-hooks-by-event-type"></a>
 ### Definitions of hooks by event type { #definitions-of-hooks-by-event-type }

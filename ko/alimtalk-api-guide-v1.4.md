@@ -25,7 +25,7 @@
 <a id="overview-of-v14-api"></a>
 ## v1.4 API 소개 { #overview-of-v14-api }
 1. 인증 메시지 API에 대한 본문 유효성 검사가 추가되었습니다.
-   - 자세한 사항은 [[인증 메시지 API](./alimtalk-api-guide/#precautions-authword)] 참고하시기 바랍니다.
+   - 자세한 사항은 [[인증 메시지 API](./alimtalk-api-guide/#authentication-messages)] 참고하시기 바랍니다.
 
 <a id="general-messages"></a>
 ## 일반 메시지 { #general-messages }
@@ -550,7 +550,6 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 <a id="authentication-messages"></a>
 ## 인증 메시지 { #authentication-messages }
 
-<span id="precautions-authword"></span>
 1. 인증 메시지 발송 시 포함되어야 할 인증 문구 안내
 
 | 구분  | 인증 문구 |
