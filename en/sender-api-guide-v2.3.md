@@ -8,7 +8,7 @@
 <a id="whats-the-diffrence"></a>
 #### What's the diffrence
 1. 발신 프로필 조회 API에 최초 사용자 제한 상태 필드가 추가되었습니다.
-2. 발신 프로필 조회 API에 카카오톡 채널 스팸 상태, 카카오톡 메시지 스팸 상태 필드가 추가되었습니다. 
+2. Added the KakaoTalk channel spam status and KakaoTalk message spam status fields to the Sender Profile query API.
 
 <a id="api-domain"></a>
 #### [API Domain]
@@ -273,8 +273,8 @@ Content-Type: application/json;charset=UTF-8
 | ------------ | ------ | -------- | ------------------------------------------------------------ |
 | X-Secret-Key | String | O        | Can be created on console.  |
 
-* 발신 프로필 삭제 시, 등록한 템플릿 데이터가 함께 삭제 됩니다.
-* 발신 프로필 삭제 시, 복구가 불가능합니다.
+* When you delete a Sender Profile, the registered template data is also deleted.
+* When you delete a Sender Profile, it cannot be recovered.
 
 <a id="response-4"></a>
 #### Response
@@ -384,8 +384,8 @@ Content-Type: application/json;charset=UTF-8
 | - kakaoStatusName         | String  | Status name of Kakao PlusFriend(normal, blocked) kakaoStatusName is null if the status is YSC02. |
 | - kakaoProfileStatus      | String  | Status code of Kakao PlusFriend profile(A: Activated, B: Blocked, C: Deactivated, D:Deleted, E: Deleting) kakaoProfileStatus is null if the status is YSC02. |
 | - kakaoProfileStatusName  | String  | Status name of Kakao PlusFriend profile(Activated, Deactivated, Blocked, Deleted, or Deleting) kakaoProfileStatusName is null if the status is YSC02. |
-| - profileSpamLevel        | String | 카카오톡 채널 스팸 상태명(영구제한, 경고제한, 정상)<br>발신 프로필 상태가 정상적이지 않을 경우 null 값을 가질 수 있습니다.                                            |
-| - profileMessageSpamLevel | String | 카카오톡 메시지 스팸 상태명(활동제한, 경고제한, 정상)<br>발신 프로필 상태가 정상적이지 않을 경우 null 값을 가질 수 있습니다.                                           |
+| - profileSpamLevel        | String | KakaoTalk channel spam status name (permanently restricted, warning restricted, normal)<br>The value can be null if the Sender Profile status is not normal.                                            |
+| - profileMessageSpamLevel | String | KakaoTalk message spam status name (activity restricted, warning restricted, normal)<br>This value may be null if the Sender Profile status is not normal. |
 |- alimtalk                 |	Object  |	AlimTalk information                                         |
 |-- resendAppKey            | String  | Alternative sms appkey                                       |
 |-- isResend                | String  | Whether to send text as alternative, if delivery fails       |
@@ -397,12 +397,12 @@ Content-Type: application/json;charset=UTF-8
 |-- isResend                | String  | Whether to send text as alternative, if delivery fails       |
 |-- resendSendNo            | String  |	Sender number for alternative delivery                       |
 |-- resendUnsubscribeNo     | String  |	080 unsubscription number for alternative delivery           |
-|-- dailyMaxCount           | Integer |	친구톡 일별 최대 발송 건수<br>(값이 0일 경우 건수 제한없음)              |
-|-- sentCount               | Integer |	친구톡 일별 발송 건수<br>(값이 0일 경우 건수 제한없음)                  |
+|-- dailyMaxCount           | Integer |	Maximum number of FriendTalk sends per day<br>(A value of 0 means no limit on the number of sends)              |
+|-- sentCount               | Integer |	Number of FriendTalk sends per day<br>(A value of 0 means no limit on the number of sends)                  |
 | - dormant                 | Boolean |	Sender dormant or not                                        |
 | - block                   | Boolean |	Sender block or not                                          |
 | - createDate              | String  | Date and time of registration                                |
-| - initialUserRestriction  | Boolean | 	최초 사용자 제한 여부                                         |
+| - initialUserRestriction  | Boolean | 	Whether to restrict the initial user                                         |
 | totalCount                | Integer | Total count                                                  |
 
 <a id="list-sender"></a>
@@ -508,8 +508,8 @@ Content-Type: application/json;charset=UTF-8
 | - kakaoStatusName         | String  | Status name of Kakao PlusFriend(normal, blocked) kakaoStatusName is null if the status is YSC02. |
 | - kakaoProfileStatus      | String  | Status code of Kakao PlusFriend profile(A: Activated, B: Blocked, C: Deactivated, D:Deleted, E: Deleting) kakaoProfileStatus is null if the status is YSC02. |
 | - kakaoProfileStatusName  | String  | Status name of Kakao PlusFriend profile(Activated, Deactivated, Blocked, Deleted, or Deleting) kakaoProfileStatusName is null if the status is YSC02. |
-| - profileSpamLevel        | String | 카카오톡 채널 스팸 상태명(영구제한, 경고제한, 정상)<br>발신 프로필 상태가 정상적이지 않을 경우 null 값을 가질 수 있습니다.                                            |
-| - profileMessageSpamLevel | String | 카카오톡 메시지 스팸 상태명(활동제한, 경고제한, 정상)<br>발신 프로필 상태가 정상적이지 않을 경우 null 값을 가질 수 있습니다.                                           |
+| - profileSpamLevel        | String | KakaoTalk channel spam status name (permanently restricted, warning restricted, normal)<br>This field can be null if the Sender Profile status is not normal.                                            |
+| - profileMessageSpamLevel | String | KakaoTalk message spam status name (activity restricted, warning restricted, normal)<br>The value may be null if the Sender Profile status is not normal. |
 |- alimtalk                 |	Object  |	AlimTalk information                                         |
 |-- resendAppKey            | String  | Alternative sms appkey                                       |
 |-- isResend                | String  | Whether to send text as alternative, if delivery fails       |
@@ -521,12 +521,12 @@ Content-Type: application/json;charset=UTF-8
 |-- isResend                | String  | Whether to send text as alternative, if delivery fails        |
 |-- resendSendNo            | String  |	Sender number for alternative delivery                        |
 |-- resendUnsubscribeNo     | String  |	080 unsubscription number for alternative delivery            |
-|-- dailyMaxCount           | Integer |	친구톡 일별 최대 발송 건수<br>(값이 0일 경우 건수 제한없음)              |
-|-- sentCount               | Integer |	친구톡 일별 발송 건수<br>(값이 0일 경우 건수 제한없음)                  |
+|-- dailyMaxCount           | Integer |	Maximum number of FriendTalk sends per day<br>(A value of 0 means no limit)              |
+|-- sentCount               | Integer |	Number of FriendTalk sends per day<br>(A value of 0 means no limit on the number of sends.)                  |
 | - dormant                 | Boolean |	Sender dormant or not                                        |
 | - block                   | Boolean |	Sender block or not                                          |
 | - createDate              | String  | Date and time of registration                                |
-| - initialUserRestriction  | Boolean | 	최초 사용자 제한 여부                                         |
+| - initialUserRestriction  | Boolean | 	Whether to restrict initial users                                         |
 | totalCount                | Integer | Total count                                                  |
 
 <a id="sender-group"></a>

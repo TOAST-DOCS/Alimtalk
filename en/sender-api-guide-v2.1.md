@@ -272,8 +272,8 @@ Content-Type: application/json;charset=UTF-8
 | ------------ | ------ | -------- | ------------------------------------------------------------ |
 | X-Secret-Key | String | O        | Can be created on console.  |
 
-* 발신 프로필 삭제 시, 등록한 템플릿 데이터가 함께 삭제 됩니다.
-* 발신 프로필 삭제 시, 복구가 불가능합니다.
+* When you delete a Sender Profile, the registered template data is also deleted.
+* When you delete a Sender Profile, it cannot be recovered.
 
 <a id="response-4"></a>
 #### Response
@@ -391,8 +391,8 @@ Content-Type: application/json;charset=UTF-8
 |-- isResend                | String  | Whether to send text as alternative, if delivery fails       |
 |-- resendSendNo            | String  |	Sender number for alternative delivery                       |
 |-- resendUnsubscribeNo     | String  |	080 unsubscription number for alternative delivery           |
-|-- dailyMaxCount           | Integer |	친구톡 일별 최대 발송 건수<br>(값이 0일 경우 건수 제한없음)              |
-|-- sentCount               | Integer |	친구톡 일별 발송 건수<br>(값이 0일 경우 건수 제한없음)                  |
+|-- dailyMaxCount           | Integer |	Maximum number of FriendTalk sends per day<br>(A value of 0 means no limit)              |
+|-- sentCount               | Integer |	Number of FriendTalk sends per day<br>(A value of 0 means no limit on the number of sends)                  |
 | - dormant                 | Boolean |	Sender dormant or not                                        |
 | - block                   | Boolean |	Sender block or not                                          |
 | - createDate              | String  | Date and time of registration                                |
@@ -509,8 +509,8 @@ Content-Type: application/json;charset=UTF-8
 |-- isResend                | String  | Whether to send text as alternative, if delivery fails        |
 |-- resendSendNo            | String  |	Sender number for alternative delivery                        |
 |-- resendUnsubscribeNo     | String  |	080 unsubscription number for alternative delivery            |
-|-- dailyMaxCount           | Integer |	친구톡 일별 최대 발송 건수<br>(값이 0일 경우 건수 제한없음)              |
-|-- sentCount               | Integer |	친구톡 일별 발송 건수<br>(값이 0일 경우 건수 제한없음)                  |
+|-- dailyMaxCount           | Integer |	Maximum number of FriendTalk sends per day<br>(A value of 0 means no limit)              |
+|-- sentCount               | Integer |	FriendTalk number of sends per day<br>(A value of 0 means no limit on the number of sends)                  |
 | - dormant                 | Boolean |	Sender dormant or not                                        |
 | - block                   | Boolean |	Sender block or not                                          |
 | - createDate              | String  | Date and time of registration                                |

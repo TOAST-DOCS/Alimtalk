@@ -7,9 +7,9 @@
 ## Overview of v2.0 API { #overview-of-v20-api }
 <a id="whats-the-diffrence"></a>
 #### What's the diffrence
-1. 카카오 채널 추가 시, 발급 받은 senderKey 필드로 API 호출이 되도록 변경 되었습니다.(plusFriendId 필드 대체)
-2. API uri가 변경 되었습니다.(/plus-friends -> /senders)
-3. 카카오 채널 그룹 기능이 추가 되었습니다.
+1. When adding a Kakao Channel, the API call has been updated to use the issued senderKey field instead of the plusFriendId field.
+2. The API URI has been changed. (/plus-friends -> /senders)
+3. Added a Kakao Channel group feature.
 
 <a id="api-domain"></a>
 #### [API Domain]
@@ -274,8 +274,8 @@ Content-Type: application/json;charset=UTF-8
 | ------------ | ------ | -------- | ------------------------------------------------------------ |
 | X-Secret-Key | String | O        | Can be created on console.  |
 
-* 발신 프로필 삭제 시, 등록한 템플릿 데이터가 함께 삭제 됩니다.
-* 발신 프로필 삭제 시, 복구가 불가능합니다.
+* When you delete a Sender Profile, the registered template data is also deleted.
+* When you delete a Sender Profile, it cannot be recovered.
 
 <a id="response-4"></a>
 #### Response
@@ -391,8 +391,8 @@ Content-Type: application/json;charset=UTF-8
 |-- isResend                | String  | Whether to send text as alternative, if delivery fails       |
 |-- resendSendNo            | String  |	Sender number for alternative delivery                       |
 |-- resendUnsubscribeNo     | String  |	080 unsubscription number for alternative delivery           |
-|-- dailyMaxCount           | Integer |	친구톡 일별 최대 발송 건수<br>(값이 0일 경우 건수 제한없음)              |
-|-- sentCount               | Integer |	친구톡 일별 발송 건수<br>(값이 0일 경우 건수 제한없음)                  |
+|-- dailyMaxCount           | Integer |	Maximum number of FriendTalk sends per day<br>(A value of 0 means no limit)              |
+|-- sentCount               | Integer |	Number of FriendTalk sends per day<br>(A value of 0 means no limit on the number of sends)                  |
 | - createDate              | String  | Date and time of registration                                |
 | totalCount                | Integer | Total count                                                  |
 
@@ -505,8 +505,8 @@ Content-Type: application/json;charset=UTF-8
 |-- isResend                | String  | Whether to send text as alternative, if delivery fails        |
 |-- resendSendNo            | String  |	Sender number for alternative delivery                        |
 |-- resendUnsubscribeNo     | String  |	080 unsubscription number for alternative delivery            |
-|-- dailyMaxCount           | Integer |	친구톡 일별 최대 발송 건수<br>(값이 0일 경우 건수 제한없음)              |
-|-- sentCount               | Integer |	친구톡 일별 발송 건수<br>(값이 0일 경우 건수 제한없음)                  |
+|-- dailyMaxCount           | Integer |	Maximum number of FriendTalk sends per day<br>(A value of 0 means no limit on the number of sends)              |
+|-- sentCount               | Integer |	FriendTalk number of sends per day<br>(A value of 0 means no limit on the number of sends)                  |
 | - createDate              | String  | Date and time of registration                                |
 | totalCount                | Integer | Total count                                                  |
 

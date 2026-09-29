@@ -92,7 +92,7 @@ Content-Type: application/json;charset=UTF-8
 | ---------------------- | ------- | -------- | ------------------------------------------------------------ |
 | senderKey              | String  | O        | Sender key                                                   |
 | templateCode           | String  | O        | Registered delivery template code(up to 20 characters)      |
-| requestDate            | String  | X        | Date and time of request(yyyy-MM-dd HH:mm)<br>(send immediately, if it is left blank)<br>최대 30일 이후까지 예약 가능 |
+| requestDate            | String  | X        | Date and time of request (yyyy-MM-dd HH:mm)<br>(send immediately, if it is left blank)<br>Can be scheduled up to 30 days later |
 | senderGroupingKey      | String  | X        | Sender's grouping key(up to 100 characters)                 |
 | createUser             | String  | X        | Registrant(saved as user UUID when delivered via console)   |
 | recipientList          | List    | O        | List of recipients(up to 1000 persons)                      |
@@ -1310,7 +1310,7 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 ```
 
 <a id="messages-1"></a>
-### SMS/LMS 대체 발송 상태 코드 { #messages-1 }
+### Status Code of SMS/LMS Resending { #messages-1 }
 
 | Name |	Description|
 |---|---|
@@ -1721,7 +1721,7 @@ Content-Type: application/json;charset=UTF-8
 
 | Value           | Type    | Description       |
 |---|---|---|
-|appkey|	String|	고유의 앱키|
+|appkey|	String|	Unique appkey|
 |senderKey|	String|	Sender Key |
 |templateCode|	String|	Template code |
 
@@ -2102,7 +2102,7 @@ Content-Type: multipart/form-data
 |---|---|---|---|
 |file|	File |	O | Template image file |
 
-[예시]
+[Example]
 ```
 curl -X POST -H "Content-Type: multipart/form-data" -H "X-Secret-Key:{secretkey}" "https://kakaotalk-bizmessage.api.nhncloudservice.com/alimtalk/v2.1/appkeys/{appkey}/template-image" -F "file=@alimtalk-template-image.jpeg"
 ```
@@ -2133,12 +2133,12 @@ curl -X POST -H "Content-Type: multipart/form-data" -H "X-Secret-Key:{secretkey}
 | - templateImageName  | String  | Image name                                                   |
 | - templateImageUrl   | String  | Image URL                                                    |
 <a id="section-1"></a>
-## 대체 발송 관리 { #section-1 }
+## Manage Fallback { #section-1 }
 
 <!-- TODO: translate body -->
 
 <a id="section-1-1"></a>
-### SMS AppKey 등록 { #section-1-1 }
+### Register an SMS AppKey { #section-1-1 }
 
 [URL]
 
@@ -2187,7 +2187,7 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 <!-- TODO: translate body -->
 
 <a id="section-1-2"></a>
-### 대체 발송 설정 등록 { #section-1-2 }
+### Register Fallback Settings { #section-1-2 }
 
 [URL]
 

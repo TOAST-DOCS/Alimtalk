@@ -7,9 +7,9 @@
 ## v2.0 API紹介 { #overview-of-v20-api }
 <a id="whats-the-diffrence"></a>
 #### 改善された点
-1. 카카오 채널 추가 시, 발급 받은 senderKey 필드로 API 호출이 되도록 변경 되었습니다.(plusFriendId 필드 대체)
-2. API uri가 변경 되었습니다.(/plus-friends -> /senders)
-3. 카카오 채널 그룹 기능이 추가 되었습니다.
+1. カカオチャンネル追加時に、発行された senderKey フィールドで API が呼び出されるように変更されました。（plusFriendId フィールドの代替）
+2. API URI が変更されました。(/plus-friends -> /senders)
+3. カカオチャンネルグループ機能が追加されました。
 
 <a id="api-domain"></a>
 #### [API 도메인]
@@ -17,7 +17,7 @@
 <table>
 <thead>
 <tr>
-<th>도메인</th>
+<th>ドメイン</th>
 </tr>
 </thead>
 <tbody>
@@ -267,8 +267,8 @@ Content-Type: application/json;charset=UTF-8
 | ------------ | ------ | ---- | ---------------------------------------- |
 | X-Secret-Key | String | O    | コンソールで作成できます。 |
 
-* 발신 프로필 삭제 시, 등록한 템플릿 데이터가 함께 삭제 됩니다.
-* 발신 프로필 삭제 시, 복구가 불가능합니다.
+* 発信プロフィールを削除すると、登録したテンプレートデータも一緒に削除されます。
+* 発信プロフィールを削除すると、復元することはできません。
 
 <a id="response-4"></a>
 #### レスポンス

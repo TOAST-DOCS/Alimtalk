@@ -1312,7 +1312,7 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 ```
 
 <a id="messages-1"></a>
-### SMS/LMS 대체 발송 상태 코드 { #messages-1 }
+### SMS/LMS 代替送信ステータスコード { #messages-1 }
 
 | 名前 |	説明|
 |---|---|
