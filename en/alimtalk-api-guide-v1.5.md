@@ -1889,7 +1889,7 @@ Content-Type: application/json;charset=UTF-8
 |tempalteTitle        | String  | X        | Template Title(No more than 50 characters, Android: To be abbreviated if it exceeds 2 lines with more than 23 characters, iOS: To be abbreviated if it exceeds 2 lines with more than 27 characters) |
 |templateSubtitle    | String   | X        | Auxiliary Template Phrase(No more than 50 characters, Android: To be abbreviated if it exceeds 18 characters, iOS: To be abbreviated if it exceeds 21 characters) |
 | securityFlag    | Boolean | X        | a |
-| categoryCode    | String  | X        | 템플릿 카테고리 코드(템플릿 카테고리 조회 API 참고, default: 999999)<br>카테고리 입력한 템플릿을 우선 심사 |
+| categoryCode    | String  | X        | Template category code (Refer to API to View Template Category, default: 999999)<br>Templates with a category entered are prioritized for review |
 | buttons         | List    | X        | List of buttons(up to 5)                                    |
 | -ordering       | Integer | X        | Button sequence(1~5)                                        |
 | -type           | String  | X        | Button type(WL: Web Link, AL: App Link, DS: Delivery Search, BK: Bot Keyword, MD: Message Delivery, BC: Bot for Consultation, BT: Bot Transfer, CA: Channel Added [only for Ad Included/Mixed Purposes Type]) |
@@ -1987,7 +1987,7 @@ Content-Type: application/json;charset=UTF-8
 |tempalteTitle| String | X| Template Title(No more than 50 characters, Android: To be abbreviated if it exceeds 2 lines with more than 23 characters, iOS: To be abbreviated if it exceeds 2 lines with more than 27 characters) |
 |templateSubtitle| String | X| Auxiliary Template Phrase(No more than 50 characters, Android: To be abbreviated if it exceeds 18 characters, iOS: To be abbreviated if it exceeds 21 characters) |
 | securityFlag    | Boolean | X        | Security template<br>Set for security messages such as OTP<br>If set, message text is unexposed to all devices except for the main device at the time of sending(default: false) |
-| categoryCode    | String  | X        | 템플릿 카테고리 코드(템플릿 카테고리 조회 API 참고, default: 999999)<br>카테고리 입력한 템플릿을 우선 심사 |
+| categoryCode    | String  | X        | Template category code (Refer to API to View Template Category, default: 999999)<br>Templates with a category entered are prioritized for review |
 | buttons         | List    | X        | List of buttons(up to 5)                                    |
 | -ordering       | Integer | X        | Button sequence(1~5)                                        |
 | -type           | String  | X        | Button type(WL: Web Link, AL: App Link, DS: Delivery Search, BK: Bot Keyword, MD: Message Delivery, BC: Bot for Consultation, BT: Bot Transfer, CA: Channel Added [only for Ad Included/Mixed Purposes Type]) |
@@ -2141,7 +2141,7 @@ Content-Type: application/json;charset=UTF-8
 
 | Value           | Type    | Description       |
 |---|---|---|
-|appkey|	String|	고유의 앱키|
+|appkey|	String|	Unique appkey|
 |plusFriendId|	String|	PlusFriend ID |
 |templateCode|	String|	Template code |
 

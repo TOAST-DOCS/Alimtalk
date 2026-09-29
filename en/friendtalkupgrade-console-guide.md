@@ -43,7 +43,7 @@ You can set up an outgoing profile and enter content to send messages in the for
         * For advertiser sending requests, advertising messages are sent only to channel friends.
 8. Enter the group tag key. (Optional)
     * If you specify a group tag key, you can check the KakaoTalk template statistics for each group tag.
-    * Group tags can be registered in the **Notification > KakaoTalk Bizmessage > 그룹 태그 관리** tab.
+    * Group tags can be registered in the **Notification > KakaoTalk Bizmessage > Tag Management** tab.
 9. After completing the input, click Send to send.
 
 <a id="when-not-using-a-template"></a>
@@ -103,7 +103,7 @@ You can set up an outgoing profile and enter content to send messages in the for
         * For advertiser sending requests, advertising messages are sent only to channel friends.
 11. Enter the group tag key. (Optional)
     * If you specify a group tag key, you can check the KakaoTalk template statistics for each group tag.
-    * Group tags can be registered in the **Notification > KakaoTalk Bizmessage > 그룹 태그 관리** tab.
+    * Group tags can be registered in the **Notification > KakaoTalk Bizmessage > Tag Management** tab.
 12. After completing the input, click Send to send.
 
 <a id="mass-delivery"></a>

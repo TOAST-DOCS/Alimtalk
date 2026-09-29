@@ -1,7 +1,7 @@
 <!-- pre-align:aligned sig=800defce3427 -->
 
 <a id="troubleshooting-guide"></a>
-## Notification > KakaoTalk Bizmessage > 문제 해결 가이드 { #troubleshooting-guide }
+## Notification > KakaoTalk Bizmessage > Troubleshooting Guide { #troubleshooting-guide }
 
 <a id="message-for-query-delivery-button"></a>
 ### Message for Query Delivery Button { #message-for-query-delivery-button }
@@ -11,11 +11,11 @@ Fill out the courier name and invoice number, and add a button to query delivery
 Here is the list of couriers for which KakaoTalk supports the query of delivery.
 
 List of Couriers Available to Query :
-KGB택배 우체국택배 로젠택배 일양로지스 GTX로지스 FedEx 한진택배 경동택배 합동택배 롯데택배 농협택배 호남택배 CU 편의점택배 CVSnet편의점택배 TNT Express USPS EMS 천일택배 DHL 대신택배 건영택배 한덱스
+KGB Delivery Hanjin Express Logen Delivery Ilyang Logis GTX Logis FedEx Hanjin Delivery Gyeongdong Delivery Hapdon Delivery Lotte Delivery Nonghyup Delivery Honam Delivery CU Convenience Store Delivery CVSnet Convenience Store Delivery TNT Express USPS EMS Cheonil Delivery DHL Daeshin Delivery Geonyoung Delivery Handex
 
 <span style="color:red">**Please note that the list is subject to change by contracts between Kakotalk and each courier.**</span>
-<b>CJ대한통운</b>
-* 카카오 비즈메시지의 배송조회 버튼 관련 변경으로 인해, 메시지 내 CJ대한통운 송장번호가 포함된 경우, '배송조회' 버튼 없이 발송됩니다.(추후 카카오에서 변경 시, 재공지)
+<b>CJ Logistics</b>
+* Due to changes related to the delivery tracking button in Kakao Biz Message, if the message contains a CJ Logistics tracking number, it will be sent without the **Delivery Tracking** button. (A notice will be reissued when Kakao makes changes in the future.)
 
 invoice number format
 

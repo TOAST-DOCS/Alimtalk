@@ -1383,7 +1383,7 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 ```
 
 <a id="status-code-of-smslms-resending"></a>
-### SMS/LMS 대체 발송 상태 코드 { #status-code-of-smslms-resending }
+### SMS/LMS 代替送信ステータスコード { #status-code-of-smslms-resending }
 
 | 名前 |	説明|
 |---|---|
