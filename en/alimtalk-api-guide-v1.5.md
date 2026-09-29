@@ -231,6 +231,7 @@ Content-Type: application/json;charset=UTF-8
 | templateCode           | String  | O        | Registered delivery template code(up to 20 characters)      |
 | requestDate            | String  | X        | Date and time of request(yyyy-MM-dd HH:mm)<br/>(sent immediately if it is left blank) |
 | senderGroupingKey      | String  | X        | Sender's grouping key(up to 100 characters)                 |
+|createUser| String | X| Registrant (saved as user UUID when sending from console)|
 | recipientList          | List    | O        | List of recipients(up to 1,000 persons)                     |
 | - recipientNo          | String  | O        | Recipient number(up to 15 characters)                       |
 | - content              | String  | O        | Message(up to 1000 characters)                             |
@@ -1667,6 +1668,8 @@ Content-Type: application/json;charset=UTF-8
 | ------------------- | ------- | -------- | ------------------------------------------------------------ |
 | plusFriendId        | String  | X        | PlusFriend ID                                                |
 | status              | String  | X        | Status code of PlusFriend(YSC02: Ready for token authenticated, YSC03: Normally registered) |
+|pageNum|	Integer|	X|	Page number (Default: 1)|
+|pageSize|	Integer|	X|	Number of queries (Default: 15, Max: 1000)|
 
 <a id="response-15"></a>
 #### Response
@@ -2467,7 +2470,46 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 <a id="register-sms-appkey"></a>
 ### Register SMS AppKey { #register-sms-appkey }
 
-<!-- TODO: translate body -->
+[URL]
+
+```
+POST  /alimtalk/v1.5/appkeys/{appkey}/failback/appkey
+Content-Type: application/json;charset=UTF-8
+```
+
+[Path parameter]
+
+| Name |	Type|	Description|
+|---|---|---|
+|appkey|	String|	Unique appkey|
+
+[Header]
+```
+{
+  "X-Secret-Key": String
+}
+```
+| Name |	Type|	Required|	Description|
+|---|---|---|---|
+|X-Secret-Key|	String| O | Can be created in the console.  |
+
+
+[Request body]
+
+```
+{
+    "resendAppKey": String
+}
+```
+
+| Name |	Type|	Required|	Description|
+|---|---|---|---|
+|resendAppKey|	String|	O | SMS service appkey to set for fallback |
+
+[Example]
+```
+curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" https://kakaotalk-bizmessage.api.nhncloudservice.com/alimtalk/v1.5/appkeys/{appkey}/failback/appkey -d '{"resendAppKey": "smsAppKey"}
+```
 
 <a id="response-24"></a>
 #### Response
@@ -2477,7 +2519,50 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 <a id="register-alternative-sending-settings"></a>
 ### Register Alternative Sending Settings { #register-alternative-sending-settings }
 
-<!-- TODO: translate body -->
+[URL]
+
+```
+POST  /alimtalk/v1.5/appkeys/{appkey}/failback
+Content-Type: application/json;charset=UTF-8
+```
+
+[Path parameter]
+
+| Name |	Type|	Description|
+|---|---|---|
+|appkey|	String|	Unique app key|
+
+[Header]
+```
+{
+  "X-Secret-Key": String
+}
+```
+| Name |	Type|	Required|	Description|
+|---|---|---|---|
+|X-Secret-Key|	String| O | Can be created in the console.  |
+
+
+[Request body]
+
+```
+{  
+   "plusFriendId": String,
+   "isResend": Boolean,
+   "resendSendNo": String
+}
+```
+
+| Name |	Type|	Required|	Description|
+|---|---|---|---|
+|plusFriendId|	String|	O | Plus Friend ID |
+|isResend|	Boolean|	O | Whether to resend text, if delivery fails<br>Resent by default, if fallback is set on console. |
+|resendSendNo|	String|	O | Alternative delivery sender number<br><span style="color:red">(Alternative delivery may fail, if the sender number is not registered on the SMS service.)</span> |
+
+[Example]
+```
+curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" https://kakaotalk-bizmessage.api.nhncloudservice.com/alimtalk/v1.5/appkeys/{appkey}/failback/appkey -d '{"plusFriendId": "@plusfriend","isResend": true,"resendSendNo": "01012341234" }
+```
 
 <a id="response-25"></a>
 #### Response

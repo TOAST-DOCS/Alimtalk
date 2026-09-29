@@ -233,6 +233,7 @@ Content-Type: application/json;charset=UTF-8
 | templateCode           | String  | O    | 登録した送信テンプレートコード(最大20桁)                    |
 | requestDate            | String  | X    | リクエスト日時(yyyy-MM-dd HH:mm)<br>(入力しない場合は即時送信) |
 | senderGroupingKey      | String  | X    | 発信グルーピングキー(最大100文字)                        |
+|createUser| String | X| 登録者(コンソールから送信する場合、ユーザーUUIDで保存)|
 | recipientList          | List    | O    | 受信者リスト(最大1,000人)                        |
 | - recipientNo          | String  | O    | 受信番号(最大15桁)                            |
 | - content              | String  | O    | 内容(最大1000文字)                             |

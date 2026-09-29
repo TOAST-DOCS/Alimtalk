@@ -2077,6 +2077,7 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 
 <a id="response-16"></a>
 #### Response
+
 ```
 
 {
@@ -2087,3 +2088,10 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
   }
 }
 ```
+
+| Name            | Type    | Not Null | Description    |
+|-----------------|---------|:--------:|----------------|
+| header          | Object  |    O     | Header area    |
+| - resultCode    | Integer |    O     | Result code    |
+| - resultMessage | String  |    O     | Result message |
+| - isSuccessful  | Boolean |    O     | Success        |

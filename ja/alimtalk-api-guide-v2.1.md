@@ -240,6 +240,7 @@ Content-Type: application/json;charset=UTF-8
 | templateCode           | String  | O    | 登録した送信テンプレートコード(最大20桁)                    |
 | requestDate            | String  | X    | リクエスト日時(yyyy-MM-dd HH:mm)<br>(入力しない場合は即時送信) |
 | senderGroupingKey      | String  | X    | 発信グルーピングキー(最大100文字)                        |
+|createUser| String | X| 登録者(コンソールから送信する場合、ユーザーUUIDで保存)|
 | recipientList          | List    | O    | 受信者リスト(最大1,000人)                        |
 | - recipientNo          | String  | O    | 受信番号(最大15桁)                            |
 | - content              | String  | O    | 内容(最大1000文字)                             |
@@ -1313,7 +1314,13 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 <a id="messages-1"></a>
 ### SMS/LMS 대체 발송 상태 코드 { #messages-1 }
 
-<!-- TODO: translate body -->
+| 名前 |	説明|
+|---|---|
+|RSC01|	代替送信の対象外|
+|RSC02|	代替送信の対象（送信結果が失敗の場合、代替送信が行われます。）|
+|RSC03|	代替送信中|
+|RSC04|	代替送信成功|
+|RSC05|	代替送信失敗|
 
 <a id="templates"></a>
 ## テンプレート { #templates }
@@ -1602,7 +1609,7 @@ Content-Type: application/json;charset=UTF-8
 | 値    | タイプ | 説明 |
 | ------------ | ------ | -------- |
 | appkey       | String | 固有のアプリケーションキー |
-| plusFriendId | String | 発信キー |
+| senderKey | String | 発信キー |
 | templateCode | String | テンプレートコード |
 
 [Header]
@@ -1647,7 +1654,7 @@ Content-Type: application/json;charset=UTF-8
 | 値    | タイプ | 説明 |
 | ------------ | ------ | -------- |
 | appkey       | String | 固有のアプリケーションキー |
-| plusFriendId | String | 発信キー |
+| senderKey    | String | 発信キー |
 | templateCode | String | テンプレートコード |
 
 [Header]
@@ -1707,7 +1714,7 @@ Content-Type: application/json;charset=UTF-8
 |値|	タイプ|	説明|
 |---|---|---|
 |appkey|	String|	固有のAppkey|
-|plusFriendId|	String|	発信キー |
+|senderKey|	String|	発信キー |
 |templateCode|	String|	テンプレートコード |
 
 [Header]
@@ -1771,6 +1778,7 @@ Content-Type: application/json;charset=UTF-8
 | 値 | タイプ | 説明 |
 | ------ | ------ | ------ |
 | appkey | String | 固有のアプリケーションキー |
+|senderKey|	String|	発信キー |
 
 [Header]
 ```
@@ -1925,8 +1933,8 @@ Content-Type: application/json;charset=UTF-8
 
 | 値 | タイプ | 説明 |
 |---|---|---|
-| appkey       | String | 固有のアプリケーションキー |
-| plusFriendId | String | プラスフレンドID |
+| appkey | String | 固有のアプリケーションキー |
+| senderKey | String | 発信キー |
 | templateCode | String | テンプレートコード |
 
 [Header]
@@ -2211,11 +2219,11 @@ Content-Type: application/json;charset=UTF-8
 }
 ```
 
-| 値               | タイプ | 必須 | 説明                                |
-| ---------------------- | ------- | ---- | ---------------------------------------- |
-| plusFriendId           | String  | O    | プラスフレンドID(最大30文字)                         |
-| isResend             | boolean | O    | 送信失敗時、代替送信するかどうか<br>コンソールで送信失敗設定をした時、デフォルト設定は再送信になっています。 |
-| resendSendNo         | String  | O    | 代替送信発信番号(最大13桁)<br><span style="color:red">(SMSサービスに登録された発信番号ではない場合、代替送信が失敗することがあります。)</span> |
+| 名前 | タイプ | 必須 | 説明 |
+|---|---|---|---|
+| senderKey | String | O | 発信キー |
+| isResend | Boolean | O | 送信失敗時、SMS代替送信するかどうか<br>Consoleで代替送信設定をした場合、デフォルトで代替送信されます。 |
+| resendSendNo | String | O | 代替送信発信番号<br><span style="color:red">(SMSサービスに登録された発信番号ではない場合、代替送信が失敗することがあります。)</span> |
 
 [例]
 ```

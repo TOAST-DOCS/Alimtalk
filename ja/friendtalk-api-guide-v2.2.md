@@ -106,16 +106,16 @@ Content-Type: application/json;charset=UTF-8
 
 | 値                | タイプ | 必須 | 説明                                 |
 | ---------------------- | ------- | ---- | ---------------------------------------- |
-| plusFriendId           | String  | O    | プラスフレンドID(最大30文字)                         |
+| senderKey              | String  | O    | 発信キー(40文字)                         |
 | requestDate            | String  | X    | リクエスト日時(yyyy-MM-dd HH:mm)、フィールドを送信しない場合、即時送信 |
 | senderGroupingKey      | String  | X    | 発信グルーピングキー(最大100文字)                        |
 | createUser             | String  | X    | 登録者(コンソールから送信する場合、ユーザーUUIDとして保存) |
 | recipientList          | List    | O    | 受信者リスト(最大1000人)                         |
 | - recipientNo          | String  | O    | 受信番号                              |
-| - content              | String  | O    | 内容(最大1000文字)<br>イメージを含む時は最大400文字  |
+| - content              | String  | O    | 内容(最大1000文字)<br>イメージ送信時、最大400文字<br>ワイド画像送信時、最大76文字  |
 | - imageSeq             | Integer | X    | イメージ番号                             |
 | - imageLink            | String  | X    | イメージリンク                                |
-| - buttons              | List    | X    | ボタン                                 |
+| - buttons              | List    | X    | ボタン<br>ワイド画像送信時、リンクボタン最大2個                                 |
 | -- ordering            | Integer | X    | ボタン順序(ボタンがある場合は必須)                      |
 | -- type                | String  | X    | ボタンタイプ(WL：Webリンク、AL：アプリリンク、BK：Botキーワード、MD：メッセージ伝達) |
 | -- name                | String  | X    | ボタン名(ボタンがある場合は必須)                      |
@@ -127,12 +127,12 @@ Content-Type: application/json;charset=UTF-8
 | -- chatEvent           | String  | X    | BT(Bot切り替え)タイプボタンの場合に接続するBotイベント名 |
 | -- target              | String  | X    |	Webリンクボタンの場合、"target":"out"属性を追加すると、アウトリンク<br>デフォルトアプリ内リンクで送信 |
 | - resendParameter      | Object  | X    | 代替発送情報 |
-| -- isResend            | boolean | X    | 送信失敗時、代替送信するかどうか<br>コンソールで送信失敗設定をした時、デフォルト設定は再送信になっています。 |
+| -- isResend            | boolean | X    | 送信失敗時、SMS代替送信するかどうか<br>コンソールで代替送信設定をした時、デフォルトで再送信されます。 |
 | -- resendType          | String  | X    | 代替送信タイプ(SMS、LMS)<br>値がない場合は、テンプレート本文の長さに応じてタイプが決まります。 |
-| -- resendTitle         | String  | X    | LMS代替送信タイトル(最大20文字)<br>(値がない場合は、プラスフレンドIDで再送信されます。) |
-| -- resendContent       | String  | X    | 代替送信内容(最大1000文字)<br>(値がない場合は、テンプレートの内容で再送信されます。) |
-| -- resendSendNo        | String  | X    | 代替送信発信番号(最大13桁)<br><span style="color:red">(SMSサービスに登録された発信番号ではない場合、代替送信が失敗することがあります。)</span> |
-| -- resendUnsubscribeNo | String  | X    | 代替080受信拒否番号<br><span style="color:red">(SMSサービスに登録された080の受信拒否番号がない場合、代替の転送が失敗することがあります。)</span> |
+| -- resendTitle         | String  | X    | LMS代替送信タイトル<br>(値がない場合は、プラスフレンドIDで再送信されます。) |
+| -- resendContent       | String  | X    | 代替送信内容<br>(値がない場合は、[メッセージ本文とWebリンクボタン名 - WebリンクMobileリンク]で再送信されます。) |
+| -- resendSendNo        | String  | X    | 代替送信発信番号<br><span style="color:red">(SMSサービスに登録された発信番号ではない場合、代替送信が失敗することがあります。)</span> |
+| -- resendUnsubscribeNo | String  | X    | 代替送信080受信拒否番号<br><span style="color:red">(SMSサービスに登録された080受信拒否番号ではない場合、代替送信が失敗することがあります。)</span> |
 | - isAd                 | Boolean | X    | 広告かどうか(デフォルト値true)                          |
 | - recipientGroupingKey | String  | X    | 受信者グルーピングキー(最大100文字)                       |
 | statsId                 | String  | X    |	統計ID(発信検索条件には含まれません, 最大8文字) |
@@ -228,17 +228,17 @@ Content-Type: application/json;charset=UTF-8
 | requestId            | String  | 条件必須(1番) | リクエストID                             |
 | startRequestDate     | String  | 条件必須(2番) | 送信リクエスト日の開始値(yyyy-MM-dd HH:mm)   |
 | endRequestDate       | String  | 条件必須(2番) | 送信リクエスト日の終了値(yyyy-MM-dd HH:mm)    |
-| startCreateDate      | String  | 条件必須(3番) | 登録日 開始値(yyy-MM-dd HH:mm)                   |
-| endCreateDate        | String  | 条件必須(3番) | 登録日 終値(yyy-MM-dd HH:mm)                    |
+| startCreateDate      | String  | 条件必須(3番) | 登録日 開始値(yyyy-MM-dd HH:mm)                   |
+| endCreateDate        | String  | 条件必須(3番) | 登録日 終値(yyyy-MM-dd HH:mm)                    |
 | recipientNo          | String  | X         | 受信番号                       |
-| plusFriendId         | String  | X         | プラスフレンドID                          |
+| senderKey            | String  | X         | 発信キー                          |
 | senderGroupingKey    | String  | X         | 発信グルーピングキー                        |
 | recipientGroupingKey | String  | X         | 受信者グルーピングキー                       |
 | messageStatus        | String  | X         | リクエストステータス(COMPLETED：成功、FAILED：失敗) |
 | resultCode           | String  | X         | 送信結果(MRC01：成功、MRC02：失敗)       |
 | createUser           | String  | X         | 登録者(コンソールから送信する場合、ユーザーUUIDとして保存) |
-| pageNum              | Integer | X         | ページ番号(基本：1)                     |
-| pageSize             | Integer | X         | 照会件数(基本：15, 最大:1000)                     |
+| pageNum              | Integer | X         | ページ番号(Default: 1)                     |
+| pageSize             | Integer | X         | 照会件数(Default: 15, Max: 1000)                     |
 
 <a id="response-2"></a>
 #### レスポンス
@@ -1294,9 +1294,10 @@ Content-Type: application/json;charset=UTF-8
 
 | 値                | タイプ | 必須 | 説明                                 |
 | ---------------------- | ------- | ---- | ---------------------------------------- |
-| plusFriendId           | String  | O    | プラスフレンドID(最大30文字)                         |
+| senderKey            | String  | O    | 発信キー |
 | isResend             | boolean | O    | 送信失敗時、代替送信するかどうか<br>コンソールで送信失敗設定をした時、デフォルト設定は再送信になっています。 |
-| resendSendNo         | String  | O    | 代替送信発信番号(最大13桁)<br><span style="color:red">(SMSサービスに登録された発信番号ではない場合、代替送信が失敗することがあります。)</span> |
+| resendSendNo         | String  | O    | 代替送信発信番号<br><span style="color:red">(SMSサービスに登録された発信番号ではない場合、代替送信が失敗することがあります。)</span> |
+| resendUnsubscribeNo  | String  | X    | 代替送信 080 受信拒否番号<br><span style="color:red">(SMSサービスに登録された080受信拒否番号ではない場合、代替送信が失敗することがあります。)</span> |
 
 [例]
 ```
