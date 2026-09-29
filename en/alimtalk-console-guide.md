@@ -187,10 +187,10 @@ The inspection and review of AlimTalk template will be conducted directly by Kak
 
 <a id="modify-templates"></a>
 #### Modify Templates
-* You can modify only templates in ** Approval/Return ** state.
+* You can modify only templates in **Approval/Return** state.
 * When the re-inspection is complete after modifying the approved template, the existing template contents are replaced with the modified one.
 * Sender profiles/groups and template codes cannot be modified.
-* Modified templates will be inspected again from ** Under Inspection** status.
+* Modified templates will be inspected again from **Under Inspection** status.
 
 <a id="delete-templates"></a>
 #### Delete Templates
