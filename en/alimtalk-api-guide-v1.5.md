@@ -2465,8 +2465,6 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 <a id="alternative-delivery-management"></a>
 ## Alternative Delivery Management { #alternative-delivery-management }
 
-<!-- TODO: translate body -->
-
 <a id="register-sms-appkey"></a>
 ### Register SMS AppKey { #register-sms-appkey }
 
@@ -2514,7 +2512,16 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 <a id="response-24"></a>
 #### Response
 
-<!-- TODO: translate body -->
+```
+
+{
+  "header": {
+      "resultCode": Integer,
+      "resultMessage": String,
+      "isSuccessful": boolean
+  }
+}
+```
 
 <a id="register-alternative-sending-settings"></a>
 ### Register Alternative Sending Settings { #register-alternative-sending-settings }
@@ -2567,5 +2574,14 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 <a id="response-25"></a>
 #### Response
 
-<!-- TODO: translate body -->
+```
+
+{
+  "header": {
+      "resultCode": Integer,
+      "resultMessage": String,
+      "isSuccessful": boolean
+  }
+}
+```
 

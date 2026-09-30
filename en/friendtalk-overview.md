@@ -9,7 +9,14 @@ It provides RESTful API for easy integration.
 <a id="friendtalk-service-termination-notice"></a>
 ## FriendTalk Service Termination Notice { #friendtalk-service-termination-notice }
 
-<!-- TODO: translate body -->
+* Support for the FriendTalk service will end on December 31, 2025 (Wed).
+* We recommend that you transition to Brand Message if you are currently using FriendTalk.
+* For more information, see the [Brand Message Migration Guide](https://docs.nhncloud.com/en/Notification/KakaoTalk%20Bizmessage/en/friendtalk-compatible-api-guide).
+
+---
+
+FriendTalk is a service that allows you to send various messages, including advertising messages such as events and promotions, to customers who have added your Kakao Channel as a friend, based on their mobile phone numbers.
+A RESTful API is provided for easy integration.
 
 <a id="characteristics"></a>
 ## Characteristics { #characteristics }
