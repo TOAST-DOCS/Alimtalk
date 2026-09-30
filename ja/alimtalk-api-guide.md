@@ -833,7 +833,7 @@ Content-Type: application/json;charset=UTF-8
 | X-NC-API-IDEMPOTENCY-KEY | 	String | X   | 重複メッセージ送信リクエストの基準 key<br>10 分間、同一の key でリクエストした場合、該当リクエストを失敗として処理します。 |
 
 [Request body]
-[上記と同様](./alimtalk-api-guide/#_3)
+[上記と同様](#_3)
 
 <a id="request-of-sending-full-text-2"></a>
 ### メッセージ全文送信リクエスト { #request-of-sending-full-text-2 }
@@ -865,7 +865,7 @@ Content-Type: application/json;charset=UTF-8
 | X-NC-API-IDEMPOTENCY-KEY | 	String | X   | 重複メッセージ送信リクエストの基準 key<br>10 分間、同一の key でリクエストした場合、該当リクエストを失敗として処理します。 |
 
 [Request Body]
-[上記と同様](./alimtalk-api-guide/#_5)
+[上記と同様](#_5)
 
 <a id="list-messages-2"></a>
 ### メッセージリスト照会 { #list-messages-2 }
@@ -899,7 +899,7 @@ Content-Type: application/json;charset=UTF-8
 | X-Secret-Key | 	String | O   | コンソールで生成できます。 |
 
 [Query parameter]
-[上記と同様](./alimtalk-api-guide/#_7)
+[上記と同様](#_7)
 
 <a id="get-messages-2"></a>
 ### メッセージ単件照会 { #get-messages-2 }
@@ -943,7 +943,7 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 <a id="response-5"></a>
 #### レスポンス
 
-[上記と同様](./alimtalk-api-guide/#_9)
+[上記と同様](#_9)
 
 <a id="message"></a>
 ## メッセージ { #message }

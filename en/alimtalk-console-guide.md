@@ -140,7 +140,7 @@ You can register a template by clicking the <b>Register Template</b> button.
 * Template Code / Template Name
     * Cannot register the same template code and template name in one sender profile/group.
 * Template Content
-    * AlimTalk can be written up to 1,000 characters including variables, URLs, spacing and button names, regardless of Korean/English. If you enter variables to register, please create a template by considering the content to be replaced.<br/> Refer to [AlimTalk Template Precautions ](https://docs.nhncloud.com/ko/Notification/KakaoTalk%20Bizmessage/ko/alimtalk-overview/#_3) for a detailed guide to the number of characters.
+    * AlimTalk can be written up to 1,000 characters including variables, URLs, spacing and button names, regardless of Korean/English. If you enter variables to register, please create a template by considering the content to be replaced.<br/> Refer to [AlimTalk Template Precautions ](./alimtalk-overview/#alimtalk-template-precautions) for a detailed guide to the number of characters.
     * Create a variable in the form of #{variable}. (Example: #{HongGildong}'s package will be delivered today (#{09:50})
     * When registering a button, the button name cannot be entered as a variable, and the button url can be entered as a variable. (Example http://kakao.com/#{변수})
     * When registering a button url, url_mobile, url_pc links must include 'http://' and 'https://'가 and the 'scheme_ios, 'scheme_android links must be registered according to the scheme type. Otherwise, template registration is not possible.
@@ -183,7 +183,7 @@ The inspection and review of AlimTalk template will be conducted directly by Kak
 <a id="template-status"></a>
 #### Template status
 * When registering a template, it is updated in the order of **Request > Under Inspection > Approval/Return** status.
-* After registering the template, it will remain the same for a year or will switch to **Dormant** status, if there is no additional sending. Please check [AlimTalk Template Precautions](https://docs.nhncloud.com/ko/Notification/KakaoTalk%20Bizmessage/ko/alimtalk-overview/#_3) for related guides.
+* After registering the template, it will remain the same for a year or will switch to **Dormant** status, if there is no additional sending. Please check [AlimTalk Template Precautions](./alimtalk-overview/#alimtalk-template-precautions) for related guides.
 
 <a id="modify-templates"></a>
 #### Modify Templates
