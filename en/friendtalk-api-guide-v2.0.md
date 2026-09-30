@@ -422,12 +422,8 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 <a id="messages"></a>
 ## Messages { #messages }
 
-<!-- TODO: translate body -->
-
 <a id="message-delivery-cancelled"></a>
 ### Message Delivery Cancelled { #message-delivery-cancelled }
-
-<!-- TODO: translate body -->
 
 <a id="request-3"></a>
 #### Request
@@ -812,8 +808,6 @@ curl -X DELETE -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Ke
 <a id="alternative-delivery-management"></a>
 ## Alternative Delivery Management { #alternative-delivery-management }
 
-<!-- TODO: translate body -->
-
 <a id="register-sms-appkey"></a>
 ### Register SMS AppKey { #register-sms-appkey }
 
@@ -861,7 +855,16 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 <a id="response-9"></a>
 #### Response
 
-<!-- TODO: translate body -->
+```
+
+{
+  "header": {
+      "resultCode": Integer,
+      "resultMessage": String,
+      "isSuccessful": boolean
+  }
+}
+```
 
 <a id="register-alternative-sending-settings"></a>
 ### Register Alternative Sending Settings { #register-alternative-sending-settings }
@@ -916,5 +919,14 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 <a id="response-10"></a>
 #### Response
 
-<!-- TODO: translate body -->
+```
+
+{
+  "header": {
+      "resultCode": Integer,
+      "resultMessage": String,
+      "isSuccessful": boolean
+  }
+}
+```
 

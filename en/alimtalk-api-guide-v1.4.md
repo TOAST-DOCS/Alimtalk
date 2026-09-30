@@ -1471,8 +1471,6 @@ Content-Type: application/json;charset=UTF-8
 <a id="get-plusfriends"></a>
 ### Get PlusFriends { #get-plusfriends }
 
-<!-- TODO: translate body -->
-
 <a id="request-10"></a>
 #### Request
 
@@ -2208,8 +2206,6 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 <a id="alternative-sending-management"></a>
 ## Alternative Sending Management { #alternative-sending-management }
 
-<!-- TODO: translate body -->
-
 <a id="register-sms-appkey"></a>
 ### Register SMS AppKey { #register-sms-appkey }
 
@@ -2257,7 +2253,16 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 <a id="response-22"></a>
 #### Response
 
-<!-- TODO: translate body -->
+```
+
+{
+  "header": {
+      "resultCode": Integer,
+      "resultMessage": String,
+      "isSuccessful": boolean
+  }
+}
+```
 
 <a id="register-alternative-sending-settings"></a>
 ### Register Alternative Sending Settings { #register-alternative-sending-settings }
@@ -2310,5 +2315,14 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 <a id="response-23"></a>
 #### Response
 
-<!-- TODO: translate body -->
+```
+
+{
+  "header": {
+      "resultCode": Integer,
+      "resultMessage": String,
+      "isSuccessful": boolean
+  }
+}
+```
 

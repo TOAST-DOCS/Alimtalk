@@ -3,13 +3,17 @@
 <a id="friendtalk-overview"></a>
 ## Notification > KakaoTalk Bizmessage > カカともへのメッセージ > 概要 { #friendtalk-overview }
 
-カカともへのメッセージは、携帯電話番号に基づいて、カカオチャンネルのフレンドに追加された顧客にイベントなどの広告性メッセージを含むさまざまなメッセージを送信できるサービスです。
-簡単に連携するためにRESTful APIを提供します。
-
 <a id="friendtalk-service-termination-notice"></a>
 ## フレンドトークサービス終了のお知らせ { #friendtalk-service-termination-notice }
 
-<!-- TODO: translate body -->
+* 2025-12-31（水）フレンドトークサービスのサポートを終了します。
+* 現在ご利用中のお客様には、ブランドメッセージへの移行をお勧めします。
+* 詳細については、[ブランドメッセージ移行ガイド](./friendtalk-compatible-api-guide/)を参照してください。
+
+---
+
+フレンドトークは、携帯電話番号をもとに、カカオチャンネルに友だち追加されたお客様に、イベントやキャンペーンなどの広告メッセージを含むさまざまなメッセージを送信できるサービスです。
+簡単に連携できる RESTful API を提供します。
 
 <a id="characteristics"></a>
 ## 特徴 { #characteristics }

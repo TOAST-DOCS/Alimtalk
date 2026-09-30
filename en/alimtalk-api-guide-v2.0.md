@@ -2057,8 +2057,6 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 <a id="section-1"></a>
 ## Manage Fallback { #section-1 }
 
-<!-- TODO: translate body -->
-
 <a id="section-1-1"></a>
 ### Register an SMS AppKey { #section-1-1 }
 
@@ -2106,7 +2104,16 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 <a id="section-1-1-1"></a>
 #### 응답
 
-<!-- TODO: translate body -->
+```
+
+{
+  "header": {
+      "resultCode": Integer,
+      "resultMessage": String,
+      "isSuccessful": boolean
+  }
+}
+```
 
 <a id="section-1-2"></a>
 ### Register Fallback Settings { #section-1-2 }
@@ -2159,5 +2166,14 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 <a id="section-1-2-1"></a>
 #### 응답
 
-<!-- TODO: translate body -->
+```
+
+{
+  "header": {
+      "resultCode": Integer,
+      "resultMessage": String,
+      "isSuccessful": boolean
+  }
+}
+```
 
