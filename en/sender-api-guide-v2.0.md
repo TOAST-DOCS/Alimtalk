@@ -244,6 +244,11 @@ Content-Type: application/json;charset=UTF-8
 | - resultCode    | Integer | Result code       |
 | - resultMessage | String  | Result message    |
 | - isSuccessful  | Boolean | Successful or not |
+| sender | Object | Sender Profile |
+| - plusFriendId | String | Plus Friend ID |
+| - senderKey | String | Sender Key |
+| - categoryCode | String | Category code |
+| - status | String | NHN Cloud Plus Friend status code <br>(YSC02: Pending Registration, YSC03: Normal Registration) |
 
 <a id="delete-sender"></a>
 ### Delete Sender { #delete-sender }
@@ -384,8 +389,8 @@ Content-Type: application/json;charset=UTF-8
 |-- resendAppKey            | String  | Alternative sms appkey                                       |
 |-- isResend                | String  | Whether to send text as alternative, if delivery fails       |
 |-- resendSendNo            | String  |	Sender number for alternative delivery                       |
-|-- dailyMaxCount           | Integer |	Maximum daily AlimTalk delivery count(no limits for 0)      |
-|-- sentCount               | Integer |	Daily AlimTalk delivery count(no limits for 0)              |
+|-- dailyMaxCount           | Integer |	Maximum daily AlimTalk delivery count<br>(A value of 0 means no limit)      |
+|-- sentCount               | Integer |	Daily AlimTalk delivery count<br>(A value of 0 means no limit)              |
 |- friendtalk               |	Object  |	FriendTalk information                                       |
 |-- resendAppKey            | String  | Alternative sms appkey                                       |
 |-- isResend                | String  | Whether to send text as alternative, if delivery fails       |
@@ -394,7 +399,6 @@ Content-Type: application/json;charset=UTF-8
 |-- dailyMaxCount           | Integer |	Maximum number of FriendTalk sends per day<br>(A value of 0 means no limit)              |
 |-- sentCount               | Integer |	Number of FriendTalk sends per day<br>(A value of 0 means no limit on the number of sends)                  |
 | - createDate              | String  | Date and time of registration                                |
-| totalCount                | Integer | Total count                                                  |
 
 <a id="list-sender"></a>
 ### List Sender { #list-sender }

@@ -116,13 +116,14 @@ Webフック設定に定義されたURLでPOSTリクエストを作成する時�
 |- kakaoMessageType|	String| カカオメッセージタイプ<br>ALIMTALK_NORMAL<br>ALIMTALK_AUTH<br>ALIMTALK_MASS<br>FRIENDTALK_NORMAL<br>FRIENDTALK_MASS<br>BRAND_MESSAGE_NORMAL<br>BRAND_MESSAGE_MASS  |
 |- requestId|	String| リクエストID |
 |- recipientSeq|	Integer| 受信者シーケンス番号 |
-|- requestDate|	String| リクエスト日 |
-|- createDate|	String| 作成日 |
-|- receiveDate|	String| 受信日 |
+|- requestDate|	String| リクエスト日時 |
+|- createDate|	String| 作成日時 |
+|- receiveDate|	String| 受信日時 |
 |- recipientNo|	String| 受信番号 |
 |- resultCode|	String| 受信結果コード |
 |- senderGroupingKey|	String| 発信グルーピングキー |
 |- recipientGroupingKey|	String| 受信者グルーピングキー |
+|- isAddedChannel|	Boolean| チャンネル追加の友だち有無<br>ブランドメッセージ(BRAND_MESSAGE_NORMAL, BRAND_MESSAGE_MASS): true/false<br>その他のカカオメッセージタイプ: null |
 |- _links|	Object|	リンク |
 |- self|	Object|	- |
 |- href|	String|	メッセージ照会APIリンク |

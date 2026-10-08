@@ -123,6 +123,7 @@ Hook data per event type when generating a POST request to the URL defined in th
 |- resultCode|	String| Result code of receiving |
 |- senderGroupingKey|	String| Sender's grouping key |
 |- recipientGroupingKey|	String| Recipient's grouping key |
+|- isAddedChannel|	Boolean| Whether the recipient is a channel-added friend<br>Brand Message (BRAND_MESSAGE_NORMAL, BRAND_MESSAGE_MASS): true/false<br>Other Kakao message types: null |
 |- _links|	Object|	Link |
 |- self|	Object|	- |
 |- href|	String|	Query Message API link |

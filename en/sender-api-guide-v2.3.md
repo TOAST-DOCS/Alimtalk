@@ -243,6 +243,11 @@ Content-Type: application/json;charset=UTF-8
 | - resultCode    | Integer | Result code       |
 | - resultMessage | String  | Result message    |
 | - isSuccessful  | Boolean | Successful or not |
+| sender | Object | Sender Profile |
+| - plusFriendId | String | PlusFriend ID |
+| - senderKey | String | Sender Key |
+| - categoryCode | String | Category code |
+| - status | String | NHN Cloud PlusFriend status code <br>(YSC02: Pending Registration, YSC03: Normal registration) |
 
 <a id="delete-sender"></a>
 ### Delete Sender { #delete-sender }
@@ -403,7 +408,6 @@ Content-Type: application/json;charset=UTF-8
 | - block                   | Boolean |	Sender block or not                                          |
 | - createDate              | String  | Date and time of registration                                |
 | - initialUserRestriction  | Boolean | 	Whether to restrict the initial user                                         |
-| totalCount                | Integer | Total count                                                  |
 
 <a id="list-sender"></a>
 ### List Sender { #list-sender }
@@ -598,11 +602,13 @@ Content-Type: application/json;charset=UTF-8
 |- senderKey | String |	Sender key |
 | - status                  | String  | Status code of NHN Cloud PlusFriend(YSC02: Ready for registeration, YSC03: Normally registered) |
 |- senders | List |	Sender List |
+|- status | String |	Status code of NHN Cloud PlusFriend(YSC02: Ready for registeration, YSC03: Normally registered) |
+|- senders | List |	Sender List |
 |-- plusFriendId | String |	PlusFriend ID |
 |-- senderKey | String |	Sender key |
-|-- createDate | String | Date and time of registration |
-|- createDate | String | Date and time of registration |
-|- updateDate |	String|	Date and time of modification |
+|-- createDate | String | Date of group registration |
+|- createDate | String | Date of registration |
+|- updateDate |	String|	Date of modification |
 
 <a id="add-sender-to-group"></a>
 ### Add sender to group { #add-sender-to-group }

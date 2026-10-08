@@ -237,6 +237,11 @@ Content-Type: application/json;charset=UTF-8
 | - resultCode    | Integer | 結果コード |
 | - resultMessage | String  | 結果メッセージ |
 | - isSuccessful  | Boolean | 成否 |
+| sender | Object | 発信プロフィール |
+| - plusFriendId | String | プラスフレンドID |
+| - senderKey | String | 発信キー |
+| - categoryCode | String | カテゴリコード |
+| - status | String | NHN Cloud プラスフレンドステータスコード <br>(YSC02: 登録待ち、YSC03: 正常登録) |
 
 <a id="delete-sender"></a>
 ### Sender 削除 { #delete-sender }
@@ -375,17 +380,19 @@ Content-Type: application/json;charset=UTF-8
 | - kakaoProfileStatus      | String  | カカオプラスフレンドプロフィールステータスコード<br>(A：有効化、B：遮断、C：無効化、D：削除E：削除処理中)<br>statusがYSC02の場合、kakaoProfileStatus null値を持ちます。 |
 | - kakaoProfileStatusName  | String  | カカオプラスフレンドプロフィールステータス名(有効化、無効化、遮断、削除処理中、削除)<br>statusがYSC02の場合、kakaoProfileStatusName null値を持ちます。 |
 |- alimtalk|	Object|	お知らせトーク設定情報|
-|-- isResend | String  | 送信失敗設定(再送信)するかどうか                   |
+|-- resendAppKey | String | 代替送信として設定するSMSサービスアプリキー |
+|-- isResend | String  | 代替送信設定(再送信)するかどうか                   |
 |-- resendSendNo | String  | 再送信時、tc-sms発信番号              |
 |-- dailyMaxCount | Integer | お知らせトークの一日最大送信件数<br>(値が0の場合、件数制限なし)    |
 |-- sentCount | Integer | お知らせトークの一日送信件数<br>(値が0の場合、件数制限なし)       |
 |- friendtalk|	Object|	友人トーク設定情報|
-|-- isResend | String  | 送信失敗設定(再送信)するかどうか                   |
+|-- resendAppKey | String | 代替送信として設定するSMSサービスアプリキー |
+|-- isResend | String  | 代替送信設定(再送信)するかどうか                   |
 |-- resendSendNo | String  | 再送信時、tc-sms発信番号              |
 |-- resendUnsubscribeNo | String |	再送信時、tc-sms 080受信拒否番号 |
 |-- dailyMaxCount | Integer | カカともへのメッセージの一日最大送信件数<br>(値が0の場合、件数制限なし)    |
 |-- sentCount | Integer | カカともへのメッセージの一日送信件数<br>(値が0の場合、件数制限なし)       |
-| - createDate              | String  | 登録日時                            |
+| - createDate              | String  | 登録日                            |
 
 <a id="list-sender"></a>
 ### Senderの照会 { #list-sender }
@@ -471,7 +478,7 @@ Content-Type: application/json;charset=UTF-8
 | - resultCode              | Integer | 結果コード                            |
 | - resultMessage           | String  | 結果メッセージ                           |
 | - isSuccessful            | Boolean | 成否                             |
-| senders                   | List  | 発信プロフィール                            |
+| senders                   | Object  | 発信プロフィールリスト                            |
 | - plusFriendId            | String  | プラスフレンドID                                 |
 | - senderKey               | String  | 発信キー                                |
 | - categoryCode            | String  | カテゴリーコード                          |
@@ -482,12 +489,14 @@ Content-Type: application/json;charset=UTF-8
 | - kakaoProfileStatus      | String  | カカオプラスフレンドプロフィールステータスコード<br>(A：有効化、B：遮断、C：無効化、D：削除E：削除処理中)<br>statusがYSC02の場合、kakaoProfileStatus null値を持ちます。 |
 | - kakaoProfileStatusName  | String  | カカオプラスフレンドプロフィールステータス名(有効化、無効化、遮断、削除処理中、削除)<br>statusがYSC02の場合、kakaoProfileStatusName null値を持ちます。 |
 |- alimtalk|	Object|	お知らせトーク設定情報|
-|-- isResend | String  | 送信失敗設定(再送信)するかどうか                   |
+|-- resendAppKey | String | 代替送信に設定するSMSサービスアプリキー |
+|-- isResend | String  | 代替送信設定(再送信)するかどうか                   |
 |-- resendSendNo | String  | 再送信時、tc-sms発信番号              |
 |-- dailyMaxCount | Integer | お知らせトークの一日最大送信件数<br>(値が0の場合、件数制限なし)    |
 |-- sentCount | Integer | お知らせトークの一日送信件数<br>(値が0の場合、件数制限なし)       |
 |- friendtalk|	Object|	友人トーク設定情報|
-|-- isResend | String  | 送信失敗設定(再送信)するかどうか                   |
+|-- resendAppKey | String | 代替送信に設定するSMSサービスアプリキー |
+|-- isResend | String  | 代替送信設定(再送信)するかどうか                   |
 |-- resendSendNo | String  | 再送信時、tc-sms発信番号              |
 |-- resendUnsubscribeNo | String |	再送信時、tc-sms 080受信拒否番号 |
 |-- dailyMaxCount | Integer | カカともへのメッセージの一日最大送信件数<br>(値が0の場合、件数制限なし)    |

@@ -408,13 +408,15 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 | - messageStatus        | String  | リクエストステータス(COMPLETED：成功、FAILED：失敗)      |
 | - resendStatus         | String  | 再送信ステータスコード                          |
 | - resendStatusName     | String  | 再送信ステータスコード名                             |
+| - resendResultCode     | String  | 再送信結果コードSMS結果コード                        |
+| - resendRequestId      | String  | 再送信SMS リクエストID                           |
 | - resultCode           | String  | 受信結果コード                           |
 | - resultCodeName       | String  | 受信結果コード名                              |
 | - createUser           | String  | 登録者(コンソールから送信する場合、ユーザーUUIDとして保存)|
 | - imageSeq             | Integer | イメージ番号                             |
 | - imageName            | String  | イメージ名(アップロードしたファイル名)                           |
 | - imageUrl             | String  | イメージURL                                  |
-| - imageLink            | String  | イメージリンク(イメージ番号を入力した場合は必須)                |
+| - imageLink            | String  | イメージリンク                                    |
 | - wide                 | Boolean | ワイドイメージの可否                        |
 | - buttons              | List    | ボタンリスト                              |
 | -- ordering            | Integer | ボタン順序                              |

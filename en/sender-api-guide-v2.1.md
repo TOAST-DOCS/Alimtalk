@@ -242,6 +242,11 @@ Content-Type: application/json;charset=UTF-8
 | - resultCode    | Integer | Result code       |
 | - resultMessage | String  | Result message    |
 | - isSuccessful  | Boolean | Successful or not |
+| sender          | Object  | Sender Profile    |
+| - plusFriendId  | String  | Plus Friend ID    |
+| - senderKey     | String  | Sender Key        |
+| - categoryCode  | String  | Category code     |
+| - status        | String  | NHN Cloud Plus Friend status code <br>(YSC02: Pending Registration, YSC03: Normal registration) |
 
 <a id="delete-sender"></a>
 ### Delete Sender { #delete-sender }
@@ -396,7 +401,6 @@ Content-Type: application/json;charset=UTF-8
 | - dormant                 | Boolean |	Sender dormant or not                                        |
 | - block                   | Boolean |	Sender block or not                                          |
 | - createDate              | String  | Date and time of registration                                |
-| totalCount                | Integer | Total count                                                  |
 
 <a id="list-sender"></a>
 ### List Sender { #list-sender }

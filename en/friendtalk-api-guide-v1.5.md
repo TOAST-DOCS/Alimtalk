@@ -54,6 +54,7 @@ Content-Type: application/json;charset=UTF-8
 | Value        | Type   | Required | Description                                                  |
 | ------------ | ------ | -------- | ------------------------------------------------------------ |
 | X-Secret-Key | String | O        | Can be created on console.  |
+| X-NC-API-IDEMPOTENCY-KEY | String | X | Key used as the criteria for duplicate message sending requests<br>If a request is made with the same key for 10 minutes, the request will be failed. |
 
 [Request body]
 
@@ -93,10 +94,10 @@ Content-Type: application/json;charset=UTF-8
 | createUser             | String  | X        | Registrant(saved as user UUID when delivered via console)   |
 | recipientList          | List    | O        | List of recipients(up to 1000)                              |
 | - recipientNo          | String  | O        | Recipient number                                             |
-| - content              | String  | O        | Body message(up to 1000 characters)<br>Up to 400, if image is included |
+| - content              | String  | O        | Body message(up to 1000 characters)<br>Up to 400, if image is included<br>Up to 76, if Wide Image is included |
 | - imageSeq             | Integer | X        | Image number                                                 |
-| - imageLink            | String  | X        | Image link(required, with the input of image number)        |
-| - buttons              | List    | X        | Button                                                       |
+| - imageLink            | String  | X        | Image link                                                   |
+| - buttons              | List    | X        | Button<br>Up to 2 link buttons, if Wide Image is included   |
 | -- ordering            | Integer | X        | Button sequence(required, if there is a button)             |
 | -- type                | String  | X        | Button type(WL: Web Link, AL: App Link, BK: Bot Keyword, MD: Message Delivery) |
 | -- name                | String  | X        | Button name(required, if there is a button)                 |
@@ -104,6 +105,13 @@ Content-Type: application/json;charset=UTF-8
 | -- linkPc              | String  | X        | PC web link(optional for the WL type)                       |
 | -- schemeIos           | String  | X        | iOS app link(required for the AL type)                      |
 | -- schemeAndroid       | String  | X        | Android app link(required for the AL type)                  |
+| - resendParameter      | Object  | X        | Alternative Delivery information                            |
+| -- isResend            | boolean | X        | Whether to resend as text message if delivery fails<br>If Alternative Delivery is set in the Console, it is resent by default. |
+| -- resendType          | String  | X        | Alternative Delivery type (SMS, LMS)<br>Categorized by the length of template body, if value is unavailable. |
+| -- resendTitle         | String  | X        | LMS Alternative Delivery title<br>(resent with Plus Friend ID if value is unavailable.) |
+| -- resendContent       | String  | X        | Alternative Delivery content<br>(resent with [Message body and web link button name - web link mobile link] if value is unavailable.) |
+| -- resendSendNo        | String  | X        | Sender Number for alternative delivery<br><span style="color:red">(Alternative delivery may fail if the sender number is not registered on the SMS service.)</span> |
+| -- resendUnsubscribeNo | String  | X        | 080 opt-out number for alternative delivery<br><span style="color:red">(Alternative delivery may fail if the 080 opt-out number is not registered on the SMS service.)</span> |
 | - isAd                 | Boolean | X        | Ad or not(default is true)                                  |
 | - recipientGroupingKey | String  | X        | Recipient's grouping key(up to 100 characters)              |
 
@@ -392,6 +400,8 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 | - messageStatus        | String  | Status of request(COMPLETED: successful, FAILED: failed)    |
 | - resendStatus         | String  | Status code of resending                                     |
 | - resendStatusName     | String  | Status code name of resending                                |
+| - resendResultCode     | String  | Result code of SMS resending                                 |
+| - resendRequestId      | String  | SMS resending request ID                                     |
 | - resultCode           | String  | Result code of receiving                                     |
 | - resultCodeName       | String  | Result code name of receiving                                |
 | - createUser           | String  | Registrant(saved as user UUID when delivered via console)   |
