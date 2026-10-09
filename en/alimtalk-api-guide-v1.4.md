@@ -2203,6 +2203,7 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 | -- activated         | Boolean | activated or not                                             |
 | -- createDate        | String  | Date and time of creation                                    |
 | - totalCount         | Integer | Total count                                                  |
+
 <a id="alternative-sending-management"></a>
 ## Alternative Sending Management { #alternative-sending-management }
 

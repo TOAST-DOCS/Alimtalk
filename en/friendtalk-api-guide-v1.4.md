@@ -780,6 +780,7 @@ curl -X DELETE -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Ke
 | - resultCode    | Integer | Result code       |
 | - resultMessage | String  | Result message    |
 | - isSuccessful  | Boolean | Successful or not |
+
 <a id="alternative-delivery-management"></a>
 ## Alternative Delivery Management { #alternative-delivery-management }
 

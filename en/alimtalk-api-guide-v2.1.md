@@ -2132,6 +2132,7 @@ curl -X POST -H "Content-Type: multipart/form-data" -H "X-Secret-Key:{secretkey}
 | templateImage        | Object  | Body area                                                    |
 | - templateImageName  | String  | Image name                                                   |
 | - templateImageUrl   | String  | Image URL                                                    |
+
 <a id="section-1"></a>
 ## Manage Fallback { #section-1 }
 

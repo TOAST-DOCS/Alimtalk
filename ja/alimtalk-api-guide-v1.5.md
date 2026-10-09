@@ -422,8 +422,7 @@ Content-Type: application/json;charset=UTF-8
 | -- templateCode             | String  | テンプレートコード                           |
 | -- recipientNo              | String  | 受信番号                            |
 | -- content                  | String  | 本文                               |
-| -- requestDate              | String  | リクエスト日
-時                            |
+| -- requestDate              | String  | リクエスト日時                            |
 | -- createDate               | String  | 登録日時                            |
 | -- receiveDate              | String  | 受信日時                            |
 | -- resendStatus             | String  | 再送信ステータスコード                        |
