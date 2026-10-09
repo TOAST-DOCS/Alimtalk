@@ -11,7 +11,7 @@ Fill out the courier name and invoice number, and add a button to query delivery
 Here is the list of couriers for which KakaoTalk supports the query of delivery.
 
 List of Couriers Available to Query :
-KGB택배 우체국택배 로젠택배 일양로지스 GTX로지스 FedEx 한진택배 경동택배 합동택배 롯데택배 농협택배 호남택배 CU 편의점택배 CVSnet편의점택배 TNT Express USPS EMS 천일택배 DHL 대신택배 건영택배 한덱스
+KGB Express, Korea Post, Logen, Ilyang Logis, GTX Logis, FedEx, Hanjin Express, Gyeongdong Express, Hapdong Express, Lotte Express, Nonghyup Express, Honam Express, CU Convenience Store Express, CVSnet Convenience Store Express, TNT Express, USPS, EMS, Cheonil Express, DHL, Daesin Express, Geonyoung Express, Handex
 
 <span style="color:red">**Please note that the list is subject to change by contracts between Kakotalk and each courier.**</span>
 <b>CJ Logistics</b>
