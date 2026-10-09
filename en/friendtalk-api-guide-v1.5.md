@@ -6,7 +6,11 @@
 <a id="friendtalk-service-termination-notice"></a>
 ## FriendTalk Service Termination Notice { #friendtalk-service-termination-notice }
 
-<!-- TODO: translate body -->
+* Support for the FriendTalk service will end on December 31, 2025 (Wed).
+* We recommend that you transition to Brand Message if you are currently using FriendTalk.
+* For more information, see the [Brand Message Migration Guide](./friendtalk-compatible-api-guide/).
+
+---
 
 <a id="friendtalk"></a>
 ## FriendTalk { #friendtalk }
