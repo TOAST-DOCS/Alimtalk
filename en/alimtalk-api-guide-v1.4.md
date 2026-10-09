@@ -56,6 +56,7 @@ Content-Type: application/json;charset=UTF-8
 | Value        | Type   | Required | Description                                                  |
 | ------------ | ------ | -------- | ------------------------------------------------------------ |
 | X-Secret-Key | String | O        | Can be created on console.  |
+| X-NC-API-IDEMPOTENCY-KEY | String | X | Key used as the criterion for duplicate message sending requests<br>If a request is made with the same key for 10 minutes, the request will be failed. |
 
 [Request body]
 
@@ -183,6 +184,7 @@ Content-Type: application/json;charset=UTF-8
 | Value        | Type   | Required | Description                                                  |
 | ------------ | ------ | -------- | ------------------------------------------------------------ |
 | X-Secret-Key | String | O        | Can be created on console.  |
+| X-NC-API-IDEMPOTENCY-KEY | String | X | Key used as the criterion for duplicate message sending requests<br>If a request is made with the same key for 10 minutes, the request will be failed. |
 
 [Request Body]
 
@@ -587,6 +589,7 @@ Content-Type: application/json;charset=UTF-8
 | Value        | Type   | Required | Description                                                  |
 | ------------ | ------ | -------- | ------------------------------------------------------------ |
 | X-Secret-Key | String | O        | Can be created on console.  |
+| X-NC-API-IDEMPOTENCY-KEY | String | X | Reference key for duplicate message Send requests<br>If a request is made with the same key for 10 minutes, the request will be failed. |
 
 [Request body]
 
@@ -622,11 +625,12 @@ Content-Type: application/json;charset=UTF-8
 | - templateParameter    | Object  | X        | Template parameter<br>(required, if it includes a variable to be replaced for template) |
 | -- key                 | String  | X        | Replacement key(#{key})                                     |
 | -- value               | String  | X        | Value which is mapped for replacement key                    |
-| - isResend             | boolean | X        | Whether to send text as alternative, if delivery fails<br>Resent in default, if delivery failure is set on console. |
-| - resendType           | String  | X        | Alternative delivery type(SMS,LMS)<br>Categorized by the length of template body, if it is left blank. |
-| - resendTitle          | String  | X        | Title for LMS alternative delivery(up to 20 characters)<br>(resent with PlusFriend ID if the value is left blank.) |
-| - resendContent        | String  | X        | Message for alternative delivery(up to 1000 characters)<br>(resent with template message, if the value is left empty.) |
-| - resendSendNo         | String  | X        | Sender number for alternative delivery(up to 13 characters)<br><span style="color:red">(if the number is not registered in SMS service, alternative delivery may fail.)</span> |
+| - resendParameter      | Object  | X        | Alternative delivery information                             |
+| -- isResend            | boolean | X        | Whether to send text as alternative, if delivery fails<br>Resent in default, if delivery failure is set on console. |
+| -- resendType          | String  | X        | Alternative delivery type(SMS,LMS)<br>Categorized by the length of template body, if it is left blank. |
+| -- resendTitle         | String  | X        | Title for LMS alternative delivery<br>(resent with PlusFriend ID if the value is left blank.) |
+| -- resendContent       | String  | X        | Message for alternative delivery<br>(resent with [Message body and web link button name - web link mobile link] if value is unavailable.) |
+| -- resendSendNo        | String  | X        | Sender number for alternative delivery<br><span style="color:red">(if the number is not registered in SMS service, alternative delivery may fail.)</span> |
 | - recipientGroupingKey | String  | X        | Recipient grouping key(up to 100 characters)                |
 
 * <b> Request date and time can be set up to 30 days since a point of calling. </b>
@@ -703,6 +707,7 @@ Content-Type: application/json;charset=UTF-8
 | Value        | Type   | Required | Description                                                  |
 | ------------ | ------ | -------- | ------------------------------------------------------------ |
 | X-Secret-Key | String | O        | Can be created on console.  |
+| X-NC-API-IDEMPOTENCY-KEY | String | X | Key for duplicate message sending request criteria<br>If a request is made with the same key for 10 minutes, the request will be failed. |
 
 [Request Body]
 
@@ -755,11 +760,12 @@ Content-Type: application/json;charset=UTF-8
 | -- linkPc              | String  | X        | PC web link(required for the WL type, for up to 500 characters) |
 | -- schemeIos           | String  | X        | iOS app link(required for the AL type, for up to 500 characters) |
 | -- schemeAndroid       | String  | X        | Android app link(required for the AL type, for up to 500 characters) |
-| - isResend             | boolean | X        | Whether to send text as alternative, if delivery fails<br>Resent in default, if delivery failure is set on console. |
-| - resendType           | String  | X        | Alternative delivery type(SMS,LMS)<br>Categorized by the length of template body, if value is unavailable. |
-| - resendTitle          | String  | X        | Title of alternative delivery for LMS(up to 20 characters)<br>(resent with PlusFriend ID, if the value is unavailable.) |
-| - resendContent        | String  | X        | Alternative delivery message(up to 1000 characters)<br>(resent with template message if value is unavailable.) |
-| - resendSendNo         | String  | X        | Sender number for alternative delivery(up to 13 characters)<br><span style="color:red">(Alternative delivery may fail, if the sender number is not registered on the SMS service.)</span> |
+| - resendParameter      | Object  | X        | Alternative delivery information                            |
+| -- isResend            | boolean | X        | Whether to send text as alternative, if delivery fails<br>Resent in default, if delivery failure is set on console. |
+| -- resendType          | String  | X        | Alternative delivery type(SMS,LMS)<br>Categorized by the length of template body, if value is unavailable. |
+| -- resendTitle         | String  | X        | Title of alternative delivery for LMS<br>(resent with PlusFriend ID, if the value is unavailable.) |
+| -- resendContent       | String  | X        | Alternative delivery message<br>(resent with [Message body and web link button name - web link mobile link] if value is unavailable.) |
+| -- resendSendNo        | String  | X        | Sender number for alternative delivery<br><span style="color:red">(Alternative delivery may fail, if the sender number is not registered on the SMS service.)</span> |
 | - recipientGroupingKey | String  | X        | Recipient's grouping key(up to 100 characters)              |
 
 * <b>Enter data completed with replacement in the body and button. </b>
@@ -1378,12 +1384,11 @@ Content-Type: application/json;charset=UTF-8
 }
 ```
 
-| Value        | Type    | Required | Description                                                  |
-| ------------ | ------- | -------- | ------------------------------------------------------------ |
-| plusFriendId | String  | O        | PlusFriend ID(up to 30 characters)                          |
-| phoneNo      | String  | O        | Mobile number of administrator(up to 15 characters)         |
-| categoryCode | String  | O        | Category code(11 characters) See response for Search Category API  e.g.) 00100010001 Health(001) - Hospital(0001) - General Hospital(0001) |
-| fileSeq      | Integer | O        | File sequence                                                |
+| 이름 |	타입|	필수|	설명|
+|---|---|---|---|
+|plusFriendId|	String|	O | PlusFriend ID(up to 30 characters) |
+|phoneNo|	String |	O | Mobile number of administrator(up to 15 characters) |
+|categoryCode|	String |	O | Category code(11 characters)<br>See response for Search Category API<br>ex) 00100010001 Health(001) - Hospital(0001) - General Hospital(0001) |
 
 <a id="response-12"></a>
 #### Response
@@ -1646,31 +1651,38 @@ Content-Type: application/json;charset=UTF-8
 }
 ```
 
-| Value                     | Type    | Description                                                  |
-| ------------------------- | ------- | ------------------------------------------------------------ |
-| header                    | Object  | Header area                                                  |
-| - resultCode              | Integer | Result code                                                  |
-| - resultMessage           | String  | Result message                                               |
-| - isSuccessful            | Boolean | Successful or not                                            |
-| plusFriends               | Object  | PlusFriend                                                   |
-| - plusFriendId            | String  | PlusFriend ID                                                |
-| - plusFriendType          | String  | PlusFriend type(NORMAL, GROUP)                              |
-| - senderKey               | String  | Sender key                                                   |
-| - categoryCode            | String  | Category code                                                |
-| - alimtalkDailyMaxCount   | Integer | Number of maximum daily AlimTalk deliveries(not limited if it is 0) |
-| - friendtalkDailyMaxCount | Integer | Number of maximum daily FriendTalk deliveries(not limited if it is 0) |
-| - alimtalkSentCount       | Integer | Number of daily AlimTalk deliveries(not limited if it is 0) |
-| - friendtalkSentCount     | Integer | Number of daily FriendTalk deliveries(not limited if it is 0) |
-| - status                  | String  | Status code of NHN Cloud PlusFriend(YSC02: Ready for registeration, YSC03: Normally registered) |
-| - statusName              | String  | Status name of NHN Cloud PlusFriend(ready for registration, normally registered) |
-| - kakaoStatus             | String  | Status code of Kakao PlusFriend(A: Normal, S: Blocked, D: Deleted) kakaoStatus is null if the status is YSC02. |
-| - kakaoStatusName         | String  | Status name of Kakao PlusFriend(normal, blocked, deleted) kakaoStatusName is null if the status is YSC02. |
-| - kakaoProfileStatus      | String  | Status code of Kakao PlusFriend profile(A: Activated, B: Blocked, C: Deactivated, D:Deleted, E: Deleting) kakaoProfileStatus is null if the status is YSC02. |
-| - kakaoProfileStatusName  | String  | Status name of Kakao PlusFriend profile(Activated, Deactivated, Blocked, Deleted, or Deleting) kakaoProfileStatusName is null if the status is YSC02. |
-| - resendYn                | String  | Set delivery failure(resending) or not                      |
-| - smsSendNo               | String  | Sender number for tc-sms, to resend                          |
-| - createDate              | String  | Date and time of registration                                |
-| totalCount                | Integer | Total count                                                  |
+| Value | Type | Description |
+| --- | --- | --- |
+| header | Object | Header area |
+| - resultCode | Integer | Result code |
+| - resultMessage | String | Result message |
+| - isSuccessful | Boolean | Successful or not |
+| plusFriends | Object | PlusFriend |
+| - plusFriendId | String | PlusFriend ID |
+| - plusFriendType | String | PlusFriend type(NORMAL, GROUP) |
+| - senderKey | String | Sender key |
+| - categoryCode | String | Category code |
+| - status | String | Status code of NHN Cloud PlusFriend(YSC02: Ready for registeration, YSC03: Normally registered) |
+| - statusName | String | Status name of NHN Cloud PlusFriend(ready for registration, normally registered) |
+| - kakaoStatus | String | Status code of Kakao PlusFriend(A: Normal, S: Blocked, D: Deleted) kakaoStatus is null if the status is YSC02. |
+| - kakaoStatusName | String | Status name of Kakao PlusFriend(normal, blocked, deleted) kakaoStatusName is null if the status is YSC02. |
+| - kakaoProfileStatus | String | Status code of Kakao PlusFriend profile(A: Activated, B: Blocked, C: Deactivated, D:Deleted, E: Deleting) kakaoProfileStatus is null if the status is YSC02. |
+| - kakaoProfileStatusName | String | Status name of Kakao PlusFriend profile(Activated, Deactivated, Blocked, Deleted, or Deleting) kakaoProfileStatusName is null if the status is YSC02. |
+| - alimtalk | Object | AlimTalk settings |
+| -- resendAppKey | String | SMS service appkey to set for fallback |
+| -- isResend | String | Set delivery failure(resending) or not |
+| -- resendSendNo | String | Sender number for tc-sms, to resend |
+| -- dailyMaxCount | Integer | Number of maximum daily AlimTalk deliveries(not limited if it is 0) |
+| -- sentCount | Integer | Number of daily AlimTalk deliveries(not limited if it is 0) |
+| - friendtalk | Object | FriendTalk settings |
+| -- resendAppKey | String | SMS service appkey to set for fallback |
+| -- isResend | String | Set delivery failure(resending) or not |
+| -- resendSendNo | String | Sender number for tc-sms, to resend |
+| -- resendUnsubscribeNo | String | 080 Opt Out Number for tc-sms, to resend |
+| -- dailyMaxCount | Integer | Number of maximum daily FriendTalk deliveries(not limited if it is 0) |
+| -- sentCount | Integer | Number of daily FriendTalk deliveries(not limited if it is 0) |
+| - createDate | String | Date and time of registration |
+| totalCount | Integer | Total count |
 
 <a id="templates"></a>
 ## Templates { #templates }

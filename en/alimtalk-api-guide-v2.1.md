@@ -57,6 +57,7 @@ Content-Type: application/json;charset=UTF-8
 | Value        | Type   | Required | Description                                                  |
 | ------------ | ------ | -------- | ------------------------------------------------------------ |
 | X-Secret-Key | String | O        | Can be created on console.  |
+|X-NC-API-IDEMPOTENCY-KEY|	String| X | Key used as the criterion for duplicate message sending requests<br>If a request is made with the same key for 10 minutes, the request will be failed. |
 
 [Request body]
 
@@ -193,6 +194,7 @@ Content-Type: application/json;charset=UTF-8
 | Value        | Type   | Required | Description                                                  |
 | ------------ | ------ | -------- | ------------------------------------------------------------ |
 | X-Secret-Key | String | O        | Can be created on console.  |
+| X-NC-API-IDEMPOTENCY-KEY | String | X | Reference key for duplicate message sending requests<br>If a request is made with the same key for 10 minutes, the request will be failed. |
 
 [Request Body]
 
@@ -573,11 +575,14 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 | - requestDate          | String  | Date and time of request                                     |
 | - receiveDate          | String  | Date and time of receiving                                   |
 | - createDate           | String  | Registered date and time                                     |
-| - resendStatus         | String  | Status code of resending                                     |
+| - resendStatus         | String  | Status code of resending (RSC01, RSC02, RSC03, RSC04, RSC05)<br>([[Alternative Delivery status table below](http://docs.toast.com/ko/Notification/KakaoTalk%20Bizmessage/ko/alimtalk-api-guide/#smslms)] Refer to) |
 | - resendStatusName     | String  | status code name of resending                                |
+| - resendResultCode     | String  | Alternative Delivery result code [SMS Result Code](https://docs.toast.com/ko/Notification/SMS/ko/error-code/#api) |
+| - resendRequestId      | String  | Alternative Delivery SMS request ID                          |
 | - messageStatus        | String  | Request status(COMPLETED -> successful, FAILED -> failed, CANCEL -> cancelled ) |
 | - resultCode           | String  | Result code of receiving                                     |
 | - resultCodeName       | String  | Result code name of receiving                                |
+| - createUser           | String  | Registrant (saved as user UUID when sent from the Console)   |
 | - buttons              | List    | List of buttons                                              |
 | -- ordering            | Integer | Button sequence                                              |
 | -- type                | String  | Button type(WL: Web Link, AL: App Link, DS: Delivery Search, BK:Bot Keyword, MD: Message Delivery, BC: Bot for Consultation, BT: Bot Transfer, CA: Channel Added) |
@@ -630,6 +635,7 @@ Content-Type: application/json;charset=UTF-8
 | Value        | Type   | Required | Description                                                  |
 | ------------ | ------ | -------- | ------------------------------------------------------------ |
 | X-Secret-Key | String | O        | Can be created on console.  |
+| X-NC-API-IDEMPOTENCY-KEY | String | X | Key used as the reference for duplicate message sending requests<br>If a request is made with the same key for 10 minutes, the request will be failed. |
 
 [Request body]
 
@@ -663,7 +669,7 @@ Content-Type: application/json;charset=UTF-8
 
 | Value                  | Type    | Required | Description                                                  |
 | ---------------------- | ------- | -------- | ------------------------------------------------------------ |
-| senderKey              | String  | O        | Sender Key                                                   |
+| senderKey              | String  | O        | Sender Key (40 characters)                                   |
 | templateCode           | String  | O        | Registered delivery template code(up to 20 characters)      |
 | requestDate            | String  | X        | Date of request(yyyy-MM-dd HH:mm)<br>(immediately sent, if it is left blank) |
 | senderGroupingKey      | String  | X        | Sender's grouping key(up to 100 characters)                 |
@@ -673,11 +679,12 @@ Content-Type: application/json;charset=UTF-8
 | - templateParameter    | Object  | X        | Template parameter<br>(required, if it includes a variable to be replaced for template) |
 | -- key                 | String  | X        | Replacement key(#{key})                                     |
 | -- value               | String  | X        | Value which is mapped for replacement key                    |
-| - isResend             | boolean | X        | Whether to send text as alternative, if delivery fails<br>Resent in default, if delivery failure is set on console. |
-| - resendType           | String  | X        | Alternative delivery type(SMS,LMS)<br>Categorized by the length of template body, if it is left blank. |
-| - resendTitle          | String  | X        | Title for LMS alternative delivery(up to 20 characters)<br>(resent with PlusFriend ID if the value is left blank.) |
-| - resendContent        | String  | X        | Message for alternative delivery(up to 1000 characters)<br>(resent with template message, if the value is left empty.) |
-| - resendSendNo         | String  | X        | Sender number for alternative delivery(up to 13 characters)<br><span style="color:red">(if the number is not registered in SMS service, alternative delivery may fail.)</span> |
+| - resendParameter      | Object  | X        | Alternative delivery information                             |
+| -- isResend            | boolean | X        | Whether to send text as alternative, if delivery fails<br>Resent in default, if delivery failure is set on console. |
+| -- resendType          | String  | X        | Alternative delivery type(SMS,LMS)<br>Categorized by the length of template body, if it is left blank. |
+| -- resendTitle         | String  | X        | Title for LMS alternative delivery<br>(resent with PlusFriend ID if the value is left blank.) |
+| -- resendContent       | String  | X        | Message for alternative delivery<br>(resent with [Message body and web link button name - web link mobile link] if value is unavailable.) |
+| -- resendSendNo        | String  | X        | Sender number for alternative delivery<br><span style="color:red">(if the number is not registered in SMS service, alternative delivery may fail.)</span> |
 | - recipientGroupingKey | String  | X        | Recipient grouping key(up to 100 characters)                |
 | messageOption          | Object  | X        | Message Option                                               |
 | - price                | Integer | X        | Price/amount/payment amount included in message(message to be delivered to user)(related to moment advertisement) |
@@ -757,6 +764,7 @@ Content-Type: application/json;charset=UTF-8
 | Value        | Type   | Required | Description                                                  |
 | ------------ | ------ | -------- | ------------------------------------------------------------ |
 | X-Secret-Key | String | O        | Can be created on console.  |
+| X-NC-API-IDEMPOTENCY-KEY | String | X | Key used as the basis for duplicate message sending requests<br>If a request is made with the same key for 10 minutes, the request will be failed. |
 
 [Request Body]
 
@@ -802,7 +810,7 @@ Content-Type: application/json;charset=UTF-8
 
 | Value                  | Type    | Required | Description                                                  |
 | ---------------------- | ------- | -------- | ------------------------------------------------------------ |
-| senderKey              | String  | O        | Sender Key                                                   |
+| senderKey              | String  | O        | Sender Key (40 characters)                                   |
 | templateCode           | String  | O        | Registered delivery template code(up to 20 characters)      |
 | requestDate            | String  | X        | Date and time of request(yyyy-MM-dd HH:mm)<br>(sent immediately, if it is left blank) |
 | senderGroupingKey      | String  | X        | Sender's grouping key(up to 100 characters)                 |
@@ -819,11 +827,12 @@ Content-Type: application/json;charset=UTF-8
 | -- linkPc              | String  | X        | PC web link(required for the WL type, for up to 500 characters) |
 | -- schemeIos           | String  | X        | iOS app link(required for the AL type, for up to 500 characters) |
 | -- schemeAndroid       | String  | X        | Android app link(required for the AL type, for up to 500 characters) |
-| - isResend             | boolean | X        | Whether to send text as alternative, if delivery fails<br>Resent in default, if delivery failure is set on console. |
-| - resendType           | String  | X        | Alternative delivery type(SMS,LMS)<br>Categorized by the length of template body, if value is unavailable. |
-| - resendTitle          | String  | X        | Title of alternative delivery for LMS(up to 20 characters)<br>(resent with PlusFriend ID, if the value is unavailable.) |
-| - resendContent        | String  | X        | Alternative delivery message(up to 1000 characters)<br>(resent with template message if value is unavailable.) |
-| - resendSendNo         | String  | X        | Sender number for alternative delivery(up to 13 characters)<br><span style="color:red">(Alternative delivery may fail, if the sender number is not registered on the SMS service.)</span> |
+| - resendParameter      | Object  | X        | Alternative delivery information                             |
+| -- isResend            | boolean | X        | Whether to send text as alternative, if delivery fails<br>Resent in default, if delivery failure is set on console. |
+| -- resendType          | String  | X        | Alternative delivery type(SMS,LMS)<br>Categorized by the length of template body, if value is unavailable. |
+| -- resendTitle         | String  | X        | Title of alternative delivery for LMS<br>(resent with PlusFriend ID, if the value is unavailable.) |
+| -- resendContent       | String  | X        | Alternative delivery message<br>(resent with [Message body and web link button name - web link mobile link] if value is unavailable.) |
+| -- resendSendNo        | String  | X        | Sender number for alternative delivery<br><span style="color:red">(Alternative delivery may fail, if the sender number is not registered on the SMS service.)</span> |
 | - recipientGroupingKey | String  | X        | Recipient's grouping key(up to 100 characters)              |
 | messageOption          | Object  | X        | Message Option                                               |
 | - price                | Integer | X        | Price/amount/payment amount included in message(message to be delivered to user)(related to moment advertisement) |
@@ -1890,20 +1899,20 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 | - isSuccessful       | Boolean | Successful or not                                            |
 | templateListResponse | Object  | Body area                                                    |
 | - templates          | List    | Template list                                                |
-| -- plusFriendId      | String  | PlusFriend ID                                                |
+| -- plusFriendId      | String  | KakaoTalk Channel search ID or Sender Profile group name     |
 | -- senderKey         | String  | Sender Key                                                   |
 | -- plusFriendType    | String  | PlusFriend type(NORMAL, GROUP)                              |
 | -- templateCode      | String  | Template code                                                |
 | -- templateName      | String  | Template name                                                |
-| -- templateContent   | String  | Template body                                                |
-|-- templateEmphasizeType| String| Types of Emphasized Template(NONE: Basic, TEXT: Emphasized, IMAGE: Image type, default:NONE) |
-|-- tempalteTitle      | String  | Template Title                                               |
-|-- templateSubtitle   | String  | Auxiliary Template Phrase                                    |
-|-- templateImageName  | String  | Image name                                                   |
-|-- templateImageUrl   | String  | Image URL                                                    |
 |-- templateMessageType| String  | Types of Template Message(BA: Basic, EX: Extra Information, AD: Ad Included, MI: Mixed Purposes) |
+|-- templateEmphasizeType| String| Types of Emphasized Template(NONE: Basic, TEXT: Emphasized, IMAGE: Image type, default:NONE) |
+| -- templateContent   | String  | Template body                                                |
 |-- templateExtra      | String  | Additional Template Information                              |
 |-- templateAd         | String  | Request for consent of receiving within template or simple ad phrases |
+|-- tempalteTitle      | String  | Template Title                                               |
+|-- templateSubtitle   | String  | Auxiliary Template Phrase                                    |
+|-- templateImageName  | String  | Image name (uploaded file name)                              |
+|-- templateImageUrl   | String  | Image URL                                                    |
 | -- buttons           | List    | List of buttons                                              |
 | --- ordering         | Integer | Button sequence(1~5)                                        |
 | --- type             | String  | Button type(WL: Web link, AL: App link, DS: Delivery search, BK: Bot keyword, MD: Message delivery, BC: Bot for Consultation, BT: Bot Transfer, CA: Channel Added) |
@@ -1923,7 +1932,10 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 | --- status            | String  | Comment status(INQ: Inquired, APR: Approved, REJ: Rejected, REP: Replied, REQ: Under inspection) |
 | -- status            | String  | Template status                                              |
 | -- statusName        | String  | Template status name                                         |
+| -- securityFlag      | Boolean | Security template                                            |
+| -- categoryCode      | String  | Template category code                                       |
 | -- createDate        | String  | Date and time of creation                                    |
+| -- updateDate        | String  | Date and time of modification                                |
 | - totalCount         | Integer | Total count                                                  |
 
 <a id="list-template-modifications"></a>
@@ -2032,20 +2044,20 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 | - isSuccessful       | Boolean | Successful or not                                            |
 | templateModificationsResponse | Object  | Body area                                                    |
 | - templates          | List    | Template list                                                |
-| -- plusFriendId      | String  | PlusFriend ID                                                |
+| -- plusFriendId      | String  | KakaoTalk Channel search ID or Sender Profile group name     |
 | -- senderKey         | String  | Sender Key                                                   |
 | -- plusFriendType    | String  | PlusFriend type(NORMAL, GROUP)                              |
 | -- templateCode      | String  | Template code                                                |
 | -- templateName      | String  | Template name                                                |
-| -- templateContent   | String  | Template body                                                |
+| -- templateMessageType| String | Types of Template Message(BA: Basic, EX: Extra Information, AD: Ad Included, MI: Mixed Purposes) |
 |-- templateEmphasizeType| String| Types of Emphasized Template(NONE: Basic, TEXT: Emphasized, IMAGE: Image type, default:NONE) |
-| -- tempalteTitle      | String  | Template Title                                               |
-| -- templateSubtitle   | String  | Auxiliary Template Phrase                                    |
-| -- templateImageName  | String  | Image name                                                   |
-| -- templateImageUrl   | String  | Image URL                                                    |
-| -- templateMessageType| String  | Types of Template Message(BA: Basic, EX: Extra Information, AD: Ad Included, MI: Mixed Purposes) |
+| -- templateContent   | String  | Template body                                                |
 | -- templateExtra      | String  | Additional Template Information                             |
 | -- templateAd         | String  | Request for consent of receiving within template or simple ad phrases |
+| -- tempalteTitle      | String  | Template Title                                               |
+| -- templateSubtitle   | String  | Auxiliary Template Phrase                                    |
+| -- templateImageName  | String  | Image name (uploaded file name)                              |
+| -- templateImageUrl   | String  | Image URL                                                    |
 | -- buttons           | List    | List of buttons                                              |
 | --- ordering         | Integer | Button sequence(1~5)                                        |
 | --- type             | String  | Button type(WL: Web link, AL: App link, DS: Delivery search, BK: Bot keyword, MD: Message delivery, BC: Bot for Consultation, BT: Bot Transfer, CA: Channel Added) |
@@ -2065,8 +2077,11 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 | --- status            | String  | Comment status(INQ: Inquired, APR: Approved, REJ: Rejected, REP: Replied, REQ: Under inspection) |
 | -- status            | String  | Template status                                              |
 | -- statusName        | String  | Template status name                                         |
+| -- securityFlag      | Boolean | Security template or not                                     |
+| -- categoryCode      | String  | Template category code                                       |
 | -- activated         | Boolean | activated or not                                             |
 | -- createDate        | String  | Date and time of creation                                    |
+| -- updateDate        | String  | Date of modification                                         |
 | - totalCount         | Integer | Total count                                                  |
 
 <a id="register-template-image"></a>

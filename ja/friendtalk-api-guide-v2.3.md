@@ -555,21 +555,21 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 }
 ```
 
-| 値                 | タイプ | 説明     |
-| ----------------------- | ------- | ------------ |
-| header                  | Object  | ヘッダ領域  |
-| - resultCode            | Integer | 結果コード  |
-| - resultMessage         | String  | 結果メッセージ |
-| - isSuccessful          | Boolean | 成否   |
-| message                 | Object  | 本文領域  |
-| - requestId             | String  | リクエストID        |
-| - senderGroupingKey     | String  | 発信グルーピングキー   |
-| - sendResults           | Object  | 送信リクエスト結果 |
-| -- recipientSeq         | Integer | 受信者シーケンス番号 |
-| -- recipientNo          | String  | 受信番号  |
-| -- resultCode           | Integer | 送信リクエスト結果コード |
-| -- resultMessage        | String  | 送信リクエスト結果メッセージ |
-| -- recipientGroupingKey | String  | 受信者グルーピングキー  |
+| 値                      | タイプ    | Not Null | 説明             |
+|-------------------------|---------|:--------:|----------------|
+| header                  | Object  |    O     | ヘッダ領域         |
+| - resultCode            | Integer |    O     | 結果コード         |
+| - resultMessage         | String  |    O     | 結果メッセージ       |
+| - isSuccessful          | Boolean |    O     | 成否            |
+| message                 | Object  |    X     | 本文領域          |
+| - requestId             | String  |    X     | リクエストID       |
+| - senderGroupingKey     | String  |    X     | 発信グルーピングキー    |
+| - sendResults           | Object  |    X     | 送信リクエスト結果     |
+| -- recipientSeq         | Integer |    O     | 受信者シーケンス番号    |
+| -- recipientNo          | String  |    X     | 受信番号         |
+| -- resultCode           | Integer |    O     | 送信リクエスト結果コード  |
+| -- resultMessage        | String  |    O     | 送信リクエスト結果メッセージ |
+| -- recipientGroupingKey | String  |    X     | 受信者グルーピングキー   |
 
 <a id="list-deliveries"></a>
 ## 送信リスト照会 { #list-deliveries }
@@ -655,32 +655,32 @@ Content-Type: application/json;charset=UTF-8
 }
 ```
 
-| 値                     | タイプ | 説明                          |
-| --------------------------- | ------- | --------------------------------- |
-| header                      | Object  | ヘッダ領域                       |
-| - resultCode                | Integer | 結果コード                       |
-| - resultMessage             | String  | 結果メッセージ                      |
-| - isSuccessful              | Boolean | 成否                        |
-| messageSearchResultResponse | Object  | 本文領域                       |
-| - messages                  | List    | メッセージリスト                     |
-| -- requestId                | String  | リクエストID                             |
-| -- recipientSeq             | Integer | 受信者シーケンス番号                  |
-| -- plusFriendId             | String  | プラスフレンドID                          |
-|-- senderKey   | String | 発信キー |
-| -- recipientNo              | String  | 受信番号                       |
-| -- requestDate              | String  | リクエスト日時                       |
-| -- createDate               | String  | 登録日時                             |
-|-- receiveDate | String |	受信日時 |
-| -- content                  | String  | 本文                          |
-| -- messageStatus            | String  | リクエストステータス(COMPLETED：成功、FAILED：失敗) |
-| -- resendStatus             | String  | 再送信ステータスコード                   |
-| -- resendStatusName         | String  | 再送信ステータスコード名                      |
-| -- resultCode               | String  | 受信結果コード                    |
-| -- resultCodeName           | String  | 受信結果コード名                       |
-| -- createUser               | String  | 登録者(コンソールから送信する場合、ユーザーUUIDとして保存)|
-| -- senderGroupingKey        | String  | 発信グルーピングキー                        |
-| -- recipientGroupingKey     | String  | 受信者グルーピングキー                       |
-| - totalCount                | Integer | 総個数                            |
+| 名前                          | タイプ      | Not Null | 説明                               |
+|-----------------------------|---------|:--------:|----------------------------------|
+| header                      | Object  |    O     | ヘッダ領域                            |
+| - resultCode                | Integer |    O     | 結果コード                            |
+| - resultMessage             | String  |    O     | 結果メッセージ                           |
+| - isSuccessful              | Boolean |    O     | 成否                            |
+| messageSearchResultResponse | Object  |    X     | 本文領域                            |
+| - messages                  | List    |    X     | メッセージリスト                          |
+| -- requestId                | String  |    O     | リクエストID                            |
+| -- recipientSeq             | Integer |    O     | 受信者シーケンス番号                       |
+| -- plusFriendId             | String  |    O     | プラスフレンドID                         |
+| -- senderKey                | String  |    O     | 発信キー                             |
+| -- recipientNo              | String  |    X     | 受信番号                            |
+| -- requestDate              | String  |    O     | リクエスト日時                            |
+| -- createDate               | String  |    O     | 登録日時                            |
+| -- receiveDate              | String  |    X     | 受信日時                            |
+| -- content                  | String  |    X     | 本文                               |
+| -- messageStatus            | String  |    O     | リクエストステータス(COMPLETED：成功、FAILED：失敗) |
+| -- resendStatus             | String  |    O     | 再送信ステータスコード                        |
+| -- resendStatusName         | String  |    O     | 再送信ステータスコード名                       |
+| -- resultCode               | String  |    X     | 受信結果コード                         |
+| -- resultCodeName           | String  |    X     | 受信結果コード名                        |
+| -- createUser               | String  |    X     | 登録者(コンソールから送信する場合、ユーザーUUIDとして保存)      |
+| -- senderGroupingKey        | String  |    X     | 発信グルーピングキー                         |
+| -- recipientGroupingKey     | String  |    X     | 受信者グルーピングキー                        |
+| - totalCount                | Integer |    X     | 総個数                             |
 
 [例]
 ```
@@ -851,93 +851,93 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 }
 ```
 
-| 値                | タイプ | 説明                                 |
-| ---------------------- | ------- | ---------------------------------------- |
-| header                 | Object  | ヘッダ領域                              |
-| - resultCode           | Integer | 結果コード                              |
-| - resultMessage        | String  | 結果メッセージ                             |
-| - isSuccessful         | Boolean | 成否                               |
-| message                | Object  | メッセージ                                |
-| - requestId            | String  | リクエストID                                    |
-| - recipientSeq         | Integer | 受信者シーケンス番号                         |
-| - plusFriendId         | String  | プラスフレンドID                                 |
-|- senderKey   | String | 発信キー                                               |
-| - recipientNo          | String  | 受信番号                              |
-| - requestDate          | String  | リクエスト日時                              |
-| - createDate           | String  | 登録日時                             |
-| - receiveDate          | String  | 受信日時                              |
-| - content              | String  | 本文                                 |
-| - messageStatus        | String  | リクエストステータス(COMPLETED：成功、FAILED：失敗)      |
-| - resendStatus         | String  | 再送信ステータスコード                          |
-| - resendStatusName     | String  | 再送信ステータスコード名                             |
-|- resendResultCode | String | 再送信結果コードSMS結果コード                                |
-|- resendRequestId | String | 再送信SMSリクエストID                                            |
-| - resultCode           | String  | 受信結果コード                           |
-| - resultCodeName       | String  | 受信結果コード名                              |
-| - createUser           | String  | 登録者(コンソールから送信する場合、ユーザーUUIDとして保存)|
-| - imageSeq             | Integer | イメージ番号                             |
-| - imageName            | String  | イメージ名(アップロードしたファイル名)                           |
-| - imageUrl             | String  | イメージURL                                  |
-| - imageLink            | String  | イメージリンク(イメージ番号を入力した場合は必須)                |
-| - wide                 | Boolean | ワイドイメージの可否                        |
-| - buttons              | List    | ボタンリスト                              |
-| -- ordering            | Integer | ボタン順序                              |
-| -- type                | String  | ボタンタイプ(WL：Webリンク、AL：アプリリンク、BK：Botキーワード、MD：メッセージ伝達) |
-| -- name                | String  | ボタン名                              |
-| -- linkMo              | String  | モバイルWebリンク(WLタイプの場合は必須フィールド)                |
-| -- linkPc              | String  | PC Webリンク(WLタイプの場合は任意フィールド)                |
-| -- schemeIos           | String  | iOSアプリリンク(ALタイプの場合は必須フィールド)                |
-| -- schemeAndroid       | String  | Androidアプリリンク(ALタイプの場合は必須フィールド)            |
-| -- chatExtra           | String  | BC(相談トーク切り替え) / BT(Bot切り替え)タイプボタンの場合に伝達するメタ情報 |
-| -- chatEvent           | String  | BT(Bot切り替え)タイプボタンの場合に接続するBotイベント名 |
-| -- bizFormKey|	String|	BF(ビジネスフォーム)タイプボタンの場合、ビズフォームキー |
-| -- target              | String  | Webリンクボタンの場合、"target":"out"属性を追加すると、アウトリンク<br>デフォルトアプリ内リンクで送信 |
-|- header | String | ヘッダ(ワイドアイテムリストメッセージタイプ使用時、必須、最大25文字) |
-|- item | Object | ワイドアイテム |
-|-- list | List | ワイドアイテムリスト(最小3個/最大4個) |
-|--- title | String | アイテムタイトル(最大25文字) |
-|--- imageUrl | String | アイテム画像URL |
-|--- linkMo | String | モバイルWebリンク |
-|--- linkPc | String | PC Webリンク |
-|--- schemeIos | String | iOSアプリリンク |
-|--- schemeAndroid | String | Androidアプリリンク |
-|- carousel | Object | カルーセル | 
-|-- list | List | カルーセルリスト(最小2個/最大6個) | 
-|--- header | String | カルーセルアイテムタイトル(最大20文字) | 
-|--- message | String | カルーセルアイテムメッセージ(最大180文字) | 
-|--- attachment | Object | カルーセルアイテム画像、ボタン情報 | 
-|---- buttons | List | ボタンリスト(最大2個) | 
-|----- name| String |	ボタン名(ボタンがある場合は必須、最大8文字)|
-|----- type| String |	ボタンタイプ(WL:Webリンク、 AL:アプリリンク、 BK:Botキーワード、 MD:メッセージ伝達、 BF:ビジネスフォーム) |
-|----- linkMo| String |	モバイルWebリンク(WLタイプの場合は必須フィールド)|
-|----- linkPc | String | PC Webリンク(WLタイプの場合は任意フィールド) |
-|----- schemeIos | String | iOSアプリリンク(ALタイプの場合は必須フィールド) |
-|----- schemeAndroid | String | Androidアプリリンク(ALタイプの場合は必須フィールド) |
-|---- image | Object | 画像 | 
-|----- imageUrl|	String|	画像URL   |
-|----- imageLink|	String|	画像リンク |
-|---- coupon | Object | クーポン | 
-|----- title| String |	クーポンtitle |
-|----- description| String |	クーポン詳細説明 |
-|----- linkMo| String | モバイルWebリンク |
-|----- linkPc | String |	PC Webリンク |
-|----- schemeIos | String | iOSアプリリンク |
-|----- schemeAndroid | String | Androidアプリリンク |
-|-- tail | Object | さらに表示ボタン情報 | 
-|--- linkMo| String |	モバイルWebリンク|
-|--- linkPc | String |	PC Webリンク |
-|--- schemeIos | String | iOSアプリリンク |
-|--- schemeAndroid | String | XAndroidアプリリンク |
-|- coupon | Object | クーポン | 
-|-- title| String |	クーポンtitle |
-|-- description| String |	クーポン詳細説明 |
-|-- linkMo| String | モバイルWebリンク |
-|-- linkPc | String |	PC Webリンク |
-|-- schemeIos | String | iOSアプリリンク |
-|-- schemeAndroid | String | Androidアプリリンク |
-| - isAd                 | Boolean | 広告かどうか                                   |
-| - senderGroupingKey    | String  | 発信グルーピングキー                               |
-| - recipientGroupingKey | String  | 受信者グルーピングキー                              |
+| 値                       | タイプ    | Not Null | 説明                                                                          |
+|------------------------|---------|:--------:|-----------------------------------------------------------------------------|
+| header                 | Object  |    O     | ヘッダ領域                                                                       |
+| - resultCode           | Integer |    O     | 結果コード                                                                       |
+| - resultMessage        | String  |    O     | 結果メッセージ                                                                     |
+| - isSuccessful         | Boolean |    O     | 成否                                                                          |
+| message                | Object  |    X     | メッセージ                                                                       |
+| - requestId            | String  |    O     | リクエストID                                                                     |
+| - recipientSeq         | Integer |    O     | 受信者シーケンス番号                                                                  |
+| - plusFriendId         | String  |    O     | プラスフレンドID                                                                   |
+| - senderKey            | String  |    O     | 発信キー                                                                        |
+| - recipientNo          | String  |    X     | 受信番号                                                                        |
+| - requestDate          | String  |    O     | リクエスト日時                                                                     |
+| - createDate           | String  |    O     | 登録日時                                                                        |
+| - receiveDate          | String  |    X     | 受信日時                                                                        |
+| - content              | String  |    X     | 本文                                                                          |
+| - messageStatus        | String  |    O     | リクエストステータス(COMPLETED：成功、FAILED：失敗)                                          |
+| - resendStatus         | String  |    O     | 再送信ステータスコード                                                                 |
+| - resendStatusName     | String  |    O     | 再送信ステータスコード名                                                                |
+| - resendResultCode     | String  |    X     | 再送信結果コードSMS結果コード                                                            |
+| - resendRequestId      | String  |    X     | 再送信SMSリクエストID                                                               |
+| - resultCode           | String  |    X     | 受信結果コード                                                                     |
+| - resultCodeName       | String  |    X     | 受信結果コード名                                                                    |
+| - createUser           | String  |    X     | 登録者(コンソールから送信する場合、ユーザーUUIDとして保存)                                            |
+| - imageSeq             | Integer |    X     | イメージ番号                                                                      |
+| - imageName            | String  |    X     | イメージ名(アップロードしたファイル名)                                                        |
+| - imageUrl             | String  |    X     | イメージURL                                                                     |
+| - imageLink            | String  |    X     | イメージリンク                                                                     |
+| - wide                 | boolean |    X     | ワイドイメージの可否                                                                  |
+| - buttons              | List    |    X     | ボタンリスト                                                                      |
+| -- ordering            | Integer |    X     | ボタン順序                                                                       |
+| -- type                | String  |    X     | ボタンタイプ(WL：Webリンク、AL：アプリリンク、BK：Botキーワード、MD：メッセージ伝達)                           |
+| -- name                | String  |    X     | ボタン名(最大28文字、ワイドアイテムリストの場合、9文字)                                              |
+| -- linkMo              | String  |    X     | モバイルWebリンク(WLタイプの場合は必須フィールド)                                                |
+| -- linkPc              | String  |    X     | PC Webリンク(WLタイプの場合は任意フィールド)                                                 |
+| -- schemeIos           | String  |    X     | iOSアプリリンク(ALタイプの場合は必須フィールド)                                                |
+| -- schemeAndroid       | String  |    X     | Androidアプリリンク(ALタイプの場合は必須フィールド)                                             |
+| -- chatExtra           | String  |    X     | BC(相談トーク切り替え) / BT(Bot切り替え)タイプボタンの場合に伝達するメタ情報                               |
+| -- chatEvent           | String  |    X     | BT(Bot切り替え)タイプボタンの場合に接続するBotイベント名                                           |
+| -- bizFormKey          | String  |    X     | BF(ビジネスフォーム)タイプボタンの場合、ビズフォームキー                                              |
+| -- target              | String  |    X     | Webリンクボタンの場合、"target":"out"属性を追加すると、アウトリンク<br>デフォルトアプリ内リンクで送信              |
+| - header               | String  |    X     | ヘッダ(ワイドアイテムリストメッセージタイプ使用時、必須、最大25文字)                                        |
+| - item                 | Object  |    X     | ワイドアイテム                                                                     |
+| -- list                | List    |    X     | ワイドアイテムリスト(最小3個/最大4個)                                                       |
+| --- title              | String  |    X     | アイテムタイトル(最初のアイテムは最大25文字、2〜4番目のアイテムは最大30文字)                                  |
+| --- imageUrl           | String  |    X     | アイテム画像URL                                                                   |
+| --- linkMo             | String  |    X     | モバイルWebリンク                                                                  |
+| --- linkPc             | String  |    X     | PC Webリンク                                                                   |
+| --- schemeIos          | String  |    X     | iOSアプリリンク                                                                   |
+| --- schemeAndroid      | String  |    X     | Androidアプリリンク                                                                |
+| - carousel             | Object  |    X     | カルーセル                                                                       |
+| -- list                | List    |    X     | カルーセルリスト(最小2個/最大10個)                                                        |
+| --- header             | String  |    X     | カルーセルアイテムタイトル(最大20文字)                                                       |
+| --- message            | String  |    X     | カルーセルアイテムメッセージ(最大180文字)                                                     |
+| --- attachment         | Object  |    X     | カルーセルアイテム画像、ボタン情報                                                           |
+| ---- buttons           | List    |    X     | ボタンリスト(最大2個)                                                                |
+| ----- name             | String  |    X     | ボタン名(ボタンがある場合は必須、最大8文字)                                                     |
+| ----- type             | String  |    X     | ボタンタイプ(WL:Webリンク、AL:アプリリンク、BK:Botキーワード、MD:メッセージ伝達、BF:ビジネスフォーム)              |
+| ----- linkMo           | String  |    X     | モバイルWebリンク(WLタイプの場合は必須フィールド)                                                |
+| ----- linkPc           | String  |    X     | PC Webリンク(WLタイプの場合は任意フィールド)                                                  |
+| ----- schemeIos        | String  |    X     | iOSアプリリンク(ALタイプの場合は必須フィールド)                                                |
+| ----- schemeAndroid    | String  |    X     | Androidアプリリンク(ALタイプの場合は必須フィールド)                                             |
+| ---- image             | Object  |    X     | 画像                                                                          |
+| ----- imageUrl         | String  |    X     | 画像URL                                                                       |
+| ----- imageLink        | String  |    X     | 画像リンク                                                                       |
+| ---- coupon            | Object  |    X     | クーポン                                                                        |
+| ----- title            | String  |    X     | クーポンtitle                                                                   |
+| ----- description      | String  |    X     | クーポン詳細説明                                                                    |
+| ----- linkMo           | String  |    X     | モバイルWebリンク                                                                  |
+| ----- linkPc           | String  |    X     | PC Webリンク                                                                   |
+| ----- schemeIos        | String  |    X     | iOSアプリリンク                                                                   |
+| ----- schemeAndroid    | String  |    X     | Androidアプリリンク                                                                |
+| -- tail                | Object  |    X     | さらに表示ボタン情報                                                                  |
+| --- linkMo             | String  |    X     | モバイルWebリンク                                                                  |
+| --- linkPc             | String  |    X     | PC Webリンク                                                                   |
+| --- schemeIos          | String  |    X     | iOSアプリリンク                                                                   |
+| --- schemeAndroid      | String  |    X     | XAndroidアプリリンク                                                               |
+| - coupon               | Object  |    X     | クーポン                                                                        |
+| -- title               | String  |    X     | クーポンtitle                                                                   |
+| -- description         | String  |    X     | クーポン詳細説明                                                                    |
+| -- linkMo              | String  |    X     | モバイルWebリンク                                                                  |
+| -- linkPc              | String  |    X     | PC Webリンク                                                                   |
+| -- schemeIos           | String  |    X     | iOSアプリリンク                                                                   |
+| -- schemeAndroid       | String  |    X     | Androidアプリリンク                                                                |
+| - isAd                 | Boolean |    X     | 広告かどうか                                                                      |
+| - senderGroupingKey    | String  |    X     | 発信グルーピングキー                                                                  |
+| - recipientGroupingKey | String  |    X     | 受信者グルーピングキー                                                                 |
 
 <a id="message"></a>
 ## メッセージ { #message }
@@ -991,12 +991,12 @@ Content-Type: application/json;charset=UTF-8
 }
 ```
 
-| 値        | タイプ | 説明 |
-| --------------- | ------- | ------ |
-| header          | Object  | ヘッダ領域 |
-| - resultCode    | Integer | 結果コード |
-| - resultMessage | String  | 結果メッセージ |
-| - isSuccessful  | Boolean | 成否 |
+| 名前              | タイプ      | Not Null | 説明     |
+|-----------------|---------|:--------:|--------|
+| header          | Object  |    O     | ヘッダ領域  |
+| - resultCode    | Integer |    O     | 結果コード  |
+| - resultMessage | String  |    O     | 結果メッセージ |
+| - isSuccessful  | Boolean |    O     | 成否  |
 
 [例]
 ```
@@ -1075,30 +1075,30 @@ Content-Type: application/json;charset=UTF-8
 }
 ```
 
-| 値                     | タイプ | 説明                                 |
-| --------------------------- | ------- | ---------------------------------------- |
-| header                      | Object  | ヘッダ領域                              |
-| - resultCode                | Integer | 結果コード                              |
-| - resultMessage             | String  | 結果メッセージ                             |
-| - isSuccessful              | Boolean | 成否                               |
-| messageSearchResultResponse | Object  | 本文領域                              |
-| - messages                  | List    | メッセージリスト                            |
-| -- requestId                | String  | リクエストID                                    |
-| -- recipientSeq             | Integer | 受信者シーケンス番号                         |
-| -- plusFriendId             | String  | プラスフレンドID                                 |
-|-- senderKey | String |	発信キー |
-| -- recipientNo              | String  | 受信番号                              |
-| -- requestDate              | String  | リクエスト日時                              |
-| -- receiveDate              | String  | 受信日時                              |
-| -- content                  | String  | 本文                                 |
-| -- messageStatus            | String  | リクエストステータス(COMPLETED -> 成功、FAILED -> 失敗、CANCEL -> キャンセル) |
-| -- resendStatus             | String  | 再送信ステータスコード                          |
-| -- resendStatusName         | String  | 再送信ステータスコード名                             |
-| -- resultCode               | String  | 受信結果コード                           |
-| -- resultCodeName           | String  | 受信結果コード名                              |
-| -- senderGroupingKey        | String  | 発信グルーピングキー                               |
-| -- recipientGroupingKey     | String  | 受信者グルーピングキー                              |
-| - totalCount                | Integer | 総個数                                    |
+| 名前                          | タイプ    | Not Null | 説明                                                              |
+|-----------------------------|---------|:--------:|---------------------------------------------------------------|
+| header                      | Object  |    O     | ヘッダ領域                                                         |
+| - resultCode                | Integer |    O     | 結果コード                                                         |
+| - resultMessage             | String  |    O     | 結果メッセージ                                                        |
+| - isSuccessful              | Boolean |    O     | 成否                                                            |
+| messageSearchResultResponse | Object  |    X     | 本文領域                                                          |
+| - messages                  | List    |    X     | メッセージリスト                                                      |
+| -- requestId                | String  |    O     | リクエストID                                                       |
+| -- recipientSeq             | Integer |    O     | 受信者シーケンス番号                                                    |
+| -- plusFriendId             | String  |    O     | プラスフレンドID                                                     |
+| -- senderKey                | String  |    O     | 発信キー                                                          |
+| -- recipientNo              | String  |    X     | 受信番号                                                          |
+| -- requestDate              | String  |    O     | リクエスト日時                                                       |
+| -- receiveDate              | String  |    X     | 受信日時                                                          |
+| -- content                  | String  |    X     | 本文                                                            |
+| -- messageStatus            | String  |    O     | リクエスト状態(COMPLETED: 成功、FAILED: 失敗、CANCEL: キャンセル)               |
+| -- resendStatus             | String  |    O     | 再送信ステータスコード                                                   |
+| -- resendStatusName         | String  |    O     | 再送信ステータスコード名                                                  |
+| -- resultCode               | String  |    X     | 受信結果コード                                                       |
+| -- resultCodeName           | String  |    X     | 受信結果コード名                                                      |
+| -- senderGroupingKey        | String  |    X     | 発信グルーピングキー                                                    |
+| -- recipientGroupingKey     | String  |    X     | 受信者グルーピングキー                                                   |
+| - totalCount                | Integer |    X     | 総個数                                                           |
 
 [例]
 ```
@@ -1189,29 +1189,29 @@ https://kakaotalk-bizmessage.api.nhncloudservice.com/friendtalk/v2.3/appkeys/{ap
 }
 ```
 
-|値|	タイプ|	説明|
-|---|---|---|
-| header | Object |	ヘッダ領域 |
-| - resultCode |	Integer |	結果コード |
-| - resultMessage |	String | 結果メッセージ |
-| - isSuccessful |	Boolean | 成否 |
-| body | Object | 本文領域 |
-| - messages | Object | メッセージリスト |
-| -- requestId | String | リクエストID |
-| -- requestDate | String | リクエスト日 |
-| -- plusFriendId | String | プラスフレンドID |
-| -- senderKey | String | 送信者ID |
-| -- masterStatusCode | String | 大量送信ステータスコード(WAIT, READY, SENDREADY, SENDWAIT, SENDING, COMPLETE, CANCEL, FAIL) |
-| -- content | String | 内容 |
-| -- isAd | Boolean | 広告かどうか |
-| -- imageSeq | Integer | 画像の順序 |
-| -- imageLink | Boolean | 画像のURL |
-| -- fileId | String | 添付ファイルID |
-| -- autoSendYn | String | 自動送信を行うかどうか |
-| -- statsId | String | 統計ID |
-| -- createDate | String | 作成日 |
-| -- createUser | String | 登録者(コンソールから送信時、ユーザーUUIDに保存) |
-| - totalCount | Integer | 総数
+| 名前                  | タイプ    | Not Null | 説明                                                                             |
+|---------------------|---------|:--------:|--------------------------------------------------------------------------------|
+| header              | Object  |    O     | ヘッダ領域                                                                          |
+| - resultCode        | Integer |    O     | 結果コード                                                                          |
+| - resultMessage     | String  |    O     | 結果メッセージ                                                                        |
+| - isSuccessful      | Boolean |    O     | 成否                                                                             |
+| body                | Object  |    X     | 本文領域                                                                          |
+| - messages          | Object  |    X     | メッセージリスト                                                                       |
+| -- requestId        | String  |    O     | リクエストID                                                                        |
+| -- requestDate      | String  |    O     | リクエスト日                                                                         |
+| -- plusFriendId     | String  |    O     | プラスフレンドID                                                                      |
+| -- senderKey        | String  |    O     | 送信者ID                                                                          |
+| -- masterStatusCode | String  |    O     | 大量送信ステータスコード(WAIT, READY, SENDREADY, SENDWAIT, SENDING, COMPLETE, CANCEL, FAIL) |
+| -- content          | String  |    X     | 内容                                                                             |
+| -- isAd             | Boolean |    X     | 広告かどうか                                                                         |
+| -- imageSeq         | Integer |    X     | 画像の順序                                                                          |
+| -- imageLink        | Boolean |    X     | 画像のURL                                                                         |
+| -- fileId           | String  |    X     | 添付ファイルID                                                                       |
+| -- autoSendYn       | String  |    X     | 自動送信を行うかどうか                                                                     |
+| -- statsId          | String  |    X     | 統計ID                                                                           |
+| -- createDate       | String  |    O     | 作成日                                                                            |
+| -- createUser       | String  |    X     | 作成ユーザー(コンソールから送信時、ユーザーUUIDに保存)                                                 |
+| - totalCount        | Integer |    X     | 総数                                                                             |
 
 
 <a id="list-mass-delivery-recipients"></a>
@@ -1291,23 +1291,23 @@ https://kakaotalk-bizmessage.api.nhncloudservice.com/friendtalk/v2.3/appkeys/{ap
 }
 ```
 
-| 値 | タイプ| 説明 |
-|---|---|---|
-| header | Object |	ヘッダ領域 |
-| - resultCode |	Integer |	結果コード |
-| - resultMessage |	String | 結果メッセージ |
-| - isSuccessful |	Boolean| 成否 |
-| body | Object | 本文領域 |
-| - recipients | List | 受信者リスト |
-| -- requestId | String | リクエストID |
-| -- recipientSeq | Integer | 受信者シーケンス番号 |
-| -- recipientNo | String | 受信番号 |
-| -- requestDate | String | リクエスト日 |
-| -- receiveDate | String | 受信日 |
-| -- messageStatus | String | 大量受信者送信ステータスコード(READY, COMPLETED, FAILED, CANCEL) |
-| -- resultCode | String | 受信結果コード |
-| -- resultCodeName | String | 受信結果コード名 |
-| - totalCount | Integer | 総数
+| 名前 | タイプ | Not Null | 説明 |
+|---|---|:---:|---|
+| header | Object | O | ヘッダ領域 |
+| - resultCode | Integer | O | 結果コード |
+| - resultMessage | String | O | 結果メッセージ |
+| - isSuccessful | Boolean | O | 成否 |
+| body | Object | X | 本文領域 |
+| - recipients | List | X | 受信者リスト |
+| -- requestId | String | O | リクエストID |
+| -- recipientSeq | Integer | O | 受信者シーケンス番号 |
+| -- recipientNo | String | O | 受信番号 |
+| -- requestDate | String | O | リクエスト日 |
+| -- receiveDate | String | X | 受信日 |
+| -- messageStatus | String | O | 大量受信者送信ステータスコード(READY, COMPLETED, FAILED, CANCEL) |
+| -- resultCode | String | X | 受信結果コード |
+| -- resultCodeName | String | X | 受信結果コード名 |
+| - totalCount | Integer | X | 総数 |
 
 <a id="get-a-mass-delivery-recipient"></a>
 ### 大量送信大量送信受信者照会 { #get-a-mass-delivery-recipient }
@@ -1610,16 +1610,16 @@ curl -X POST -H "Content-Type: multipart/form-data" -H "X-Secret-Key:{secretkey}
 }
 ```
 
-| 値         | タイプ | 説明               |
-| --------------- | ------- | ---------------------- |
-| header          | Object  | ヘッダ領域            |
-| - resultCode    | Integer | 結果コード            |
-| - resultMessage | String  | 結果メッセージ           |
-| - isSuccessful  | Boolean | 成否             |
-| image           | Object  | 本文領域            |
-| - imageSeq      | Integer | イメージ番号(カカともへのメッセージの送信時に使用) |
-| - imageUrl      | String  | イメージURL                |
-| - imageName     | String  | イメージ名(アップロードしたファイル名)         |
+| 名前              | タイプ      | Not Null | 説明                                        |
+|-----------------|---------|:--------:|-------------------------------------------|
+| header          | Object  |    O     | ヘッダ領域                                     |
+| - resultCode    | Integer |    O     | 結果コード                                     |
+| - resultMessage | String  |    O     | 結果メッセージ                                    |
+| - isSuccessful  | Boolean |    O     | 成否                                        |
+| image           | Object  |    X     | 本文領域                                      |
+| - imageSeq      | Integer |    X     | イメージ番号(カカともへのメッセージの送信時に使用)               |
+| - imageUrl      | String  |    X     | イメージURL                                   |
+| - imageName     | String  |    X     | イメージ名(アップロードしたファイル名)                      |
 
 <a id="register-wide-item-list-images"></a>
 ### ワイドアイテムリスト画像登録 { #register-wide-item-list-images }
@@ -1678,16 +1678,16 @@ curl -X POST -H "Content-Type: multipart/form-data" -H "X-Secret-Key:{secretkey}
 }
 ```
 
-| 名前 |	タイプ|	説明|
-|---|---|---|
-|header|	Object|	ヘッダ領域|
-|- resultCode|	Integer|	結果コード|
-|- resultMessage|	String| 結果メッセージ|
-|- isSuccessful|	Boolean| 成否|
-|image|	Object|	本文領域|
-|- imageSeq | Integer |	画像番号(カカともへのメッセージメッセージ送信時に使用)|
-|- imageUrl | String |	画像URL |
-|- imageName | String |	画像名(アップロードしたファイル名) |
+| 名前 | タイプ | Not Null | 説明 |
+|---|---|:---:|---|
+| header | Object | O | ヘッダ領域 |
+| - resultCode | Integer | O | 結果コード |
+| - resultMessage | String | O | 結果メッセージ |
+| - isSuccessful | Boolean | O | 成否 |
+| image | Object | X | 本文領域 |
+| - imageSeq | Integer | X | 画像番号(フレンドトークメッセージ送信時に使用) |
+| - imageUrl | String | X | 画像URL |
+| - imageName | String | X | 画像名(アップロードしたファイル名) |
 
 <a id="register-carousel-image"></a>
 ### カルーセル画像登録 { #register-carousel-image }
@@ -1824,20 +1824,20 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 }
 ```
 
-| 値         | タイプ | 説明               |
-|---|---|---|
-| header          | Object  | ヘッダ領域            |
-| - resultCode    | Integer | 結果コード            |
-| - resultMessage | String  | 結果メッセージ           |
-| - isSuccessful  | Boolean | 成否             |
-| imagesResponse  | Object  | 本文領域            |
-| - image         | Object  | 本文領域            |
-| -- imageSeq     | Integer | イメージ番号(カカともへのメッセージの送信時に使用) |
-| -- imageUrl     | String  | イメージURL                |
-| -- imageName    | String  | イメージ名(アップロードしたファイル名)         |
-| -- imageType     | String |	- IMAGE:一般画像<br/> - WIDE_IMAGE:ワイド画像<br/> - WIDE_ITEMLIST_IMAGE:ワイドアイテムリスト画像<br/> - CAROUSEL_IMAGE:カルーセル画像<br/> |
-| -- createDate   | String  | 作成日時            |
-| - totalCount    | Integer | 総個数                  |
+| 名前              | タイプ      | Not Null | 説明                                                                                                                                     |
+|-----------------|---------|:--------:|----------------------------------------------------------------------------------------------------------------------------------------|
+| header          | Object  |    O     | ヘッダ領域                                                                                                                                  |
+| - resultCode    | Integer |    O     | 結果コード                                                                                                                                  |
+| - resultMessage | String  |    O     | 結果メッセージ                                                                                                                                 |
+| - isSuccessful  | Boolean |    O     | 成否                                                                                                                                  |
+| imagesResponse  | Object  |    X     | 本文領域                                                                                                                                  |
+| - image         | Object  |    X     | 本文領域                                                                                                                                  |
+| -- imageSeq     | Integer |    X     | イメージ番号(フレンドトークメッセージの送信時に使用)                                                                                                                |
+| -- imageUrl     | String  |    X     | イメージURL                                                                                                                                |
+| -- imageName    | String  |    X     | イメージ名(アップロードしたファイル名)                                                                                                                         |
+| -- createUser   | String  |    X     | 作成者                                                                                                                                    |
+| -- imageType    | String  |    X     | - IMAGE:一般画像<br/> - WIDE_IMAGE:ワイド画像<br/> - WIDE_ITEMLIST_IMAGE:ワイドアイテムリスト画像<br/> - CAROUSEL_IMAGE:カルーセル画像<br/> |
+| - totalCount    | Integer |    X     | 総個数                                                                                                                                   |
 
 * イメージは、最近登録した順にソートされてレスポンスを返します。
 
@@ -1893,12 +1893,12 @@ curl -X DELETE -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Ke
 }
 ```
 
-| 値         | タイプ | 説明 |
-|---|---|---|
-| header          | Object  | ヘッダ領域 |
-| - resultCode    | Integer | 結果コード |
-| - resultMessage | String  | 結果メッセージ |
-| - isSuccessful  | Boolean | 成否 |
+| 名前              | タイプ      | Not Null | 説明     |
+|-----------------|---------|:--------:|--------|
+| header          | Object  |    O     | ヘッダ領域  |
+| - resultCode    | Integer |    O     | 結果コード  |
+| - resultMessage | String  |    O     | 結果メッセージ |
+| - isSuccessful  | Boolean |    O     | 成否  |
 
 
 <a id="upload"></a>
@@ -1961,13 +1961,13 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 }
 ```
 
-| 名前 |	タイプ|	説明|
-|---|---|---|
-|header|	Object|	ヘッダ領域|
-|- resultCode|	Integer|	結果コード|
-|- resultMessage|	String| 結果メッセージ|
-|- isSuccessful|	Boolean| 成否|
-|bizFormKey | String | ビジネスフォームキー |
+| 名前 | タイプ | Not Null | 説明 |
+|-----------------|---------|:--------:|---------|
+| header | Object | O | ヘッダ領域 |
+| - resultCode | Integer | O | 結果コード |
+| - resultMessage | String | O | 結果メッセージ |
+| - isSuccessful | Boolean | O | 成否 |
+| bizFormKey | String | X | ビジネスフォームキー |
 
 
 <a id="manage-alternative-delivery"></a>

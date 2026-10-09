@@ -59,6 +59,7 @@ Content-Type: application/json;charset=UTF-8
 | Value        | Type   | Required | Description                                                  |
 | ------------ | ------ | -------- | ------------------------------------------------------------ |
 | X-Secret-Key | String | O        | Can be created on console.  |
+| X-NC-API-IDEMPOTENCY-KEY | String | X | Key used as the basis for duplicate message sending requests<br>If a request is made with the same key for 10 minutes, the request will be failed. |
 
 [Request body]
 
@@ -187,6 +188,7 @@ Content-Type: application/json;charset=UTF-8
 | Value        | Type   | Required | Description                                                  |
 | ------------ | ------ | -------- | ------------------------------------------------------------ |
 | X-Secret-Key | String | O        | Can be created on console.  |
+| X-NC-API-IDEMPOTENCY-KEY | String | X | Key used as the standard for duplicate message sending requests<br>If a request is made with the same key for 10 minutes, the request will be failed. |
 
 [Request Body]
 
@@ -564,9 +566,12 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 | - createDate           | String  | Registered date and time                                     |
 | - resendStatus         | String  | Status code of resending                                     |
 | - resendStatusName     | String  | status code name of resending                                |
+| - resendResultCode     | String  | Result code of resending [SMS Result Code](https://docs.toast.com/ko/Notification/SMS/ko/error-code/#api) |
+| - resendRequestId      | String  | Request ID of resending SMS                                  |
 | - messageStatus        | String  | Request status(COMPLETED -> successful, FAILED -> failed, CANCEL -> cancelled ) |
 | - resultCode           | String  | Result code of receiving                                     |
 | - resultCodeName       | String  | Result code name of receiving                                |
+| - createUser           | String  | Registrant (saved as user UUID when sending from console)    |
 | - buttons              | List    | List of buttons                                              |
 | -- ordering            | Integer | Button sequence                                              |
 | -- type                | String  | Button type(WL: Web Link, AL: App Link, DS: Delivery Search, BK:Bot Keyword, MD: Message Delivery, BC: Bot for Consultation, BT: Bot Transfer, CA: Channel Added) |
@@ -616,6 +621,7 @@ Content-Type: application/json;charset=UTF-8
 | Value        | Type   | Required | Description                                                  |
 | ------------ | ------ | -------- | ------------------------------------------------------------ |
 | X-Secret-Key | String | O        | Can be created on console.  |
+| X-NC-API-IDEMPOTENCY-KEY | String | X | Reference key for duplicate message sending requests<br>If a request is made with the same key for 10 minutes, the request will be failed. |
 
 [Request body]
 
@@ -655,11 +661,12 @@ Content-Type: application/json;charset=UTF-8
 | - templateParameter    | Object  | X        | Template parameter<br>(required, if it includes a variable to be replaced for template) |
 | -- key                 | String  | X        | Replacement key(#{key})                                     |
 | -- value               | String  | X        | Value which is mapped for replacement key                    |
-| - isResend             | boolean | X        | Whether to send text as alternative, if delivery fails<br>Resent in default, if delivery failure is set on console. |
-| - resendType           | String  | X        | Alternative delivery type(SMS,LMS)<br>Categorized by the length of template body, if it is left blank. |
-| - resendTitle          | String  | X        | Title for LMS alternative delivery(up to 20 characters)<br>(resent with PlusFriend ID if the value is left blank.) |
-| - resendContent        | String  | X        | Message for alternative delivery(up to 1000 characters)<br>(resent with template message, if the value is left empty.) |
-| - resendSendNo         | String  | X        | Sender number for alternative delivery(up to 13 characters)<br><span style="color:red">(if the number is not registered in SMS service, alternative delivery may fail.)</span> |
+| - resendParameter      | Object  | X        | Alternative delivery information                             |
+| -- isResend            | boolean | X        | Whether to send text as alternative, if delivery fails<br>Resent in default, if delivery failure is set on console. |
+| -- resendType          | String  | X        | Alternative delivery type(SMS,LMS)<br>Categorized by the length of template body, if it is left blank. |
+| -- resendTitle         | String  | X        | Title for LMS alternative delivery<br>(resent with PlusFriend ID if the value is left blank.) |
+| -- resendContent       | String  | X        | Message for alternative delivery<br>(resent with [Message body and web link button name - web link mobile link] if value is unavailable.) |
+| -- resendSendNo        | String  | X        | Sender number for alternative delivery<br><span style="color:red">(if the number is not registered in SMS service, alternative delivery may fail.)</span> |
 | - recipientGroupingKey | String  | X        | Recipient grouping key(up to 100 characters)                |
 
 * <b> Request date and time can be set up to 30 days since a point of calling. </b>
@@ -736,6 +743,7 @@ Content-Type: application/json;charset=UTF-8
 | Value        | Type   | Required | Description                                                  |
 | ------------ | ------ | -------- | ------------------------------------------------------------ |
 | X-Secret-Key | String | O        | Can be created on console.  |
+|X-NC-API-IDEMPOTENCY-KEY|	String| X | Key used as the standard for duplicate message sending requests<br>If a request is made with the same key for 10 minutes, the request will be failed. |
 
 [Request Body]
 
@@ -794,11 +802,12 @@ Content-Type: application/json;charset=UTF-8
 | -- linkPc              | String  | X        | PC web link(required for the WL type, for up to 500 characters) |
 | -- schemeIos           | String  | X        | iOS app link(required for the AL type, for up to 500 characters) |
 | -- schemeAndroid       | String  | X        | Android app link(required for the AL type, for up to 500 characters) |
-| - isResend             | boolean | X        | Whether to send text as alternative, if delivery fails<br>Resent in default, if delivery failure is set on console. |
-| - resendType           | String  | X        | Alternative delivery type(SMS,LMS)<br>Categorized by the length of template body, if value is unavailable. |
-| - resendTitle          | String  | X        | Title of alternative delivery for LMS(up to 20 characters)<br>(resent with PlusFriend ID, if the value is unavailable.) |
-| - resendContent        | String  | X        | Alternative delivery message(up to 1000 characters)<br>(resent with template message if value is unavailable.) |
-| - resendSendNo         | String  | X        | Sender number for alternative delivery(up to 13 characters)<br><span style="color:red">(Alternative delivery may fail, if the sender number is not registered on the SMS service.)</span> |
+| - resendParameter      | Object  | X        | Alternative delivery information                            |
+| -- isResend            | boolean | X        | Whether to send text as alternative, if delivery fails<br>Resent in default, if delivery failure is set on console. |
+| -- resendType          | String  | X        | Alternative delivery type(SMS,LMS)<br>Categorized by the length of template body, if value is unavailable. |
+| -- resendTitle         | String  | X        | Title of alternative delivery for LMS<br>(resent with PlusFriend ID, if the value is unavailable.) |
+| -- resendContent       | String  | X        | Alternative delivery message<br>(resent with [Message body and web link button name - web link mobile link] if value is unavailable.) |
+| -- resendSendNo        | String  | X        | Sender number for alternative delivery<br><span style="color:red">(Alternative delivery may fail, if the sender number is not registered on the SMS service.)</span> |
 | - recipientGroupingKey | String  | X        | Recipient's grouping key(up to 100 characters)              |
 
 * <b>Enter data completed with replacement in the body and button. </b>
@@ -1286,6 +1295,7 @@ Content-Type: application/json;charset=UTF-8
 | -- recipientNo              | String  | Recipient number                                             |
 | -- content                  | String  | Body message                                                 |
 | -- requestDate              | String  | Date and time of request                                     |
+| -- createDate               | String  | Date of registration                                         |
 | -- receiveDate              | String  | Date and time of receiving                                   |
 | -- resendStatus             | String  | Status code of resending                                     |
 | -- resendStatusName         | String  | Status code name of resending                                |
@@ -1300,6 +1310,7 @@ Content-Type: application/json;charset=UTF-8
 | --- linkPc                  | String  | PC web link(optional for the WL type)                       |
 | --- schemeIos               | String  | iOS app link(required for the AL type)                      |
 | --- schemeAndroid           | String  | Android app link(required for the AL type)                  |
+| -- createUser               | String  | Registrant (saved as user UUID when sending from console)    |
 | -- senderGroupingKey        | String  | Sender's grouping key                                        |
 | -- recipientGroupingKey     | String  | Recipient's grouping key                                     |
 | - totalCount                | Integer | Total count                                                  |
@@ -1445,7 +1456,6 @@ Content-Type: application/json;charset=UTF-8
 | plusFriendId | String  | O        | PlusFriend ID(up to 30 characters)                          |
 | phoneNo      | String  | O        | Mobile number of administrator(up to 15 characters)         |
 | categoryCode | String  | O        | Category code(11 characters) See response for Search Category API  e.g.) 00100010001 Health(001) - Hospital(0001) - General Hospital(0001) |
-| fileSeq      | Integer | O        | File sequence                                                |
 
 <a id="response-12"></a>
 #### Response
@@ -1611,8 +1621,8 @@ Content-Type: application/json;charset=UTF-8
 | - plusFriendType          | String  | PlusFriend type(NORMAL, GROUP)                              |
 | - senderKey               | String  | Sender key                                                   |
 | - categoryCode            | String  | Category code                                                |
-| - status                  | String  | Status code of TOAST PlusFriend(YSC02: Ready for registeration, YSC03: Normally registered) |
-| - statusName              | String  | Status name of TOAST PlusFriend(ready for registration, normally registered) |
+| - status                  | String  | Status code of NHN Cloud PlusFriend(YSC02: Ready for registeration, YSC03: Normally registered) |
+| - statusName              | String  | Status name of NHN Cloud PlusFriend(ready for registration, normally registered) |
 | - kakaoStatus             | String  | Status code of Kakao PlusFriend(A: Normal, S: Blocked, D: Deleted) kakaoStatus is null if the status is YSC02. |
 | - kakaoStatusName         | String  | Status name of Kakao PlusFriend(normal, blocked, deleted) kakaoStatusName is null if the status is YSC02. |
 | - kakaoProfileStatus      | String  | Status code of Kakao PlusFriend profile(A: Activated, B: Blocked, C: Deactivated, D:Deleted, E: Deleting) kakaoProfileStatus is null if the status is YSC02. |
@@ -1631,7 +1641,6 @@ Content-Type: application/json;charset=UTF-8
 |-- dailyMaxCount           | Integer |	Maximum daily FriendTalk delivery count <br>(no limis for 0) |
 |-- sentCount               | Integer |	Daily FriendTalk delivery count <br>(no limits for 0)        |
 | - createDate              | String  | Date and time of registration                                |
-| totalCount                | Integer | Total count                                                  |
 
 <a id="list-plusfriends"></a>
 ### List PlusFriends { #list-plusfriends }

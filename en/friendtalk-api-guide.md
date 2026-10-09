@@ -941,21 +941,21 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 }
 ```
 
-| Name |	Type|	Descriptions|
-|---|---|---|
-|header|	Object|	Header area|
-|- resultCode|	Integer|	Result code|
-|- resultMessage|	String| Result message|
-|- isSuccessful|	Boolean| Successful or not|
-|message|	Object|	Body area|
-|- requestId | String |	Request ID |
-|- senderGroupingKey | String |	Sender's grouping key |
-|- sendResults | Object | Result of delivery request |
-|-- recipientSeq | Integer | Recipient's sequence number |
-|-- recipientNo | String | Recipient number |
-|-- resultCode | Integer | Result code of delivery request |
-|-- resultMessage | String | Result message of delivery request |
-|-- recipientGroupingKey | String | Recipient's grouping key |
+| Name                    | 	Type      | Not Null | 	Descriptions          |
+|-------------------------|----------|----------|--------------|
+| header                  | 	Object  | O        | 	Header area       |
+| - resultCode            | 	Integer | O        | 	Result code       |
+| - resultMessage         | 	String  | O        | Result message       |
+| - isSuccessful          | 	Boolean | O        | Successful or not        |
+| message                 | 	Object  | X        | 	Body area       |
+| - requestId             | String   | X        | 	Request ID       |
+| - senderGroupingKey     | String   | X        | 	Sender's grouping key    |
+| - sendResults           | Object   | X        | Result of delivery request     |
+| -- recipientSeq         | Integer  | O        | Recipient's sequence number   |
+| -- recipientNo          | String   | X        | Recipient number        |
+| -- resultCode           | Integer  | O        | Result code of delivery request  |
+| -- resultMessage        | String   | O        | Result message of delivery request |
+| -- recipientGroupingKey | String   | X        | Recipient's grouping key    |
 
 <a id="list-deliveries"></a>
 ## List Deliveries { #list-deliveries }
@@ -1041,32 +1041,32 @@ Content-Type: application/json;charset=UTF-8
 }
 ```
 
-| Name |	Type|	Descriptions|
-|---|---|---|
-|header|	Object|	Header area|
-|- resultCode|	Integer|	Result code|
-|- resultMessage|	String| Result message|
-|- isSuccessful|	Boolean| Successful or not|
-|messageSearchResultResponse|	Object|	Body area|
-|- messages | List |	List of messages |
-|-- requestId | String |	Request ID |
-|-- recipientSeq | Integer |	Recipient's sequence number |
-|-- plusFriendId | String |	Plus Friend ID |
-|-- senderKey   | String | Sender Key   |
-|-- recipientNo | String |	Recipient number |
-|-- requestDate | String |	Date and time of request |
-|-- createDate | String | Registered date and time |
-|-- receiveDate | String |	Date and time of receiving |
-|-- content | String |	Body |
-|-- messageStatus | String |	Request status (COMPLETED: successful, FAILED: failed) |
-|-- resendStatus | String |	Status code of resending |
-|-- resendStatusName | String |	Status code name of resending |
-|-- resultCode | String |	Result code of receiving |
-|-- resultCodeName | String |	Result code name of receiving |
-|-- createUser | String | Registrant (saved as user UUID when sending from console) |
-|-- senderGroupingKey | String | Sender's grouping key |
-|-- recipientGroupingKey | String |	Recipient's grouping key |
-|- totalCount | Integer | Total count |
+| Name                          | Type      | Not Null | Descriptions                               |
+|-----------------------------|---------|:--------:|----------------------------------|
+| header                      | Object  |    O     | Header area                            |
+| - resultCode                | Integer |    O     | Result code                            |
+| - resultMessage             | String  |    O     | Result message                           |
+| - isSuccessful              | Boolean |    O     | Successful or not                            |
+| messageSearchResultResponse | Object  |    X     | Body area                            |
+| - messages                  | List    |    X     | List of messages                          |
+| -- requestId                | String  |    O     | Request ID                            |
+| -- recipientSeq             | Integer |    O     | Recipient's sequence number                       |
+| -- plusFriendId             | String  |    O     | Plus Friend ID                         |
+| -- senderKey                | String  |    O     | Sender Key                             |
+| -- recipientNo              | String  |    X     | Recipient number                            |
+| -- requestDate              | String  |    O     | Date and time of request                            |
+| -- createDate               | String  |    O     | Registered date and time                            |
+| -- receiveDate              | String  |    X     | Date and time of receiving                            |
+| -- content                  | String  |    X     | Body                               |
+| -- messageStatus            | String  |    O     | Request status (COMPLETED: successful, FAILED: failed) |
+| -- resendStatus             | String  |    O     | Status code of resending                        |
+| -- resendStatusName         | String  |    O     | Status code name of resending                       |
+| -- resultCode               | String  |    X     | Result code of receiving                         |
+| -- resultCodeName           | String  |    X     | Result code name of receiving                        |
+| -- createUser               | String  |    X     | Registrant (saved as user UUID when sending from console)      |
+| -- senderGroupingKey        | String  |    X     | Sender's grouping key                         |
+| -- recipientGroupingKey     | String  |    X     | Recipient's grouping key                        |
+| - totalCount                | Integer |    X     | Total count                             |
 
 [Example]
 ```
@@ -1549,12 +1549,12 @@ Content-Type: application/json;charset=UTF-8
 }
 ```
 
-| Name |	Type|	Descriptions|
-|---|---|---|
-|header|	Object|	Header area|
-|- resultCode|	Integer|	Result code|
-|- resultMessage|	String| Result message|
-|- isSuccessful|	Boolean| Successful or not|
+| Name | Type | Not Null | Descriptions |
+|-----------------|---------|:--------:|--------|
+| header | Object | X | Header area |
+| - resultCode | Integer | X | Result code |
+| - resultMessage | String | X | Result message |
+| - isSuccessful | Boolean | X | Successful or not |
 
 [Example]
 ```
@@ -1633,30 +1633,30 @@ Content-Type: application/json;charset=UTF-8
 }
 ```
 
-| Name |	Type|	Descriptions|
-|---|---|---|
-|header|	Object|	Header area|
-|- resultCode|	Integer|	Result code|
-|- resultMessage|	String| Result message|
-|- isSuccessful|	Boolean| Successful or not|
-|messageSearchResultResponse|	Object|	Body area|
-|- messages | List |	List of messages |
-|-- requestId | String |	Request ID |
-|-- recipientSeq | Integer |	Recipient's sequence number |
-|-- plusFriendId | String |	Plus Friend ID |
-|-- senderKey | String |	Sender Key |
-|-- recipientNo | String |	Recipient number |
-|-- requestDate | String |	Date and time of request |
-|-- receiveDate | String |	Date and time of receiving |
-|-- content | String |	Body |
-|-- messageStatus | String |	Request status (COMPLETED -> successful, FAILED -> failed, CANCEL -> canceled) |
-|-- resendStatus | String |	Status code of resending |
-|-- resendStatusName | String |	Status code name of resending |
-|-- resultCode | String |	Result code of receiving |
-|-- resultCodeName | String |	Result code name of receiving |
-|-- senderGroupingKey | String | Sender's grouping key |
-|-- recipientGroupingKey | String |	Recipient's grouping key |
-|- totalCount | Integer | Total count |
+| Name | Type | Not Null | Descriptions |
+|-----------------------------|---------|:--------:|-----------------------------------------------------|
+| header | Object | O | Header area |
+| - resultCode | Integer | O | Result code |
+| - resultMessage | String | O | Result message |
+| - isSuccessful | Boolean | O | Successful or not |
+| messageSearchResultResponse | Object | X | Body area |
+| - messages | List | X | List of messages |
+| -- requestId | String | O | Request ID |
+| -- recipientSeq | Integer | O | Recipient's sequence number |
+| -- plusFriendId | String | O | Plus Friend ID |
+| -- senderKey | String | O | Sender Key |
+| -- recipientNo | String | X | Recipient number |
+| -- requestDate | String | O | Date and time of request |
+| -- receiveDate | String | X | Date and time of receiving |
+| -- content | String | X | Body |
+| -- messageStatus | String | O | Request status (COMPLETED -> successful, FAILED -> failed, CANCEL -> canceled) |
+| -- resendStatus | String | O | Status code of resending |
+| -- resendStatusName | String | O | Status code name of resending |
+| -- resultCode | String | X | Result code of receiving |
+| -- resultCodeName | String | X | Result code name of receiving |
+| -- senderGroupingKey | String | X | Sender's grouping key |
+| -- recipientGroupingKey | String | X | Recipient's grouping key |
+| - totalCount | Integer | X | Total count |
 
 [Example]
 ```
@@ -1747,29 +1747,29 @@ curl -X GET \
 }
 ```
 
-| Name |	Type|	Descriptions|
-|---|---|---|
-| header | Object |	Header area |
-| - resultCode |	Integer |	Result code |
-| - resultMessage |	String | Result message |
-| - isSuccessful |	Boolean | Successful or not |
-| body | Object | Body area |
-| - messages | Object | List of messages |
-| -- requestId | String | Request ID |
-| -- requestDate | String | Date of request |
-| -- plusFriendId | String | PlusFriend ID |
-| -- senderKey | String | Sender ID |
-| -- masterStatusCode | String | Mass delivery status code (WAIT, READY, SENDREADY, SENDWAIT, SENDING, COMPLETE, CANCEL, FAIL) |
-| -- content | String | Content |
-| -- isAd | Boolean | Ad or not |
-| -- imageSeq | Integer | Image sequence |
-| -- imageLink | Boolean | Image URL |
-| -- fileId | String | Attachment ID |
-| -- autoSendYn | String | Auto sending or not |
-| -- statsId | String | Statistics ID |
-| -- createDate | String | Date of creation |
-| -- createUser | String | User who created the request (saved as user UUID when sending from console) |
-| - totalCount | Integer | Total count |
+| Name | Type | Not Null | Descriptions |
+|---|---|:---:|---|
+| header | Object | O | Header area |
+| - resultCode | Integer | O | Result code |
+| - resultMessage | String | O | Result message |
+| - isSuccessful | Boolean | O | Successful or not |
+| body | Object | X | Body area |
+| - messages | Object | X | List of messages |
+| -- requestId | String | O | Request ID |
+| -- requestDate | String | O | Date of request |
+| -- plusFriendId | String | O | PlusFriend ID |
+| -- senderKey | String | O | Sender ID |
+| -- masterStatusCode | String | O | Mass delivery status code (WAIT, READY, SENDREADY, SENDWAIT, SENDING, COMPLETE, CANCEL, FAIL) |
+| -- content | String | X | Content |
+| -- isAd | Boolean | X | Ad or not |
+| -- imageSeq | Integer | X | Image sequence |
+| -- imageLink | Boolean | X | Image URL |
+| -- fileId | String | X | Attachment ID |
+| -- autoSendYn | String | X | Auto sending or not |
+| -- statsId | String | X | Statistics ID |
+| -- createDate | String | O | Date of creation |
+| -- createUser | String | X | User who created the request (saved as user UUID when sending from console) |
+| - totalCount | Integer | X | Total count |
 
 
 <a id="list-mass-delivery-recipients"></a>
@@ -1849,23 +1849,23 @@ curl -X GET \
 }
 ```
 
-| Name | Type| Descriptions |
-|---|---|---|
-| header | Object |	Header area |
-| - resultCode |	Integer |	Result code |
-| - resultMessage |	String | Result message |
-| - isSuccessful |	Boolean| Successful or not |
-| body | Object | Body area |
-| - recipients | List | List of recipients |
-| -- requestId | String | Request ID |
-| -- recipientSeq | Integer | Recipient's sequence number |
-| -- recipientNo | String | Recipient number |
-| -- requestDate | String | Date of request |
-| -- receiveDate | String | Date of receiving |
-| -- messageStatus | String | Mass recipient delivery status code (READY, COMPLETED, FAILED, CANCEL) |
-| -- resultCode | String | Result code of receiving |
-| -- resultCodeName | String | Result code name of receiving |
-| - totalCount | Integer | Total count |
+| Name | Type | Not Null | Descriptions |
+|---|---|:---:|---|
+| header | Object | O | Header area |
+| - resultCode | Integer | O | Result code |
+| - resultMessage | String | O | Result message |
+| - isSuccessful | Boolean | O | Successful or not |
+| body | Object | X | Body area |
+| - recipients | List | X | List of recipients |
+| -- requestId | String | O | Request ID |
+| -- recipientSeq | Integer | O | Recipient's sequence number |
+| -- recipientNo | String | X | Recipient number |
+| -- requestDate | String | O | Date of request |
+| -- receiveDate | String | X | Date of receiving |
+| -- messageStatus | String | O | Mass recipient delivery status code (READY, COMPLETED, FAILED, CANCEL) |
+| -- resultCode | String | X | Result code of receiving |
+| -- resultCodeName | String | X | Result code name of receiving |
+| - totalCount | Integer | X | Total count |
 
 <a id="get-a-mass-delivery-recipient"></a>
 ### Get a Mass Delivery Recipient { #get-a-mass-delivery-recipient }
@@ -2053,113 +2053,113 @@ curl -X GET \
 }
 ```
 
-| Name |	Type|	Descriptions|
-|---|---|---|
-| header | Object |	Header area |
-| - resultCode |	Integer |	Result code |
-| - resultMessage |	String | Result message |
-| - isSuccessful |	Boolean| Successful or not |
-| body | Object | Body area |
-| - requestId | String | Request ID |
-| - recipientSeq | Integer | Recipient's sequence number |
-| - plusFriendId | String | PlusFriend ID |
-| - senderKey | String | Sender key (40 characters)|
-| - recipientNo | String | Recipient number |
-| - requestDate | String | Date of request |
-| - receiveDate | String | Date of receiving |
-| - content | String | Body |
-| - messageStatus | String | Mass recipient delivery status code (READY, COMPLETED, FAILED, CANCEL) |
-| - resendStatus | String |	Status code of resending (RSC01, RSC02, RSC03, RSC04, RSC05)<br>([[Refer to Status code of resending table](http://docs.toast.com/ko/Notification/KakaoTalk%20Bizmessage/ko/alimtalk-api-guide/#smslms)] below) |
-| - resendStatusName | String |	Status code name of resending |
-| - resendRequestId | String | Resending SMS request ID |
-| - resendResultCode | String | Result code of resending [Result code of SMS sending](https://docs.toast.com/ko/Notification/SMS/ko/error-code/#api) |
-| - resultCode | String |	Result code of receiving |
-| - resultCodeName | String |	Result code name of receiving |
-| - imageSeq | Integer | Image sequence |
-| - imageLink | Integer | Image URL |
-| - buttons | List | Button sequence |
-| -- ordering | String | Button sequence |
-| -- type | String | Button type<br/> - WL: Web link<br/> - AL: App link<br/> - DS: Delivery Search<br/> - BK: Bot Keyword<br/> - MD: Message Delivery<br/> - BC: Bot for Consultation<br/> - BT: Bot Transfer<br/> - AC: Channel Added [only for Ad Included/Mixed Purposes Type] |
-| -- name | String | Button name |
-| -- linkMo | String | Mobile web link (required for the WL type) |
-| -- linkPc | String | PC web link (optional for the WL type)|
-| -- schemeIos | String | iOS app link (required for the AL type) |
-| -- schemeAndroid | String | Android app link (required field if AL type) |
-| -- chatExtra | String | BC: Meta information to be delivered when switching to consultation talk<br/> BT: Meta information to be delivered when switching to bot |
-| -- chatEvent | String | BT: Bot event name to connect when switching to bot |
-| -- bizFormKey|	String|	Bizform key for BF (Business Form) type buttons |
-| -- target|	String|	In the case of a web link button, out link used when adding "target":"out" attribute<br>Send with the default in-app link |
-| - header | String | Header (required when using the wide item list message type, up to 25 characters) |
-| - additionalContent | String | Additional information (up to 34 characters), available for commerce only                                                                                                                            |
-| - item | Object | Wide item |
-| -- list | List | Wide item list (at lease 3, up to 4) |
-| --- title | String | Item title (up to 25 characters for the first item, up to 30 characters for items 2-4) |
-| --- imageUrl | String | Item image URL |
-| --- linkMo | String | Mobile web link |
-| --- linkPc | String | PC web link |
-| --- schemeIos | String | iOS app link |
-| --- schemeAndroid | String | Android app link |
-| - carousel | Object | Carousel | 
-|-- head | String | Carousel intro info                                                | 
-|--- header | String | Carousel intro header (up to 20 characters)                                        |  
-|--- content | String | Carousel intro content (up to 50 characters)                                        |
-|--- imageUrl | String | Carousel intro image address                                            |
-|--- linkMo | String | Web link to go to on intro click in mobile                                 |
-|--- linkPc | String | Web link to go to on intro click in PC                                  |
-|--- schemeIos | String | App link to go to on intro click in iOS                                 |
-|--- schemeAndroid | String | App link to go to on intro click in Android                               |
-|-- list | List  | Carousel lists (minimum 2, maximum 10)                                     |
-|--- header | String | Carousel item title (up to 20 characters)                                        | 
-|--- message | String | Carousel item message (up to 180 characters)                                      | 
-|--- additionalContent | String | Additional information (up to 34 characters)                                             | 
-|--- attachment | Object | Carousel item images, button information                                        | 
-|---- buttons | List | Button list (up to 2)                                             | 
-|----- name| String | 	Button name (required if you have a button, up to 8 characters)                               |
-|----- type| String | 	Button type (WL: Web Link, AL: App Link, BK: Bot Keyword, MD: Message Delivery, BF: Business Form)   |
-|----- linkMo| String | 	Mobile web link (required for the WL type)                                |
-|----- linkPc | String | PC web link (optional for the WL type)                                  |
-|----- schemeIos | String | iOS app link (required for the AL type)                                 |
-|----- schemeAndroid | String | Android app link (required field if AL type)                               |
-|---- image | Object | Image                                                       | 
-|----- imageUrl|	String| 	Image URL                                                  |
-|----- imageLink|	String| 	Image link                                                   |
-|---- coupon | Object | Coupon                                                        | 
-|----- title| String | 	Coupon title                                                 |
-|----- description| String | 	Coupon details                                                 |
-|----- linkMo| String | Mobile web link                                                  |
-|----- linkPc | String | 	PC web link                                                  |
-|----- schemeIos | String | iOS app link                                                  |
-|----- schemeAndroid | String | Android app link                                                |
-|---- commerce | Object | Commerce                                                       | 
-|----- title | String | Product title (up to 30 characters)                                             |
-|----- regularPrice | Integer | Regular price (0 to 99,999,999)                                      |
-|----- discountPrice | Integer | Discount Price (0 to 99,999,999)                                      |
-|----- discountRate | Integer | Discount rate (0 to 100), discount rate if discounted price exists                                |
-|----- discountFixed | Integer | Flat rate pricing (0 to 999,999)                                       |
-|-- tail | Object | Learn more button information                                                 | 
-|--- linkMo| String | 	Mobile web link                                                 |
-|--- linkPc | String | 	PC web link                                                  |
-|--- schemeIos | String | iOS app link                                                  |
-|--- schemeAndroid | String | Android app link                                               |
-|- coupon | Object | Coupon                                                        | 
-|-- title| String | 	Coupon title                                                 |
-|-- description| String | 	Coupon details                                                 |
-|-- linkMo| String | Mobile web link                                                  |
-|-- linkPc | String | 	PC web link                                                  |
-|-- schemeIos | String | iOS app link                                                  |
-|-- schemeAndroid | String | Android app link                                                |
-|- video | Object | Video                                                       | 
-|-- videoUrl | String | Kakao TV video URL                  |
-|-- thumbnailUrl | String | Image URLs for video thumbnails               |
-|- commerce | Object | Commerce                                                       | 
-|-- title | String | Product title (up to 30 characters)                                             |
-|-- regularPrice | Integer | Regular price (0 to 99,999,999)                                      |
-|-- discountPrice | Integer | Discount Price (0 to 99,999,999)                                      |
-|-- discountRate | Integer | Discount rate (0 to 100), discount rate if discounted price exists                                |
-|-- discountFixed | Integer | Flat rate pricing (0 to 999,999)                                       |
-|- isAd | Boolean | Ad or not                                                     |
-|- adult | Boolean | Whether the message is for adults                                                |
-|- createDate | String | Date of creation |
+| 이름                    | 타입      | Not Null | 설명                                                                                                                                                                       |
+|-----------------------|---------|:--------:|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **header**            | Object  |    O     | Header area                                                                                                                                                                    |
+| - resultCode          | Integer |    O     | Result code                                                                                                                                                                    |
+| - resultMessage       | String  |    O     | Result message                                                                                                                                                                   |
+| - isSuccessful        | Boolean |    O     | Successful or not                                                                                                                                                                    |
+| body                  | Object  |    X     | Body area                                                                                                                                                                    |
+| - requestId           | String  |    O     | Request ID                                                                                                                                                                    |
+| - recipientSeq        | Integer |    O     | Recipient's sequence number                                                                                                                                               |
+| - plusFriendId        | String  |    O     | PlusFriend ID                                                                                                                                                                |
+| - senderKey           | String  |    O     | Sender key (40 characters)                                                                                                                                                                |
+| - recipientNo         | String  |    X     | Recipient number                                                                                                                                                                    |
+| - requestDate | String | O | Date of request |
+| - receiveDate | String | X | Date of receiving |
+| - content | String | X | Body |
+| - messageStatus | String | X | Mass recipient delivery status code (READY, COMPLETED, FAILED, CANCEL) |
+| - resendStatus | String | O | Status code of resending (RSC01, RSC02, RSC03, RSC04, RSC05)<br>([[Refer to Status code of resending table](http://docs.toast.com/ko/Notification/KakaoTalk%20Bizmessage/ko/alimtalk-api-guide/#smslms)] below) |
+| - resendStatusName | String | O | Status code name of resending |
+| - resendRequestId | String | X | Resending SMS request ID |
+| - resendResultCode | String | X | Result code of resending [Result code of SMS sending](https://docs.toast.com/ko/Notification/SMS/ko/error-code/#api) |
+| - resultCode | String | X | Result code of receiving |
+| - resultCodeName | String | X | Result code name of receiving |
+| - imageSeq | Integer | X | Image sequence |
+| - imageLink | Integer | X | Image URL |
+| - buttons | List | X | Button sequence |
+| -- ordering | String | X | Button sequence |
+| -- type | String | X | Button type<br/> - WL: Web link<br/> - AL: App link<br/> - DS: Delivery Search<br/> - BK: Bot Keyword<br/> - MD: Message Delivery<br/> - BC: Bot for Consultation<br/> - BT: Bot Transfer<br/> - AC: Channel Added [only for Ad Included/Mixed Purposes Type] |
+| -- name | String | X | Button name |
+| -- linkMo | String | X | Mobile web link (required for the WL type) |
+| -- linkPc | String | X | PC web link (optional for the WL type) |
+| -- schemeIos | String | X | iOS app link (required for the AL type) |
+| -- schemeAndroid | String | X | Android app link (required for the AL type) |
+| -- chatExtra | String | X | BC: Meta information to be delivered when switching to consultation talk<br/> BT: Meta information to be delivered when switching to bot |
+| -- chatEvent | String | X | BT: Bot event name to connect when switching to bot |
+| -- bizFormKey | String | X | Bizform key for BF (Business Form) type buttons |
+| -- target | String | X | In the case of a web link button, out link used when adding "target":"out" attribute<br>Send with the default in-app link |
+| - header | String | X | Header (required when using the wide item list message type, up to 25 characters) |
+| - additionalContent | String | X | Additional information (up to 34 characters), available for commerce only |
+| - item | Object | X | Wide item |
+| -- list | List | X | Wide item list (at lease 3, up to 4) |
+| --- title | String | X | Item title (up to 25 characters for the first item, up to 30 characters for items 2-4) |
+| --- imageUrl | String | X | Item image URL |
+| --- linkMo | String | X | Mobile web link |
+| --- linkPc | String | X | PC web link |
+| --- schemeIos | String | X | iOS app link |
+| --- schemeAndroid | String | X | Android app link |
+| - carousel | Object | X | Carousel |
+| -- head | String | X | Carousel intro info |
+| --- header | String | X | Carousel intro header (up to 20 characters) |
+| --- content | String | X | Carousel intro content (up to 50 characters) |
+| --- imageUrl | String | X | Carousel intro image address |
+| --- linkMo | String | X | Web link to go to on intro click in mobile |
+| --- linkPc | String | X | Web link to go to on intro click in PC |
+| --- schemeIos | String | X | App link to go to on intro click in iOS |
+| --- schemeAndroid | String | X | App link to go to on intro click in Android |
+| -- list | List | X | Carousel lists (minimum 2, maximum 10) |
+| --- header | String | X | Carousel item title (up to 20 characters) |
+| --- message | String | X | Carousel item message (up to 180 characters) |
+| --- additionalContent | String | X | Additional information (up to 34 characters) |
+| --- attachment | Object | X | Carousel item images, button information |
+| ---- buttons | List | X | Button list (up to 2) |
+| ----- name | String | X | Button name (required if you have a button, up to 8 characters) |
+| ----- type            | String  |    X     | Button type (WL: Web Link, AL: App Link, BK: Bot Keyword, MD: Message Delivery, BF: Business Form)                                                                                                              |
+| ----- linkMo          | String  |    X     | Mobile web link (required for the WL type)                                                                                                                                                |
+| ----- linkPc          | String  |    X     | PC web link (optional for the WL type)                                                                                                                                                 |
+| ----- schemeIos       | String  |    X     | iOS app link (required for the AL type)                                                                                                                                                |
+| ----- schemeAndroid   | String  |    X     | Android app link (required for the AL type)                                                                                                                              |
+| ---- image            | Object  |    X     | Image                                                                                                                                                                      |
+| ----- imageUrl        | String  |    X     | Image URL                                                                                                                                                                  |
+| ----- imageLink       | String  |    X     | Image link                                                                                                                                                                   |
+| ---- coupon           | Object  |    X     | Coupon                                                                                                                                                                       |
+| ----- title           | String  |    X     | Coupon title                                                                                                                                                                 |
+| ----- description     | String  |    X     | Coupon details                                                                                                                                                                 |
+| ----- linkMo          | String  |    X     | Mobile web link                                                                                                                                                                 |
+| ----- linkPc          | String  |    X     | PC web link                                                                                                                                                                  |
+| ----- schemeIos       | String  |    X     | iOS app link                                                                                                                                                                 |
+| ----- schemeAndroid   | String  |    X     | Android app link                                                                                                                                               |
+| ---- commerce         | Object  |    X     | Commerce                                                                                                                                                                      |
+| ----- title           | String  |    X     | Product title (up to 30 characters)                                                                                                                                                            |
+| ----- regularPrice    | Integer |    X     | Regular price (0 to 99,999,999)                                                                                                                                                    |
+| ----- discountPrice   | Integer |    X     | Discount Price (0 to 99,999,999)                                                                                                                                                    |
+| ----- discountRate    | Integer |    X     | Discount rate (0 to 100), discount rate if discounted price exists                                                                                                                                              |
+| ----- discountFixed   | Integer |    X     | Flat rate pricing (0 to 999,999)                                                                                                                                                     |
+| -- tail               | Object  |    X     | Learn more button information                                                                                                                                                                |
+| --- linkMo            | String  |    X     | Mobile web link                                                                                                                                                                 |
+| --- linkPc            | String  |    X     | PC web link                                                                                                                                                                  |
+| --- schemeIos         | String  |    X     | iOS app link                                                                                                                                                                 |
+| --- schemeAndroid     | String  |    X     | Android app link                                                                                                                                                               |
+| - coupon              | Object  |    X     | Coupon                                                                                                                                                                       |
+| -- title              | String  |    X     | Coupon title                                                                                                                                                                 |
+| -- description        | String  |    X     | Coupon details                                                                                                                                                                 |
+| -- linkMo             | String  |    X     | Mobile web link                                                                                                                                                                 |
+| -- linkPc | String | X | PC web link |
+| -- schemeIos | String | X | iOS app link |
+| -- schemeAndroid | String | X | Android app link |
+| - video | Object | X | Video |
+| -- videoUrl | String | X | Kakao TV video URL |
+| -- thumbnailUrl | String | X | Image URLs for video thumbnails |
+| - commerce | Object | X | Commerce |
+| -- title | String | X | Product title (up to 30 characters) |
+| -- regularPrice | Integer | X | Regular price (0 to 99,999,999) |
+| -- discountPrice | Integer | X | Discount Price (0 to 99,999,999) |
+| -- discountRate | Integer | X | Discount rate (0 to 100), discount rate if discounted price exists |
+| -- discountFixed | Integer | X | Flat rate pricing (0 to 999,999) |
+| - isAd | Boolean | X | Ad or not |
+| - adult | Boolean | X | Whether the message is for adults |
+| - createDate | String | O | Date of creation |
 
 
 <a id="image-management"></a>
@@ -2223,16 +2223,16 @@ curl -X POST -H "Content-Type: multipart/form-data" -H "X-Secret-Key:{secretkey}
 }
 ```
 
-| Name |	Type|	Descriptions|
-|---|---|---|
-|header|	Object|	Header area|
-|- resultCode|	Integer|	Result code|
-|- resultMessage|	String| Result message|
-|- isSuccessful|	Boolean| Successful or not|
-|image|	Object|	Body area|
-|- imageSeq | Integer |	Image number (used when sending a FriendTalk message)|
-|- imageUrl | String |	Image URL |
-|- imageName | String |	Image name (name of uploaded file) |
+| Name            | Type    | Not Null | Descriptions                                              |
+|-----------------|---------|:--------:|-----------------------------------------------------------|
+| header          | Object  |    O     | Header area                                               |
+| - resultCode    | Integer |    O     | Result code                                               |
+| - resultMessage | String  |    O     | Result message                                            |
+| - isSuccessful  | Boolean |    O     | Successful or not                                         |
+| image           | Object  |    X     | Body area                                                 |
+| - imageSeq      | Integer |    X     | Image number (to send FriendTalk messages)                |
+| - imageUrl      | String  |    X     | Image URL                                                 |
+| - imageName     | String  |    X     | Image name (name of uploaded file)                        |
 
 <a id="register-wide-item-list-images"></a>
 ### Register Wide Item List Images { #register-wide-item-list-images }
@@ -2291,16 +2291,16 @@ curl -X POST -H "Content-Type: multipart/form-data" -H "X-Secret-Key:{secretkey}
 }
 ```
 
-| Name |	Type|	Descriptions|
-|---|---|---|
-|header|	Object|	Header area|
-|- resultCode|	Integer|	Result code|
-|- resultMessage|	String| Result message|
-|- isSuccessful|	Boolean| Successful or not|
-|image|	Object|	Body area|
-|- imageSeq | Integer |	Image number (used when sending a FriendTalk message)|
-|- imageUrl | String |	Image URL |
-|- imageName | String |	Image name (name of uploaded file) |
+| Name              | Type    | Not Null | Description                                      |
+|-----------------|---------|:--------:|-------------------------|
+| header          | Object  |    O     | Header area                   |
+| - resultCode    | Integer |    O     | Result code                   |
+| - resultMessage | String  |    O     | Result message                  |
+| - isSuccessful  | Boolean |    O     | Successful or not                   |
+| image           | Object  |    X     | Body area                   |
+| - imageSeq      | Integer |    X     | Image number (to send FriendTalk messages) |
+| - imageUrl      | String  |    X     | Image URL                 |
+| - imageName     | String  |    X     | Image name (name of uploaded file)          |
 
 <a id="register-carousel-image"></a>
 ### Register Carousel Image { #register-carousel-image }
@@ -2359,16 +2359,16 @@ curl -X POST -H "Content-Type: multipart/form-data" -H "X-Secret-Key:{secretkey}
 }
 ```
 
-| Name |	Type|	Descriptions|
-|---|---|---|
-|header|	Object|	Header area|
-|- resultCode|	Integer|	Result code|
-|- resultMessage|	String| Result message|
-|- isSuccessful|	Boolean| Successful or not|
-|image|	Object|	Body area|
-|- imageSeq | Integer |	Image number (used when sending a FriendTalk message)|
-|- imageUrl | String |	Image URL |
-|- imageName | String |	Image name (name of uploaded file) |
+| Name | Type | Not Null | Descriptions |
+|---|---|:---:|---|
+| header | Object | O | Header area |
+| - resultCode | Integer | O | Result code |
+| - resultMessage | String | O | Result message |
+| - isSuccessful | Boolean | O | Successful or not |
+| image | Object | X | Body area |
+| - imageSeq | Integer | X | Image number (used when sending a FriendTalk message) |
+| - imageUrl | String | X | Image URL |
+| - imageName | String | X | Image name (name of uploaded file) |
 
 <a id="register-carousel-commerce-images"></a>
 ### Register carousel commerce images { #register-carousel-commerce-images }
@@ -2427,16 +2427,16 @@ curl -X POST -H "Content-Type: multipart/form-data" -H "X-Secret-Key:{secretkey}
 }
 ```
 
-| Name |	Type|	Descriptions|
-|---|---|---|
-|header|	Object|	Header area|
-|- resultCode|	Integer|	Result code|
-|- resultMessage|	String| Result message|
-|- isSuccessful|	Boolean| Successful or not|
-|image|	Object|	Body area|
-|- imageSeq | Integer |	Image number (used when sending a FriendTalk message)|
-|- imageUrl | String |	Image URL |
-|- imageName | String |	Image name (name of uploaded file) |
+| Name | Type | Not Null | Descriptions |
+|---|---|:---:|---|
+| header | Object | O | Header area |
+| - resultCode | Integer | O | Result code |
+| - resultMessage | String | O | Result message |
+| - isSuccessful | Boolean | O | Successful or not |
+| image | Object | X | Body area |
+| - imageSeq | Integer | X | Image number (to send FriendTalk messages) |
+| - imageUrl | String | X | Image URL |
+| - imageName | String | X | Image name (name of uploaded file) |
 
 <a id="query-images"></a>
 ### Query Images { #query-images }
@@ -2505,20 +2505,20 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 }
 ```
 
-| Name |	Type|	Descriptions|
-|---|---|---|
-|header|	Object|	Header area|
-|- resultCode|	Integer|	Result code|
-|- resultMessage|	String| Result message|
-|- isSuccessful|	Boolean| Successful or not|
-|imagesResponse| Object| Body area|
-|- image|	Object|	Body area|
-|-- imageSeq | Integer |	Image number (used when sending a FriendTalk message)|
-|-- imageUrl | String |	Image URL |
-|-- imageName | String |	Image name (name of uploaded file) |
-|-- createUser | String |	Creator |
-|-- imageType | String |	- IMAGE: General image<br/> - WIDE_IMAGE: Wide image<br/> - WIDE_ITEMLIST_IMAGE: Wide item list image<br/> - CAROUSEL_IMAGE: Carousel image<br/> |
-|- totalCount | Integer | Total count |
+| Name              | Type    | Not Null | Descriptions                                                                                                                                     |
+|-----------------|---------|:--------:|----------------------------------------------------------------------------------------------------------------------------------------|
+| header          | Object  |    O     | Header area                                                                                                                                  |
+| - resultCode    | Integer |    O     | Result code                                                                                                                                  |
+| - resultMessage | String  |    O     | Result message                                                                                                                                 |
+| - isSuccessful  | Boolean |    O     | Successful or not                                                                                                                                  |
+| imagesResponse  | Object  |    X     | Body area                                                                                                                                  |
+| - image         | Object  |    X     | Body area                                                                                                                                  |
+| -- imageSeq     | Integer |    X     | Image number (used when sending a FriendTalk message)                                                                                                                |
+| -- imageUrl     | String  |    X     | Image URL                                                                                                                                |
+| -- imageName    | String  |    X     | Image name (name of uploaded file)                                                                                                                         |
+| -- createUser   | String  |    X     | Creator                                                                                                                                    |
+| -- imageType    | String  |    X     | - IMAGE: General image<br/> - WIDE_IMAGE: Wide image<br/> - WIDE_ITEMLIST_IMAGE: Wide item list image<br/> - CAROUSEL_IMAGE: Carousel image<br/> |
+| - totalCount    | Integer |    X     | Total count                                                                                                                                   |
 
 * Response is sent in the order of latest registration.
 
@@ -2574,12 +2574,12 @@ curl -X DELETE -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Ke
 }
 ```
 
-| Name |	Type|	Descriptions|
-|---|---|---|
-|header|	Object|	Header area|
-|- resultCode|	Integer|	Result code|
-|- resultMessage|	String| Result message|
-|- isSuccessful|	Boolean| Successful or not|
+| Name              | Type      | Not Null | Description     |
+|-----------------|---------|:--------:|--------|
+| header          | Object  |    O     | Header area  |
+| - resultCode    | Integer |    O     | Result code  |
+| - resultMessage | String  |    O     | Result message |
+| - isSuccessful  | Boolean |    O     | Successful or not  |
 
 
 <a id="upload"></a>
@@ -2642,13 +2642,13 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 }
 ```
 
-| Name |	Type|	Descriptions|
-|---|---|---|
-|header|	Object|	Header area|
-|- resultCode|	Integer|	Result code|
-|- resultMessage|	String| Result message|
-|- isSuccessful|	Boolean| Successful or not|
-|bizFormKey | String | Business form key |
+| Name | Type | Not Null | Descriptions |
+|-----------------|---------|:--------:|---------|
+| header | Object | O | Header area |
+| - resultCode | Integer | O | Result code |
+| - resultMessage | String | O | Result message |
+| - isSuccessful | Boolean | O | Successful or not |
+| bizFormKey | String | X | Business form key |
 
 
 <a id="manage-alternative-delivery"></a>
