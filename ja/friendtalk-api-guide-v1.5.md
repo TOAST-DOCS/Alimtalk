@@ -6,7 +6,11 @@
 <a id="friendtalk-service-termination-notice"></a>
 ## フレンドトークサービス終了のお知らせ { #friendtalk-service-termination-notice }
 
-<!-- TODO: translate body -->
+* 2025-12-31（水）フレンドトークサービスのサポートを終了します。
+* 現在ご利用中のお客様には、ブランドメッセージへの移行をお勧めします。
+* 詳細については、[ブランドメッセージ移行ガイド](./friendtalk-compatible-api-guide/)を参照してください。
+
+---
 
 <a id="friendtalk"></a>
 ## カカともへのメッセージ { #friendtalk }
