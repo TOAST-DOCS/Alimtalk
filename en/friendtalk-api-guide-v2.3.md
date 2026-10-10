@@ -555,7 +555,7 @@ curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:
 }
 ```
 
-| 이름                      | 타입      | Not Null | 설명           |
+| Name                    | Type    | Not Null | Descriptions |
 |-------------------------|---------|:--------:|--------------|
 | header                  | Object  |    O     | Header area        |
 | - resultCode            | Integer |    O     | Result code        |

@@ -1384,7 +1384,7 @@ Content-Type: application/json;charset=UTF-8
 }
 ```
 
-| 이름 |	타입|	필수|	설명|
+| Value|	Type|	Required|	Description|
 |---|---|---|---|
 |plusFriendId|	String|	O | PlusFriend ID(up to 30 characters) |
 |phoneNo|	String |	O | Mobile number of administrator(up to 15 characters) |
