@@ -580,9 +580,10 @@ Content-Type: application/json;charset=UTF-8
   "X-Secret-Key": String
 }
 ```
-| 値     | タイプ | 必須 | 説明                                |
-| ------------ | ------ | ---- | ---------------------------------------- |
-| X-Secret-Key | String | O    | コンソールで作成できます。 |
+| 名前 | タイプ | 必須 | 説明 |
+|---|---|---|---|
+| X-Secret-Key | String | O | コンソールで作成できます。 |
+| X-NC-API-IDEMPOTENCY-KEY | String | X | 重複メッセージ送信リクエストの基準key<br>10分間、同一のkeyでリクエストした場合、該当リクエストは失敗として処理されます。 |
 
 |X-NC-API-IDEMPOTENCY-KEY|	String| X | 重複メッセージ送信要求基準key<br>10分間同じkeyで要求すると、その要求を失敗処理します。 |
 [Request body]
@@ -705,6 +706,7 @@ Content-Type: application/json;charset=UTF-8
 | 値     | タイプ | 必須 | 説明                                |
 | ------------ | ------ | ---- | ---------------------------------------- |
 | X-Secret-Key | String | O    | コンソールで作成できます。 |
+| X-NC-API-IDEMPOTENCY-KEY | String | X | 重複メッセージ送信リクエストの基準key<br>10分間、同一のkeyでリクエストした場合、該当リクエストを失敗として処理します。 |
 
 [Request body]
 
@@ -1550,16 +1552,18 @@ Content-Type: application/json;charset=UTF-8
 | - kakaoProfileStatus      | String  | カカオプラスフレンドプロフィールステータスコード<br>(A：有効化、B：遮断、C：無効化、D：削除E：削除処理中)<br>statusがYSC02の場合、kakaoProfileStatus null値を持ちます。 |
 | - kakaoProfileStatusName  | String  | カカオプラスフレンドプロフィールステータス名(有効化、無効化、遮断、削除処理中、削除)<br>statusがYSC02の場合、kakaoProfileStatusName null値を持ちます。 |
 |- alimtalk|	Object|	お知らせトーク設定情報|
-|-- isResend | String  | 送信失敗設定(再送信)するかどうか                    |
+|-- resendAppKey | String | 代替送信として設定するSMSサービスのアプリキー |
+|-- isResend | String  | 代替送信設定(再送信)するかどうか                    |
 |-- resendSendNo | String  | 再送信時、tc-sms発信番号               |
-|-- dailyMaxCount | Integer | お知らせトークの一日最大送信件数<br>(値が0の場合、件数制限なし)    |
-|-- sentCount | Integer | お知らせトークの一日送信件数<br>(値が0の場合、件数制限なし)       |
+|-- dailyMaxCount | Integer | お知らせトークの日別最大送信件数<br>(値が0の場合、件数制限なし)    |
+|-- sentCount | Integer | お知らせトークの日別送信件数<br>(値が0の場合、件数制限なし)       |
 |- friendtalk|	Object|	友人トーク設定情報|
-|-- isResend | String  | 送信失敗設定(再送信)するかどうか                    |
+|-- resendAppKey | String | 代替送信として設定するSMSサービスのアプリキー |
+|-- isResend | String  | 代替送信設定(再送信)するかどうか                    |
 |-- resendSendNo | String  | 再送信時、tc-sms発信番号               |
 |-- resendUnsubscribeNo | String |	再送信時、tc-sms 080受信拒否番号 |
-|-- dailyMaxCount | Integer | カカともへのメッセージの一日最大送信件数<br>(値が0の場合、件数制限なし)    |
-|-- sentCount | Integer | カカともへのメッセージの一日送信件数<br>(値が0の場合、件数制限なし)       |
+|-- dailyMaxCount | Integer | フレンドトークの日別最大送信件数<br>(値が0の場合、件数制限なし)    |
+|-- sentCount | Integer | フレンドトークの日別送信件数<br>(値が0の場合、件数制限なし)       |
 | - createDate              | String  | 登録日時                             |
 
 <a id="list-plusfriends"></a>
@@ -1658,12 +1662,14 @@ Content-Type: application/json;charset=UTF-8
 | - kakaoProfileStatus      | String  | カカオプラスフレンドプロフィールステータスコード<br>(A：有効化、B：遮断、C：無効化、D：削除E：削除処理中)<br>statusがYSC02の場合、kakaoProfileStatus null値を持ちます。 |
 | - kakaoProfileStatusName  | String  | カカオプラスフレンドプロフィールステータス名(有効化、無効化、遮断、削除処理中、削除)<br>statusがYSC02の場合、kakaoProfileStatusName null値を持ちます。 |
 |- alimtalk|	Object|	お知らせトーク設定情報|
-|-- isResend | String  | 送信失敗設定(再送信)するかどうか                    |
+|-- resendAppKey | String | 代替送信として設定するSMSサービスのアプリキー |
+|-- isResend | String  | 代替送信設定(再送信)するかどうか                    |
 |-- resendSendNo | String  | 再送信時、tc-sms発信番号               |
 |-- dailyMaxCount | Integer | お知らせトークの一日最大送信件数<br>(値が0の場合、件数制限なし)    |
 |-- sentCount | Integer | お知らせトークの一日送信件数<br>(値が0の場合、件数制限なし)       |
 |- friendtalk|	Object|	友人トーク設定情報|
-|-- isResend | String  | 送信失敗設定(再送信)するかどうか                    |
+|-- resendAppKey | String | 代替送信として設定するSMSサービスのアプリキー |
+|-- isResend | String  | 代替送信設定(再送信)するかどうか                    |
 |-- resendSendNo | String  | 再送信時、tc-sms発信番号               |
 |-- resendUnsubscribeNo | String |	再送信時、tc-sms 080受信拒否番号 |
 |-- dailyMaxCount | Integer | カカともへのメッセージの一日最大送信件数<br>(値が0の場合、件数制限なし)    |

@@ -58,6 +58,7 @@ Content-Type: application/json;charset=UTF-8
 | Value        | Type   | Required | Description                                                  |
 | ------------ | ------ | -------- | ------------------------------------------------------------ |
 | X-Secret-Key | String | O        | Can be created on console.  |
+| X-NC-API-IDEMPOTENCY-KEY | String | X | Reference key for duplicate message sending requests<br>If a request is made with the same key for 10 minutes, the request will be failed. |
 
 [Request body]
 
@@ -266,16 +267,18 @@ Content-Type: application/json;charset=UTF-8
 | -- requestId                | String  | Request ID                                             |
 | -- recipientSeq             | Integer | Recipient sequence number                              |
 | -- plusFriendId             | String  | Plus Friend ID                                         |
+| -- senderKey                | String  | Sender Key                                             |
 | -- recipientNo              | String  | Recipient number                                       |
 | -- requestDate              | String  | Date and time of request                               |
 | -- createDate               | String  | Registered date and time                               |
+| -- receiveDate              | String  | Date and time of receiving                             |
 | -- content                  | String  | Body                                                   |
 | -- messageStatus            | String  | Request status(COMPLETED: successful, FAILED: failed) |
 | -- resendStatus             | String  | Status code of resending                               |
 | -- resendStatusName         | String  | Status code name of resending                          |
 | -- resultCode               | String  | Result code of receiving                               |
 | -- resultCodeName           | String  | Result code name of receiving                          |
-| -- createUser               | String  | Registrant(saved as user UUID when delivered via console)  |
+| -- createUser               | String  | Registrant (saved as user UUID when sending from console)  |
 | -- senderGroupingKey        | String  | Sender's grouping key                                  |
 | -- recipientGroupingKey     | String  | Recipient's grouping key                               |
 | - totalCount                | Integer | Total count                                            |
@@ -395,6 +398,7 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 | - requestId            | String  | Request ID                                                   |
 | - recipientSeq         | Integer | Recipient sequence number                                    |
 | - plusFriendId         | String  | Plus Friend ID                                               |
+| - senderKey            | String  | Sender Key                                                   |
 | - recipientNo          | String  | Recipient number                                             |
 | - requestDate          | String  | Date and time of request                                     |
 | - createDate           | String  | Registered date and time                                     |
@@ -403,6 +407,8 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 | - messageStatus        | String  | Status of request(COMPLETED: successful, FAILED: failed)    |
 | - resendStatus         | String  | Status code of resending                                     |
 | - resendStatusName     | String  | Status code name of resending                                |
+| - resendResultCode     | String  | Resend result code SMS result code                           |
+| - resendRequestId      | String  | Resend SMS request ID                                        |
 | - resultCode           | String  | Result code of receiving                                     |
 | - resultCodeName       | String  | Result code name of receiving                                |
 | - createUser           | String  | Registrant(saved as user UUID when delivered via console)   |
@@ -572,6 +578,7 @@ Content-Type: application/json;charset=UTF-8
 | -- requestId                | String  | Request ID                                                   |
 | -- recipientSeq             | Integer | Recipient's sequence number                                  |
 | -- plusFriendId             | String  | Plus Friend ID                                               |
+| -- senderKey                | String  | Sender Key                                                   |
 | -- recipientNo              | String  | Recipient number                                             |
 | -- requestDate              | String  | Date and time of request                                     |
 | -- receiveDate              | String  | Date and time of receiving                                   |

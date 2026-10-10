@@ -563,18 +563,21 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 | - templateCode         | String  | テンプレートコード                            |
 | - recipientNo          | String  | 受信番号                             |
 | - content              | String  | 本文                                |
-|- templateTitle         | String  | テンプレートハイライトタイトル              |
-|- templateSubtitle      | String  | テンプレートハイライトサブタイトル           |
+|- templateTitle         | String  | テンプレートタイトル              |
+|- templateSubtitle      | String  | テンプレートサブタイトル           |
 |- templateExtra         | String  | テンプレート付加情報                     |
 |- templateAd            | String  | テンプレート内の受信同意または簡単な広告文句   |
 | - requestDate          | String  | リクエスト日時                             |
 | - receiveDate          | String  | 受信日時                             |
 | - createDate           | String  | 登録日時                            |
-| - resendStatus         | String  | 再送信ステータスコード                         |
+| - resendStatus         | String  | 代替送信ステータスコード(RSC01, RSC02, RSC03, RSC04, RSC05)<br>([[下の代替送信ステータス表](http://docs.toast.com/ko/Notification/KakaoTalk%20Bizmessage/ko/alimtalk-api-guide/#smslms)] 参考) |
 | - resendStatusName     | String  | 再送信ステータスコード名                          |
+| - resendResultCode     | String  | 代替送信結果コード [SMS結果コード](https://docs.toast.com/ko/Notification/SMS/ko/error-code/#api) |
+| - resendRequestId      | String  | 代替送信SMS リクエストID |
 | - messageStatus        | String  | リクエストステータス(COMPLETED -> 成功、FAILED -> 失敗、CANCEL -> キャンセル) |
 | - resultCode           | String  | 受信結果コード                          |
 | - resultCodeName       | String  | 受信結果コード名                           |
+| - createUser           | String  | 登録者(コンソールから送信する場合、ユーザーUUIDで保存) |
 | - buttons              | List    | ボタンリスト                             |
 | -- ordering            | Integer | ボタン順序                             |
 | -- type                | String  | ボタンタイプ(WL：Webリンク、AL：アプリリンク、DS：配送照会、BK：Botキーワード、MD：メッセージ伝達、BC：相談トーク転換、BT：Bot転換、AC：チャンネル追加) |
@@ -584,8 +587,8 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 | -- schemeIos           | String  | iOSアプリリンク(ALタイプの場合は必須フィールド)                |
 | -- schemeAndroid       | String  | Androidアプリリンク(ALタイプの場合は必須フィールド)            |
 | - messageOption        | Object  |	メッセージオプション                                           |
-| -- price               | Integer |	message(ユーザーに伝達されるメッセージ)内に含まれた価格/金額/決済金額(モーメント広告に該当) |
-| -- currencyType        | String  |	message(ユーザーに伝達されるメッセージ)内に含まれた価格/金額/決済金額(モーメント広告に該当) |
+| -- price               | Integer |	ユーザーに伝達されるメッセージ内に含まれた価格/金額/決済金額(モーメント広告に該当) |
+| -- currencyType        | String  |	ユーザーに伝達されるメッセージ内に含まれた価格/金額/決済金額の通貨単位。KRW、USD、EURなど国際通貨コードを使用(モーメント広告に該当) |
 | - senderGroupingKey    | String  | 発信グルーピングキー                            |
 | - recipientGroupingKey | String  | 受信者グルーピングキー                           |
 
@@ -1794,12 +1797,11 @@ Content-Type: application/json;charset=UTF-8
 
 | 値      | タイプ | 必須 | 説明    |
 | -------------- | ------- | ---- | ------------- |
-| plusFriendId   | String  | X    | 発信キー      |
 | templateCode   | String  | X    | テンプレートコード |
 | templateName   | String  | X    | テンプレート名 |
 | templateStatus | String  | X    | テンプレートステータスコード |
-| pageNum        | Integer | X    | ページ番号(基本：1) |
-| pageSize       | Integer | X    | 照会件数(基本：15、最大: 1000) |
+| pageNum        | Integer | X    | ページ番号(Default: 1) |
+| pageSize       | Integer | X    | 照会件数(Default: 15, Max: 1000) |
 
 | テンプレートステータスコード | 説明 |
 | --------- | ---- |
@@ -1874,26 +1876,27 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 ```
 
 | 値            | タイプ | 説明                               |
-| -------------------- | ------- | ---------------------------------------- |
+|---|---|---|
 | header               | Object  | ヘッダ領域                            |
 | - resultCode         | Integer | 結果コード                            |
 | - resultMessage      | String  | 結果メッセージ                           |
 | - isSuccessful       | Boolean | 成否                             |
 | templateListResponse | Object  | 本文領域                            |
 | - templates          | List    | テンプレートリスト                          |
-| -- plusFriendId      | String  | プラスフレンドID                                 |
+| -- plusFriendId      | String  | カカオトークチャンネル検索用IDまたは発信プロフィールグループ名 |
+| -- senderKey         | String  | 発信キー                            |
 | -- plusFriendType    | String  | プラスフレンドタイプ(NORMAL、GROUP)                  |
 | -- templateCode      | String  | テンプレートコード                           |
 | -- templateName      | String  | テンプレート名                             |
+| -- templateMessageType| String | テンプレートメッセージタイプ(BA:基本型、EX:付加情報型、AD:チャンネル追加型、MI:複合型) |
+| -- templateEmphasizeType| String| テンプレート強調表示タイプ(NONE：基本、TEXT：強調表示、IMAGE：画像型) |
 | -- templateContent   | String  | テンプレート本文                           |
-| -- templateEmphasizeType| String| テンプレートハイライトタイプ（NONE：基本、TEXT：ハイライト、default：NONE）<br>TEXT：templateTitle、templateSubtitleフィールド必須 |
-| -- tempalteTitle     | String  | テンプレートのタイトル(最大50字、Android:2行、23字以上のコマ処理、iOS:2行、27字以上のコマ処理) |
-| -- templateSubtitle  | String  | テンプレートの補助フレーズ(最大50文字、Android:18字以上のコマを省く、iOS:21字以上のコマを省く) |
+| -- templateExtra     | String  | テンプレート付加情報 |
+| -- templateAd        | String  | テンプレート内の受信同意要請または簡単な広告文句 |
+| -- tempalteTitle     | String  | テンプレートタイトル |
+| -- templateSubtitle  | String  | テンプレートの補助フレーズ |
 | -- templateImageName | String  | 画像名（アップロードされたファイル名） |
 | -- templateImageUrl  | String  | 画像のURL |
-| -- templateMessageType| String  | テンプレートメッセージタイプ(BA:基本型、EX:付加情報型、AD:広告追加型、MI:複合型)<br>EX：templateExtraフィールド必須<br>MI：templateExtraフィールド必須」 |
-| -- templateExtra     | String  | テンプレート付加情報 |
-| -- templateAd        | String  | テンプレート内の受信同意または簡単な広告文句 |
 | -- buttons           | List    | ボタンリスト                            |
 | --- ordering         | Integer | ボタン順序(1~5)                               |
 | --- type             | String  | ボタンタイプ(WL：Webリンク、AL：アプリリンク、DS：配送照会、BK：Botキーワード、MD：メッセージ伝達、BC：相談トーク転換、BT：Bot転換、AC：チャンネル追加) |
@@ -1910,10 +1913,13 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 | --- attachment        | List | 添付ファイル                           |
 | ---- originalFileName | String | 添付ファイル名                        |
 | ---- filePath         | String | 添付ファイルへのパス                   |
-| --- status            | String  | 応答状態(INQ：お問い合わせ、APR：承認、REJ：差し戻し、REP：返信, REQ:検査中) |
+| --- status            | String  | コメント状態(INQ：お問い合わせ、APR：承認、REJ：差し戻し、REP：返信、REQ：検収中) |
 | -- status            | String  | テンプレートのステータス                           |
 | -- statusName        | String  | テンプレートのステータス名                           |
+| -- securityFlag      | Boolean | セキュリティテンプレートかどうか                     |
+| -- categoryCode      | String  | テンプレートカテゴリコード                          |
 | -- createDate        | String  | 作成日時                            |
+| -- updateDate        | String  | 修正日時                            |
 | - totalCount         | Integer | 総個数                              |
 
 <a id="list-template-modifications"></a>
@@ -2021,19 +2027,20 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 | - isSuccessful       | Boolean | 成否                             |
 | templateModificationsResponse | Object  | 本文領域                            |
 | - templates          | List    | テンプレートリスト                          |
-| -- plusFriendId      | String  | プラスフレンドID                                 |
+| -- plusFriendId      | String  | カカオトークチャンネル検索用IDまたは発信プロフィールグループ名 |
+| -- senderKey         | String  | 発信キー                             |
 | -- plusFriendType    | String  | プラスフレンドタイプ(NORMAL、GROUP)                  |
 | -- templateCode      | String  | テンプレートコード                           |
 | -- templateName      | String  | テンプレート名                             |
+| -- templateMessageType| String  | テンプレートメッセージタイプ(BA：基本型、EX：付加情報型、AD：チャンネル追加型、MI：複合型) |
+| -- templateEmphasizeType| String| テンプレート強調表示タイプ(NONE：基本、TEXT：強調表示、IMAGE：画像型) |
 | -- templateContent   | String  | テンプレート本文                           |
-| -- templateEmphasizeType| String| テンプレートハイライトタイプ（NONE：基本、TEXT：ハイライト、default：NONE）<br>TEXT：templateTitle、templateSubtitleフィールド必須 |
-| -- tempalteTitle     | String  | テンプレートのタイトル(最大50字、Android:2行、23字以上のコマ処理、iOS:2行、27字以上のコマ処理) |
-| -- templateSubtitle  | String  | テンプレートの補助フレーズ(最大50文字、Android:18字以上のコマを省く、iOS:21字以上のコマを省く) |
+| -- templateExtra     | String  | テンプレート付加情報 |
+| -- templateAd        | String  | テンプレート内の受信同意要請または簡単な広告文句 |
+| -- tempalteTitle     | String  | テンプレートタイトル |
+| -- templateSubtitle  | String  | テンプレートの補助フレーズ |
 | -- templateImageName | String  | 画像名（アップロードされたファイル名） |
 | -- templateImageUrl  | String  | 画像のURL |
-| -- templateMessageType| String  | テンプレートメッセージタイプ(BA:基本型、EX:付加情報型、AD:広告追加型、MI:複合型)<br>EX：templateExtraフィールド必須<br>MI：templateExtraフィールド必須」 |
-| -- templateExtra     | String  | テンプレート付加情報 |
-| -- templateAd        | String  | テンプレート内の受信同意または簡単な広告文句 |
 | -- buttons           | List    | ボタンリスト                            |
 | --- ordering         | Integer | ボタン順序(1~5)                               |
 | --- type             | String  | ボタンタイプ(WL：Webリンク、AL：アプリリンク、DS：配送照会、BK：Botキーワード、MD：メッセージ伝達、BC：相談トーク転換、BT：Bot転換、AC：チャンネル追加) |
@@ -2045,16 +2052,19 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 | -- comments          | List    | 検収結果                            |
 | --- id               | Integer | お問い合わせID                                   |
 | --- content          | String  | お問い合わせ内容                            |
-| ---userName          | String  | 作成者                               |
-| ---createAt          | String  | 登録日                            |
+| --- userName         | String  | 作成者                               |
+| --- createAt         | String  | 登録日                            |
 | --- attachment        | List | 添付ファイル                           |
 | ---- originalFileName | String | 添付ファイル名                        |
 | ---- filePath         | String | 添付ファイルへのパス                   |
-| ---status            | String  | 応答状態(INQ：お問い合わせ、APR：承認、REJ：差し戻し、REP：返信, REQ:検査中) |
+| --- status           | String  | コメント状態(INQ：お問い合わせ、APR：承認、REJ：差し戻し、REP：返信、REQ：検収中) |
 | -- status            | String  | テンプレートのステータス                           |
 | -- statusName        | String  | テンプレートのステータス名                           |
+| -- securityFlag      | Boolean | セキュリティテンプレートかどうか                   |
+| -- categoryCode      | String  | テンプレートカテゴリコード                       |
 | -- activated         | Boolean  | 有効かどうか                            |
 | -- createDate        | String  | 作成日時                            |
+| -- updateDate        | String  | 更新日時                            |
 | - totalCount         | Integer | 総個数                              |
 
 <a id="register-template-image"></a>

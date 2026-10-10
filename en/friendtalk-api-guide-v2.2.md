@@ -64,6 +64,7 @@ Content-Type: application/json;charset=UTF-8
 | Name |  Type| Required| Description|
 |---|---|---|---|
 |X-Secret-Key|  String| O | Can be created on console.  |
+|X-NC-API-IDEMPOTENCY-KEY|	String| X | Key for duplicate message send request criteria<br>If a request is made with the same key for 10 minutes, the request will be failed. |
 
 [Request body]
 
