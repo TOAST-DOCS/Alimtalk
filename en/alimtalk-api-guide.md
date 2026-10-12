@@ -555,7 +555,7 @@ Content-Type: application/json;charset=UTF-8
 | -- requestDate              | String  |    O     | Request date and time                                                                                                                                                  |
 | -- createDate               | String  |    O     | Registration date and time                                                                                                                                                  |
 | -- receiveDate              | String  |    X     | Received date and time                                                                                                                                                  |
-| -- resendStatus             | String  |    O     | Status code of resending (RSC01, RSC02, RSC03, RSC04, RSC05)\<br\>([See [Alternative Delivery Status Table](http://docs.toast.com/ko/Notification/KakaoTalk%20Bizmessage/ko/alimtalk-api-guide/#smslms)] below) |
+| -- resendStatus             | String  |    O     | Status code of resending (RSC01, RSC02, RSC03, RSC04, RSC05)&lt;br\>([See [Alternative Delivery Status Table](http://docs.toast.com/ko/Notification/KakaoTalk%20Bizmessage/ko/alimtalk-api-guide/#smslms)] below) |
 | -- resendStatusName         | String  |    O     | Status code name of resending                                                                                                                                           |
 | -- messageStatus            | String  |    O     | Request status (COMPLETED -> successful, FAILED -> failed, CANCEL -> canceled)                                                                                                                                |
 | -- createUser               | String  |    X     | Registrant (saved as user UUID when sending from console)                                                                                                                                            |
@@ -750,7 +750,7 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 | - requestDate | String | O | Request date and time |
 | - receiveDate | String | X | Received date and time |
 | - createDate | String | O | Registration date and time |
-| - resendStatus | String | O | Status code of resending (RSC01, RSC02, RSC03, RSC04, RSC05)\<br\>(See [[alternative delivery status table below](http://docs.toast.com/ko/Notification/KakaoTalk%20Bizmessage/ko/alimtalk-api-guide/#smslms)]) |
+| - resendStatus | String | O | Status code of resending (RSC01, RSC02, RSC03, RSC04, RSC05)&lt;br\>(See [[alternative delivery status table below](http://docs.toast.com/ko/Notification/KakaoTalk%20Bizmessage/ko/alimtalk-api-guide/#smslms)]) |
 | - resendStatusName | String | O | Status code name of resending |
 | - resendResultCode | String | X | Result code of resending [SMS result code](https://docs.toast.com/ko/Notification/SMS/ko/error-code/#api) |
 | - resendRequestId | String | X | Resending SMS request ID |
@@ -773,7 +773,7 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 | -- relayId              | String  |    X     | Value passed via the X-Kakao-Plugin-Relay-Id header when the plugin is executed                                                                                                                        |
 | -- oneClickId           | String  |    X     | Payment information used by the one-click payment plugin                                                                                                                                               |
 | -- productId            | String  |    X     | Payment information used by the one-click payment plugin                                                                                                                                               |
-| -- target               | String  |    X     | For web link buttons, adding the `"target":"out"` attribute sends as an out-link\<br\>Sent as an in-app link by default                                                                                                            |
+| -- target               | String  |    X     | For web link buttons, adding the `"target":"out"` attribute sends as an out-link&lt;br\>Sent as an in-app link by default                                                                                                            |
 | - quickReplies          | List    |    X     | Quick reply list (up to 5)                                                                                                                                                        |
 | -- ordering             | Integer |    X     | Quick reply order (required if quick replies exist)                                                                                                                                                |
 | -- type                 | String  |    X     | Quick reply type (WL: Web link, AL: App link, BK: Bot keyword, BC: Bot for Consultation, BT: Bot Transfer, BF: Business form)                                                                                                |
@@ -783,7 +783,7 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 | -- schemeIos            | String  |    X     | iOS app link (required for the AL type, up to 500 characters)                                                                                                                                     |
 | -- schemeAndroid        | String  |    X     | Android app link (required for the AL type, up to 500 characters)                                                                                                                                   |
 | -- pluginId             | String  |    X     | Plugin ID (up to 24 characters)                                                                                                                                        |
-| -- target               | String  |    X     | For web link types, adding the `"target":"out"` attribute sends as an out-link\<br\>Sent as an in-app link by default                                                                                                            |
+| -- target               | String  |    X     | For web link types, adding the `"target":"out"` attribute sends as an out-link&lt;br\>Sent as an in-app link by default                                                                                                            |
 | -- telNumber           | 	String  | 	X  | Phone number to send for TN (Call) type buttons                                                                                    |
 | - messageOption         | Object  |    X     | Message option                                                                                                                                                                 |
 | -- price                | Integer |    X     | Price/amount/payment amount included in the message to be delivered to the user (related to moment advertisement)                                                                                                                            |
@@ -1096,7 +1096,7 @@ Content-Type: application/json;charset=UTF-8
 | - requestDate      | String  |    O     | Request date and time                                                                                                                                                              |
 | - createDate       | String  |    O     | Creation date and time                                                                                                                                                             |
 | - receiveDate      | String  |    X     | Receipt date and time                                                                                                                                                              |
-| - resendStatus     | String  |    O     | Status code of resending (RSC01, RSC02, RSC03, RSC04, RSC05)\<br\>(See [[SMS/LMS resending status table](http://docs.toast.com/en/Notification/KakaoTalk%20Bizmessage/ko/alimtalk-api-guide/#smslms)] below) |
+| - resendStatus     | String  |    O     | Status code of resending (RSC01, RSC02, RSC03, RSC04, RSC05)&lt;br\>(See [[SMS/LMS resending status table](http://docs.toast.com/en/Notification/KakaoTalk%20Bizmessage/ko/alimtalk-api-guide/#smslms)] below) |
 | - resendStatusName | String  |    O     | Status code name of resending                                                                                                                                                      |
 | - resendResultCode | String  |    X     | Result code of resending [SMS result code](https://docs.toast.com/en/Notification/SMS/ko/error-code/#api)                                                                          |
 | - resendRequestId  | String  |    X     | Request ID of resending SMS                                                                                                                                                        |
@@ -1583,7 +1583,7 @@ curl -X GET \
 | - requestDate | String | O | Request date |
 | - receiveDate | String | X | Received date |
 | - createDate | String | O | Created date |
-| - resendStatus | String | O | Status code of resending (RSC01, RSC02, RSC03, RSC04, RSC05)\<br\>([[See the alternative delivery status table below](http://docs.toast.com/ko/Notification/KakaoTalk%20Bizmessage/ko/alimtalk-api-guide/#smslms)]) |
+| - resendStatus | String | O | Status code of resending (RSC01, RSC02, RSC03, RSC04, RSC05)&lt;br\>([[See the alternative delivery status table below](http://docs.toast.com/ko/Notification/KakaoTalk%20Bizmessage/ko/alimtalk-api-guide/#smslms)]) |
 | - resendStatusName | String | O | Status name of resending |
 | - resendResultCode | String | O | Result code of resending [SMS result code](https://docs.toast.com/ko/Notification/SMS/ko/error-code/#api) |
 | - resendRequestId | String | X | Request ID of resending |
@@ -1606,7 +1606,7 @@ curl -X GET \
 | -- relayId              | String  |    X     | Value passed via the X-Kakao-Plugin-Relay-Id header when the plugin is executed                                                                                                                        |
 | -- oneClickId           | String  |    X     | Payment information used by the one-click payment plugin                                                                                                                                               |
 | -- productId            | String  |    X     | Payment information used by the one-click payment plugin                                                                                                                                               |
-| -- target               | String  |    X     | For web link buttons, adding the `"target":"out"` attribute sends an out-link\<br\>Sent as an in-app link by default                                                                                                            |
+| -- target               | String  |    X     | For web link buttons, adding the `"target":"out"` attribute sends an out-link&lt;br\>Sent as an in-app link by default                                                                                                            |
 | -- telNumber           | 	String  | 	X  | Phone number to send for TN (Call) type buttons                                                                                                                                    |
 | - quickReplies          | List    |    X     | Quick reply list (up to 5)                                                                                                                                                        |
 | -- ordering             | Integer |    X     | Quick reply order (required if quick replies are present)                                                                                                                                                |
@@ -1617,7 +1617,7 @@ curl -X GET \
 | -- schemeIos            | String  |    X     | iOS app link (required for the AL type, up to 500 characters)                                                                                                                                     |
 | -- schemeAndroid        | String  |    X     | Android app link (required for the AL type, up to 500 characters)                                                                                                                                   |
 | -- pluginId             | String  |    X     | Plugin ID (up to 24 characters)                                                                                                                                                        |
-| -- target               | String  |    X     | For web link types, adding the `"target":"out"` attribute sends an out-link\<br\>Sent as an in-app link by default                                                                                                            |
+| -- target               | String  |    X     | For web link types, adding the `"target":"out"` attribute sends an out-link&lt;br\>Sent as an in-app link by default                                                                                                            |
 
 <a id="templates"></a>
 ## Templates { #templates }

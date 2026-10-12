@@ -1423,7 +1423,7 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 | -- chatExtra           | String  |    X     | Meta information to send for BC (Bot for Consultation) or BT (Bot Transfer) type buttons                                       |
 | -- chatEvent           | String  |    X     | Bot event name to connect for BT (Bot Transfer) type button                                                                    |
 | -- bizFormKey          | String  |    X     | Biz form key for BF (Business Form) type button                                                                                |
-| -- target              | String  |    X     | For web link buttons, adding the `"target":"out"` attribute sends an out-link\<br\>Sent as an in-app link by default           |
+| -- target              | String  |    X     | For web link buttons, adding the `"target":"out"` attribute sends an out-link&lt;br\>Sent as an in-app link by default           |
 | - header               | String  |    X     | Header (required when using the wide item list message type, up to 25 characters)                                              |
 | - additionalContent    | String  |    X     | Additional Information (up to 34 characters), only available for the Commerce type                   |
 | - item                 | Object  |    X     | Wide Item                                                                                            |
@@ -1693,6 +1693,7 @@ Content-Type: application/json;charset=UTF-8
 | X-Secret-Key | String | Unique secret key |
 
 [Query parameter]
+
 * One of the following is required: requestId, startRequestDate + endRequestDate, or startCreateDate + endCreateDate.
 
 | Name |	Type| Max. Length |	Required|	Descriptions|

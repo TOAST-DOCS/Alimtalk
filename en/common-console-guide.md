@@ -25,6 +25,7 @@
 <a id="authentication-representative"></a>
 ### Authentication representative { #authentication-representative }
 ![KTB_01_20230926.png](https://static.toastoven.net/prod_alimtalk/KTB_01_20230926.png)
+
 1. Select the <b>Identity Verification</b> tab.
 2. Click on <b>identifying with your mobile phone and attaching the required documents</b> to begin the process
 3. Agree after checking the consent to collect and use personal information.
@@ -47,6 +48,7 @@
 Register your sender profile after opening KakaoTalk channel. Detailed guide to creating KakaoTalk channels can be found in [Sender Profile](./sender-overview/). 
 Once the sender profile registration is complete, a KakaoTalk token message will be sent to the administrator's phone. 
 ![KTB_02_20230926.png](https://static.toastoven.net/prod_alimtalk/KTB_02_20230926.png)
+
 1. Enter the ID for the search that starts with @.
 2. Enter the mobile phone number you registered when you joined the KakaoTalk Channel Administrator Center.
     * You can check/modify your mobile phone number in [KakaoTalk Channel Administrator Center Login > Select E-mail at the top right > My Account Information].
@@ -142,6 +144,7 @@ Sender profiles that do not meet certain criteria are subject to first-time user
 ## Webhook Management { #webhook-management }
 You can receive webhook events by specifying a URL when the specified event occurs. 
 ![KTB_04_20230926.png](https://static.toastoven.net/prod_alimtalk/KTB_04_20230926.png)
+
 1. Select the event type to register.
 2. Enter URL address where you can receive the data to be sent to webhook.
 3. Enter the webhook signature to register (not required).
@@ -154,6 +157,7 @@ Registered webhooks can be checked in the <b>webhook registration list</b>.
 When registering an event key and sending with that key, you can collect statistical data by statistical event key.
 Please refer to the <b>note</b> for the meaning of statistical event key terms.
 ![KTB_05_20230926.png](https://static.toastoven.net/prod_alimtalk/KTB_05_20230926.png)
+
 1. <b>Set the data collection period </b>.
 2. Enter a name and <b>detailed description</b> for the <b>statistical event key</b>.
 3. Click <b>Save<b> and the event key will be registered.

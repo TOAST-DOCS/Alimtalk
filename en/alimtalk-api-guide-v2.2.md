@@ -1429,6 +1429,7 @@ Content-Type: application/json;charset=UTF-8
 |X-Secret-Key|  String| Unique secret key |
 
 [Query parameter]
+
 * One of the following is required: requestId, startRequestDate + endRequestDate, or startCreateDate + endCreateDate.
 
 | Name |  Type| Max. Length | Required| Description|

@@ -1135,6 +1135,7 @@ Content-Type: application/json;charset=UTF-8
 | X-Secret-Key | String | 固有のシークレットキー |
 
 [Query parameter]
+
 * requestIdまたはstartRequestDate + endRequestDateまたはstartCreateDate + endCreateDateは必須です。
 
 |値|	タイプ| 最大長さ |	必須|	説明|

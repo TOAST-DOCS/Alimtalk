@@ -907,11 +907,11 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 | -- chatExtra           | String  |    X     | BC(상담톡 전환) / BT(봇 전환) 타입 버튼일 경우 전달할 메타정보                   |
 | -- chatEvent           | String  |    X     | BT(봇 전환) 타입 버튼일 경우 연결할 봇 이벤트명                              |
 | -- bizFormKey          | String  |    X     | BF(비즈니스 폼) 타입 버튼일 경우 비즈폼 키                                 |
-| -- target              | String  |    X     | 웹 링크 버튼일 경우 "target":"out" 속성 추가 시 아웃 링크\<br\>기본 인앱 링크로 발송 |
+| -- target              | String  |    X     | 웹 링크 버튼일 경우 "target":"out" 속성 추가 시 아웃 링크&lt;br\>기본 인앱 링크로 발송 |
 | - header               | String  |    X     | 헤더(와이드 아이템 리스트 메시지 타입 사용 시, 필수, 최대 25자)                    |
 | - item                 | Object  |    X     | 와이드 아이템                                                    |
 | -- list                | List    |    X     | 와이드 아이템 리스트(최소 3개, 최대 4개)                                  |
-| --- title              | String  |    X     | 아이템 제목(첫 번째 아이템의 경우 최대 25자, 2\~4번째 아이템의 경우 최대 30자)         |
+| --- title              | String  |    X     | 아이템 제목(첫 번째 아이템의 경우 최대 25자, 2~4번째 아이템의 경우 최대 30자)         |
 | --- imageUrl           | String  |    X     | 아이템 이미지 URL                                                |
 | --- linkMo             | String  |    X     | 모바일 웹 링크                                                   |
 | --- linkPc             | String  |    X     | PC 웹 링크                                                    |
@@ -1516,7 +1516,7 @@ curl -X GET \
 | - receiveDate       | String  |    X     | 수신 날짜                                                                                                                                                                  |
 | - content           | String  |    X     | 본문                                                                                                                                                                     |
 | - messageStatus     | String  |    O     | 대량 수신자 발송 상태 코드(READY, COMPLETED, FAILED, CANCEL)                                                                                                                      |
-| - resendStatus      | String  |    O     | 대체 발송 상태 코드(RSC01, RSC02, RSC03, RSC04, RSC05)\<br\>([[아래 대체 발송 상태 표](http://docs.toast.com/ko/Notification/KakaoTalk%20Bizmessage/ko/alimtalk-api-guide/#smslms)] 참고) |
+| - resendStatus      | String  |    O     | 대체 발송 상태 코드(RSC01, RSC02, RSC03, RSC04, RSC05)&lt;br\>([[아래 대체 발송 상태 표](http://docs.toast.com/ko/Notification/KakaoTalk%20Bizmessage/ko/alimtalk-api-guide/#smslms)] 참고) |
 | - resendStatusName  | String  |    O     | 대체 발송 상태 코드명                                                                                                                                                           |
 | - resendRequestId   | String  |    X     | 대체 발송 SMS 요청 ID                                                                                                                                                        |
 | - resendResultCode  | String  |    X     | 대체 발송 결과 코드 [SMS 결과 코드](https://docs.toast.com/ko/Notification/SMS/ko/error-code/#api)                                                                                 |
@@ -1526,20 +1526,20 @@ curl -X GET \
 | - imageLink         | Integer |    X     | 이미지 URL                                                                                                                                                                |
 | - buttons           | List    |    X     | 버튼 순서                                                                                                                                                                  |
 | -- ordering         | String  |    X     | 버튼 순서                                                                                                                                                                  |
-| -- type             | String  |    X     | 버튼 종류\<br/\> - WL: 웹링크\<br/\> - AL: 앱링크\<br/\> - DS: 배송 조회\<br/\> - BK: 봇 키워드\<br/\> - MD: 메시지 전달\<br/\> - BC: 상담톡 전환\<br/\> - BT: 봇 전환\<br/\> - AC: 채널 추가[광고 추가/복합형만] |
+| -- type             | String  |    X     | 버튼 종류&lt;br/\> - WL: 웹링크&lt;br/\> - AL: 앱링크&lt;br/\> - DS: 배송 조회&lt;br/\> - BK: 봇 키워드&lt;br/\> - MD: 메시지 전달&lt;br/\> - BC: 상담톡 전환&lt;br/\> - BT: 봇 전환&lt;br/\> - AC: 채널 추가[광고 추가/복합형만] |
 | -- name             | String  |    X     | 버튼 이름                                                                                                                                                                  |
 | -- linkMo           | String  |    X     | 모바일 웹 링크(WL 타입일 경우 필수 필드)                                                                                                                                              |
 | -- linkPc           | String  |    X     | PC 웹 링크(WL 타입일 경우 선택 필드)                                                                                                                                               |
 | -- schemeIos        | String  |    X     | iOS 앱 링크(AL 타입일 경우 필수 필드)                                                                                                                                              |
 | -- schemeAndroid    | String  |    X     | 안드로이드 앱 링크(AL 타입일 경우 필수 필드)                                                                                                                                            |
-| -- chatExtra        | String  |    X     | BC: 상담톡 전환시 전달할 메타정보\<br/\> BT: 봇 전환 시 전달할 메타정보                                                                                                                        |
+| -- chatExtra        | String  |    X     | BC: 상담톡 전환시 전달할 메타정보&lt;br/\> BT: 봇 전환 시 전달할 메타정보                                                                                                                        |
 | -- chatEvent        | String  |    X     | BT: 봇 전환 시 연결할 봇 이벤트명                                                                                                                                                  |
 | -- bizFormKey       | String  |    X     | BF(비즈니스 폼) 타입 버튼 시, 비즈폼 키                                                                                                                                              |
-| -- target           | String  |    X     | 웹 링크 버튼일 경우, "target":"out" 속성 추가 시 아웃 링크\<br\>기본 인앱 링크로 발송                                                                                                            |
+| -- target           | String  |    X     | 웹 링크 버튼일 경우, "target":"out" 속성 추가 시 아웃 링크&lt;br\>기본 인앱 링크로 발송                                                                                                            |
 | - header            | String  |    X     | 헤더(와이드 아이템 리스트 메시지 타입 사용 시, 필수, 최대 25자)                                                                                                                                |
 | - item              | Object  |    X     | 와이드 아이템                                                                                                                                                                |
 | -- list             | List    |    X     | 와이드 아이템 리스트(최소 3개, 최대 4개)                                                                                                                                              |
-| --- title           | String  |    X     | 아이템 제목(첫 번째 아이템의 경우 최대 25자, 2\~4번째 아이템의 경우 최대 30자)                                                                                                                     |
+| --- title           | String  |    X     | 아이템 제목(첫 번째 아이템의 경우 최대 25자, 2~4번째 아이템의 경우 최대 30자)                                                                                                                     |
 | --- imageUrl        | String  |    X     | 아이템 이미지 URL                                                                                                                                                            |
 | --- linkMo          | String  |    X     | 모바일 웹 링크                                                                                                                                                               |
 | --- linkPc          | X       | PC 웹 링크  |
@@ -1889,7 +1889,7 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 | -- imageUrl     | String  |    X     | 이미지 URL                                                                                                                                |
 | -- imageName    | String  |    X     | 이미지명(업로드한 파일명)                                                                                                                         |
 | -- createUser   | String  |    X     | 생성자                                                                                                                                    |
-| -- imageType    | String  |    X     | - IMAGE: 일반 이미지\<br/\> - WIDE\_IMAGE: 와이드 이미지\<br/\> - WIDE\_ITEMLIST\_IMAGE: 와이드 아이템 리스트 이미지\<br/\> - CAROUSEL\_IMAGE: 캐러셀 이미지\<br/\> |
+| -- imageType    | String  |    X     | - IMAGE: 일반 이미지&lt;br/\> - WIDE\_IMAGE: 와이드 이미지&lt;br/\> - WIDE\_ITEMLIST\_IMAGE: 와이드 아이템 리스트 이미지&lt;br/\> - CAROUSEL\_IMAGE: 캐러셀 이미지&lt;br/\> |
 | - totalCount    | Integer |    X     | 총 개수                                                                                                                                   |
 
 * 이미지는 최근 등록한 순으로 정렬되어 응답합니다.

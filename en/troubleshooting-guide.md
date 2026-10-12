@@ -15,6 +15,7 @@ KGB택배 우체국택배 로젠택배 일양로지스 GTX로지스 FedEx 한진
 
 <span style="color:red">**Please note that the list is subject to change by contracts between Kakotalk and each courier.**</span>
 <b>CJ Logistics</b>
+
 * Due to changes related to the delivery tracking button in Kakao Biz Message, if the message contains a CJ Logistics tracking number, it will be sent without the **Delivery Tracking** button. (A notice will be reissued when Kakao makes changes in the future.)
 
 invoice number format
