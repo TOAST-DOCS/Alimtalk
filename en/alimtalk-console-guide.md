@@ -31,12 +31,14 @@ This is general delivery screen of AlimTalk
 ### Mass Delivery { #mass-delivery }
 It is the feature to send AlimTalk to multiple recipient numbers through an Excel/CSV format template file. Select <b>Mass Delivery </b> from bottom tab. 
 ![KTB_10_20230926.png](https://static.toastoven.net/prod_alimtalk/KTB_10_20230926.png)
+
 * Select a template and click on <b>Download Template</b> to download the CSV, XLSX files containing the template replacement. If the template replacement is not included, the delivery will be processed as fail.
 * If you open CSV file as Excel and save it, Hangul may not be saved normally. It is recommended to inspect and send it to check if it has been replaced normally.
 * Files can be uploaded up to 30MB in CSV, XLSM format. The maximum number of recipients that can be sent is 1,000,000.
 * If you select <b>Split Delivery</b>, you can send AlimTalk by specifying <b>Split Count</b> and <b>Delivery interval</b>.
 
 ![KTB_11_20230926.png](https://static.toastoven.net/prod_alimtalk/KTB_11_20230926.png)
+
 * In the recipient file, enter and upload the required information for template delivery, such as the recipient number, variable (if any).
 
 If you click on <b>Send</b> button, you can select <b>Inspect and proceed</b> or <b>Immediate Delivery</b>.
@@ -50,6 +52,7 @@ If you click on <b>Send</b> button, you can select <b>Inspect and proceed</b> or
 It is the feature to send a text message alternatively if you fail to send AlimTalk. 
 <b>Send with common content </b> or <b>Set different messages for each user </b> can be selected to send. 
 ![KTB_12_20230926.png](https://static.toastoven.net/prod_alimtalk/KTB_12_20230926.png)
+
 * For alternative delivery, <b>Manage Alternative Delivery</b> tab should be enabled and SMS service should be used. 
 * Alternative sending requires a sender number. If you do not set an alternative sending status or a sender number, the default settings specified on the <b> Manage Alternative Delivery</b> tab apply.
 * It will be sent alternatively after the KakaoTalk delivery result has been changed to a failure and it may take up to tens of seconds to receive a text.
@@ -74,6 +77,7 @@ It is the feature to send a text message alternatively if you fail to send AlimT
 You can view based on the message type. 
 (<b>Request ID</b> and <b>Request Date and Time</b> are required values.) 
 ![KTB_13_20250403.jpg](../static/images/KTB_13_20250403.jpg)
+
 * Details of each sending message can be found on the <b>View Details</b> screen by clicking on the search results item.
 * <b>Request Date and Time </b> can be retrieved up to a month.
 * Data displayed on full screen can be downloaded as an Excel file.
@@ -84,6 +88,7 @@ You can view based on the message type.
 ### Cancel Send { #cancel-send }
 During normal delivery, scheduled delivery with sending request date and time set to the future can be canceled. 
 ![KTB_14_20250403.jpg](../static/images/KTB_14_20250403.jpg)
+
 * You can see the check box on the left side of the request ID by querying the scheduled delivery request.
 * The check box appears only for uncancelled scheduled requests.
 * If you select the check box of the request you want to cancel and click on <b>Cancel Selected Schedule</b> at the top, the request will be canceled.
@@ -94,6 +99,7 @@ During normal delivery, scheduled delivery with sending request date and time se
 ### View Mass delivery { #view-mass-delivery }
 You can View Mass delivery of AlimTalk. 
 ![KTB_15_20250403.jpg](../static/images/KTB_15_20250403.png)
+
 * View: You can look up mass AlimTalk messages sent in the inquiry form at the top. If you select the line of the inquiry list, you can check the receipt number and the sending information (sending contents, sending result) in the inquiry form at the bottom.
 * Send/Cancel: When sending mass AlimTalk, select <b> Inspect and proceed</b> to send or cancel items that are <b>ready to send</b> by clicking on <b>Send</b> or <b>Cancel</b>.
 * We recommend that you click on an item in the search results and check the replacement value in View in Detail window.

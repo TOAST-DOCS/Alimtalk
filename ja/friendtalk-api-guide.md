@@ -1425,7 +1425,7 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 | -- chatExtra           | String  |    X     | BC（相談トーク転換）/ BT（ボット転換）タイプボタンの際に渡すメタ情報                      |
 | -- chatEvent           | String  |    X     | BT（ボット転換）タイプボタンの際に連携するボットイベント名                                 |
 | -- bizFormKey          | String  |    X     | BF（ビジネスフォーム）タイプボタンの際のビズフォームキー                                    |
-| -- target              | String  |    X     | Web リンクボタンの場合、"target":"out" 属性を追加するとアウトリンク\<br\>デフォルトはインアプリリンクで送信  |
+| -- target              | String  |    X     | Web リンクボタンの場合、"target":"out" 属性を追加するとアウトリンク&lt;br\>デフォルトはインアプリリンクで送信  |
 | - header               | String  |    X     | ヘッダー（ワイドアイテムリストメッセージタイプ使用時は必須、最大 25 文字）                     |
 | - additionalContent    | String  |    X     | 付加情報（最大34文字）、コマース型でのみ使用可能                                |
 | - item                 | Object  |    X     | ワイドアイテム                                                     |
@@ -1695,6 +1695,7 @@ Content-Type: application/json;charset=UTF-8
 | X-Secret-Key | String | 固有のシークレットキー |
 
 [Query parameter]
+
 * requestIdまたはstartRequestDate + endRequestDateまたはstartCreateDate + endCreateDateは必須です。
 
 |値|	タイプ| 最大長さ |	必須|	説明|
@@ -2071,7 +2072,7 @@ https://kakaotalk-bizmessage.api.nhncloudservice.com/friendtalk/v2.4/appkeys/{ap
 | - receiveDate         | String  |    X     | 受信日                                                                                                                                                                    |
 | - content             | String  |    X     | 本文                                                                                                                                                                       |
 | - messageStatus       | String  |    X     | 大量受信者送信ステータスコード(READY, COMPLETED, FAILED, CANCEL)                                                                                                                        |
-| - resendStatus        | String  |    O     | 代替送信ステータスコード(RSC01, RSC02, RSC03, RSC04, RSC05)\<br\>([[以下の代替送信ステータス表](http://docs.toast.com/ko/Notification/KakaoTalk%20Bizmessage/ko/alimtalk-api-guide/#smslms)] 参考)   |
+| - resendStatus        | String  |    O     | 代替送信ステータスコード(RSC01, RSC02, RSC03, RSC04, RSC05)&lt;br\>([[以下の代替送信ステータス表](http://docs.toast.com/ko/Notification/KakaoTalk%20Bizmessage/ko/alimtalk-api-guide/#smslms)] 参考)   |
 | - resendStatusName    | String  |    O     | 代替送信ステータスコード名                                                                                                                                                             |
 | - resendRequestId     | String  |    X     | 代替送信SMSリクエストID                                                                                                                                                          |
 | - resendResultCode    | String  |    X     | 代替送信結果コード [SMS結果コード](https://docs.toast.com/ko/Notification/SMS/ko/error-code/#api)                                                                                   |
@@ -2081,7 +2082,7 @@ https://kakaotalk-bizmessage.api.nhncloudservice.com/friendtalk/v2.4/appkeys/{ap
 | - imageLink           | Integer |    X     | 画像のURL                                                                                                                                                                  |
 | - buttons             | List    |    X     | ボタンの順序                                                                                                                                                                    |
 | -- ordering           | String  |    X     | ボタンの順序                                                                                                                                                                    |
-| -- type               | String  |    X     | ボタンの種類\<br/\> - WL：Webリンク\<br/\> - AL：アプリリンク\<br/\> - DS：配送照会\<br/\> - BK：Botキーワード\<br/\> - MD：メッセージ伝達\<br/\> - BC：相談トーク切り替え\<br/\> - BT：Bot切り替え\<br/\> - AC：チャンネル追加[広告追加/複合型のみ] |
+| -- type               | String  |    X     | ボタンの種類&lt;br/\> - WL：Webリンク&lt;br/\> - AL：アプリリンク&lt;br/\> - DS：配送照会&lt;br/\> - BK：Botキーワード&lt;br/\> - MD：メッセージ伝達&lt;br/\> - BC：相談トーク切り替え&lt;br/\> - BT：Bot切り替え&lt;br/\> - AC：チャンネル追加[広告追加/複合型のみ] |
 | -- name               | String  |    X     | ボタン名                                                                                                                                                                    |
 | -- linkMo             | String  |    X     | モバイルWebリンク(WLタイプの場合は必須フィールド)                                                                                                                                                |
 | -- linkPc             | String  |    X     | PC Webリンク(WLタイプの場合は任意フィールド)                                                                                                                                                 |

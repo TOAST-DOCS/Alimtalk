@@ -336,6 +336,7 @@
     * Added the feature to search by FriendTalk send type when searching FriendTalk send history.
 
 **2024. 10. 29.**
+
 * [コンソール]カカともへのメッセージクーポンのタイトルにコンマ(,)を使用できるように改善
     * カカともへのメッセージクーポンのタイトルにコンマ(,)を使用できるように改善しました。
 * [コンソール]カカともへのメッセージ送信履歴照会時、カカともへのメッセージ送信タイプで照会できるように改善

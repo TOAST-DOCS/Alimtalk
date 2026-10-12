@@ -32,7 +32,7 @@ KakaoTalk Bizmessageサービス内で特定のイベントが発生すると、
 |productName|	String|	Webフックイベントが発生したサービス名 |
 |appKey|	String| Webフックイベントが発生したサービスアプリケーションキー |
 |event|	String| Webフックイベント名 |
-|hooks|	List\<Map\> | Webフックイベント発生時のデータ<br>* 詳細は[イベントタイプ別フック(hook)定義](#definitions-of-hooks-by-event-type)を参照してください。 |
+|hooks|	List&lt;Map\> | Webフックイベント発生時のデータ<br>* 詳細は[イベントタイプ別フック(hook)定義](#definitions-of-hooks-by-event-type)を参照してください。 |
 
 <a id="curl"></a>
 #### cURL
@@ -63,7 +63,7 @@ Webフック設定に定義されたURLでPOSTリクエストを作成する時�
 #### テンプレート状態/お問い合わせのアップデート
 |値| 	タイプ         | 	説明                                                  |
 |---|--------------|-------------------------------------------------------|
-|hooks| 	List\<Map\> | ウェブフックイベント発生時のデータ                                      |
+|hooks| 	List&lt;Map\> | ウェブフックイベント発生時のデータ                                      |
 |- hookId| 	String      | サービスでイベントが発生した際に生成される固有ID                           |
 |- senderKey| 	String      | 	送信キー                                                |
 |- templateCode| 	String      | テンプレートコード                                               |
@@ -112,7 +112,7 @@ Webフック設定に定義されたURLでPOSTリクエストを作成する時�
 #### メッセージ送信結果コードのアップデート
 |値|	タイプ|	説明|
 |---|---|---|
-|hooks|	List\<Map\> | Webフックイベント発生時のデータ |
+|hooks|	List&lt;Map\> | Webフックイベント発生時のデータ |
 |- kakaoMessageType|	String| カカオメッセージタイプ<br>ALIMTALK_NORMAL<br>ALIMTALK_AUTH<br>ALIMTALK_MASS<br>FRIENDTALK_NORMAL<br>FRIENDTALK_MASS<br>BRAND_MESSAGE_NORMAL<br>BRAND_MESSAGE_MASS  |
 |- requestId|	String| リクエストID |
 |- recipientSeq|	Integer| 受信者シーケンス番号 |
