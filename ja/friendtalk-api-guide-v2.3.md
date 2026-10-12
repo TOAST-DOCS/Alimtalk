@@ -1466,87 +1466,87 @@ https://kakaotalk-bizmessage.api.nhncloudservice.com/friendtalk/v2.3/appkeys/{ap
 }
 ```
 
-|値|	タイプ|	説明|
-|---|---|---|
-| header | Object |	ヘッダ領域 |
-| - resultCode |	Integer |	結果コード |
-| - resultMessage |	String | 結果メッセージ |
-| - isSuccessful |	Boolean| 成否 |
-| body | Object | 本文領域 |
-| - requestId | String | リクエストID |
-| - recipientSeq | Integer | 受信者シーケンス番号 |
-| - plusFriendId | String | プラスフレンドID |
-| - senderKey | String | 発信キー(40文字)|
-| - recipientNo | String | 受信番号 |
-| - requestDate | String | リクエスト日 |
-| - receiveDate | String | 受信日 |
-| - content | String | 本文 |
-| - messageStatus | String | 大量受信者送信ステータスコード(READY, COMPLETED, FAILED, CANCEL) |
-| - resendStatus | String |	代替送信ステータスコード(RSC01, RSC02, RSC03, RSC04, RSC05)<br>([[以下の代替送信ステータス表](http://docs.toast.com/ko/Notification/KakaoTalk%20Bizmessage/ko/alimtalk-api-guide/#smslms)]参考) |
-| - resendStatusName | String |	代替送信ステータスコード名 |
-| - resendRequestId | String | 代替送信SMSリクエストID |
-| - resendResultCode | String | 代替送信結果コード[SMS結果コード](https://docs.toast.com/ko/Notification/SMS/ko/error-code/#api) |
-| - resultCode | String |	受信結果コード |
-| - resultCodeName | String |	受信結果コード名 |
-| - imageSeq | Integer | 画像の順序 |
-| - imageLink | Integer | 画像のURL |
-| - buttons | List | ボタンの順序 |
-| -- ordering | String | ボタンの順序 |
-| -- type | String | ボタンの種類<br/> - WL：Webリンク<br/> - AL：アプリリンク<br/> - DS：配送照会<br/> - BK：Botキーワード<br/> - MD：メッセージ伝達<br/> - BC：相談トーク切り替え<br/> - BT：Bot切り替え<br/> - AC：チャンネル追加[広告追加/複合型のみ] |
-| -- name | String | ボタン名 |
-| -- linkMo | String | モバイルWebリンク(WLタイプの場合は必須フィールド) |
-| -- linkPc | String | PC Webリンク(WLタイプの場合は任意フィールド)|
-| -- schemeIos | String | IOSアプリリンク(ALタイプの場合は必須フィールド) |
-| -- schemeAndroid | String | Androidアプリリンク(ALタイプの場合は必須フィールド) |
-| -- chatExtra | String | BC：相談トークに切り替える時に伝達するメタ情報<br/> BT：Botに切り替える時に伝達するメタ情報 |
-| -- chatEvent | String | BT：Botに切り替える時に接続するBotイベント名 |
-| -- bizFormKey|	String|	BF(ビジネスフォーム)タイプボタンの場合、ビズフォームキー |
-| -- target|	String|	Webリンクボタンの場合、"target"："out"プロパティを追加時アウトリンク<br>基本アプリ内リンクで送信 |
-| - header | String | ヘッダ(ワイドアイテムリストメッセージタイプ使用時、必須、最大25文字) |
-| - item | Object | ワイドアイテム |
-| -- list | List | ワイドアイテムリスト(最小3個/最大4個) |
-| --- title | String | アイテムタイトル(最大25文字) |
-| --- imageUrl | String | アイテム画像URL |
-| --- linkMo | String | モバイルWebリンク |
-| --- linkPc | String | PC Webリンク |
-| --- schemeIos | String | iOSアプリリンク |
-| --- schemeAndroid | String | Androidアプリリンク |
-| - carousel | Object | カルーセル | 
-| -- list | List | カルーセルリスト(最小2個/最大10個) | 
-| --- header | String | カルーセルアイテムタイトル(最大20文字) | 
-| --- message | String | カルーセルアイテムメッセージ(最大180文字) | 
-| --- attachment | Object | カルーセルアイテム画像、ボタン情報 | 
-| ---- buttons | List | ボタンリスト(最大2個) | 
-| ----- name| String |	ボタン名(ボタンがある場合は必須、最大8文字)|
-| ----- type| String |	ボタンタイプ(WL:Webリンク、 AL:アプリリンク、 BK:Botキーワード、 MD:メッセージ伝達、 BF:ビジネスフォーム) |
-| ----- linkMo| String |	モバイルWebリンク(WLタイプの場合は必須フィールド)|
-| ----- linkPc | String |	PC Webリンク(WLタイプの場合は任意フィールド) |
-| ----- schemeIos | String | iOSアプリリンク(ALタイプの場合は必須フィールド) |
-| ----- schemeAndroid | String | Androidアプリリンク(ALタイプの場合は必須フィールド) |
-| ---- image | Object | 画像 | 
-| ----- imageUrl|	String|	画像URL   |
-| ----- imageLink|	String|	画像リンク |
-| ---- coupon | Object | クーポン | 
-| ----- title| String |	クーポンtitle |
-| ----- description| String |	クーポン詳細説明 |
-| ----- linkMo| String | モバイルWebリンク |
-| ----- linkPc | String |	PC Webリンク |
-| ----- schemeIos | String | iOSアプリリンク |
-| ----- schemeAndroid | String | Androidアプリリンク |
-| -- tail | Object | さらに表示ボタン情報 | 
-| --- linkMo| String |	モバイルWebリンク|
-| --- linkPc | String |	PC Webリンク |
-| --- schemeIos | String | iOSアプリリンク |
-| --- schemeAndroid | String | Androidアプリリンク |
-|- coupon | Object | クーポン | 
-|-- title| String |	クーポンtitle |
-|-- description| String |	クーポン詳細説明 |
-|-- linkMo| String | モバイルWebリンク |
-|-- linkPc | String |	PC Webリンク |
-|-- schemeIos | String | iOSアプリリンク |
-|-- schemeAndroid | String | Androidアプリリンク |
-| - isAd | Boolean | 広告かどうか |
-| - createDate | String | 作成日 |
+|値|	タイプ| Not Null |	説明|
+|---|---| :--------: |---|
+| header | Object | O |	ヘッダ領域 |
+| - resultCode |	Integer | O |	結果コード |
+| - resultMessage |	String | O | 結果メッセージ |
+| - isSuccessful |	Boolean| O | 成否 |
+| body | Object | X | 本文領域 |
+| - requestId | String | O | リクエストID |
+| - recipientSeq | Integer | O | 受信者シーケンス番号 |
+| - plusFriendId | String | O | プラスフレンドID |
+| - senderKey | String | O | 発信キー(40文字)|
+| - recipientNo | String | X | 受信番号 |
+| - requestDate | String | O | リクエスト日 |
+| - receiveDate | String | X | 受信日 |
+| - content | String | X | 本文 |
+| - messageStatus | String | O | 大量受信者送信ステータスコード(READY, COMPLETED, FAILED, CANCEL) |
+| - resendStatus | String | O |	代替送信ステータスコード(RSC01, RSC02, RSC03, RSC04, RSC05)<br>([[以下の代替送信ステータス表](http://docs.toast.com/ko/Notification/KakaoTalk%20Bizmessage/ko/alimtalk-api-guide/#smslms)]参考) |
+| - resendStatusName | String | O |	代替送信ステータスコード名 |
+| - resendRequestId | String | X | 代替送信SMSリクエストID |
+| - resendResultCode | String | X | 代替送信結果コード[SMS結果コード](https://docs.toast.com/ko/Notification/SMS/ko/error-code/#api) |
+| - resultCode | String | X |	受信結果コード |
+| - resultCodeName | String | X |	受信結果コード名 |
+| - imageSeq | Integer | X | 画像の順序 |
+| - imageLink | Integer | X | 画像のURL |
+| - buttons | List | X | ボタンの順序 |
+| -- ordering | String | X | ボタンの順序 |
+| -- type | String | X | ボタンの種類<br/> - WL：Webリンク<br/> - AL：アプリリンク<br/> - DS：配送照会<br/> - BK：Botキーワード<br/> - MD：メッセージ伝達<br/> - BC：相談トーク切り替え<br/> - BT：Bot切り替え<br/> - AC：チャンネル追加[広告追加/複合型のみ] |
+| -- name | String | X | ボタン名 |
+| -- linkMo | String | X | モバイルWebリンク(WLタイプの場合は必須フィールド) |
+| -- linkPc | String | X | PC Webリンク(WLタイプの場合は任意フィールド)|
+| -- schemeIos | String | X | IOSアプリリンク(ALタイプの場合は必須フィールド) |
+| -- schemeAndroid | String | X | Androidアプリリンク(ALタイプの場合は必須フィールド) |
+| -- chatExtra | String | X | BC：相談トークに切り替える時に伝達するメタ情報<br/> BT：Botに切り替える時に伝達するメタ情報 |
+| -- chatEvent | String | X | BT：Botに切り替える時に接続するBotイベント名 |
+| -- bizFormKey|	String| X |	BF(ビジネスフォーム)タイプボタンの場合、ビズフォームキー |
+| -- target|	String| X |	Webリンクボタンの場合、"target"："out"プロパティを追加時アウトリンク<br>基本アプリ内リンクで送信 |
+| - header | String | X | ヘッダ(ワイドアイテムリストメッセージタイプ使用時、必須、最大25文字) |
+| - item | Object | X | ワイドアイテム |
+| -- list | List | X | ワイドアイテムリスト(最小3個/最大4個) |
+| --- title | String | X | アイテムタイトル(最大25文字) |
+| --- imageUrl | String | X | アイテム画像URL |
+| --- linkMo | String | X | モバイルWebリンク |
+| --- linkPc | String | X | PC Webリンク |
+| --- schemeIos | String | X | iOSアプリリンク |
+| --- schemeAndroid | String | X | Androidアプリリンク |
+| - carousel | Object | X | カルーセル | 
+| -- list | List | X | カルーセルリスト(最小2個/最大10個) | 
+| --- header | String | X | カルーセルアイテムタイトル(最大20文字) | 
+| --- message | String | X | カルーセルアイテムメッセージ(最大180文字) | 
+| --- attachment | Object | X | カルーセルアイテム画像、ボタン情報 | 
+| ---- buttons | List | X | ボタンリスト(最大2個) | 
+| ----- name| String | X |	ボタン名(ボタンがある場合は必須、最大8文字)|
+| ----- type| String | X |	ボタンタイプ(WL:Webリンク、 AL:アプリリンク、 BK:Botキーワード、 MD:メッセージ伝達、 BF:ビジネスフォーム) |
+| ----- linkMo| String | X |	モバイルWebリンク(WLタイプの場合は必須フィールド)|
+| ----- linkPc | String | X |	PC Webリンク(WLタイプの場合は任意フィールド) |
+| ----- schemeIos | String | X | iOSアプリリンク(ALタイプの場合は必須フィールド) |
+| ----- schemeAndroid | String | X | Androidアプリリンク(ALタイプの場合は必須フィールド) |
+| ---- image | Object | X | 画像 | 
+| ----- imageUrl|	String| X |	画像URL   |
+| ----- imageLink|	String| X |	画像リンク |
+| ---- coupon | Object | X | クーポン | 
+| ----- title| String | X |	クーポンtitle |
+| ----- description| String | X |	クーポン詳細説明 |
+| ----- linkMo| String | X | モバイルWebリンク |
+| ----- linkPc | String | X |	PC Webリンク |
+| ----- schemeIos | String | X | iOSアプリリンク |
+| ----- schemeAndroid | String | X | Androidアプリリンク |
+| -- tail | Object | X | さらに表示ボタン情報 | 
+| --- linkMo| String | X |	モバイルWebリンク|
+| --- linkPc | String | X |	PC Webリンク |
+| --- schemeIos | String | X | iOSアプリリンク |
+| --- schemeAndroid | String | X | Androidアプリリンク |
+|- coupon | Object | X | クーポン | 
+|-- title| String | X |	クーポンtitle |
+|-- description| String | X |	クーポン詳細説明 |
+|-- linkMo| String | X | モバイルWebリンク |
+|-- linkPc | String | X |	PC Webリンク |
+|-- schemeIos | String | X | iOSアプリリンク |
+|-- schemeAndroid | String | X | Androidアプリリンク |
+| - isAd | Boolean | X | 広告かどうか |
+| - createDate | String | O | 作成日 |
 
 
 <a id="image-management"></a>
