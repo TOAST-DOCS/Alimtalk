@@ -1,4 +1,4 @@
-<!-- pre-align:aligned sig=262dba70bc7f -->
+<!-- pre-align:aligned sig=b0582765a3b4 -->
 
 <a id="release-notes"></a>
 ## Notification > KakaoTalk Bizmessage > 릴리스 노트 { #release-notes }
