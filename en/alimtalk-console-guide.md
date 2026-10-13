@@ -210,7 +210,7 @@ The inspection and review of AlimTalk template will be conducted directly by Kak
 * If AlimTalk fails to send, you can set it to be sent alternatively as a text message.
 * The NHN Cloud SMS service must be in use and will be sent by SMS/LMS depending on the length of the message. (A separate fee will be charged for sending text messages for each type.)
 * Since alternative delivery is made in the SMS service, field values must follow the API specifications for SMS (e.g. Sender number registered at the SMS service, or restriction in the field length). 
-* Subjects or contents that exceed the byte limit for the specified alternative sending type may be cut short (see [SMS Precautions](https://docs.toast.com/ko/Notification/SMS/ko/api-guide/#_1))
+* Subjects or contents that exceed the byte limit for the specified alternative sending type may be cut short (see [SMS Precautions](https://docs.nhncloud.com/ko/Notification/SMS/ko/api-guide/#_1))
 * Modifying the SMS app key will reset the alternative sending settings for all search IDs.
 * The content for alternative sending is sent in EUC-KR, and unsupported emoji will fail for alternative sending.
 * You can modify <b>alternative sending</b> and <b>sender number</b> by clicking<b>modify</b> to modify the search ID's channel to modify the alternative sending settings. 

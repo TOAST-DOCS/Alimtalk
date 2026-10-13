@@ -66,7 +66,7 @@ Content-Type: application/json;charset=UTF-8
 * <b>The request date can be set from the time you make the call to 60 days later.</b>
 * <b> Delivery restricted during night (20:50~08:00 on the following day)</b>
 * <b> Delivery is to be replaced by SMS, and field input must follow delivery API specifications of the SMS service (e.g. sender number registered at SMS service, 080 unsubscription, and field length restrictions) </b>
-* <b> Title or message of an alternative delivery may be cut in length, if the byte size exceeds restrictions (see [[Cautions for SMS](https://docs.toast.com/ko/Notification/SMS/ko/api-guide/#_1)])</b>
+* <b> Title or message of an alternative delivery may be cut in length, if the byte size exceeds restrictions (see [[Cautions for SMS](https://docs.nhncloud.com/ko/Notification/SMS/ko/api-guide/#_1)])</b>
 * <b>FriendTalk ad messages are sent using the Ads SMS API instead, so you must register a 080 opt-out number.</b>
 * <b>When entering the resendContent field of a FriendTalk ad message, you must enter the <span style="color:red">ad text</span>from the SMS ad API to send it. `(Ad) content[Free unsubscribe]080XXXXXXX`</b>
 * <b> When the resendContent field of a FriendTalk ad message is missing, ad phrase is automatically created with registered 080 number for unsubscription to enable alternative delivery. </b>
@@ -2070,10 +2070,10 @@ curl -X GET \
 | - receiveDate | String | X | Date of receiving |
 | - content | String | X | Body |
 | - messageStatus | String | X | Mass recipient delivery status code (READY, COMPLETED, FAILED, CANCEL) |
-| - resendStatus | String | O | Status code of resending (RSC01, RSC02, RSC03, RSC04, RSC05)<br>([[Refer to Status code of resending table](http://docs.toast.com/ko/Notification/KakaoTalk%20Bizmessage/ko/alimtalk-api-guide/#smslms)] below) |
+| - resendStatus | String | O | Status code of resending (RSC01, RSC02, RSC03, RSC04, RSC05)<br>([[Refer to Status code of resending table](https://docs.nhncloud.com/ko/Notification/KakaoTalk%20Bizmessage/ko/alimtalk-api-guide/#smslms)] below) |
 | - resendStatusName | String | O | Status code name of resending |
 | - resendRequestId | String | X | Resending SMS request ID |
-| - resendResultCode | String | X | Result code of resending [Result code of SMS sending](https://docs.toast.com/ko/Notification/SMS/ko/error-code/#api) |
+| - resendResultCode | String | X | Result code of resending [Result code of SMS sending](https://docs.nhncloud.com/ko/Notification/SMS/ko/error-code/#api) |
 | - resultCode | String | X | Result code of receiving |
 | - resultCodeName | String | X | Result code name of receiving |
 | - imageSeq | Integer | X | Image sequence |

@@ -68,7 +68,7 @@ Content-Type: application/json;charset=UTF-8
 * <b>リクエスト日時は呼び出した時点から60日後まで設定可能です。</b>
 * <b>夜間送信制限(20:50~翌日08:00)</b>
 * <b>SMSサービスで代替送信されるため、SMSサービスの送信API仕様に従ってフィールドを入力する必要があります。(SMSサービスに登録された発信番号、 080受信拒否番号、各種フィールドの長さ制限など)</b>
-* <b>指定した代替送信タイプのバイト制限を超える代替送信のタイトルや内容は切り捨てられ、代替送信される場合があります。([[SMS注意事項](https://docs.toast.com/ko/Notification/SMS/ko/api-guide/#_1)]参考)</b>
+* <b>指定した代替送信タイプのバイト制限を超える代替送信のタイトルや内容は切り捨てられ、代替送信される場合があります。([[SMS注意事項](https://docs.nhncloud.com/ko/Notification/SMS/ko/api-guide/#_1)]参考)</b>
 * <b>カカともへのメッセージ広告メッセージは広告SMS APIで代替送信されるため、代替送信を行うには必ず080受信拒否番号を登録する必要があります。</b>
 * <b>カカともへのメッセージ広告メッセージのresendContentフィールドを入力する場合、 SMS広告APIの <span style="color:red">広告文言</span>を必ず入力すると正常に代替送信されます。 `(広告)内容[無料受信拒否]080XXXXXXX`</b>
 * <b>カカともへのメッセージ広告メッセージのresendContentフィールドがない場合、登録された080受信拒否番号に<span style="color:red">広告文言</span>を自動作成して代替送信されます。</b>
@@ -1483,10 +1483,10 @@ https://kakaotalk-bizmessage.api.nhncloudservice.com/friendtalk/v2.3/appkeys/{ap
 | - receiveDate | String | X | 受信日 |
 | - content | String | X | 本文 |
 | - messageStatus | String | O | 大量受信者送信ステータスコード(READY, COMPLETED, FAILED, CANCEL) |
-| - resendStatus | String | O |	代替送信ステータスコード(RSC01, RSC02, RSC03, RSC04, RSC05)<br>([[以下の代替送信ステータス表](http://docs.toast.com/ko/Notification/KakaoTalk%20Bizmessage/ko/alimtalk-api-guide/#smslms)]参考) |
+| - resendStatus | String | O |	代替送信ステータスコード(RSC01, RSC02, RSC03, RSC04, RSC05)<br>([[以下の代替送信ステータス表](https://docs.nhncloud.com/ko/Notification/KakaoTalk%20Bizmessage/ko/alimtalk-api-guide/#smslms)]参考) |
 | - resendStatusName | String | O |	代替送信ステータスコード名 |
 | - resendRequestId | String | X | 代替送信SMSリクエストID |
-| - resendResultCode | String | X | 代替送信結果コード[SMS結果コード](https://docs.toast.com/ko/Notification/SMS/ko/error-code/#api) |
+| - resendResultCode | String | X | 代替送信結果コード[SMS結果コード](https://docs.nhncloud.com/ko/Notification/SMS/ko/error-code/#api) |
 | - resultCode | String | X |	受信結果コード |
 | - resultCodeName | String | X |	受信結果コード名 |
 | - imageSeq | Integer | X | 画像の順序 |
