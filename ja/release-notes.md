@@ -5,6 +5,15 @@
 <a id="release-notes"></a>
 ## Notification > KakaoTalk Bizmessage > リリースノート { #release-notes }
 
+<a id="october-27-2026"></a>
+### 2026. 10. 27. { #october-27-2026 }
+
+<a id="october-27-2026-feature-updates"></a>
+#### 機能改善/変更
+* [API, コンソール] ブランドメッセージ基本型送信時のグループタグキーフィールドを削除
+    * カカオの仕様に従い、ブランドメッセージ基本型送信時にグループタグキー(`groupTagKey`)フィールドが削除されました。
+    * 自由型送信のグループタグ機能は、従来と同様に維持されます。
+
 <a id="august-25-2026"></a>
 ### 2026. 08. 25. { #august-25-2026 }
 
