@@ -4,6 +4,15 @@
 
 <a id="release-notes"></a>
 ## Notification > KakaoTalk Bizmessage > Release Notes { #release-notes }
+<a id="october-27-2026"></a>
+### October 27, 2026 { #october-27-2026 }
+
+<a id="october-27-2026-feature-updates"></a>
+#### Feature Updates
+* [API, Console] Removed group tag key field when sending Brand Message basic type
+    * In accordance with Kakao specifications, the group tag key (`groupTagKey`) field has been removed when sending Brand Message basic type.
+    * The group tag feature for free-form sending remains unchanged.
+
 <a id="august-25-2026"></a>
 ### August 25, 2026 { #august-25-2026 }
 
