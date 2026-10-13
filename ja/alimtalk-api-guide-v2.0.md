@@ -114,7 +114,7 @@ Content-Type: application/json;charset=UTF-8
 * <b>リクエスト日時は呼び出す時点から60日後まで設定可能です。</b>
 * <b>SMSサービスで代替送信されるため、SMSサービスの送信APIの仕様に応じてフィールドを入力する必要があります。(SMSサービスに登録された発信番号、各種フィールドの長さ制限など)</b>
 * <b>SMSサービスは、国際SMSのみサポートします。国際受信者番号の場合、 resendType(代替送信タイプ)をSMSに変更すると正常に代替送信できます。</b>
-* <b>指定した代替送信タイプのバイト制限を超える代替送信のタイトルや内容は、途中で切れて代替送信されることがあります。([[SMS注意事項](https://docs.toast.com/ko/Notification/SMS/ko/api-guide/#_1)]参考)</b>
+* <b>指定した代替送信タイプのバイト制限を超える代替送信のタイトルや内容は、途中で切れて代替送信されることがあります。([[SMS注意事項](https://docs.nhncloud.com/ko/Notification/SMS/ko/api-guide/#_1)]参考)</b>
 * <b>templateTitleとtemplateItemHighlight.titleフィールドの一番後ろに日本語識別子とtemplateParameterを利用して`\s`文字を追加する場合、取り消し線スタイルを適用できます。</b>
     * <b>ただし、テンプレート登録時にあらかじめ\sをフィールドに追加しておいた場合は適用されません。</b>
 
@@ -267,7 +267,7 @@ Content-Type: application/json;charset=UTF-8
 * <b>リクエスト日時は呼び出す時点から60日後まで設定可能です。</b>
 * <b>SMSサービスで代替送信されるため、SMSサービスの送信APIの仕様に応じてフィールドを入力する必要があります。(SMSサービスに登録された発信番号、各種フィールドの長さ制限など)</b>
 * <b>SMSサービスは、国際SMSのみサポートします。国際受信者番号の場合、 resendType(代替送信タイプ)をSMSに変更すると正常に代替送信できます。</b>
-* <b>指定した代替送信タイプのバイト制限を超える代替送信のタイトルや内容は、途中で切れて代替送信されることがあります。([[SMS注意事項](https://docs.toast.com/ko/Notification/SMS/ko/api-guide/#_1)]参考)<
+* <b>指定した代替送信タイプのバイト制限を超える代替送信のタイトルや内容は、途中で切れて代替送信されることがあります。([[SMS注意事項](https://docs.nhncloud.com/ko/Notification/SMS/ko/api-guide/#_1)]参考)<
 * <b>送信時にtemplateTitleとtemplateItemHighlight.titleフィールドの一番後ろに`\s`文字を追加すると、取り消し線スタイルを適用できます。</b>
     * <b>ただし、テンプレート登録時にあらかじめ\sをフィールドに追加しておいた場合は適用されません。</b>
 
@@ -569,9 +569,9 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 | - requestDate          | String  | リクエスト日時                             |
 | - receiveDate          | String  | 受信日時                             |
 | - createDate           | String  | 登録日時                            |
-| - resendStatus         | String  | 代替送信ステータスコード(RSC01、RSC02、RSC03、RSC04、RSC05)<br>([[下記の代替送信ステータス表](http://docs.toast.com/ko/Notification/KakaoTalk%20Bizmessage/ko/alimtalk-api-guide/#smslms)] 参照) |
+| - resendStatus         | String  | 代替送信ステータスコード(RSC01、RSC02、RSC03、RSC04、RSC05)<br>([[下記の代替送信ステータス表](https://docs.nhncloud.com/ko/Notification/KakaoTalk%20Bizmessage/ko/alimtalk-api-guide/#smslms)] 参照) |
 | - resendStatusName     | String  | 再送信ステータスコード名                          |
-| - resendResultCode     | String  | 代替送信結果コード [SMS結果コード](https://docs.toast.com/ko/Notification/SMS/ko/error-code/#api) |
+| - resendResultCode     | String  | 代替送信結果コード [SMS結果コード](https://docs.nhncloud.com/ko/Notification/SMS/ko/error-code/#api) |
 | - resendRequestId      | String  | 代替送信SMS リクエストID |
 | - messageStatus        | String  | リクエストステータス(COMPLETED -> 成功、FAILED -> 失敗、CANCEL -> キャンセル) |
 | - resultCode           | String  | 受信結果コード                          |
@@ -686,7 +686,7 @@ Content-Type: application/json;charset=UTF-8
 
 * <b>リクエスト日時は呼び出す時点から60日後まで設定可能です。</b>
 * <b>SMSサービスで代替送信されるため、SMSサービスの送信APIの仕様に応じてフィールドを入力する必要があります。(SMSサービスに登録された発信番号、各種フィールドの長さ制限など)</b>
-* <b>指定した代替送信タイプのバイト制限を超える代替送信のタイトルや内容は、途中で切れて代替送信されることがあります。([[SMS注意事項](https://docs.toast.com/ko/Notification/SMS/ko/api-guide/#_1)]参考)</b>
+* <b>指定した代替送信タイプのバイト制限を超える代替送信のタイトルや内容は、途中で切れて代替送信されることがあります。([[SMS注意事項](https://docs.nhncloud.com/ko/Notification/SMS/ko/api-guide/#_1)]参考)</b>
 
 [例]
 ```
@@ -1137,7 +1137,7 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 | - receiveDate          | String  | 受信日時                             |
 | - resendStatus         | String  | 再送信ステータスコード                         |
 | - resendStatusName     | String  | 再送信ステータスコード名                          |
-| - resendResultCode     | String  | 再送結果コード[SMS結果コード](https://docs.toast.com/ja/Notification/SMS/ja/error-code/#api) |
+| - resendResultCode     | String  | 再送結果コード[SMS結果コード](https://docs.nhncloud.com/ja/Notification/SMS/ja/error-code/#api) |
 | - resendRequestId      | String  | 再送SMSリクエストID                                                  |
 | - messageStatus        | String  | リクエストステータス(COMPLETED -> 成功、FAILED -> 失敗、CANCEL -> キャンセル) |
 | - resultCode           | String  | 受信結果コード                          |
@@ -1302,7 +1302,7 @@ Content-Type: application/json;charset=UTF-8
 | - receiveDate              | String  | 受信日時                            |
 | - resendStatus             | String  | 再送信ステータスコード                        |
 | - resendStatusName         | String  | 再送信ステータスコード名                        |
-| - resendResultCode         | String  | 再送結果コード[SMS結果コード](https://docs.toast.com/ja/Notification/SMS/ja/error-code/#api)                        |
+| - resendResultCode         | String  | 再送結果コード[SMS結果コード](https://docs.nhncloud.com/ja/Notification/SMS/ja/error-code/#api)                        |
 | - resendRequestId          | String  | 再送SMSリクエストID                        |
 | - messageStatus            | String  | リクエストステータス(COMPLETED -> 成功、FAILED -> 失敗、CANCEL -> キャンセル) |
 | - resultCode               | String  | 受信結果コード                         |

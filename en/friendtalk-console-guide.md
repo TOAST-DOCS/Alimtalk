@@ -240,7 +240,7 @@ You can register or delete the images you want to use for FriendTalk and check t
 * The NHN Cloud SMS service must be in use and will be sent by SMS/LMS depending on the length of the message. (A separate fee will be charged for sending text messages for each type.)
 * Modifying the SMS app key will reset the alternative sending settings for all search IDs.
 * Since alternative delivery is made in the SMS service, field values must follow the API specifications for SMS (e.g. Sender number registered at the SMS service, or restriction in the field length). 
-* Title or message of an alternative delivery may be cut in length, if the byte size exceeds restrictions (see [[Cautions for SMS](https://docs.toast.com/ko/Notification/SMS/ko/api-guide/#_1)])
+* Title or message of an alternative delivery may be cut in length, if the byte size exceeds restrictions (see [[Cautions for SMS](https://docs.nhncloud.com/ko/Notification/SMS/ko/api-guide/#_1)])
 * The content for alternative sending is sent in EUC-KR, and unsupported emoji will fail for alternative sending.
 * You can modify <b>alternative sending</b> and <b>sender number</b> by clicking<b>modify</b> to modify the search ID's channel to modify the alternative sending settings. 
 * If <b>alternative sending or not</b> is set to <b>Disabled </b>, the channel of the search ID cannot be sent alternatively when sending FriendTalk message.

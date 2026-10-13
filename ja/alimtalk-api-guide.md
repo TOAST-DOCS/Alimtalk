@@ -152,7 +152,7 @@ Content-Type: application/json;charset=UTF-8
 * <b>リクエスト日時は、呼び出し時点から 60 日後まで設定できます。</b>
 * <b>SMS サービスで代替送信されるため、SMS サービスの送信 API 仕様に従ってフィールドを入力する必要があります。（SMS サービスに登録された発信番号、各種フィールドの長さ制限など）</b>
 * <b>代替送信は SMS、LMS で送信可能であり、国際代替送信は SMS のみサポートします。国際受信者番号の場合、resendType（代替送信タイプ）を SMS に変更する必要があります。</b>
-* <b>指定した代替送信タイプのバイト制限を超える代替送信タイトルや内容は、切り捨てられて代替送信される場合があります。（[[SMS 注意事項](https://docs.toast.com/ko/Notification/SMS/ko/api-guide/#_1)] 参考）</b>
+* <b>指定した代替送信タイプのバイト制限を超える代替送信タイトルや内容は、切り捨てられて代替送信される場合があります。（[[SMS 注意事項](https://docs.nhncloud.com/ko/Notification/SMS/ko/api-guide/#_1)] 参考）</b>
 * <b>templateTitle および templateItemHighlight.title フィールドの末尾に、置換子と templateParameter を使用して `\s` 文字を追加すると、取り消し線スタイルを適用できます。</b>
     * <b>ただし、テンプレート登録時にあらかじめ \s をフィールドに追加しておく場合は適用されません。</b>
 
@@ -393,7 +393,7 @@ Content-Type: application/json;charset=UTF-8
 * <b>リクエスト日時は、呼び出し時点から60日後まで設定できます。</b>
 * <b>SMSサービスで代替送信されるため、SMSサービスの送信API仕様に従ってフィールドを入力する必要があります。（SMSサービスに登録された発信番号、各種フィールドの長さ制限など）</b>
 * <b>代替送信はSMS、LMSで送信可能で、国際代替送信はSMSのみサポートします。国際受信者番号の場合、resendType（代替送信タイプ）をSMSに変更する必要があります。</b>
-* <b>指定した代替送信タイプのバイト制限を超える代替送信タイトルや内容は、切り捨てられて代替送信される場合があります。（[[SMS 注意事項](https://docs.toast.com/ko/Notification/SMS/ko/api-guide/#_1)] 参照）</b>
+* <b>指定した代替送信タイプのバイト制限を超える代替送信タイトルや内容は、切り捨てられて代替送信される場合があります。（[[SMS 注意事項](https://docs.nhncloud.com/ko/Notification/SMS/ko/api-guide/#_1)] 参照）</b>
 * <b>送信時点でtemplateTitleとtemplateItemHighlight.titleフィールドの末尾に`\s`文字を追加した場合、取り消し線スタイルを適用できます。</b>
     * <b>ただし、テンプレート登録時にあらかじめ\sをフィールドに追加している場合は適用されません。</b>
 
@@ -555,7 +555,7 @@ Content-Type: application/json;charset=UTF-8
 | -- requestDate              | String  |    O     | リクエスト日時                                                                                                                                                                  |
 | -- createDate               | String  |    O     | 登録日時                                                                                                                                                                  |
 | -- receiveDate              | String  |    X     | 受信日時                                                                                                                                                                  |
-| -- resendStatus             | String  |    O     | 代替送信状態コード(RSC01、RSC02、RSC03、RSC04、RSC05)&lt;br\>([[下記の代替送信状態表](http://docs.toast.com/ko/Notification/KakaoTalk%20Bizmessage/ko/alimtalk-api-guide/#smslms)] 参照) |
+| -- resendStatus             | String  |    O     | 代替送信状態コード(RSC01、RSC02、RSC03、RSC04、RSC05)&lt;br\>([[下記の代替送信状態表](https://docs.nhncloud.com/ko/Notification/KakaoTalk%20Bizmessage/ko/alimtalk-api-guide/#smslms)] 参照) |
 | -- resendStatusName         | String  |    O     | 代替送信状態コード名                                                                                                                                                           |
 | -- messageStatus            | String  |    O     | リクエスト状態( COMPLETED \-> 成功、FAILED \-> 失敗、CANCEL \-> 取消 )                                                                                                                |
 | -- createUser               | String  |    X     | 登録者(コンソールから送信時にユーザー UUID で保存)                                                                                                                                            |
@@ -750,9 +750,9 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 | - requestDate           | String  |    O     | リクエスト日時                                                                                                                                                                  |
 | - receiveDate           | String  |    X     | 受信日時                                                                                                                                                                  |
 | - createDate            | String  |    O     | 登録日時                                                                                                                                                                  |
-| - resendStatus          | String  |    O     | 代替送信ステータスコード（RSC01、RSC02、RSC03、RSC04、RSC05）&lt;br\>（[[下記の代替送信ステータス表](http://docs.toast.com/ko/Notification/KakaoTalk%20Bizmessage/ko/alimtalk-api-guide/#smslms)] 参照） |
+| - resendStatus          | String  |    O     | 代替送信ステータスコード（RSC01、RSC02、RSC03、RSC04、RSC05）&lt;br\>（[[下記の代替送信ステータス表](https://docs.nhncloud.com/ko/Notification/KakaoTalk%20Bizmessage/ko/alimtalk-api-guide/#smslms)] 参照） |
 | - resendStatusName      | String  |    O     | 代替送信ステータスコード名                                                                                                                                                           |
-| - resendResultCode      | String  |    X     | 代替送信結果コード [SMS 結果コード](https://docs.toast.com/ko/Notification/SMS/ko/error-code/#api)                                                                                 |
+| - resendResultCode      | String  |    X     | 代替送信結果コード [SMS 結果コード](https://docs.nhncloud.com/ko/Notification/SMS/ko/error-code/#api)                                                                                 |
 | - resendRequestId       | String  |    X     | 代替送信 SMS リクエスト ID                                                                                                                                                        |
 | - messageStatus         | String  |    O     | リクエストステータス（COMPLETED -\> 成功、FAILED -\> 失敗、CANCEL -\> 取消）                                                                                                                |
 | - resultCode            | String  |    X     | 受信結果コード                                                                                                                                                               |
@@ -1096,9 +1096,9 @@ Content-Type: application/json;charset=UTF-8
 | - requestDate      | String  |    O     | リクエスト日時                                                                                                                                                                  |
 | - createDate       | String  |    O     | 作成日時                                                                                                                                                                  |
 | - receiveDate      | String  |    X     | 受信日時                                                                                                                                                                  |
-| - resendStatus     | String  |    O     | 代替送信ステータスコード(RSC01, RSC02, RSC03, RSC04, RSC05)&lt;br\>([[下記の代替送信ステータス表](http://docs.toast.com/ko/Notification/KakaoTalk%20Bizmessage/ko/alimtalk-api-guide/#smslms)] 参照) |
+| - resendStatus     | String  |    O     | 代替送信ステータスコード(RSC01, RSC02, RSC03, RSC04, RSC05)&lt;br\>([[下記の代替送信ステータス表](https://docs.nhncloud.com/ko/Notification/KakaoTalk%20Bizmessage/ko/alimtalk-api-guide/#smslms)] 参照) |
 | - resendStatusName | String  |    O     | 代替送信ステータスコード名                                                                                                                                                           |
-| - resendResultCode | String  |    X     | 代替送信結果コード [SMS 結果コード](https://docs.toast.com/ko/Notification/SMS/ko/error-code/#api)                                                                                 |
+| - resendResultCode | String  |    X     | 代替送信結果コード [SMS 結果コード](https://docs.nhncloud.com/ko/Notification/SMS/ko/error-code/#api)                                                                                 |
 | - resendRequestId  | String  |    X     | 代替送信 SMS リクエスト ID                                                                                                                                                        |
 | - messageStatus    | String  |    O     | リクエストステータス(COMPLETED -\> 成功、FAILED -\> 失敗、CANCEL -\> 取消)                                                                                                                 |
 | - resultCode       | String  |    X     | 受信結果コード                                                                                                                                                               |
@@ -1583,9 +1583,9 @@ curl -X GET \
 | - requestDate           | String  |    O     | リクエスト日時                                                                                                                                                                  |
 | - receiveDate           | String  |    X     | 受信日時                                                                                                                                                                  |
 | - createDate            | String  |    O     | 作成日時                                                                                                                                                                  |
-| - resendStatus          | String  |    O     | 代替送信ステータスコード（RSC01、RSC02、RSC03、RSC04、RSC05）&lt;br\>（[[下記の代替送信ステータス表](http://docs.toast.com/ko/Notification/KakaoTalk%20Bizmessage/ko/alimtalk-api-guide/#smslms)] 参照） |
+| - resendStatus          | String  |    O     | 代替送信ステータスコード（RSC01、RSC02、RSC03、RSC04、RSC05）&lt;br\>（[[下記の代替送信ステータス表](https://docs.nhncloud.com/ko/Notification/KakaoTalk%20Bizmessage/ko/alimtalk-api-guide/#smslms)] 参照） |
 | - resendStatusName      | String  |    O     | 代替送信ステータス名                                                                                                                                                              |
-| - resendResultCode      | String  |    O     | 代替送信結果コード [SMS 結果コード](https://docs.toast.com/ko/Notification/SMS/ko/error-code/#api)                                                                                 |
+| - resendResultCode      | String  |    O     | 代替送信結果コード [SMS 結果コード](https://docs.nhncloud.com/ko/Notification/SMS/ko/error-code/#api)                                                                                 |
 | - resendRequestId       | String  |    X     | 代替送信リクエスト ID                                                                                                                                                            |
 | - messageStatus         | String  |    O     | 一括受信者送信ステータスコード（READY、COMPLETED、FAILED、CANCEL）                                                                                                                      |
 | - resultCode            | String  |    X     | 結果ステータスコード                                                                                                                                                               |

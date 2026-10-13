@@ -130,7 +130,7 @@ Content-Type: application/json;charset=UTF-8
 * <b>요청 일시는 호출하는 시점부터 60일 후까지 설정 가능합니다.</b>
 * <b>SMS 서비스에서 대체 발송되므로, SMS 서비스의 발송 API 명세에 따라 필드를 입력해야 합니다.(SMS 서비스에 등록된 발신 번호, 각종 필드 길이 제한 등)</b>
 * <b>대체 발송은 SMS, LMS로 발송 가능하며, 국제 대체 발송은 SMS만 지원합니다. 국제 수신자 번호일 경우, resendType(대체 발송 타입)을 SMS로 변경해야 정상적으로 대체 발송할 수 있습니다.</b>
-* <b>지정한 대체 발송 타입의 바이트 제한을 초과하는 대체 발송 제목이나 내용은 잘려서 대체 발송될 수 있습니다.([[SMS 주의사항](https://docs.toast.com/ko/Notification/SMS/ko/api-guide/#_1)] 참고)</b>
+* <b>지정한 대체 발송 타입의 바이트 제한을 초과하는 대체 발송 제목이나 내용은 잘려서 대체 발송될 수 있습니다.([[SMS 주의사항](https://docs.nhncloud.com/ko/Notification/SMS/ko/api-guide/#_1)] 참고)</b>
 * <b>templateTitle과 templateItemHighlight.title 필드 맨 뒤에 치환자와 templateParameter를 이용해서 `\s` 문자를 추가할 경우 취소선 스타일을 적용할 수 있습니다.</b>
     * <b>단, 템플릿 등록 시 미리 \s를 필드에 추가해 두는 경우에는 적용되지 않습니다.</b>
 
@@ -292,7 +292,7 @@ Content-Type: application/json;charset=UTF-8
 * <b>요청 일시는 호출하는 시점부터 60일 후까지 설정 가능합니다.</b>
 * <b>SMS 서비스에서 대체 발송되므로, SMS 서비스의 발송 API 명세에 따라 필드를 입력해야 합니다.(SMS 서비스에 등록된 발신 번호, 각종 필드 길이 제한 등)</b>
 * <b>대체 발송은 SMS, LMS로 발송 가능하며, 국제 대체 발송은 SMS만 지원합니다. 국제 수신자 번호일 경우, resendType(대체 발송 타입)을 SMS로 변경해야 정상적으로 대체 발송할 수 있습니다.</b>
-* <b>지정한 대체 발송 타입의 바이트 제한을 초과하는 대체 발송 제목이나 내용은 잘려서 대체 발송될 수 있습니다.([[SMS 주의사항](https://docs.toast.com/ko/Notification/SMS/ko/api-guide/#_1)] 참고)</b>
+* <b>지정한 대체 발송 타입의 바이트 제한을 초과하는 대체 발송 제목이나 내용은 잘려서 대체 발송될 수 있습니다.([[SMS 주의사항](https://docs.nhncloud.com/ko/Notification/SMS/ko/api-guide/#_1)] 참고)</b>
 * <b>발송 시점에 templateTitle과 templateItemHighlight.title 필드 맨 뒤에 `\s` 문자를 추가할 경우 취소선 스타일을 적용할 수 있습니다.</b>
     * <b>단, 템플릿 등록 시 미리 \s를 필드에 추가해 두는 경우에는 적용되지 않습니다.</b>
 
@@ -464,7 +464,7 @@ Content-Type: application/json;charset=UTF-8
 |-- requestDate | String |	요청 일시 |
 |-- createDate | String | 등록 일시 |
 |-- receiveDate | String |	수신 일시 |
-|-- resendStatus | String |	대체 발송 상태 코드(RSC01, RSC02, RSC03, RSC04, RSC05)<br>([[아래 대체 발송 상태 표](http://docs.toast.com/ko/Notification/KakaoTalk%20Bizmessage/ko/alimtalk-api-guide/#smslms)] 참고) |
+|-- resendStatus | String |	대체 발송 상태 코드(RSC01, RSC02, RSC03, RSC04, RSC05)<br>([[아래 대체 발송 상태 표](https://docs.nhncloud.com/ko/Notification/KakaoTalk%20Bizmessage/ko/alimtalk-api-guide/#smslms)] 참고) |
 |-- resendStatusName | String |	대체 발송 상태 코드명 |
 |-- messageStatus | String |	요청 상태( COMPLETED -> 성공, FAILED -> 실패, CANCEL -> 취소 ) |
 |-- createUser | String | 등록자(콘솔에서 발송 시 사용자 UUID로 저장) |
@@ -603,9 +603,9 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 |- requestDate | String |	요청 일시 |
 |- receiveDate | String |	수신 일시 |
 |- createDate | String | 등록 일시 |
-|- resendStatus | String |	대체 발송 상태 코드(RSC01, RSC02, RSC03, RSC04, RSC05)<br>([[아래 대체 발송 상태 표](http://docs.toast.com/ko/Notification/KakaoTalk%20Bizmessage/ko/alimtalk-api-guide/#smslms)] 참고) |
+|- resendStatus | String |	대체 발송 상태 코드(RSC01, RSC02, RSC03, RSC04, RSC05)<br>([[아래 대체 발송 상태 표](https://docs.nhncloud.com/ko/Notification/KakaoTalk%20Bizmessage/ko/alimtalk-api-guide/#smslms)] 참고) |
 |- resendStatusName | String |	대체 발송 상태 코드명 |
-|- resendResultCode | String | 대체 발송 결과 코드 [SMS 결과 코드](https://docs.toast.com/ko/Notification/SMS/ko/error-code/#api) |
+|- resendResultCode | String | 대체 발송 결과 코드 [SMS 결과 코드](https://docs.nhncloud.com/ko/Notification/SMS/ko/error-code/#api) |
 |- resendRequestId | String | 대체 발송 SMS 요청 ID |
 |- messageStatus | String |	요청 상태( COMPLETED -> 성공, FAILED -> 실패, CANCEL -> 취소 ) |
 |- resultCode | String |	수신 결과 코드 |
@@ -738,7 +738,7 @@ Content-Type: application/json;charset=UTF-8
 
 * <b>요청 일시는 호출하는 시점부터 60일 후까지 설정 가능합니다.</b>
 * <b>SMS 서비스에서 대체 발송되므로, SMS 서비스의 발송 API 명세에 따라 필드를 입력해야 합니다.(SMS 서비스에 등록된 발신 번호, 각종 필드 길이 제한 등)</b>
-* <b>지정한 대체 발송 타입의 바이트 제한을 초과하는 대체 발송 제목이나 내용은 잘려서 대체 발송될 수 있습니다.([[SMS 주의사항](https://docs.toast.com/ko/Notification/SMS/ko/api-guide/#_1)] 참고)</b>
+* <b>지정한 대체 발송 타입의 바이트 제한을 초과하는 대체 발송 제목이나 내용은 잘려서 대체 발송될 수 있습니다.([[SMS 주의사항](https://docs.nhncloud.com/ko/Notification/SMS/ko/api-guide/#_1)] 참고)</b>
 
 [예시]
 ```
@@ -1065,7 +1065,7 @@ Content-Type: application/json;charset=UTF-8
 |-- requestDate | String | 요청 일시 |
 |-- createDate | String |	등록 일시 |
 |-- receiveDate | String |	수신 일시 |
-|-- resendStatus | String |	대체 발송 상태 코드(RSC01, RSC02, RSC03, RSC04, RSC05)<br>([[아래 대체 발송 상태 표](http://docs.toast.com/ko/Notification/KakaoTalk%20Bizmessage/ko/alimtalk-api-guide/#smslms)] 참고) |
+|-- resendStatus | String |	대체 발송 상태 코드(RSC01, RSC02, RSC03, RSC04, RSC05)<br>([[아래 대체 발송 상태 표](https://docs.nhncloud.com/ko/Notification/KakaoTalk%20Bizmessage/ko/alimtalk-api-guide/#smslms)] 참고) |
 |-- resendStatusName | String |	대체 발송 상태 코드명 |
 |-- messageStatus | String |	요청 상태( COMPLETED -> 성공, FAILED -> 실패, CANCEL -> 취소 ) |
 |-- resultCode | String |	수신 결과 코드 |
@@ -1204,9 +1204,9 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 |- requestDate | String | 요청 일시 |
 |- createDate | String |	등록 일시 |
 |- receiveDate | String |	수신 일시 |
-|- resendStatus | String |	대체 발송 상태 코드(RSC01, RSC02, RSC03, RSC04, RSC05)<br>([[아래 대체 발송 상태 표](http://docs.toast.com/ko/Notification/KakaoTalk%20Bizmessage/ko/alimtalk-api-guide/#smslms)] 참고) |
+|- resendStatus | String |	대체 발송 상태 코드(RSC01, RSC02, RSC03, RSC04, RSC05)<br>([[아래 대체 발송 상태 표](https://docs.nhncloud.com/ko/Notification/KakaoTalk%20Bizmessage/ko/alimtalk-api-guide/#smslms)] 참고) |
 |- resendStatusName | String |	대체 발송 상태 코드명 |
-|- resendResultCode | String | 대체 발송 결과 코드 [SMS 결과 코드](https://docs.toast.com/ko/Notification/SMS/ko/error-code/#api) |
+|- resendResultCode | String | 대체 발송 결과 코드 [SMS 결과 코드](https://docs.nhncloud.com/ko/Notification/SMS/ko/error-code/#api) |
 |- resendRequestId | String | 대체 발송 SMS 요청 ID |
 |- messageStatus | String |	요청 상태( COMPLETED -> 성공, FAILED -> 실패, CANCEL -> 취소 ) |
 |- resultCode | String |	수신 결과 코드 |
@@ -1372,9 +1372,9 @@ Content-Type: application/json;charset=UTF-8
 |- requestDate | String |	요청 일시 |
 |- createDate  | String |	생성 일시 |
 |- receiveDate | String |	수신 일시 |
-|- resendStatus | String |	대체 발송 상태 코드(RSC01, RSC02, RSC03, RSC04, RSC05)<br>([[아래 대체 발송 상태 표](http://docs.toast.com/ko/Notification/KakaoTalk%20Bizmessage/ko/alimtalk-api-guide/#smslms)] 참고) |
+|- resendStatus | String |	대체 발송 상태 코드(RSC01, RSC02, RSC03, RSC04, RSC05)<br>([[아래 대체 발송 상태 표](https://docs.nhncloud.com/ko/Notification/KakaoTalk%20Bizmessage/ko/alimtalk-api-guide/#smslms)] 참고) |
 |- resendStatusName | String |	대체 발송 상태 코드명 |
-|- resendResultCode | String | 대체 발송 결과 코드 [SMS 결과 코드](https://docs.toast.com/ko/Notification/SMS/ko/error-code/#api) |
+|- resendResultCode | String | 대체 발송 결과 코드 [SMS 결과 코드](https://docs.nhncloud.com/ko/Notification/SMS/ko/error-code/#api) |
 |- resendRequestId | String | 대체 발송 SMS 요청 ID |
 |- messageStatus | String |	요청 상태(COMPLETED -> 성공, FAILED -> 실패, CANCEL -> 취소 ) |
 |- resultCode | String |	수신 결과 코드 |
@@ -1755,9 +1755,9 @@ curl -X GET \
 | - requestDate | String | 요청 날짜 |
 | - receiveDate | String | 수신 날짜 |
 | - createDate | String | 생성 날짜 |
-| - resendStatus | String | 대체 발송 상태 코드(RSC01, RSC02, RSC03, RSC04, RSC05)<br>([[아래 대체 발송 상태 표](http://docs.toast.com/ko/Notification/KakaoTalk%20Bizmessage/ko/alimtalk-api-guide/#smslms)] 참고) |
+| - resendStatus | String | 대체 발송 상태 코드(RSC01, RSC02, RSC03, RSC04, RSC05)<br>([[아래 대체 발송 상태 표](https://docs.nhncloud.com/ko/Notification/KakaoTalk%20Bizmessage/ko/alimtalk-api-guide/#smslms)] 참고) |
 | - resendStatusName | String | 대체 발송 상태명 |
-| - resendResultCode | String | 대체 발송 결과 코드 [SMS 결과 코드](https://docs.toast.com/ko/Notification/SMS/ko/error-code/#api) |
+| - resendResultCode | String | 대체 발송 결과 코드 [SMS 결과 코드](https://docs.nhncloud.com/ko/Notification/SMS/ko/error-code/#api) |
 | - resendRequestId | String | 대체 발송 요청 ID |
 | - messageStatus | String | 대량 수신자 발송 상태 코드(READY, COMPLETED, FAILED, CANCEL) |
 | - resultCode | String | 결과 상태 코드 |

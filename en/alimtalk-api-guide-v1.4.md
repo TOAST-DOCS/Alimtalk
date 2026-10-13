@@ -105,7 +105,7 @@ Content-Type: application/json;charset=UTF-8
 * <b>Request date and time can be set up to 30 days since a point of calling.</b>
 * <b>Since alternative delivery is made in the SMS service, field values must follow the API specifications for SMS (e.g. Sender number registered at the SMS service, or restriction in the field length). </b>
 * <b>The SMS Service supports international SMS only. For international receiver numbers, the resendType(alternative delivery type) must be changed to SMS to allow sending without fail. </b>
-* <b>Title or content for alternative delivery that exceeds specified byte size may be cut for delivery.(see [[Caution](https://docs.toast.com/ko/Notification/SMS/ko/api-guide/#_1)] for reference)</b>
+* <b>Title or content for alternative delivery that exceeds specified byte size may be cut for delivery.(see [[Caution](https://docs.nhncloud.com/ko/Notification/SMS/ko/api-guide/#_1)] for reference)</b>
 * <b>If you add the `\s` character to the end of the templateTitle and templateItemHighlight.title fields with a substitution and templateParameter, you can apply the strikethrough style</b>
     * <b>But, this does not apply if you pre-add \s to the fields when registering the template</b>.
 
@@ -251,7 +251,7 @@ Content-Type: application/json;charset=UTF-8
 * **Request date and time can be set up to 30 days since a point of calling.**
 * <b>The fields must be entered according to the sending API specification of the SMS service, as they are sent alternatively by the SMS service (sending number registered with the SMS service, various field length limits, etc.)</b>
 * <b>Only the international SMS service is supported. For an international recipient number, the resendType(alternative delivery type) must be changed to SMS to allow sending normally. </b>
-* <b>Any subject or content of an alternative message that exceeds the byte limit of the specified alternative message type may be cut partially and sent as an alternative message (See [[SMS Precautions](https://docs.toast.com/ko/Notification/SMS/ko/api-guide/#_1)])</b>
+* <b>Any subject or content of an alternative message that exceeds the byte limit of the specified alternative message type may be cut partially and sent as an alternative message (See [[SMS Precautions](https://docs.nhncloud.com/ko/Notification/SMS/ko/api-guide/#_1)])</b>
 
 [Exapmle]
 
