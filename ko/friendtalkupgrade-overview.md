@@ -54,6 +54,23 @@
 
 * 광고주 발송 요청 대상에서, 채널 친구인 경우에만 광고성 메시지를 발송 처리합니다.
 
+<a id="statistics-aggregation-for-targeting-m"></a>
+### M 타겟팅 발송의 통계 집계 기준 { #statistics-aggregation-for-targeting-m }
+
+M 타겟팅으로 요청한 메시지는 수신자의 채널 친구 여부에 따라 채널 친구 대상(I) 또는 비친구 대상(N) 메시지로 나뉘어 발송됩니다. 이에 따라 NHN Cloud 콘솔 통계와 카카오 통계의 집계 기준이 다음과 같이 다릅니다.
+
+| 구분 | 집계 기준 |
+|---|---|
+| NHN Cloud 콘솔 통계 | 요청 시 지정한 타겟팅(M) 기준으로 집계 |
+| 카카오 통계 | 실제 발송된 메시지 타입 기준으로 I, N에 각각 집계(M은 0건) |
+
+* 예: M 타겟팅으로 1,000건을 요청하고 그중 300명이 채널 친구인 경우
+    * NHN Cloud 콘솔 통계: M 1,000건
+    * 카카오 통계: M 0건, I 300건, N 700건(발송 성공 여부에 따라 수치는 달라질 수 있습니다.)
+* 카카오 통계에서 M 타겟팅 수치가 0건으로 보이는 것은 집계 기준 차이에 따른 것이니 카카오 통계를 확인할 때 참고하세요.
+
+![friendtalkupgrade_targeting_m_statistics_20261008.png](../static/images/friendtalkupgrade_targeting_m_statistics_20261008.png)
+
 <a id="brand-message-sending-support-type"></a>
 ## 브랜드 메시지 발송 지원 타입 { #brand-message-sending-support-type }
 
