@@ -93,7 +93,7 @@ You can set up an outgoing profile and enter content to send messages in the for
 8. Select whether to set fallback messages.
     * To enable fallback, you must set the fallback option to **Enable** in the **080 Opt Out Management** tab and integrate the SMS service.
 9. Add a recipient.
-   * A recipient can be written in phone number format.
+    * A recipient can be written in phone number format.
 10. Select a targeting type by recipient.
     * Brand Message is an advertising message that can be sent to users who have agreed to receive marketing messages from advertisers (hereinafter referred to as "marketing consent"') and channel friend users.
     * Depending on the targeting type, whether the specified recipients receive your message may vary.
