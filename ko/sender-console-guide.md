@@ -1,4 +1,4 @@
-<!-- pre-align:aligned sig=3d4c5fafe732 -->
+<!-- pre-align:aligned sig=5028c31577c3 -->
 
 <a id="sender-console-guide"></a>
 ## Notification > KakaoTalk Bizmessage > 발신 프로필 > 콘솔 사용 가이드 { #sender-console-guide }
