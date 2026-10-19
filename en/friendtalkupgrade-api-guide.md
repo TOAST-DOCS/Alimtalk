@@ -147,8 +147,11 @@ Content-Type: application/json;charset=UTF-8
         * M: Users who have consented to receive advertising information from the company (KakaoTalk consent)
         * N: Users who have consented to receive advertising information from the company (KakaoTalk consent) - Channel friends
         * I: Intersection of the company's intended delivery targets ∩ Channel friends
+    * M targeting sends are sent as I or N messages depending on whether the recipient is a KakaoTalk Channel friend, and in Kakao statistics, these are aggregated as I/N targeting send counts, not M. For more information, see [Brand Message Overview > Statistics Aggregation for M Targeting Sending](./friendtalkupgrade-overview/#statistics-aggregation-for-targeting-m).
 * All 8 message types from the existing FriendTalk can be used.
 * BT and AC button types can be used.
+* If you specify a group tag key (groupTagKey), you can view Kakao template statistics by group tag.
+    * According to Kakao policy, group tags can be registered up to 100 per day and up to 1,000 in total per Sender Profile. For more information, see [Sender Profile Console Guide > Group Tag Management](./sender-console-guide/#group-tag-management).
 * The following restrictions apply when using the AC (Add Channel) button:
     * It is displayed as an emphasis button (yellow).
     * If there are multiple buttons, it must be placed at the designated position.
@@ -1298,6 +1301,7 @@ In the carousel type, you can apply different replacement variable values to eac
         * M: Users who have agreed to receive advertising information from the customer (KakaoTalk consent)
         * N: Users who have agreed to receive advertising information from the customer (KakaoTalk consent) - Channel friends
         * I: Customer's send request targets ∩ channel friends
+    * M targeting sends are sent as I or N messages depending on whether the recipient is a KakaoTalk Channel friend, and in Kakao statistics, these are aggregated as I/N targeting send counts, not M. For more information, see [Brand Message Overview > Statistics Aggregation for M Targeting Sending](./friendtalkupgrade-overview/#statistics-aggregation-for-targeting-m).
 * You can use all 8 message types available in the existing FriendTalk.
 * The BT button type cannot be used.
 * You can use the AC (Add Channel) button.
