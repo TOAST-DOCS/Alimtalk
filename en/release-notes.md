@@ -13,6 +13,9 @@
     * In accordance with Kakao specifications, the group tag key (`groupTagKey`) field has been removed when sending Brand Message basic type.
     * The group tag feature for free-form sending remains unchanged.
 
+* [Console] Removed the reseller identification code input field when sending Brand Message
+    * When sending a Brand Message from the Console, the reseller identification code is set to the default value (NHN Cloud identification code).
+
 <a id="august-25-2026"></a>
 ### August 25, 2026 { #august-25-2026 }
 
@@ -501,6 +504,9 @@
 *[Console] First User Restrictions on Sending Profile
 
 * Sending Profile Restrictions on First User registration have been added to prevent abusing activity in accordance with Kakao Policy.
+
+<!-- -->
+
 1. Unable to add as a member to Group Profile
 2. When the template variable is replaced, and if the difference is greater than 14 characters, process it as message sending failure
 
