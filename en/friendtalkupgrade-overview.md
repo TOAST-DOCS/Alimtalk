@@ -1,3 +1,5 @@
+<!-- machine_translated: true -->
+
 <!-- pre-align:aligned sig=4f53951e6d9e -->
 
 <a id="friendtalkupgrade-overview"></a>
@@ -53,6 +55,23 @@ The service provides RESTful API for easy integration.
 ### I: Target of advertiser sending request ∩ Channel friend { #i-target-of-advertiser-sending-request-channel-friend }
 
 * For advertiser sending requests, advertising messages are sent only to channel friends.
+
+<a id="statistics-aggregation-for-targeting-m"></a>
+### Statistics Aggregation for M Targeting { #statistics-aggregation-for-targeting-m }
+
+Messages requested with M targeting are divided and sent as either Channel Friend (I) or Non-Friend (N) messages depending on whether the recipient is a KakaoTalk Channel friend. As a result, the aggregation criteria differ between NHN Cloud Console statistics and Kakao statistics as follows:
+
+| Category | Aggregation Criteria |
+|---|---|
+| NHN Cloud Console statistics | Aggregated based on the targeting (M) specified at the time of request |
+| Kakao statistics | Aggregated separately under I and N based on the actual message type sent (M shows 0) |
+
+* Example: If you request 1,000 messages with M targeting and 300 of the recipients are KakaoTalk Channel friends:
+    * NHN Cloud Console statistics: M — 1,000
+    * Kakao statistics: M — 0, I — 300, N — 700 (the numbers may vary depending on delivery success)
+* The fact that the M targeting count shows 0 in Kakao statistics is due to the difference in aggregation criteria. Keep this in mind when reviewing Kakao statistics.
+
+![friendtalkupgrade_targeting_m_statistics_20261008.png](../static/images/friendtalkupgrade_targeting_m_statistics_20261008.png)
 
 <a id="brand-message-sending-support-type"></a>
 ## Brand message sending support type { #brand-message-sending-support-type }
