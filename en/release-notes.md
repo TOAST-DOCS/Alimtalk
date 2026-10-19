@@ -504,6 +504,9 @@
 *[Console] First User Restrictions on Sending Profile
 
 * Sending Profile Restrictions on First User registration have been added to prevent abusing activity in accordance with Kakao Policy.
+
+<!-- -->
+
 1. Unable to add as a member to Group Profile
 2. When the template variable is replaced, and if the difference is greater than 14 characters, process it as message sending failure
 
