@@ -189,6 +189,7 @@ Content-Type: application/json;charset=UTF-8
 | 名前           | タイプ     | 必須 | 説明                   |
 |--------------|--------|----|----------------------|
 | X-Secret-Key | String | O  | コンソールで作成できます。 |
+| X-NC-API-IDEMPOTENCY-KEY | String | X  | 重複メッセージ送信リクエストの基準key<br>10分間、同じkeyでリクエストした場合、該当リクエストを失敗として処理します。 |
 
 <a id="request-text-type-sending"></a>
 #### テキスト型送信リクエスト
@@ -1338,6 +1339,7 @@ Content-Type: application/json;charset=UTF-8
 | 名前           | タイプ     | 必須 | 説明               |
 |--------------|--------|----|------------------|
 | X-Secret-Key | String | O  | コンソールで作成できます。 |
+| X-NC-API-IDEMPOTENCY-KEY | String | X  | 重複メッセージ送信リクエストの基準key<br>10分間、同じkeyでリクエストした場合、該当リクエストを失敗として処理します。 |
 
 <a id="requested-4"></a>
 #### 送信リクエスト
@@ -1905,6 +1907,7 @@ Content-Type: application/json;charset=UTF-8
 | targeting       | String  | X  | メッセージ対象のタイプ（M: マーケティング受信同意ユーザー、N: 友だちではないマーケティング受信同意ユーザーのみ、I: 友だちであるユーザー） |
 | pageNum         | Integer | X  | ページ番号（デフォルト: 1）                                                       |
 | pageSize        | Integer | X  | 照会件数（デフォルト: 15）                                                       |
+
 !!! tip "ヒント"
     照会可能な期間は直近90日以内であり、1回の照会範囲は最大31日です。
 
@@ -2890,7 +2893,6 @@ Content-Type: application/json;charset=UTF-8
 | 名前           | タイプ     | 必須 | 説明               |
 |--------------|--------|----|------------------|
 | X-Secret-Key | String | O  | コンソールで生成できます。 |
-|X-NC-API-IDEMPOTENCY-KEY|	String| X | 重複メッセージ送信リクエストの基準キー<br>10分間、同一キーでリクエストした場合、該当リクエストを失敗として処理します。 |
 
 <a id="response-9"></a>
 #### 応答
