@@ -1,6 +1,6 @@
 <!-- machine_translated: true -->
 
-<!-- pre-align:aligned sig=3d4c5fafe732 -->
+<!-- pre-align:aligned sig=5028c31577c3 -->
 
 <a id="sender-console-guide"></a>
 ## Notification > KakaoTalk Bizmessage > Sender Profile > Console Guide { #sender-console-guide }
