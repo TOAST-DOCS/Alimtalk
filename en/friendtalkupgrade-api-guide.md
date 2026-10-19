@@ -189,6 +189,7 @@ Content-Type: application/json;charset=UTF-8
 | Name | Type | Required | Description |
 |--------------|--------|----|------------------|
 | X-Secret-Key | String | O | Can be created in the console. |
+| X-NC-API-IDEMPOTENCY-KEY | String | X  | Reference key for duplicate message sending requests<br>If a request is made with the same key for 10 minutes, the request will be failed. |
 
 <a id="request-text-type-sending"></a>
 #### Send Text Type
@@ -1338,6 +1339,7 @@ Content-Type: application/json;charset=UTF-8
 | Name | Type | Required | Description |
 |--------------|--------|----|------------------|
 | X-Secret-Key | String | O | Can be created in the console. |
+| X-NC-API-IDEMPOTENCY-KEY | String | X  | Reference key for duplicate message sending requests<br>If a request is made with the same key for 10 minutes, the request will be failed. |
 
 <a id="requested-4"></a>
 #### Delivery Request
@@ -1905,6 +1907,7 @@ Content-Type: application/json;charset=UTF-8
 | targeting       | String  | X  | Type of message target (M: users who have consented to marketing messages, N: users who have consented to marketing messages but are not friends, I: users who are friends) |
 | pageNum         | Integer | X  | Page number (default: 1)                                                       |
 | pageSize        | Integer | X  | Number of queries (default: 15)                                                       |
+
 !!! tip "Note"
     The search period is within the last 90 days, and the range for a single search is up to 31 days.
 
@@ -2890,7 +2893,6 @@ Content-Type: application/json;charset=UTF-8
 | Name                        | Type   | Required | Description                                                                                                                              |
 |-----------------------------|--------|----------|------------------------------------------------------------------------------------------------------------------------------------------|
 | X-Secret-Key                | String | O        | Can be created in the console.                                                                                                           |
-| X-NC-API-IDEMPOTENCY-KEY    | String | X        | Key used as the reference for duplicate message sending requests.<br>If a request is made with the same key for 10 minutes, the request will be failed. |
 
 <a id="response-9"></a>
 #### Response
