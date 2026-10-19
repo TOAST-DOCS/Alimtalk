@@ -41,9 +41,11 @@ You can set up an outgoing profile and enter content to send messages in the for
         * Send advertising messages to advertisers’ users with marketing consent (KakaoTalk message consent), except channel friends.
       * I: Target of advertiser sending request ∩ Channel friend
         * For advertiser sending requests, advertising messages are sent only to channel friends.
+    * M targeting delivery is sent as I or N messages depending on whether the recipient is a channel friend, and is counted in Kakao statistics as I/N targeting delivery counts rather than M. For more information, see [Brand Message Overview > Statistics Aggregation for M Targeting Delivery](./friendtalkupgrade-overview/#statistics-aggregation-for-targeting-m).
 8. Enter the group tag key. (Optional)
     * If you specify a group tag key, you can check the KakaoTalk template statistics for each group tag.
     * Group tags can be registered in the **Notification > KakaoTalk Bizmessage > Tag Management** tab.
+    * Group tags can be registered up to 100 per day and a maximum of 1,000 per Sender Profile, in accordance with Kakao's policy. For more information, see [Sender Profile Console Guide > Group Tag Management](./sender-console-guide/#group-tag-management).
 9. After completing the input, click Send to send.
 
 <a id="when-not-using-a-template"></a>
@@ -91,7 +93,7 @@ You can set up an outgoing profile and enter content to send messages in the for
 8. Select whether to set fallback messages.
     * To enable fallback, you must set the fallback option to **Enable** in the **080 Opt Out Management** tab and integrate the SMS service.
 9. Add a recipient.
-   * A recipient can be written in phone number format.
+    * A recipient can be written in phone number format.
 10. Select a targeting type by recipient.
     * Brand Message is an advertising message that can be sent to users who have agreed to receive marketing messages from advertisers (hereinafter referred to as "marketing consent"') and channel friend users.
     * Depending on the targeting type, whether the specified recipients receive your message may vary.
@@ -101,9 +103,11 @@ You can set up an outgoing profile and enter content to send messages in the for
         * Send advertising messages to advertisers’ users with marketing consent (KakaoTalk message consent), except channel friends.
       * I: Target of advertiser sending request ∩ Channel friend
         * For advertiser sending requests, advertising messages are sent only to channel friends.
+    * M targeting delivery is sent as I or N messages depending on whether the recipient is a Kakao Channel friend, and in Kakao statistics, it is counted as I/N targeting delivery counts rather than M. For more information, see [Brand Message Overview > Statistics Aggregation Criteria for M Targeting Delivery](./friendtalkupgrade-overview/#statistics-aggregation-for-targeting-m).
 11. Enter the group tag key. (Optional)
     * If you specify a group tag key, you can check the KakaoTalk template statistics for each group tag.
     * Group tags can be registered in the **Notification > KakaoTalk Bizmessage > Tag Management** tab.
+    * Group tags can be registered up to 100 per day and up to 1,000 in total per Sender Profile, in accordance with Kakao's policies. For more information, see [Sender Profile Console Guide > Group Tag Management](./sender-console-guide/#group-tag-management).
 12. After completing the input, click Send to send.
 
 <a id="mass-delivery"></a>

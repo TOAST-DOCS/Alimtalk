@@ -1,4 +1,6 @@
-<!-- pre-align:aligned sig=3d4c5fafe732 -->
+<!-- machine_translated: true -->
+
+<!-- pre-align:aligned sig=5028c31577c3 -->
 
 <a id="sender-console-guide"></a>
 ## Notification > KakaoTalk Bizmessage > 送信元プロフィール > コンソールガイド { #sender-console-guide }
@@ -51,6 +53,8 @@
 * クリック数は、同じメッセージに対して重複集計します。
 * 送信成功件数が10件以下の場合は、有効既読数とクリック数を提供しません。
 
+* ブランドメッセージのMターゲティング送信は、受信者のチャンネル友だち登録状況に応じてIまたはNメッセージとして送信され、カカオ統計にはMではなくI/Nターゲティング送信件数として集計されます。詳細については、[ブランドメッセージ概要 > Mターゲティング送信の統計集計基準](./friendtalkupgrade-overview/#statistics-aggregation-for-targeting-m)を参照してください。
+
 <a id="delivery-statistics"></a>
 ### 送信統計 { #delivery-statistics }
 
@@ -72,6 +76,20 @@
 
 * **+ グループタグ登録**をクリックしてグループタグ名を入力し、登録します。
 * 修正または削除するグループタグのチェックボックスを選択し、**グループタグ修正**または**グループタグ削除**をクリックします。
+
+<a id="group-tag-registration-limit"></a>
+### グループタグ登録上限 { #group-tag-registration-limit }
+
+カカオのポリシーに従い、グループタグは発信プロフィール単位で次の上限内で登録できます(2026年9月16日適用)。
+
+| 区分 | 上限 |
+|---|---|
+| 1日あたりの登録可能数 | 100個 |
+| 最大保有可能数 | 1,000個 |
+
+* 1日の登録上限に達した場合、当日登録したグループタグを削除しても追加で登録することはできません。翌日に登録してください。
+* 保有上限に達した場合は、使用していないグループタグを削除してから登録してください。
+* グループタグは受信者ごと、送信リクエストごとに毎回新たに作成する値ではありません。キャンペーン、プロモーションなどの成果をまとめて確認する送信単位で登録し、再利用することを推奨します。
 
 <a id="notice-of-personal-information-consignee"></a>
 ## 個人情報受託社告知案内 { #notice-of-personal-information-consignee }
