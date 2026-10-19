@@ -1,4 +1,4 @@
-<!-- pre-align:aligned sig=4f53951e6d9e -->
+<!-- pre-align:aligned sig=101f1bd98156 -->
 
 <a id="friendtalkupgrade-overview"></a>
 ## Notification > KakaoTalk Bizmessage > 브랜드 메시지 > 개요 { #friendtalkupgrade-overview }
