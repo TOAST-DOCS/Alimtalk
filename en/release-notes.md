@@ -106,6 +106,7 @@
 
 <a id="march-24-2026"></a>
 ### March 24, 2026 { #march-24-2026 }
+* [Console] KakaoBizCenter statistics
     * Added a feature to retrieve statistics data for AlimTalk and brand messages provided by KakaoBizCenter.
 
 * [Console] Added KakaoBizCenter group tag management feature
@@ -1029,5 +1030,5 @@ Delivery body text
 ### April 20, 2017 { #april-20-2017 }
 <a id="new-product-release"></a>
 #### New Product Release
-    * AlimTalk is a product based on mobile phones with which users can send informative messages such as delivery message, schedule notification, and others without adding the recipient as a friend.
-    * It provides RESTful API for users to easily link it to apps.
+* AlimTalk is a product based on mobile phones with which users can send informative messages such as delivery message, schedule notification, and others without adding the recipient as a friend.
+* It provides RESTful API for users to easily link it to apps.
