@@ -27,7 +27,7 @@
 <a id="overview-of-v14-api"></a>
 ## Overview of v1.4 API { #overview-of-v14-api }
 1. Validity checks for the main text for Authentication Messages API has been added.
-   - For more details, see [[Authentication Messages API](./alimtalk-api-guide/#authentication-messages)].
+    - For more details, see [[Authentication Messages API](./alimtalk-api-guide/#authentication-messages)].
 
 
 <a id="general-messages"></a>
