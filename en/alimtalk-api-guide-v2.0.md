@@ -1,3 +1,5 @@
+<!-- machine_translated: true -->
+
 <!-- pre-align:aligned sig=1ae484c62c5a -->
 
 <a id="alimtalk-api-guide-v2-0"></a>
@@ -345,12 +347,12 @@ Content-Type: application/json;charset=UTF-8
 | appkey | String | Original appkey |
 
 [Header]
-
 ```
 {
   "X-Secret-Key": String
 }
 ```
+
 | Value        | Type   | Required | Description                                                  |
 | ------------ | ------ | -------- | ------------------------------------------------------------ |
 | X-Secret-Key | String | O        | Can be created on console.  |
@@ -376,7 +378,7 @@ Content-Type: application/json;charset=UTF-8
 | pageSize             | Integer | X                             | Number of queries(default: 15, Max: 1000)                  |
 
 * Cannot query data requested for delivery which are dated before 90 days.
-* The maximum available days for delivery request is 30 days.
+* Delivery can be requested within 31 days to the maximum.
 
 <a id="response-3"></a>
 #### Response
@@ -940,7 +942,7 @@ Content-Type: application/json;charset=UTF-8
 | pageSize             | Integer | X                             | Number of queries(default: 15, Max: 1000)                  |
 
 * Delivery request data before 90 days cannot be queried.
-* Delivery can be requested within 30 days to the maximum.   
+* Delivery can be requested within 31 days to the maximum.
 
 <a id="response-7"></a>
 #### Response
