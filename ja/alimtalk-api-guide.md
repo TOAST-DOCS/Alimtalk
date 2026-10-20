@@ -1,3 +1,5 @@
+<!-- machine_translated: true -->
+
 <!-- pre-align:aligned sig=8e75522b754c -->
 
 <a id="alimtalk-api-guide"></a>
@@ -497,7 +499,7 @@ Content-Type: application/json;charset=UTF-8
 | pageSize             | 	Integer | 	X         | 	照会件数(Default: 15、Max: 1000)                        |
 
 * 90日以前の送信リクエストデータは照会できません。
-* 送信リクエスト日時の範囲は最大 30 日です。
+* 送信リクエスト日時の範囲は最大31日です。
 
 <a id="response-3"></a>
 #### レスポンス
