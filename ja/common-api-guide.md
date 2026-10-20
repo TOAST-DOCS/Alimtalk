@@ -193,7 +193,7 @@
 
 * ブランドメッセージ(自由型)はグループタグを使用した場合にのみ提供します。
 
-* ブランドメッセージ Mターゲティング送信は、受信者のチャンネル友達かどうかに応じてIまたはNメッセージとして送信され、カカオの統計にはMではなくI/Nターゲティング送信件数として集計されます。詳細については、[ブランドメッセージ概要 > Mターゲティング送信の統計集計基準](./friendtalkupgrade-overview/#statistics-aggregation-for-targeting-m)を参照してください。
+* ブランドメッセージ Mターゲティング送信は、受信者のチャンネルフレンドかどうかに応じてIまたはNメッセージとして送信され、カカオの統計にはMではなくI/Nターゲティング送信件数として集計されます。詳細については、[ブランドメッセージ概要 > Mターゲティング送信の統計集計基準](./friendtalkupgrade-overview/#statistics-aggregation-for-targeting-m)を参照してください。
 
 <a id="retrieve-alimtalk-delivery-statistics"></a>
 ### お知らせトーク送信統計の照会 { #retrieve-alimtalk-delivery-statistics }
