@@ -497,7 +497,7 @@ Content-Type: application/json;charset=UTF-8
 | pageSize             | 	Integer | 	X         | 	조회 건수(Default: 15, Max: 1000)                        |
 
 * 90일 이전 발송 요청 데이터는 조회되지 않습니다.
-* 발송 요청 일시의 범위는 최대 30일입니다.
+* 발송 요청 일시의 범위는 최대 31일입니다.
 
 <a id="response-3"></a>
 #### 응답
