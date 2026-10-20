@@ -27,7 +27,7 @@
 <a id="overview-of-v14-api"></a>
 ## v1.4 API紹介 { #overview-of-v14-api }
 1. 認証メッセージAPIに対する本文の有効性チェックが追加されました。
-   - 詳細は[[認証用SMS送信API](./alimtalk-api-guide/#authentication-messages)]を参照してください。
+    - 詳細は[[認証用SMS送信API](./alimtalk-api-guide/#authentication-messages)]を参照してください。
 
 <a id="general-messages"></a>
 ## 一般メッセージ { #general-messages }
