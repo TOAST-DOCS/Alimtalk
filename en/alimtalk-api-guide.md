@@ -1,3 +1,5 @@
+<!-- machine_translated: true -->
+
 <!-- pre-align:aligned sig=8e75522b754c -->
 
 <a id="alimtalk-api-guide"></a>
@@ -497,7 +499,7 @@ Content-Type: application/json;charset=UTF-8
 | pageSize             | 	Integer | 	X         | 	Number of queries (Default: 15, Max: 1000)                        |
 
 * Delivery request data before 90 days cannot be queried.
-* The range of delivery request dates is up to 30 days.
+* The range of delivery request dates is up to 31 days.
 
 <a id="response-3"></a>
 #### Response
