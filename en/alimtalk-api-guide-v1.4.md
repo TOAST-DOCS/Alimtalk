@@ -1,3 +1,5 @@
+<!-- machine_translated: true -->
+
 <!-- pre-align:aligned sig=1e5a642866c3 -->
 
 <a id="alimtalk-api-guide-v1-4"></a>
@@ -25,7 +27,7 @@
 <a id="overview-of-v14-api"></a>
 ## Overview of v1.4 API { #overview-of-v14-api }
 1. Validity checks for the main text for Authentication Messages API has been added.
-   - For more details, see [[Authentication Messages API](./alimtalk-api-guide/#authentication-messages)].
+    - For more details, see [[Authentication Messages API](./alimtalk-api-guide/#authentication-messages)].
 
 
 <a id="general-messages"></a>
@@ -321,12 +323,12 @@ Content-Type: application/json;charset=UTF-8
 | appkey | String | Original appkey |
 
 [Header]
-
 ```
 {
   "X-Secret-Key": String
 }
 ```
+
 | Value        | Type   | Required | Description                                                  |
 | ------------ | ------ | -------- | ------------------------------------------------------------ |
 | X-Secret-Key | String | O        | Can be created on console.  |
@@ -349,7 +351,7 @@ Content-Type: application/json;charset=UTF-8
 | pageSize             | Integer | X                             | Number of queries(default: 15, Max: 1000)                  |
 
 * Cannot query data requested for delivery which are dated before 90 days.
-* The maximum available days for delivery request is 30 days.
+* The maximum available days for delivery request is 31 days.
 
 <a id="response-3"></a>
 #### Response
@@ -865,7 +867,7 @@ Content-Type: application/json;charset=UTF-8
 | pageSize             | Integer | X                             | Number of queries(default: 15, Max: 1000)                  |
 
 * Delivery request data before 90 days cannot be queried.
-* Delivery can be requested within 30 days to the maximum.   
+* The maximum available days for delivery request is 31 days.
 
 <a id="response-7"></a>
 #### Response

@@ -1,3 +1,5 @@
+<!-- machine_translated: true -->
+
 <!-- pre-align:aligned sig=1e5a642866c3 -->
 
 <a id="alimtalk-api-guide-v1-4"></a>
@@ -25,7 +27,7 @@
 <a id="overview-of-v14-api"></a>
 ## v1.4 API紹介 { #overview-of-v14-api }
 1. 認証メッセージAPIに対する本文の有効性チェックが追加されました。
-   - 詳細は[[認証用SMS送信API](./alimtalk-api-guide/#authentication-messages)]を参照してください。
+    - 詳細は[[認証用SMS送信API](./alimtalk-api-guide/#authentication-messages)]を参照してください。
 
 <a id="general-messages"></a>
 ## 一般メッセージ { #general-messages }
@@ -343,7 +345,7 @@ Content-Type: application/json;charset=UTF-8
 | pageSize             | Integer | X         | 照会件数(基本：15, 最大:1000)                |
 
 * 90日以上前の送信リクエストデータは照会されません。
-* 送信リクエスト日時の範囲は最大30日です。
+* 送信リクエスト日時の範囲は最大31日です。
 
 <a id="response-3"></a>
 #### レスポンス
@@ -866,7 +868,7 @@ Content-Type: application/json;charset=UTF-8
 | pageSize             | Integer | X         | 照会件数(基本：15, 最大:1000)                |
 
 * 90日以上前の送信リクエストデータは照会されません。
-* 送信リクエスト日時の範囲は最大30日です。
+* 送信リクエスト日時の範囲は最大31日です。
 
 <a id="response-7"></a>
 #### レスポンス
