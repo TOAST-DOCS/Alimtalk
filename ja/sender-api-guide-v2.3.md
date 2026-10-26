@@ -8,8 +8,8 @@
 <a id="whats-the-diffrence"></a>
 #### 改善された点
 
-1. 발신 프로필 조회 API에 최초 사용자 제한 상태 필드가 추가되었습니다.
-2. 발신 프로필 조회 API에 카카오톡 채널 스팸 상태, 카카오톡 메시지 스팸 상태 필드가 추가되었습니다.
+1. 発信プロフィール照会 API に初回ユーザー制限状態フィールドが追加されました。
+2. 発信プロフィール照会 API に、カカオトークチャンネルスパム状態、カカオトークメッセージスパム状態フィールドが追加されました。
 
 <a id="api-domain"></a>
 #### [API 도메인]
@@ -17,7 +17,7 @@
 <table>
 <thead>
 <tr>
-<th>도메인</th>
+<th>ドメイン</th>
 </tr>
 </thead>
 <tbody>
@@ -237,6 +237,11 @@ Content-Type: application/json;charset=UTF-8
 | - resultCode    | Integer | 結果コード |
 | - resultMessage | String  | 結果メッセージ |
 | - isSuccessful  | Boolean | 成否 |
+| sender          | Object  | 発信プロフィール |
+| - plusFriendId  | String  | プラスフレンドID |
+| - senderKey     | String  | 発信キー |
+| - categoryCode  | String  | カテゴリコード |
+| - status        | String  | NHN Cloud プラスフレンドステータスコード <br>(YSC02: 登録待ち、YSC03: 正常登録) |
 
 <a id="delete-sender"></a>
 ### Sender 削除 { #delete-sender }
@@ -267,8 +272,8 @@ Content-Type: application/json;charset=UTF-8
 | ------------ | ------ | ---- | ---------------------------------------- |
 | X-Secret-Key | String | O    | コンソールで作成できます。 |
 
-* 발신 프로필 삭제 시, 등록한 템플릿 데이터가 함께 삭제 됩니다.
-* 발신 프로필 삭제 시, 복구가 불가능합니다.
+* 発信プロフィールを削除すると、登録したテンプレートデータも一緒に削除されます。
+* 発信プロフィールを削除すると、復元することはできません。
 
 <a id="response-4"></a>
 #### レスポンス
@@ -379,15 +384,17 @@ Content-Type: application/json;charset=UTF-8
 | - kakaoStatusName         | String  | カカオプラスフレンドステータス名(正常、遮断)<br>statusがYSC02の場合、kakaoStatusName null値を持ちます。 |
 | - kakaoProfileStatus      | String  | カカオプラスフレンドプロフィールステータスコード<br>(A：有効化、B：遮断、C：無効化、D：削除E：削除処理中)<br>statusがYSC02の場合、kakaoProfileStatus null値を持ちます。 |
 | - kakaoProfileStatusName  | String  | カカオプラスフレンドプロフィールステータス名(有効化、無効化、遮断、削除処理中、削除)<br>statusがYSC02の場合、kakaoProfileStatusName null値を持ちます。 |
-|- profileSpamLevel | String | 카카오톡 채널 스팸 상태명(영구제한, 경고제한, 정상)<br>발신 프로필 상태가 정상적이지 않을 경우 null 값을 가질 수 있습니다.                                            |
-|- profileMessageSpamLevel | String | 카카오톡 메시지 스팸 상태명(활동제한, 경고제한, 정상)<br>발신 프로필 상태가 정상적이지 않을 경우 null 값을 가질 수 있습니다.                                           |
+|- profileSpamLevel | String | カカオトークチャンネルのスパムステータス名 (永久制限、警告制限、正常)<br>発信プロフィールのステータスが正常でない場合、null 値になることがあります。                                            |
+|- profileMessageSpamLevel | String | KakaoTalkメッセージスパムステータス名（活動制限、警告制限、正常）<br>発信プロフィールのステータスが正常でない場合、null 値を持つ場合があります。                                           |
 |- alimtalk|	Object|	お知らせトーク設定情報|
-|-- isResend | String  | 送信失敗設定(再送信)するかどうか                   |
+|-- resendAppKey | String | 代替送信に設定するSMSサービスアプリキー |
+|-- isResend | String  | 代替送信設定(再送信)するかどうか                   |
 |-- resendSendNo | String  | 再送信時、tc-sms発信番号              |
 |-- dailyMaxCount | Integer | お知らせトークの一日最大送信件数<br>(値が0の場合、件数制限なし)    |
 |-- sentCount | Integer | お知らせトークの一日送信件数<br>(値が0の場合、件数制限なし)       |
 |- friendtalk|	Object|	友人トーク設定情報|
-|-- isResend | String  | 送信失敗設定(再送信)するかどうか                   |
+|-- resendAppKey | String | 代替送信に設定するSMSサービスアプリキー |
+|-- isResend | String  | 代替送信設定(再送信)するかどうか                   |
 |-- resendSendNo | String  | 再送信時、tc-sms発信番号              |
 |-- resendUnsubscribeNo | String |	再送信時、tc-sms 080受信拒否番号 |
 |-- dailyMaxCount | Integer | カカともへのメッセージの一日最大送信件数<br>(値が0の場合、件数制限なし)    |
@@ -395,7 +402,7 @@ Content-Type: application/json;charset=UTF-8
 |- dormant | Boolean |	発信プロフィール休眠するかどうか |
 |- block | Boolean |	発信プロフィールブロックするかどうか |
 | - createDate              | String  | 登録日時                            |
-| - initialUserRestriction | Boolean | 	최초 사용자 제한 여부                                                                                                          |
+| - initialUserRestriction | Boolean | 	初回ユーザー制限の有無                                                                                                          |
 
 <a id="list-sender"></a>
 ### Senderの照会 { #list-sender }
@@ -486,7 +493,7 @@ Content-Type: application/json;charset=UTF-8
 | - resultCode              | Integer | 結果コード                            |
 | - resultMessage           | String  | 結果メッセージ                           |
 | - isSuccessful            | Boolean | 成否                             |
-| senders                   | List  | 発信プロフィール                            |
+| senders                   | Object  | 発信プロフィール一覧                         |
 | - plusFriendId            | String  | プラスフレンドID                                 |
 | - senderKey               | String  | 発信キー                                |
 | - categoryCode            | String  | カテゴリーコード                          |
@@ -496,23 +503,25 @@ Content-Type: application/json;charset=UTF-8
 | - kakaoStatusName         | String  | カカオプラスフレンドステータス名(正常、遮断)<br>statusがYSC02の場合、kakaoStatusName null値を持ちます。 |
 | - kakaoProfileStatus      | String  | カカオプラスフレンドプロフィールステータスコード<br>(A：有効化、B：遮断、C：無効化、D：削除E：削除処理中)<br>statusがYSC02の場合、kakaoProfileStatus null値を持ちます。 |
 | - kakaoProfileStatusName  | String  | カカオプラスフレンドプロフィールステータス名(有効化、無効化、遮断、削除処理中、削除)<br>statusがYSC02の場合、kakaoProfileStatusName null値を持ちます。 |
-| - profileSpamLevel | String | 카카오톡 채널 스팸 상태명(영구제한, 경고제한, 정상)<br>발신 프로필 상태가 정상적이지 않을 경우 null 값을 가질 수 있습니다.                                            |
-| - profileMessageSpamLevel | String | 카카오톡 메시지 스팸 상태명(활동제한, 경고제한, 정상)<br>발신 프로필 상태가 정상적이지 않을 경우 null 값을 가질 수 있습니다.                                           |
+| - profileSpamLevel | String | カカオトークチャンネルのスパム状態名（永久制限、警告制限、正常）<br>発信プロフィールの状態が正常でない場合、null 値を持つ場合があります。 |
+| - profileMessageSpamLevel | String | カカオトークメッセージスパム状態名（活動制限、警告制限、正常）<br>発信プロフィールの状態が正常でない場合、null 値になる場合があります。 |
 |- alimtalk|	Object|	お知らせトーク設定情報|
-|-- isResend | String  | 送信失敗設定(再送信)するかどうか                   |
+|-- resendAppKey | String | 代替送信として設定するSMSサービスアプリキー |
+|-- isResend | String  | 代替送信設定(再送信)するかどうか                   |
 |-- resendSendNo | String  | 再送信時、tc-sms発信番号              |
 |-- dailyMaxCount | Integer | お知らせトークの一日最大送信件数<br>(値が0の場合、件数制限なし)    |
 |-- sentCount | Integer | お知らせトークの一日送信件数<br>(値が0の場合、件数制限なし)       |
 |- friendtalk|	Object|	友人トーク設定情報|
-|-- isResend | String  | 送信失敗設定(再送信)するかどうか                   |
+|-- resendAppKey | String | 代替送信として設定するSMSサービスアプリキー |
+|-- isResend | String  | 代替送信設定(再送信)するかどうか                   |
 |-- resendSendNo | String  | 再送信時、tc-sms発信番号              |
 |-- resendUnsubscribeNo | String |	再送信時、tc-sms 080受信拒否番号 |
-|-- dailyMaxCount | Integer | カカともへのメッセージの一日最大送信件数<br>(値が0の場合、件数制限なし)    |
-|-- sentCount | Integer | カカともへのメッセージの一日送信件数<br>(値が0の場合、件数制限なし)       |
+|-- dailyMaxCount | Integer | フレンドトークの一日最大送信件数<br>(値が0の場合、件数制限なし)    |
+|-- sentCount | Integer | フレンドトークの一日送信件数<br>(値が0の場合、件数制限なし)       |
 |- dormant | Boolean |	発信プロフィール休眠するかどうか |
 |- block | Boolean |	発信プロフィールブロックするかどうか |
 | - createDate              | String  | 登録日時                            |
-| - initialUserRestriction  | Boolean | 	최초 사용자 제한 여부                                                                                                          |
+| - initialUserRestriction  | Boolean | 	初回ユーザー制限の有無                                                                                                          |
 | totalCount                | Integer | 総個数                               |
 
 <a id="sender-group"></a>
@@ -580,13 +589,15 @@ Content-Type: application/json;charset=UTF-8
 | - resultMessage           | String  | 結果メッセージ                           |
 | - isSuccessful            | Boolean | 成否                             |
 |senderGroup|	Object|	発信プロフィールグループ |
-|- groupName | String |	グループ名 |
+|- groupName | String |	発信プロフィールグループ名 |
 |- senderKey | String |	発信キー |
 | - status                  | String  | NHN Cloudプラスフレンドステータスコード <br>(YSC02：登録待機中、YSC03：正常登録) |
-|- senders | List |	発信プロフィール |
-|-- plusFriendId | String |	プラスフレンドID |
+|- senders | List |	グループに属する発信プロフィールリスト |
+|- status | String |	NHN Cloudプラスフレンドステータスコード <br>(YSC02：登録待機中、YSC03：正常登録) |
+|- senders | List |	グループに属する発信プロフィール一覧 |
+|-- plusFriendId | String |	カカオトークチャンネル検索用ID |
 |-- senderKey | String |	発信キー |
-|-- createDate | String | 登録日時 |
+|-- createDate | String | グループ登録日 |
 |- createDate | String | 登録日時 |
 |- updateDate |	String|	変更日 |
 

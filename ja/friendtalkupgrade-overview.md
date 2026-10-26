@@ -1,4 +1,6 @@
-<!-- pre-align:aligned sig=4f53951e6d9e -->
+<!-- machine_translated: true -->
+
+<!-- pre-align:aligned sig=101f1bd98156 -->
 
 <a id="friendtalkupgrade-overview"></a>
 ## Notification > KakaoTalk Bizmessage > ブランドメッセージ > 概要 { #friendtalkupgrade-overview }
@@ -53,6 +55,23 @@
 ### I: 広告主の送信リクエスト対象 ∩ チャネルの友だち { #i-target-of-advertiser-sending-request-channel-friend }
 
 * 広告主の送信リクエスト対象のうち、チャネルの友だちである場合にのみ広告メッセージを送信します。
+
+<a id="statistics-aggregation-for-targeting-m"></a>
+### Mターゲティング送信の統計集計基準 { #statistics-aggregation-for-targeting-m }
+
+Mターゲティングでリクエストしたメッセージは、受信者のチャンネル友達かどうかに応じて、チャンネル友達対象(I)または非友達対象(N)メッセージに分かれて送信されます。これにより、NHN Cloudコンソール統計とカカオ統計の集計基準は次のように異なります。
+
+| 区分 | 集計基準 |
+|---|---|
+| NHN Cloudコンソール統計 | リクエスト時に指定したターゲティング(M)基準で集計 |
+| カカオ統計 | 実際に送信されたメッセージタイプ基準でI、Nにそれぞれ集計(Mは0件) |
+
+* 例: Mターゲティングで1,000件をリクエストし、そのうち300名がチャンネル友達の場合
+    * NHN Cloudコンソール統計: M 1,000件
+    * カカオ統計: M 0件、I 300件、N 700件(送信成功の有無によって数値は異なる場合があります。)
+* カカオ統計でMターゲティングの数値が0件と表示されるのは、集計基準の違いによるものですので、カカオ統計を確認する際に参考にしてください。
+
+![friendtalkupgrade_targeting_m_statistics_20261008.png](../static/images/friendtalkupgrade_targeting_m_statistics_20261008.png)
 
 <a id="brand-message-sending-support-type"></a>
 ## ブランドメッセージでサポートされる送信タイプ { #brand-message-sending-support-type }

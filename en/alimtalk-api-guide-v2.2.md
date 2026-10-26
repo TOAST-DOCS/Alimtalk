@@ -1,3 +1,5 @@
+<!-- machine_translated: true -->
+
 <!-- pre-align:aligned sig=860851672e13 -->
 
 <a id="alimtalk-api-guide-v2-2"></a>
@@ -57,6 +59,7 @@ Content-Type: application/json;charset=UTF-8
 | Name |  Type| Required| Description|
 |---|---|---|---|
 |X-Secret-Key|  String| O | Can be created on console.  |
+|X-NC-API-IDEMPOTENCY-KEY|	String| X | Key used as the basis for duplicate message sending requests<br>If a request is made with the same key for 10 minutes, the request will be failed. |
 
 [Request body]
 
@@ -131,7 +134,7 @@ Content-Type: application/json;charset=UTF-8
 * <b>Request date and time can be set up to 60 days since a point of calling.</b>
 * <b>Since alternative delivery is made in the SMS service, field values must follow the API specifications for SMS(e.g. Sender number registered at the SMS service, or restriction in the field length). </b>
 * <b>The SMS Service supports international SMS only. For international receiver numbers, the resendType(alternative delivery type) must be changed to SMS to allow sending without fail. </b>
-* <b>Title or content for alternative delivery that exceeds specified byte size may be cut for delivery.(see [[Caution](https://docs.toast.com/ko/Notification/SMS/ko/api-guide/#_1)] for reference)</b>
+* <b>Title or content for alternative delivery that exceeds specified byte size may be cut for delivery.(see [[Caution](https://docs.nhncloud.com/ko/Notification/SMS/ko/api-guide/#_1)] for reference)</b>
  * <b>If you add the `\s` character to the end of the templateTitle and templateItemHighlight.title fields with a substitution and templateParameter, you can apply the strikethrough style</b>
      * <b>But, this does not apply if you pre-add \s to the fields when registering the template</b>.
 
@@ -207,6 +210,7 @@ Content-Type: application/json;charset=UTF-8
 | Name |  Type| Required| Description|
 |---|---|---|---|
 |X-Secret-Key|  String| O | Can be created on console.  |
+|X-NC-API-IDEMPOTENCY-KEY|	String| X | Key used as the criteria for duplicate message sending requests<br>If a request is made with the same key for 10 minutes, the request will be failed. |
 
 [Request Body]
 
@@ -292,7 +296,7 @@ Content-Type: application/json;charset=UTF-8
 * **Request date and time can be set up to 60 days since a point of calling.**
 * <b>Delivery is to be replaced by SMS, and field input must follow delivery API specifications of the SMS service(e.g. sender number registered at SMS service, 080 unsubscription, and field length restrictions) </b>
 * <b>Only the international SMS service is supported. For an international recipient number, the resendType(alternative delivery type) must be changed to SMS to allow sending normally. </b>
-* <b>Title or message of an alternative delivery may be cut in length, if the byte size exceeds restrictions(see [[Cautions for SMS](https://docs.toast.com/ko/Notification/SMS/ko/api-guide/#_1)])</b>
+* <b>Title or message of an alternative delivery may be cut in length, if the byte size exceeds restrictions(see [[Cautions for SMS](https://docs.nhncloud.com/ko/Notification/SMS/ko/api-guide/#_1)])</b>
 * <b>The strikethrough style can be applied if you add the `\s` character to the end of the templateTitle and templateItemHighlight.title fields at the time of sending</b> 
     * <b>However, this does not apply if you add the \s to the fields in advance when registering the template</b>.
     
@@ -393,7 +397,7 @@ Content-Type: application/json;charset=UTF-8
 |pageSize|  Integer|    X|  Number of queries(default: 15, Max: 1000)|
 
 * Cannot query data requested for delivery which are dated before 90 days.
-* The maximum available days for delivery request is 30 days.
+* Delivery can be requested within 31 days to the maximum.
 
 <a id="response-3"></a>
 #### Response
@@ -464,7 +468,7 @@ Content-Type: application/json;charset=UTF-8
 |-- requestDate | String |  Date and time of request |
 |-- createDate | String | Registered date and time |
 |-- receiveDate | String |  Date and time of receiving |
-|-- resendStatus | String | Status code of resending(RSC01, RSC02, RSC03, RSC04, RSC05)<br>([Refer to [Status code of resending table](http://docs.toast.com/en/Notification/KakaoTalk%20Bizmessage/en/alimtalk-api-guide/#smslms)] below) |
+|-- resendStatus | String | Status code of resending(RSC01, RSC02, RSC03, RSC04, RSC05)<br>([Refer to [Status code of resending table](https://docs.nhncloud.com/en/Notification/KakaoTalk%20Bizmessage/en/alimtalk-api-guide/#smslms)] below) |
 |-- resendStatusName | String | Status code name of resending |
 |-- messageStatus | String |    Request status(COMPLETED -> successful, FAILED -> failed, CANCEL -> canceled ) |
 |-- createUser | String | Registrant(saved as user UUID when sending from console) |
@@ -603,9 +607,9 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 |- requestDate | String |   Date and time of request |
 |- receiveDate | String |   Date and time of receiving |
 |- createDate | String | Registered date and time |
-|- resendStatus | String |  Status code of resending(RSC01, RSC02, RSC03, RSC04, RSC05)<br>([Refer to [Status code of resending table](http://docs.toast.com/en/Notification/KakaoTalk%20Bizmessage/en/alimtalk-api-guide/#smslms)] below) |
+|- resendStatus | String |  Status code of resending(RSC01, RSC02, RSC03, RSC04, RSC05)<br>([Refer to [Status code of resending table](https://docs.nhncloud.com/en/Notification/KakaoTalk%20Bizmessage/en/alimtalk-api-guide/#smslms)] below) |
 |- resendStatusName | String |  Status code name of resending |
-|- resendResultCode | String | Result code of resending [Result code of SMS sending](https://docs.toast.com/en/Notification/SMS/en/error-code/#api) |
+|- resendResultCode | String | Result code of resending [Result code of SMS sending](https://docs.nhncloud.com/en/Notification/SMS/en/error-code/#api) |
 |- resendRequestId | String | Resending SMS request ID |
 |- messageStatus | String | Request status(COMPLETED -> successful, FAILED -> failed, CANCEL -> cancelled ) |
 |- resultCode | String |    Result code of receiving |
@@ -666,6 +670,7 @@ Content-Type: application/json;charset=UTF-8
 | Name |  Type| Required| Description|
 |---|---|---|---|
 |X-Secret-Key|  String| O | Can be created on console.  |
+|X-NC-API-IDEMPOTENCY-KEY|	String| X | Key used as the basis for duplicate message sending requests<br>If a request is made with the same key for 10 minutes, the request will be failed. |
 
 [Request body]
 
@@ -737,7 +742,7 @@ Content-Type: application/json;charset=UTF-8
 
 * <b> Request date and time can be set up to 60 days since a point of calling. </b>
 * <b>Since alternative delivery is made in the SMS service, field values must follow the API specifications for SMS(e.g. Sender number registered at the SMS service, or restriction in the field length). </b>
-* <b>Title or content for alternative delivery that exceeds specified byte size may be cut for delivery.(see [[Caution](https://docs.toast.com/ko/Notification/SMS/ko/api-guide/#_1)] for reference)</b>
+* <b>Title or content for alternative delivery that exceeds specified byte size may be cut for delivery.(see [[Caution](https://docs.nhncloud.com/ko/Notification/SMS/ko/api-guide/#_1)] for reference)</b>
 
 [Example]
 ```
@@ -811,6 +816,7 @@ Content-Type: application/json;charset=UTF-8
 | Name |  Type| Required| Description|
 |---|---|---|---|
 |X-Secret-Key|  String| O | Can be created on console.  |
+|X-NC-API-IDEMPOTENCY-KEY|	String| X | Reference key for duplicate message sending requests<br>If a request is made with the same key for 10 minutes, the request will be failed. |
 
 [Request Body]
 
@@ -992,7 +998,7 @@ Content-Type: application/json;charset=UTF-8
 |pageSize|  Integer|    X|  Number of queries(default: 15, Max: 1000)|
 
 * Delivery request data before 90 days cannot be queried.
-* Delivery can be requested within 30 days to the maximum.   
+* Delivery can be requested within 31 days to the maximum.
 
 <a id="response-7"></a>
 #### Response
@@ -1063,7 +1069,7 @@ Content-Type: application/json;charset=UTF-8
 |-- requestDate | String | Date and time of request |
 |-- createDate | String |   Registered date and time |
 |-- receiveDate | String |  Date and time of receiving |
-|-- resendStatus | String | Status code of resending(RSC01, RSC02, RSC03, RSC04, RSC05)<br>([Refer to [Status code of resending table](http://docs.toast.com/en/Notification/KakaoTalk%20Bizmessage/en/alimtalk-api-guide/#smslms)] below) |
+|-- resendStatus | String | Status code of resending(RSC01, RSC02, RSC03, RSC04, RSC05)<br>([Refer to [Status code of resending table](https://docs.nhncloud.com/en/Notification/KakaoTalk%20Bizmessage/en/alimtalk-api-guide/#smslms)] below) |
 |-- resendStatusName | String | Status code name of resending |
 |-- messageStatus | String |    Request status(COMPLETED -> successful, FAILED ->failed, CANCEL -> canceled ) |
 |-- resultCode | String |   Result code of receiving |
@@ -1202,9 +1208,9 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 |- requestDate | String | Date and time of request |
 |- createDate | String |    Registered date and time |
 |- receiveDate | String |   Date and time of receiving |
-|- resendStatus | String |  Status code of resending(RSC01, RSC02, RSC03, RSC04, RSC05)<br>([Refer to [Status code of resending table](http://docs.toast.com/en/Notification/KakaoTalk%20Bizmessage/en/alimtalk-api-guide/#smslms)] below) |
+|- resendStatus | String |  Status code of resending(RSC01, RSC02, RSC03, RSC04, RSC05)<br>([Refer to [Status code of resending table](https://docs.nhncloud.com/en/Notification/KakaoTalk%20Bizmessage/en/alimtalk-api-guide/#smslms)] below) |
 |- resendStatusName | String |  Status code name of resending |
-|- resendResultCode | String | Result code of resending [Result code of SMS sending](https://docs.toast.com/en/Notification/SMS/en/error-code/#api) |
+|- resendResultCode | String | Result code of resending [Result code of SMS sending](https://docs.nhncloud.com/en/Notification/SMS/en/error-code/#api) |
 |- resendRequestId | String | ID requesting of resending SMS |
 |- messageStatus | String | Request status(COMPLETED -> successful, FAILED -> failed, CANCEL -> canceled) |
 |- resultCode | String |    Result code of receiving |
@@ -1370,9 +1376,9 @@ Content-Type: application/json;charset=UTF-8
 |- requestDate | String |   Date and time of request |
 |- createDate  | String |   Date and time of creation |
 |- receiveDate | String |   Date and time of receiving |
-|- resendStatus | String |  Status code of resending(RSC01, RSC02, RSC03, RSC04, RSC05)<br>([Refer to [Status code of resending table](http://docs.toast.com/en/Notification/KakaoTalk%20Bizmessage/en/alimtalk-api-guide/#smslms)] below) |
+|- resendStatus | String |  Status code of resending(RSC01, RSC02, RSC03, RSC04, RSC05)<br>([Refer to [Status code of resending table](https://docs.nhncloud.com/en/Notification/KakaoTalk%20Bizmessage/en/alimtalk-api-guide/#smslms)] below) |
 |- resendStatusName | String |  Status code name of resending |
-|- resendResultCode | String | Result code of resending [Result code of SMS sending](https://docs.toast.com/en/Notification/SMS/en/error-code/#api) |
+|- resendResultCode | String | Result code of resending [Result code of SMS sending](https://docs.nhncloud.com/en/Notification/SMS/en/error-code/#api) |
 |- resendRequestId | String | Resending SMS request ID |
 |- messageStatus | String | Request status(COMPLETED -> Successful, FAILED -> Failed, CANCEL -> Canceled) |
 |- resultCode | String |    Result code of receiving |
@@ -1425,6 +1431,7 @@ Content-Type: application/json;charset=UTF-8
 |X-Secret-Key|  String| Unique secret key |
 
 [Query parameter]
+
 * One of the following is required: requestId, startRequestDate + endRequestDate, or startCreateDate + endCreateDate.
 
 | Name |  Type| Max. Length | Required| Description|
@@ -1752,9 +1759,9 @@ curl -X GET \
 | - requestDate | String | Date of request |
 | - receiveDate | String | Date of receiving |
 | - createDate | String | Date of creation |
-| - resendStatus | String | Status code of resending(RSC01, RSC02, RSC03, RSC04, RSC05)<br>([Refer to [Status code of resending table](http://docs.toast.com/en/Notification/KakaoTalk%20Bizmessage/en/alimtalk-api-guide/#smslms)] below) |
+| - resendStatus | String | Status code of resending(RSC01, RSC02, RSC03, RSC04, RSC05)<br>([Refer to [Status code of resending table](https://docs.nhncloud.com/en/Notification/KakaoTalk%20Bizmessage/en/alimtalk-api-guide/#smslms)] below) |
 | - resendStatusName | String | Status name of resending |
-| - resendResultCode | String | Result code of resending [Result code of SMS sending](https://docs.toast.com/en/Notification/SMS/en/error-code/#api) |
+| - resendResultCode | String | Result code of resending [Result code of SMS sending](https://docs.nhncloud.com/en/Notification/SMS/en/error-code/#api) |
 | - resendRequestId | String | Resending SMS request ID |
 | - messageStatus | String | Mass recipient delivery status code(READY, COMPLETED, FAILED, CANCEL) |
 | - resultCode | String | Result status code |

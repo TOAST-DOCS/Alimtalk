@@ -1,4 +1,6 @@
-<!-- pre-align:aligned sig=3d4c5fafe732 -->
+<!-- machine_translated: true -->
+
+<!-- pre-align:aligned sig=5028c31577c3 -->
 
 <a id="sender-console-guide"></a>
 ## Notification > KakaoTalk Bizmessage > Sender Profile > Console Guide { #sender-console-guide }
@@ -51,6 +53,8 @@ Click **Go to Kakao Statistics** in Sender Profile Management to view Kakao stat
 * Clicks are counted multiple times for the same message.
 * If the number of successful deliveries is 10 or fewer, valid opens and clicks are not provided.
 
+* Brand Message M targeting delivery is sent as either an I or N message depending on whether the recipient is a KakaoTalk Channel friend, and is counted in Kakao statistics as I/N targeting delivery rather than M. For more details, see [Brand Message Overview > Statistics Aggregation for M Targeting Delivery](./friendtalkupgrade-overview/#statistics-aggregation-for-targeting-m).
+
 <a id="delivery-statistics"></a>
 ### Delivery Statistics { #delivery-statistics }
 
@@ -72,6 +76,20 @@ Group tags are identification tags used when querying template statistics for br
 
 * Click **+ Register Group Tag** to enter a group tag name and register it.
 * Select the checkbox of the group tag to modify or delete, and click **Modify Group Tag** or **Delete Group Tag**.
+
+<a id="group-tag-registration-limit"></a>
+### Group Tag Registration Limit { #group-tag-registration-limit }
+
+According to Kakao policy, group tags can be registered within the following limits per Sender Profile (effective September 16, 2026).
+
+| Category | Limit |
+|---|---|
+| Maximum daily registrations | 100 |
+| Maximum retention count | 1,000 |
+
+* If the daily registration limit is reached, you cannot register additional group tags even if you delete group tags registered on the same day. Register them on the following day.
+* If the retention limit is reached, delete unused group tags before registering new ones.
+* Group tags are not values that are newly created for each recipient or send request. It is recommended to register and reuse them as a sending unit to consolidate and track performance across campaigns, promotions, and similar activities.
 
 <a id="notice-of-personal-information-consignee"></a>
 ## Notice of Personal Information Consignee { #notice-of-personal-information-consignee }

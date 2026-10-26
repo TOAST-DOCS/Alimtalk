@@ -1,4 +1,4 @@
-<!-- pre-align:aligned sig=3d4c5fafe732 -->
+<!-- pre-align:aligned sig=5028c31577c3 -->
 
 <a id="sender-console-guide"></a>
 ## Notification > KakaoTalk Bizmessage > 발신 프로필 > 콘솔 사용 가이드 { #sender-console-guide }
@@ -50,6 +50,7 @@
 * 유효 읽음 수는 같은 메시지에 대해 중복 집계하지 않습니다.
 * 클릭 수는 같은 메시지에 대해 중복 집계합니다.
 * 발송 성공 건수가 10건 이하이면 유효 읽음 수와 클릭 수를 제공하지 않습니다.
+* 브랜드 메시지 M 타겟팅 발송은 수신자의 채널 친구 여부에 따라 I 또는 N 메시지로 발송되며, 카카오 통계에는 M이 아닌 I/N 타겟팅 발송 건수로 집계됩니다. 자세한 내용은 [브랜드 메시지 개요 > M 타겟팅 발송의 통계 집계 기준](./friendtalkupgrade-overview/#statistics-aggregation-for-targeting-m)을 참고하세요.
 
 <a id="delivery-statistics"></a>
 ### 발송 통계 { #delivery-statistics }
@@ -72,6 +73,20 @@
 
 * **+ 그룹 태그 등록**을 클릭해 그룹 태그 이름을 입력하고 등록합니다.
 * 수정하거나 삭제할 그룹 태그의 체크박스를 선택하고 **그룹 태그 수정** 또는 **그룹 태그 삭제**를 클릭합니다.
+
+<a id="group-tag-registration-limit"></a>
+### 그룹 태그 등록 한도 { #group-tag-registration-limit }
+
+카카오 정책에 따라 그룹 태그는 발신 프로필 기준으로 다음 한도 내에서 등록할 수 있습니다(2026년 9월 16일 적용).
+
+| 구분 | 한도 |
+|---|---|
+| 하루 등록 가능 수 | 100개 |
+| 최대 보유 가능 수 | 1,000개 |
+
+* 하루 등록 한도에 도달하면 당일 등록한 그룹 태그를 삭제하더라도 추가로 등록할 수 없습니다. 다음 날 등록하세요.
+* 보유 한도에 도달하면 사용하지 않는 그룹 태그를 삭제한 뒤 등록하세요.
+* 그룹 태그는 수신자별, 발송 요청별로 매번 새로 만드는 값이 아닙니다. 캠페인, 프로모션 등 성과를 묶어서 확인할 발송 단위로 등록하고 재사용하는 것을 권장합니다.
 
 <a id="notice-of-personal-information-consignee"></a>
 ## 개인정보 수탁사 고지 안내 { #notice-of-personal-information-consignee }

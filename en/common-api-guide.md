@@ -1,3 +1,5 @@
+<!-- machine_translated: true -->
+
 <!-- pre-align:aligned sig=13eee0b1c3c5 -->
 
 <a id="common-api-guide"></a>
@@ -55,6 +57,7 @@
   "X-Secret-Key": String
 }
 ```
+
 | Name |	Type|	Required|	Descriptions|
 |---|---|---|---|
 |X-Secret-Key|	String| O | It can be created in the console.  |
@@ -189,6 +192,8 @@ Retrieves the daily send count, valid read count, and click count by sender prof
 Retrieves the daily send count, valid read count, and click count by template and group tag. You can filter by period, message type, and more.
 
 * Brand message freestyle is only provided when a group tag is used.
+
+* Brand Message M targeting delivery is sent as either an I or N message depending on whether the recipient is a channel friend, and Kakao statistics count it as I/N targeting sends rather than M. For more details, see [Brand Message Overview > Statistics Aggregation for M Targeting Delivery](./friendtalkupgrade-overview/#statistics-aggregation-for-targeting-m).
 
 <a id="retrieve-alimtalk-delivery-statistics"></a>
 ### Retrieve AlimTalk Delivery Statistics { #retrieve-alimtalk-delivery-statistics }

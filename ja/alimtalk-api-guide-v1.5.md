@@ -1,3 +1,5 @@
+<!-- machine_translated: true -->
+
 <!-- pre-align:aligned sig=8038e3f27378 -->
 
 <a id="alimtalk-api-guide-v1-5"></a>
@@ -112,7 +114,7 @@ Content-Type: application/json;charset=UTF-8
 * <b>リクエスト日時は呼び出す時点から30日後まで設定可能です。</b>
 * <b>SMSサービスで代替送信されるため、SMSサービスの送信APIの仕様に応じてフィールドを入力する必要があります。(SMSサービスに登録された発信番号、各種フィールドの長さ制限など)</b>
 * <b>SMSサービスは、国際SMSのみサポートします。国際受信者番号の場合、 resendType(代替送信タイプ)をSMSに変更すると正常に代替送信できます。</b>
-* <b>指定した代替送信タイプのバイト制限を超える代替送信のタイトルや内容は、途中で切れて代替送信されることがあります。([[SMS注意事項](https://docs.toast.com/ko/Notification/SMS/ko/api-guide/#_1)]参考)</b>
+* <b>指定した代替送信タイプのバイト制限を超える代替送信のタイトルや内容は、途中で切れて代替送信されることがあります。([[SMS注意事項](https://docs.nhncloud.com/ko/Notification/SMS/ko/api-guide/#_1)]参考)</b>
 * <b>templateTitleとtemplateItemHighlight.titleフィールドの一番後ろに日本語識別子とtemplateParameterを利用して`\s`文字を追加する場合、取り消し線スタイルを適用できます。</b>
     * <b>ただし、テンプレート登録時にあらかじめ\sをフィールドに追加しておいた場合は適用されません。</b>
 
@@ -233,6 +235,7 @@ Content-Type: application/json;charset=UTF-8
 | templateCode           | String  | O    | 登録した送信テンプレートコード(最大20桁)                    |
 | requestDate            | String  | X    | リクエスト日時(yyyy-MM-dd HH:mm)<br>(入力しない場合は即時送信) |
 | senderGroupingKey      | String  | X    | 発信グルーピングキー(最大100文字)                        |
+|createUser| String | X| 登録者(コンソールから送信する場合、ユーザーUUIDで保存)|
 | recipientList          | List    | O    | 受信者リスト(最大1,000人)                        |
 | - recipientNo          | String  | O    | 受信番号(最大15桁)                            |
 | - content              | String  | O    | 内容(最大1000文字)                             |
@@ -257,7 +260,7 @@ Content-Type: application/json;charset=UTF-8
 * <b>リクエスト日時は呼び出す時点から30日後まで設定可能です。</b>
 * <b>SMSサービスで代替送信されるため、SMSサービスの送信APIの仕様に応じてフィールドを入力する必要があります。(SMSサービスに登録された発信番号、各種フィールドの長さ制限など)</b>
 * <b>SMSサービスは、国際SMSのみサポートします。国際受信者番号の場合、 resendType(代替送信タイプ)をSMSに変更すると正常に代替送信できます。</b>
-* <b>指定した代替送信タイプのバイト制限を超える代替送信のタイトルや内容は、途中で切れて代替送信されることがあります。([[SMS注意事項](https://docs.toast.com/ko/Notification/SMS/ko/api-guide/#_1)]参考)<
+* <b>指定した代替送信タイプのバイト制限を超える代替送信のタイトルや内容は、途中で切れて代替送信されることがあります。([[SMS注意事項](https://docs.nhncloud.com/ko/Notification/SMS/ko/api-guide/#_1)]参考)<
 * <b>送信時にtemplateTitleとtemplateItemHighlight.titleフィールドの一番後ろに`\s`文字を追加すると、取り消し線スタイルを適用できます。</b>
     * <b>ただし、テンプレート登録時にあらかじめ\sをフィールドに追加しておいた場合は適用されません。</b>
 
@@ -358,7 +361,7 @@ Content-Type: application/json;charset=UTF-8
 | pageSize             | Integer | X         | 照会件数(基本：15、最大: 1000)                |
 
 * 90日以上前の送信リクエストデータは照会されません。
-* 送信リクエスト日時の範囲は最大30日です。
+* 送信リクエスト日時の範囲は最大31日です。
 
 <a id="response-3"></a>
 #### レスポンス
@@ -421,8 +424,7 @@ Content-Type: application/json;charset=UTF-8
 | -- templateCode             | String  | テンプレートコード                           |
 | -- recipientNo              | String  | 受信番号                            |
 | -- content                  | String  | 本文                               |
-| -- requestDate              | String  | リクエスト日
-時                            |
+| -- requestDate              | String  | リクエスト日時                            |
 | -- createDate               | String  | 登録日時                            |
 | -- receiveDate              | String  | 受信日時                            |
 | -- resendStatus             | String  | 再送信ステータスコード                        |
@@ -542,7 +544,7 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 }
 ```
 
-| 値               | タイプ | 説明                                |
+| 名前               | タイプ | 説明                                |
 | ---------------------- | ------- | ---------------------------------------- |
 | header                 | Object  | ヘッダ領域                             |
 | - resultCode           | Integer | 結果コード                             |
@@ -555,8 +557,8 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 | - templateCode         | String  | テンプレートコード                            |
 | - recipientNo          | String  | 受信番号                             |
 | - content              | String  | 本文                                |
-|- templateTitle         | String  | テンプレートハイライトタイトル              |
-|- templateSubtitle      | String  | テンプレートハイライトサブタイトル           |
+|- templateTitle         | String  | テンプレートタイトル              |
+|- templateSubtitle      | String  | テンプレート補助文言           |
 |- templateExtra         | String  | テンプレート付加情報                     |
 |- templateAd            | String  | テンプレート内の受信同意または簡単な広告文句   |
 | - requestDate          | String  | リクエスト日時                             |
@@ -564,9 +566,12 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 | - createDate           | String  | 登録日時                            |
 | - resendStatus         | String  | 再送信ステータスコード                         |
 | - resendStatusName     | String  | 再送信ステータスコード名                          |
+| - resendResultCode     | String  | 再送信結果コード [SMS結果コード](https://docs.nhncloud.com/ko/Notification/SMS/ko/error-code/#api) |
+| - resendRequestId      | String  | 再送信SMSリクエストID                          |
 | - messageStatus        | String  | リクエストステータス(COMPLETED -> 成功、FAILED -> 失敗、CANCEL -> キャンセル) |
 | - resultCode           | String  | 受信結果コード                          |
 | - resultCodeName       | String  | 受信結果コード名                           |
+| - createUser           | String  | 登録者(コンソールから送信時、ユーザーUUIDで保存) |
 | - buttons              | List    | ボタンリスト                             |
 | -- ordering            | Integer | ボタン順序                             |
 | -- type                | String  | ボタンタイプ(WL：Webリンク、AL：アプリリンク、DS：配送照会、BK：Botキーワード、MD：メッセージ伝達、BC：相談トーク転換、BT：Bot転換、AC：チャンネル追加) |
@@ -666,7 +671,7 @@ Content-Type: application/json;charset=UTF-8
 
 * <b>リクエスト日時は呼び出す時点から30日後まで設定可能です。</b>
 * <b>SMSサービスで代替送信されるため、SMSサービスの送信APIの仕様に応じてフィールドを入力する必要があります。(SMSサービスに登録された発信番号、各種フィールドの長さ制限など)</b>
-* <b>指定した代替送信タイプのバイト制限を超える代替送信のタイトルや内容は、途中で切れて代替送信されることがあります。([[SMS注意事項](https://docs.toast.com/ko/Notification/SMS/ko/api-guide/#_1)]参考)</b>
+* <b>指定した代替送信タイプのバイト制限を超える代替送信のタイトルや内容は、途中で切れて代替送信されることがあります。([[SMS注意事項](https://docs.nhncloud.com/ko/Notification/SMS/ko/api-guide/#_1)]参考)</b>
 
 [例]
 ```
@@ -907,7 +912,7 @@ Content-Type: application/json;charset=UTF-8
 | pageSize             | Integer | X         | 照会件数(基本：15、最大: 1000)                |
 
 * 90日以上前の送信リクエストデータは照会されません。
-* 送信リクエスト日時の範囲は最大30日です。
+* 送信リクエスト日時の範囲は最大31日です。
 
 <a id="response-7"></a>
 #### レスポンス
@@ -1112,7 +1117,7 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 | - receiveDate          | String  | 受信日時                             |
 | - resendStatus         | String  | 再送信ステータスコード                         |
 | - resendStatusName     | String  | 再送信ステータスコード名                          |
-| - resendResultCode     | String  | 再送結果コード[SMS結果コード](https://docs.toast.com/ja/Notification/SMS/ja/error-code/#api) |
+| - resendResultCode     | String  | 再送結果コード[SMS結果コード](https://docs.nhncloud.com/ja/Notification/SMS/ja/error-code/#api) |
 | - resendRequestId      | String  | 再送SMSリクエストID                                                  |
 | - messageStatus        | String  | リクエストステータス(COMPLETED -> 成功、FAILED -> 失敗、CANCEL -> キャンセル) |
 | - resultCode           | String  | 受信結果コード                          |
@@ -1292,6 +1297,7 @@ Content-Type: application/json;charset=UTF-8
 | -- recipientNo              | String  | 受信番号                            |
 | -- content                  | String  | 本文                               |
 | -- requestDate              | String  | リクエスト日時                            |
+| -- createDate               | String  | 登録日                             |
 | -- receiveDate              | String  | 受信日時                            |
 | -- resendStatus             | String  | 再送信ステータスコード                        |
 | -- resendStatusName         | String  | 再送信ステータスコード名                        |
@@ -1306,6 +1312,7 @@ Content-Type: application/json;charset=UTF-8
 | --- linkPc                  | String  | PC Webリンク(WLタイプの場合は任意フィールド)                 |
 | --- schemeIos               | String  | iOSアプリリンク(ALタイプの場合は必須フィールド)                |
 | --- schemeAndroid           | String  | Androidアプリリンク(ALタイプの場合は必須フィールド)            |
+| -- createUser               | String  | 登録者(コンソールから送信する際、ユーザーUUIDで保存)          |
 | -- senderGroupingKey        | String  | 発信グルーピングキー                            |
 | -- recipientGroupingKey     | String  | 受信者グルーピングキー                           |
 | - totalCount                | Integer | 総個数                              |
@@ -1613,12 +1620,14 @@ Content-Type: application/json;charset=UTF-8
 | - kakaoProfileStatus      | String  | カカオプラスフレンドプロフィールステータスコード<br>(A：有効化、B：遮断、C：無効化、D：削除E：削除処理中)<br>statusがYSC02の場合、kakaoProfileStatus null値を持ちます。 |
 | - kakaoProfileStatusName  | String  | カカオプラスフレンドプロフィールステータス名(有効化、無効化、遮断、削除処理中、削除)<br>statusがYSC02の場合、kakaoProfileStatusName null値を持ちます。 |
 |- alimtalk|	Object|	お知らせトーク設定情報|
-|-- isResend | String  | 送信失敗設定(再送信)するかどうか                   |
+|-- resendAppKey | String  | 代替送信として設定するSMSサービスアプリキー |
+|-- isResend | String  | 代替送信設定(再送信)するかどうか                   |
 |-- resendSendNo | String  | 再送信時、tc-sms発信番号              |
 |-- dailyMaxCount | Integer | お知らせトークの一日最大送信件数<br>(値が0の場合、件数制限なし)    |
 |-- sentCount | Integer | お知らせトークの一日送信件数<br>(値が0の場合、件数制限なし)       |
 |- friendtalk|	Object|	友人トーク設定情報|
-|-- isResend | String  | 送信失敗設定(再送信)するかどうか                   |
+|-- resendAppKey | String  | 代替送信として設定するSMSサービスアプリキー |
+|-- isResend | String  | 代替送信設定(再送信)するかどうか                   |
 |-- resendSendNo | String  | 再送信時、tc-sms発信番号              |
 |-- resendUnsubscribeNo | String |	再送信時、tc-sms 080受信拒否番号 |
 |-- dailyMaxCount | Integer | カカともへのメッセージの一日最大送信件数<br>(値が0の場合、件数制限なし)    |
@@ -1721,16 +1730,18 @@ Content-Type: application/json;charset=UTF-8
 | - kakaoProfileStatus      | String  | カカオプラスフレンドプロフィールステータスコード<br>(A：有効化、B：遮断、C：無効化、D：削除E：削除処理中)<br>statusがYSC02の場合、kakaoProfileStatus null値を持ちます。 |
 | - kakaoProfileStatusName  | String  | カカオプラスフレンドプロフィールステータス名(有効化、無効化、遮断、削除処理中、削除)<br>statusがYSC02の場合、kakaoProfileStatusName null値を持ちます。 |
 |- alimtalk|	Object|	お知らせトーク設定情報|
-|-- isResend | String  | 送信失敗設定(再送信)するかどうか                   |
+|-- resendAppKey | String | 代替送信として設定するSMSサービスアプリキー |
+|-- isResend | String  | 代替送信設定(再送信)するかどうか                   |
 |-- resendSendNo | String  | 再送信時、tc-sms発信番号              |
 |-- dailyMaxCount | Integer | お知らせトークの一日最大送信件数<br>(値が0の場合、件数制限なし)    |
 |-- sentCount | Integer | お知らせトークの一日送信件数<br>(値が0の場合、件数制限なし)       |
 |- friendtalk|	Object|	友人トーク設定情報|
-|-- isResend | String  | 送信失敗設定(再送信)するかどうか                   |
+|-- resendAppKey | String | 代替送信として設定するSMSサービスアプリキー |
+|-- isResend | String  | 代替送信設定(再送信)するかどうか                   |
 |-- resendSendNo | String  | 再送信時、tc-sms発信番号              |
 |-- resendUnsubscribeNo | String |	再送信時、tc-sms 080受信拒否番号 |
-|-- dailyMaxCount | Integer | カカともへのメッセージの一日最大送信件数<br>(値が0の場合、件数制限なし)    |
-|-- sentCount | Integer | カカともへのメッセージの一日送信件数<br>(値が0の場合、件数制限なし)       |
+|-- dailyMaxCount | Integer | フレンドトークの一日最大送信件数<br>(値が0の場合、件数制限なし)    |
+|-- sentCount | Integer | フレンドトークの一日送信件数<br>(値が0の場合、件数制限なし)       |
 | - createDate              | String  | 登録日時                            |
 | totalCount                | Integer | 総個数                               |
 
