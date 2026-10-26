@@ -53,7 +53,7 @@
 * クリック数は、同じメッセージに対して重複集計します。
 * 送信成功件数が10件以下の場合は、有効既読数とクリック数を提供しません。
 
-* ブランドメッセージのMターゲティング送信は、受信者のチャンネル友だち登録状況に応じてIまたはNメッセージとして送信され、カカオ統計にはMではなくI/Nターゲティング送信件数として集計されます。詳細については、[ブランドメッセージ概要 > Mターゲティング送信の統計集計基準](./friendtalkupgrade-overview/#statistics-aggregation-for-targeting-m)を参照してください。
+* ブランドメッセージのMターゲティング送信は、受信者がチャネルの友だちかどうかに応じてIまたはNメッセージとして送信され、カカオ統計にはMではなくI/Nターゲティング送信件数として集計されます。詳細については、[ブランドメッセージ概要 > Mターゲティング送信の統計集計基準](./friendtalkupgrade-overview/#statistics-aggregation-for-targeting-m)を参照してください。
 
 <a id="delivery-statistics"></a>
 ### 送信統計 { #delivery-statistics }
