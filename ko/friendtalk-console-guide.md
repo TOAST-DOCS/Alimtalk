@@ -7,7 +7,7 @@
 ## 친구톡 서비스 종료 안내 { #friendtalk-service-termination-notice }
 * 2025-12-31(수) 친구톡 서비스 지원을 종료합니다.
 * 기존에 이용 중이신 고객께는 브랜드 메시지로 전환하실 것을 권장드립니다.
-* 자세한 사항은 [브랜드 메시지 전환 가이드](https://docs.nhncloud.com/ko/Notification/KakaoTalk%20Bizmessage/ko/friendtalk-compatible-api-guide)를 참고해주시기 바랍니다.
+* 자세한 사항은 [브랜드 메시지 전환 가이드](./friendtalk-compatible-api-guide/)를 참고해주시기 바랍니다.
 
 ---
 
@@ -35,7 +35,7 @@
 
 5. 내용을 입력합니다.
 
-6. 메시지 타입을 선택합니다. 타입별 상세 가이드는 [친구톡 발송 지원 타입](https://docs.nhncloud.com/ko/Notification/KakaoTalk%20Bizmessage/ko/friendtalk-overview/#_3)에서 확인하세요.
+6. 메시지 타입을 선택합니다. 타입별 상세 가이드는 [친구톡 발송 지원 타입](./friendtalk-overview/#friendtalk-delivery-supported-types)에서 확인하세요.
     * 기본형(텍스트/이미지/와이드 이미지)
         * 텍스트: 한/영 구분 없이 띄어쓰기 포함 1,000자 텍스트+링크 버튼 최대 5(세로 배열)
         * 이미지: 한/영 구분 없이 띄어쓰기 포함 400자 텍스트+이미지 1장+링크 버튼 최대 5(세로 배열)
@@ -240,7 +240,7 @@ Excel/CSV 포맷의 템플릿 파일을 통해 여러 수신 번호로 알림톡
 * NHN Cloud SMS 서비스를 이용 중이어야 하며, 메시지 길이에 따라 SMS/LMS로 발송됩니다.(각 타입별 문자 발송 시 별도의 이용료 부과)
 * SMS 앱키를 수정하면 모든 검색용 아이디의 채널은 대체 발송 설정이 초기화됩니다.
 * SMS 서비스로 대체 발송되므로, SMS 서비스의 발송 API 명세에 따라 필드를 입력해야 합니다.(SMS 서비스에 등록된 발신 번호, 각종 필드 길이 제한 등)
-* 지정한 대체 발송 타입의 바이트 제한을 초과하는 대체 발송 제목이나 내용은 잘려서 대체 발송이 될 수 있습니다.([[SMS 주의 사항](https://docs.toast.com/ko/Notification/SMS/ko/api-guide/#_1)] 참고)
+* 지정한 대체 발송 타입의 바이트 제한을 초과하는 대체 발송 제목이나 내용은 잘려서 대체 발송이 될 수 있습니다.([[SMS 주의 사항](https://docs.nhncloud.com/ko/Notification/SMS/ko/api-guide/#_1)] 참고)
 * 대체 발송 내용은 EUC-KR 기준으로 발송되며, 지원하지 않는 이모티콘은 대체 발송에 실패합니다.
 * 대체 발송 설정을 수정할 검색용 아이디의 채널은 <b>수정</b>을 클릭해 <b>대체 발송 여부</b> 및 <b>발신 번호</b>를 수정할 수 있습니다.
 * <b>대체 발송 여부</b>를 <b>사용 안 함</b>으로 설정할 경우 친구톡 발송 시 해당 검색용 아이디의 채널은 대체 발송이 불가합니다.

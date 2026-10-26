@@ -1,9 +1,21 @@
 <!-- machine_translated: true -->
 
-<!-- pre-align:aligned sig=262dba70bc7f -->
+<!-- pre-align:aligned sig=b0582765a3b4 -->
 
 <a id="release-notes"></a>
 ## Notification > KakaoTalk Bizmessage > Release Notes { #release-notes }
+<a id="october-27-2026"></a>
+### October 27, 2026 { #october-27-2026 }
+
+<a id="october-27-2026-feature-updates"></a>
+#### Feature Updates
+* [API, Console] Removed group tag key field when sending Brand Message basic type
+    * In accordance with Kakao specifications, the group tag key (`groupTagKey`) field has been removed when sending Brand Message basic type.
+    * The group tag feature for free-form sending remains unchanged.
+
+* [Console] Removed the reseller identification code input field when sending Brand Message
+    * When sending a Brand Message from the Console, the reseller identification code is set to the default value (NHN Cloud identification code).
+
 <a id="august-25-2026"></a>
 ### August 25, 2026 { #august-25-2026 }
 
@@ -63,7 +75,17 @@
 <a id="may-27-2026-2"></a>
 ### May 27, 2026 { #may-27-2026-2 }
 
-<!-- TODO: translate body -->
+* [API] Added KakaoBizCenter statistics retrieval API
+    * Added an API to retrieve sending statistics and template statistics for AlimTalk and brand messages provided by KakaoBizCenter.
+    * Daily (DAILY) or monthly (MONTHLY) statistics data can be retrieved based on the sender key.
+
+* [API, Console] Updated guide on brand message image deletion
+    * Updated the guide to clarify that changing the image when updating a brand message template deletes the existing image from the Kakao CDN, and that other templates using the same image are also affected.
+
+* [API, Console] Changed content length limits by brand message type
+    * The content length limit for the IMAGE type has been changed from a maximum of 400 characters to a maximum of 1,300 characters.
+    * The line break limit for the IMAGE type has been changed from a maximum of 29 to a maximum of 99.
+    * The line break limit for the WIDE and PREMIUM_VIDEO types has been changed from a maximum of 1 to a maximum of 5.
 
 <a id="april-28-2026"></a>
 ### April 28, 2026 { #april-28-2026 }
@@ -76,10 +98,15 @@
 <a id="april-28-2026-2"></a>
 ### April 28, 2026 { #april-28-2026-2 }
 
-<!-- TODO: translate body -->
+* [API] Automatic cleanup of sender profiles and template data deleted after dormancy
+    * Synchronizes and automatically cleans up sender profiles and template data that were deleted by Kakao after remaining dormant for over 1 year.
+* [API] Added channel add button (AC type) support for free-form Brand Message delivery
+    * Expanded the Add Channel Button for free-form delivery to be available for all targeting options.
+    * If the recipient is a friend, the delivery will not fail, but the Add Channel Button will not be displayed.
 
 <a id="march-24-2026"></a>
 ### March 24, 2026 { #march-24-2026 }
+* [Console] KakaoBizCenter statistics
     * Added a feature to retrieve statistics data for AlimTalk and brand messages provided by KakaoBizCenter.
 
 * [Console] Added KakaoBizCenter group tag management feature
@@ -266,7 +293,12 @@
 <a id="may-27-2025"></a>
 ### May 27, 2025 { #may-27-2025 }
 
-<!-- TODO: translate body -->
+* [Console] Added display of template blocking status on the AlimTalk template query tab
+    * The template blocking status is now displayed on the AlimTalk template query tab.
+* [Console] Added a Brand Message Bulk Sending feature
+    * Added a bulk sending feature using CSV and XLSX files.
+* [Console] Added a Brand Message sending statistics screen
+    * Statistics screens by date, time slot, and day of the week are now available.
 
 <a id="may-13-2025"></a>
 ### May 13, 2025 { #may-13-2025 }
@@ -471,7 +503,11 @@
 <a id="november-29-2022"></a>
 ### November 29, 2022 { #november-29-2022 }
 *[Console] First User Restrictions on Sending Profile
+
 * Sending Profile Restrictions on First User registration have been added to prevent abusing activity in accordance with Kakao Policy.
+
+<!-- -->
+
 1. Unable to add as a member to Group Profile
 2. When the template variable is replaced, and if the difference is greater than 14 characters, process it as message sending failure
 
@@ -994,5 +1030,5 @@ Delivery body text
 ### April 20, 2017 { #april-20-2017 }
 <a id="new-product-release"></a>
 #### New Product Release
-    * AlimTalk is a product based on mobile phones with which users can send informative messages such as delivery message, schedule notification, and others without adding the recipient as a friend.
-    * It provides RESTful API for users to easily link it to apps.
+* AlimTalk is a product based on mobile phones with which users can send informative messages such as delivery message, schedule notification, and others without adding the recipient as a friend.
+* It provides RESTful API for users to easily link it to apps.

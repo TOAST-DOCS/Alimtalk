@@ -1,7 +1,18 @@
-<!-- pre-align:aligned sig=262dba70bc7f -->
+<!-- pre-align:aligned sig=b0582765a3b4 -->
 
 <a id="release-notes"></a>
 ## Notification > KakaoTalk Bizmessage > 릴리스 노트 { #release-notes }
+
+<a id="october-27-2026"></a>
+### 2026. 10. 27. { #october-27-2026 }
+
+<a id="october-27-2026-feature-updates"></a>
+#### 기능 개선/변경
+* [API, 콘솔] 브랜드 메시지 기본형 발송 시 그룹 태그 키 필드 제거
+    * 카카오 스펙에 따라 브랜드 메시지 기본형 발송 시 그룹 태그 키(`groupTagKey`) 필드가 제거되었습니다.
+    * 자유형 발송의 그룹 태그 기능은 기존과 동일하게 유지됩니다.
+* [콘솔] 브랜드 메시지 발송 시 재판매사 식별 코드 입력 필드 제거
+    * 콘솔에서 브랜드 메시지 발송 시 재판매사 식별 코드는 기본값(NHN Cloud 식별코드)으로 설정됩니다.
 
 <a id="august-25-2026"></a>
 ### 2026. 08. 25. { #august-25-2026 }
@@ -376,7 +387,7 @@
 <a id="april-23-2024"></a>
 ### 2024. 04. 23. { #april-23-2024 }
 * [API] 메시지 발송 중복 요청 시 실패 처리 기능 추가
-    * 메시지 발송 시 X-NC-API-IDEMPOTENCY-KEY 헤더의 값을 기준으로 10분간 동일한 키 값을 가지는 요청을 실패 처리하는 기능이 추가되었습니다. [메시지 발송 요청 API 가이드](https://docs.nhncloud.com/ko/Notification/KakaoTalk%20Bizmessage/ko/alimtalk-api-guide/#_3)
+    * 메시지 발송 시 X-NC-API-IDEMPOTENCY-KEY 헤더의 값을 기준으로 10분간 동일한 키 값을 가지는 요청을 실패 처리하는 기능이 추가되었습니다. [메시지 발송 요청 API 가이드](./alimtalk-api-guide/#_3)
 * [콘솔] 예약 발송 최대 예약 가능 기간 변경
     * 예약 발송의 발송 일시를 현재로부터 최대 60일 이후까지 설정이 가능하도록 변경되었습니다.
 * [콘솔] 알림톡 아이템리스트형 요약 필드가 초기화되지 않는 버그 수정

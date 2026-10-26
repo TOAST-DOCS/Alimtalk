@@ -6,7 +6,11 @@
 <a id="friendtalk-service-termination-notice"></a>
 ## フレンドトークサービス終了のお知らせ { #friendtalk-service-termination-notice }
 
-<!-- TODO: translate body -->
+* 2025-12-31（水）フレンドトークサービスのサポートを終了します。
+* 現在ご利用中のお客様には、ブランドメッセージへの移行をお勧めします。
+* 詳細については、[ブランドメッセージ移行ガイド](./friendtalk-compatible-api-guide/)を参照してください。
+
+---
 
 <a id="friendtalk"></a>
 ## カカともへのメッセージ { #friendtalk }
@@ -126,7 +130,7 @@ Content-Type: application/json;charset=UTF-8
 * <b>リクエスト日時は呼び出す時点から30日後まで設定可能です。</b>
 * <b>夜間送信制限(20:00～翌日08:00)</b>
 * <b>SMSサービスの代替として送信されるため、SMSサービスの発送API明細に従ってフィールドを入力してください。(SMSサービスに登録された発信番号、080受信拒否番号、各種フィールドの長さ制限など)</b>
-* <b>指定した代替発送タイプのバイトの制限を超える代替発送のタイトルや内容はカットされ、代替発送となることがあります。([[SMS注意事項](https://docs.toast.com/ja/Notification/SMS/ja/api-guide/#_1)] 参照)</b>
+* <b>指定した代替発送タイプのバイトの制限を超える代替発送のタイトルや内容はカットされ、代替発送となることがあります。([[SMS注意事項](https://docs.nhncloud.com/ja/Notification/SMS/ja/api-guide/#_1)] 参照)</b>
 * <b>友達トークの広告メッセージは、広告SMS APIに代替送信されるので、必ず080受信拒否番号を登録しないと代替送信されません。</b>
 * <b>友達トーク広告メッセージのresendContentフィールドを入力する場合、SMS広告APIの広告文句を必須入力すると正常的に代替して送信されます。(広告)内容[無料受信拒否]080XXXXXX</b>
 * <b>友達トーク広告メッセージのresendContentフィールドがない場合は、登録された080受信拒否番号で広告メッセージを自動生成して代替送信されます。</b>
@@ -408,13 +412,15 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 | - messageStatus        | String  | リクエストステータス(COMPLETED：成功、FAILED：失敗)      |
 | - resendStatus         | String  | 再送信ステータスコード                          |
 | - resendStatusName     | String  | 再送信ステータスコード名                             |
+| - resendResultCode     | String  | 再送信結果コード SMS結果コード                   |
+| - resendRequestId      | String  | 再送信SMSリクエストID                         |
 | - resultCode           | String  | 受信結果コード                           |
 | - resultCodeName       | String  | 受信結果コード名                              |
 | - createUser           | String  | 登録者(コンソールから送信する場合、ユーザーUUIDとして保存)|
 | - imageSeq             | Integer | イメージ番号                             |
 | - imageName            | String  | イメージ名(アップロードしたファイル名)                           |
 | - imageUrl             | String  | イメージURL                                  |
-| - imageLink            | String  | イメージリンク(イメージ番号を入力した場合は必須)                |
+| - imageLink            | String  | イメージリンク                                |
 | - wide                 | Boolean | ワイドイメージの可否                        |
 | - buttons              | List    | ボタンリスト                              |
 | -- ordering            | Integer | ボタン順序                              |
@@ -911,6 +917,7 @@ Content-Type: application/json;charset=UTF-8
 | plusFriendId           | String  | O    | プラスフレンドID(最大30文字)                         |
 | isResend             | boolean | O    | 送信失敗時、代替送信するかどうか<br>コンソールで送信失敗設定をした時、デフォルト設定は再送信になっています。 |
 | resendSendNo         | String  | O    | 代替送信発信番号(最大13桁)<br><span style="color:red">(SMSサービスに登録された発信番号ではない場合、代替送信が失敗することがあります。)</span> |
+|resendUnsubscribeNo|	String|	X | 代替送信080受信拒否番号<br><span style="color:red">(SMSサービスに登録された080受信拒否番号ではない場合、代替送信が失敗することがあります。)</span> |
 
 [例]
 ```

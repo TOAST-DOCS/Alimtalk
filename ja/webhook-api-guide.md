@@ -32,7 +32,7 @@ KakaoTalk Bizmessageサービス内で特定のイベントが発生すると、
 |productName|	String|	Webフックイベントが発生したサービス名 |
 |appKey|	String| Webフックイベントが発生したサービスアプリケーションキー |
 |event|	String| Webフックイベント名 |
-|hooks|	List\<Map\> | Webフックイベント発生時のデータ<br>* 詳細は[イベントタイプ別フック(hook)定義](./webhook-api-guide/#definitions-of-hooks-by-event-type)を参照してください。 |
+|hooks|	List&lt;Map\> | Webフックイベント発生時のデータ<br>* 詳細は[イベントタイプ別フック(hook)定義](#definitions-of-hooks-by-event-type)を参照してください。 |
 
 <a id="curl"></a>
 #### cURL
@@ -63,7 +63,7 @@ Webフック設定に定義されたURLでPOSTリクエストを作成する時�
 #### テンプレート状態/お問い合わせのアップデート
 |値| 	タイプ         | 	説明                                                  |
 |---|--------------|-------------------------------------------------------|
-|hooks| 	List\<Map\> | ウェブフックイベント発生時のデータ                                      |
+|hooks| 	List&lt;Map\> | ウェブフックイベント発生時のデータ                                      |
 |- hookId| 	String      | サービスでイベントが発生した際に生成される固有ID                           |
 |- senderKey| 	String      | 	送信キー                                                |
 |- templateCode| 	String      | テンプレートコード                                               |
@@ -112,17 +112,18 @@ Webフック設定に定義されたURLでPOSTリクエストを作成する時�
 #### メッセージ送信結果コードのアップデート
 |値|	タイプ|	説明|
 |---|---|---|
-|hooks|	List\<Map\> | Webフックイベント発生時のデータ |
+|hooks|	List&lt;Map\> | Webフックイベント発生時のデータ |
 |- kakaoMessageType|	String| カカオメッセージタイプ<br>ALIMTALK_NORMAL<br>ALIMTALK_AUTH<br>ALIMTALK_MASS<br>FRIENDTALK_NORMAL<br>FRIENDTALK_MASS<br>BRAND_MESSAGE_NORMAL<br>BRAND_MESSAGE_MASS  |
 |- requestId|	String| リクエストID |
 |- recipientSeq|	Integer| 受信者シーケンス番号 |
-|- requestDate|	String| リクエスト日 |
-|- createDate|	String| 作成日 |
-|- receiveDate|	String| 受信日 |
+|- requestDate|	String| リクエスト日時 |
+|- createDate|	String| 作成日時 |
+|- receiveDate|	String| 受信日時 |
 |- recipientNo|	String| 受信番号 |
 |- resultCode|	String| 受信結果コード |
 |- senderGroupingKey|	String| 発信グルーピングキー |
 |- recipientGroupingKey|	String| 受信者グルーピングキー |
+|- isAddedChannel|	Boolean| チャンネル追加の友達かどうか<br>ブランドメッセージ(BRAND_MESSAGE_NORMAL, BRAND_MESSAGE_MASS): true/false<br>その他のカカオメッセージタイプ: null |
 |- _links|	Object|	リンク |
 |- self|	Object|	- |
 |- href|	String|	メッセージ照会APIリンク |

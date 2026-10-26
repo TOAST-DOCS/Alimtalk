@@ -31,12 +31,14 @@ This is general delivery screen of AlimTalk
 ### Mass Delivery { #mass-delivery }
 It is the feature to send AlimTalk to multiple recipient numbers through an Excel/CSV format template file. Select <b>Mass Delivery </b> from bottom tab. 
 ![KTB_10_20230926.png](https://static.toastoven.net/prod_alimtalk/KTB_10_20230926.png)
+
 * Select a template and click on <b>Download Template</b> to download the CSV, XLSX files containing the template replacement. If the template replacement is not included, the delivery will be processed as fail.
 * If you open CSV file as Excel and save it, Hangul may not be saved normally. It is recommended to inspect and send it to check if it has been replaced normally.
 * Files can be uploaded up to 30MB in CSV, XLSM format. The maximum number of recipients that can be sent is 1,000,000.
 * If you select <b>Split Delivery</b>, you can send AlimTalk by specifying <b>Split Count</b> and <b>Delivery interval</b>.
 
 ![KTB_11_20230926.png](https://static.toastoven.net/prod_alimtalk/KTB_11_20230926.png)
+
 * In the recipient file, enter and upload the required information for template delivery, such as the recipient number, variable (if any).
 
 If you click on <b>Send</b> button, you can select <b>Inspect and proceed</b> or <b>Immediate Delivery</b>.
@@ -50,6 +52,7 @@ If you click on <b>Send</b> button, you can select <b>Inspect and proceed</b> or
 It is the feature to send a text message alternatively if you fail to send AlimTalk. 
 <b>Send with common content </b> or <b>Set different messages for each user </b> can be selected to send. 
 ![KTB_12_20230926.png](https://static.toastoven.net/prod_alimtalk/KTB_12_20230926.png)
+
 * For alternative delivery, <b>Manage Alternative Delivery</b> tab should be enabled and SMS service should be used. 
 * Alternative sending requires a sender number. If you do not set an alternative sending status or a sender number, the default settings specified on the <b> Manage Alternative Delivery</b> tab apply.
 * It will be sent alternatively after the KakaoTalk delivery result has been changed to a failure and it may take up to tens of seconds to receive a text.
@@ -74,6 +77,7 @@ It is the feature to send a text message alternatively if you fail to send AlimT
 You can view based on the message type. 
 (<b>Request ID</b> and <b>Request Date and Time</b> are required values.) 
 ![KTB_13_20250403.jpg](../static/images/KTB_13_20250403.jpg)
+
 * Details of each sending message can be found on the <b>View Details</b> screen by clicking on the search results item.
 * <b>Request Date and Time </b> can be retrieved up to a month.
 * Data displayed on full screen can be downloaded as an Excel file.
@@ -84,6 +88,7 @@ You can view based on the message type.
 ### Cancel Send { #cancel-send }
 During normal delivery, scheduled delivery with sending request date and time set to the future can be canceled. 
 ![KTB_14_20250403.jpg](../static/images/KTB_14_20250403.jpg)
+
 * You can see the check box on the left side of the request ID by querying the scheduled delivery request.
 * The check box appears only for uncancelled scheduled requests.
 * If you select the check box of the request you want to cancel and click on <b>Cancel Selected Schedule</b> at the top, the request will be canceled.
@@ -94,6 +99,7 @@ During normal delivery, scheduled delivery with sending request date and time se
 ### View Mass delivery { #view-mass-delivery }
 You can View Mass delivery of AlimTalk. 
 ![KTB_15_20250403.jpg](../static/images/KTB_15_20250403.png)
+
 * View: You can look up mass AlimTalk messages sent in the inquiry form at the top. If you select the line of the inquiry list, you can check the receipt number and the sending information (sending contents, sending result) in the inquiry form at the bottom.
 * Send/Cancel: When sending mass AlimTalk, select <b> Inspect and proceed</b> to send or cancel items that are <b>ready to send</b> by clicking on <b>Send</b> or <b>Cancel</b>.
 * We recommend that you click on an item in the search results and check the replacement value in View in Detail window.
@@ -140,7 +146,7 @@ You can register a template by clicking the <b>Register Template</b> button.
 * Template Code / Template Name
     * Cannot register the same template code and template name in one sender profile/group.
 * Template Content
-    * AlimTalk can be written up to 1,000 characters including variables, URLs, spacing and button names, regardless of Korean/English. If you enter variables to register, please create a template by considering the content to be replaced.<br/> Refer to [AlimTalk Template Precautions ](https://docs.nhncloud.com/ko/Notification/KakaoTalk%20Bizmessage/ko/alimtalk-overview/#_3) for a detailed guide to the number of characters.
+    * AlimTalk can be written up to 1,000 characters including variables, URLs, spacing and button names, regardless of Korean/English. If you enter variables to register, please create a template by considering the content to be replaced.<br/> Refer to [AlimTalk Template Precautions ](./alimtalk-overview/#alimtalk-template-precautions) for a detailed guide to the number of characters.
     * Create a variable in the form of #{variable}. (Example: #{HongGildong}'s package will be delivered today (#{09:50})
     * When registering a button, the button name cannot be entered as a variable, and the button url can be entered as a variable. (Example http://kakao.com/#{변수})
     * When registering a button url, url_mobile, url_pc links must include 'http://' and 'https://'가 and the 'scheme_ios, 'scheme_android links must be registered according to the scheme type. Otherwise, template registration is not possible.
@@ -183,14 +189,14 @@ The inspection and review of AlimTalk template will be conducted directly by Kak
 <a id="template-status"></a>
 #### Template status
 * When registering a template, it is updated in the order of **Request > Under Inspection > Approval/Return** status.
-* After registering the template, it will remain the same for a year or will switch to **Dormant** status, if there is no additional sending. Please check [AlimTalk Template Precautions](https://docs.nhncloud.com/ko/Notification/KakaoTalk%20Bizmessage/ko/alimtalk-overview/#_3) for related guides.
+* After registering the template, it will remain the same for a year or will switch to **Dormant** status, if there is no additional sending. Please check [AlimTalk Template Precautions](./alimtalk-overview/#alimtalk-template-precautions) for related guides.
 
 <a id="modify-templates"></a>
 #### Modify Templates
-* You can modify only templates in ** Approval/Return ** state.
+* You can modify only templates in **Approval/Return** state.
 * When the re-inspection is complete after modifying the approved template, the existing template contents are replaced with the modified one.
 * Sender profiles/groups and template codes cannot be modified.
-* Modified templates will be inspected again from ** Under Inspection** status.
+* Modified templates will be inspected again from **Under Inspection** status.
 
 <a id="delete-templates"></a>
 #### Delete Templates
@@ -204,7 +210,7 @@ The inspection and review of AlimTalk template will be conducted directly by Kak
 * If AlimTalk fails to send, you can set it to be sent alternatively as a text message.
 * The NHN Cloud SMS service must be in use and will be sent by SMS/LMS depending on the length of the message. (A separate fee will be charged for sending text messages for each type.)
 * Since alternative delivery is made in the SMS service, field values must follow the API specifications for SMS (e.g. Sender number registered at the SMS service, or restriction in the field length). 
-* Subjects or contents that exceed the byte limit for the specified alternative sending type may be cut short (see [SMS Precautions](https://docs.toast.com/ko/Notification/SMS/ko/api-guide/#_1))
+* Subjects or contents that exceed the byte limit for the specified alternative sending type may be cut short (see [SMS Precautions](https://docs.nhncloud.com/ko/Notification/SMS/ko/api-guide/#_1))
 * Modifying the SMS app key will reset the alternative sending settings for all search IDs.
 * The content for alternative sending is sent in EUC-KR, and unsupported emoji will fail for alternative sending.
 * You can modify <b>alternative sending</b> and <b>sender number</b> by clicking<b>modify</b> to modify the search ID's channel to modify the alternative sending settings. 
