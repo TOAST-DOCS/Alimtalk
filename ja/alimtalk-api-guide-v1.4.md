@@ -1,3 +1,5 @@
+<!-- machine_translated: true -->
+
 <!-- pre-align:aligned sig=1e5a642866c3 -->
 
 <a id="alimtalk-api-guide-v1-4"></a>
@@ -25,7 +27,7 @@
 <a id="overview-of-v14-api"></a>
 ## v1.4 API紹介 { #overview-of-v14-api }
 1. 認証メッセージAPIに対する本文の有効性チェックが追加されました。
-   - 詳細は[[認証用SMS送信API](./alimtalk-api-guide/#authentication-messages)]を参照してください。
+    - 詳細は[[認証用SMS送信API](./alimtalk-api-guide/#authentication-messages)]を参照してください。
 
 <a id="general-messages"></a>
 ## 一般メッセージ { #general-messages }
@@ -104,7 +106,7 @@ Content-Type: application/json;charset=UTF-8
 * <b>リクエスト日時は呼び出す時点から30日後まで設定可能です。</b>
 * <b>SMSサービスで代替送信されるため、SMSサービスの送信APIの仕様に応じてフィールドを入力する必要があります。(SMSサービスに登録された発信番号、各種フィールドの長さ制限など)</b>
 * <b>SMSサービスは、国際SMSのみサポートします。国際受信者番号の場合、 resendType(代替送信タイプ)をSMSに変更すると正常に代替送信できます。</b>
-* <b>指定した代替送信タイプのバイト制限を超える代替送信のタイトルや内容は、途中で切れて代替送信されることがあります。([[SMS注意事項](https://docs.toast.com/ko/Notification/SMS/ko/api-guide/#_1)]参考)</b>
+* <b>指定した代替送信タイプのバイト制限を超える代替送信のタイトルや内容は、途中で切れて代替送信されることがあります。([[SMS注意事項](https://docs.nhncloud.com/ko/Notification/SMS/ko/api-guide/#_1)]参考)</b>
 * <b>templateTitleとtemplateItemHighlight.titleフィールドの一番後ろに日本語識別子とtemplateParameterを利用して`\s`文字を追加する場合、取り消し線スタイルを適用できます。</b>
     * <b>ただし、テンプレート登録時にあらかじめ\sをフィールドに追加しておいた場合は適用されません。</b>
 
@@ -247,7 +249,7 @@ Content-Type: application/json;charset=UTF-8
 * <b>リクエスト日時は呼び出す時点から30日後まで設定可能です。</b>
 * <b>SMSサービスで代替送信されるため、SMSサービスの送信APIの仕様に応じてフィールドを入力する必要があります。(SMSサービスに登録された発信番号、各種フィールドの長さ制限など)</b>
 * <b>代替送信はSMS、LMSで送信可能で、国際代替送信はSMSのみサポートします。国際受信者番号の場合、resendType(代替送信タイプ)をSMSに変更すると正常に代替送信できます。</b>
-* <b>指定した代替送信タイプのバイト制限を超える代替送信のタイトルや内容は、途中で切れて代替送信されることがあります。([[SMS注意事項](https://docs.toast.com/ko/Notification/SMS/ko/api-guide/#_1)]参考)<
+* <b>指定した代替送信タイプのバイト制限を超える代替送信のタイトルや内容は、途中で切れて代替送信されることがあります。([[SMS注意事項](https://docs.nhncloud.com/ko/Notification/SMS/ko/api-guide/#_1)]参考)<
 
 [例]
 ```
@@ -343,7 +345,7 @@ Content-Type: application/json;charset=UTF-8
 | pageSize             | Integer | X         | 照会件数(基本：15, 最大:1000)                |
 
 * 90日以上前の送信リクエストデータは照会されません。
-* 送信リクエスト日時の範囲は最大30日です。
+* 送信リクエスト日時の範囲は最大31日です。
 
 <a id="response-3"></a>
 #### レスポンス
@@ -580,9 +582,10 @@ Content-Type: application/json;charset=UTF-8
   "X-Secret-Key": String
 }
 ```
-| 値     | タイプ | 必須 | 説明                                |
-| ------------ | ------ | ---- | ---------------------------------------- |
-| X-Secret-Key | String | O    | コンソールで作成できます。 |
+| 名前 | タイプ | 必須 | 説明 |
+|---|---|---|---|
+| X-Secret-Key | String | O | コンソールで作成できます。 |
+| X-NC-API-IDEMPOTENCY-KEY | String | X | 重複メッセージ送信リクエストの基準key<br>10分間、同一のkeyでリクエストした場合、該当リクエストは失敗として処理されます。 |
 
 |X-NC-API-IDEMPOTENCY-KEY|	String| X | 重複メッセージ送信要求基準key<br>10分間同じkeyで要求すると、その要求を失敗処理します。 |
 [Request body]
@@ -631,7 +634,7 @@ Content-Type: application/json;charset=UTF-8
 
 * <b>リクエスト日時は呼び出す時点から30日後まで設定可能です。</b>
 * <b>SMSサービスで代替送信されるため、SMSサービスの送信APIの仕様に応じてフィールドを入力する必要があります。(SMSサービスに登録された発信番号、各種フィールドの長さ制限など)</b>
-* <b>指定した代替送信タイプのバイト制限を超える代替送信のタイトルや内容は、途中で切れて代替送信されることがあります。([[SMS注意事項](https://docs.toast.com/ko/Notification/SMS/ko/api-guide/#_1)]参考)</b>
+* <b>指定した代替送信タイプのバイト制限を超える代替送信のタイトルや内容は、途中で切れて代替送信されることがあります。([[SMS注意事項](https://docs.nhncloud.com/ko/Notification/SMS/ko/api-guide/#_1)]参考)</b>
 
 [例]
 ```
@@ -705,6 +708,7 @@ Content-Type: application/json;charset=UTF-8
 | 値     | タイプ | 必須 | 説明                                |
 | ------------ | ------ | ---- | ---------------------------------------- |
 | X-Secret-Key | String | O    | コンソールで作成できます。 |
+| X-NC-API-IDEMPOTENCY-KEY | String | X | 重複メッセージ送信リクエストの基準key<br>10分間、同一のkeyでリクエストした場合、該当リクエストを失敗として処理します。 |
 
 [Request body]
 
@@ -864,7 +868,7 @@ Content-Type: application/json;charset=UTF-8
 | pageSize             | Integer | X         | 照会件数(基本：15, 最大:1000)                |
 
 * 90日以上前の送信リクエストデータは照会されません。
-* 送信リクエスト日時の範囲は最大30日です。
+* 送信リクエスト日時の範囲は最大31日です。
 
 <a id="response-7"></a>
 #### レスポンス
@@ -1550,16 +1554,18 @@ Content-Type: application/json;charset=UTF-8
 | - kakaoProfileStatus      | String  | カカオプラスフレンドプロフィールステータスコード<br>(A：有効化、B：遮断、C：無効化、D：削除E：削除処理中)<br>statusがYSC02の場合、kakaoProfileStatus null値を持ちます。 |
 | - kakaoProfileStatusName  | String  | カカオプラスフレンドプロフィールステータス名(有効化、無効化、遮断、削除処理中、削除)<br>statusがYSC02の場合、kakaoProfileStatusName null値を持ちます。 |
 |- alimtalk|	Object|	お知らせトーク設定情報|
-|-- isResend | String  | 送信失敗設定(再送信)するかどうか                    |
+|-- resendAppKey | String | 代替送信として設定するSMSサービスのアプリキー |
+|-- isResend | String  | 代替送信設定(再送信)するかどうか                    |
 |-- resendSendNo | String  | 再送信時、tc-sms発信番号               |
-|-- dailyMaxCount | Integer | お知らせトークの一日最大送信件数<br>(値が0の場合、件数制限なし)    |
-|-- sentCount | Integer | お知らせトークの一日送信件数<br>(値が0の場合、件数制限なし)       |
+|-- dailyMaxCount | Integer | お知らせトークの日別最大送信件数<br>(値が0の場合、件数制限なし)    |
+|-- sentCount | Integer | お知らせトークの日別送信件数<br>(値が0の場合、件数制限なし)       |
 |- friendtalk|	Object|	友人トーク設定情報|
-|-- isResend | String  | 送信失敗設定(再送信)するかどうか                    |
+|-- resendAppKey | String | 代替送信として設定するSMSサービスのアプリキー |
+|-- isResend | String  | 代替送信設定(再送信)するかどうか                    |
 |-- resendSendNo | String  | 再送信時、tc-sms発信番号               |
 |-- resendUnsubscribeNo | String |	再送信時、tc-sms 080受信拒否番号 |
-|-- dailyMaxCount | Integer | カカともへのメッセージの一日最大送信件数<br>(値が0の場合、件数制限なし)    |
-|-- sentCount | Integer | カカともへのメッセージの一日送信件数<br>(値が0の場合、件数制限なし)       |
+|-- dailyMaxCount | Integer | フレンドトークの日別最大送信件数<br>(値が0の場合、件数制限なし)    |
+|-- sentCount | Integer | フレンドトークの日別送信件数<br>(値が0の場合、件数制限なし)       |
 | - createDate              | String  | 登録日時                             |
 
 <a id="list-plusfriends"></a>
@@ -1658,12 +1664,14 @@ Content-Type: application/json;charset=UTF-8
 | - kakaoProfileStatus      | String  | カカオプラスフレンドプロフィールステータスコード<br>(A：有効化、B：遮断、C：無効化、D：削除E：削除処理中)<br>statusがYSC02の場合、kakaoProfileStatus null値を持ちます。 |
 | - kakaoProfileStatusName  | String  | カカオプラスフレンドプロフィールステータス名(有効化、無効化、遮断、削除処理中、削除)<br>statusがYSC02の場合、kakaoProfileStatusName null値を持ちます。 |
 |- alimtalk|	Object|	お知らせトーク設定情報|
-|-- isResend | String  | 送信失敗設定(再送信)するかどうか                    |
+|-- resendAppKey | String | 代替送信として設定するSMSサービスのアプリキー |
+|-- isResend | String  | 代替送信設定(再送信)するかどうか                    |
 |-- resendSendNo | String  | 再送信時、tc-sms発信番号               |
 |-- dailyMaxCount | Integer | お知らせトークの一日最大送信件数<br>(値が0の場合、件数制限なし)    |
 |-- sentCount | Integer | お知らせトークの一日送信件数<br>(値が0の場合、件数制限なし)       |
 |- friendtalk|	Object|	友人トーク設定情報|
-|-- isResend | String  | 送信失敗設定(再送信)するかどうか                    |
+|-- resendAppKey | String | 代替送信として設定するSMSサービスのアプリキー |
+|-- isResend | String  | 代替送信設定(再送信)するかどうか                    |
 |-- resendSendNo | String  | 再送信時、tc-sms発信番号               |
 |-- resendUnsubscribeNo | String |	再送信時、tc-sms 080受信拒否番号 |
 |-- dailyMaxCount | Integer | カカともへのメッセージの一日最大送信件数<br>(値が0の場合、件数制限なし)    |
@@ -2042,39 +2050,37 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 }
 ```
 
-| 値             | タイプ | 説明                                |
-| -------------------- | ------- | ---------------------------------------- |
 | 名前 |	タイプ| 	説明                                                          |
 |---|---|----------------------------------------------------------------|
-|header|	Object| 	ヘッダ領域                                                       |
-|- resultCode|	Integer| 	結果コード                                                       |
-|- resultMessage|	String| 結果メッセージ                                                       |
-|- isSuccessful|	Boolean| 成否                                                        |
-|templateListResponse|	Object| 	本文領域                                                       |
-|- templates | List | 	テンプレートリスト                                                     |
+|header|	Object| 	ヘッダー領域                                                        |
+|- resultCode|	Integer| 	結果コード                                                         |
+|- resultMessage|	String| 結果メッセージ                                                         |
+|- isSuccessful|	Boolean| 成功かどうか                                                          |
+|templateListResponse|	Object| 	本文領域                                                          |
+|- templates | List | 	テンプレートリスト                                                       |
 |-- plusFriendId | String | 	プラスフレンドID                                                      |
 |-- plusFriendType | String | プラスフレンドタイプ(NORMAL, GROUP)                                        |
-|-- templateCode | String | 	テンプレートコード                                                      |
-|-- templateName | String | 	テンプレート名                                                        |
-|-- templateContent | String | 	テンプレート本文                                                      |
-|-- buttons | List | 	ボタンリスト                                                      |
-|--- ordering | Integer | 	ボタン順序(1~5)                                                    |
-|--- type | String | 	ボタンボタンタイプ(WL: Webリンク、 AL:アプリリンク、 DS:配送照会、 BK: Botキーワード、 MD:メッセージ伝達) |
-|--- name | String | 	ボタン名                                                       |
-|--- linkMo | String | 	モバイルWebリンク(WLタイプの場合は必須フィールド)                                     |
-|--- linkPc | String | 	PC Webリンク(WLタイプの場合は任意フィールド)                                      |
-|--- schemeIos | String | 	iOSアプリリンク(ALタイプの場合は必須フィールド)                                     |
-|--- schemeAndroid | String | 	Androidアプリリンク(ALタイプの場合は必須フィールド)                                   |
-|-- comments | List | 検収結果                                                        |
-|--- id | Integer | お問い合わせID                                                         |
-|--- content |  String | お問い合わせ内容                                                        |
-|---userName | String | 作成者                                                          |
-|---createAt | String | 登録日                                                        |
-|---status | String | コメント状態(INQ:お問い合わせ、 APR:承認、 REJ:差し戻し、REP：返信、REQ:検収中)            |
-|-- status| String | テンプレート状態                                                       |
-|-- statusName | String | テンプレート状態名                                                      |
-|-- createDate | String | 作成日時                                                          |
-|- totalCount | Integer | 総数                                                          |
+|-- templateCode | String | 	テンプレートコード                                                       |
+|-- templateName | String | 	テンプレート名                                                         |
+|-- templateContent | String | 	テンプレート本文                                                        |
+|-- buttons | List | 	ボタンリスト                                                          |
+|--- ordering | Integer | 	ボタンの順序(1〜5)                                                     |
+|--- type | String | 	ボタンタイプ(WL: Webリンク、AL: アプリリンク、DS: 配送照会、BK: Botキーワード、MD: メッセージ転送) |
+|--- name | String | 	ボタン名                                                            |
+|--- linkMo | String | 	モバイルWebリンク(WLタイプの場合、必須フィールド)                                    |
+|--- linkPc | String | 	PC Webリンク(WLタイプの場合、任意フィールド)                                     |
+|--- schemeIos | String | 	iOSアプリリンク(ALタイプの場合、必須フィールド)                                     |
+|--- schemeAndroid | String | 	Androidアプリリンク(ALタイプの場合、必須フィールド)                                 |
+|-- comments | List | 検収結果                                                            |
+|--- id | Integer | お問い合わせID                                                          |
+|--- content |  String | お問い合わせ内容                                                          |
+|---userName | String | 作成者                                                              |
+|---createAt | String | 登録日                                                              |
+|---status | String | コメント状態(INQ: 問い合わせ、APR: 承認、REJ: 差し戻し、REP: 返答、REQ: 検収中)             |
+|-- status| String | テンプレート状態                                                          |
+|-- statusName | String | テンプレート状態名                                                         |
+|-- createDate | String | 作成日時                                                             |
+|- totalCount | Integer | 総件数                                                              |
 
 <a id="list-template-modifications"></a>
 ### テンプレートの修正リスト照会 { #list-template-modifications }

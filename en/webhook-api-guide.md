@@ -32,7 +32,7 @@ API documentation for the generated POST request.
 |productName|	String|	The name of the service where a webhook event occurred |
 |appKey|	String| The service appkey where the webhook event occurred |
 |event|	String| Webhook event name |
-|hooks|	List<Map> | Data when a webhook event occurs<br>\* For more information, see  [Hook definitions by event type](./webhook-api-guide/#definitions-of-hooks-by-event-type). |
+|hooks|	List<Map> | Data when a webhook event occurs<br>\* For more information, see  [Hook definitions by event type](#definitions-of-hooks-by-event-type). |
 
 <a id="curl"></a>
 #### cURL
@@ -123,6 +123,7 @@ Hook data per event type when generating a POST request to the URL defined in th
 |- resultCode|	String| Result code of receiving |
 |- senderGroupingKey|	String| Sender's grouping key |
 |- recipientGroupingKey|	String| Recipient's grouping key |
+|- isAddedChannel|	Boolean| Whether the recipient added the channel as a friend<br>Brand Message (BRAND_MESSAGE_NORMAL, BRAND_MESSAGE_MASS): true/false<br>Other Kakao message types: null |
 |- _links|	Object|	Link |
 |- self|	Object|	- |
 |- href|	String|	Query Message API link |

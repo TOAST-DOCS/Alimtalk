@@ -191,6 +191,7 @@
 템플릿 및 그룹 태그를 기준으로 일별 발송 수, 유효 읽음 수, 클릭 수를 조회합니다. 기간, 메시지 타입 등을 설정해 조회할 수 있습니다.
 
 * 브랜드 메시지 자유형은 그룹 태그를 사용한 경우에만 제공합니다.
+* 브랜드 메시지 M 타겟팅 발송은 수신자의 채널 친구 여부에 따라 I 또는 N 메시지로 발송되며, 카카오 통계에는 M이 아닌 I/N 타겟팅 발송 건수로 집계됩니다. 자세한 내용은 [브랜드 메시지 개요 > M 타겟팅 발송의 통계 집계 기준](./friendtalkupgrade-overview/#statistics-aggregation-for-targeting-m)을 참고하세요.
 
 <a id="retrieve-alimtalk-delivery-statistics"></a>
 ### 알림톡 발송 통계 조회 { #retrieve-alimtalk-delivery-statistics }

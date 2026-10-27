@@ -32,7 +32,7 @@ KakaoTalk Bizmessage 서비스 내 특정 이벤트가 발생하면 웹훅 설�
 |productName|	String|	웹훅 이벤트가 발생한 서비스명 |
 |appKey|	String| 웹훅 이벤트가 발생한 서비스 앱키 |
 |event|	String| 웹훅 이벤트명 |
-|hooks|	List\<Map\> | 웹훅 이벤트 발생 시 데이터<br>* 상세한 내용은 [이벤트 유형별 훅(hook) 정의](./webhook-api-guide/#definitions-of-hooks-by-event-type)를 참고해 주세요. |
+|hooks|	List&lt;Map\> | 웹훅 이벤트 발생 시 데이터<br>* 상세한 내용은 [이벤트 유형별 훅(hook) 정의](#definitions-of-hooks-by-event-type)를 참고해 주세요. |
 
 <a id="curl"></a>
 #### cURL
@@ -63,7 +63,7 @@ curl -X POST \
 #### 템플릿 상태/문의 업데이트
 |값| 	타입          | 	설명                                                   |
 |---|--------------|-------------------------------------------------------|
-|hooks| 	List\<Map\> | 웹훅 이벤트 발생 시 데이터                                       |
+|hooks| 	List&lt;Map\> | 웹훅 이벤트 발생 시 데이터                                       |
 |- hookId| 	String      | 서비스에서 이벤트가 발생할 때 생성되는 고유 ID                           |
 |- senderKey| 	String      | 	발신 키                                                 |
 |- templateCode| 	String      | 템플릿 코드                                                |
@@ -112,7 +112,7 @@ curl -X POST \
 #### 메시지 발송 결과 코드 업데이트
 |값|	타입| 	설명                                                                                                                                                   |
 |---|---|-------------------------------------------------------------------------------------------------------------------------------------------------------|
-|hooks|	List\<Map\> | 웹훅 이벤트 발생 시 데이터                                                                                                                                       |
+|hooks|	List&lt;Map\> | 웹훅 이벤트 발생 시 데이터                                                                                                                                       |
 |- kakaoMessageType|	String| 카카오 메시지 타입<br>ALIMTALK_NORMAL<br>ALIMTALK_AUTH<br>ALIMTALK_MASS<br>FRIENDTALK_NORMAL<br>FRIENDTALK_MASS<br>BRAND_MESSAGE_NORMAL<br>BRAND_MESSAGE_MASS |
 |- requestId|	String| 요청 ID                                                                                                                                                 |
 |- recipientSeq|	Integer| 수신자 시퀀스 번호                                                                                                                                            |

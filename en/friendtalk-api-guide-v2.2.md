@@ -6,7 +6,11 @@
 <a id="friendtalk-service-termination-notice"></a>
 ## FriendTalk Service Termination Notice { #friendtalk-service-termination-notice }
 
-<!-- TODO: translate body -->
+* Support for the FriendTalk service will end on December 31, 2025 (Wed).
+* We recommend that you transition to Brand Message if you are currently using FriendTalk.
+* For more information, see the [Brand Message Migration Guide](./friendtalk-compatible-api-guide/).
+
+---
 
 <a id="friendtalk"></a>
 ## FriendTalk { #friendtalk }
@@ -60,6 +64,7 @@ Content-Type: application/json;charset=UTF-8
 | Name |  Type| Required| Description|
 |---|---|---|---|
 |X-Secret-Key|  String| O | Can be created on console.  |
+|X-NC-API-IDEMPOTENCY-KEY|	String| X | Key for duplicate message send request criteria<br>If a request is made with the same key for 10 minutes, the request will be failed. |
 
 [Request body]
 
@@ -139,7 +144,7 @@ Content-Type: application/json;charset=UTF-8
 * <b> Request date and time can be configured up to 90 days after a point of calling </b>
 * <b> Delivery restricted during night(20:50~08:00 on the following day)</b>
 * <b> Delivery is to be replaced by SMS, and field input must follow delivery API specifications of the SMS service(e.g. sender number registered at SMS service, 080 unsubscription, and field length restrictions) </b>
-* <b> Title or message of an alternative delivery may be cut in length, if the byte size exceeds restrictions(see [[Cautions for SMS](https://docs.toast.com/en/Notification/SMS/en/api-guide/#_1)])</b>
+* <b> Title or message of an alternative delivery may be cut in length, if the byte size exceeds restrictions(see [[Cautions for SMS](https://docs.nhncloud.com/en/Notification/SMS/en/api-guide/#_1)])</b>
 * <b> FriendTalk ad message can be replaced by Ad SMS API, so it must be registered at the 080 Unsubscription Service to enable alternative delivery. </b>
 * <b> When the resendContent field of a FriendTalk ad message is available, ad phrase for SMS Ad API is required to enable alternative delivery.(Ad) Content [Unsubscribe for Free] 080XXXXXXX </b>
 * <b> When the resendContent field of a FriendTalk ad message is missing, ad phrase is automatically created with registered 080 number for unsubscription to enable alternative delivery. </b>
@@ -651,6 +656,7 @@ Content-Type: application/json;charset=UTF-8
 | X-Secret-Key | String | Unique secret key |
 
 [Query parameter]
+
 * One of the following is required: requestId, startRequestDate + endRequestDate, or startCreateDate + endCreateDate.
 
 | Name |  Type| Max. Length | Required| Description|
@@ -963,10 +969,10 @@ curl -X GET \
 | - receiveDate | String | Date of receiving |
 | - content | String | Body message |
 | - messageStatus | String | Mass recipient delivery status code(READY, COMPLETED, FAILED, CANCEL) |
-| - resendStatus | String | Status code of resending(RSC01, RSC02, RSC03, RSC04, RSC05)<br>([Refer to [Status code of resending table](http://docs.toast.com/en/Notification/KakaoTalk%20Bizmessage/en/alimtalk-api-guide/#smslms)] below) |
+| - resendStatus | String | Status code of resending(RSC01, RSC02, RSC03, RSC04, RSC05)<br>([Refer to [Status code of resending table](https://docs.nhncloud.com/en/Notification/KakaoTalk%20Bizmessage/en/alimtalk-api-guide/#smslms)] below) |
 | - resendStatusName | String | Status code name of resending |
 | - resendRequestId | String | Resending SMS request ID |
-| - resendResultCode | String | Result code of resending [Result code of SMS sending](https://docs.toast.com/en/Notification/SMS/en/error-code/#api) |
+| - resendResultCode | String | Result code of resending [Result code of SMS sending](https://docs.nhncloud.com/en/Notification/SMS/en/error-code/#api) |
 | - resultCode | String |   Result code of receiving |
 | - resultCodeName | String |   Result code name of receiving |
 | - imageSeq | Integer | Image sequence |

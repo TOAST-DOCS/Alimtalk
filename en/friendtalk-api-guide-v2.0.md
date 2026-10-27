@@ -6,7 +6,11 @@
 <a id="friendtalk-service-end-of-life-notice"></a>
 ## FriendTalk Service End of Life Notice { #friendtalk-service-end-of-life-notice }
 
-<!-- TODO: translate body -->
+* Support for the FriendTalk service will end on December 31, 2025 (Wed).
+* We recommend that you transition to Brand Message if you are currently using FriendTalk.
+* For more information, see the [Brand Message Migration Guide](./friendtalk-compatible-api-guide/).
+
+---
 
 <a id="friendtalk"></a>
 ## FriendTalk { #friendtalk }
@@ -54,6 +58,7 @@ Content-Type: application/json;charset=UTF-8
 | Value        | Type   | Required | Description                                                  |
 | ------------ | ------ | -------- | ------------------------------------------------------------ |
 | X-Secret-Key | String | O        | Can be created on console.  |
+| X-NC-API-IDEMPOTENCY-KEY | String | X | Reference key for duplicate message sending requests<br>If a request is made with the same key for 10 minutes, the request will be failed. |
 
 [Request body]
 
@@ -87,16 +92,16 @@ Content-Type: application/json;charset=UTF-8
 
 | Value                  | Type    | Required | Description                                                  |
 | ---------------------- | ------- | -------- | ------------------------------------------------------------ |
-| plusFriendId           | String  | O        | Plus Friend ID(up to 30 characters)                         |
+| senderKey              | String  | O        | Sender Key(40 characters)                                    |
 | requestDate            | String  | X        | Date and time of request(yyyy-MM-dd HH:mm), to be sent immediately if field is not sent |
 | senderGroupingKey      | String  | X        | Sender's grouping key(up to 100 characters)                 |
 | createUser             | String  | X        | Registrant(saved as user UUID when delivered via console)   |
 | recipientList          | List    | O        | List of recipients(up to 1000)                              |
 | - recipientNo          | String  | O        | Recipient number                                             |
-| - content              | String  | O        | Body message(up to 1000 characters)<br>Up to 400, if image is included |
+| - content              | String  | O        | Body message(up to 1000 characters)<br>Up to 400, if image is included<br>Up to 76, if Wide Image is included |
 | - imageSeq             | Integer | X        | Image number                                                 |
-| - imageLink            | String  | X        | Image link(required, with the input of image number)        |
-| - buttons              | List    | X        | Button                                                       |
+| - imageLink            | String  | X        | Image link                                                   |
+| - buttons              | List    | X        | Button<br>Up to 2 link buttons, if Wide Image is included   |
 | -- ordering            | Integer | X        | Button sequence(required, if there is a button)             |
 | -- type                | String  | X        | Button type(WL: Web Link, AL: App Link, BK: Bot Keyword, MD: Message Delivery) |
 | -- name                | String  | X        | Button name(required, if there is a button)                 |
@@ -104,13 +109,20 @@ Content-Type: application/json;charset=UTF-8
 | -- linkPc              | String  | X        | PC web link(optional for the WL type)                       |
 | -- schemeIos           | String  | X        | iOS app link(required for the AL type)                      |
 | -- schemeAndroid       | String  | X        | Android app link(required for the AL type)                  |
-| - isAd                 | Boolean | X        | Ad or not(default is true)                                  |
+| - resendParameter      | Object  | X        | Alternative delivery information                             |
+| -- isResend            | boolean | X        | Whether to send an alternative text message upon delivery failure<br>If alternative delivery is set in the console, it is resent by default. |
+| -- resendType          | String  | X        | Alternative delivery type (SMS, LMS)<br>Categorized by the length of template body, if value is unavailable. |
+| -- resendTitle         | String  | X        | LMS alternative delivery title<br>(Resent with Plus Friend ID, if value is unavailable.) |
+| -- resendContent       | String  | X        | Alternative delivery content<br>(resent with [Message body and web link button name - web link mobile link] if value is unavailable.) |
+| -- resendSendNo        | String  | X        | Sender number for alternative delivery<br><span style="color:red">(Fallback may fail, if the sender number is not registered on the SMS service.)</span> |
+| -- resendUnsubscribeNo | String  | X        | 080 unsubscribe number for alternative delivery<br><span style="color:red">(Fallback may fail if the 080 unsubscribe number is not registered on the SMS service.)</span> |
+| - isAd                 | Boolean | X        | Ad or not(default is true)                                   |
 | - recipientGroupingKey | String  | X        | Recipient's grouping key(up to 100 characters)              |
 
 * <b> Request date and time can be configured up to 90 days after a point of calling </b>
 * <b> Delivery restricted during night(20:50~08:00 on the following day)</b>
 * <b> Delivery is to be replaced by SMS, and field input must follow delivery API specifications of the SMS service(e.g. sender number registered at SMS service, 080 unsubscription, and field length restrictions) </b>
-* <b> Title or message of an alternative delivery may be cut in length, if the byte size exceeds restrictions(see [[Cautions for SMS](https://docs.toast.com/en/Notification/SMS/en/api-guide/#_1)])</b>
+* <b> Title or message of an alternative delivery may be cut in length, if the byte size exceeds restrictions(see [[Cautions for SMS](https://docs.nhncloud.com/en/Notification/SMS/en/api-guide/#_1)])</b>
 * <b> FriendTalk ad message can be replaced by Ad SMS API, so it must be registered at the 080 Unsubscription Service to enable alternative delivery. </b>
 * <b> When the resendContent field of a FriendTalk ad message is available, ad phrase for SMS Ad API is required to enable alternative delivery.(Ad) Content [Unsubscribe for Free] 080XXXXXXX </b>
 * <b> When the resendContent field of a FriendTalk ad message is missing, ad phrase is automatically created with registered 080 number for unsubscription to enable alternative delivery. </b>
@@ -201,7 +213,7 @@ Content-Type: application/json;charset=UTF-8
 | startCreateDate      | String  | Conditionally required(no.3) | Start date of registration(mm:HH dd-MM-yyyy)          |
 | endCreateDate        | String  | Conditionally required(no.3) | End date of registration(mm:HH dd-MM-yyyy)            |
 | recipientNo          | String  | X                             | Recipient number                                       |
-| plusFriendId         | String  | X                             | Plus Friend ID                                         |
+| senderKey            | String  | X                             | Sender key                                             |
 | senderGroupingKey    | String  | X                             | Sender's grouping key                                  |
 | recipientGroupingKey | String  | X                             | Recipient's grouping key                               |
 | messageStatus        | String  | X                             | Request status(COMPLETED: successful, FAILED: failed) |
@@ -255,16 +267,18 @@ Content-Type: application/json;charset=UTF-8
 | -- requestId                | String  | Request ID                                             |
 | -- recipientSeq             | Integer | Recipient sequence number                              |
 | -- plusFriendId             | String  | Plus Friend ID                                         |
+| -- senderKey                | String  | Sender Key                                             |
 | -- recipientNo              | String  | Recipient number                                       |
 | -- requestDate              | String  | Date and time of request                               |
 | -- createDate               | String  | Registered date and time                               |
+| -- receiveDate              | String  | Date and time of receiving                             |
 | -- content                  | String  | Body                                                   |
 | -- messageStatus            | String  | Request status(COMPLETED: successful, FAILED: failed) |
 | -- resendStatus             | String  | Status code of resending                               |
 | -- resendStatusName         | String  | Status code name of resending                          |
 | -- resultCode               | String  | Result code of receiving                               |
 | -- resultCodeName           | String  | Result code name of receiving                          |
-| -- createUser               | String  | Registrant(saved as user UUID when delivered via console)  |
+| -- createUser               | String  | Registrant (saved as user UUID when sending from console)  |
 | -- senderGroupingKey        | String  | Sender's grouping key                                  |
 | -- recipientGroupingKey     | String  | Recipient's grouping key                               |
 | - totalCount                | Integer | Total count                                            |
@@ -384,6 +398,7 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 | - requestId            | String  | Request ID                                                   |
 | - recipientSeq         | Integer | Recipient sequence number                                    |
 | - plusFriendId         | String  | Plus Friend ID                                               |
+| - senderKey            | String  | Sender Key                                                   |
 | - recipientNo          | String  | Recipient number                                             |
 | - requestDate          | String  | Date and time of request                                     |
 | - createDate           | String  | Registered date and time                                     |
@@ -392,6 +407,8 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 | - messageStatus        | String  | Status of request(COMPLETED: successful, FAILED: failed)    |
 | - resendStatus         | String  | Status code of resending                                     |
 | - resendStatusName     | String  | Status code name of resending                                |
+| - resendResultCode     | String  | Resend result code SMS result code                           |
+| - resendRequestId      | String  | Resend SMS request ID                                        |
 | - resultCode           | String  | Result code of receiving                                     |
 | - resultCodeName       | String  | Result code name of receiving                                |
 | - createUser           | String  | Registrant(saved as user UUID when delivered via console)   |
@@ -415,22 +432,68 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 <a id="messages"></a>
 ## Messages { #messages }
 
-<!-- TODO: translate body -->
-
 <a id="message-delivery-cancelled"></a>
 ### Message Delivery Cancelled { #message-delivery-cancelled }
-
-<!-- TODO: translate body -->
 
 <a id="request-3"></a>
 #### Request
 
-<!-- TODO: translate body -->
+[URL]
+
+```
+DELETE  /friendtalk/v2.0/appkeys/{appkey}/messages/{requestId}
+Content-Type: application/json;charset=UTF-8
+```
+
+[Path parameter]
+
+| Name |	Type|	Description|
+|---|---|---|
+|appkey|	String|	Unique app key|
+|requestId| String| Request ID|
+
+[Header]
+```
+{
+  "X-Secret-Key": String
+}
+```
+| Name |	Type|	Required|	Description|
+|---|---|---|---|
+|X-Secret-Key|	String| O | Can be created in the console.  |
+
+[Query parameter]
+
+| Name |	Type|	Required|	Description|
+|---|---|---|---|
+|recipientSeq|	String|	X | Recipient sequence number<br>(to cancel all deliveries of request ID, if the value is left blank) |
+
+* Both general and authentication messages can be canceled by the same API.
 
 <a id="response-4"></a>
 #### Response
 
-<!-- TODO: translate body -->
+```
+{
+  "header": {
+      "resultCode": Integer,
+      "resultMessage": String,
+      "isSuccessful": boolean
+  }
+}
+```
+
+| Name |	Type|	Description|
+|---|---|---|
+|header|	Object|	Header area|
+|- resultCode|	Integer|	Result code|
+|- resultMessage|	String| Result message|
+|- isSuccessful|	Boolean| Success|
+
+[Example]
+```
+curl -X DELETE -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" "https://kakaotalk-bizmessage.api.nhncloudservice.com/friendtalk/v2.0/appkeys/{appkey}/messages/{requestId}?recipientSeq=1,2,3"
+```
 
 <a id="query-updated-message-results"></a>
 ### Query Updated Message Results { #query-updated-message-results }
@@ -515,6 +578,7 @@ Content-Type: application/json;charset=UTF-8
 | -- requestId                | String  | Request ID                                                   |
 | -- recipientSeq             | Integer | Recipient's sequence number                                  |
 | -- plusFriendId             | String  | Plus Friend ID                                               |
+| -- senderKey                | String  | Sender Key                                                   |
 | -- recipientNo              | String  | Recipient number                                             |
 | -- requestDate              | String  | Date and time of request                                     |
 | -- receiveDate              | String  | Date and time of receiving                                   |
@@ -752,28 +816,129 @@ curl -X DELETE -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Ke
 | - resultCode    | Integer | Result code       |
 | - resultMessage | String  | Result message    |
 | - isSuccessful  | Boolean | Successful or not |
+
 <a id="alternative-delivery-management"></a>
 ## Alternative Delivery Management { #alternative-delivery-management }
-
-<!-- TODO: translate body -->
 
 <a id="register-sms-appkey"></a>
 ### Register SMS AppKey { #register-sms-appkey }
 
-<!-- TODO: translate body -->
+[URL]
+
+```
+POST  /friendtalk/v2.0/appkeys/{appkey}/failback/appkey
+Content-Type: application/json;charset=UTF-8
+```
+
+[Path parameter]
+
+| Name |	Type|	Description|
+|---|---|---|
+|appkey|	String|	Unique app key|
+
+[Header]
+```
+{
+  "X-Secret-Key": String
+}
+```
+| Name |	Type|	Required|	Description|
+|---|---|---|---|
+|X-Secret-Key|	String| O | Can be created in the console.  |
+
+
+[Request body]
+
+```
+{
+    "resendAppKey": String
+}
+```
+
+| Name |	Type|	Required|	Description|
+|---|---|---|---|
+|resendAppKey|	String|	O | SMS service appkey to set for fallback |
+
+[Example]
+```
+curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" https://kakaotalk-bizmessage.api.nhncloudservice.com/friendtalk/v2.0/appkeys/{appkey}/failback/appkey -d '{"resendAppKey": "smsAppKey"}
+```
 
 <a id="response-9"></a>
 #### Response
 
-<!-- TODO: translate body -->
+```
+
+{
+  "header": {
+      "resultCode": Integer,
+      "resultMessage": String,
+      "isSuccessful": boolean
+  }
+}
+```
 
 <a id="register-alternative-sending-settings"></a>
 ### Register Alternative Sending Settings { #register-alternative-sending-settings }
 
-<!-- TODO: translate body -->
+[URL]
+
+```
+POST  /friendtalk/v2.0/appkeys/{appkey}/failback
+Content-Type: application/json;charset=UTF-8
+```
+
+[Path parameter]
+
+| Name |	Type|	Description|
+|---|---|---|
+|appkey|	String|	Unique app key|
+
+[Header]
+```
+{
+  "X-Secret-Key": String
+}
+```
+| Name |	Type|	Required|	Description|
+|---|---|---|---|
+|X-Secret-Key|	String| O | You can create it in the console.  |
+
+
+[Request body]
+
+```
+{  
+   "senderKey": String,
+   "isResend": Boolean,
+   "resendSendNo": String,
+   "resendUnsubscribeNo": String
+}
+```
+
+| Name |	Type|	Required|	Description|
+|---|---|---|---|
+|senderKey|	String|	O | Sender Key |
+|isResend|	Boolean|	O | Whether to resend text, if delivery fails<br>Resent by default, if fallback is set on console. |
+|resendSendNo|	String|	O | Sender number for alternative delivery<br><span style="color:red">(Alternative delivery may fail, if the sender number is not registered on the SMS service.)</span> |
+|resendUnsubscribeNo|	String|	X | 080 opt-out number for alternative delivery<br><span style="color:red">(If it is not the 080 opt-out number registered in the SMS service, alternative delivery may fail.)</span> |
+
+[Example]
+```
+curl -X POST -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{secretkey}" https://kakaotalk-bizmessage.api.nhncloudservice.com/friendtalk/v2.0/appkeys/{appkey}/failback/appkey -d '{"senderKey": "9e0afe2c12aaaaaaaaaa7520052880b555f1a60a","isResend": true,"resendSendNo": "01012341234", "resendUnsubscribeNo": "0801234567" }
+```
 
 <a id="response-10"></a>
 #### Response
 
-<!-- TODO: translate body -->
+```
+
+{
+  "header": {
+      "resultCode": Integer,
+      "resultMessage": String,
+      "isSuccessful": boolean
+  }
+}
+```
 

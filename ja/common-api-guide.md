@@ -1,3 +1,5 @@
+<!-- machine_translated: true -->
+
 <!-- pre-align:aligned sig=13eee0b1c3c5 -->
 
 <a id="common-api-guide"></a>
@@ -55,6 +57,7 @@
   "X-Secret-Key": String
 }
 ```
+
 | 値      | タイプ | 必須 | 説明                                 |
 | ------------ | ------ | ---- | ---------------------------------------- |
 | X-Secret-Key | String | O    | コンソールで作成できます。  |
@@ -189,6 +192,8 @@
 テンプレート及びグループタグを基準として、日別の送信数、有効既読数、クリック数を照会します。期間、メッセージタイプなどを設定して照会できます。
 
 * ブランドメッセージ(自由型)はグループタグを使用した場合にのみ提供します。
+
+* ブランドメッセージ Mターゲティング送信は、受信者のチャンネル友達かどうかに応じてIまたはNメッセージとして送信され、カカオの統計にはMではなくI/Nターゲティング送信件数として集計されます。詳細については、[ブランドメッセージ概要 > Mターゲティング送信の統計集計基準](./friendtalkupgrade-overview/#statistics-aggregation-for-targeting-m)を参照してください。
 
 <a id="retrieve-alimtalk-delivery-statistics"></a>
 ### お知らせトーク送信統計の照会 { #retrieve-alimtalk-delivery-statistics }

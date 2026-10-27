@@ -1,3 +1,5 @@
+<!-- machine_translated: true -->
+
 <!-- pre-align:aligned sig=8e75522b754c -->
 
 <a id="alimtalk-api-guide"></a>
@@ -152,7 +154,7 @@ Content-Type: application/json;charset=UTF-8
 * <b>リクエスト日時は、呼び出し時点から 60 日後まで設定できます。</b>
 * <b>SMS サービスで代替送信されるため、SMS サービスの送信 API 仕様に従ってフィールドを入力する必要があります。（SMS サービスに登録された発信番号、各種フィールドの長さ制限など）</b>
 * <b>代替送信は SMS、LMS で送信可能であり、国際代替送信は SMS のみサポートします。国際受信者番号の場合、resendType（代替送信タイプ）を SMS に変更する必要があります。</b>
-* <b>指定した代替送信タイプのバイト制限を超える代替送信タイトルや内容は、切り捨てられて代替送信される場合があります。（[[SMS 注意事項](https://docs.toast.com/ko/Notification/SMS/ko/api-guide/#_1)] 参考）</b>
+* <b>指定した代替送信タイプのバイト制限を超える代替送信タイトルや内容は、切り捨てられて代替送信される場合があります。（[[SMS 注意事項](https://docs.nhncloud.com/ko/Notification/SMS/ko/api-guide/#_1)] 参考）</b>
 * <b>templateTitle および templateItemHighlight.title フィールドの末尾に、置換子と templateParameter を使用して `\s` 文字を追加すると、取り消し線スタイルを適用できます。</b>
     * <b>ただし、テンプレート登録時にあらかじめ \s をフィールドに追加しておく場合は適用されません。</b>
 
@@ -393,7 +395,7 @@ Content-Type: application/json;charset=UTF-8
 * <b>リクエスト日時は、呼び出し時点から60日後まで設定できます。</b>
 * <b>SMSサービスで代替送信されるため、SMSサービスの送信API仕様に従ってフィールドを入力する必要があります。（SMSサービスに登録された発信番号、各種フィールドの長さ制限など）</b>
 * <b>代替送信はSMS、LMSで送信可能で、国際代替送信はSMSのみサポートします。国際受信者番号の場合、resendType（代替送信タイプ）をSMSに変更する必要があります。</b>
-* <b>指定した代替送信タイプのバイト制限を超える代替送信タイトルや内容は、切り捨てられて代替送信される場合があります。（[[SMS 注意事項](https://docs.toast.com/ko/Notification/SMS/ko/api-guide/#_1)] 参照）</b>
+* <b>指定した代替送信タイプのバイト制限を超える代替送信タイトルや内容は、切り捨てられて代替送信される場合があります。（[[SMS 注意事項](https://docs.nhncloud.com/ko/Notification/SMS/ko/api-guide/#_1)] 参照）</b>
 * <b>送信時点でtemplateTitleとtemplateItemHighlight.titleフィールドの末尾に`\s`文字を追加した場合、取り消し線スタイルを適用できます。</b>
     * <b>ただし、テンプレート登録時にあらかじめ\sをフィールドに追加している場合は適用されません。</b>
 
@@ -497,7 +499,7 @@ Content-Type: application/json;charset=UTF-8
 | pageSize             | 	Integer | 	X         | 	照会件数(Default: 15、Max: 1000)                        |
 
 * 90日以前の送信リクエストデータは照会できません。
-* 送信リクエスト日時の範囲は最大 30 日です。
+* 送信リクエスト日時の範囲は最大31日です。
 
 <a id="response-3"></a>
 #### レスポンス
@@ -555,7 +557,7 @@ Content-Type: application/json;charset=UTF-8
 | -- requestDate              | String  |    O     | リクエスト日時                                                                                                                                                                  |
 | -- createDate               | String  |    O     | 登録日時                                                                                                                                                                  |
 | -- receiveDate              | String  |    X     | 受信日時                                                                                                                                                                  |
-| -- resendStatus             | String  |    O     | 代替送信状態コード(RSC01、RSC02、RSC03、RSC04、RSC05)\<br\>([[下記の代替送信状態表](http://docs.toast.com/ko/Notification/KakaoTalk%20Bizmessage/ko/alimtalk-api-guide/#smslms)] 参照) |
+| -- resendStatus             | String  |    O     | 代替送信状態コード(RSC01、RSC02、RSC03、RSC04、RSC05)&lt;br\>([[下記の代替送信状態表](https://docs.nhncloud.com/ko/Notification/KakaoTalk%20Bizmessage/ko/alimtalk-api-guide/#smslms)] 参照) |
 | -- resendStatusName         | String  |    O     | 代替送信状態コード名                                                                                                                                                           |
 | -- messageStatus            | String  |    O     | リクエスト状態( COMPLETED \-> 成功、FAILED \-> 失敗、CANCEL \-> 取消 )                                                                                                                |
 | -- createUser               | String  |    X     | 登録者(コンソールから送信時にユーザー UUID で保存)                                                                                                                                            |
@@ -750,9 +752,9 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 | - requestDate           | String  |    O     | リクエスト日時                                                                                                                                                                  |
 | - receiveDate           | String  |    X     | 受信日時                                                                                                                                                                  |
 | - createDate            | String  |    O     | 登録日時                                                                                                                                                                  |
-| - resendStatus          | String  |    O     | 代替送信ステータスコード（RSC01、RSC02、RSC03、RSC04、RSC05）\<br\>（[[下記の代替送信ステータス表](http://docs.toast.com/ko/Notification/KakaoTalk%20Bizmessage/ko/alimtalk-api-guide/#smslms)] 参照） |
+| - resendStatus          | String  |    O     | 代替送信ステータスコード（RSC01、RSC02、RSC03、RSC04、RSC05）&lt;br\>（[[下記の代替送信ステータス表](https://docs.nhncloud.com/ko/Notification/KakaoTalk%20Bizmessage/ko/alimtalk-api-guide/#smslms)] 参照） |
 | - resendStatusName      | String  |    O     | 代替送信ステータスコード名                                                                                                                                                           |
-| - resendResultCode      | String  |    X     | 代替送信結果コード [SMS 結果コード](https://docs.toast.com/ko/Notification/SMS/ko/error-code/#api)                                                                                 |
+| - resendResultCode      | String  |    X     | 代替送信結果コード [SMS 結果コード](https://docs.nhncloud.com/ko/Notification/SMS/ko/error-code/#api)                                                                                 |
 | - resendRequestId       | String  |    X     | 代替送信 SMS リクエスト ID                                                                                                                                                        |
 | - messageStatus         | String  |    O     | リクエストステータス（COMPLETED -\> 成功、FAILED -\> 失敗、CANCEL -\> 取消）                                                                                                                |
 | - resultCode            | String  |    X     | 受信結果コード                                                                                                                                                               |
@@ -773,7 +775,7 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 | -- relayId              | String  |    X     | プラグイン実行時に X-Kakao-Plugin-Relay-Id ヘッダーを通じて転達される値                                                                                                                        |
 | -- oneClickId           | String  |    X     | ワンクリック決済プラグインで使用する決済情報                                                                                                                                               |
 | -- productId            | String  |    X     | ワンクリック決済プラグインで使用する決済情報                                                                                                                                               |
-| -- target               | String  |    X     | Web リンクボタンの場合、"target":"out" 属性を追加するとアウトリンク\<br\>デフォルトはインアプリリンクで送信                                                                                                            |
+| -- target               | String  |    X     | Web リンクボタンの場合、"target":"out" 属性を追加するとアウトリンク&lt;br\>デフォルトはインアプリリンクで送信                                                                                                            |
 | - quickReplies          | List    |    X     | クイックリプライリスト（最大 5 件）                                                                                                                                                        |
 | -- ordering             | Integer |    X     | クイックリプライ順序（クイックリプライがある場合は必須）                                                                                                                                                |
 | -- type                 | String  |    X     | クイックリプライタイプ（WL: Web リンク、AL: アプリリンク、BK: ボットキーワード、BC: 相談トーク転換、BT: ボット転換、BF: ビジネスフォーム）                                                                                                |
@@ -783,7 +785,7 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 | -- schemeIos            | String  |    X     | iOS アプリリンク（AL タイプの場合は必須フィールド、最大 500 文字）                                                                                                                                     |
 | -- schemeAndroid        | String  |    X     | Android アプリリンク（AL タイプの場合は必須フィールド、最大 500 文字）                                                                                                                                   |
 | -- pluginId             | String  |    X     | プラグイン ID（最大 24 文字）                                                                                                                                                        |
-| -- target               | String  |    X     | Web リンクタイプの場合、"target":"out" 属性を追加するとアウトリンク\<br\>デフォルトはインアプリリンクで送信                                                                                                            |
+| -- target               | String  |    X     | Web リンクタイプの場合、"target":"out" 属性を追加するとアウトリンク&lt;br\>デフォルトはインアプリリンクで送信                                                                                                            |
 | -- telNumber           | 	String  | 	X  | TN（電話する）タイプのボタン時、転達する電話番号                                                                    |
 | - messageOption         | Object  |    X     | メッセージオプション                                                                                                                                                                 |
 | -- price                | Integer |    X     | ユーザーに転達されるメッセージ内に含まれる価格/金額/決済金額（モーメント広告に該当）                                                                                                                            |
@@ -833,7 +835,7 @@ Content-Type: application/json;charset=UTF-8
 | X-NC-API-IDEMPOTENCY-KEY | 	String | X   | 重複メッセージ送信リクエストの基準 key<br>10 分間、同一の key でリクエストした場合、該当リクエストを失敗として処理します。 |
 
 [Request body]
-[上記と同様](./alimtalk-api-guide/#_3)
+[上記と同様](#_3)
 
 <a id="request-of-sending-full-text-2"></a>
 ### メッセージ全文送信リクエスト { #request-of-sending-full-text-2 }
@@ -865,7 +867,7 @@ Content-Type: application/json;charset=UTF-8
 | X-NC-API-IDEMPOTENCY-KEY | 	String | X   | 重複メッセージ送信リクエストの基準 key<br>10 分間、同一の key でリクエストした場合、該当リクエストを失敗として処理します。 |
 
 [Request Body]
-[上記と同様](./alimtalk-api-guide/#_5)
+[上記と同様](#_5)
 
 <a id="list-messages-2"></a>
 ### メッセージリスト照会 { #list-messages-2 }
@@ -899,7 +901,7 @@ Content-Type: application/json;charset=UTF-8
 | X-Secret-Key | 	String | O   | コンソールで生成できます。 |
 
 [Query parameter]
-[上記と同様](./alimtalk-api-guide/#_7)
+[上記と同様](#_7)
 
 <a id="get-messages-2"></a>
 ### メッセージ単件照会 { #get-messages-2 }
@@ -943,7 +945,7 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 <a id="response-5"></a>
 #### レスポンス
 
-[上記と同様](./alimtalk-api-guide/#_9)
+[上記と同様](#_9)
 
 <a id="message"></a>
 ## メッセージ { #message }
@@ -1096,9 +1098,9 @@ Content-Type: application/json;charset=UTF-8
 | - requestDate      | String  |    O     | リクエスト日時                                                                                                                                                                  |
 | - createDate       | String  |    O     | 作成日時                                                                                                                                                                  |
 | - receiveDate      | String  |    X     | 受信日時                                                                                                                                                                  |
-| - resendStatus     | String  |    O     | 代替送信ステータスコード(RSC01, RSC02, RSC03, RSC04, RSC05)\<br\>([[下記の代替送信ステータス表](http://docs.toast.com/ko/Notification/KakaoTalk%20Bizmessage/ko/alimtalk-api-guide/#smslms)] 参照) |
+| - resendStatus     | String  |    O     | 代替送信ステータスコード(RSC01, RSC02, RSC03, RSC04, RSC05)&lt;br\>([[下記の代替送信ステータス表](https://docs.nhncloud.com/ko/Notification/KakaoTalk%20Bizmessage/ko/alimtalk-api-guide/#smslms)] 参照) |
 | - resendStatusName | String  |    O     | 代替送信ステータスコード名                                                                                                                                                           |
-| - resendResultCode | String  |    X     | 代替送信結果コード [SMS 結果コード](https://docs.toast.com/ko/Notification/SMS/ko/error-code/#api)                                                                                 |
+| - resendResultCode | String  |    X     | 代替送信結果コード [SMS 結果コード](https://docs.nhncloud.com/ko/Notification/SMS/ko/error-code/#api)                                                                                 |
 | - resendRequestId  | String  |    X     | 代替送信 SMS リクエスト ID                                                                                                                                                        |
 | - messageStatus    | String  |    O     | リクエストステータス(COMPLETED -\> 成功、FAILED -\> 失敗、CANCEL -\> 取消)                                                                                                                 |
 | - resultCode       | String  |    X     | 受信結果コード                                                                                                                                                               |
@@ -1583,9 +1585,9 @@ curl -X GET \
 | - requestDate           | String  |    O     | リクエスト日時                                                                                                                                                                  |
 | - receiveDate           | String  |    X     | 受信日時                                                                                                                                                                  |
 | - createDate            | String  |    O     | 作成日時                                                                                                                                                                  |
-| - resendStatus          | String  |    O     | 代替送信ステータスコード（RSC01、RSC02、RSC03、RSC04、RSC05）\<br\>（[[下記の代替送信ステータス表](http://docs.toast.com/ko/Notification/KakaoTalk%20Bizmessage/ko/alimtalk-api-guide/#smslms)] 参照） |
+| - resendStatus          | String  |    O     | 代替送信ステータスコード（RSC01、RSC02、RSC03、RSC04、RSC05）&lt;br\>（[[下記の代替送信ステータス表](https://docs.nhncloud.com/ko/Notification/KakaoTalk%20Bizmessage/ko/alimtalk-api-guide/#smslms)] 参照） |
 | - resendStatusName      | String  |    O     | 代替送信ステータス名                                                                                                                                                              |
-| - resendResultCode      | String  |    O     | 代替送信結果コード [SMS 結果コード](https://docs.toast.com/ko/Notification/SMS/ko/error-code/#api)                                                                                 |
+| - resendResultCode      | String  |    O     | 代替送信結果コード [SMS 結果コード](https://docs.nhncloud.com/ko/Notification/SMS/ko/error-code/#api)                                                                                 |
 | - resendRequestId       | String  |    X     | 代替送信リクエスト ID                                                                                                                                                            |
 | - messageStatus         | String  |    O     | 一括受信者送信ステータスコード（READY、COMPLETED、FAILED、CANCEL）                                                                                                                      |
 | - resultCode            | String  |    X     | 結果ステータスコード                                                                                                                                                               |
@@ -1606,7 +1608,7 @@ curl -X GET \
 | -- relayId              | String  |    X     | プラグイン実行時に X-Kakao-Plugin-Relay-Id ヘッダーを通じて受け取る値                                                                                                                        |
 | -- oneClickId           | String  |    X     | ワンクリック決済プラグインで使用する決済情報                                                                                                                                               |
 | -- productId            | String  |    X     | ワンクリック決済プラグインで使用する決済情報                                                                                                                                               |
-| -- target               | String  |    X     | ウェブリンクボタンの場合、"target":"out" 属性を追加するとアウトリンク\<br\>デフォルトはインアプリリンクで送信                                                                                                            |
+| -- target               | String  |    X     | ウェブリンクボタンの場合、"target":"out" 属性を追加するとアウトリンク&lt;br\>デフォルトはインアプリリンクで送信                                                                                                            |
 | -- telNumber           | 	String  | 	X  | TN（電話する）タイプのボタン時、転達する電話番号                                                                                                                                                    |
 | - quickReplies          | List    |    X     | クイックリプライリスト（最大 5 件）                                                                                                                                                        |
 | -- ordering             | Integer |    X     | クイックリプライの順序（クイックリプライがある場合、必須）                                                                                                                                                |
@@ -1617,7 +1619,7 @@ curl -X GET \
 | -- schemeIos            | String  |    X     | iOS アプリリンク（AL タイプの場合、必須フィールド、最大 500 文字）                                                                                                                                     |
 | -- schemeAndroid        | String  |    X     | Android アプリリンク（AL タイプの場合、必須フィールド、最大 500 文字）                                                                                                                                   |
 | -- pluginId             | String  |    X     | プラグイン ID（最大 24 文字）                                                                                                                                                        |
-| -- target               | String  |    X     | ウェブリンクタイプの場合、"target":"out" 属性を追加するとアウトリンク\<br\>デフォルトはインアプリリンクで送信                                                                                                            |
+| -- target               | String  |    X     | ウェブリンクタイプの場合、"target":"out" 属性を追加するとアウトリンク&lt;br\>デフォルトはインアプリリンクで送信                                                                                                            |
 
 <a id="templates"></a>
 ## テンプレート { #templates }

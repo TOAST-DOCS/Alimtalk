@@ -6,7 +6,11 @@
 <a id="friendtalk-service-end-of-life-notice"></a>
 ## フレンドトークサービス終了のお知らせ { #friendtalk-service-end-of-life-notice }
 
-<!-- TODO: translate body -->
+* 2025-12-31（水）フレンドトークサービスのサポートを終了します。
+* 現在ご利用中のお客様には、ブランドメッセージへの移行をお勧めします。
+* 詳細については、[ブランドメッセージ移行ガイド](./friendtalk-compatible-api-guide/)を参照してください。
+
+---
 
 <a id="friendtalk"></a>
 ## カカともへのメッセージ { #friendtalk }
@@ -96,16 +100,16 @@ Content-Type: application/json;charset=UTF-8
 
 | 値                | タイプ | 必須 | 説明                                 |
 | ---------------------- | ------- | ---- | ---------------------------------------- |
-| plusFriendId           | String  | O    | プラスフレンドID(最大30文字)                         |
+| senderKey              | String  | O    | 発信キー(40文字)                         |
 | requestDate            | String  | X    | リクエスト日時(yyyy-MM-dd HH:mm)、フィールドを送信しない場合、即時送信 |
 | senderGroupingKey      | String  | X    | 発信グルーピングキー(最大100文字)                        |
 | createUser             | String  | X    | 登録者(コンソールから送信する場合、ユーザーUUIDとして保存) |
 | recipientList          | List    | O    | 受信者リスト(最大1000人)                         |
 | - recipientNo          | String  | O    | 受信番号                              |
-| - content              | String  | O    | 内容(最大1000文字)<br>イメージを含む時は最大400文字  |
+| - content              | String  | O    | 内容(最大1000文字)<br>イメージ送信時は最大400文字<br>ワイド画像送信時は最大76文字 |
 | - imageSeq             | Integer | X    | イメージ番号                             |
 | - imageLink            | String  | X    | イメージリンク                                |
-| - buttons              | List    | X    | ボタン                                 |
+| - buttons              | List    | X    | ボタン<br>ワイド画像送信時、リンクボタン最大2個 |
 | -- ordering            | Integer | X    | ボタン順序(ボタンがある場合は必須)                      |
 | -- type                | String  | X    | ボタンタイプ(WL：Webリンク、AL：アプリリンク、BK：Botキーワード、MD：メッセージ伝達) |
 | -- name                | String  | X    | ボタン名(ボタンがある場合は必須)                      |
@@ -114,19 +118,19 @@ Content-Type: application/json;charset=UTF-8
 | -- schemeIos           | String  | X    | iOSアプリリンク(ALタイプの場合は必須フィールド)                |
 | -- schemeAndroid       | String  | X    | Androidアプリリンク(ALタイプの場合は必須フィールド)            |
 | - resendParameter      | Object  | X    | 代替発送情報 |
-| -- isResend            | boolean | X    | 送信失敗時、代替送信するかどうか<br>コンソールで送信失敗設定をした時、デフォルト設定は再送信になっています。 |
+| -- isResend            | boolean | X    | 送信失敗時、文字代替送信するかどうか<br>コンソールで代替送信設定をした場合、デフォルトで再送信されます。 |
 | -- resendType          | String  | X    | 代替送信タイプ(SMS、LMS)<br>値がない場合は、テンプレート本文の長さに応じてタイプが決まります。 |
-| -- resendTitle         | String  | X    | LMS代替送信タイトル(最大20文字)<br>(値がない場合は、プラスフレンドIDで再送信されます。) |
-| -- resendContent       | String  | X    | 代替送信内容(最大1000文字)<br>(値がない場合は、テンプレートの内容で再送信されます。) |
-| -- resendSendNo        | String  | X    | 代替送信発信番号(最大13桁)<br><span style="color:red">(SMSサービスに登録された発信番号ではない場合、代替送信が失敗することがあります。)</span> |
-| -- resendUnsubscribeNo | String  | X    | 代替080受信拒否番号<br><span style="color:red">(SMSサービスに登録された080の受信拒否番号がない場合、代替の転送が失敗することがあります。)</span> |
+| -- resendTitle         | String  | X    | LMS代替送信タイトル<br>(値がない場合は、プラスフレンドIDで再送信されます。) |
+| -- resendContent       | String  | X    | 代替送信内容<br>(値がない場合は、[メッセージ本文とWebリンクボタン名 - WebリンクMobileリンク]で再送信されます。) |
+| -- resendSendNo        | String  | X    | 代替送信発信番号<br><span style="color:red">(SMSサービスに登録された発信番号ではない場合、代替送信が失敗することがあります。)</span> |
+| -- resendUnsubscribeNo | String  | X    | 代替送信080受信拒否番号<br><span style="color:red">(SMSサービスに登録された080受信拒否番号ではない場合、代替送信が失敗することがあります。)</span> |
 | - isAd                 | Boolean | X    | 広告かどうか(デフォルト値true)                          |
 | - recipientGroupingKey | String  | X    | 受信者グルーピングキー(最大100文字)                       |
 
 * <b>リクエスト日時は呼び出す時点から60日後まで設定可能です。</b>
 * <b>夜間送信制限(20:00～翌日08:00)</b>
 * <b>SMSサービスの代替として送信されるため、SMSサービスの発送API明細に従ってフィールドを入力してください。(SMSサービスに登録された発信番号、080受信拒否番号、各種フィールドの長さ制限など)</b>
-* <b>指定した代替発送タイプのバイトの制限を超える代替発送のタイトルや内容はカットされ、代替発送となることがあります。([[SMS注意事項](https://docs.toast.com/ja/Notification/SMS/ja/api-guide/#_1)] 参照)</b>
+* <b>指定した代替発送タイプのバイトの制限を超える代替発送のタイトルや内容はカットされ、代替発送となることがあります。([[SMS注意事項](https://docs.nhncloud.com/ja/Notification/SMS/ja/api-guide/#_1)] 参照)</b>
 * <b>友達トークの広告メッセージは、広告SMS APIに代替送信されるので、必ず080受信拒否番号を登録しないと代替送信されません。</b>
 * <b>友達トーク広告メッセージのresendContentフィールドを入力する場合、SMS広告APIの広告文句を必須入力すると正常的に代替して送信されます。(広告)内容[無料受信拒否]080XXXXXX</b>
 * <b>友達トーク広告メッセージのresendContentフィールドがない場合は、登録された080受信拒否番号で広告メッセージを自動生成して代替送信されます。</b>
@@ -214,10 +218,10 @@ Content-Type: application/json;charset=UTF-8
 | requestId            | String  | 条件必須(1番) | リクエストID                             |
 | startRequestDate     | String  | 条件必須(2番) | 送信リクエスト日の開始値(yyyy-MM-dd HH:mm)   |
 | endRequestDate       | String  | 条件必須(2番) | 送信リクエスト日の終了値(yyyy-MM-dd HH:mm)    |
-| startCreateDate      | String  | 条件必須(3番) | 登録日 開始値(yyy-MM-dd HH:mm)                   |
-| endCreateDate        | String  | 条件必須(3番) | 登録日 終値(yyy-MM-dd HH:mm)                    |
+| startCreateDate      | String  | 条件必須(3番) | 登録日 開始値(yyyy-MM-dd HH:mm)                   |
+| endCreateDate        | String  | 条件必須(3番) | 登録日 終値(yyyy-MM-dd HH:mm)                    |
 | recipientNo          | String  | X         | 受信番号                       |
-| plusFriendId         | String  | X         | プラスフレンドID                          |
+| senderKey            | String  | X         | 発信キー                          |
 | senderGroupingKey    | String  | X         | 発信グルーピングキー                        |
 | recipientGroupingKey | String  | X         | 受信者グルーピングキー                       |
 | messageStatus        | String  | X         | リクエストステータス(COMPLETED：成功、FAILED：失敗) |
@@ -271,9 +275,11 @@ Content-Type: application/json;charset=UTF-8
 | -- requestId                | String  | リクエストID                             |
 | -- recipientSeq             | Integer | 受信者シーケンス番号                  |
 | -- plusFriendId             | String  | プラスフレンドID                          |
+| -- senderKey                | String  | 発信キー                             |
 | -- recipientNo              | String  | 受信番号                       |
 | -- requestDate              | String  | リクエスト日時                       |
 | -- createDate               | String  | 登録日時                             |
+| -- receiveDate              | String  | 受信日時                             |
 | -- content                  | String  | 本文                          |
 | -- messageStatus            | String  | リクエストステータス(COMPLETED：成功、FAILED：失敗) |
 | -- resendStatus             | String  | 再送信ステータスコード                   |
@@ -400,6 +406,7 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 | - requestId            | String  | リクエストID                                    |
 | - recipientSeq         | Integer | 受信者シーケンス番号                         |
 | - plusFriendId         | String  | プラスフレンドID                                 |
+| - senderKey            | String  | 発信キー                                    |
 | - recipientNo          | String  | 受信番号                              |
 | - requestDate          | String  | リクエスト日時                              |
 | - createDate           | String  | 登録日時                             |
@@ -408,13 +415,15 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 | - messageStatus        | String  | リクエストステータス(COMPLETED：成功、FAILED：失敗)      |
 | - resendStatus         | String  | 再送信ステータスコード                          |
 | - resendStatusName     | String  | 再送信ステータスコード名                             |
+| - resendResultCode     | String  | 再送信結果コード SMS結果コード                   |
+| - resendRequestId      | String  | 再送信SMSリクエストID                           |
 | - resultCode           | String  | 受信結果コード                           |
 | - resultCodeName       | String  | 受信結果コード名                              |
 | - createUser           | String  | 登録者(コンソールから送信する場合、ユーザーUUIDとして保存)|
 | - imageSeq             | Integer | イメージ番号                             |
 | - imageName            | String  | イメージ名(アップロードしたファイル名)                           |
 | - imageUrl             | String  | イメージURL                                  |
-| - imageLink            | String  | イメージリンク(イメージ番号を入力した場合は必須)                |
+| - imageLink            | String  | イメージリンク                |
 | - wide                 | Boolean | ワイドイメージの可否                        |
 | - buttons              | List    | ボタンリスト                              |
 | -- ordering            | Integer | ボタン順序                              |
@@ -574,6 +583,7 @@ Content-Type: application/json;charset=UTF-8
 | -- requestId                | String  | リクエストID                                    |
 | -- recipientSeq             | Integer | 受信者シーケンス番号                         |
 | -- plusFriendId             | String  | プラスフレンドID                                 |
+| -- senderKey                | String  | 発信キー                                    |
 | -- recipientNo              | String  | 受信番号                              |
 | -- requestDate              | String  | リクエスト日時                              |
 | -- receiveDate              | String  | 受信日時                              |
@@ -906,11 +916,12 @@ Content-Type: application/json;charset=UTF-8
 }
 ```
 
-| 値                | タイプ | 必須 | 説明                                 |
-| ---------------------- | ------- | ---- | ---------------------------------------- |
-| plusFriendId           | String  | O    | プラスフレンドID(最大30文字)                         |
-| isResend             | boolean | O    | 送信失敗時、代替送信するかどうか<br>コンソールで送信失敗設定をした時、デフォルト設定は再送信になっています。 |
-| resendSendNo         | String  | O    | 代替送信発信番号(最大13桁)<br><span style="color:red">(SMSサービスに登録された発信番号ではない場合、代替送信が失敗することがあります。)</span> |
+| 名前 | タイプ | 必須 | 説明 |
+|---|---|---|---|
+| senderKey | String | O | 発信キー |
+| isResend | Boolean | O | 送信失敗時、SMS代替送信するかどうか<br>Consoleで代替送信設定時、デフォルトで再送信されます。 |
+| resendSendNo | String | O | 代替送信発信番号<br><span style="color:red">(SMS商品に登録された発信番号ではない場合、代替送信が失敗することがあります。)</span> |
+| resendUnsubscribeNo | String | X | 代替送信080受信拒否番号<br><span style="color:red">(SMS商品に登録された080受信拒否番号ではない場合、代替送信が失敗することがあります。)</span> |
 
 [例]
 ```

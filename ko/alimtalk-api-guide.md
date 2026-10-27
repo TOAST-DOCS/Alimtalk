@@ -152,7 +152,7 @@ Content-Type: application/json;charset=UTF-8
 * <b>요청 일시는 호출하는 시점부터 60일 후까지 설정 가능합니다.</b>
 * <b>SMS 서비스에서 대체 발송되므로, SMS 서비스의 발송 API 명세에 따라 필드를 입력해야 합니다.(SMS 서비스에 등록된 발신 번호, 각종 필드 길이 제한 등)</b>
 * <b>대체 발송은 SMS, LMS로 발송 가능하며, 국제 대체 발송은 SMS만 지원합니다.국제 수신자 번호일 경우, resendType(대체 발송 타입)을 SMS로 변경해야 정상적으로 대체 발송할 수 있습니다.</b>
-* <b>지정한 대체 발송 타입의 바이트 제한을 초과하는 대체 발송 제목이나 내용은 잘려서 대체 발송될 수 있습니다.([[SMS 주의사항](https://docs.toast.com/ko/Notification/SMS/ko/api-guide/#_1)] 참고)</b>
+* <b>지정한 대체 발송 타입의 바이트 제한을 초과하는 대체 발송 제목이나 내용은 잘려서 대체 발송될 수 있습니다.([[SMS 주의사항](https://docs.nhncloud.com/ko/Notification/SMS/ko/api-guide/#_1)] 참고)</b>
 * <b>templateTitle과 templateItemHighlight.title 필드 맨 뒤에 치환자와 templateParameter를 이용해서 `\s` 문자를 추가할 경우 취소선 스타일을 적용할 수 있습니다.</b>
     * <b>단, 템플릿 등록 시 미리 \s를 필드에 추가해 두는 경우에는 적용되지 않습니다.</b>
 
@@ -393,7 +393,7 @@ Content-Type: application/json;charset=UTF-8
 * <b>요청 일시는 호출하는 시점부터 60일 후까지 설정 가능합니다.</b>
 * <b>SMS 서비스에서 대체 발송되므로, SMS 서비스의 발송 API 명세에 따라 필드를 입력해야 합니다.(SMS 서비스에 등록된 발신 번호, 각종 필드 길이 제한 등)</b>
 * <b>대체 발송은 SMS, LMS로 발송 가능하며, 국제 대체 발송은 SMS만 지원합니다.국제 수신자 번호일 경우, resendType(대체 발송 타입)을 SMS로 변경해야 정상적으로 대체 발송할 수 있습니다.</b>
-* <b>지정한 대체 발송 타입의 바이트 제한을 초과하는 대체 발송 제목이나 내용은 잘려서 대체 발송될 수 있습니다.([[SMS 주의사항](https://docs.toast.com/ko/Notification/SMS/ko/api-guide/#_1)] 참고)</b>
+* <b>지정한 대체 발송 타입의 바이트 제한을 초과하는 대체 발송 제목이나 내용은 잘려서 대체 발송될 수 있습니다.([[SMS 주의사항](https://docs.nhncloud.com/ko/Notification/SMS/ko/api-guide/#_1)] 참고)</b>
 * <b>발송 시점에 templateTitle과 templateItemHighlight.title 필드 맨 뒤에 `\s` 문자를 추가할 경우 취소선 스타일을 적용할 수 있습니다.</b>
     * <b>단, 템플릿 등록 시 미리 \s를 필드에 추가해 두는 경우에는 적용되지 않습니다.</b>
 
@@ -497,7 +497,7 @@ Content-Type: application/json;charset=UTF-8
 | pageSize             | 	Integer | 	X         | 	조회 건수(Default: 15, Max: 1000)                        |
 
 * 90일 이전 발송 요청 데이터는 조회되지 않습니다.
-* 발송 요청 일시의 범위는 최대 30일입니다.
+* 발송 요청 일시의 범위는 최대 31일입니다.
 
 <a id="response-3"></a>
 #### 응답
@@ -555,7 +555,7 @@ Content-Type: application/json;charset=UTF-8
 | -- requestDate              | String  |    O     | 요청 일시                                                                                                                                                                  |
 | -- createDate               | String  |    O     | 등록 일시                                                                                                                                                                  |
 | -- receiveDate              | String  |    X     | 수신 일시                                                                                                                                                                  |
-| -- resendStatus             | String  |    O     | 대체 발송 상태 코드(RSC01, RSC02, RSC03, RSC04, RSC05)\<br\>([[아래 대체 발송 상태 표](http://docs.toast.com/ko/Notification/KakaoTalk%20Bizmessage/ko/alimtalk-api-guide/#smslms)] 참고) |
+| -- resendStatus             | String  |    O     | 대체 발송 상태 코드(RSC01, RSC02, RSC03, RSC04, RSC05)&lt;br\>([[아래 대체 발송 상태 표](https://docs.nhncloud.com/ko/Notification/KakaoTalk%20Bizmessage/ko/alimtalk-api-guide/#smslms)] 참고) |
 | -- resendStatusName         | String  |    O     | 대체 발송 상태 코드명                                                                                                                                                           |
 | -- messageStatus            | String  |    O     | 요청 상태( COMPLETED -\> 성공, FAILED -\> 실패, CANCEL -\> 취소 )                                                                                                                |
 | -- createUser               | String  |    X     | 등록자(콘솔에서 발송 시 사용자 UUID로 저장)                                                                                                                                            |
@@ -750,9 +750,9 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 | - requestDate           | String  |    O     | 요청 일시                                                                                                                                                                  |
 | - receiveDate           | String  |    X     | 수신 일시                                                                                                                                                                  |
 | - createDate            | String  |    O     | 등록 일시                                                                                                                                                                  |
-| - resendStatus          | String  |    O     | 대체 발송 상태 코드(RSC01, RSC02, RSC03, RSC04, RSC05)\<br\>([[아래 대체 발송 상태 표](http://docs.toast.com/ko/Notification/KakaoTalk%20Bizmessage/ko/alimtalk-api-guide/#smslms)] 참고) |
+| - resendStatus          | String  |    O     | 대체 발송 상태 코드(RSC01, RSC02, RSC03, RSC04, RSC05)&lt;br\>([[아래 대체 발송 상태 표](https://docs.nhncloud.com/ko/Notification/KakaoTalk%20Bizmessage/ko/alimtalk-api-guide/#smslms)] 참고) |
 | - resendStatusName      | String  |    O     | 대체 발송 상태 코드명                                                                                                                                                           |
-| - resendResultCode      | String  |    X     | 대체 발송 결과 코드 [SMS 결과 코드](https://docs.toast.com/ko/Notification/SMS/ko/error-code/#api)                                                                                 |
+| - resendResultCode      | String  |    X     | 대체 발송 결과 코드 [SMS 결과 코드](https://docs.nhncloud.com/ko/Notification/SMS/ko/error-code/#api)                                                                                 |
 | - resendRequestId       | String  |    X     | 대체 발송 SMS 요청 ID                                                                                                                                                        |
 | - messageStatus         | String  |    O     | 요청 상태( COMPLETED -\> 성공, FAILED -\> 실패, CANCEL -\> 취소 )                                                                                                                |
 | - resultCode            | String  |    X     | 수신 결과 코드                                                                                                                                                               |
@@ -773,7 +773,7 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 | -- relayId              | String  |    X     | 플러그인 실행 시 X-Kakao-Plugin-Relay-Id 헤더를 통해 전달받을 값                                                                                                                        |
 | -- oneClickId           | String  |    X     | 원클릭 결제 플러그인에서 사용하는 결제 정보                                                                                                                                               |
 | -- productId            | String  |    X     | 원클릭 결제 플러그인에서 사용하는 결제 정보                                                                                                                                               |
-| -- target               | String  |    X     | 웹 링크 버튼일 경우, "target":"out" 속성 추가 시 아웃 링크\<br\>기본 인앱 링크로 발송                                                                                                            |
+| -- target               | String  |    X     | 웹 링크 버튼일 경우, "target":"out" 속성 추가 시 아웃 링크&lt;br\>기본 인앱 링크로 발송                                                                                                            |
 | - quickReplies          | List    |    X     | 바로연결 리스트(최대 5개)                                                                                                                                                        |
 | -- ordering             | Integer |    X     | 바로연결 순서(바로연결이 있는 경우 필수)                                                                                                                                                |
 | -- type                 | String  |    X     | 바로연결 타입(WL: 웹 링크, AL: 앱 링크, BK: 봇 키워드, BC: 상담톡 전환, BT: 봇 전환, BF: 비즈니스폼)                                                                                                |
@@ -783,7 +783,7 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 | -- schemeIos            | String  |    X     | iOS 앱 링크(AL 타입일 경우 필수 필드, 최대 500자)                                                                                                                                     |
 | -- schemeAndroid        | String  |    X     | 안드로이드 앱 링크(AL 타입일 경우 필수 필드, 최대 500자)                                                                                                                                   |
 | -- pluginId             | String  |    X     | 플러그인 ID(최대 24자)                                                                                                                                                        |
-| -- target               | String  |    X     | 웹 링크 타입일 경우, "target":"out" 속성 추가 시 아웃 링크\<br\>기본 인앱 링크로 발송                                                                                                            |
+| -- target               | String  |    X     | 웹 링크 타입일 경우, "target":"out" 속성 추가 시 아웃 링크&lt;br\>기본 인앱 링크로 발송                                                                                                            |
 | -- telNumber           | 	String  | 	X  | TN(전화하기) 타입 버튼 시, 전달할 전화번호                                                                    |
 | - messageOption         | Object  |    X     | 메시지 옵션                                                                                                                                                                 |
 | -- price                | Integer |    X     | 사용자에게 전달될 메시지 내 포함된 가격/금액/결제 금액(모먼트 광고에 해당)                                                                                                                            |
@@ -833,7 +833,7 @@ Content-Type: application/json;charset=UTF-8
 | X-NC-API-IDEMPOTENCY-KEY | 	String | X   | 중복 메시지 발송 요청 기준 key<br>10분간 동일한 key로 요청 시 해당 요청을 실패 처리합니다. |
 
 [Request body]
-[위와 동일](./alimtalk-api-guide/#_3)
+[위와 동일](#_3)
 
 <a id="request-of-sending-full-text-2"></a>
 ### 메시지 전문 발송 요청 { #request-of-sending-full-text-2 }
@@ -865,7 +865,7 @@ Content-Type: application/json;charset=UTF-8
 | X-NC-API-IDEMPOTENCY-KEY | 	String | X   | 중복 메시지 발송 요청 기준 key<br>10분간 동일한 key로 요청 시 해당 요청을 실패 처리합니다. |
 
 [Request Body]
-[위와 동일](./alimtalk-api-guide/#_5)
+[위와 동일](#_5)
 
 <a id="list-messages-2"></a>
 ### 메시지 리스트 조회 { #list-messages-2 }
@@ -899,7 +899,7 @@ Content-Type: application/json;charset=UTF-8
 | X-Secret-Key | 	String | O   | 콘솔에서 생성할 수 있습니다. |
 
 [Query parameter]
-[위와 동일](./alimtalk-api-guide/#_7)
+[위와 동일](#_7)
 
 <a id="get-messages-2"></a>
 ### 메시지 단건 조회 { #get-messages-2 }
@@ -943,7 +943,7 @@ curl -X GET -H "Content-Type: application/json;charset=UTF-8" -H "X-Secret-Key:{
 <a id="response-5"></a>
 #### 응답
 
-[위와 동일](./alimtalk-api-guide/#_9)
+[위와 동일](#_9)
 
 <a id="message"></a>
 ## 메시지 { #message }
@@ -1096,9 +1096,9 @@ Content-Type: application/json;charset=UTF-8
 | - requestDate      | String  |    O     | 요청 일시                                                                                                                                                                  |
 | - createDate       | String  |    O     | 생성 일시                                                                                                                                                                  |
 | - receiveDate      | String  |    X     | 수신 일시                                                                                                                                                                  |
-| - resendStatus     | String  |    O     | 대체 발송 상태 코드(RSC01, RSC02, RSC03, RSC04, RSC05)\<br\>([[아래 대체 발송 상태 표](http://docs.toast.com/ko/Notification/KakaoTalk%20Bizmessage/ko/alimtalk-api-guide/#smslms)] 참고) |
+| - resendStatus     | String  |    O     | 대체 발송 상태 코드(RSC01, RSC02, RSC03, RSC04, RSC05)&lt;br\>([[아래 대체 발송 상태 표](https://docs.nhncloud.com/ko/Notification/KakaoTalk%20Bizmessage/ko/alimtalk-api-guide/#smslms)] 참고) |
 | - resendStatusName | String  |    O     | 대체 발송 상태 코드명                                                                                                                                                           |
-| - resendResultCode | String  |    X     | 대체 발송 결과 코드 [SMS 결과 코드](https://docs.toast.com/ko/Notification/SMS/ko/error-code/#api)                                                                                 |
+| - resendResultCode | String  |    X     | 대체 발송 결과 코드 [SMS 결과 코드](https://docs.nhncloud.com/ko/Notification/SMS/ko/error-code/#api)                                                                                 |
 | - resendRequestId  | String  |    X     | 대체 발송 SMS 요청 ID                                                                                                                                                        |
 | - messageStatus    | String  |    O     | 요청 상태(COMPLETED -\> 성공, FAILED -\> 실패, CANCEL -\> 취소 )                                                                                                                 |
 | - resultCode       | String  |    X     | 수신 결과 코드                                                                                                                                                               |
@@ -1583,9 +1583,9 @@ curl -X GET \
 | - requestDate           | String  |    O     | 요청 날짜                                                                                                                                                                  |
 | - receiveDate           | String  |    X     | 수신 날짜                                                                                                                                                                  |
 | - createDate            | String  |    O     | 생성 날짜                                                                                                                                                                  |
-| - resendStatus          | String  |    O     | 대체 발송 상태 코드(RSC01, RSC02, RSC03, RSC04, RSC05)\<br\>([[아래 대체 발송 상태 표](http://docs.toast.com/ko/Notification/KakaoTalk%20Bizmessage/ko/alimtalk-api-guide/#smslms)] 참고) |
+| - resendStatus          | String  |    O     | 대체 발송 상태 코드(RSC01, RSC02, RSC03, RSC04, RSC05)&lt;br\>([[아래 대체 발송 상태 표](https://docs.nhncloud.com/ko/Notification/KakaoTalk%20Bizmessage/ko/alimtalk-api-guide/#smslms)] 참고) |
 | - resendStatusName      | String  |    O     | 대체 발송 상태명                                                                                                                                                              |
-| - resendResultCode      | String  |    O     | 대체 발송 결과 코드 [SMS 결과 코드](https://docs.toast.com/ko/Notification/SMS/ko/error-code/#api)                                                                                 |
+| - resendResultCode      | String  |    O     | 대체 발송 결과 코드 [SMS 결과 코드](https://docs.nhncloud.com/ko/Notification/SMS/ko/error-code/#api)                                                                                 |
 | - resendRequestId       | String  |    X     | 대체 발송 요청 ID                                                                                                                                                            |
 | - messageStatus         | String  |    O     | 대량 수신자 발송 상태 코드(READY, COMPLETED, FAILED, CANCEL)                                                                                                                      |
 | - resultCode            | String  |    X     | 결과 상태 코드                                                                                                                                                               |
@@ -1606,7 +1606,7 @@ curl -X GET \
 | -- relayId              | String  |    X     | 플러그인 실행 시 X-Kakao-Plugin-Relay-Id 헤더를 통해 전달받을 값                                                                                                                        |
 | -- oneClickId           | String  |    X     | 원클릭 결제 플러그인에서 사용하는 결제 정보                                                                                                                                               |
 | -- productId            | String  |    X     | 원클릭 결제 플러그인에서 사용하는 결제 정보                                                                                                                                               |
-| -- target               | String  |    X     | 웹 링크 버튼일 경우, "target":"out" 속성 추가 시 아웃 링크\<br\>기본 인앱 링크로 발송                                                                                                            |
+| -- target               | String  |    X     | 웹 링크 버튼일 경우, "target":"out" 속성 추가 시 아웃 링크&lt;br\>기본 인앱 링크로 발송                                                                                                            |
 | -- telNumber           | 	String  | 	X  | TN(전화하기) 타입 버튼 시, 전달할 전화번호                                                                    |
 | - quickReplies          | List    |    X     | 바로연결 리스트(최대 5개)                                                                                                                                                        |
 | -- ordering             | Integer |    X     | 바로연결 순서(바로연결이 있는 경우 필수)                                                                                                                                                |
@@ -1617,7 +1617,7 @@ curl -X GET \
 | -- schemeIos            | String  |    X     | iOS 앱 링크(AL 타입일 경우 필수 필드, 최대 500자)                                                                                                                                     |
 | -- schemeAndroid        | String  |    X     | 안드로이드 앱 링크(AL 타입일 경우 필수 필드, 최대 500자)                                                                                                                                   |
 | -- pluginId             | String  |    X     | 플러그인 ID(최대 24자)                                                                                                                                                        |
-| -- target               | String  |    X     | 웹 링크 타입일 경우, "target":"out" 속성 추가 시 아웃 링크\<br\>기본 인앱 링크로 발송                                                                                                            |
+| -- target               | String  |    X     | 웹 링크 타입일 경우, "target":"out" 속성 추가 시 아웃 링크&lt;br\>기본 인앱 링크로 발송                                                                                                            |
 
 <a id="templates"></a>
 ## 템플릿 { #templates }

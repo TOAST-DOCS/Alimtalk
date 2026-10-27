@@ -36,5 +36,5 @@ After opening channel, apply for a business channel by setting up channel inform
 <a id="register-kakaotalk-channel"></a>
 ### Register KakaoTalk Channel { #register-kakaotalk-channel }
 1. If switching to a business channel has been completed (approved), register the correspodning sender profile (KakaoTalk channel) on **Notification > KakaoTalk Bizmessage > Manage outgoing Profiles** tab.
-    * The Sender Profile Registration Detail Guide is available to check [Manage Sender Profiles](https://docs.nhncloud.com/ko/Notification/KakaoTalk%20Bizmessage/ko/common-console-guide/#_5).
+    * The Sender Profile Registration Detail Guide is available to check [Manage Sender Profiles](./common-console-guide/#manage-sender-profiles).
 
